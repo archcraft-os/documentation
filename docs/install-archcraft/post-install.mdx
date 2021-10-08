@@ -1,0 +1,98 @@
+---
+sidebar_position: 3
+---
+
+# Post Installation
+
+After installing Archcraft, there are few things you should do...
+
+### Update System
+Refresh package database and Update your new installation.
+```bash
+$ sudo pacman -Syyu
+```
+
+If you get `invalid or corrupted package (PGP signature)` error, do...
+
+```bash
+$ sudo pacman -S archlinux-keyring
+$ sudo pacman-key --populate
+```
+
+### Install New Softwares
+Install your favorite programs with pacman or yay (AUR).
+
+```bash
+$ sudo pacman -S gimp inkscape
+
+# Or from AUR
+
+$ yay -S spotify		
+```
+
+### Fix Screen Tearing
+If you're facing screen tearing issue then :
+
+1. Enable `GLX` backend for compositor. If you're using `openbox` then right click on the desktop and 
+go to **Preferences > Compositor** and click on `Use 'glx' backend` or you can edit `~/.config/picom.conf` file manually.
+
+1. If first option does not work for you, Create a `xorg.conf` file like this :
+
+```bash
+# Change to xorg.conf.d dir
+$ cd /etc/X11/xorg.conf.d
+
+# Create a conf file
+$ sudo touch 20-amdgpu.conf
+
+# Edit the file
+$ sudo vim 20-amdgpu.conf
+
+# Paste this in the editor
+Section "Device"
+     Identifier "AMD"
+     Driver "amdgpu"
+     Option "TearFree" "true"
+EndSection						
+```
+:::danger
+
+This method may not work on your system and you might not be able to boot into **xorg**. So make sure you know how to use **tty** or boot into **recovery mode** to revert the changes you made.
+
+:::
+
+### Enable Suspend Service
+Enable betterlockscreen's suspend service for your user account.
+
+```bash
+# Enable betterlockscreen suspend service
+
+$ sudo systemctl enable betterlockscreen@$USER.service						
+```
+
+### Fix Lock Screen Background
+Fix lock screen layout on hidpi or low resolution displays.
+
+```bash
+# Update the lockscreen wallpaper
+
+$ betterlockscreen -u /usr/share/backgrounds/groot.jpg
+```
+
+### Remove Unnecessary Modules From Initrd
+Let's say you've installed Archcraft (with `ABIF`) on a machine which has an Intel GPU. In this case you only need **`i915`** module. Delete other modules from the array and rebuild initrd.
+
+```bash
+# Edit mkinitcpio.conf file
+$ sudo vim /etc/mkinitcpio.conf
+
+# Change line 7 from
+MODULES=(i915? amdgpu? radeon? nouveau? vboxvideo? vmwgfx?)
+# To
+MODULES=(i915)
+
+# Save file and rebuild initrd
+$ sudo mkinitcpio -p linux						
+```
+
+Well, that's pretty much everything for now, go ahead and enjoy Archcraft.
