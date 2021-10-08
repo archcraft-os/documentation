@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>Archcraft Blog</title>
+        <link>https://wiki.archcraft.io/news</link>
+        <description>Archcraft Blog</description>
+        <lastBuildDate>Tue, 05 Oct 2021 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[October Release Available]]></title>
+            <link>https://wiki.archcraft.io/news/03-release-news</link>
+            <guid>03-release-news</guid>
+            <pubDate>Tue, 05 Oct 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[New ISO of Archcraft is now available to download.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Issues In September Release]]></title>
+            <link>https://wiki.archcraft.io/news/02-issue-news</link>
+            <guid>02-issue-news</guid>
+            <pubDate>Thu, 30 Sep 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[<span]]></description>
+        </item>
+        <item>
+            <title><![CDATA[September Release Available]]></title>
+            <link>https://wiki.archcraft.io/news/01-release-news</link>
+            <guid>01-release-news</guid>
+            <pubDate>Sat, 25 Sep 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[<span]]></description>
+        </item>
+    </channel>
+</rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>Archcraft Blog</title>
+        <link>https://wiki.archcraft.io/blog</link>
+        <description>Archcraft Blog</description>
+        <lastBuildDate>Tue, 20 Jul 2021 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[Change themes and icons in bspwm]]></title>
+            <link>https://wiki.archcraft.io/blog/02-post-bspwm</link>
+            <guid>02-post-bspwm</guid>
+            <pubDate>Tue, 20 Jul 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[In Archcraft, Bspwm use xsettingsd, a daemon that implements the XSETTINGS specification.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Add my music in mpd]]></title>
+            <link>https://wiki.archcraft.io/blog/01-post-mpd</link>
+            <guid>01-post-mpd</guid>
+            <pubDate>Tue, 20 Jul 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[To add your favorite music in mpd, (assuming your songs are stored in ~/Music directory) follow the steps below :]]></description>
+        </item>
+    </channel>
+</rss>
