@@ -3,19 +3,17 @@ sidebar_position: 2
 hide_table_of_contents: true
 ---
 
-# Boot Archcraft with GRUB
+# Lancer Archcraft avec grub
 
-If you already have **Linux** installed on your system and want to try Archcraft without making a bootable USB drive, you can do so with the GRUB2 bootloader.
-Follow the steps below to boot Archcraft ISO with GRUB2 :
+Si vous avez **GNU/Linux** d'installé sur votre PC et vous voulez tester Archcraft sans créer de clé USB bootable, vous pouvez le faire avec GRUB2.
+Suivez ces étapes pour lancer l'ISO de Archcraft avec GRUB2 :
 
-- Open terminal and edit **/etc/grub.d/40_custom** with your favorite text editor.
-
+- Lancez un terminal et modifiez **/etc/grub.d/40_custom** avec votre éditeur de texte favoris.
 ```bash
 $ sudo vim /etc/grub.d/40_custom
 ```
 
-- Add the following entry in the file, replace **(hd0,X)** with your root partition, e.g. (hd0,2) and **/path/to/archcraft.iso** with your Archcraft ISO path.
-
+- Ajoutez cette entrée dans le fichier, remplacez **(hd0,X)** avec votre partition root, par exemple. (hd0,2) et **/path/to/archcraft.iso** avec le chemin vers votre ISO Archcraft
 ```bash
 menuentry "Archcraft Live ISO" --class archcraft {
     set root='(hd0,X)'
@@ -30,14 +28,13 @@ menuentry "Archcraft Live ISO" --class archcraft {
 }
 ```
 
-- Save the file and update **grub.cfg**, the GRUB configuration file.
-
+- Sauvegardez le fichier et mettez à jours **grub.cfg**, le fichier de configuration GRUB
 ```bash
-# On Arch Linux
+# Sur Arch Linux
 $ sudo grub-mkconfig -o /boot/grub/grub.cfg
 						
-# On Ubuntu & its derivatives
+# Sur Ubuntu
 $ sudo update-grub
 ```
 
-- After updating the config file, Reboot the system and boot into Archcraft Live. Try it out, or maybe install it on a USB or SDcard.
+- Aprés avoir mis a jours le fichier de configuration , redémarrez votre system et entrez dans Archcraft Live. Essayez le , ou peut étre installez le sur une clé USB ou une carte SD.
