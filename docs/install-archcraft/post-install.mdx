@@ -5,39 +5,36 @@ sidebar_position: 3
 # Post Installation
 
 After installing Archcraft, there are few things you should do...
-
-### Update System
-Refresh package database and Update your new installation.
+Aprés avoir installé Archcraft, voici quelque trucs que vous devez faire...
+### Mettre a jours votre systéme
+Retéléchargez la base de données des paquets et mettez à jours votre installation.
 ```bash
 $ sudo pacman -Syyu
 ```
 
-If you get `invalid or corrupted package (PGP signature)` error, do...
-
+Si vous recevez un joli `packet invalide ou corrumpus (Signature PGP)`, faites...
 ```bash
 $ sudo pacman -S archlinux-keyring
 $ sudo pacman-key --populate
 ```
 
-### Install New Softwares
-Install your favorite programs with pacman or yay (AUR).
+### Installez des programs
+Installez vos programs favoris avec pacman ou yay (AUR).
 
 ```bash
-$ sudo pacman -S gimp inkscape
+$ sudo pacman -S gimp inkscape discord
 
 # Or from AUR
 
 $ yay -S spotify		
 ```
 
-### Fix Screen Tearing
-If you're facing screen tearing issue then :
+### Réglez les déchirures d'écran
+Si vous avez des soucis de déchirure d'écran, faites ceci:
 
-1. Enable `GLX` backend for compositor. If you're using `openbox` then right click on the desktop and 
-go to **Preferences > Compositor** and click on `Use 'glx' backend` or you can edit `~/.config/picom.conf` file manually.
 
-1. If first option does not work for you, Create a `xorg.conf` file like this :
-
+1. Activez le backend `GLX` pour votre compositeur. Si vous étes sous `openbox` clique droit sur votre bureau et **Préférences > Compositeur** et cliquez sur `Utiliser 'glx' backend` ou vous pouvez éditer le fichier `~/.config/picom.conf` manuellement
+2. Si la premiére option ne marche pas pour vous, créez un fichier `xorg.conf` comme ceci :
 ```bash
 # Change to xorg.conf.d dir
 $ cd /etc/X11/xorg.conf.d
@@ -58,30 +55,27 @@ EndSection
 :::danger
 
 This method may not work on your system and you might not be able to boot into **xorg**. So make sure you know how to use **tty** or boot into **recovery mode** to revert the changes you made.
-
+Cette methode peut ne pas marcher sur votre systéme et donc vous pourrez pas lancer **xorg**. Donc soyez sûr de connaitre comment utiliser le **TTY** ou bien boot sur le **recovery mode (mode de récupération)**
 :::
 
-### Enable Suspend Service
-Enable betterlockscreen's suspend service for your user account.
-
+### Activer le mode de suspension
+Activez le service de suspension de betterlockscreen pour votre compte utilisateur
 ```bash
 # Enable betterlockscreen suspend service
 
 $ sudo systemctl enable betterlockscreen@$USER.service						
 ```
 
-### Fix Lock Screen Background
-Fix lock screen layout on hidpi or low resolution displays.
-
+### Régler le fond d'écran de verrouillage 
+Réglez la disposition de l'écran de verrouillage sur des écrans HIDPI ou à basse résolution
 ```bash
 # Update the lockscreen wallpaper
 
 $ betterlockscreen -u /usr/share/backgrounds/groot.jpg
 ```
 
-### Remove Unnecessary Modules From Initrd
-Let's say you've installed Archcraft (with `ABIF`) on a machine which has an Intel GPU. In this case you only need **`i915`** module. Delete other modules from the array and rebuild initrd.
-
+###  Retirer les modules inutiles de initrd
+Disant que vous avez installé Archcraft (avec `ABIF`) sur une machine avec un GPU Intel. Vous avez seulement besoin du module **`i915`**. Supprimez les autres modules de cette liste et reconstruisez initrd.
 ```bash
 # Edit mkinitcpio.conf file
 $ sudo vim /etc/mkinitcpio.conf
@@ -95,4 +89,4 @@ MODULES=(i915)
 $ sudo mkinitcpio -p linux						
 ```
 
-Well, that's pretty much everything for now, go ahead and enjoy Archcraft.
+Et voilà!!!!, c'est tout pour maintenant, profitez bien de Archcraft.
