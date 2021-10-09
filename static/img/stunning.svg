@@ -7,36 +7,12 @@
    viewBox="0 0 512 512"
    version="1.1"
    id="svg912"
-   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
-   sodipodi:docname="stunning.svg"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
-  <sodipodi:namedview
-     id="namedview914"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageshadow="2"
-     inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="0"
-     inkscape:document-units="mm"
-     showgrid="false"
-     inkscape:zoom="0.24082637"
-     inkscape:cx="1289.3106"
-     inkscape:cy="1256.0917"
-     inkscape:window-width="1900"
-     inkscape:window-height="986"
-     inkscape:window-x="10"
-     inkscape:window-y="48"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="layer1" />
   <defs
      id="defs909">
     <linearGradient
-       inkscape:collect="always"
        id="linearGradient8953">
       <stop
          style="stop-color:#62aeef;stop-opacity:1"
@@ -54,7 +30,6 @@
        height="92.387657"
        id="rect201173" />
     <linearGradient
-       inkscape:collect="always"
        xlink:href="#linearGradient8953"
        id="linearGradient8955"
        x1="17.036255"
@@ -71,8 +46,6 @@
        id="rect212985" />
   </defs>
   <g
-     inkscape:label="Layer 1"
-     inkscape:groupmode="layer"
      id="layer1"
      transform="translate(-16.875885,-9.0537109)">
     <g
@@ -84,16 +57,16 @@
          cx="272.87589"
          cy="265.05371"
          r="256" />
-      <text
-         xml:space="preserve"
+      <g
+         aria-label=""
          transform="matrix(6.5439673,0,0,6.5439673,-972.6507,-1313.6017)"
          id="text212983"
-         style="font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect212985);fill:#ffffff"><tspan
-           x="170.33203"
-           y="257.70312"
-           id="tspan996"><tspan
-             style="font-family:feather;-inkscape-font-specification:feather"
-             id="tspan994"></tspan></tspan></text>
+         style="font-size:40px;line-height:1.25;white-space:pre;shape-inside:url(#rect212985);fill:#ffffff">
+        <path
+           d="m 203.88672,229.89062 q 1.09375,1.09375 1.64062,2.5 0.54688,1.36719 0.54688,2.8125 0,1.44532 -0.54688,2.85157 -0.54687,1.36718 -1.64062,2.46093 l -13.55469,13.55469 -13.55469,-13.55469 q -1.09375,-1.09375 -1.64062,-2.46093 -0.54688,-1.40625 -0.54688,-2.85157 0,-1.44531 0.54688,-2.8125 0.54687,-1.40625 1.64062,-2.5 1.09375,-1.09375 2.46094,-1.64062 1.40625,-0.54688 2.85156,-0.54688 1.44532,0 2.8125,0.54688 1.36719,0.54687 2.5,1.64062 l 1.75782,1.75782 q 0.46875,0.50781 1.17187,0.50781 0.70313,0 1.17188,-0.50781 l 1.75781,-1.75782 q 1.13281,-1.09375 2.5,-1.64062 1.36719,-0.54688 2.8125,-0.54688 1.44531,0 2.8125,0.54688 1.40625,0.54687 2.5,1.64062 z m 2.34375,-2.34375 q -1.5625,-1.60156 -3.59375,-2.38281 -1.99219,-0.78125 -4.0625,-0.78125 -2.07031,0 -4.0625,0.78125 -1.99219,0.78125 -3.59375,2.38281 l -0.58594,0.58594 -0.58594,-0.58594 q -1.60156,-1.60156 -3.59375,-2.38281 -1.99218,-0.78125 -4.0625,-0.78125 -2.07031,0 -4.10156,0.78125 -1.99219,0.78125 -3.55469,2.38281 -1.60156,1.5625 -2.42187,3.59375 -0.78125,1.99219 -0.78125,4.0625 0,2.07032 0.78125,4.10157 0.82031,1.99218 2.42187,3.55468 l 14.72657,14.72657 q 0.46875,0.50781 1.17187,0.50781 0.70313,0 1.17188,-0.50781 l 14.72656,-14.72657 q 1.60156,-1.5625 2.38281,-3.55468 0.82031,-2.03125 0.82031,-4.10157 0,-2.07031 -0.82031,-4.0625 -0.78125,-1.99218 -2.38281,-3.59375 z"
+           style="font-family:feather;-inkscape-font-specification:feather"
+           id="path905" />
+      </g>
     </g>
   </g>
 </svg>

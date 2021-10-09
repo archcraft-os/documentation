@@ -72,6 +72,10 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       hideableSidebar: true,
+      announcementBar: {
+        id: 'announcementBar-2', // Increment on change
+        content: `⭐️ If you love Archcraft, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/archcraft-os/archcraft">GitHub</a>️ ⭐`,
+      },
       navbar: {
         title: 'Archcraft',
         logo: {
