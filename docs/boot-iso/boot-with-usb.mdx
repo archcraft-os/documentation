@@ -3,7 +3,7 @@ sidebar_position: 1
 hide_table_of_contents: true
 ---
 
-# Create A Bootable USB
+# Créer une clé Usb bootable
 
 <!-- Tabs -->
 import Tabs from '@theme/Tabs';
@@ -13,14 +13,14 @@ import TabItem from '@theme/TabItem';
 
 <TabItem value="dd" label="dd" default>
 
-## dd (Linux)
+## dd (GNU/Linux)
 
-If you're already using **Linux**, you can create an Archcraft bootable USB with **`dd`**.
-dd creates both BIOS and UEFI bootable USB and this method is recommended due to its simplicity and universal availability.
-Follow the steps below to create a bootable USB with dd :
+Si vous utilisez **GNU/Linux**,vous pouvez créer une clé USB bootable Archcraft avec la commande **`dd`**.
+dd est capable de créer des clé USB bootables UEFI et BIOS, cette méthode est recommendée grâce à sa simplicité et sa disponiblité sur toutes les distro
 
-- Open a terminal and run `sudo fdisk -l` to get the USB info. In my case, it's **/dev/sda**.
+Suivez ces instructions afin de créer une clé USB bootable avec dd:
 
+- Ouvrez un terminal et écrivez `sudo fdisk -l` pour avoir les info de la clé. Dans mon cas , c'est **/dev/sda**.
 ```bash
 $ sudo fdisk -l
 
@@ -33,8 +33,7 @@ Disklabel type: dos
 Disk identifier: 0x940318b0
 ```
 
-You can also run `lsblk` to find your USB device, by judging the size of it.
-
+Vous pouvez aussi lancer `lsblk` pour trouver votre clé USB en jugeant de sa taille.
 ```bash
 $ lsblk
 
@@ -46,14 +45,12 @@ nvme0n1     259:0    0 238.5G  0 disk
 ...
 ```
 
-- After finding your USB device, Run `dd` to flash the ISO on USB 
-
+- Aprés avoir trouvé votre clé USB, Lançez `dd` pour flasher le ISO sur votre USB
 ```bash
 $ sudo dd bs=4M if=path/to/archcraft.iso of=/dev/sdX status=progress oflag=sync
 ```
-
-- Make sure you replace **path/to/archcraft.iso** with the Archcraft ISO path and **sdX** with your USB device.
-- This will create a bootable Archcraft USB for both **BIOS and UEFI**.
+- Remplacez **/path/to/archcraft.iso** avec le chemin de votre ISO téléchargé, et **sdX** avec votre Clé USB 
+- Cette commande vas créer une clé Archcraft bootable pour **BIOS et UEFI**
 
 </TabItem>
 
@@ -61,14 +58,14 @@ $ sudo dd bs=4M if=path/to/archcraft.iso of=/dev/sdX status=progress oflag=sync
 
 ## Etcher (Linux, Mac, Windows)
 
-[Etcher](https://www.balena.io/etcher/) is an OS image flasher built with Node.js and Electron, capable of flashing an SDCard or USB drive.
-It protects you from accidentally writing to your hard-drives and ensures every byte of data was written correctly.
-Follow the steps below to create a bootable USB with Etcher :
+[Etcher](https://www.balena.io/etcher/) est un flasheur d'images d'OS construit avec Node.js et Electron, capable de flasher une SDCard ou une clé USB.
+Il vous protège contre l'écriture accidentelle sur vos disques durs et garantit que chaque octet de données a été écrit correctement.
+Suivez les étapes ci-dessous pour créer une clé USB bootable avec Etcher :
 
-1. Launch Etcher. Click on **Select Image** and select the Archcraft ISO.
-1. Select your USB drive, **Be careful here** and select the right one.
-1. Click on **Flash!** and wait for it to finish.
-1. This will create a bootable Archcraft USB for both **BIOS and UEFI**.
+1. Lancez Etcher. Cliquez sur **Select Image** et sélectionnez l'ISO d'Archcraft.
+2. Sélectionnez votre clé USB, **Faites attention ici** et sélectionnez la bonne.
+3. Cliquez sur **Flash!** et attendez qu'il se termine.
+4. Cela créera une USB Archcraft bootable pour **BIOS et UEFI**.
 
 </TabItem>
 
@@ -76,17 +73,16 @@ Follow the steps below to create a bootable USB with Etcher :
 
 ## Rufus (Windows)
 
-[Rufus](https://rufus.akeo.ie/) is a multi-purpose USB ISO writer. It provides a graphical user interface and does not care if the drive is properly formatted or not.
-Simply select the Archcraft ISO, the USB drive you want to create the bootable Archcraft onto and click **START**.
+[Rufus](https://rufus.akeo.ie/) est un graveur ISO USB polyvalent. Il fournit une interface utilisateur graphique et ne se soucie pas de savoir si le lecteur est correctement formaté ou non.
+Il suffit de sélectionner l'ISO d'Archcraft, le lecteur USB sur lequel vous souhaitez créer l'Archcraft amorçable et de cliquer sur **START**.
 
 :::tip
 
-If the USB drive does not boot properly using the default ISO Image mode, **DD** Image mode should be used instead.
-
+Si le lecteur USB ne démarre pas correctement en utilisant le mode image ISO par défaut, le mode image **DD** doit être utilisé à la place.
 :::
 
-- For Rufus version ≥ 3.0 select GPT from the Partition scheme drop-down menu. After clicking START you will get the mode selection dialog, select DD Image mode.
-- For Rufus version < 3.0 select DD Image mode from the drop-down menu on the bottom.
+- Pour Rufus version ≥ 3.0, sélectionnez **GPT** dans le menu déroulant **Schéma de partition**. Après avoir cliqué sur **START**, vous obtiendrez le dialogue de sélection du mode, sélectionnez le mode **DD Image.**
+- Pour Rufus version < 3.0 sélectionner le mode **DD Image** dans le menu déroulant en bas.
 
 </TabItem>
 
@@ -94,21 +90,22 @@ If the USB drive does not boot properly using the default ISO Image mode, **DD**
 
 ## Other Options (Linux)
 
-- With **`cat`** : Open a terminal and run :
+- Avec **`cat`** : Ouvrez un terminal et lançez :
 ```bash
 $ sudo cat path/to/archcraft.iso > /dev/sdX
 ```
-- With **`cp`** : Open a terminal and run :
+- Avec **`cp`** : Ouvrez un terminal et lançez :
 ```bash
 $ sudo cp path/to/archcraft.iso /dev/sdX
 ```
-- With **`tee`** : Open a terminal and run :
+- Avec **`tee`** : Ouvrez un terminal et lançez :
 ```bash
 $ sudo tee < path/to/archcraft.iso > /dev/sdx
 ```
 
-Make sure you replace **path/to/archcraft.iso** with the Archcraft ISO path and **sdX** with your USB device.
+- Remplacez **/path/to/archcraft.iso** avec le chemin de votre ISO téléchargé, et **sdX** avec votre Clé USB 
 
 </TabItem>
 
 </Tabs>
+
