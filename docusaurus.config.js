@@ -58,7 +58,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-		  editLocalizedFiles: true
+		  editLocalizedFiles: true,
           editUrl: 'https://github.com/archcraft-os/documentation/edit/main/',
         },
         blog: {
@@ -67,7 +67,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 		  blogSidebarTitle: 'Recent posts',
           blogSidebarCount: 10,
           // Please change this to your repo.
-		  editLocalizedFiles: true
+		  editLocalizedFiles: true,
           editUrl:
             'https://github.com/archcraft-os/documentation/edit/main/',
         },
