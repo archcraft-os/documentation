@@ -19,59 +19,61 @@ export const Highlight = ({children, color}) => (
 
 ## Summery
 
-Due to a <Highlight color="#E06B74">bug</Highlight> in installer scripts, users are facing few issues on September ISO.
-Support for <Highlight color="#55B6C2">flatpak</Highlight> caused issues with gtk applications such as **thunar** and **plank**.
+En raison d'un <Highlight color="#E06B74">bug</Highlight> dans les scripts d'installation, les utilisateurs rencontrent quelques problèmes sur l'ISO de septembre.
+Le support de <Highlight color="#55B6C2">flatpak</Highlight> a causé des problèmes avec les applications gtk telles que **thunar** et **plank**.
 
 <!--truncate-->
 
-## Issues
-1. Unable to adjust display brightness
-1. Launching Thunar and plank takes a long time
-1. Lightdm greeter crashes / lags / shows error
+## Problèmes
+1. Impossible de régler la luminosité de l'écran
+1. Le lancement de Thunar et de la planche prend beaucoup de temps.
+1. Le greeter de Lightdm se bloque / traîne / affiche une erreur
+
 
 ## Solutions
 
-You can try these methods to fix issues with the new ISO.
+Vous pouvez essayer ces méthodes pour résoudre les problèmes avec la nouvelle ISO.
 
-### Install drivers
+### Installer les pilotes
 
-Use `lspci` to get the information about available graphics card(s) on your system, and install the appropriate drivers.
+Utilisez `lspci` pour obtenir les informations sur la ou les cartes graphiques disponibles sur votre système, et installez les pilotes appropriés.
 ```bash
-$ lspci -k | grep -P 'VGA|3D|Display'
-03:00.0 VGA compatible controller: Advanced Micro Devices, Inc. [AMD/ATI] Picasso (rev c2)
+$ lspci -k | grep -P 'VGA|3D|Display' (en anglais)
+03:00.0 Contrôleur compatible VGA : Advanced Micro Devices, Inc. [AMD/ATI] Picasso (rev c2)
 ```
-In that case, Install `xf86-video-amdgpu` package and reboot the system.
+Dans ce cas, installez le paquet `xf86-video-amdgpu` et redémarrez le système.
 
-### Remove Flatpak
+### Supprimer Flatpak
 
-Remove `flatpak` package to resolve the issue with gtk applications.
+Supprimez le paquet `flatpak` pour résoudre le problème avec les applications gtk.
 ```bash
 $ sudo pacman -Rnscv flatpak
 ```
 
+
 :::caution
-This operation will also remove `pamac-all` as flatpak is one of its dependencies.
-You can install `pamac-aur` if you want a **Graphical package manager**. 
+Cette opération supprimera également `pamac-all` car flatpak est l'une de ses dépendances.
+Vous pouvez installer `pamac-aur` si vous voulez un **Graphical package manager**. 
 :::
 
-### Install Sddm
+### Installer Sddm
 
-Due to the removal of drivers from the installed system, lightdm's webkit greeter crashes and fails to load the default theme.
-Also, It's a bit slow on older machines. To fix this issue, Install `sddm` and `archcraft-sddm-theme-default`
-```bash
+En raison de la suppression des pilotes du système installé, le greeter webkit de lightdm se bloque et ne parvient pas à charger le thème par défaut.
+De plus, il est un peu lent sur les vieilles machines. Pour résoudre ce problème, installez `sddm` et `archcraft-sddm-theme-default`.
+``bash
 $ sudo pacman -S sddm archcraft-sddm-theme-default
 ```
 
-Copy sddm config file, Use **archcraft**  as the theme name
+Copier le fichier de configuration sddm, utiliser **archcraft** comme nom de thème
 ```bash
 $ sudo cp /usr/lib/sddm/sddm.conf.d/default.conf /etc/sddm.conf.d/default.conf
 ``` 
 
-Enable sddm service and reboot the computer
+Activez le service sddm et redémarrez l'ordinateur
 ```bash
 $ sudo systemctl enable -f sddm-plymouth.service
 ``` 
 
 :::info
-**All the issues above will be fixed ASAP and a new ISO will be uploaded soon.**
+**Tous les problèmes ci-dessus seront corrigés dès que possible et une nouvelle ISO sera bientôt mise en ligne.**
 :::
