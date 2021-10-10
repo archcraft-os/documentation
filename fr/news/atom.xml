@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://wiki.archcraft.io/fr/news</id>
+    <title>Archcraft Blog</title>
+    <updated>2021-10-05T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://wiki.archcraft.io/fr/news"/>
+    <subtitle>Archcraft Blog</subtitle>
+    <icon>https://wiki.archcraft.io/fr/img/favicon.svg</icon>
+    <entry>
+        <title type="html"><![CDATA[Version d'octobre disponible]]></title>
+        <id>03-release-news</id>
+        <link href="https://wiki.archcraft.io/fr/news/03-release-news"/>
+        <updated>2021-10-05T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[New ISO of Archcraft is now available to download.]]></summary>
+        <author>
+            <name>Aditya Shakya</name>
+            <uri>https://github.com/adi1090x</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Problèmes dans la version de septembre]]></title>
+        <id>02-issue-news</id>
+        <link href="https://wiki.archcraft.io/fr/news/02-issue-news"/>
+        <updated>2021-09-30T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[<span]]></summary>
+        <author>
+            <name>Aditya Shakya</name>
+            <uri>https://github.com/adi1090x</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Version de septembre disponible]]></title>
+        <id>01-release-news</id>
+        <link href="https://wiki.archcraft.io/fr/news/01-release-news"/>
+        <updated>2021-09-25T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[<span]]></summary>
+        <author>
+            <name>Aditya Shakya</name>
+            <uri>https://github.com/adi1090x</uri>
+        </author>
+    </entry>
+</feed>

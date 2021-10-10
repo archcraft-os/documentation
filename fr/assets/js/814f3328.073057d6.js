@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkArchcraft_Wiki=self.webpackChunkArchcraft_Wiki||[]).push([[2535],{5641:function(e){e.exports=JSON.parse('{"title":"Messages r\xe9cents","items":[{"title":"Changer les th\xe8mes et les ic\xf4nes dans bspwm","permalink":"/fr/blog/02-post-bspwm"},{"title":"Ajouter ma musique en mpd","permalink":"/fr/blog/01-post-mpd"}]}')}}]);
