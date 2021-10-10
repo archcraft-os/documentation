@@ -12,7 +12,7 @@
         <id>02-post-bspwm</id>
         <link href="https://wiki.archcraft.io/fr/blog/02-post-bspwm"/>
         <updated>2021-07-20T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[In Archcraft, Bspwm use xsettingsd, a daemon that implements the XSETTINGS specification.]]></summary>
+        <summary type="html"><![CDATA[Dans Archcraft, BSPWM utilise xsettingsd, un démon qui implimente la specification XSETTINGS]]></summary>
         <author>
             <name>Aditya Shakya</name>
             <uri>https://github.com/adi1090x</uri>
@@ -23,7 +23,7 @@
         <id>01-post-mpd</id>
         <link href="https://wiki.archcraft.io/fr/blog/01-post-mpd"/>
         <updated>2021-07-20T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[To add your favorite music in mpd, (assuming your songs are stored in ~/Music directory) follow the steps below :]]></summary>
+        <summary type="html"><![CDATA[Afin d'ajouter vos musiques favoris à mpd, (en les mettant dans le dossier ~/Music bien évidement) suivez ces instructions :]]></summary>
         <author>
             <name>Aditya Shakya</name>
             <uri>https://github.com/adi1090x</uri>
