@@ -5,23 +5,21 @@ authors: adi1090x
 tags: [howto, bspwm, xsettingsd, gtk]
 ---
 
-In Archcraft, Bspwm use `xsettingsd`, a daemon that implements the *XSETTINGS* specification.
-To change gtk theme, icons and cursor theme, you need to edit the **~/.xsettingsd** file.
-
-- Edit **~/.xsettingsd** file with your favorite text editor
-
+Dans Archcraft, BSPWM utilise `xsettingsd`, un démon qui implimente la specification *XSETTINGS*
+Pour changer les thémes GTK, icons et le theme du curseur , vous devez éditer le fichier **~/.xsettingsd**
+- Éditez **~/.xsettingsd** avec votre éditeur de texte de choix
 ```bash
 $ vim ~/.xsettingsd
 ```
 
 <!--truncate-->
   
-- Change the values of following lines according to the stuff you want to apply
-
+- Changez ces valeurs avec les valeurs que vous voulez mettre
 ```bash
 Net/ThemeName "Arc-Dark"
 Net/IconThemeName "Arc-Circle"
 Gtk/CursorThemeName "Pear"
 ```
 
-- Restart the `xsettingsd` daemon. Have a look at [this](https://github.com/derat/xsettingsd/wiki/Settings) for all available options.
+- Restart the `xsettingsd` daemon. Have a look at [this] for all available options.
+- Redémarez le démon `xsettingsd`. Jettez un coup d'oeil au [wiki](https://github.com/derat/xsettingsd/wiki/Settings) pour toutes les options possibles
