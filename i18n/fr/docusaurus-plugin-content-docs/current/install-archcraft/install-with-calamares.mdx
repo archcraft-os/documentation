@@ -1,0 +1,116 @@
+---
+sidebar_position: 1
+---
+
+# Installer Archcraft avec Calamares
+
+Ceci est un simple guide pour les débutants pour installer Archcraft sur votre systéme, sans casser quoi que se sois
+Dans ce guide, On vas installer Archcraft sur un systéme UEFI . Mais le processus est le méme si vous utilisez BIOS
+
+On vas assumez que vous avez déja créé une [bootable USB](../boot-iso/boot-with-usb) avec Archcraft ISO, lancez votre system avec elle, et selectionnez **Boot Archcraft** Lancez l'installeur sois avec l'app Bienvenue , ou avec le menu
+
+### Preparation
+
+Dans le menu Bienvenue, Choisissez votre langue et cliquez sur<kbd>Next</kbd>
+
+![img](./calamares/1.png)
+
+Selectionnez  votre **Region**, **Time Zone**, **System Locale** etc et cliquez sur <kbd>Next</kbd> `si vous étes connecté a internet, ces options serronts choisis automatiquement`
+
+![img](./calamares/2.png)
+
+Selectionnez votre **Keyboard Layout**(dans ce cas French) et cliquez sur <kbd>Next</kbd> `Par défaut , votre disposition de clavier est automatiquement choisi grace a votre locale`
+
+![img](./calamares/3.png)
+
+### Partitionnement 
+
+:::note
+
+**Sur ce guide, tout les partitionnements sont fait sur un disque VIERGE.**
+
+:::
+
+Voici l'étape **qui fait peuur** ou presque tout nouveau utilisateur de Linux foire quelque chose.
+Soyez prudents , il est recommendé de bien lire et comprendre [Partition scheme](https://wiki.archlinux.org/title/Partitioning#Partition_scheme)
+avant de faire quoi que se sois sur votre systeme 
+
+Si vous installez Archcraft sur VirtualBox(*une nouvelle machine virtuelle*), Vous pouvez juste cliquer sur `Erase all disk`
+Mais sur une vrai machine, ce n'est pas une bonne idée (*sauf si vous décidez de formatter votre pc entiérement*)
+Sur une vrai machine, Il est recommendé de choisir `Manual Partitioning` et dans ce guide, on vas faire ainsi
+Cliquez sur le bouton Radio puis <kbd>Next</kbd>
+
+![img](./calamares/4.png)
+
+Ici , vous verrez que le disque est entiérement vide (*Mais dans votre cas , il y aura des partitions*).
+Maintenant on vas créer une **Table de partitions** , pour UEFI choisissez GPT, pour BIOS choisissez MBR
+
+> *Vous n'avez pas a faire cette étape si votre disque a déja des partitions*.
+
+![img](./calamares/5.png)
+
+La Table de partitions est crée et maitenant vous verrez de `L'espace Libre` sur votre disque. Maintenant, cliquez sur <kbd>Créer</kbd> pour créer des partitions
+
+![img](./calamares/6.png)
+
+Pour cette installation , on vas créer 3 partitions :
+- `boot` : /boot/efi
+- `root` : /
+- `home` : /home
+
+Optionnellement vous pouvez (*Vous devez surtout*) faire une partition swap, mais je skip cette partie ici (vous pouvez skip si vous avez assez de ram , ou vous étes sur une machine virtuelle)
+
+Sur des systémes **UEFI**, vous devez créer une partition `boot` pour lancer le systéme. Si vous étes sous BIOS, Vous pouvez ne pas créer une partition `boot`
+
+:::danger
+
+Just mount the EFI partition to `/boot/efi` 
+Votre systéme a sûrement une partition **EFI** . Dans ce cas **NE LA FORMATTEZ PAS** sinon vous pourrez pas lancer d'autres OS qui sont déja installé (Genre Windows) <br/>
+
+:::
+
+:::caution
+
+Ayez sûr de donner à votre partition EFI au minimum `100MB de stockage libre` sinon l'installation vas pas réussir.
+
+:::
+
+Puisse-que notre disque est vide, on vas créer une partition EFI. Comme vous pouvez voir, On vas créer une partition `fat32` avec `300MB` de stockage et la monter à `/boot/efi` et mettre le drapeau **boot** 
+
+![img](./calamares/7.png)
+
+Maintenant créez une partition `root`. Encore une fois, choisissez `l'Espace libe` et cliquez sur <kbd>Create</kbd>.
+Selectionnez la taille de votre partition root (*mettez au minimum 10GB*), et le systéme de fichier (*Si vous vous en foutez, choisissez **ext4***)
+Monter la à `/` et mettez lui le drapeau **root** , Optionellement vous pouvez mettre le **label** pour le systéme de fichier si vous voulez utiliser une **Encryption**, Cochez la case `Encrypt` et mettez un mot de passe.
+
+![img](./calamares/8.png)
+
+Et pour finir, créez une partition `home` et montez la à `/home`.
+
+![img](./calamares/9.png)
+
+Voici a quoi devrais ressembler vos partitions aprés cela, une fois tout est bon , cliquez sur  <kbd>Next</kbd>.
+
+![img](./calamares/10.png)
+
+### Finalization
+
+Créez un `Compte utilisateur` pour vous, ceci est un formulaire trés simple, remplissez le et cliquez <kbd>Next</kbd>
+
+![img](./calamares/11.png)
+
+Voici un résumé de cette installation, toute modification faite et tout ce que fera l'installateur.
+Jettez un coup d'oeil et une fois tout compte fait, cliquez sur <kbd>Next</kbd> pour commencer l'**`Installation`**
+
+![img](./calamares/12.png)
+
+Maintenant, L'installation commence, cela peut prendre quelque minutes, vous pouvez sois regarder ses jolis photos ou bien....
+Je sais pas moi , allez manger des croissants ?
+
+![img](./calamares/13.png)
+
+Une fois tout est fait, Cliquez sur `Redémarrer maintenant` pour redémarrer le systéme directement (oubliez pas de retirer l'USB)
+
+![img](./calamares/14.png)
+
+**Et voilà , Archcraft est installé sur votre systéme, amusez vous bien !!!!**

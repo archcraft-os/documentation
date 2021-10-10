@@ -15,6 +15,12 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
   favicon: 'img/favicon.svg',
   trailingSlash: false,
 
+  // Translation
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'fr'],
+  },
+
   // News Blog Section
   plugins: [
     [
@@ -37,6 +43,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
          * Options
          */        
         showReadingTime: false,
+        blogTitle: 'News',
 		blogSidebarTitle: 'Latest News',
         blogSidebarCount: 5,
       },
@@ -55,6 +62,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
         },
         blog: {
           showReadingTime: true,
+          blogTitle: 'Tutorials',
 		  blogSidebarTitle: 'Recent posts',
           blogSidebarCount: 10,
           // Please change this to your repo.

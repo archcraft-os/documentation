@@ -1,0 +1,22 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.Boot Archcraft": {
+    "message": "Botte Archcraft",
+    "description": "The label for category Boot Archcraft in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Install Archcraft": {
+    "message": "Installer Archcraft",
+    "description": "The label for category Install Archcraft in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Window Managers": {
+    "message": "Window Managers",
+    "description": "The label for category Window Managers in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Contribution": {
+    "message": "Contribution",
+    "description": "The label for category Contribution in sidebar tutorialSidebar"
+  }
+}

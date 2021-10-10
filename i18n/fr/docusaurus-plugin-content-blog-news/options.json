@@ -1,0 +1,14 @@
+{
+  "title": {
+    "message": "Nouvelles",
+    "description": "The title for the blog used in SEO"
+  },
+  "description": {
+    "message": "nouvelles",
+    "description": "The description for the blog used in SEO"
+  },
+  "sidebar.title": {
+    "message": "Dernières nouvelles",
+    "description": "The label for the left sidebar"
+  }
+}

@@ -1,0 +1,96 @@
+---
+sidebar_position: 3
+---
+
+# Post Installation
+
+Aprés avoir installé Archcraft, voici quelque trucs que vous devez faire...
+
+### Mettre a jours votre systéme
+Retéléchargez la base de données des paquets et mettez à jours votre installation.
+```bash
+$ sudo pacman -Syyu
+```
+
+Si vous recevez un joli `packet invalide ou corrumpus (Signature PGP)`, faites...
+```bash
+$ sudo pacman -S archlinux-keyring
+$ sudo pacman-key --populate
+```
+
+### Installez des programs
+Installez vos programs favoris avec pacman ou yay (AUR).
+
+```bash
+$ sudo pacman -S gimp inkscape discord
+
+# Or from AUR
+
+$ yay -S spotify		
+```
+
+### Réglez les déchirures d'écran
+Si vous avez des soucis de déchirure d'écran, faites ceci:
+
+1. Activez le backend `GLX` pour votre compositeur. Si vous étes sous `openbox` clique droit sur votre bureau et **Préférences > Compositeur** et cliquez sur `Utiliser 'glx' backend` ou vous pouvez éditer le fichier `~/.config/picom.conf` manuellement
+2. Si la premiére option ne marche pas pour vous, créez un fichier `xorg.conf` comme ceci :
+
+```bash
+# Change to xorg.conf.d dir
+$ cd /etc/X11/xorg.conf.d
+
+# Create a conf file
+$ sudo touch 20-amdgpu.conf
+
+# Edit the file
+$ sudo vim 20-amdgpu.conf
+
+# Paste this in the editor
+Section "Device"
+     Identifier "AMD"
+     Driver "amdgpu"
+     Option "TearFree" "true"
+EndSection						
+```
+
+:::danger
+
+Cette methode peut ne pas marcher sur votre systéme et donc vous pourrez pas lancer **xorg**.
+Donc soyez sûr de connaitre comment utiliser le **TTY** ou bien boot sur le **recovery mode (mode de récupération)**
+
+:::
+
+### Activer le mode de suspension
+Activez le service de suspension de betterlockscreen pour votre compte utilisateur
+```bash
+# Enable betterlockscreen suspend service
+
+$ sudo systemctl enable betterlockscreen@$USER.service						
+```
+
+### Régler le fond d'écran de verrouillage 
+Réglez la disposition de l'écran de verrouillage sur des écrans HIDPI ou à basse résolution
+```bash
+# Update the lockscreen wallpaper
+
+$ betterlockscreen -u /usr/share/backgrounds/groot.jpg
+```
+
+###  Retirer les modules inutiles de initrd
+Disant que vous avez installé Archcraft (avec `ABIF`) sur une machine avec un GPU Intel.
+Vous avez seulement besoin du module **`i915`**.
+Supprimez les autres modules de cette liste et reconstruisez initrd.
+```bash
+# Edit mkinitcpio.conf file
+$ sudo vim /etc/mkinitcpio.conf
+
+# Change line 7 from
+MODULES=(i915? amdgpu? radeon? nouveau? vboxvideo? vmwgfx?)
+# To
+MODULES=(i915)
+
+# Save file and rebuild initrd
+$ sudo mkinitcpio -p linux						
+```
+
+Et voilà!!!!, c'est tout pour maintenant, profitez bien de Archcraft.
