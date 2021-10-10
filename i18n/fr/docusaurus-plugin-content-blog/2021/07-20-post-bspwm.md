@@ -21,5 +21,4 @@ Net/IconThemeName "Arc-Circle"
 Gtk/CursorThemeName "Pear"
 ```
 
-- Restart the `xsettingsd` daemon. Have a look at [this] for all available options.
 - Redémarez le démon `xsettingsd`. Jettez un coup d'oeil au [wiki](https://github.com/derat/xsettingsd/wiki/Settings) pour toutes les options possibles
