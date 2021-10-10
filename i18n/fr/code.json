@@ -222,19 +222,19 @@
     "message": "Archcraft"
   },
   "Yet another minimal Linux distribution, based on Arch Linux.": {
-    "message": "Encore une autre distribution Linux minimale, basée sur Arch Linux."
+    "message": "Une distribution minimale basée sur Arch Linux."
   },
   "Minimal": {
     "message": "Minimal"
   },
   "Archcraft is very minimal and lightweight. It can run under 500Mb of memory as It only uses window managers and lightweight applications.": {
-    "message": "Archcraft est très minimal et léger. Il peut fonctionner sous 500 Mo de mémoire car il n'utilise que des gestionnaires de fenêtres et des applications légères."
+    "message": "Archcraft est trés légé et minimal . Fonctionnant sur 500MB de RAM qui est lié a l'utilisation de Window Managers(tel que i3wm , openbox et bspwm) ainsi que des applications légéres"
   },
   "Stunning": {
     "message": "Superbe"
   },
   "Flat and pastel colors, the consistency among all the UI elements, And various themes make Archcraft look very clean, minimal and Stunning.": {
-    "message": "Les couleurs plates et pastel, la cohérence entre tous les éléments de l'interface utilisateur et divers thèmes donnent à Archcraft un aspect très propre, minimal et magnifique."
+    "message": "Des couleurs simples et pastel, avec des éléments du menu qui vont ensemble, et plusieur themes qui rendent Archcraft propre, minimal et joli!!!"
   },
   "Powerful": {
     "message": "Puissant"
