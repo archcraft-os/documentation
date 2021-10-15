@@ -112,14 +112,14 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
       },
       // Search bar
       algolia: {
-        apiKey: 'YOUR_API_KEY',
-        indexName: 'YOUR_INDEX_NAME',
+        apiKey: '802115dbf963e638e1641f03bd41c646',
+        indexName: 'archcraft',
   
         // Optional: see doc section below
         contextualSearch: true,
   
         // Optional: see doc section below
-        //appId: 'YOUR_APP_ID',
+        appId: 'BH4D9OD16A',
   
         // Optional: Algolia search parameters
         searchParameters: {},
