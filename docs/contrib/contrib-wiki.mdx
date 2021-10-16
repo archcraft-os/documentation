@@ -1,7 +1,40 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 # Improve Wiki
 
-Instructions will be available soon.
+Follow this guide if you want to add documentation in Archcraft Wiki...
+
+## Prerequisite
+
+- [Setup](setup-env.mdx) the local development environment, If you want to work locally. 
+- You should have the basic understanding of the syntax of [Markdown](https://www.markdownguide.org/cheat-sheet) and [MDX](https://mdxjs.com). See [Docusaurus Markdown Features](https://docusaurus.io/docs/markdown-features).
+- You, at least know how to *fork*, *clone* a repository and create a *pull request*.
+
+## Files and format
+
+The **docs** directory has subdirectories (to categories documentations) which contains
+the `.md` and `.mdx` files for each wiki post and a `_category_.json` file for docs category.
+
+- The `_category_.json` file is used to label and position (on sidebar) the category.
+- Here's the example of `Boot Archcraft` section of our wiki
+```
+docs 	# Main Directory
+└── boot-iso						# Doc Category
+   ├── _category_.json				# Category Properties
+   ├── boot-with-usb.mdx			# Wiki Page
+   └── boot-with-grub.mdx			# Another wiki page in same category
+```
+
+## Front matter
+
+In `front matter`, You can specify the position of doc in category, etc.
+```yml {2}
+---
+sidebar_position: 1
+hide_table_of_contents: true
+---
+```
+
+> For more info, visit [Docusaurus:Docs](https://docusaurus.io/docs/docs-introduction)

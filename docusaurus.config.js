@@ -19,6 +19,16 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'fr'],
+    localeConfigs: {
+      en: {
+        label: 'English',
+        direction: 'ltr',
+      },
+      fr: {
+        label: 'Français',
+        direction: 'ltr',
+      },
+    },
   },
 
   // News Blog Section

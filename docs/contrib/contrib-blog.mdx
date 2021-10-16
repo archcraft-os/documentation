@@ -1,7 +1,64 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 ---
 
 # Write Tutorials
 
-Instructions will be available soon.
+Follow this guide if you want to write tutorials for Archcraft...
+
+## Prerequisite
+
+- [Setup](setup-env.mdx) the local development environment, If you want to work locally. 
+- You should have the basic understanding of the syntax of [Markdown](https://www.markdownguide.org/cheat-sheet) and [MDX](https://mdxjs.com). See [Docusaurus Markdown Features](https://docusaurus.io/docs/markdown-features).
+- You, at least know how to *fork*, *clone* a repository and create a *pull request*.
+
+## Files and format
+
+The **blog** directory contains all the `.md` and `.mdx` files for tutorials.
+
+- To add a new tutorial, just create a new file with the correct format.
+- The Format is important here, The format structure is :
+```
+YEAR 	# Directory
+├── month-date-post-NAME.mdx	# .md or .mdx file
+└── month-date					# Directory
+   ├── Images					# Directory
+   └── post-NAME.mdx			# .md or .mdx file
+```
+
+## Title and tags
+
+Add appropriate slug, title and tags in the `front matter` of the file you create.
+```yml
+---
+slug: NUM-post-NAME
+title: TITLE FOR THE POST
+authors: ID
+tags: [TAG1, TAG2]
+---
+```
+
+## Author
+
+Add your details in the file **`authors.yml`** and add your ID in the `front matter` of the file you created.
+
+`authors.yml`
+```yml
+...
+ID:
+  name: YOUR_NAME
+  title: ABOUT_YOU
+  url: https://github.com/USERNAME
+  image_url: https://github.com/USERNAME.png
+...
+```
+
+`Front matter`
+```yml {3}
+slug: NUM-post-NAME
+title: TITLE FOR THE POST
+authors: ID
+tags: [TAG1, TAG2]
+```
+
+> For more info, visit [Docusaurus:Blog](https://docusaurus.io/docs/blog)

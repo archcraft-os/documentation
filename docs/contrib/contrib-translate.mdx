@@ -1,7 +1,60 @@
 ---
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 # Translate Wiki
 
-Instructions will be available soon.
+Follow this guide if you want to translate the Archcraft Wiki...
+
+## Prerequisite
+
+- [Setup](setup-env.mdx) the local development environment, If you want to work locally. 
+- You should have the basic understanding of the syntax of [Markdown](https://www.markdownguide.org/cheat-sheet) and [MDX](https://mdxjs.com). See [Docusaurus Markdown Features](https://docusaurus.io/docs/markdown-features).
+- You, at least know how to *fork*, *clone* a repository and create a *pull request*.
+
+## Configuration
+
+Edit the `docusaurus.config.js` file and add the correct **[i18n locale](https://www.npmjs.com/package/i18n-iso-countries)**
+
+For Ex : If you want to translate to *Russian*, Add <kbd>ru</kbd> in `locales:` section -
+```jsx {4-8}
+  // Translation
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'fr', 'ru'],
+      ru: {
+        label: 'Russian',
+        direction: 'ltr',
+      },
+  },
+```
+
+## Translate
+
+Open the terminal (in the root directory of the website) and...
+
+- Create the directory for locale inside `i18n`.
+```bash
+$ mkdir -p i18n/ru
+```
+
+- Run the write-translations command:
+```bash
+$ yarn run write-translations -- --locale ru
+```
+
+- Copy the original doc files inside the translation directories:
+```bash
+$ cp -r blog/* i18n/ru/docusaurus-plugin-content-blog
+$ cp -r news/* i18n/ru/docusaurus-plugin-content-blog-news
+$ cp -r docs/* i18n/ru/docusaurus-plugin-content-docs
+```
+
+- Start your localized site in dev mode, using the locale of your choice, Your site is accessible at `http://localhost:3000/ru`
+```bash
+$ yarn run start -- --locale ru
+```
+
+- Translate all the files inside `i18n/ru` directory. And when you're done, Create a pull request with your translations.
+
+> For more info, visit [Docusaurus:i18n](https://docusaurus.io/docs/i18n/tutorial)
