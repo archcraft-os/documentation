@@ -1,22 +1,8 @@
 ---
 sidebar_position: 4
 ---
-   
-<!-- Tabs -->
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-<!-- Badges -->
-export const Highlight = ({children, color}) => (
-  <span
-    style={{
-      backgroundColor: color,
-      borderRadius: '4px',
-      color: '#fff',
-      padding: '0 0.2rem 0 0.2rem',
-    }}>
-    {children}
-  </span>
-); 
+
+
 # I3wm
 
 For Archcraft community members, Edit the page.
@@ -70,4 +56,16 @@ Keybinding | Function
   <kbd>Control+Shift+r</kbd> | Restarts i3 inplace
   <kbd>Control+Shift+q</kbd> | Quit i3 session
   
-
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+export const Highlight = ({children, color}) => (
+  <span
+    style={{
+      backgroundColor: color,
+      borderRadius: '4px',
+      color: '#fff',
+      padding: '0 0.2rem 0 0.2rem',
+    }}>
+    {children}
+  </span>
+); 
