@@ -4,9 +4,23 @@
         <title>Archcraft Blog</title>
         <link>https://wiki.archcraft.io/news</link>
         <description>Archcraft Blog</description>
-        <lastBuildDate>Tue, 05 Oct 2021 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 30 Nov 2021 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[Archcraft XFCE Released]]></title>
+            <link>https://wiki.archcraft.io/news/05-release-xfce-news</link>
+            <guid>05-release-xfce-news</guid>
+            <pubDate>Tue, 30 Nov 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[New Flavor (XFCE) of Archcraft is now available to download.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Archcraft Lite Released]]></title>
+            <link>https://wiki.archcraft.io/news/04-release-lite-news</link>
+            <guid>04-release-lite-news</guid>
+            <pubDate>Sat, 13 Nov 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[New Flavor (Lite) of Archcraft is now available to download.]]></description>
+        </item>
         <item>
             <title><![CDATA[October Release Available]]></title>
             <link>https://wiki.archcraft.io/news/03-release-news</link>
