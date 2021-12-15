@@ -2,11 +2,29 @@
 sidebar_position: 4
 ---
 
+<!-- Tabs -->
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<!-- Badges -->
+export const Highlight = ({children, color}) => (
+  <span
+    style={{
+      backgroundColor: color,
+      borderRadius: '4px',
+      color: '#fff',
+      padding: '0 0.2rem 0 0.2rem',
+    }}>
+    {children}
+  </span>
+);
 
 # I3wm
 
 For Archcraft community members, Edit the page.
+
 **Note: the mod Key in Archcraft i3wm is the Super Key (Aka: Windows key)**
+
 |Keybinding | Function |
 |------------ | ------------- |
 |**mod+Return** | Opens a terminal (alacritty) |
@@ -59,19 +77,3 @@ For Archcraft community members, Edit the page.
 ---
 
 **To install the archcraft i3wm theme , just run `yay -Syyu archcraft-i3wm`**
-<!-- Tabs -->
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<!-- Badges -->
-export const Highlight = ({children, color}) => (
-  <span
-    style={{
-      backgroundColor: color,
-      borderRadius: '4px',
-      color: '#fff',
-      padding: '0 0.2rem 0 0.2rem',
-    }}>
-    {children}
-  </span>
-);
