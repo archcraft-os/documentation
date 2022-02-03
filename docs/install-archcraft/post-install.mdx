@@ -6,6 +6,15 @@ sidebar_position: 3
 
 After installing Archcraft, there are few things you should do...
 
+### Black Screen After Install / Liveboot
+If you get a black screen after booting the installed ISO or the live ISO, It maybe because of compositor. In that case, to solve this issue :
+- Login to a tty by pressing `ctrl+alt+f2/f3...`
+- Edit the `~/.config/picom.conf` file and use `glx` as backend.
+- If that does not work, Uninstall the compositor `picom-ibhagwan-git`
+```bash
+$ sudo pacman -Rsn picom-ibhagwan-git
+```
+
 ### Update System
 Refresh package database and Update your new installation.
 ```bash
