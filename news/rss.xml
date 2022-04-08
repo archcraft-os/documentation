@@ -4,9 +4,16 @@
         <title>Archcraft Blog</title>
         <link>https://wiki.archcraft.io/news</link>
         <description>Archcraft Blog</description>
-        <lastBuildDate>Wed, 02 Feb 2022 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 07 Apr 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[April Release Available]]></title>
+            <link>https://wiki.archcraft.io/news/07-release-news</link>
+            <guid>07-release-news</guid>
+            <pubDate>Thu, 07 Apr 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Just a regular ISO update]]></description>
+        </item>
         <item>
             <title><![CDATA[February Release Available]]></title>
             <link>https://wiki.archcraft.io/news/06-release-news</link>
