@@ -5,7 +5,7 @@ authors: adi1090x
 tags: [howto, mpd, ncmpcpp, polybar]
 ---
 
-Aby dodać twoją ulubioną muzykę w `mpd`, (*zakładając, że znajduje się ona w katalogu `~/Music`*) wykonuj poniższe kroki:
+Jeśli chcesz dodać swoją ulubioną muzykę do `mpd`, (*zakładając, że znajduje się ona w katalogu `~/Music`*) wykonuj poniższe kroki:
 
 - Otwórz terminal i uruchom **ncmpcpp**
 <!--truncate-->

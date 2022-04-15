@@ -1,30 +1,30 @@
 {
   "Minimal": {
-    "message": "Minimal"
+    "message": "Minimalistyczny"
   },
   "Archcraft is very minimal and lightweight. It can run under 500Mb of memory as It only uses window managers and lightweight applications.": {
-    "message": "Archcraft is very minimal and lightweight. It can run under 500Mb of memory as It only uses window managers and lightweight applications."
+    "message": "Archcraft jest bardzo minimalistyczny i lekki. Do jego działania wystarczy 500 MB ramu, ponieważ używa tylko menedżerów okien i lekkich aplikacji."
   },
   "Stunning": {
-    "message": "Stunning"
+    "message": "Oszałamiający"
   },
   "Flat and pastel colors, the consistency among all the UI elements, And various themes make Archcraft look very clean, minimal and Stunning.": {
-    "message": "Flat and pastel colors, the consistency among all the UI elements, And various themes make Archcraft look very clean, minimal and Stunning."
+    "message": "Pastelowe kolory, spójność wszystkich elementów interfejsu użytkownika i różne motywy sprawiają, że Archcraft wygląda bardzo przejżyście, minimalistycznie i oszałamiająco."
   },
   "Powerful": {
-    "message": "Powerful"
+    "message": "Wydajny"
   },
   "With built-in support for AUR, Chaotic AUR and being lightweight, Archcraft gives you the power to do whatever you want on your Linux PC.": {
-    "message": "With built-in support for AUR, Chaotic AUR and being lightweight, Archcraft gives you the power to do whatever you want on your Linux PC."
+    "message": "Dzięki wbudowanemu wsparciu dla AUR, Chaotic AUR i niewielkiemu rozmiarowi, Archcraft daje Ci możliwość zrobienia z komputerem  wszystkiego, co tylko zechcesz."
   },
   "Archcraft": {
     "message": "Archcraft"
   },
   "Yet another minimal Linux distribution, based on Arch Linux.": {
-    "message": "Yet another minimal Linux distribution, based on Arch Linux."
+    "message": "Kolejna minimalistyczna dystrybucja linuxa, oparta na Arch Linuxie."
   },
   "Welcome to Archcraft Wiki": {
-    "message": "Welcome to Archcraft Wiki"
+    "message": "Witaj w Archcraft Wiki"
   },
   "theme.NotFound.title": {
     "message": "Strona nie została znaleziona",
@@ -42,14 +42,6 @@
     "message": "Zamknij",
     "description": "The ARIA label for close button of announcement bar"
   },
-  "theme.blog.archive.title": {
-    "message": "Archive",
-    "description": "The page & hero title of the blog archive page"
-  },
-  "theme.blog.archive.description": {
-    "message": "Archive",
-    "description": "The page & hero description of the blog archive page"
-  },
   "theme.blog.paginator.navAriaLabel": {
     "message": "Nawigacja na stronie listy wpisów na blogu",
     "description": "The ARIA label for the blog pagination"
@@ -62,10 +54,6 @@
     "message": "Starsze wpisy",
     "description": "The label used to navigate to the older blog posts page (next page)"
   },
-  "theme.blog.sidebar.navAriaLabel": {
-    "message": "Blog recent posts navigation",
-    "description": "The ARIA label for recent posts in the blog sidebar"
-  },
   "theme.blog.post.readingTime.plurals": {
     "message": "{readingTime} min aby przeczytać|{readingTime} min aby przeczytać|{readingTime} min aby przeczytać",
     "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
@@ -73,6 +61,30 @@
   "theme.blog.post.readMore": {
     "message": "Czytaj więcej",
     "description": "The label used in blog post item excerpts to link to full blog posts"
+  },
+  "theme.blog.archive.title": {
+    "message": "Archiwum",
+    "description": "The page & hero title of the blog archive page"
+  },
+  "theme.blog.archive.description": {
+    "message": "Archiwum",
+    "description": "The page & hero description of the blog archive page"
+  },
+  "theme.blog.sidebar.navAriaLabel": {
+    "message": "Nawigacja po ostatnich postach na blogu",
+    "description": "The ARIA label for recent posts in the blog sidebar"
+  },
+  "theme.blog.post.paginator.navAriaLabel": {
+    "message": "Nawigacja na stronie postu na blogu",
+    "description": "The ARIA label for the blog posts pagination"
+  },
+  "theme.blog.post.paginator.newerPost": {
+    "message": "Nowszy post",
+    "description": "The blog post button label to navigate to the newer/previous post"
+  },
+  "theme.blog.post.paginator.olderPost": {
+    "message": "Starszy post",
+    "description": "The blog post button label to navigate to the older/next post"
   },
   "theme.blog.post.plurals": {
     "message": "Jeden post|{count} posty|{count} postów",
@@ -97,18 +109,6 @@
   "theme.CodeBlock.copy": {
     "message": "Kopiuj",
     "description": "The copy button label on code blocks"
-  },
-  "theme.blog.post.paginator.navAriaLabel": {
-    "message": "Nawigacja na stronie postu na blogu",
-    "description": "The ARIA label for the blog posts pagination"
-  },
-  "theme.blog.post.paginator.newerPost": {
-    "message": "Nowszy posty",
-    "description": "The blog post button label to navigate to the newer/previous post"
-  },
-  "theme.blog.post.paginator.olderPost": {
-    "message": "Starszy posty",
-    "description": "The blog post button label to navigate to the older/next post"
   },
   "theme.docs.sidebar.expandButtonTitle": {
     "message": "Rozszerz boczny panel",
@@ -139,11 +139,11 @@
     "description": "The title attribute for collapse button of doc sidebar"
   },
   "theme.docs.tagDocListPageTitle.nDocsTagged": {
-    "message": "One doc tagged|{count} docs tagged",
+    "message": "Jeden oznaczony dokument|{count} oznaczonych dokumentów",
     "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.docs.tagDocListPageTitle": {
-    "message": "{nDocsTagged} with \"{tagName}\"",
+    "message": "{nDocsTagged} z \"{tagName}\"",
     "description": "The title of the page for a docs tag"
   },
   "theme.docs.versions.unreleasedVersionLabel": {
@@ -183,11 +183,11 @@
     "description": "The sentence used to display when a page has been last updated, and by who"
   },
   "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
-    "message": "← Back to main menu",
+    "message": "← Wróć do main menu",
     "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
   },
   "theme.navbar.mobileVersionsDropdown.label": {
-    "message": "Versions",
+    "message": "Wersje",
     "description": "The label for the navbar versions dropdown on mobile view"
   },
   "theme.common.skipToMainContent": {
@@ -195,7 +195,7 @@
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
   },
   "theme.TOCCollapsible.toggleButtonLabel": {
-    "message": "On this page",
+    "message": "Na tej stronie",
     "description": "The label used by the button on the collapsible TOC component"
   },
   "theme.tags.tagsListLabel": {
@@ -203,7 +203,7 @@
     "description": "The label alongside a tag list"
   },
   "theme.SearchPage.documentsFound.plurals": {
-    "message": "One document found|{count} documents found",
+    "message": "Znaleziono jeden dokument|{count} dokumentów znaleziono",
     "description": "Pluralized label for \"{count} documents found\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.SearchPage.existingResultsTitle": {
