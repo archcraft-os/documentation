@@ -1,0 +1,66 @@
+---
+slug: 04-release-lite-news
+title: Wydano wersję Archcraft Lite
+authors: adi1090x
+tags: [flavor, lite, release, iso]
+---
+
+**Nowa odsłona  Archcrafta (Lite) jest już dostępna do pobrania.**
+
+Archcraft Lite jest kolejnym wariantem Archcrafta, przeznaczonym dla średnio zaawansowanych użytkowników linuxa.
+W przeciwieństwie do głównego Archcrafta, nie oferuje on niczego wyszukanego.
+Jest to tylko menedżer okien z kilkoma podstawowymi aplikacjami i narzędziami.
+
+<!--truncate-->
+
+## Przegląd
+
+**W porównaniu do głównego [Archcrafta](https://github.com/archcraft-os/archcraft), nie otrzymasz :**
+- Wymyślnego Bootloadera (brak motywów grub)
+- Wymyślnego Boot Splasha (brak plymouth)
+- Wymyślnego menedżera wyświetlania (motywy i inne rzeczy)
+- Wielu menedżerów okien i stylów
+- Graficznego instalatora (Calamares)
+- Wymyślnych Polybarów, motywów Rofi
+- A nawet przeglądarki internetowej
+
+**Za to otrzymasz :**
+- Prosty menedżer wyświetlania (`lxdm`)
+- Tylko jeden menedżer okien (`openbox`)
+- Inteligentną i przyjazną dla użytkownika powłokę (`fish`) 
+- Prosty panel (`tint2`)
+- Prosty program uruchamiający (`ulauncher`)
+- Kilka podstawowych aplikacji (`terminal`, `menedżer plików`, `edytor tekstu`)
+- Kilka narzędzi (`media player`, `screen utilities`, `doc viewer`)
+- Kilka programów CLI (`vim`, `ranger`, `htop` itp.)
+- Instalator (tylko w wersji CLI) (`abif`)
+- I słodki Ocean-man...
+
+## Ostatnie wydanie
+
+- **`ISO`** : [archcraft-lite-2021.11.13-x86_64.iso](https://github.com/archcraft-os/archcraft-lite/releases/download/v21.11/archcraft-lite-2021.11.13-x86_64.iso)
+- **`SIG`** : [archcraft-lite-2021.11.13-x86_64.iso.sig](https://github.com/archcraft-os/archcraft-lite/releases/download/v21.11/archcraft-lite-2021.11.13-x86_64.iso.sig)
+- **`SHA`** : [archcraft-lite-2021.11.13-x86_64.iso.sha256sum](https://github.com/archcraft-os/archcraft-lite/releases/download/v21.11/archcraft-lite-2021.11.13-x86_64.iso.sha256sum)<br/>
+`3b9a9a13a5132ad7f8c5e2f369450f65cf7daf2b0979d847b400a598457571ec`
+- **`TORRENT`** : [archcraft-lite-2021.11.13-x86_64.iso.torrent](https://github.com/archcraft-os/archcraft-lite/releases/download/v21.11/archcraft-lite-2021.11.13-x86_64.iso.torrent)
+
+## Zweryfikuj autentyczność ISO
+
+- Pobierz pliki **`ISO`**, **`gpg signature`** i **`sha256sum`**.
+- Upewnij się, że wszystkie pliki znajdują się w tym samym katalogu (np. `~/Downloads`)
+- Po pierwsze, zweryfikuj klucz na serwerze kluczy, otwórz terminal i uruchom polecenie (dowolne z poniższych):
+```
+$ gpg --keyserver hkps://keys.gnupg.net --recv-keys 7DC81F73
+$ gpg --keyserver hkps://keyserver.ubuntu.com --recv-keys 7DC81F73
+$ gpg --keyserver hkp://pgp.mit.edu --recv-keys 7DC81F73
+```
+
+- Następnie otwórz `terminal` w katalogu `~/Downloads` i uruchom następujące polecenie :
+```
+$ gpg --verify archcraft-lite-2021.11.13-x86_64.iso.sig
+```
+
+- Na koniec należy zweryfikować `sha256sum` uruchamiając :
+```
+$ sha256sum -c archcraft-lite-2021.11.13-x86_64.iso.sha256sum
+```

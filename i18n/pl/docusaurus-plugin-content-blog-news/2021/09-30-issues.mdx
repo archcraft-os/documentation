@@ -1,0 +1,77 @@
+---
+slug: 02-issue-news
+title: Błędy we wrześniowej wersji
+authors: adi1090x
+tags: [bug, issues, iso]
+---
+
+export const Highlight = ({children, color}) => (
+  <span
+    style={{
+      backgroundColor: color,
+      borderRadius: '4px',
+      color: '#fff',
+      padding: '0 0.2rem 0 0.2rem',
+    }}>
+    {children}
+  </span>
+);
+
+## Podsumowanie
+
+Z powodu <Highlight color="#E06B74">błędu</Highlight> w skryptach instalatora, użytkownicy napotykają kilka problemów z wrześniowym ISO. 
+Wsparcie dla <Highlight color="#55B6C2">flatpaka</Highlight> powodowało problemy z aplikacjami gtk, takimi jak **thunar** i **plank**.
+
+<!--truncate-->
+
+## Błedy
+1. Nie można regulować jasności wyświetlacza
+1. Uruchomienie Thunara i planka zajmuje dużo czasu
+1. Program Lightdm greeter zawiesza się / laguje / pokazuje błąd
+
+## Rozwiązania
+
+Aby rozwiązać problemy z nowym ISO, można skorzystać z poniższych metod.
+
+### Zainstaluj sterowniki
+
+Użyj `lspci`, aby uzyskać informacje o dostępnych kartach graficznych w systemie i zainstalować odpowiednie sterowniki.
+```bash
+$ lspci -k | grep -P 'VGA|3D|Display'
+03:00.0 Sterownik zgodny z VGA: Advanced Micro Devices, Inc. [AMD/ATI] Picasso (rev c2)
+```
+W takim przypadku należy zainstalować pakiet `xf86-video-amdgpu` i ponownie uruchomić system.
+
+### Usuń Flatpaka
+
+Usuń `flatpaka`, aby rozwiązać problem z aplikacjami gtk.
+```bash
+$ sudo pacman -Rnscv flatpak
+```
+
+:::caution Uwaga
+Ta operacja usunie również `pamac-all`, ponieważ flatpak jest jedną z nim powiązany.
+Możesz zainstalować `pamac-aur`, jeśli chcesz mieć **graficzny menedżer pakietów**. 
+:::
+
+## Zainstaluj Sddm
+
+Z powodu usunięcia sterowników z zainstalowanego systemu, program Lightdm's Webkit greeter ulega awarii i nie potrafi załadować domyślnego motywu.
+Ponadto, na starszych maszynach działa on nieco wolniej. Aby rozwiązać ten problem, należy zainstalować `sddm` i `archcraft-sddm-theme-default`.
+```bash
+$ sudo pacman -S sddm archcraft-sddm-theme-default
+```
+
+Skopiuj plik konfiguracyjny sddm, użyj **archcraft** jako nazwy motywu.
+```bash
+$ sudo cp /usr/lib/sddm/sddm.conf.d/default.conf /etc/sddm.conf.d/default.conf
+``` 
+
+Uruchom usługę sddm i zrestartuj komputer.
+```bash
+$ sudo systemctl enable -f sddm-plymouth.service
+``` 
+
+:::info Informacja
+**Wszystkie powyższe problemy zostaną naprawione tak szybko jak to możliwe, a nowe ISO zostanie wkrótce wydane.**
+:::

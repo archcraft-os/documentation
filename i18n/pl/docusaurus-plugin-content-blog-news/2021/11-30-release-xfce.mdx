@@ -1,0 +1,50 @@
+---
+slug: 05-release-xfce-news
+title: Wydano wersję Archcraft XFCE
+authors: adi1090x
+tags: [flavor, xfce, release, iso]
+---
+
+**Nowa odsłona Archcrafta (XFCE) jest już dostępna do pobrania.**
+
+Ten wariant Archcrafta zawiera XFCE.
+XFCE jest minimalistycznym środowiskiem graficznym, jego celem jest szybkość i niskie zużycie zasobów systemowych.
+Archcraft XFCE jest wysoce dostosowany i wstępnie skonfigurowany.
+<!--truncate-->
+
+### Lista zmian
+**`Grudzień 2021 (Drugie wydanie)`**
+
+- Zaktualizowano ISO o nową bazę
+- Bardziej minimalistyczny interfejs użytkownika
+- Nowe motywy i style
+- I więcej...
+
+## Ostatnie wydanie
+
+- **`ISO`** : [archcraft-xfce-2021.11.30-x86_64.iso](https://github.com/archcraft-os/archcraft-xfce/releases/download/v21.11/archcraft-xfce-2021.11.30-x86_64.iso)
+- **`SIG`** : [archcraft-xfce-2021.11.30-x86_64.iso.sig](https://github.com/archcraft-os/archcraft-xfce/releases/download/v21.11/archcraft-xfce-2021.11.30-x86_64.iso.sig)
+- **`SHA`** : [archcraft-xfce-2021.11.30-x86_64.iso.sha256sum](https://github.com/archcraft-os/archcraft-xfce/releases/download/v21.11/archcraft-xfce-2021.11.30-x86_64.iso.sha256sum)<br/>
+`68b8baab5c61c00f158e96c230c98459cb2affd1dd90985086292b9f0aed390a`
+- **`TORRENT`** : [archcraft-xfce-2021.11.30-x86_64.iso.torrent](https://github.com/archcraft-os/archcraft-xfce/releases/download/v21.11/archcraft-xfce-2021.11.30-x86_64.iso.torrent)
+
+## Zweryfikuj autentyczność ISO
+
+- Pobierz pliki **`ISO`**, **`gpg signature`** i **`sha256sum`**.
+- Upewnij się, że wszystkie pliki znajdują się w tym samym katalogu (np. `~/Downloads`)
+- Po pierwsze, zweryfikuj klucz na serwerze kluczy, otwórz terminal i uruchom polecenie (dowolne z poniższych) :
+```
+$ gpg --keyserver hkps://keys.gnupg.net --recv-keys 7DC81F73
+$ gpg --keyserver hkps://keyserver.ubuntu.com --recv-keys 7DC81F73
+$ gpg --keyserver hkp://pgp.mit.edu --recv-keys 7DC81F73
+```
+
+- Następnie otwórz `terminal` w katalogu `~/Downloads` i uruchom następujące polecenie :
+```
+$ gpg --verify archcraft-xfce-2021.11.30-x86_64.iso.sig
+```
+
+- Na koniec należy zweryfikować `sha256sum` uruchamiając :
+```
+$ sha256sum -c archcraft-xfce-2021.11.30-x86_64.iso.sha256sum
+```

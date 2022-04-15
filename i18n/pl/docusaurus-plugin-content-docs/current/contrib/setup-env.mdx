@@ -1,0 +1,38 @@
+---
+sidebar_position: 1
+---
+
+# Konfiguracja systemu
+
+Skonfigurujmy system do pracy lokalnej...
+
+- Zainstaluj `nodejs`, `npm` i `yarn` :
+```bash
+$ sudo pacman -S nodejs npm yarn
+```
+
+- Zklonuj `dokumentację` z Githuba :
+```bash
+$ git clone https://github.com/archcraft-os/documentation
+```
+
+- Zainstaluj potrzebne `node modules` *(moduły node)* w katalogu głównym repozytorium:
+```bash
+$ cd documentation
+$ npm install
+```
+
+- Uruchom lokalny serwer programistyczny :
+```bash
+$ yarn run start
+```
+
+- Dodaj dokumentację, edytuj strony, a kiedy skończysz, zbuduj witrynę :
+```bash
+$ yarn run build
+```
+:::note Informacja
+
+Upewnij się, że strona jest zbudowana poprawnie i przetestuj ją na lokalnym serwerze przed wysłaniem jej na Githuba (lub utworzeniem  pull requesta).
+
+:::
