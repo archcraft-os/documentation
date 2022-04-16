@@ -1,0 +1,58 @@
+---
+slug: 01-release-news
+title: Wydano wrześniową wersję
+authors: adi1090x
+tags: [v21.09, release, iso]
+---
+
+export const Highlight = ({children, color}) => (
+  <span
+    style={{
+      backgroundColor: color,
+      borderRadius: '4px',
+      color: '#fff',
+      padding: '0.2rem',
+    }}>
+    {children}
+  </span>
+);
+
+**Nowa wersja ISO Archcrafta jest już dostępna do pobrania.**
+
+Po ciężkiej pracy przez prawie 3 miesiące, przedstawiam wam <Highlight color="#C778DD">Następnego Archcrafta</Highlight>.
+
+### Co nowego
+- Stworzony na nowo, od podstaw (dla lepszej aktualizacji i łatwejszej konserwacji)
+- Nowe **`base`**, **`logo`**, **`packages`**, **`repository`**, itd.
+- Naprawiono problem z czarnym ekranem (niektóre GPU Nvidii)
+<!--truncate-->
+- Naprawiono problem z **`additional kernel`** *(dodatkowym jądrem)* w grubie
+- Włączono obsługę **`snapa`** i **`flatpaka`**.
+- Dodano **`graficzną nakładkę`** dla pacmana (z integracją z `aur`, `snaps` i `flatpak`)
+- Włączono domyślnie **`chaotic aur`** 
+- Włączono domyślnie **`bluetooth`**
+- Włączono domyślnie **`os-prober`**
+- Włączono **`on-demand rehash`** dla `zsh`
+- Użyto **`lightdm`** z **`webkit2-greeter`** jako domyślnego menedżera wyświetlania
+- Użyto **`firefoxa`** jako domyślnej przeglądarki internetowej
+- Nowy motyw dla **`plymouth`**, nowe motywy **`gruba`**
+- Nowy motywy  **`gtk`**, **`icon`**, **`cursor`** i inny zestaw **`tapet`**
+- Nowe aplikacje **`welcome`**, **`about`**, **`help and tips`**
+- Nowe niesamowite **`czcionki`** i zaktualizowane **`nerd fonts`**
+- Nowe **`style`** i **`motyw`** dla `openboxa (15+)` i `bspwm (20)`
+- **`Konfiguracje`** :
+  - Zaprojektowano na nowo pulpit `bspwm` (polybar, rofi, etc)
+  - Całkowicie nowy config `openbox`
+  - Ulepszone menu openbox, nowe pipemenus, różne style menu
+  - Pipemenu `Xrandr` do regulacji rozdzielczości i łatwego zarządzania wieloma monitorami 
+  - Kompozytor `Picom` (fork `ibhagwan`) z dual_kawase blur i zaokrąglonymi rogami.
+  - Lepsze zrzuty ekranu dzięki `maim` i nagrywanie ekranu dzięki `ffmpeg`.
+  - Automatyczne wykrywanie `interfejsu sieciowego`, `baterii` i `karty graficznej` dla polybara.
+  - Dodanie wszystkich moich motywów `polybar` i `rofi`.
+  - Styl maszyny do pisania dla `pyroom` dla przyjemnego pisania
+- **`Programy wiersza poleceń`** :
+  - `vim` z [ultimate vimrc](https://github.com/amix/vimrc) (nerd-tree, lightline, etc)
+  - `neovim` z [Nvchad](https://github.com/NvChad/NvChad) (najlepszy config nvima)
+  - `ranger` z [icons](https://github.com/alexanderjeurissen/ranger_devicons), kolorowaniem składni i podglądem (obrazów, wideo, pdf, itp)
+  - `oh-my-zsh` z [spaceship-prompt](https://github.com/spaceship-prompt/spaceship-prompt)
+  - `ncmpcpp` z obsługą grafiki albumów

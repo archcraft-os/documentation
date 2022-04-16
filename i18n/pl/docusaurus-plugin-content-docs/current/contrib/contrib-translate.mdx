@@ -1,0 +1,67 @@
+---
+sidebar_position: 4
+---
+
+# Przetłumacz Wiki
+
+Postępuj zgodnie z tym poradnikiem, jeśli chcesz przetłumaczyć Archcraft Wiki...
+
+## Wymagania wstępne
+
+- [Skonfigurowany system](setup-env.mdx) do pracy lokalnej.
+- Powinieneś mieć podstawową wiedzę na temat składni [Markdowna](https://www.markdownguide.org/cheat-sheet) i [MDXa](https://mdxjs.com). Zobacz [Docusaurus Markdown Features](https://docusaurus.io/docs/markdown-features).
+- Powinieneś przynajmniej wiedzieć jak: *zforkować*, *zklonować* repozytorium i utworzyć *pull requesta*.
+
+## Konfiguracja
+
+Edytuj plik `docusaurus.config.js` i dodaj odpowiednie **[i18n locale](https://www.npmjs.com/package/i18n-iso-countries)**.
+
+Na przykład: Jeśli chcesz tłumaczyć na język *rosyjski*, dodaj <kbd>ru</kbd> w sekcji `locales:` :
+```jsx {4-8}
+  // Tłumaczenie
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'fr', 'ru'],
+      ru: {
+        label: 'Russian',
+        direction: 'ltr',
+      },
+  },
+```
+
+## Tłumaczenie
+
+Otwórz terminal (w katalogu głównym witryny) i...
+
+- Utwórz katalog dla danego języka w środku katalogu `i18n`.
+```bash
+$ mkdir -p i18n/ru
+```
+
+- Uruchom polecenie write-translations:
+```bash
+$ yarn run write-translations -- --locale ru
+```
+
+- Skopiuj oryginalne pliki doc do katalogów tłumaczeń:
+```bash
+$ mkdir -p i18n/ru/docusaurus-plugin-content-docs/current
+$ cp -r blog/* i18n/ru/docusaurus-plugin-content-blog
+$ cp -r news/* i18n/ru/docusaurus-plugin-content-blog-news
+$ cp -r docs/* i18n/ru/docusaurus-plugin-content-docs/current
+```
+
+- Uruchom swoją przetłumaczoną stronę w trybie dev. Strona jest dostępna pod adresem `http://localhost:3000/ru`.
+```bash
+$ yarn run start -- --locale ru
+```
+
+- Przetłumacz wszystkie pliki w katalogu `i18n/ru`. A kiedy skończysz, utwórz pull requesta ze swoimi tłumaczeniami.
+
+> Aby uzyskać więcej informacji, odwiedź [Docusaurus:i18n](https://docusaurus.io/docs/i18n/tutorial)
+
+## Tłumacze
+
+🇫🇷 [Francuska wersja](https://wiki.archcraft.io/fr/) została przetłumaczona przez [Arnae](https://www.github.com/Archenagechan).
+
+🇵🇱 [Polska wersja](https://wiki.archcraft.io/pl/) została przetłumaczona przez [Keyitdev](https://www.github.com/Keyitdev).

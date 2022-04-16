@@ -1,0 +1,382 @@
+---
+sidebar_position: 2
+---
+
+# Zainstaluj Archcrafta wykorzystując ABIF
+
+**`ABIF`** jest drugim instalatorem Archcrafta, opiera się on na wierszu poleceń i jest bardzo wydajny (*Osobiście go używam*).
+Osoby, którzy chcą go użyć do instalacji Archcrafta, powinne wiedzieć co robią.
+
+> *Nie polecam używania tego instalatora, jeżeli jesteś początkującym, zamiast tego użyj [Calamares](./install-with-calamares).*<br/>
+*Jeśli jednak nadal chcesz użyć tego instalatora, możesz skorzystać z poniższego poradnika.*
+
+W tym poradniku będę instalował Archcrafta na systemie UEFI z `Szyfrowaniem` i `LVM` przy użyciu **`ABIF`**. 
+Proces będzie taki sam jeśli używasz BIOSu.
+
+Zakładam, że utworzyłeś już [bootowalne urządzenie USB](../boot-iso/boot-with-usb) z ISO Archcrafta. Uruchom Archcrafta używając bootowalnego USB, wybierz opcję **Boot Archcraft** *(Uruchom Archcrafta)*. Następnie uruchom instalator przez aplikację powitalną lub menu.
+
+Wybierz język instalatora i kliknij przycisk <kbd>Enter</kbd>
+
+![img](./abif/1.png)
+
+### Przygotowanie instalacji
+
+Wybierz `Prepare Installation` *(Przygotuj instalację)*  i kliknij przycisk <kbd>Enter</kbd>
+
+![img](./abif/2.png)
+
+Wybierz `Set Virtual Console` *(Ustaw konsolę wirtualną)*, wybierz swój układ i kliknij przycisk <kbd>Enter</kbd>
+
+![img](./abif/3.png)
+
+Wybierz `Set Desktop Keyboard Layout` *(Ustaw układ klawiatury pulpitu)*, wybierz swój układ i kliknij przycisk <kbd>Enter</kbd>
+
+![img](./abif/4.png)
+
+### Partycjonowanie dysku
+
+Wybierz `List Devices` *(Listę urządzeń)* i kliknij przycisk <kbd>Enter</kbd>
+
+![img](./abif/5.png)
+
+W tym miejscu możesz zobaczyć dostępne dyski i partycje swojego systemu.
+
+![img](./abif/6.png)
+
+Jeśli twój dysk jest już podzielony na partycje, możesz to pominąć i przejść do:
+
+- [Konfiguracji szyforwania LUKS](#konfiguracja-szyfrowania-luks) (*Jeżeli chcesz używać  `Encryption` (Szyfrowania)*)
+- [Konfiguracji LVM](#konfiguracja-lvm) (*Jeżeli chcesz używać `LVM`*)
+- [Montowanie partycji](#montowanie-partycji) (*Jeśli chcesz normalnie zainstalować*)
+
+Jeśli chcesz dokonać partycjonowania, wybierz `Partition Disk` *(Partycjonowanie dysku)* i kliknij przycisk <kbd>Enter</kbd>
+
+![img](./abif/7.png)
+
+Wybierz `Your Disk` *(Twój dysk)* i kliknij przycisk <kbd>Enter</kbd>
+
+![img](./abif/8.png)
+
+Wybierz dowolne narzędzie do partycjonowania (*w tym poradniku używam `gparted`*) i kliknij przycisk <kbd>Enter</kbd>
+
+![img](./abif/9.png)
+
+Wykonaj partycjonowanie, a kiedy skończysz, wyjdź z `gparted`
+
+:::caution Uwaga
+
+Jeśli twój system ma już partycję EFI, upewnij się, że ma co najmniej `100 MB wolnego miejsca`, w przeciwnym razie instalacja się nie powiedzie.
+
+:::
+
+![img](./abif/10.png)
+
+### Konfiguracja szyfrowania LUKS
+
+Jeśli nie chcesz używać **Szyfrowania Dysku**, możesz to pominąć i przejść do:
+
+- [Konfiguracji LVM](#konfiguracja-lvm) (*Jeżeli chcesz używać `LVM`*)
+- [Montowania partycji](#montowanie-partycji) (*Jeśli chcesz normalnie zainstalować*)
+
+Jeśli chcesz używać **Szyfrowania Dysku**,  Wybierz `LUKS Encryption` *(szyfrowanie LUKS)* i kliknij przycisk <kbd>Enter</kbd>
+
+![img](./abif/11.png)
+
+Ja po prostu użyję `Automatic LUKS Encryption` *(Automatyczne szyfrowanie LUKS)*, ale ty jeśli chcesz wprowadźić zmiany, zrób to tutaj i kliknij przycisk <kbd>Enter</kbd>
+
+![img](./abif/12.png)
+
+Wybierz partycję która chcesz zaszyfrować  (*Ja zaszyfruję partycję root (`/dev/sda2`)*) i kliknij przycisk <kbd>Enter</kbd>
+
+![img](./abif/13.png)
+
+Wprowadź nazwę dla `Encrypted block device` *(Zaszyfrowane urządzenie blokowe)* i kliknij przycisk <kbd>Enter</kbd>
+
+![img](./abif/14.png)
+
+Ustaw silne `hasło` i kliknij przycisk <kbd>Enter</kbd>, potwierdź hasło i kliknij przycisk <kbd>Enter</kbd>. 
+
+![img](./abif/15.png)
+
+Możesz tutaj przejżeć swoją konfigurację LUKS. Po zakończeniu kliknij przcisk <kbd>Enter</kbd>, aby wyjść.
+
+![img](./abif/16.png)
+
+Powtórz ten proces, aby zaszyfrować pozostałe partycje  (*na przykład: `/home`*).
+Kiedy skończysz, wybierz `Back` *(Powrót)* i kliknij przycisk <kbd>Enter</kbd>
+
+![img](./abif/17.png)
+
+### Konfiguracja LVM
+
+Jeżeli nie chcesz skonfigurować **Woluminów logicznych**, możesz pominąć ten krok i przejśc do [Montowania Partycji](#montowanie-partycji).<br/>
+Jeśli jednak chesz dokonać ich konfiguracji, wybierz `Logical Volume Management` *(Zarządzanie logicznymi woluminami)* i kliknij przycisk <kbd>Enter</kbd>
+
+![img](./abif/18.png)
+
+Stwórz **Grupę woluminów**, wybierz `Create VG and LV(s)` *(Stwórz VG i LV)* i kliknij przycisk <kbd>Enter</kbd>
+
+![img](./abif/19.png)
+
+Wprowadż nazwę `grupy` i kliknij przycisk <kbd>Enter</kbd>
+
+![img](./abif/20.png)
+
+Wybierz `Partycję` (*użyj <kbd>SPACE</kbd>* *(SPACJI)*), którą chcesz dodać do grupy LV i kliknij przycisk <kbd>Enter</kbd>
+
+![img](./abif/21.png)
+
+Naciśnij <kbd>Enter</kbd>, aby potwierdzić tworzenie grupy.
+
+![img](./abif/22.png)
+
+Pojawi się okno dialogowe potwierdzające, że grupa została utworzona. naciśnij <kbd>Enter</kbd>, aby wyjść.
+
+![img](./abif/23.png)
+
+Wybierz `Liczbę` woluminów w grupie (*wcześniej wybraliśmy dwie partycje do dodania do grupy*) i kliknij przycisk <kbd>Enter</kbd>
+
+![img](./abif/24.png)
+
+Wprowadź nazwę pierwszego LV (*dla `roota`*) i kliknij przycisk <kbd>Enter</kbd>
+
+![img](./abif/25.png)
+
+Wprowadź rozmiar `LV` i kliknij przycisk <kbd>Enter</kbd>
+
+![img](./abif/26.png)
+
+Zobaczysz, że LV został utworzony, naciśnij klawisz <kbd>Enter</kbd>, aby wyjść.
+
+![img](./abif/27.png)
+
+Zrób to samo dla drugiego LV, wpisz nazwę i kliknij przycisk <kbd>Enter</kbd>. Rozmiar zostanie automatycznie zmniejszony.
+
+![img](./abif/28.png)
+
+Naciśnij <kbd>Enter</kbd>, aby zobaczyć swój schemat LVM.
+
+![img](./abif/29.png)
+
+Kiedy skończysz, kliknij przycisk <kbd>Enter</kbd>, aby wyjść.
+
+![img](./abif/30.png)
+
+### Montowanie partycji
+
+Teraz, gdy mamy już skonfigurowane partycje *(Szyfrowanie i LVM)*. Nadszedł czas, aby zmountować je w celu instalacji.
+
+Wybierz `Mount Partitions` *(Montowanie partycji)* i kliknij przycisk <kbd>Enter</kbd>
+
+![img](./abif/31.png)
+
+Wybierz `Root Partition` *(Partycję Root)* i kliknij przycisk <kbd>Enter</kbd>. Pamiętaj, że:
+
+- Jeżeli skonfigurowałeś **LVM** (*z szyfrowaniem*), wybierz to dla `roota` (*na przykład: w tej konfiguracji **/dev/mapper/archcraft-lvol_root** będzie rootem*)
+- Jeżeli skonfigurowałeś **Szyfrowanie** bez (*LVM*), wybierz to dla `roota` (*/dev/mapper/cryptroot*)
+- Jeżeli nie skonfigurowałeś *Szyfrowania* lub *LVM*, wybierz `roota` normalnie (*/dev/sda2*)
+
+![img](./abif/32.png)
+
+Wybierz `ext4` jako system plików (*możesz wybrać dowolny sytem plików*) i kliknij przycisk <kbd>Enter</kbd>
+
+![img](./abif/33.png)
+
+Wybierz `Yes` *(Tak)* i kliknij przycisk <kbd>Enter</kbd>, aby zformatować partycję, resztę zignoruj.
+
+![img](./abif/34.png)
+
+Jeżeli utworzyłeś **Swap Partition** *(Partycję swapa)*, możesz zamontować ją tutaj. Możesz także użyc `Swapfile`, jeśli chcesz.
+Wybierz to co preferujesz i kliknij przycisk <kbd>Enter</kbd>
+
+![img](./abif/35.png)
+
+Teraz, zamontuj partycję `boot`. Wybierz swoją `EFI partition` *(partycję EFI)* (*/dev/sda1*) i kliknij przycisk <kbd>Enter</kbd>
+
+![img](./abif/36.png)
+
+:::danger Niebezpieczeństwo
+
+Twój system może posiadać już partycję **EFI**. W takim przypadku **`NIE FORMATUJ`** jej, ponieważ nie będziesz mógł uruchomić innego zainstalowanego już systemu operacyjnego (np. Windowsa)<br/>
+Po prostu zamontuj partycję EFI do `/boot/efi` 
+
+:::
+
+Wybierz `No` *(Nie)*, jeżeli nie chcesz formatować partycji EFI i kliknij przycisk <kbd>Enter</kbd>
+
+![img](./abif/37.png)
+
+Wybierz `/boot` jako punkt montowania i kliknij przycisk <kbd>Enter</kbd>
+
+![img](./abif/38.png)
+
+Teraz możesz zamontować resztę partycji (*na przykład: /home*) tutaj. Wybierz ją i kliknij przycisk <kbd>Enter</kbd>
+
+![img](./abif/39.png)
+
+Ponownie, Wybierz `ext4` (*albo jakikolwiek inny*) jako system plików i kliknij przycisk <kbd>Enter</kbd>
+
+![img](./abif/40.png)
+
+Wejdź do `mount point` *(punktu montowania)* partycji i kliknij przycisk <kbd>Enter</kbd>
+
+![img](./abif/41.png)
+
+Kiedy skończysz motować wszytkie partycję, wybierz `Done` *(Zrobione)* i kliknij przycisk <kbd>Enter</kbd> to exit
+
+![img](./abif/42.png)
+
+Wybierz `Back` *(Powrót)* i kliknij przycisk <kbd>Enter</kbd>, aby przejśc do instalacji.
+
+![img](./abif/43.png)
+
+### Instalacja bazy
+
+Teraz kiedy wszystkie partycje są zamontowane i gotowe, zainstalujmy **`Base packages`** *(pakiety bazowe/podstawowe)*.
+
+Wybierz `Install Base` *(Zainstaluj bazę)* i kliknij przycisk <kbd>Enter</kbd>
+
+![img](./abif/44.png)
+
+Wybierz `Install Base Packages` *(Zainstaluj pakiety bazowe)* i kliknij przycisk <kbd>Enter</kbd>
+
+![img](./abif/45.png)
+
+Poczekaj na zakończenie instalacji. A w międzyczasie, [Popraw sobie nastrój...](https://youtu.be/dQw4w9WgXcQ?t=5)
+
+![img](./abif/46.png)
+
+Po zakończeniu instalacji, wybierz `Run Mkinitcpio` *(Uruchom Mkinitcpio)* i kliknij przycisk <kbd>Enter</kbd>
+
+![img](./abif/47.png)
+
+To wygeneruje **initramfs-linux** i **initramfs-linux-fallback**.
+
+![img](./abif/48.png)
+
+Wybierz `Install Bootloader` *(Zainstaluj bootloadera)* i kliknij przycisk <kbd>Enter</kbd>
+
+![img](./abif/49.png)
+
+Wybierz `gruba` jako bootloadera i kliknij przycisk <kbd>Enter</kbd>
+
+![img](./abif/50.png)
+
+Wybierz `Yes` *(Tak)*, żeby ustawić *gruba* jako domyślnego bootloadera i kliknij przycisk <kbd>Enter</kbd>
+
+![img](./abif/51.png)
+
+Wybierz `Back` *(Powrót)* i kliknij przycisk <kbd>Enter</kbd>, aby zakończyć instalację.
+
+![img](./abif/52.png)
+
+### Konfiguracja bazy
+
+Archcraft jest zainstalowany na twoim sytemie. Teraz nadszedł czas, aby skonfigurować installację.
+
+Wybierz `Configure Base` *(Konfiguruj Bazę)* i kliknij przycisk <kbd>Enter</kbd>
+
+![img](./abif/53.png)
+
+Wybierz `Generate FSTAB` *(Generuj FSTAB)* i kliknij przycisk <kbd>Enter</kbd>
+
+![img](./abif/54.png)
+
+Wybierz `Part UUID` dla **UEFI** and `Device UUID` *(Urządzenie UUID)* dla **BIOSa** i kliknij przycisk <kbd>Enter</kbd>
+
+![img](./abif/55.png)
+
+Wybierz `Set Hostname` *(Ustaw nazwę hosta)* i kliknij przycisk <kbd>Enter</kbd>
+
+![img](./abif/56.png)
+
+Wprowadź `nazwę hosta` dla twojego systemu i kliknij przycisk <kbd>Enter</kbd>
+
+![img](./abif/57.png)
+
+Wybierz `Set System Locale` *(Ustawenia regionalne systemu)* i kliknij przycisk <kbd>Enter</kbd>
+
+![img](./abif/58.png)
+
+Wybierz te ustawenia regionalne systemu które chcesz (*`en_US.UTF-8` dla US English*) i kliknij przycisk <kbd>Enter</kbd>
+
+![img](./abif/59.png)
+
+Wybierz `Set Timezone and Clock` *(Ustaw strefę czasowąi zegar)* i kliknij przycisk <kbd>Enter</kbd>
+
+![img](./abif/60.png)
+
+Wybierz swoją `Time Zone` *(Strefę czasową)* (na przykład : *`ASIA`*) i kliknij przycisk <kbd>Enter</kbd>
+
+![img](./abif/61.png)
+
+Wybierz swój `Region` (na przykład : *`Kolkata`*) i kliknij przycisk <kbd>Enter</kbd>
+
+![img](./abif/62.png)
+
+Wybierz `Yes` *(Tak)* i kliknij przycisk <kbd>Enter</kbd>
+
+![img](./abif/63.png)
+
+Wybierz `utc` i kliknij przycisk <kbd>Enter</kbd>
+
+:::info Informacja
+
+W przypadku dualbootowania z Windowsem zaleca się [skonfigurowanie systemu Windows do używania czasu UTC](https://wiki.archlinux.org/title/System_time#UTC_in_Microsoft_Windows),
+a nie Linuksa do używania czasu lokalnego. (*Windows domyślnie używa czasu lokalnego*).
+
+:::
+
+![img](./abif/64.png)
+
+Wybierz `Set Root Password` *(Ustaw hasło Roota)*, żeby ustawić hasło dla  **roota** i kliknij przycisk <kbd>Enter</kbd>
+
+![img](./abif/65.png)
+
+Wybierz `Add New User(s)` *(Dodaj nowgo użytkownika/ nowych użytkowników)*, aby utworzyć nowe konto/ nowe konta i kliknij przycisk <kbd>Enter</kbd>
+
+![img](./abif/66.png)
+
+Wprowadź `nazwę użytkownika` i kliknij przycisk <kbd>Enter</kbd>
+
+![img](./abif/67.png)
+
+Wprowadź `hasło` dla twojego konta i klinij przycisk <kbd>Enter</kbd>. Potwierdź hasło.
+
+![img](./abif/68.png)
+
+Wybierz `Security and systemd Tweaks` *(Bezpieczeństwo i zmiany systemd)*, aby dostosować je  (*Jeśli wiesz, co robić*) i kliknij przycisk <kbd>Enter</kbd>.
+
+![img](./abif/69.png)
+
+Kiedy skończysz, wybierz `Back` *(Powrót)* i kliknij przycisk <kbd>Enter</kbd>, aby wyjść.
+
+![img](./abif/70.png)
+
+### Przegląd plików konfiugracyjnych
+
+Wybierz `Review Configuration Files` *(Przejrzyj pliki konfiguracyjne)* i kliknij przycisk <kbd>Enter</kbd>
+
+![img](./abif/71.png)
+
+Wybierz `pliki`, które chcesz wyświetlić i kliknij przycisk <kbd>Enter</kbd>. Gdy skończysz, wybierz `Back` *(Powrót)*, aby wyjść.
+
+![img](./abif/72.png)
+
+### Zakończenie
+
+To już wszystko... Teraz możesz **`wyłączyć instalator`** i zrestować system.
+
+Wybierz `Done` *(Gotowe)* i kliknij przycisk <kbd>Enter</kbd>
+
+![img](./abif/73.png)
+
+Wybierz `Yes` *(Tak)* i kliknij przycisk <kbd>Enter</kbd>, aby wyjść.
+
+![img](./abif/74.png)
+
+Uruchom ponownie nowo zainstalowany system.
+
+![img](./abif/75.png)
+
+**Dobra, to wszystko! Archcraft jest zainstalowany na twoim systemie. Baw się dobrze!**.
