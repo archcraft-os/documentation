@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkArchcraft_Wiki=self.webpackChunkArchcraft_Wiki||[]).push([[2535],{5641:function(t){t.exports=JSON.parse('{"title":"Ostatnie posty","items":[{"title":"Zmie\u0144 motyw i ikony bspwm","permalink":"/pl/blog/02-post-bspwm"},{"title":"Dodaj moj\u0105 muzyk\u0119 w mpd","permalink":"/pl/blog/01-post-mpd"}]}')}}]);

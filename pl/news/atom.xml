@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://wiki.archcraft.io/pl/news</id>
+    <title>Archcraft Blog</title>
+    <updated>2022-04-07T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://wiki.archcraft.io/pl/news"/>
+    <subtitle>Archcraft Blog</subtitle>
+    <icon>https://wiki.archcraft.io/pl/img/favicon.svg</icon>
+    <entry>
+        <title type="html"><![CDATA[Wydano kwietniową wersję]]></title>
+        <id>07-release-news</id>
+        <link href="https://wiki.archcraft.io/pl/news/07-release-news"/>
+        <updated>2022-04-07T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Zwykła aktualizacja ISO]]></summary>
+        <author>
+            <name>Aditya Shakya</name>
+            <uri>https://github.com/adi1090x</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Wydano lutową wersję]]></title>
+        <id>06-release-news</id>
+        <link href="https://wiki.archcraft.io/pl/news/06-release-news"/>
+        <updated>2022-02-02T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Nowa wersja ISO Archcrafta jest już dostępna do pobrania.]]></summary>
+        <author>
+            <name>Aditya Shakya</name>
+            <uri>https://github.com/adi1090x</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Wydano wersję Archcraft XFCE]]></title>
+        <id>05-release-xfce-news</id>
+        <link href="https://wiki.archcraft.io/pl/news/05-release-xfce-news"/>
+        <updated>2021-11-30T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Nowa odsłona Archcrafta (XFCE) jest już dostępna do pobrania.]]></summary>
+        <author>
+            <name>Aditya Shakya</name>
+            <uri>https://github.com/adi1090x</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Wydano wersję Archcraft Lite]]></title>
+        <id>04-release-lite-news</id>
+        <link href="https://wiki.archcraft.io/pl/news/04-release-lite-news"/>
+        <updated>2021-11-13T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Nowa odsłona  Archcrafta (Lite) jest już dostępna do pobrania.]]></summary>
+        <author>
+            <name>Aditya Shakya</name>
+            <uri>https://github.com/adi1090x</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Wydano październikową wersję]]></title>
+        <id>03-release-news</id>
+        <link href="https://wiki.archcraft.io/pl/news/03-release-news"/>
+        <updated>2021-10-05T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Nowa wersja ISO Archcrafta jest już dostępna do pobrania.]]></summary>
+        <author>
+            <name>Aditya Shakya</name>
+            <uri>https://github.com/adi1090x</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Błędy we wrześniowej wersji]]></title>
+        <id>02-issue-news</id>
+        <link href="https://wiki.archcraft.io/pl/news/02-issue-news"/>
+        <updated>2021-09-30T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[<span]]></summary>
+        <author>
+            <name>Aditya Shakya</name>
+            <uri>https://github.com/adi1090x</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Wydano wrześniową wersję]]></title>
+        <id>01-release-news</id>
+        <link href="https://wiki.archcraft.io/pl/news/01-release-news"/>
+        <updated>2021-09-25T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[<span]]></summary>
+        <author>
+            <name>Aditya Shakya</name>
+            <uri>https://github.com/adi1090x</uri>
+        </author>
+    </entry>
+</feed>
