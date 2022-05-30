@@ -1,0 +1,69 @@
+---
+sidebar_position: 4
+---
+
+# Wiki'nin Çevirisini Yapın
+
+Archcraft Wiki'sinin çevirisini yapmak isterseniz bu rehberi takip edebilirsiniz...
+
+## Önkoşullar
+
+- Kendi bilgisayarınızda çalışmak istiyorsanız [sistem yapılandırmanızı](setup-env.mdx) yapın. 
+- [Markdown](https://www.markdownguide.org/cheat-sheet) ve [MDX](https://mdxjs.com) hakkında temel bilgilere sahip olmalısınız. Daha fazlası için [Docusaurus Markdown Features](https://docusaurus.io/docs/markdown-features).
+- *fork*, *repo klonlama* ve *pull request* oluşturma konularında bilgi sahibi olmalısınız.
+
+## Yapılandırma
+
+`docusaurus.config.js` dosyasını düzenleyin ve **[i18n](https://www.npmjs.com/package/i18n-iso-countries)** için doğru dil ayarını ekleyin.
+
+Örneğin: *Rusça* çevirisi yapmak istiyorsanız, yerel ayarlarda <kbd>ru</kbd> ekleyin:
+```jsx {4-8}
+  // Translation
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'fr', 'ru'],
+      ru: {
+        label: 'Russian',
+        direction: 'ltr',
+      },
+  },
+```
+
+## Çeviri
+
+Komut satırını açın (web sitesinin kök dizininde) ve...
+
+- `i18n` içinde çevirmek istediğiniz dil için yeni bir dizin oluşturun.
+```bash
+$ mkdir -p i18n/ru
+```
+
+- write-translations komutunu çalıştırın:
+```bash
+$ yarn run write-translations -- --locale ru
+```
+
+- Orijinal belge dosyalarını çeviri dizininin içine kopyalayın:
+```bash
+$ mkdir -p i18n/ru/docusaurus-plugin-content-docs/current
+$ cp -r blog/* i18n/ru/docusaurus-plugin-content-blog
+$ cp -r news/* i18n/ru/docusaurus-plugin-content-blog-news
+$ cp -r docs/* i18n/ru/docusaurus-plugin-content-docs/current
+```
+
+- Çevirisini yaptığınız sitenizi, istediğiniz yerel ayarı kullanarak geliştirme modunda başlatın. Sitenize `http://localhost:3000/ru` adresinden ulaşabilirsiniz.
+```bash
+$ yarn run start -- --locale ru
+```
+
+- `i18n/ru` dizinindeki tüm dosyaların çevirisi yapınız. Herşey tamamlandığında, çeviriniz içen yeni bir pull request oluşturabilirsiniz. 
+
+> Daha fazlası için [Docusaurus:i18n](https://docusaurus.io/docs/i18n/tutorial)
+
+## Çevirmenler
+
+🇫🇷 [Fransızca](https://wiki.archcraft.io/fr/) çevirisi [Arnae](https://www.github.com/Archenagechan) tarafından yapılmıştır.
+
+🇵🇱 [Lehçe](https://wiki.archcraft.io/pl/) çevirisi [Keyitdev](https://www.github.com/Keyitdev) tarafından yapılmıştır.
+
+🇹🇷 [Türkçe](https://wiki.archcraft.io/tr/) çevirisi  [Levent C. Yılmaz](https://www.github.com/lvntcnylmz) tarafından yapılmıştır.
