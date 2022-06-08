@@ -1,0 +1,117 @@
+---
+sidebar_position: 1
+hide_table_of_contents: true
+---
+
+# Önyüklenebilir USB Oluşturma
+
+<!-- Tabs -->
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+
+<TabItem value="dd" label="dd" default>
+
+## dd (Linux)
+
+Halihazırda **Linux** kullanıyorsanız, **`dd`** ile önyüklenebilir Archcraft USB'si oluşturabilirsiniz.
+**`dd`** hem BIOS hem de UEFI için önyüklenebilir USB oluşturur. Basitliği ve evrensel kullanılabilirliği sebebiyle bu yöntem önerilmektedir.
+
+**`dd`** ile önyüklenebilir bir USB oluşturmak için aşağıdaki adımları takip edin :
+
+- USB bilgilerine ulaşmak için komut satırını açıp `sudo fdisk -l` komutunu çalıştırın. Benim durumumda, bu **/dev/sda**.
+
+```bash
+$ sudo fdisk -l
+
+Disk /dev/sda: 29.25 GiB, 31406948352 bytes, 61341696 sectors
+Disk model: Cruzer Blade
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x940318b0
+```
+
+USB cihazınızı boyutlarına göre incelemek isterseniz `lsblk` konutunu çalıştırabilirsiniz.
+
+```bash
+$ lsblk
+
+NAME        MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
+sda           8:0    1  29.3G  0 disk
+├─sda1        8:1    1   1.6G  0 part
+└─sda2        8:2    1    54M  0 part
+nvme0n1     259:0    0 238.5G  0 disk
+...
+```
+
+- USB cihazınızı bulduktan sonra `dd` komutunu çalıştırıp ISO dosyasını USB cihazınıza yazabilirsiniz.
+
+```bash
+$ sudo dd bs=4M if=path/to/archcraft.iso of=/dev/sdX status=progress oflag=sync
+```
+
+- **path/to/archcraft.iso** yerine kendi Archcraft ISO dosyanızın adresinizi yazmayı ve kendi USB cihazınızın **sdX** değerini değiştirmeyi unutmayın.
+- Bu yöntem hem **BIOS** hem de **UEFI** için önyüklenebilir Archcraft USB'si yaratacaktır.
+
+</TabItem>
+
+<TabItem value="etcher" label="Etcher">
+
+## Etcher (Linux, Mac, Windows)
+
+[Etcher](https://www.balena.io/etcher/), Node.js ve Electron ile oluşturulmuş, SDCard'a ya da USB'ye dosya yazmak için kullanılan bir programdır.
+Sizi, sabit sürücülerinize hatalı bilgi yazmaktan korur ve her bayt verinin doğru yazılmasını sağlar.
+
+Etcher ile önyüklenebilir bir USB oluşturmak için aşağıdaki adımları takip ediniz :
+
+1. Etcher'i çalıştırın. **Select Image** butonuna tıklayın ve Archcraft ISO dosyasını seçin.
+1. USB sürücünüzü seçin, **doğru sürücüyü seçtiğinizden emin olun.**.
+1. **Flash** butonuna tıklayın ve işlemin bitmesini bekleyin.
+1. Bu yöntem hem **BIOS** hem de **UEFI** için önyüklenebilir Archcraft USB'si yaratacaktır.
+
+</TabItem>
+
+<TabItem value="rufus" label="Rufus">
+
+## Rufus (Windows)
+
+[Rufus](https://rufus.akeo.ie/), USB anahtar/bellekler, hafıza kartları vb. gibi USB sürücüleri biçimlendirmeye ve önyüklemeli hale getirmeye yardımcı olan bir araçtır. 
+Kullanıcı için grafiksel bir arayüz sunar.
+Archcraft ISO dosyası ile kullanmak istediğiniz USB sürücünüzü seçin ve **START** butonuna tıklayınız.
+
+:::tip İpucu
+
+Eğer USB sürücüsü varsayılan ISO dosyası için düzgün çalışmıyorsa, bunu yerine **DD Image** modu kullanılmalıdır.
+
+:::
+
+- Rufus versiyonu 3.0'dan büyük ise Disk Bölüm Düzeni açılır menüsünden GPT opsiyonunu seçin. **START** butonuna bastıktan sonra mod seçim kutusunu göreceksiniz, **DD Image** modunu seçin.
+- Rusuf versiyonu 3.0'dan küçük ise aşağıdaki açılır menüden **DD Image** modunu seçin.
+
+</TabItem>
+
+<TabItem value="other" label="Other">
+
+## Diğer Seçenekler (Linux)
+
+-  **`cat`** komutu ile oluşturmak için komut satırını açınız ve aşağıdaki komutu çalıştırınız :
+```bash
+$ sudo cat path/to/archcraft.iso > /dev/sdX
+```
+- **`cp`** komutu ile oluşturmak için komut satırını açınız ve aşağıdaki komutu çalıştırınız :
+```bash
+$ sudo cp path/to/archcraft.iso /dev/sdX
+```
+- **`tee`** komutu ile oluşturmak için komut satırını açınız ve aşağıdaki komutu çalıştırınız :
+```bash
+$ sudo tee < path/to/archcraft.iso > /dev/sdx
+```
+
+**path/to/archcraft.iso** yerine kendi Archcraft ISO dosyanızın adresini yazmayı ve kendi USB cihazınızın **sdX** değerini değistirmeyi unutmayınız.
+
+</TabItem>
+
+</Tabs>

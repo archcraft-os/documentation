@@ -1,0 +1,64 @@
+---
+sidebar_position: 2
+---
+
+# Öğretici Bilgiler Yazın
+
+Archcraft hakkında öğretici bilgiler yazmak isterseniz bu rehberi takip edebilirsiniz...
+
+## Önkoşullar
+
+- Kendi bilgisayarınızda çalışmak istiyorsanız [sistem yapılandırmanızı](setup-env.mdx) yapın. 
+- [Markdown](https://www.markdownguide.org/cheat-sheet) ve [MDX](https://mdxjs.com) hakkında temel bilgilere sahip olmalısınız. Daha fazlası için [Docusaurus Markdown Features](https://docusaurus.io/docs/markdown-features).
+- *fork*, *repo klonlama* ve *pull request* oluşturma konularında bilgi sahibi olmalısınız.
+
+## Dosya Formatları
+
+**blog** dizini, öğretici bilgiler için tüm `.md` ve `.mdx` uzantılı dosyalarını içerir.
+
+- Yeni bilgiler eklemek istiyorsanız doğru formatta bir dosya oluşturun.
+- Dosya formatları burada çok önemli. Proje mimarisi şu şekilde olmalı :
+```
+YEAR 	# Directory
+├── month-date-post-NAME.mdx	# .md or .mdx file
+└── month-date					# Directory
+   ├── Images					# Directory
+   └── post-NAME.mdx			# .md or .mdx file
+```
+
+## Başlık ve Etiketler
+
+Oluşturduğunuz dosyanın `ön bilgisine` uygun bilgi, başlık ve etiketler ekleyin.
+```yml
+---
+slug: NUM-post-NAME
+title: TITLE FOR THE POST
+authors: ID
+tags: [TAG1, TAG2]
+---
+```
+
+## Yazar
+
+Ayrıntılarınızı **`authors.yml`** dosyasına, ID'nizi oluşturduğunuz dosyanın `ön bilgisine` ekleyin.
+
+`authors.yml`
+```yml
+...
+ID:
+  name: YOUR_NAME
+  title: ABOUT_YOU
+  url: https://github.com/USERNAME
+  image_url: https://github.com/USERNAME.png
+...
+```
+
+`Ön Madde`
+```yml {3}
+slug: NUM-post-NAME
+title: TITLE FOR THE POST
+authors: ID
+tags: [TAG1, TAG2]
+```
+
+> Daha fazlası için [Docusaurus:Blog](https://docusaurus.io/docs/blog)

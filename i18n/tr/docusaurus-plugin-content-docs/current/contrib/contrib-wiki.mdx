@@ -1,0 +1,39 @@
+---
+sidebar_position: 3
+---
+
+# Wiki'yi Geliştirin
+
+Archcraft Wiki'ye yeni dökümanlar eklemek isterseniz bu rehberi takip edebilirsiniz...
+
+## Önkoşullar
+
+- Kendi bilgisayarınızda çalışmak istiyorsanız [sistem yapılandırmanızı](setup-env.mdx) yapın. 
+- [Markdown](https://www.markdownguide.org/cheat-sheet) ve [MDX](https://mdxjs.com) hakkında temel bilgilere sahip olmalısınız. Daha fazlası için [Docusaurus Markdown Features](https://docusaurus.io/docs/markdown-features).
+- *fork*, *repo klonlama* ve *pull request* oluşturma konularında bilgi sahibi olmalısınız.
+
+## Files and format
+
+**docs** dizini, her wiki gönderisi için `.md` ve `.mdx` uzantılı dosyaları ve dokümanlar kategorisi için bir `_category_.json` dosyasını içeren alt dizinlere sahiptir.
+
+- `_category_.json` dosyası, kategoriyi etiketlemek ve (kenar çubuğunda) konumlandırmak için kullanılır.
+- Aşağıda `Archcraft'ı Önyükle` kısmı için hazırlanmış örneği görebilirsiniz.
+```
+docs 	# Main Directory
+└── boot-iso						# Doc Category
+   ├── _category_.json				# Category Properties
+   ├── boot-with-usb.mdx			# Wiki Page
+   └── boot-with-grub.mdx			# Another wiki page in same category
+```
+
+## Ön Bilgi
+
+`Ön bilgi` kısmında dokümanın kategorideki konumunu vb. belirtebilirsiniz.
+```yml {2}
+---
+sidebar_position: 1
+hide_table_of_contents: true
+---
+```
+
+> Daha fazlası için [Docusaurus:Docs](https://docusaurus.io/docs/docs-introduction)
