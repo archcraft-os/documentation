@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>Archcraft Blog</title>
+        <link>https://wiki.archcraft.io/tr/news</link>
+        <description>Archcraft Blog</description>
+        <lastBuildDate>Wed, 08 Jun 2022 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[June 2022 Release Available]]></title>
+            <link>https://wiki.archcraft.io/tr/news/08-release-news</link>
+            <guid>08-release-news</guid>
+            <pubDate>Wed, 08 Jun 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Just a regular ISO update]]></description>
+        </item>
+        <item>
+            <title><![CDATA[April 2022 Release Available]]></title>
+            <link>https://wiki.archcraft.io/tr/news/07-release-news</link>
+            <guid>07-release-news</guid>
+            <pubDate>Thu, 07 Apr 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Just a regular ISO update]]></description>
+        </item>
+        <item>
+            <title><![CDATA[February 2022 Release Available]]></title>
+            <link>https://wiki.archcraft.io/tr/news/06-release-news</link>
+            <guid>06-release-news</guid>
+            <pubDate>Wed, 02 Feb 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[New ISO of Archcraft is now available to download.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Archcraft XFCE Released]]></title>
+            <link>https://wiki.archcraft.io/tr/news/05-release-xfce-news</link>
+            <guid>05-release-xfce-news</guid>
+            <pubDate>Tue, 30 Nov 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[New Flavor (XFCE) of Archcraft is now available to download.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Archcraft Lite Released]]></title>
+            <link>https://wiki.archcraft.io/tr/news/04-release-lite-news</link>
+            <guid>04-release-lite-news</guid>
+            <pubDate>Sat, 13 Nov 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[New Flavor (Lite) of Archcraft is now available to download.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[October 2021 Release Available]]></title>
+            <link>https://wiki.archcraft.io/tr/news/03-release-news</link>
+            <guid>03-release-news</guid>
+            <pubDate>Tue, 05 Oct 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[New ISO of Archcraft is now available to download.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Issues In September 2021 Release]]></title>
+            <link>https://wiki.archcraft.io/tr/news/02-issue-news</link>
+            <guid>02-issue-news</guid>
+            <pubDate>Thu, 30 Sep 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[<span]]></description>
+        </item>
+        <item>
+            <title><![CDATA[September 2021 Release Available]]></title>
+            <link>https://wiki.archcraft.io/tr/news/01-release-news</link>
+            <guid>01-release-news</guid>
+            <pubDate>Sat, 25 Sep 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[<span]]></description>
+        </item>
+    </channel>
+</rss>

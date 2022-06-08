@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://wiki.archcraft.io/tr/news</id>
+    <title>Archcraft Blog</title>
+    <updated>2022-06-08T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://wiki.archcraft.io/tr/news"/>
+    <subtitle>Archcraft Blog</subtitle>
+    <icon>https://wiki.archcraft.io/tr/img/favicon.svg</icon>
+    <entry>
+        <title type="html"><![CDATA[June 2022 Release Available]]></title>
+        <id>08-release-news</id>
+        <link href="https://wiki.archcraft.io/tr/news/08-release-news"/>
+        <updated>2022-06-08T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Just a regular ISO update]]></summary>
+        <author>
+            <name>Aditya Shakya</name>
+            <uri>https://github.com/adi1090x</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[April 2022 Release Available]]></title>
+        <id>07-release-news</id>
+        <link href="https://wiki.archcraft.io/tr/news/07-release-news"/>
+        <updated>2022-04-07T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Just a regular ISO update]]></summary>
+        <author>
+            <name>Aditya Shakya</name>
+            <uri>https://github.com/adi1090x</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[February 2022 Release Available]]></title>
+        <id>06-release-news</id>
+        <link href="https://wiki.archcraft.io/tr/news/06-release-news"/>
+        <updated>2022-02-02T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[New ISO of Archcraft is now available to download.]]></summary>
+        <author>
+            <name>Aditya Shakya</name>
+            <uri>https://github.com/adi1090x</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Archcraft XFCE Released]]></title>
+        <id>05-release-xfce-news</id>
+        <link href="https://wiki.archcraft.io/tr/news/05-release-xfce-news"/>
+        <updated>2021-11-30T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[New Flavor (XFCE) of Archcraft is now available to download.]]></summary>
+        <author>
+            <name>Aditya Shakya</name>
+            <uri>https://github.com/adi1090x</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Archcraft Lite Released]]></title>
+        <id>04-release-lite-news</id>
+        <link href="https://wiki.archcraft.io/tr/news/04-release-lite-news"/>
+        <updated>2021-11-13T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[New Flavor (Lite) of Archcraft is now available to download.]]></summary>
+        <author>
+            <name>Aditya Shakya</name>
+            <uri>https://github.com/adi1090x</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[October 2021 Release Available]]></title>
+        <id>03-release-news</id>
+        <link href="https://wiki.archcraft.io/tr/news/03-release-news"/>
+        <updated>2021-10-05T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[New ISO of Archcraft is now available to download.]]></summary>
+        <author>
+            <name>Aditya Shakya</name>
+            <uri>https://github.com/adi1090x</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Issues In September 2021 Release]]></title>
+        <id>02-issue-news</id>
+        <link href="https://wiki.archcraft.io/tr/news/02-issue-news"/>
+        <updated>2021-09-30T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[<span]]></summary>
+        <author>
+            <name>Aditya Shakya</name>
+            <uri>https://github.com/adi1090x</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[September 2021 Release Available]]></title>
+        <id>01-release-news</id>
+        <link href="https://wiki.archcraft.io/tr/news/01-release-news"/>
+        <updated>2021-09-25T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[<span]]></summary>
+        <author>
+            <name>Aditya Shakya</name>
+            <uri>https://github.com/adi1090x</uri>
+        </author>
+    </entry>
+</feed>
