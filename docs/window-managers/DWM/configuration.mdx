@@ -1,0 +1,45 @@
+# Configuration
+
+For Archcraft community members, Edit the page.
+
+<!-- Tabs -->
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<!-- Badges -->
+export const Highlight = ({children, color}) => (
+  <span
+    style={{
+      backgroundColor: color,
+      borderRadius: '4px',
+      color: '#fff',
+      padding: '0 0.2rem 0 0.2rem',
+    }}>
+    {children}
+  </span>
+);
+
+<!-- Add your stuff after this -->
+
+### Introduction
+
+DWM is configured by modifying its source code. When installed through the `archcraft-dwm` package, the source is copied to `/opt/dwm-source`.  
+In that directory, you can find the `config.def.h` C header file.  
+If you are not comfortable configuring it this way, DWM might not be the right choice for you.
+
+### Compiling
+
+After making changes, DWM needs to be recompiled. For this, run `sudo make clean` and `sudo make install`. Finally, restart DWM with **MOD+SHIFT+R**.  
+
+### Default Applications
+
+To configure the default applications (Terminal Emulator, Browser, etc.), you have two choices.  
+1. **Set them in `config.def.h` directly**  
+To set a default applications in `config.def.h` directly, find its definition and set its executable path and pass optional arguments.  
+For example, this line replaces Firefox with Google Chrome. The arguments `--enable-features=WebUIDarkMode` and `--force-dark-mode` force Chrome to always use a dark theme:
+```c
+static const char *webcmd[]             = { "/usr/bin/google-chrome-stable", "--enable-features=WebUIDarkMode", "--force-dark-mode", NULL  };
+```
+2. **Delegate to an external script**  
+By default, most keybindings delegate to scripts in `/usr/share/archcraft/dwm/`.  
+Making changes to these scripts does not require recompilation or a restart.

@@ -1,0 +1,34 @@
+---
+sidebar_position: 1
+---
+
+# Installation
+
+For Archcraft community members, Edit the page.
+
+<!-- Tabs -->
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<!-- Badges -->
+export const Highlight = ({children, color}) => (
+  <span
+    style={{
+      backgroundColor: color,
+      borderRadius: '4px',
+      color: '#fff',
+      padding: '0 0.2rem 0 0.2rem',
+    }}>
+    {children}
+  </span>
+);
+
+<!-- Add your stuff after this -->
+
+
+To install archcraft-dwm just run the following command `sudo pacman -S archcraft-dwm`
+
+> DWM is configured by modifying its source code.  If you are not comfortable configuring it this way, DWM might not be the right choice for you.
+
+Its source code is copied to `/opt/dwm-source`. See [Configuration](Configuration) for details.
+
