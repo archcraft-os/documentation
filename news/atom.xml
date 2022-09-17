@@ -2,11 +2,22 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wiki.archcraft.io/news</id>
     <title>Archcraft Blog</title>
-    <updated>2022-07-18T00:00:00.000Z</updated>
+    <updated>2022-09-16T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wiki.archcraft.io/news"/>
     <subtitle>Archcraft Blog</subtitle>
     <icon>https://wiki.archcraft.io/img/favicon.svg</icon>
+    <entry>
+        <title type="html"><![CDATA[September 2022 Release Available]]></title>
+        <id>10-release-news</id>
+        <link href="https://wiki.archcraft.io/news/10-release-news"/>
+        <updated>2022-09-16T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Just a regular ISO update]]></summary>
+        <author>
+            <name>Aditya Shakya</name>
+            <uri>https://github.com/adi1090x</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[July 2022 Release Available]]></title>
         <id>09-release-news</id>
