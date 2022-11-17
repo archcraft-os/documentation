@@ -3,18 +3,18 @@ sidebar_position: 2
 hide_table_of_contents: true
 ---
 
-# Boot Archcraft with GRUB
+# Boot Archcraft com GRUB
 
-If you already have **Linux** installed on your system and want to try Archcraft without making a bootable USB drive, you can do so with the GRUB2 bootloader.
-Follow the steps below to boot Archcraft ISO with GRUB2 :
+Se você já tem o **Linux** instalado em seu sistema e deseja experimentar o Archcraft sem criar uma unidade USB bootavel, pode fazer isso com o gerenciador de inicialização GRUB2.
+Siga as etapas abaixo para inicializar a ISO Archcraft com GRUB2 :
 
-- Open terminal and edit **/etc/grub.d/40_custom** with your favorite text editor.
+- Abra o terminal e edite **/etc/grub.d/40_custom** com seu editor de texto favorito.
 
 ```bash
 $ sudo vim /etc/grub.d/40_custom
 ```
 
-- Add the following entry in the file, replace **(hd0,X)** with your root partition, e.g. (hd0,2) and **/path/to/archcraft.iso** with your Archcraft ISO path.
+- Adicione o seguinte trecho no arquivo, substitua **(hd0,X)** pela sua partição raiz, por exemplo (hd0,2) e **/path/to/archcraft.iso** com o caminho da sua ISO Archcraft.
 
 ```bash
 menuentry "Archcraft Live ISO" --class archcraft {
@@ -30,14 +30,14 @@ menuentry "Archcraft Live ISO" --class archcraft {
 }
 ```
 
-- Save the file and update **grub.cfg**, the GRUB configuration file.
+- Salve o arquivo e atualize **grub.cfg**, o arquivo de configuração do GRUB.
 
 ```bash
 # On Arch Linux
 $ sudo grub-mkconfig -o /boot/grub/grub.cfg
-						
-# On Ubuntu & its derivatives
+
+# No Ubuntu & seus derivados
 $ sudo update-grub
 ```
 
-- After updating the config file, Reboot the system and boot into Archcraft Live. Try it out, or maybe install it on a USB or SDcard.
+- Depois de atualizar o arquivo de configuração, reinicie o sistema e inicialize-o como Archcraft Live. Experimente ou talvez instale-o em um USB ou cartão SD
