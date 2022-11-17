@@ -3,28 +3,28 @@
     "message": "Archcraft"
   },
   "Yet another minimal Linux distribution, based on Arch Linux.": {
-    "message": "Yet another minimal Linux distribution, based on Arch Linux."
+    "message": "Mais uma distribuição linux minima, baseada no Arch Linux."
   },
   "Welcome to Archcraft Wiki": {
-    "message": "Welcome to Archcraft Wiki"
+    "message": "Bem-vindo a Wiki do Archcraft"
   },
   "Minimal": {
-    "message": "Minimal"
+    "message": "Mínima"
   },
   "Archcraft is very minimal and lightweight. It can run under 500Mb of memory as It only uses window managers and lightweight applications.": {
-    "message": "Archcraft is very minimal and lightweight. It can run under 500Mb of memory as It only uses window managers and lightweight applications."
+    "message": "O Archcraft é muito leve e minimalista. Pode rodar com menos de 500Mb de memória, pois só utiliza gerenciadores de janelas e aplicações leves."
   },
   "Stunning": {
-    "message": "Stunning"
+    "message": "Impressionante"
   },
   "Flat and pastel colors, the consistency among all the UI elements, And various themes make Archcraft look very clean, minimal and Stunning.": {
-    "message": "Flat and pastel colors, the consistency among all the UI elements, And various themes make Archcraft look very clean, minimal and Stunning."
+    "message": "Cores planas e pastéis, consistência entre todos os elementos da UI e vários temas fazem o Archcraft parecer muito limpo, minimalista e impressionante."
   },
   "Powerful": {
-    "message": "Powerful"
+    "message": "Poderoso"
   },
   "With built-in support for AUR, Chaotic AUR and being lightweight, Archcraft gives you the power to do whatever you want on your Linux PC.": {
-    "message": "With built-in support for AUR, Chaotic AUR and being lightweight, Archcraft gives you the power to do whatever you want on your Linux PC."
+    "message": "Tendo suporte integrado para AUR, Chaotic-AUR e sendo leve, o Archcraft te da o poder de fazer o que você quiser em seu PC Linux."
   },
   "theme.NotFound.title": {
     "message": "Página não encontrada",
@@ -35,7 +35,7 @@
     "description": "The first paragraph of the 404 page"
   },
   "theme.NotFound.p2": {
-    "message": "Entre em contato com o proprietário do site que lhe trouxe para cá e lhe informe que o link está quebrado.",
+    "message": "Entre em contato com o proprietário do site que te trouxe até aqui e lhe informe que o link está quebrado.",
     "description": "The 2nd paragraph of the 404 page"
   },
   "theme.AnnouncementBar.closeButtonAriaLabel": {
@@ -43,23 +43,23 @@
     "description": "The ARIA label for close button of announcement bar"
   },
   "theme.blog.archive.title": {
-    "message": "Archive",
+    "message": "Arquivo",
     "description": "The page & hero title of the blog archive page"
   },
   "theme.blog.archive.description": {
-    "message": "Archive",
+    "message": "Arquivo",
     "description": "The page & hero description of the blog archive page"
   },
   "theme.blog.paginator.navAriaLabel": {
-    "message": "Navegação da página de listagem do blog",
+    "message": "Paginação da lista de postagens do blog",
     "description": "The ARIA label for the blog pagination"
   },
   "theme.blog.paginator.newerEntries": {
-    "message": "Conteúdo mais novo",
+    "message": "Postagens mais recentes",
     "description": "The label used to navigate to the newer blog posts page (previous page)"
   },
   "theme.blog.paginator.olderEntries": {
-    "message": "Conteúdo mais antigo",
+    "message": "Postagens anteriores",
     "description": "The label used to navigate to the older blog posts page (next page)"
   },
   "theme.blog.post.readingTime.plurals": {
@@ -75,7 +75,7 @@
     "description": "The ARIA label for the blog posts pagination"
   },
   "theme.blog.post.paginator.newerPost": {
-    "message": "Postagem mais nova",
+    "message": "Postagem mais recente",
     "description": "The blog post button label to navigate to the newer/previous post"
   },
   "theme.blog.post.paginator.olderPost": {
@@ -83,7 +83,7 @@
     "description": "The blog post button label to navigate to the older/next post"
   },
   "theme.blog.sidebar.navAriaLabel": {
-    "message": "Blog recent posts navigation",
+    "message": "Postagem mais recente",
     "description": "The ARIA label for recent posts in the blog sidebar"
   },
   "theme.blog.post.plurals": {
@@ -95,7 +95,7 @@
     "description": "The title of the page for a blog tag"
   },
   "theme.tags.tagsPageLink": {
-    "message": "Ver todas os Marcadores",
+    "message": "Ver todos os Marcadores",
     "description": "The label of the link targeting the tag list page"
   },
   "theme.CodeBlock.copyButtonAriaLabel": {
@@ -119,7 +119,7 @@
     "description": "The ARIA label and title attribute for expand button of doc sidebar"
   },
   "theme.docs.paginator.navAriaLabel": {
-    "message": "Navigação das páginas de documentação",
+    "message": "Navegação das páginas da documentação",
     "description": "The ARIA label for the docs pagination"
   },
   "theme.docs.paginator.previous": {
@@ -139,11 +139,11 @@
     "description": "The title attribute for collapse button of doc sidebar"
   },
   "theme.docs.tagDocListPageTitle.nDocsTagged": {
-    "message": "One doc tagged|{count} docs tagged",
+    "message": "Um documento marcado|{count} documentos marcados",
     "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.docs.tagDocListPageTitle": {
-    "message": "{nDocsTagged} with \"{tagName}\"",
+    "message": "{nDocsTagged} com \"{tagName}\"",
     "description": "The title of the page for a docs tag"
   },
   "theme.docs.versions.unreleasedVersionLabel": {
@@ -183,19 +183,19 @@
     "description": "The sentence used to display when a page has been last updated, and by who"
   },
   "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
-    "message": "← Back to main menu",
+    "message": "← Voltar ao menu principal",
     "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
   },
   "theme.navbar.mobileVersionsDropdown.label": {
-    "message": "Versions",
+    "message": "Versões",
     "description": "The label for the navbar versions dropdown on mobile view"
   },
   "theme.common.skipToMainContent": {
-    "message": "Pular para o conteúdo principal",
+    "message": "Ir para o conteúdo principal",
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
   },
   "theme.TOCCollapsible.toggleButtonLabel": {
-    "message": "On this page",
+    "message": "Nesta página",
     "description": "The label used by the button on the collapsible TOC component"
   },
   "theme.tags.tagsListLabel": {
@@ -211,7 +211,7 @@
     "description": "The search page title for non-empty query"
   },
   "theme.SearchPage.emptyResultsTitle": {
-    "message": "Busca da documentação",
+    "message": "Buscar na documentação",
     "description": "The search page title for empty query"
   },
   "theme.SearchPage.inputPlaceholder": {
@@ -223,7 +223,7 @@
     "description": "The ARIA label for search page input"
   },
   "theme.SearchPage.algoliaLabel": {
-    "message": "Busca feita por Algolia",
+    "message": "Buscar por Algolia",
     "description": "The ARIA label for Algolia mention"
   },
   "theme.SearchPage.noResultsText": {
