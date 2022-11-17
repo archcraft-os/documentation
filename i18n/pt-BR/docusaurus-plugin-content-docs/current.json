@@ -8,7 +8,7 @@
     "description": "The label for category Boot Archcraft in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Install Archcraft": {
-    "message": "Install Archcraft",
+    "message": "Instalar Archcraft",
     "description": "The label for category Install Archcraft in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Window Managers": {
@@ -20,7 +20,7 @@
     "description": "The label for category Desktop Environment in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Contribution": {
-    "message": "Contribution",
+    "message": "Contribuição",
     "description": "The label for category Contribution in sidebar tutorialSidebar"
   }
 }
