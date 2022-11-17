@@ -18,7 +18,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
   // Translation
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'fr', 'pl', 'tr'],
+    locales: ['en', 'fr', 'pl', 'tr', 'pt-BR'],
     localeConfigs: {
       en: {
         label: 'English',
@@ -34,6 +34,10 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
       },
       tr: {
         label: 'Türkçe',
+        direction: 'ltr',
+      },
+      'pt-BR': {
+        label: 'Português(Brasil)',
         direction: 'ltr',
       }
     },
