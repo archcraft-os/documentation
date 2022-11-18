@@ -2,21 +2,21 @@
 sidebar_position: 4
 ---
 
-# Translate Wiki
+# Traduzir a Wiki
 
-Follow this guide if you want to translate the Archcraft Wiki...
+Siga este guia se você quiser traduzir a Wiki do Archcraft...
 
-## Prerequisite
+## Prerrequisitos
 
-- [Setup](setup-env.mdx) the local development environment, If you want to work locally. 
-- You should have the basic understanding of the syntax of [Markdown](https://www.markdownguide.org/cheat-sheet) and [MDX](https://mdxjs.com). See [Docusaurus Markdown Features](https://docusaurus.io/docs/markdown-features).
-- You, at least know how to *fork*, *clone* a repository and create a *pull request*.
+- [configurar](setup-env.mdx) o ambiente de desenvolvimento local, se você quer trabalhar localmente. 
+- Você deve ter o entendimento básico da sintaxe de [Markdown](https://www.markdownguide.org/cheat-sheet) e [MDX](https://mdxjs.com). Veja [Docusaurus Markdown Features](https://docusaurus.io/docs/markdown-features).
+- Você deve saber, pelo menos, como criar um *fork*, *clonar* um repositório e criar um *pull request*.
 
-## Configuration
+## Configuração
 
-Edit the `docusaurus.config.js` file and add the correct **[i18n locale](https://www.npmjs.com/package/i18n-iso-countries)**
+Edite o arquivo `docusaurus.config.js` e adicione o **[local i18n](https://www.npmjs.com/package/i18n-iso-countries)** correto
 
-For Ex : If you want to translate to *Russian*, Add <kbd>ru</kbd> in `locales:` section -
+Por Ex: Se você quiser traduzir para *Russo*, Adicione <kbd>ru</kbd> na seção `locales:` -
 ```jsx {4-8}
   // Translation
   i18n: {
@@ -29,21 +29,21 @@ For Ex : If you want to translate to *Russian*, Add <kbd>ru</kbd> in `locales:` 
   },
 ```
 
-## Translate
+## Traduzir
 
-Open the terminal (in the root directory of the website) and...
+Abra o terminal (no diretório raiz do site) e...
 
-- Create the directory for locale inside `i18n`.
+- Crie o diretório para fazer a localização dentro de `i18n`.
 ```bash
 $ mkdir -p i18n/ru
 ```
 
-- Run the write-translations command:
+- Execute o comando write-translations:
 ```bash
 $ yarn run write-translations -- --locale ru
 ```
 
-- Copy the original doc files inside the translation directories:
+- Copie os arquivos e documentos originais dentro dos diretórios de tradução:
 ```bash
 $ mkdir -p i18n/ru/docusaurus-plugin-content-docs/current
 $ cp -r blog/* i18n/ru/docusaurus-plugin-content-blog
@@ -51,17 +51,19 @@ $ cp -r news/* i18n/ru/docusaurus-plugin-content-blog-news
 $ cp -r docs/* i18n/ru/docusaurus-plugin-content-docs/current
 ```
 
-- Start your localized site in dev mode, using the locale of your choice, Your site is accessible at `http://localhost:3000/ru`
+- Inicie seu site localizado no modo dev, usando a localidade de sua escolha. Seu site estará acessível em `http://localhost:3000/ru`
 ```bash
 $ yarn run start -- --locale ru
 ```
 
-- Translate all the files inside `i18n/ru` directory. And when you're done, Create a pull request with your translations.
+- Traduza todos os arquivos dentro do diretório `i18n/ru`. E quando terminar, crie um pull request com suas traduções.
 
-> For more info, visit [Docusaurus:i18n](https://docusaurus.io/docs/i18n/tutorial)
+> Para mais informações, visite [Docusaurus:i18n](https://docusaurus.io/docs/i18n/tutorial)
 
-## Translators
+## Tradutores
 
-🇫🇷 The [French version](https://wiki.archcraft.io/fr/) is translated by [Arnae](https://www.github.com/Archenagechan).
+🇫🇷 A [versão francesa](https://wiki.archcraft.io/fr/) é traduzida por [Arnae](https://www.github.com/Archenagechan).
 
-🇵🇱 The [Polish version](https://wiki.archcraft.io/pl/) is translated by [Keyitdev](https://www.github.com/Keyitdev).
+🇵🇱 A [versão polonesa](https://wiki.archcraft.io/pl/) é traduzida por [Keyitdev](https://www.github.com/Keyitdev).
+
+🇧🇷 A [versão português(br)](https://wiki.archcraft.io/pt-BR/) é traduzida por [Gean](https://www.github.com/gean634n).

@@ -2,34 +2,35 @@
 sidebar_position: 3
 ---
 
-# Improve Wiki
+# Melhorar a Wiki
 
-Follow this guide if you want to add documentation in Archcraft Wiki...
+Siga este guia se quiser adicionar documentação na Wiki do Archcraft...
 
-## Prerequisite
+## Pré-requisitos
 
-- [Setup](setup-env.mdx) the local development environment, If you want to work locally. 
-- You should have the basic understanding of the syntax of [Markdown](https://www.markdownguide.org/cheat-sheet) and [MDX](https://mdxjs.com). See [Docusaurus Markdown Features](https://docusaurus.io/docs/markdown-features).
-- You, at least know how to *fork*, *clone* a repository and create a *pull request*.
+- [configurar](setup-env.mdx) o ambiente de desenvolvimento local, 
+se você quer trabalhar localmente. 
+- Você deve ter o entendimento básico da sintaxe de [Markdown](https://www.markdownguide.org/cheat-sheet) e [MDX](https://mdxjs.com). Veja [Docusaurus Markdown Features](https://docusaurus.io/docs/markdown-features).
+- Você deve saber, pelo menos, como criar um *fork*, *clonar* um repositório e criar um *pull request*.
 
-## Files and format
+## Arquivos e formato
 
-The **docs** directory has subdirectories (to categories documentations) which contains
-the `.md` and `.mdx` files for each wiki post and a `_category_.json` file for docs category.
+O diretório **docs** tem subdiretórios (para documentações de categorias) que contém
+os arquivos `.md` e `.mdx` para cada post wiki e um arquivo `_category_.json` para a categoria de documentos.
 
-- The `_category_.json` file is used to label and position (on sidebar) the category.
-- Here's the example of `Boot Archcraft` section of our wiki
+- O arquivo `_category_.json` é usado para rotular e posicionar (na barra lateral) a categoria.
+- Aqui está o exemplo da seção `Boot Archcraft` do nosso wiki
 ```
-docs 	# Main Directory
-└── boot-iso						# Doc Category
-   ├── _category_.json				# Category Properties
-   ├── boot-with-usb.mdx			# Wiki Page
-   └── boot-with-grub.mdx			# Another wiki page in same category
+docs 	# Diretório principal
+└── boot-iso						# Categoria do documento
+   ├── _category_.json				# Propriedades da categoria
+   ├── boot-with-usb.mdx			# Pagina da Wiki
+   └── boot-with-grub.mdx			# Outra página da Wiki na mesma categoria
 ```
 
-## Front matter
+## Conteúdo inicial
 
-In `front matter`, You can specify the position of doc in category, etc.
+No `Conteúdo inicial`, você pode especificar a posição do doc na categoria, etc.
 ```yml {2}
 ---
 sidebar_position: 1
@@ -37,4 +38,4 @@ hide_table_of_contents: true
 ---
 ```
 
-> For more info, visit [Docusaurus:Docs](https://docusaurus.io/docs/docs-introduction)
+> Para mais informações, visite [Docusaurus:Docs](https://docusaurus.io/docs/docs-introduction)

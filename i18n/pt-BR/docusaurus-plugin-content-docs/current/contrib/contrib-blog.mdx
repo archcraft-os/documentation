@@ -2,63 +2,63 @@
 sidebar_position: 2
 ---
 
-# Write Tutorials
+# Escreva Tutoriais
 
-Follow this guide if you want to write tutorials for Archcraft...
+Siga este guia se você quiser escrever tutoriais para o Archcraft...
 
-## Prerequisite
+## Pré-requisitos
 
-- [Setup](setup-env.mdx) the local development environment, If you want to work locally. 
-- You should have the basic understanding of the syntax of [Markdown](https://www.markdownguide.org/cheat-sheet) and [MDX](https://mdxjs.com). See [Docusaurus Markdown Features](https://docusaurus.io/docs/markdown-features).
-- You, at least know how to *fork*, *clone* a repository and create a *pull request*.
+- [configurar](setup-env.mdx) o ambiente de desenvolvimento local, se você quer trabalhar localmente. 
+- Você deve ter o entendimento básico da sintaxe de [Markdown](https://www.markdownguide.org/cheat-sheet) e [MDX](https://mdxjs.com). Veja [Docusaurus Markdown Features](https://docusaurus.io/docs/markdown-features).
+- Você deve saber, pelo menos, como criar um *fork*, *clonar* um repositório e criar um *pull request*.
 
-## Files and format
+## Arquivos e formato
 
-The **blog** directory contains all the `.md` and `.mdx` files for tutorials.
+O diretório **blog** contém todos os arquivos `.md` e `.mdx` para os tutoriais.
 
-- To add a new tutorial, just create a new file with the correct format.
-- The Format is important here, The format structure is :
+- Para adicionar um novo tutorial, basta criar um novo arquivo com o formato correto.
+- O formato é importante aqui, a estrutura do formato é :
 ```
-YEAR 	# Directory
-├── month-date-post-NAME.mdx	# .md or .mdx file
-└── month-date					# Directory
-   ├── Images					# Directory
-   └── post-NAME.mdx			# .md or .mdx file
+YEAR 	# Pasta
+├── mês-data-post-NOME.mdx	# arquivo .md ou .mdx
+└── mês-data					# Pasta
+   ├── Images					# Pasta
+   └── post-NOME.mdx			# arquivo .md ou .mdx
 ```
 
-## Title and tags
+## Título e tags
 
-Add appropriate slug, title and tags in the `front matter` of the file you create.
+Adicione o slug, o título e as tags apropriados no `Conteúdo inicial` do arquivo que você criou.
 ```yml
 ---
-slug: NUM-post-NAME
-title: TITLE FOR THE POST
+slug: NUM-post-NOME
+title: TÍTULO DO POST
 authors: ID
 tags: [TAG1, TAG2]
 ---
 ```
 
-## Author
+## Autor
 
-Add your details in the file **`authors.yml`** and add your ID in the `front matter` of the file you created.
+Adicione seus dados no arquivo **`authors.yml`** e adicione seu ID no `início` do arquivo que você criou.
 
 `authors.yml`
 ```yml
 ...
 ID:
-  name: YOUR_NAME
-  title: ABOUT_YOU
+  name: SEU_NOME
+  title: SOBRE_VOCÊ
   url: https://github.com/USERNAME
   image_url: https://github.com/USERNAME.png
 ...
 ```
 
-`Front matter`
+`Conteúdo inicial`
 ```yml {3}
-slug: NUM-post-NAME
-title: TITLE FOR THE POST
+slug: NUM-post-NOME
+title: TÍTULO DO POST
 authors: ID
 tags: [TAG1, TAG2]
 ```
 
-> For more info, visit [Docusaurus:Blog](https://docusaurus.io/docs/blog)
+> Para mais informações, visite [Docusaurus:Blog](https://docusaurus.io/docs/blog)
