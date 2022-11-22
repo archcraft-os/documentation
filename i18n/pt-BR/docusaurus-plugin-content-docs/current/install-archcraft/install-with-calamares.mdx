@@ -2,118 +2,119 @@
 sidebar_position: 1
 ---
 
-# Install Archcraft With Calamares
+# Instalar Archcraft com Calamares
 
-This is a simple guide for beginners and linux newbies to install Archcraft on their system, without messing it up.
-In this guide, I'll be installing Archcraft on an UEFI system. But the process is the same if you are using BIOS.
-Follow the steps below to install Archcraft.
 
-I'm assuming that you have already created a [bootable USB](../boot-iso/boot-with-usb) with Archcraft ISO, boot system with it and
-select **Boot Archcraft**. Launch the installer via either welcome app or menu.
+Este é um guia simples para iniciantes e novatos no Linux para instalar o Archcraft em seu sistema, sem bagunçar tudo.
+Neste guia, instalarei o Archcraft em um sistema UEFI. Mas o processo é o mesmo se você estiver usando BIOS.
+Siga os passos abaixo para instalar o Archcraft.
 
-### Preparation
+Estou assumindo que você já criou um [USB bootavel](../boot-iso/boot-with-usb) com a ISO do Archcraft,inicialize o sistema com ele e selecione **Boot Archcraft**. Inicie o instalador por meio do aplicativo de boas-vindas ou do menu.
 
-On the welcome screen, Select the installer language and click on <kbd>Next</kbd>
+### Preparação
+
+Na tela de boas-vindas, selecione o idioma do instalador e clique em  <kbd>Next</kbd>
 
 ![img](./calamares/1.png)
 
-Select your **Region**, **Time Zone**, **System Locale** etc and click on <kbd>Next</kbd> `If you're connected to the internet, this will be adjusted automatically`
+Selecione sua **Região**, **Fuso horário**, **Localidade do sistema** etc e clique em <kbd>Avançar</kbd> `Se você estiver conectado à internet, isso será ajustado automaticamente`
 
 ![img](./calamares/2.png)
 
-Select your **Keyboard Layout** and click on <kbd>Next</kbd> `By default, the keyboard layout is automatically adjusted according to selected system locale`
+Selecione seu **Layout de teclado** e clique em <kbd>Avançar</kbd> `Por padrão, o layout do teclado é ajustado automaticamente de acordo com a localidade do sistema selecionado`
 
 ![img](./calamares/3.png)
 
-### Partitioning
+### Particionamento
 
-:::note
+:::note Nota
 
-**In this guide, All partitioning operations are performed on an empty disk.**
+**Neste guia, todas as operações de particionamento são executadas em um disco vazio.**
 
 :::
 
-Here comes the **scary** part where almost every Linux newbie messes things up.
-So, Be careful what you do here. It is recommended that you read and understand [Partition scheme](https://wiki.archlinux.org/title/Partitioning#Partition_scheme)
-before doing any partitioning on your system.
+Aí vem a parte **assustadora**, onde quase todo novato em Linux bagunça tudo.
+Então, cuidado com o que você faz aqui. É recomendado que você leia e entenda [Esquema de partição](https://wiki.archlinux.org/title/Partitioning#Partition_scheme)
+antes de fazer qualquer particionamento em seu sistema.
 
-If you're installing Archcraft on Virtualbox (*on a newly created virtual machine*), You can just select `Erase disk`
-But on real machine, that's not a great idea (*unless you decided to wipe your system completely*)
-On real hardware, It's better you choose `Manual Partitioning` and in this guide, we're going to do the same.
-Click on that radio button and click on <kbd>Next</kbd>
+Se você estiver instalando o Archcraft no Virtualbox (*em uma máquina virtual recém-criada*), basta selecionar `Apagar disco`
+Mas em uma máquina real, isso não é uma boa ideia (*a menos que você decida limpar seu sistema completamente*)
+Em um hardware real, é melhor você escolher `Particionamento manual` e neste guia faremos o mesmo.
+Clique nesse botão com essa opção e clique em <kbd>Avançar</kbd>
 
 ![img](./calamares/4.png)
 
-Here, You can see that the disk is completely empty (*But in your case you may see a bunch of partitions here*).
-Let's create a **Partition table** first. For UEFI, use `GPT` partition table and for BIOS, use `MBR`.
+Aqui, você pode ver que o disco está completamente vazio (*Mas, no seu caso, você pode ver várias partições aqui*).
+Primeiro vamos criar uma **Tabela de partição**. Para UEFI, use a tabela de partições `GPT` e para BIOS, use `MBR`.
 
-> *You don't need to create a partition table if your disk has partitions already, It's only for empty disks*.
+> *Você não precisa criar uma tabela de partição se o seu disco já tiver partições, é apenas para discos vazios*.
 
 ![img](./calamares/5.png)
 
-Partition table is created and you can see the `Free Space` on your disk. Now, Click on <kbd>Create</kbd> button to create partitions.
+A tabela de partição é criada e você pode ver o 'Espaço Livre' em seu disco. Agora, clique no botão <kbd>Criar</kbd> para criar partições.
 
 ![img](./calamares/6.png)
 
-For this installation, We are going to create three partition :
+Para esta instalação, vamos criar três partições :
 - `boot` : /boot/efi
 - `root` : /
 - `home` : /home
 
-Additionally, you can (*You Should*) also setup a separate **swap** partition, I'm skipping that here.
+Além disso, você também pode (*deve*) configurar uma partição **swap** separada, estou pulando essa etapa aqui.
 
-On **UEFI systems**, a separate partition is needed to boot the system. If you're on BIOS, You can skip creating a separate `boot` partition.
+Em **sistemas UEFI**, é necessária uma partição separada para inicializar o sistema. Se você estiver no BIOS, pode pular a criação de uma partição `boot` separada.
 
-:::danger
+:::danger Perigo
 
-Your system may already have an **EFI** partition. In that case **`DO NOT FORMAT IT`** or you won't be able to boot into other installed OS (Let's say windows)<br/>
-Just mount the EFI partition to `/boot/efi` 
-
-:::
-
-:::caution
-
-Make sure your EFI partition has at least `100MB of free storage`, or the installation will fail.
+Seu sistema pode já ter uma partição **EFI**. Nesse caso **`NÃO FORMATE`** ou você não conseguirá inicializar em outro SO instalado (digamos, Windows)<br/>
+Basta montar a partição EFI em `/boot/efi`
 
 :::
 
-Since in our case, the disk is empty, Let's make an EFI partition. As you can see, I've created a `300MB` partition with **fat32** file system
-and mounted it to `/boot/efi` and set the **boot** flag.
+:::caution Cuidado
+
+Certifique-se de que sua partição EFI tenha pelo menos `100 MB de armazenamento livre` ou a instalação falhará.
+
+:::
+
+Como no nosso caso o disco está vazio, vamos criar uma partição EFI. Como você pode ver, criei uma partição `300MB` com o sistema de arquivos **fat32**,
+montei em `/boot/efi` e defini o sinalizador **boot**.
 
 ![img](./calamares/7.png)
 
-Now create a `root` partition. Again, Select `Free Space` and Click on <kbd>Create</kbd>.
-Select the size of your root partition (*make sure it's at least 10GB in size*), file system (*If you don't care, go with **ext4** fs*).
-Mount it to `/` and set the flag to **root**, Optionally you can also set the **label** for the file system and if you want to use **Encryption**, Check the `Encrypt` box and set up a password.
+
+Agora crie uma partição `root`. Novamente, selecione `Free Space` e clique em <kbd>Criar</kbd>.
+Selecione o tamanho da partição raiz (*certifique-se de que ela tenha pelo menos 10 GB*), sistema de arquivos (*se não se importar, escolha o sistema de arquivos **ext4** *).
+Monte-a em `/` e defina o sinalizador como **root**, Opcionalmente, você também pode definir o **label** para o sistema de arquivos e, se quiser usar **Criptografia**, marque a caixa `Encrypt` e configure uma senha.
 
 ![img](./calamares/8.png)
 
-And at last, create a `home` partition and mount that to `/home`.
+E, finalmente, crie uma partição `home` e monte-a em `/home`.
 
 ![img](./calamares/9.png)
 
-Here's how our partitions look for this installation. When you sure everything is okay, Click on <kbd>Next</kbd>
+Veja como nossas partições ficaram para esta instalação. Quando tiver certeza de que está tudo bem, clique em <kbd>Avançar</kbd>
 
 ![img](./calamares/10.png)
 
-### Finalization
+### Finalização
 
-Create an `user account` for you, this is a simple form, fill it up and click on <kbd>Next</kbd>
+Crie uma `conta de usuário` para você, este é um formulário simples, preencha-o e clique em <kbd>Avançar</kbd>
 
 ![img](./calamares/11.png)
 
-Here's the summary for this installation, Whatever changes you have made and what the installer is going to do now.
-Have a look at that and when you're satisfied, click on <kbd>Next</kbd> to being the **`Installation`**
+Aqui está o resumo desta instalação, contendo quaisquer alterações que você tenha feito e o que o instalador fará agora.
+Dê uma olhada nisso e quando estiver satisfeito, clique em <kbd>Avançar</kbd> para fazer a **`Instalação`**
 
 ![img](./calamares/12.png)
 
-Now, The actual installation begins, It'll take a few minutes so in the meantime you can stare at the slides or...
-I don't know, go get a coffee or something.
+Agora, a instalação propriamente dita começa. Levará alguns minutos, então, enquanto isso, você pode olhar os slides ou...
+Não sei, vá tomar um café ou algo assim.
 
 ![img](./calamares/13.png)
 
-When it's done, Check that `Reboot now` box to reboot the system instantly.
+Quando terminar, marque a caixa `Reiniciar agora` para reiniciar o sistema instantaneamente.
 
 ![img](./calamares/14.png)
 
-**Well, That’s it! Archcraft is installed on your system. Enjoy!**
+**Bem, é isso! O Archcraft está instalado em seu sistema. Divertir-se!**
