@@ -2,21 +2,22 @@
 sidebar_position: 3
 ---
 
-# Post Installation
+# Pós-instalação
 
-After installing Archcraft, there are few things you should do...
+Depois de instalar o Archcraft, há algumas coisas que você deve fazer...
 
-### Black Screen After Install / Liveboot
-If you get a black screen after booting the installed ISO or the live ISO, It maybe because of compositor. In that case, to solve this issue :
-- Login to a tty by pressing `ctrl+alt+f2/f3...`
-- Edit the `~/.config/picom.conf` file and use `glx` as backend.
-- If that does not work, Uninstall the compositor `picom-ibhagwan-git`
+### Tela preta após a instalação / Liveboot
+
+Se você tiver uma tela preta após inicializar o ISO instalado ou a ISO do liveUSB, talvez seja por causa do compositor. Nesse caso, para resolver este problema:
+- Entre em um tty pressionando `ctrl+alt+f2/f3...`
+- Edite o arquivo `~/.config/picom.conf` e use `glx` como backend.
+- Se isso não funcionar, desinstale o compositor `picom-ibhagwan-git`
 ```bash
 $ sudo pacman -Rsn picom-ibhagwan-git
 ```
 
-### Update System
-Refresh package database and Update your new installation.
+### Atualize o Sistema
+Atualize o banco de dados de pacotes e atualize sua nova instalação.
 ```bash
 $ sudo pacman -Syyu
 ```
@@ -28,80 +29,80 @@ $ sudo pacman -S archlinux-keyring
 $ sudo pacman-key --populate
 ```
 
-### Install New Softwares
-Install your favorite programs with pacman or yay (AUR).
+### Instalar Novos Softwares
+Instale seus programas favoritos com pacman ou yay (AUR).
 
 ```bash
 $ sudo pacman -S gimp inkscape
 
-# Or from AUR
+# Ou utilizando AUR
 
 $ yay -S spotify		
 ```
 
-### Fix Screen Tearing
-If you're facing screen tearing issue then :
+### Consertar Tearing na tela
+Se você está enfrentando problemas tearing de tela, então :
 
-1. Enable `GLX` backend for compositor. If you're using `openbox` then right click on the desktop and 
-go to **Preferences > Compositor** and click on `Use 'glx' backend` or you can edit `~/.config/picom.conf` file manually.
+1. Habilite o back-end `GLX` para o compositor. Se você estiver usando `openbox`, clique com o botão direito na área de trabalho e
+va para **Preferences > Compositor** e clique em `Use 'glx' backend` ou você pode editar o arquivo `~/.config/picom.conf` manualmente.
 
-1. If first option does not work for you, Create a `xorg.conf` file like this :
+1. Se a primeira opção não funcionar para você, crie um arquivo `xorg.conf` como este :
 
 ```bash
-# Change to xorg.conf.d dir
+# Mude para o diretório xorg.conf.d
 $ cd /etc/X11/xorg.conf.d
 
-# Create a conf file
+# Criar um arquivo conf
 $ sudo touch 20-amdgpu.conf
 
-# Edit the file
+# Edite o arquivo
 $ sudo vim 20-amdgpu.conf
 
-# Paste this in the editor
+# Cole isso no editor
 Section "Device"
      Identifier "AMD"
      Driver "amdgpu"
      Option "TearFree" "true"
 EndSection						
 ```
-:::danger
+:::danger perigo
 
-This method may not work on your system and you might not be able to boot into **xorg**. So make sure you know how to use **tty** or boot into **recovery mode** to revert the changes you made.
+Este método pode não funcionar em seu sistema e você pode não conseguir inicializar no **xorg**. Portanto, certifique-se de saber como usar **tty** ou inicializar no **modo de recuperação** para reverter as alterações feitas.
 
 :::
 
-### Enable Suspend Service
-Enable betterlockscreen's suspend service for your user account.
+### Ativar suspensão de tela
+Habilite o serviço de suspensão betterlockscreen para sua conta de usuário.
 
 ```bash
-# Enable betterlockscreen suspend service
+# Habilite o serviço de suspensão betterlockscreen
 
 $ sudo systemctl enable betterlockscreen@$USER.service						
 ```
 
-### Fix Lock Screen Background
-Fix lock screen layout on hidpi or low resolution displays.
+### Corrigir fundo da tela de bloqueio
+Corrija o layout da tela de bloqueio em telas hidpi ou de baixa resolução.
 
 ```bash
-# Update the lockscreen wallpaper
+# Atualize o papel de parede da tela de bloqueio
 
 $ betterlockscreen -u /usr/share/backgrounds/groot.jpg
 ```
 
-### Remove Unnecessary Modules From Initrd
-Let's say you've installed Archcraft (with `ABIF`) on a machine which has an Intel GPU. In this case you only need **`i915`** module. Delete other modules from the array and rebuild initrd.
+### Remover Módulos Desnecessários do Initrd
+Digamos que você instalou o Archcraft (com `ABIF`) em uma máquina que possui uma GPU Intel. Neste caso você só precisa do módulo **`i915`**. Exclua outros módulos da matriz e reconstrua o initrd.
 
 ```bash
-# Edit mkinitcpio.conf file
+# Edite o arquivo mkinitcpio.conf
 $ sudo vim /etc/mkinitcpio.conf
 
-# Change line 7 from
+# Mude a linha 7 de
 MODULES=(i915? amdgpu? radeon? nouveau? vboxvideo? vmwgfx?)
-# To
+# para
 MODULES=(i915)
 
-# Save file and rebuild initrd
+# Salve o arquivo e reconstrua o initrd
 $ sudo mkinitcpio -p linux						
 ```
 
-Well, that's pretty much everything for now, go ahead and enjoy Archcraft.
+Bem, isso é tudo por enquanto, vá em frente e aproveite o Archcraft.
