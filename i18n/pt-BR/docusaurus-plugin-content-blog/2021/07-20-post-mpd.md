@@ -1,14 +1,14 @@
 ---
 slug: 01-post-mpd
-title: Add my music in mpd
+title: Adicionar minha música ao mpd
 authors: adi1090x
 tags: [howto, mpd, ncmpcpp, polybar]
 ---
 
-To add your favorite music in `mpd`, (*assuming your songs are stored in `~/Music` directory*) follow the steps below :
+Para adicionar sua música favorita em `mpd`, (*assumindo que suas músicas estão armazenadas no diretório `~/Music`*) Siga os passos abaixo :
 
-- Open a terminal and run **ncmpcpp**
+- Abra um terminal e execute **ncmpcpp**
 <!--truncate-->
-- In `ncmpcpp`, press <kbd>2</kbd> to open **song browser**
-- In browser tab, press <kbd>u</kbd> to update the **music database**
-- Select your songs and press <kbd>SPACE</kbd> to add the songs in your **current playlist**
+- Em `ncmpcpp`, pressione <kbd>2</kbd> para abrir o **navegador de músicas**
+- Nesta guia do navegador, pressione <kbd>u</kbd> para atualizar o **banco de dados de música**
+- Selecione suas músicas e pressione <kbd>ESPAÇO</kbd> para adicioná-las à sua **lista de reprodução atual**
