@@ -1,0 +1,41 @@
+---
+sidebar_position: 3
+---
+
+# Melhorar a Wiki
+
+Siga este guia se quiser adicionar documentação na Wiki do Archcraft...
+
+## Pré-requisitos
+
+- [configurar](setup-env.mdx) o ambiente de desenvolvimento local, 
+se você quer trabalhar localmente. 
+- Você deve ter o entendimento básico da sintaxe de [Markdown](https://www.markdownguide.org/cheat-sheet) e [MDX](https://mdxjs.com). Veja [Docusaurus Markdown Features](https://docusaurus.io/docs/markdown-features).
+- Você deve saber, pelo menos, como criar um *fork*, *clonar* um repositório e criar um *pull request*.
+
+## Arquivos e formato
+
+O diretório **docs** tem subdiretórios (para documentações de categorias) que contém
+os arquivos `.md` e `.mdx` para cada post wiki e um arquivo `_category_.json` para a categoria de documentos.
+
+- O arquivo `_category_.json` é usado para rotular e posicionar (na barra lateral) a categoria.
+- Aqui está o exemplo da seção `Boot Archcraft` do nosso wiki
+```
+docs 	# Diretório principal
+└── boot-iso						# Categoria do documento
+   ├── _category_.json				# Propriedades da categoria
+   ├── boot-with-usb.mdx			# Pagina da Wiki
+   └── boot-with-grub.mdx			# Outra página da Wiki na mesma categoria
+```
+
+## Conteúdo inicial
+
+No `Conteúdo inicial`, você pode especificar a posição do doc na categoria, etc.
+```yml {2}
+---
+sidebar_position: 1
+hide_table_of_contents: true
+---
+```
+
+> Para mais informações, visite [Docusaurus:Docs](https://docusaurus.io/docs/docs-introduction)

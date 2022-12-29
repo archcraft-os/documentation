@@ -1,0 +1,108 @@
+---
+sidebar_position: 3
+---
+
+# Pós-instalação
+
+Depois de instalar o Archcraft, há algumas coisas que você deve fazer...
+
+### Tela preta após a instalação / Liveboot
+
+Se você tiver uma tela preta após inicializar o ISO instalado ou a ISO do liveUSB, talvez seja por causa do compositor. Nesse caso, para resolver este problema:
+- Entre em um tty pressionando `ctrl+alt+f2/f3...`
+- Edite o arquivo `~/.config/picom.conf` e use `glx` como backend.
+- Se isso não funcionar, desinstale o compositor `picom-ibhagwan-git`
+```bash
+$ sudo pacman -Rsn picom-ibhagwan-git
+```
+
+### Atualize o Sistema
+Atualize o banco de dados de pacotes e atualize sua nova instalação.
+```bash
+$ sudo pacman -Syyu
+```
+
+If you get `invalid or corrupted package (PGP signature)` error, do...
+
+```bash
+$ sudo pacman -S archlinux-keyring
+$ sudo pacman-key --populate
+```
+
+### Instalar Novos Softwares
+Instale seus programas favoritos com pacman ou yay (AUR).
+
+```bash
+$ sudo pacman -S gimp inkscape
+
+# Ou utilizando AUR
+
+$ yay -S spotify		
+```
+
+### Consertar Tearing na tela
+Se você está enfrentando problemas tearing de tela, então :
+
+1. Habilite o back-end `GLX` para o compositor. Se você estiver usando `openbox`, clique com o botão direito na área de trabalho e
+va para **Preferences > Compositor** e clique em `Use 'glx' backend` ou você pode editar o arquivo `~/.config/picom.conf` manualmente.
+
+1. Se a primeira opção não funcionar para você, crie um arquivo `xorg.conf` como este :
+
+```bash
+# Mude para o diretório xorg.conf.d
+$ cd /etc/X11/xorg.conf.d
+
+# Criar um arquivo conf
+$ sudo touch 20-amdgpu.conf
+
+# Edite o arquivo
+$ sudo vim 20-amdgpu.conf
+
+# Cole isso no editor
+Section "Device"
+     Identifier "AMD"
+     Driver "amdgpu"
+     Option "TearFree" "true"
+EndSection						
+```
+:::danger perigo
+
+Este método pode não funcionar em seu sistema e você pode não conseguir inicializar no **xorg**. Portanto, certifique-se de saber como usar **tty** ou inicializar no **modo de recuperação** para reverter as alterações feitas.
+
+:::
+
+### Ativar suspensão de tela
+Habilite o serviço de suspensão betterlockscreen para sua conta de usuário.
+
+```bash
+# Habilite o serviço de suspensão betterlockscreen
+
+$ sudo systemctl enable betterlockscreen@$USER.service						
+```
+
+### Corrigir fundo da tela de bloqueio
+Corrija o layout da tela de bloqueio em telas hidpi ou de baixa resolução.
+
+```bash
+# Atualize o papel de parede da tela de bloqueio
+
+$ betterlockscreen -u /usr/share/backgrounds/groot.jpg
+```
+
+### Remover Módulos Desnecessários do Initrd
+Digamos que você instalou o Archcraft (com `ABIF`) em uma máquina que possui uma GPU Intel. Neste caso você só precisa do módulo **`i915`**. Exclua outros módulos da matriz e reconstrua o initrd.
+
+```bash
+# Edite o arquivo mkinitcpio.conf
+$ sudo vim /etc/mkinitcpio.conf
+
+# Mude a linha 7 de
+MODULES=(i915? amdgpu? radeon? nouveau? vboxvideo? vmwgfx?)
+# para
+MODULES=(i915)
+
+# Salve o arquivo e reconstrua o initrd
+$ sudo mkinitcpio -p linux						
+```
+
+Bem, isso é tudo por enquanto, vá em frente e aproveite o Archcraft.

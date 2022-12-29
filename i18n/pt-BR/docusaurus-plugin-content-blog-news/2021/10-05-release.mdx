@@ -1,0 +1,24 @@
+---
+slug: 03-release-news
+title: October 2021 Release Available
+authors: adi1090x
+tags: [v21.10, release, iso]
+---
+
+**A nova ISO do Archcraft já está disponível para download.**
+
+Muitos usuários enfrentaram problemas com a versão de setembro, devido ao bug no instalador.
+No entanto, não foi um grande problema e pode ser corrigido facilmente, mas há pessoas que são completamente novas no Linux em geral.
+Portanto, este lançamento pertence a eles. Esta versão corrige todos os problemas da versão anterior.
+
+<!--truncate-->
+
+### Changelog
+
+**`Bug Fix Release for v21.09`**
+- Fixed `drivers getting removed via installer` bug (backlight, external monitor issues)
+- Removed support for `flatpak` as it caused issue with thunar and plank (and other gtk applications)
+- Removed support for `snaps` (Arch community really hated it)
+- Replaced `lightdm` with **`sddm`**, as webkit2-greeter was causing issues on older machines
+- Improved `openbox`, `bspwm`, `polybar` and other stuff
+- And... I learned that I don't ~~need to~~ have to add everything people suggest

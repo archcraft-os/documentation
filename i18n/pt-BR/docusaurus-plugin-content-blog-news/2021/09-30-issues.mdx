@@ -1,0 +1,77 @@
+---
+slug: 02-issue-news
+title: Problemas da Versão de setembro de 2021
+authors: adi1090x
+tags: [bug, issues, iso]
+---
+
+export const Highlight = ({children, color}) => (
+  <span
+    style={{
+      backgroundColor: color,
+      borderRadius: '4px',
+      color: '#fff',
+      padding: '0 0.2rem 0 0.2rem',
+    }}>
+    {children}
+  </span>
+);
+
+## Verão
+
+Devido a um <Highlight color="#E06B74">bug</Highlight> nos scripts do instalador, os usuários estão enfrentando alguns problemas na ISO de setembro.
+O suporte para <Highlight color="#55B6C2">flatpak</Highlight> causava problemas com aplicativos gtk, como **thunar** e **plank**.
+
+<!--truncate-->
+
+## Problemas
+1. Não é possível ajustar o brilho da tela
+1. Abrir o Thunar e o plank leva muito tempo
+1. Saudação Lightdm trava/atrasa/mostra erro
+
+## Soluções
+
+Você pode tentar esses métodos para corrigir problemas com a nova ISO.
+
+### Instalar drivers
+
+Use `lspci` para obter as informações sobre as placas gráficas disponíveis em seu sistema e instale os drivers apropriados.
+```bash
+$ lspci -k | grep -P 'VGA|3D|Display'
+03:00.0 VGA compatible controller: Advanced Micro Devices, Inc. [AMD/ATI] Picasso (rev c2)
+```
+Nesse caso, instale o pacote `xf86-video-amdgpu` e reinicie o sistema.
+
+### Remover Flatpak
+
+Remova o pacote `flatpak` para resolver o problema com os aplicativos gtk.
+```bash
+$ sudo pacman -Rnscv flatpak
+```
+
+:::caution Cuidado
+Esta operação também removerá o `pamac-all`, pois flatpak é uma de suas dependências.
+Você pode instalar o `pamac-aur` se quiser um **Gerenciador gráfico de pacotes**. 
+:::
+
+### Instalar Sddm
+
+Devido à remoção dos drivers do sistema instalado, o webkit greeter do lightdm trava e falha ao carregar o tema padrão.
+Além disso, é um pouco lento em máquinas mais antigas. Para corrigir esse problema, instale `sddm` e `archcraft-sddm-theme-default`
+```bash
+$ sudo pacman -S sddm archcraft-sddm-theme-default
+```
+
+Copie o arquivo de configuração sddm, use **archcraft** como o nome do tema
+```bash
+$ sudo cp /usr/lib/sddm/sddm.conf.d/default.conf /etc/sddm.conf.d/default.conf
+``` 
+
+Habilite o serviço sddm e reinicie o computador
+```bash
+$ sudo systemctl enable -f sddm-plymouth.service
+``` 
+
+:::info informação
+**Todos os problemas acima serão corrigidos o mais rápido possível e uma nova ISO será carregada em breve.**
+:::
