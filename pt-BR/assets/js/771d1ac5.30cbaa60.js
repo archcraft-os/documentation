@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkArchcraft_Wiki=self.webpackChunkArchcraft_Wiki||[]).push([[1960],{3021:function(s){s.exports=JSON.parse('{"allTagsPath":"/pt-BR/blog/tags","slug":"/pt-BR/blog/tags/bspwm","name":"bspwm","count":1,"permalink":"/pt-BR/blog/tags/bspwm"}')}}]);

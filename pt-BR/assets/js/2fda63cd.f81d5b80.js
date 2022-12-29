@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkArchcraft_Wiki=self.webpackChunkArchcraft_Wiki||[]).push([[6306],{9375:function(t){t.exports=JSON.parse('{"allTagsPath":"/pt-BR/blog/tags","slug":"/pt-BR/blog/tags/howto","name":"howto","count":2,"permalink":"/pt-BR/blog/tags/howto"}')}}]);

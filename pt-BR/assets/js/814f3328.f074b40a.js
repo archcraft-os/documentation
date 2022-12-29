@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkArchcraft_Wiki=self.webpackChunkArchcraft_Wiki||[]).push([[2535],{5641:function(e){e.exports=JSON.parse('{"title":"Postagens recentes","items":[{"title":"Alterar temas e \xedcones no bspwm","permalink":"/pt-BR/blog/02-post-bspwm"},{"title":"Adicionar minha m\xfasica ao mpd","permalink":"/pt-BR/blog/01-post-mpd"}]}')}}]);

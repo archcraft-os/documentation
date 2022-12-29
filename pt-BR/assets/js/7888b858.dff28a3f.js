@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkArchcraft_Wiki=self.webpackChunkArchcraft_Wiki||[]).push([[1442],{3131:function(e){e.exports=JSON.parse('{"allTagsPath":"/pt-BR/news/tags","slug":"/pt-BR/news/tags/lxde","name":"lxde","count":1,"permalink":"/pt-BR/news/tags/lxde"}')}}]);

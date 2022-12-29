@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>Archcraft Blog</title>
+        <link>https://wiki.archcraft.io/pt-BR/news</link>
+        <description>Archcraft Blog</description>
+        <lastBuildDate>Mon, 10 Oct 2022 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[Versão Archcraft LXDE]]></title>
+            <link>https://wiki.archcraft.io/pt-BR/news/12-release-news</link>
+            <guid>12-release-news</guid>
+            <pubDate>Mon, 10 Oct 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Novo Versão (LXDE) do Archcraft já está disponível para download.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Versão Archcraft XFCE]]></title>
+            <link>https://wiki.archcraft.io/pt-BR/news/11-release-news</link>
+            <guid>11-release-news</guid>
+            <pubDate>Fri, 07 Oct 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Nova Versão (XFCE) do Archcraft já está disponível para download.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Versão de setembro de 2022 disponível]]></title>
+            <link>https://wiki.archcraft.io/pt-BR/news/10-release-news</link>
+            <guid>10-release-news</guid>
+            <pubDate>Fri, 16 Sep 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Apenas uma atualização regular da ISO]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Versão de julho de 2022 disponível]]></title>
+            <link>https://wiki.archcraft.io/pt-BR/news/09-release-news</link>
+            <guid>09-release-news</guid>
+            <pubDate>Mon, 18 Jul 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Apenas uma atualização regular da ISO]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Versão de junho de 2022 disponível]]></title>
+            <link>https://wiki.archcraft.io/pt-BR/news/08-release-news</link>
+            <guid>08-release-news</guid>
+            <pubDate>Wed, 08 Jun 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Apenas uma atualização regular da ISO]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Versão de abril de 2022 disponível]]></title>
+            <link>https://wiki.archcraft.io/pt-BR/news/07-release-news</link>
+            <guid>07-release-news</guid>
+            <pubDate>Thu, 07 Apr 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Apenas uma atualização regular da ISO]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Versão de fevereiro de 2022 disponível]]></title>
+            <link>https://wiki.archcraft.io/pt-BR/news/06-release-news</link>
+            <guid>06-release-news</guid>
+            <pubDate>Wed, 02 Feb 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[A nova ISO do Archcraft já está disponível para download.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Versão Archcraft XFCE]]></title>
+            <link>https://wiki.archcraft.io/pt-BR/news/05-release-xfce-news</link>
+            <guid>05-release-xfce-news</guid>
+            <pubDate>Tue, 30 Nov 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[Nova Versão (XFCE) do Archcraft já está disponível para download.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Versão Lite do Archcraft]]></title>
+            <link>https://wiki.archcraft.io/pt-BR/news/04-release-lite-news</link>
+            <guid>04-release-lite-news</guid>
+            <pubDate>Sat, 13 Nov 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[Nova Versão (Lite) do Archcraft já está disponível para download.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[October 2021 Release Available]]></title>
+            <link>https://wiki.archcraft.io/pt-BR/news/03-release-news</link>
+            <guid>03-release-news</guid>
+            <pubDate>Tue, 05 Oct 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[A nova ISO do Archcraft já está disponível para download.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Problemas da Versão de setembro de 2021]]></title>
+            <link>https://wiki.archcraft.io/pt-BR/news/02-issue-news</link>
+            <guid>02-issue-news</guid>
+            <pubDate>Thu, 30 Sep 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[<span]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Versão de setembro de 2021 disponível]]></title>
+            <link>https://wiki.archcraft.io/pt-BR/news/01-release-news</link>
+            <guid>01-release-news</guid>
+            <pubDate>Sat, 25 Sep 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[<span]]></description>
+        </item>
+    </channel>
+</rss>
