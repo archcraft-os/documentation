@@ -34,7 +34,7 @@ const FeatureList = [
     description: (
       <>
 		<Translate>
-		With built-in support for AUR, Chaotic AUR and being lightweight, 
+		With latest softwares and built-in support for AUR, and being lightweight, 
 		Archcraft gives you the power to do whatever you want on your Linux PC.
 		</Translate>
       </>

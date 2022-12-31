@@ -218,8 +218,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
             title: 'More',
             items: [
               {
-                label: 'Donate',
-                href: 'https://archcraft.io/donate',
+                label: 'Release Cycle',
+                href: 'https://archcraft.io/more',
               },
               {
                 label: 'Sourceforge',
