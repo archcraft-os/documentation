@@ -2,11 +2,33 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wiki.archcraft.io/pl/news</id>
     <title>Archcraft Blog</title>
-    <updated>2023-01-01T00:00:00.000Z</updated>
+    <updated>2023-01-22T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wiki.archcraft.io/pl/news"/>
     <subtitle>Archcraft Blog</subtitle>
     <icon>https://wiki.archcraft.io/pl/img/favicon.svg</icon>
+    <entry>
+        <title type="html"><![CDATA[Updated Archcraft LXDE ISO]]></title>
+        <id>15-release-news</id>
+        <link href="https://wiki.archcraft.io/pl/news/15-release-news"/>
+        <updated>2023-01-22T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[New ISO of Archcraft LXDE is now available to download.]]></summary>
+        <author>
+            <name>Aditya Shakya</name>
+            <uri>https://github.com/adi1090x</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Updated Archcraft XFCE ISO]]></title>
+        <id>14-release-news</id>
+        <link href="https://wiki.archcraft.io/pl/news/14-release-news"/>
+        <updated>2023-01-20T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[New ISO of Archcraft XFCE is now available to download.]]></summary>
+        <author>
+            <name>Aditya Shakya</name>
+            <uri>https://github.com/adi1090x</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[January 2023 Release Available]]></title>
         <id>13-release-news</id>

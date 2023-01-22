@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkArchcraft_Wiki=self.webpackChunkArchcraft_Wiki||[]).push([[8405],{3660:function(s){s.exports=JSON.parse('{"allTagsPath":"/fr/news/tags","slug":"/fr/news/tags/iso","name":"iso","count":15,"permalink":"/fr/news/tags/iso"}')}}]);
