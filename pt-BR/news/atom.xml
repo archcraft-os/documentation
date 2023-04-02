@@ -8,6 +8,17 @@
     <subtitle>Archcraft Blog</subtitle>
     <icon>https://wiki.archcraft.io/pt-BR/img/favicon.svg</icon>
     <entry>
+        <title type="html"><![CDATA[Archcraft XFCE and LXDE ISOs (April 2023)]]></title>
+        <id>17-release-news</id>
+        <link href="https://wiki.archcraft.io/pt-BR/news/17-release-news"/>
+        <updated>2023-04-02T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[New ISOs of Archcraft XFCE and LXDE is now available to download.]]></summary>
+        <author>
+            <name>Aditya Shakya</name>
+            <uri>https://github.com/adi1090x</uri>
+        </author>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[April 2023 Release Available]]></title>
         <id>16-release-news</id>
         <link href="https://wiki.archcraft.io/pt-BR/news/16-release-news"/>

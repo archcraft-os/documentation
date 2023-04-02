@@ -8,6 +8,13 @@
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <item>
+            <title><![CDATA[Archcraft XFCE and LXDE ISOs (April 2023)]]></title>
+            <link>https://wiki.archcraft.io/pl/news/17-release-news</link>
+            <guid>17-release-news</guid>
+            <pubDate>Sun, 02 Apr 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[New ISOs of Archcraft XFCE and LXDE is now available to download.]]></description>
+        </item>
+        <item>
             <title><![CDATA[April 2023 Release Available]]></title>
             <link>https://wiki.archcraft.io/pl/news/16-release-news</link>
             <guid>16-release-news</guid>
