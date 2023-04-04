@@ -1,0 +1,81 @@
+---
+sidebar_position: 4
+---
+
+# I3wm
+
+For Archcraft community members, Edit the page.
+
+<!-- Tabs -->
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<!-- Badges -->
+export const Highlight = ({children, color}) => (
+  <span
+    style={{
+      backgroundColor: color,
+      borderRadius: '4px',
+      color: '#fff',
+      padding: '0 0.2rem 0 0.2rem',
+    }}>
+    {children}
+  </span>
+);
+
+<!-- Add your stuff after this -->
+
+**Note: Archcraft i3wm配置中 `mod` 键  就是 `Super` 键 (Aka: Windows key)**
+
+|快捷键 | Function |
+|------------ | ------------- |
+|**mod+Return** | 打开终端 (alacritty) |
+|**mod+t** | 全屏模式打开终端 |
+|**mod+Shift+Return** | 浮动模式打开终端 |
+|**mod+Shift+f** | 打开文件管理器 (thunar) |
+|**mod+Shift+e** | 打开文本编辑器-图形界面 (geany) |
+|**mod+Shift+w** | 打开网络浏览器 (firefox) |
+|**alt+Control+v** | 打开文本编辑器-命令行 (vim) |
+|**alt+Control+n** | 打开文本编辑器-命令行 (NEOvim) |
+|**alt+Control+r** | 打开文件管理器-命令行 (ranger) |
+|**alt+Control+h** | 打开系统任务管理器-命令行 (HTOP) |
+|**alt+Control+b** | 打开系统任务管理器-命令行 (Bashtop) |
+|**alt+F1** | 打开应用列表 |
+|**mod+n** | 打开网络管理器 |
+|**mod+x** | 打开电源管理器 |
+|**mod+m** | 打开音乐播放器 |
+|**mod+i** | 打开网络管理器 |
+|**mod+s** | 打开屏幕截图 |
+|**mod+r** | 以root用户运行英语 |
+|**mod+w** | 打开窗口管理 |
+|**Print** | 进行屏幕截图 |
+|**mod+Print** | 进行屏幕截图 (延迟 5s) |
+|**Shift+Print** | 进行屏幕截图 (延迟 10s)|
+|**Control+Print** | 截取活动窗口  |
+|**mod+Control+Print** | 选取部分屏幕截图 |
+|**alt+Control+l** | 锁屏 |
+|**mod+q** | 关闭窗口 | 
+|**mod+c** | 关闭窗口 |
+|**mod+j/k/l/semicolon** | 移动焦点 |
+|**mod+Left/Down/Up/Right** | 移动焦点 |
+|**mod+Shift+j/k/l/semicolon** | 移动焦点所在的窗口 |
+|**mod+Shift+Left/Down/Up/Right** | 移动焦点所在的窗口 |
+|**mod+h** | 进入水平分屏模式 |
+|**mod+v** | 进入竖直分屏模式 |
+|**mod+f** | 全屏化焦点所在窗口 |
+|**mod+Shift+z** | Change container layout (stacking) |
+|**mod+Shift+x** | Change container layout (tabbed) |
+|**mod+Shift+c** | Change container layout (toggle split) |
+|**mod+Space** | 切换焦点所在窗口的浮动和普通模式 |
+|**mod+Shift+Space** | Change focus between tiling / floating windows |
+|**mod+** | 焦点移至父窗口 |
+|**mod+d** | 焦点移至子窗口 |
+|**mod+1-2....9-0** | 切换工作区 |
+|**mod++Shift+1-2....9-0** | 动焦点所在的窗口至其他工作区 |
+|**Control+Shift+c** | 重载i3wm配置文件 |
+|**Control+Shift+r** | 重启i3wm |
+|**Control+Shift+q** | 退出i3 |
+
+---
+
+**安装archcraft i3wm 主题 , 运行 `yay -Syyu archcraft-i3wm`**

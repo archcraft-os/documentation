@@ -18,7 +18,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
   // Translation
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'fr', 'pl', 'tr', 'pt-BR'],
+    locales: ['en', 'fr', 'pl', 'tr', 'pt-BR', 'zh'],
     localeConfigs: {
       en: {
         label: 'English',
@@ -38,6 +38,10 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
       },
       'pt-BR': {
         label: 'Português(Brasil)',
+        direction: 'ltr',
+      },
+      'zh': {
+        label: 'Chinese(简体)',
         direction: 'ltr',
       }
     },
@@ -63,10 +67,10 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
         path: './news',
         /**
          * Options
-         */        
+         */
         showReadingTime: false,
         blogTitle: 'News',
-		blogSidebarTitle: 'Latest News',
+        blogSidebarTitle: 'Latest News',
         blogSidebarCount: 5,
       },
     ],
@@ -80,16 +84,16 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-		  editLocalizedFiles: true,
+          editLocalizedFiles: true,
           editUrl: 'https://github.com/archcraft-os/documentation/edit/main/',
         },
         blog: {
           showReadingTime: true,
           blogTitle: 'Tutorials',
-		  blogSidebarTitle: 'Recent posts',
+          blogSidebarTitle: 'Recent posts',
           blogSidebarCount: 10,
           // Please change this to your repo.
-		  editLocalizedFiles: true,
+          editLocalizedFiles: true,
           editUrl:
             'https://github.com/archcraft-os/documentation/edit/main/',
         },
@@ -121,9 +125,9 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
             position: 'left',
             label: 'Wiki',
           },
-          {to: '/blog', label: 'Tutorials', position: 'left'},
-          {to: '/news', label: 'News', position: 'left'},
-          {type: 'localeDropdown', position: 'right'},
+          { to: '/blog', label: 'Tutorials', position: 'left' },
+          { to: '/news', label: 'News', position: 'left' },
+          { type: 'localeDropdown', position: 'right' },
           {
             href: 'https://github.com/archcraft-os',
             position: 'right',
@@ -136,16 +140,16 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
       algolia: {
         apiKey: '802115dbf963e638e1641f03bd41c646',
         indexName: 'archcraft',
-  
+
         // Optional: see doc section below
         contextualSearch: true,
-  
+
         // Optional: see doc section below
         appId: 'BH4D9OD16A',
-  
+
         // Optional: Algolia search parameters
         searchParameters: {},
-  
+
         //... other Algolia params
       },
       footer: {
