@@ -1,0 +1,58 @@
+---
+slug: 01-release-news
+title: Versión Disponible Septiembre 2021
+authors: adi1090x
+tags: [v21.09, release, iso]
+---
+
+export const Highlight = ({children, color}) => (
+  <span
+    style={{
+      backgroundColor: color,
+      borderRadius: '4px',
+      color: '#fff',
+      padding: '0.2rem',
+    }}>
+    {children}
+  </span>
+);
+
+**Nueva ISO disponible para descargar**
+
+Después de trabajar duro por casi 3 meses, les presento el <Highlight color="#C778DD">Siguiente Archcraft</Highlight>
+
+### ¿Que háy de nuevo?
+- Creado desde cero (para mejores actualizaciones y un fácil mantenimiento)
+- Nuevo **`base`**, **`logo`**, **`paquetes`**, **`repositorio`**, etc
+- Arreglado el problema de la pantalla negra en algunas GPUs de Nvidia
+<!--truncate-->
+- Arreglado el problema del **`kernel adicional`** con grub
+- Habilitado el soporte para **`snap`** y **`flatpak`**
+- Añadido **`frontend gráfico`** para pacman (con integración en `aur`, `snaps`, `flatpak`)
+- Habilitado el **`chaotic aur`** por defecto
+- Habilitado los servicios **`bluetooth`** por defecto
+- Habilitado **`os-prober`** por defecto
+- Habilitado **`on-demand rehash`** para `zsh`
+- Usando **`lightdm`** con **`webkit2-greeter`** como gestor de pantallas por defecto
+- Usando **`firefox`** como el navegador por defecto
+- Nuevo **`plymouth`** tema, **`grub`** temas
+- Nuevos temas **`gtk`**, **`icon`**, **`cursor`** y diferentes packs de **`wallpaper`**
+- Nuevas aplicaciones **`welcome`**, **`about`**, **`help and tips`**
+- Nuevas **`fuentes`** increibles y **`nerd fonts`** actualizadas
+- Nuevos **`estilos`** y **`temas`** para `openbox (15+)` y `bspwm (20)`
+- **`Ajustes`** :
+  - Rediseñado el escritor `bspwm` (polybar, rofi, etc)
+  - Configuración completamente nueva de `openbox`
+  - Mejora en el menú de openbox, nuevos pipemenus, diferentes estilos de menú
+  - `Xrandr` pipemenu para ajustar la resolución y trabajar con múltiples monitores con mayor facilidad
+  - `Picom` compositor (`ibhagwan fork`) con dual_kawase blur y esquinas redondeadas.
+  - Mejores capturas de pantalla con `maim` y grabación de pantalla con `ffmpeg`
+  - Detección automática de `interfaces de red`, `bateria`, y `tarjetas de video` para polybar.
+  - Incluidos todos mis temas de `polybar` y `rofi`
+  - Estilo máquina de escribir en `pyroom` para una experiencia de escritura placentera
+- **`Programas de línea de comandos`** :
+  - `vim` con [ultimate vimrc](https://github.com/amix/vimrc) (nerd-tree, lightline, etc)
+  - `neovim` con [Nvchad](https://github.com/NvChad/NvChad) (the ultimate nvim config)
+  - `ranger` con [icons](https://github.com/alexanderjeurissen/ranger_devicons), syntax highlighting and previews (images, videos, pdf, etc)
+  - `oh-my-zsh` con [spaceship-prompt](https://github.com/spaceship-prompt/spaceship-prompt)
+  - `ncmpcpp` con soporte para carátulas

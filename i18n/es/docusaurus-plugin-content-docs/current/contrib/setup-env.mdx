@@ -1,0 +1,38 @@
+---
+sidebar_position: 1
+---
+
+# Setup System
+
+Let's set up your system for local development...
+
+- Install `nodejs`, `npm` and `yarn` on your system :
+```bash
+$ sudo pacman -S nodejs npm yarn
+```
+
+- Clone the `documentation` repository from Github :
+```bash
+$ git clone https://github.com/archcraft-os/documentation
+```
+
+- Install required `node modules` in the root directory of the repository :
+```bash
+$ cd documentation
+$ npm install
+```
+
+- Run the local development server​ :
+```bash
+$ yarn run start
+```
+
+- Add documentations, Edit pages, and when you're done, Build the website :
+```bash
+$ yarn run build
+```
+:::note
+
+Make sure the website should build successfully and you test the build on the local server before deploying it to Github (or creating a pull request).
+
+:::
