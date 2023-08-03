@@ -1,0 +1,40 @@
+---
+sidebar_position: 3
+---
+
+# 改善维基
+
+如果你想为Archcraft维基添加页面的话，请参考本指南：
+
+## 先决条件
+
+- [部署](setup-env.mdx) 本地开发环境，如果你想要在本地计算机上开展工作。
+- 你应该基本掌握[Markdown](https://www.markdownguide.org/cheat-sheet)和[MDX](https://mdxjs.com)的格式。可以参考[Docusaurus Markdown Features](https://docusaurus.io/docs/markdown-features)。
+- 你至少应该知道如何*fork*、*clone*一个仓库并创建一个*pull request（拉取请求）*。
+
+## 文件与格式
+
+**docs**目录包含很多子目录（为了进行文档分类），其中包含了`.md`和`.mdx`格式的维基文章和一个用于描述文档目录的`_category_.json`文件。
+
+- `_category_.json`文件用于标识和定位此目录。
+- 以下为维基中`引导Archcraft`这一节的示例：
+
+```
+docs 	# Main Directory
+└── boot-iso						# Doc Category
+   ├── _category_.json				# Category Properties
+   ├── boot-with-usb.mdx			# Wiki Page
+   └── boot-with-grub.mdx			# Another wiki page in same category
+```
+
+## 文档开头
+
+在`文档开头`，你可以指定目录中文档的位置等属性。
+```yml {2}
+---
+sidebar_position: 1
+hide_table_of_contents: true
+---
+```
+
+> 要了解更多信息，请访问[Docusaurus:Docs](https://docusaurus.io/docs/docs-introduction)

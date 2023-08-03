@@ -1,0 +1,38 @@
+---
+sidebar_position: 1
+---
+
+# 配置开发环境
+
+让我们一起配置本地开发环境。
+
+- 安装 `nodejs`, `npm` and `yarn` 到你的系统上：
+```bash
+$ sudo pacman -S nodejs npm yarn
+```
+
+- 从Github克隆`documentation`仓库到本地：
+```bash
+$ git clone https://github.com/archcraft-os/documentation
+```
+
+- 在项目根目录安装`node modules`依赖项：
+```bash
+$ cd documentation
+$ npm install
+```
+
+- 打开本地开发服务器：
+```bash
+$ yarn run start
+```
+
+- 添加文档或者编辑界面。当工作完成后，构建此站点：
+```bash
+$ yarn run build
+```
+:::note
+
+在你部署此站点之前确保其可以被成功构建并且在本地服务器上测试过此构建。
+
+:::

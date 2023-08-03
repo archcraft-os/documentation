@@ -1,0 +1,393 @@
+---
+sidebar_position: 2
+---
+
+# 使用ABIF安装Archcraft
+
+**`ABIF`** 是Archcraft第二种支持的安装器类型，其基于命令行打造且非常强大(*我个人使用它*)。我建议只有知道自己在做什么的人来使用ABIF去安装Archcraft。
+
+> *我不推荐初学者使用此安装器，用[Calamares](./install-with-calamares)会更适合你。*<br/>
+*不过如果你仍要使用此安装器，请根据指南一步一步来。*
+
+在本指南中，我将要在一台UEFI引导设备上使用**`ABIF`**安装具有`加密功能`和`逻辑卷管理器`的Archcraft。这个过程也适用于BIOS设备。
+
+我假定你已经使用Archcraft ISO文件创建了一个[可引导USB设备](../boot-iso/boot-with-usb)，用其引导进入系统并选择了**Boot Archcraft**，并从菜单或者欢迎软件中打开了安装器。
+
+:::info
+
+来自中文文档翻译者：由于此安装器中并不包含简体中文（zh-CN）选项，所以本指南所有配置相关名词保持不变。
+
+:::
+
+首先，选择安装器语言并使用<kbd>Enter</kbd>确认。
+
+![img](./abif/1.png)
+
+### 准备安装
+
+选择 `Prepare Installation` 并使用<kbd>Enter</kbd>确认。
+
+![img](./abif/2.png)
+
+选择 `Set Virtual Console`, 选择你的布局并使用<kbd>Enter</kbd>确认。
+
+![img](./abif/3.png)
+
+选择 `Set Desktop Keyboard Layout`, 选择你的布局并使用<kbd>Enter</kbd>确认。
+
+![img](./abif/4.png)
+
+### 硬盘分区
+
+选择 `List Devices` 并使用<kbd>Enter</kbd>确认。
+
+![img](./abif/5.png)
+
+在这里你可以看到设备上可用的磁盘和分区。
+
+![img](./abif/6.png)
+
+如果你的硬盘已经被分区过了，你可以跳过此步骤到以下步骤：
+
+- [配置 LUKS](#setup-luks-encryption) (*如果你想要使用 `Encryption` 功能的话*)
+- [配置 LVM](#setup-lvm) (*如果你想要使用 `LVM` 功能的话*)
+- [挂载分区](#mount-partitions) (*如果只想要正常安装的话*)
+
+如果你想要进行分区操作，选择 `Partition Disk` 并使用<kbd>Enter</kbd>确认。
+
+![img](./abif/7.png)
+
+选择 `Your Disk` 并使用<kbd>Enter</kbd>确认。
+
+![img](./abif/8.png)
+
+选择任意一个分区工具 (* 这里使用的是`gparted`*) 并使用<kbd>Enter</kbd>确认。
+
+![img](./abif/9.png)
+
+进行分区操作，完成后退出`gparted`。
+
+:::info
+
+来自中文文档翻译者：如果你是一个Linux初学者，不了解该如何分区，可以查看[使用Calamares安装Archcraft](./install-with-calamares)这篇文章中的分区部分。
+
+:::
+
+:::caution
+
+如果你的系统已经存在了一个EFI分区，请确保其`至少拥有100MB的剩余内存`，否则可能会安装失败。
+
+:::
+
+![img](./abif/10.png)
+
+### 配置 LUKS 加密
+
+如果你不想使用**Disk Encryption**的话，你可以跳过此步骤到以下步骤：
+
+- [配置 LVM](#setup-lvm) (*如果你想要使用 `LVM` 功能的话*)
+- [挂载分区](#mount-partitions) (*如果你不想要使用 `LVM` 功能的话*)
+
+如果你想要使用 **Disk Encryption** ，选择 `LUKS Encryption` 并使用<kbd>Enter</kbd>确认。
+
+![img](./abif/11.png)
+
+在这里我直接选择了 `Automatic LUKS（自动配置）` ，不过如果你有自己的偏好的话，选择它并使用<kbd>Enter</kbd>确认。
+
+![img](./abif/12.png)
+
+选择你想要加密的分区(*我的选择的是我的root分区： `/dev/sda2`*)并使用<kbd>Enter</kbd>确认。
+
+![img](./abif/13.png)
+
+为 `Encrypted block device` 输入名字并使用<kbd>Enter</kbd>确认。
+
+![img](./abif/14.png)
+
+输入一个强 `password（密码）` 使用<kbd>Enter</kbd>确认，重复一次操作。
+
+![img](./abif/15.png)
+
+你可以在这里回顾你的LUKS配置。完成后使用<kbd>Enter</kbd>退出。
+
+![img](./abif/16.png)
+
+为其他分区(*比如：`/home`*)重复以上加密操作。完成后选择 `Back` 并使用<kbd>Enter</kbd>确认。
+
+![img](./abif/17.png)
+
+### 配置 LVM
+
+如果你不想配置**Logical Volumes（逻辑卷）**，你可以跳过这个步骤到[挂载分区](#mount-partitions)。<br/>
+如果你想的话，选择`Logical Volume Management`并使用<kbd>Enter</kbd>确认。
+
+![img](./abif/18.png)
+
+首先创建一个 **Volume Group**，选择`Create VG and LV(s)`并使用<kbd>Enter</kbd>确认。
+
+![img](./abif/19.png)
+
+输入 `group` 的名称并使用<kbd>Enter</kbd>确认。
+
+![img](./abif/20.png)
+
+选择你要添加到逻辑卷组中的 `Partitions（分区）`(*用 <kbd>SPACE</kbd>*) 并使用<kbd>Enter</kbd>确认。
+
+![img](./abif/21.png)
+
+使用<kbd>Enter</kbd>来确认创建分组。
+
+![img](./abif/22.png)
+
+将会有对话框弹出来确认已经创建的分组，使用<kbd>Enter</kbd>退出。
+
+![img](./abif/23.png)
+
+选择组中卷的`数目`(*在这里我们先选择两个添加到分组中*) 并使用<kbd>Enter</kbd>确认。
+
+![img](./abif/24.png)
+
+输入第一个逻辑卷的名称(*用于`root`*)并使用<kbd>Enter</kbd>确认。
+
+![img](./abif/25.png)
+
+输入`LV`的大小并使用<kbd>Enter</kbd>确认。
+
+![img](./abif/26.png)
+
+你会看到逻辑卷已经被创建了，使用<kbd>Enter</kbd>退出。
+
+![img](./abif/27.png)
+
+为第二个逻辑卷做同样的操作，输入名称并使用<kbd>Enter</kbd>确认，其大小将会被自动配置。
+
+![img](./abif/28.png)
+
+使用<kbd>Enter</kbd>来查看你的逻辑卷管理器分配表。
+
+![img](./abif/29.png)
+
+完成后使用<kbd>Enter</kbd>退出。
+
+![img](./abif/30.png)
+
+### 挂载分区
+
+现在我们已经设置好了分区(*Encryption以及LVM*)。是时候挂载它们以用于接下来的安装了。
+
+选择 `Mount Partitions` 并使用<kbd>Enter</kbd>确认。
+
+![img](./abif/31.png)
+
+选择 `Root Partition` 并使用<kbd>Enter</kbd>确认。请注意：
+
+- 如果你配置了 **LVM**(*带有加密*)，选择其作为`root`。(*在本例中就是**/dev/mapper/archcraft-lvol_root** *)
+- 如果你只配置了 **Encryption**(*不带有LVM*)，选择其作为`root`。(*/dev/mapper/cryptroot*)
+- 如果你既没有配置 *Encryption* 也没有配置 *LVM*，正常选择`root`即可。(*/dev/sda2*)
+
+![img](./abif/32.png)
+
+选择 `ext4` 文件系统(*或者其他你认为合适的*)并使用<kbd>Enter</kbd>确认。
+
+![img](./abif/33.png)
+
+选择`Yes`并使用<kbd>Enter</kbd>来格式化分区。忽略其他东西。
+
+![img](./abif/34.png)
+
+如果你创建了一个 **Swap Partition（交换分区）**，可以在此处将其挂载。也可以选择使用 `Swapfile`。选择你所偏好的然后用<kbd>Enter</kbd>确认。
+
+![img](./abif/35.png)
+
+现在，挂载`boot`分区。选择你的`EFI partition（EFI分区）`(*/dev/sda1*) 并使用<kbd>Enter</kbd>确认。
+
+![img](./abif/36.png)
+:::danger
+
+你的系统可能已经存在了一个**EFI**分区。如果是这样的话**`千万不要`**格式化它，否则你将不能引导进入其他系统。<br/>
+只要把EFI分区挂载到`/boot`即可。
+
+:::
+
+如果你不想格式化EFI分区的话，选择 `No` 并使用<kbd>Enter</kbd>确认。
+
+![img](./abif/37.png)
+
+选择`/boot`作为挂载点并使用<kbd>Enter</kbd>确认。
+
+![img](./abif/38.png)
+
+现在你可以挂载剩余的分区了(*比如：/home*)。选择分区后使用<kbd>Enter</kbd>确认。
+
+![img](./abif/39.png)
+
+再次选择`ext4`(*或其他的文件系统*)并使用<kbd>Enter</kbd>确认。
+
+![img](./abif/40.png)
+
+输入分区的 `mount point（挂载点）` 并使用<kbd>Enter</kbd>确认。
+
+![img](./abif/41.png)
+
+挂载好所有分区之后，选择 `Done` 并使用<kbd>Enter</kbd>退出。
+
+![img](./abif/42.png)
+
+选择 `Back` 并使用<kbd>Enter</kbd>来继续安装。
+
+![img](./abif/43.png)
+
+### 基础安装
+
+现在所有的分区都已经挂载妥当，让我们开始安装**`Base packages（基础包）`**。
+
+选择 `Install Base` 并使用<kbd>Enter</kbd>确认。
+
+![img](./abif/44.png)
+
+选择 `Install Base Packages` 并使用<kbd>Enter</kbd>确认。
+
+![img](./abif/45.png)
+等待安装完成。这个时候，给你看点[好东西](https://youtu.be/dQw4w9WgXcQ?t=5)。
+
+![img](./abif/46.png)
+
+安装完成之后，选择 `Run Mkinitcpio` 并使用<kbd>Enter</kbd>确认。
+
+![img](./abif/47.png)
+
+这将会生成**initramfs-linux**和**initramfs-linux-fallback**。
+
+![img](./abif/48.png)
+
+选择 `Install Bootloader` 并使用<kbd>Enter</kbd>确认。
+
+![img](./abif/49.png)
+
+选择 `grub` 作为引导加载程序并使用<kbd>Enter</kbd>确认。
+
+![img](./abif/50.png)
+
+选择 `Yes` 来让grub成为默认引导加载程序并使用<kbd>Enter</kbd>确认。
+
+![img](./abif/51.png)
+
+选择 `Back` 并使用<kbd>Enter</kbd>来退出安装。
+
+![img](./abif/52.png)
+
+### 基础设置
+
+Archcraft已经安装到你的设备上了，是时候开始进行设置。
+
+选择 `Configure Base` 并使用<kbd>Enter</kbd>来确认。
+
+![img](./abif/53.png)
+
+选择 `Generate FSTAB` 并使用<kbd>Enter</kbd>来确认。
+
+![img](./abif/54.png)
+
+对于UEFI引导设备，选择 `Part UUID` ；对于 **BIOS** 引导设备，选择 `Device UUID` ，并使用<kbd>Enter</kbd>来确认。
+
+![img](./abif/55.png)
+
+选择 `Set Hostname` 并使用<kbd>Enter</kbd>来确认。
+
+![img](./abif/56.png)
+
+为你的系统输入`hostname（主机名）` 并使用<kbd>Enter</kbd>来确认。
+
+![img](./abif/57.png)
+
+选择 `Set System Locale` 并使用<kbd>Enter</kbd>来确认。
+
+![img](./abif/58.png)
+
+选择你想要使用的区域设置并使用<kbd>Enter</kbd>来确认(*`en_US.UTF-8` 即为 US English*)。
+
+![img](./abif/59.png)
+
+选择 `Set Timezone and Clock` 并使用<kbd>Enter</kbd>来确认。
+
+![img](./abif/60.png)
+
+选择你的 `Time Zone` (比如：*`ASIA`*)并使用<kbd>Enter</kbd>来确认。
+
+![img](./abif/61.png)
+
+选择你的 `Region` (比如：*`Kolkata`*)并使用<kbd>Enter</kbd>来确认。
+
+![img](./abif/62.png)
+
+选择 `Yes` 并使用<kbd>Enter</kbd>来确认。
+
+![img](./abif/63.png)
+
+选择 `utc` 并使用<kbd>Enter</kbd>来确认。
+
+:::info
+
+在需要同时引导Windows系统的情况下，推荐[设置Windows使用UTC时间](https://wiki.archlinux.org/title/System_time#UTC_in_Microsoft_Windows)，而不是将Linux配置为使用localtime。(*Windows默认使用localtime*)
+
+:::
+
+:::info
+
+来自中文文档翻译者：这么做是为了统一双系统下的系统时间。在默认的设置中，由于Windows和Linux对硬件时间理解的不同，一般显示的时间会相差八个小时。
+
+:::
+
+![img](./abif/64.png)
+
+选择 `Set Root Password` 来为 **root** 设置密码，使用<kbd>Enter</kbd>来确认。
+
+![img](./abif/65.png)
+
+选择 `Add New User(s)` 来创建新用户，使用<kbd>Enter</kbd>来确认。
+
+![img](./abif/66.png)
+
+输入 `username` ，使用<kbd>Enter</kbd>来确认。
+
+![img](./abif/67.png)
+
+为你的用户输入 `password` ，使用<kbd>Enter</kbd>来确认密码。
+
+![img](./abif/68.png)
+
+选择 `Security and systemd Tweaks` 来调整相关内容 (*如果你知道怎么做的话*) 并使用<kbd>Enter</kbd>来确认。
+
+![img](./abif/69.png)
+
+完成后，选择 `Back` 并使用<kbd>Enter</kbd>来确认。
+
+![img](./abif/70.png)
+
+### 浏览配置文件
+
+选择 `Review Configuration Files` 并使用<kbd>Enter</kbd>来确认。
+
+![img](./abif/71.png)
+
+选择想要查看的 `file` 并使用<kbd>Enter</kbd>来确认。完成后，选择 `Back` 并使用<kbd>Enter</kbd>来退出。
+
+![img](./abif/72.png)
+
+### 完成
+
+所有操作都完成了，你现在可以**`退出安装器`**然后重启系统了。
+
+选择 `Done` 并使用<kbd>Enter</kbd>来确认。
+
+![img](./abif/73.png)
+
+选择 `Yes` 并使用<kbd>Enter</kbd>来退出。
+
+![img](./abif/74.png)
+
+重新启动到新安装的系统中。
+
+![img](./abif/75.png)
+
+**Archcraft已经安装到你的设备上了，享受它吧！**

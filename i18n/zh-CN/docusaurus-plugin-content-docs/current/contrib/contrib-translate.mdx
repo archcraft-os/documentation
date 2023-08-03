@@ -1,0 +1,69 @@
+---
+sidebar_position: 4
+---
+
+# 翻译维基
+
+如果你想为Archcraft维基翻译页面的话，请参考本指南：
+
+## 先决条件
+
+- [部署](setup-env.mdx) 本地开发环境，如果你想要在本地计算机上开展工作。
+- 你应该基本掌握[Markdown](https://www.markdownguide.org/cheat-sheet)和[MDX](https://mdxjs.com)的格式。可以参考[Docusaurus Markdown Features](https://docusaurus.io/docs/markdown-features)。
+- 你至少应该知道如何*fork*、*clone*一个仓库并创建一个*pull request（拉取请求）*。
+
+## 设置
+
+编辑`docusaurus.config.js`文件并添加正确的**[国际化代码](https://www.npmjs.com/package/i18n-iso-countries)**
+
+比如: 如果你想将文档翻译到*Russian*, 添加 <kbd>ru</kbd>到`locales:`列表中
+```jsx {4-8}
+  // Translation
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'fr', 'ru'],
+      ru: {
+        label: 'Russian',
+        direction: 'ltr',
+      },
+  },
+```
+
+## 翻译
+
+打开终端（在网站的根目录），然后进行以下操作：
+
+- 在 `i18n` 目录中创建本地化目录。
+```bash
+$ mkdir -p i18n/ru
+```
+
+- 执行write-translations命令：
+```bash
+$ yarn run write-translations -- --locale ru
+```
+
+- 将原始文档复制到翻译目录：
+```bash
+$ mkdir -p i18n/ru/docusaurus-plugin-content-docs/current
+$ cp -r blog/* i18n/ru/docusaurus-plugin-content-blog
+$ cp -r news/* i18n/ru/docusaurus-plugin-content-blog-news
+$ cp -r docs/* i18n/ru/docusaurus-plugin-content-docs/current
+```
+
+- 用你的本地化选择来在开发模式中运行本地化站点。你可以通过`http://localhost:3000/ru`来访问它。
+```bash
+$ yarn run start -- --locale ru
+```
+
+- 翻译`i18n/ru`目录中的所有文件。当所有工作完成后，创建一个拉取请求。
+
+> 要了解更多信息，请访问[Docusaurus:i18n](https://docusaurus.io/docs/i18n/tutorial)
+
+## 翻译者
+
+🇫🇷 [法语版本](https://wiki.archcraft.io/fr/)由[Arnae](https://www.github.com/Archenagechan)翻译。
+
+🇵🇱 [波兰语版本](https://wiki.archcraft.io/pl/)由[Keyitdev](https://www.github.com/Keyitdev)翻译。
+
+🇨🇳 [简体中文版本](https://wiki.archcraft.io/zh-CN/)由[FDawn星临](https://www.github.com/fdawnxl)翻译。
