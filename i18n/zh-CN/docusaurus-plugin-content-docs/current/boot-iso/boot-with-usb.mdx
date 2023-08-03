@@ -1,0 +1,109 @@
+---
+sidebar_position: 1
+hide_table_of_contents: true
+---
+
+# 创建一个可引导USB设备
+
+<!-- Tabs -->
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+
+<TabItem value="dd" label="dd" default>
+
+## dd (Linux)
+
+如果你已经在使用 **Linux** 操作系统，你可以使用 **`dd`** 命令创建一个Archcraft可引导USB设备。dd既可以创建BIOS引导设备又可以创建UEFI引导设备，由于其简单易用，我们推荐使用这种方法。请按照以下的步骤来使用dd创建一个可引导的USB设备：
+
+- 打开一个终端并执行 `sudo fdisk -l` 来获取USB设备的信息。以我的设备为例，它是 **/dev/sda** 。
+
+```bash
+$ sudo fdisk -l
+
+Disk /dev/sda: 29.25 GiB, 31406948352 bytes, 61341696 sectors
+Disk model: Cruzer Blade
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x940318b0
+```
+
+你也可以执行 `lsblk` 来寻找你的USB设备，根据容量的大小来判断哪个是要使用的设备。
+
+```bash
+$ lsblk
+
+NAME        MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
+sda           8:0    1  29.3G  0 disk
+├─sda1        8:1    1   1.6G  0 part
+└─sda2        8:2    1    54M  0 part
+nvme0n1     259:0    0 238.5G  0 disk
+...
+```
+
+- 在找到你的USB设备后，执行 `dd` 命令来将ISO文件刷写到USB设备中。
+
+```bash
+$ sudo dd bs=4M if=path/to/archcraft.iso of=/dev/sdX status=progress oflag=sync
+```
+
+- 确保 **path/to/archcraft.iso** 是你存放Archcraft ISO 文件的路径且 **sdX** 是欲使用的USB设备的路径。
+- 此操作将会创建一个同时支持 **BIOS和UEFI** 引导的Archcraft 可引导USB设备。
+
+</TabItem>
+
+<TabItem value="etcher" label="Etcher">
+
+## Etcher (Linux, Mac, Windows)
+
+[Etcher](https://www.balena.io/etcher/) 是一个使用Node.JS和Electron构建的操作系统镜像工具，支持烧录SD卡或者USB设备。它可以防止你意外烧录硬盘并且保证每个字节的数据都被正确写入。请按照以下的步骤来使用Etcher创建一个可引导的USB设备：
+
+1. 启动Etcher，点击 **Select Image** 并选择Archcraft ISO文件。
+1. 选择欲烧录的USB设备， **请小心**选择正确的设备。
+1. 点击 **Flash!** 按钮并等待操作完成。
+1. 此操作将会创建一个同时支持 **BIOS和UEFI** 引导的Archcraft 可引导USB设备。
+
+</TabItem>
+
+<TabItem value="rufus" label="Rufus">
+
+## Rufus (Windows)
+
+[Rufus](https://rufus.akeo.ie/) 是一个多功能的USB设备ISO文件烧录工具。它提供图形界面且不关心设备是否被正确的格式化。简单的选择Archcraft ISO文件和欲烧录的USB设备，然后点击 **START** 即可。
+
+:::tip
+
+如果USB驱动器无法使用默认的ISO映像模式正常启动，请改用DD映像模式。
+
+:::
+
+- 如果Rufus版本大于等于3.0，则先在分区表下拉菜单中选择GPT项。在点击START按钮后会弹出模式选择对话框，选择DD映像模式。
+- 如果Rufus版本小于3.0，则在下方的下拉菜单中选择DD映像模式。
+
+</TabItem>
+
+<TabItem value="other" label="其他">
+
+## 其他方法 (Linux)
+
+- 使用 **`cat`** 命令：打开一个终端并执行:
+```bash
+$ sudo cat path/to/archcraft.iso > /dev/sdX
+```
+- 使用 **`cp`** 命令：打开一个终端并执行:
+```bash
+$ sudo cp path/to/archcraft.iso /dev/sdX
+```
+- 使用 **`tee`** 命令：打开一个终端并执行:
+```bash
+$ sudo tee < path/to/archcraft.iso > /dev/sdx
+```
+
+确保 **path/to/archcraft.iso** 是你存放Archcraft ISO 文件的路径且 **sdX** 是欲使用的USB设备的路径。
+
+</TabItem>
+
+</Tabs>

@@ -1,0 +1,30 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.Boot Archcraft": {
+    "message": "引导Archcraft",
+    "description": "The label for category Boot Archcraft in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Install Archcraft": {
+    "message": "安装Archcraft",
+    "description": "The label for category Install Archcraft in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Window Managers": {
+    "message": "窗口管理器",
+    "description": "The label for category Window Managers in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Wayland Compositors": {
+    "message": "Wayland合成器",
+    "description": "The label for category Wayland Compositors in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Desktop Environment": {
+    "message": "桌面环境",
+    "description": "The label for category Desktop Environment in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Contribution": {
+    "message": "贡献",
+    "description": "The label for category Contribution in sidebar tutorialSidebar"
+  }
+}

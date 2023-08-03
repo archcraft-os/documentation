@@ -1,0 +1,106 @@
+---
+sidebar_position: 3
+---
+
+# 安装完成之后
+
+安装完Archcraft之后，还有一些事需要你去做...
+
+### 在Liveboot/刚安装好的系统中出现黑屏
+如果你在新安装的系统或者Liveboot中出现了黑屏的现象，这可能合成器导致的。想要解决这个问题，请跟随以下步骤：
+- 使用`ctrl+alt+f2/f3...`进入tty
+- 编辑`~/.config/picom.conf`文件，将其配置为使用glx作为后端
+- 如果以上步骤不生效，卸载合成器`picom-ibhagwan-git`
+```bash
+$ sudo pacman -Rsn picom-ibhagwan-git
+```
+
+### 更新系统
+刷新包管理数据库并更新新安装的系统。
+```bash
+$ sudo pacman -Syyu
+```
+
+如果你遇到了`invalid or corrupted package (PGP signature)`报错，请执行以下命令：
+
+```bash
+$ sudo pacman -S archlinux-keyring
+$ sudo pacman-key --populate
+```
+
+### 安装新软件
+用pacman或者yay (AUR)安装你想要的程序。
+
+```bash
+$ sudo pacman -S gimp inkscape
+
+# Or from AUR
+
+$ yay -S spotify		
+```
+
+### 修复屏幕撕裂
+如果你遇到了屏幕撕裂的问题，请这样做：
+
+1. 为合成器启用GLX后端。如果你正在使用 `openbox` ，那么可以右键点击桌面，展开**Preferences > Compositor**菜单，点击`Use 'glx' backend`选项。或者手动编辑`~/.config/picom.conf`。
+
+1. 如果上面一条对你没用的话，按照下面的内容创建一个`xorg.conf`：
+
+```bash
+# Change to xorg.conf.d dir
+$ cd /etc/X11/xorg.conf.d
+
+# Create a conf file
+$ sudo touch 20-amdgpu.conf
+
+# Edit the file
+$ sudo vim 20-amdgpu.conf
+
+# Paste this in the editor
+Section "Device"
+     Identifier "AMD"
+     Driver "amdgpu"
+     Option "TearFree" "true"
+EndSection						
+```
+:::danger
+
+这个方法可能并不适用于你的系统，并且可能导致无法引导xorg。确保你知道如何使用**tty**或引导进入**recovery mode**来还原你所做出的改变。
+
+:::
+
+### 启用休眠服务
+为你的账户启用betterlockscreen休眠服务。
+
+```bash
+# Enable betterlockscreen suspend service
+
+$ sudo systemctl enable betterlockscreen@$USER.service						
+```
+
+### 修复锁屏背景
+修复在高/低分辨率情况下的锁屏布局。
+
+```bash
+# Update the lockscreen wallpaper
+
+$ betterlockscreen -u /usr/share/backgrounds/groot.jpg
+```
+
+### 从Initrd移除不必要的模块
+假设你在有一台配有IntelGPU的计算机上安装了Archcraft（使用ABIF）。在这种情况下，你只需要i915模块。从列表中删除其他模块并重建initrd。
+
+```bash
+# Edit mkinitcpio.conf file
+$ sudo vim /etc/mkinitcpio.conf
+
+# Change line 7 from
+MODULES=(i915? amdgpu? radeon? nouveau? vboxvideo? vmwgfx?)
+# To
+MODULES=(i915)
+
+# Save file and rebuild initrd
+$ sudo mkinitcpio -p linux						
+```
+
+好了，目前就这些了，继续享受Archcraft吧。

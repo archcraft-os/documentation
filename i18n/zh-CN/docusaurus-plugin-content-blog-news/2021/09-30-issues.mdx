@@ -1,0 +1,77 @@
+---
+slug: 02-issue-news
+title: Issues In September 2021 Release
+authors: adi1090x
+tags: [bug, issues, iso]
+---
+
+export const Highlight = ({children, color}) => (
+  <span
+    style={{
+      backgroundColor: color,
+      borderRadius: '4px',
+      color: '#fff',
+      padding: '0 0.2rem 0 0.2rem',
+    }}>
+    {children}
+  </span>
+);
+
+## Summery
+
+Due to a <Highlight color="#E06B74">bug</Highlight> in installer scripts, users are facing few issues on September ISO.
+Support for <Highlight color="#55B6C2">flatpak</Highlight> caused issues with gtk applications such as **thunar** and **plank**.
+
+<!--truncate-->
+
+## Issues
+1. Unable to adjust display brightness
+1. Launching Thunar and plank takes a long time
+1. Lightdm greeter crashes / lags / shows error
+
+## Solutions
+
+You can try these methods to fix issues with the new ISO.
+
+### Install drivers
+
+Use `lspci` to get the information about available graphics card(s) on your system, and install the appropriate drivers.
+```bash
+$ lspci -k | grep -P 'VGA|3D|Display'
+03:00.0 VGA compatible controller: Advanced Micro Devices, Inc. [AMD/ATI] Picasso (rev c2)
+```
+In that case, Install `xf86-video-amdgpu` package and reboot the system.
+
+### Remove Flatpak
+
+Remove `flatpak` package to resolve the issue with gtk applications.
+```bash
+$ sudo pacman -Rnscv flatpak
+```
+
+:::caution
+This operation will also remove `pamac-all` as flatpak is one of its dependencies.
+You can install `pamac-aur` if you want a **Graphical package manager**. 
+:::
+
+### Install Sddm
+
+Due to the removal of drivers from the installed system, lightdm's webkit greeter crashes and fails to load the default theme.
+Also, It's a bit slow on older machines. To fix this issue, Install `sddm` and `archcraft-sddm-theme-default`
+```bash
+$ sudo pacman -S sddm archcraft-sddm-theme-default
+```
+
+Copy sddm config file, Use **archcraft**  as the theme name
+```bash
+$ sudo cp /usr/lib/sddm/sddm.conf.d/default.conf /etc/sddm.conf.d/default.conf
+``` 
+
+Enable sddm service and reboot the computer
+```bash
+$ sudo systemctl enable -f sddm-plymouth.service
+``` 
+
+:::info
+**All the issues above will be fixed ASAP and a new ISO will be uploaded soon.**
+:::

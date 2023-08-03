@@ -1,0 +1,64 @@
+---
+sidebar_position: 2
+---
+
+# 编写教程
+
+如果你想为Archcraft编写教程的话参考本指南：
+
+## 先决条件
+
+- [部署](setup-env.mdx) 本地开发环境，如果你想要在本地计算机上开展工作。
+- 你应该基本掌握[Markdown](https://www.markdownguide.org/cheat-sheet)和[MDX](https://mdxjs.com)的格式。可以参考[Docusaurus Markdown Features](https://docusaurus.io/docs/markdown-features)。
+- 你至少应该知道如何*fork*、*clone*一个仓库并创建一个*pull request（拉取请求）*。
+
+## 文件与格式
+
+**blog** 目录包含了教程的所有`.md`和`.mdx`文件。
+
+- 想要添加一个教程，以正确的格式创建文件即可。
+- 在这里格式很重要，目录结构如下：
+```
+YEAR 	# Directory
+├── month-date-post-NAME.mdx	# .md or .mdx file
+└── month-date					# Directory
+   ├── Images					# Directory
+   └── post-NAME.mdx			# .md or .mdx file
+```
+
+## 标题与标签
+
+在你创建的文件的开头添加合适的slug，title和tags。
+```yml
+---
+slug: NUM-post-NAME
+title: TITLE FOR THE POST
+authors: ID
+tags: [TAG1, TAG2]
+---
+```
+
+## 作者
+
+添加你的详细信息到**`authors.yml`**文件中，并且把你的ID添加到你创建的文件的开头。
+
+`authors.yml`
+```yml
+...
+ID:
+  name: YOUR_NAME
+  title: ABOUT_YOU
+  url: https://github.com/USERNAME
+  image_url: https://github.com/USERNAME.png
+...
+```
+
+`文章开头`
+```yml {3}
+slug: NUM-post-NAME
+title: TITLE FOR THE POST
+authors: ID
+tags: [TAG1, TAG2]
+```
+
+> 要了解更多信息，请访问[Docusaurus:Blog](https://docusaurus.io/docs/blog)
