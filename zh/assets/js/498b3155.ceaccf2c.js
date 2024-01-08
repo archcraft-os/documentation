@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkArchcraft_Wiki=self.webpackChunkArchcraft_Wiki||[]).push([[9746],{5711:function(e){e.exports=JSON.parse('{"allTagsPath":"/zh/news/tags","slug":"/zh/news/tags/xfce","name":"xfce","count":5,"permalink":"/zh/news/tags/xfce"}')}}]);
