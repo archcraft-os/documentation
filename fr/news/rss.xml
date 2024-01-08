@@ -4,9 +4,23 @@
         <title>Archcraft Blog</title>
         <link>https://wiki.archcraft.io/fr/news</link>
         <description>Archcraft Blog</description>
-        <lastBuildDate>Mon, 24 Jul 2023 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 08 Jan 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[January 2024 Release Available]]></title>
+            <link>https://wiki.archcraft.io/fr/news/22-release-news</link>
+            <guid>22-release-news</guid>
+            <pubDate>Mon, 08 Jan 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Just a regular ISO update]]></description>
+        </item>
+        <item>
+            <title><![CDATA[October 2023 Release Available]]></title>
+            <link>https://wiki.archcraft.io/fr/news/21-release-news</link>
+            <guid>21-release-news</guid>
+            <pubDate>Thu, 12 Oct 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Just a regular ISO update]]></description>
+        </item>
         <item>
             <title><![CDATA[Updated Archcraft LXDE ISO]]></title>
             <link>https://wiki.archcraft.io/fr/news/20-release-news</link>
