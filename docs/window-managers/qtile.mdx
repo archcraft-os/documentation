@@ -1,8 +1,8 @@
 ---
-sidebar_position: 2
+sidebar_position: 9
 ---
 
-# Bspwm
+# Qtile
 
 For Archcraft community members, Edit the page.
 
@@ -25,22 +25,22 @@ export const Highlight = ({children, color}) => (
 
 <!-- Add your stuff after this -->
 
-**Note: the mod Key in Archcraft bspwm is the Super Key (Aka: Windows key)**
+**Note: the mod Key in Archcraft qtile is the Super Key (Aka: Windows key)
+and the mod1 key is the Alt Key**
 
 |Keybinding|Function|
 |--|--|
-|**mod + T**| VERY IMPORTANT : Rofi themes Menu |
 |**mod + Return** | Opens a terminal (alacritty) |
 |**mod + Alt + Return** | Opens a terminal in fullscreen mode |
 |**mod + Shift + Return** | Opens a terminal in floating mode |
 |**Alt + F1** | Opens app launcher |
+|**Alt + F2** | Opens app command runner |
 |**mod + N** | Opens network menu |
 |**mod + B** | Opens Bluetooth menu |
 |**mod + X** | Opens a power menu |
 |**mod + M** | Opens the music menu |
 |**mod + S** | Opens screenshot menu |
 |**mod + R** | Runs apps as root |
-|**mod + W** | Opens windows menu |
 |**mod + Shift + F** | Opens file manager (thunar) |
 |**mod + Shift + E** | Opens a text editor GUI (geany) |
 |**mod + Shift + W** | Opens a web browser (firefox) |
@@ -48,30 +48,30 @@ export const Highlight = ({children, color}) => (
 |**Ctrl + Alt + R** | Opens a TUI file manager (ranger) |
 |**Ctrl + Alt + H** | Opens a TUI system resource monitor (HTOP) |
 |**mod + P**| Color Picker |
-|**mod + Shift + L** | Launches the BSPWM lockscreen |
+|**Ctrl + Alt + L** | Launches the qtile lockscreen |
 |**Print** | Takes a screenshot |
-|**Alt + Print** | Takes a screenshot (5s delay) |
+|**Ctrl + Print** | Takes a screenshot (5s delay) |
 |**Shift + Print** | Takes a screenshot (10s delay)|
-|**Ctrl + Print** | Takes a screenshot of active window |
+|**Ctrl + Shift + Print** | Takes a screenshot of active window |
 |**mod + Print** | Takes a screenshot of an area |
-|**mod + C** | Kill an App |
-|**mod + Escape** | Reload keybindings|
-|**Ctrl + Alt + Escape** | Use xkill to murder an App via a skull cursor of death (scary) |
-|**Ctrl + Shift + Q** | Quit BSPWM (goodbye frien ;-;) |
-|**Ctrl + Shift + R** | Restart BSPWM |
-|**mod + H/V/Q** | Split horizontally vertically or cancel splits |
-|**mod + Ctrl + {1-9}** | Preselect the ratio |
+|**mod + C/Q** | Kill an App |
+|**mod + Ctrl + Q** | Quit qtile (goodbye frien ;-;) |
+|**mod + Ctrl + S** | Restart qtile |
+|**mod + Ctrl + R** | Reload qtile configuration |
 |**mod + F** | Enable FullScreen |
 |**mod + Space** | Toggle betweeen floating and tiled |
-|**mod + Shift + Space** | Enable Pseudo tiled and tiled mode |
-|**mod + Ctrl + M/X/Y/Z** | Set the node flags to "Marked/Locked/Sticky/Private" |
+|**mod + Shift + Space** | Toggle between different layouts |
+|**mod + Left/Down/Up/Right** | Switch between windows |
 |**mod + Shift + Left/Down/Up/Right** | Send the window to the edge of the screen |
-|**Ctrl + Alt + Left/Right** | Switch workspace |
-|**mod + Tab/Grave** | Switch to last opened workspace |
+|**mod + Alt + Left/Right** | Switch between workspaces |
+|**mod + Shift + Space** | Toggle between layouts |
+|**mod + B** | Switch to last opened workspace |
+|**mod + Tab** | Change focus to other window |
 |**mod + Shift+{1-8}** | Send focused window to another workspace |
-|**mod + Ctrl + Left/Right/Up/Down** | Expand the window |
-|**mod + Alt + Left/Right/Up/Down**| Shrink the window|
-|**mod + Shift + H**| Hide/Unhide a window |
+|**mod + Ctrl + Left/Right/Up/Down** | Expand/Shrink the window |
+|**mod + Shift + R** | Toggle window resize mode and use (Left/Down/Up/Right) to resize the window |
+|**mod + Ctrl + Return** | Reset all window sizes |
 
+To install Qtile, just run `sudo pacman -Syyu archcraft-qtile`
 
-Made with ❤️ by [Crystal](https://github.com/crystal-trd) 
+Edited by [Z3r0Tw0-ZT](https://github.com/Z3r0Tw0-ZT) ❤️
