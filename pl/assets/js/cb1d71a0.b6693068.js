@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkArchcraft_Wiki=self.webpackChunkArchcraft_Wiki||[]).push([[2178],{2356:function(p){p.exports=JSON.parse('{"allTagsPath":"/pl/blog/tags","slug":"/pl/blog/tags/ncmpcpp","name":"ncmpcpp","count":1,"permalink":"/pl/blog/tags/ncmpcpp"}')}}]);

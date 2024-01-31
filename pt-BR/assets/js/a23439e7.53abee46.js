@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkArchcraft_Wiki=self.webpackChunkArchcraft_Wiki||[]).push([[4140],{7833:function(e){e.exports=JSON.parse('{"permalink":"/pt-BR/news/page/3","page":3,"postsPerPage":10,"totalPages":3,"totalCount":22,"previousPage":"/pt-BR/news/page/2","nextPage":null,"blogDescription":"Blog","blogTitle":"Not\xedcias"}')}}]);

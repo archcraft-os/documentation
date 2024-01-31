@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkArchcraft_Wiki=self.webpackChunkArchcraft_Wiki||[]).push([[8018],{4628:function(s){s.exports=JSON.parse('{"allTagsPath":"/zh/news/tags","slug":"/zh/news/tags/v-22-09","name":"v22.09","count":1,"permalink":"/zh/news/tags/v-22-09"}')}}]);

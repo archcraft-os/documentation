@@ -2,251 +2,813 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wiki.archcraft.io/fr/news</id>
     <title>Archcraft Blog</title>
-    <updated>2024-01-08T00:00:00.000Z</updated>
+    <updated>2024-01-12T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wiki.archcraft.io/fr/news"/>
     <subtitle>Archcraft Blog</subtitle>
     <icon>https://wiki.archcraft.io/fr/img/favicon.svg</icon>
     <entry>
-        <title type="html"><![CDATA[January 2024 Release Available]]></title>
-        <id>22-release-news</id>
-        <link href="https://wiki.archcraft.io/fr/news/22-release-news"/>
+        <title type="html"><![CDATA[Archcraft LXDE Release]]></title>
+        <id>https://wiki.archcraft.io/fr/news/34-news-release</id>
+        <link href="https://wiki.archcraft.io/fr/news/34-news-release"/>
+        <updated>2024-01-12T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[New ISO of Archcraft LXDE is now available to download. Read the changelogs below to know what's new.]]></summary>
+        <content type="html"><![CDATA[<p>New ISO of Archcraft LXDE is now available to download. Read the changelogs below to know what's new.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="changelogs-">Changelogs :<a href="https://wiki.archcraft.io/fr/news/34-news-release#changelogs-" class="hash-link" aria-label="Lien direct vers Changelogs :" title="Lien direct vers Changelogs :">​</a></h3>
+<p><strong><code>Just a regular ISO update</code></strong></p>
+<ul>
+<li>Updated ISO base and profile</li>
+<li>Updated the ISO with latest packages</li>
+<li>Bug Fixes, Etc.</li>
+</ul>]]></content>
+        <author>
+            <name>Aditya Shakya</name>
+            <uri>https://github.com/adi1090x</uri>
+        </author>
+        <category label="flavor" term="flavor"/>
+        <category label="lxde" term="lxde"/>
+        <category label="release" term="release"/>
+        <category label="iso" term="iso"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Archcraft XFCE Release]]></title>
+        <id>https://wiki.archcraft.io/fr/news/33-news-release</id>
+        <link href="https://wiki.archcraft.io/fr/news/33-news-release"/>
+        <updated>2024-01-12T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[New ISO of Archcraft XFCE is now available to download. Read the changelogs below to know what's new.]]></summary>
+        <content type="html"><![CDATA[<p>New ISO of Archcraft XFCE is now available to download. Read the changelogs below to know what's new.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="changelogs-">Changelogs :<a href="https://wiki.archcraft.io/fr/news/33-news-release#changelogs-" class="hash-link" aria-label="Lien direct vers Changelogs :" title="Lien direct vers Changelogs :">​</a></h3>
+<p><strong><code>Just a regular ISO update</code></strong></p>
+<ul>
+<li>Updated ISO base and profile</li>
+<li>Updated the ISO with latest packages</li>
+<li>Fixed theming issue with xfce terminal</li>
+<li>Bug Fixes, Etc.</li>
+</ul>]]></content>
+        <author>
+            <name>Aditya Shakya</name>
+            <uri>https://github.com/adi1090x</uri>
+        </author>
+        <category label="flavor" term="flavor"/>
+        <category label="xfce" term="xfce"/>
+        <category label="release" term="release"/>
+        <category label="iso" term="iso"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Archcraft Prime Release]]></title>
+        <id>https://wiki.archcraft.io/fr/news/31-news-release</id>
+        <link href="https://wiki.archcraft.io/fr/news/31-news-release"/>
+        <updated>2024-01-09T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Exclusive New Archcraft Prime ISO is now available to download. Read the changelogs below to know what's new.]]></summary>
+        <content type="html"><![CDATA[<p><span style="background-color:#c778dd;border-radius:25px;color:#fff;padding:0.2rem 0.4rem">Exclusive</span> New <strong>Archcraft Prime ISO</strong> is now available to download. Read the changelogs below to know what's new.</p>
+<p><strong>Archcraft Prime</strong> offers every (<code>Not the one released after Prime</code>) exclusive stuff of Archcraft in <em><strong>One Single ISO</strong></em>. It has <a href="https://wiki.archcraft.io/fr/docs/window-managers/stacking-wm/openbox"><code>Openbox Premium</code></a>, <a href="https://wiki.archcraft.io/fr/docs/window-managers/tiling-wm/bspwm"><code>Bspwm Premium</code></a> and <a href="https://wiki.archcraft.io/fr/docs/window-managers/tiling-wm/i3wm"><code>i3wm Premium</code></a> as well as all the exclusive wayland compositors (<a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/sway"><code>Sway</code></a>, <a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/wayfire"><code>Wayfire</code></a>, <a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/river"><code>River</code></a>, <a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/hyprland"><code>Hyprland</code></a> and <a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/newm"><code>Newm</code></a>) pre-installed.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="changelogs-">Changelogs :<a href="https://wiki.archcraft.io/fr/news/31-news-release#changelogs-" class="hash-link" aria-label="Lien direct vers Changelogs :" title="Lien direct vers Changelogs :">​</a></h3>
+<ul>
+<li>Updated ISO profile</li>
+<li>Latest base with new packages</li>
+<li>Update all Archcraft and AUR packages</li>
+<li>Updated all window managers<!-- -->
+<ul>
+<li>Openbox: Fixed some pipemenus and updated configs and themes</li>
+<li>Bspwm: updated configs and themes (tray module for polybar)</li>
+<li>i3wm: updated configs and themes (tray module for polybar)</li>
+</ul>
+</li>
+<li>Updated all wayland compositors<!-- -->
+<ul>
+<li>Sway: fixed bugs and updated configs</li>
+<li>Wayfire: migrated to v0.8.0 and updated configs accordingly</li>
+<li>River: fixed bugs and updated configs</li>
+<li>Hyprland: using my own hyprland build for stability and updated configs to v0.34.0</li>
+<li>Newm: fixed issue with waybar gets hidden behind windows and updated configs</li>
+</ul>
+</li>
+<li>Migrated <code>alacritty</code> to its new config (<code>yml</code> to <code>toml</code>)</li>
+<li>Updated <strong>all scripts</strong> related to alacritty</li>
+<li>Small improvements and bugs fixed.</li>
+</ul>
+<p><strong>Download :</strong> You can download the latest ISO from <a href="https://ko-fi.com/s/c925a2a8c1" target="_blank" rel="noopener noreferrer"><strong><code>ko-fi</code></strong> ☕</a></p>
+<p><strong>Get the Updated ISO :</strong>  Follow the steps below to get updated files (or re-download files) for free:</p>
+<ul>
+<li>Login to you Ko-fi account</li>
+<li>Go to your <code>Ko-fi Payments History</code></li>
+<li>Select the purchases you've made</li>
+<li>Click on <code>View Details</code></li>
+<li>Then, Click on <code>View Content</code> to download the updated files.</li>
+</ul>]]></content>
+        <author>
+            <name>Aditya Shakya</name>
+            <uri>https://github.com/adi1090x</uri>
+        </author>
+        <category label="prime" term="prime"/>
+        <category label="openbox" term="openbox"/>
+        <category label="bspwm" term="bspwm"/>
+        <category label="i3wm" term="i3wm"/>
+        <category label="sway" term="sway"/>
+        <category label="wayfire" term="wayfire"/>
+        <category label="river" term="river"/>
+        <category label="hyprland" term="hyprland"/>
+        <category label="newm" term="newm"/>
+        <category label="release" term="release"/>
+        <category label="iso" term="iso"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Archcraft WSE Release]]></title>
+        <id>https://wiki.archcraft.io/fr/news/32-news-release</id>
+        <link href="https://wiki.archcraft.io/fr/news/32-news-release"/>
+        <updated>2024-01-09T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Exclusive New Archcraft Wayland Special Edition ISO is now available to download. Read the changelogs below to know what's new.]]></summary>
+        <content type="html"><![CDATA[<p><span style="background-color:#e06b74;border-radius:25px;color:#fff;padding:0.2rem 0.4rem">Exclusive</span> New <strong>Archcraft Wayland Special Edition ISO</strong> is now available to download. Read the changelogs below to know what's new.</p>
+<p>This special edition of Archcraft comes with <a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/sway"><code>Sway</code></a>, <a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/wayfire"><code>Wayfire</code></a>, <a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/river"><code>River</code></a>, <a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/hyprland"><code>Hyprland</code></a> and <a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/newm"><code>Newm</code></a> pre-installed, pre-configured and provides you a wayland only Linux experience.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="changelogs-">Changelogs :<a href="https://wiki.archcraft.io/fr/news/32-news-release#changelogs-" class="hash-link" aria-label="Lien direct vers Changelogs :" title="Lien direct vers Changelogs :">​</a></h3>
+<ul>
+<li>Updated ISO profile</li>
+<li>Latest base with new packages</li>
+<li>Update all Archcraft and AUR packages</li>
+<li>Updated all wayland compositors<!-- -->
+<ul>
+<li>Sway: fixed bugs and updated configs</li>
+<li>Wayfire: migrated to v0.8.0 and updated configs accordingly</li>
+<li>River: fixed bugs and updated configs</li>
+<li>Hyprland: using my own hyprland build for stability and updated configs to v0.34.0</li>
+<li>Newm: fixed issue with waybar gets hidden behind windows and updated configs</li>
+</ul>
+</li>
+<li>Migrated <code>alacritty</code> to its new config (<code>yml</code> to <code>toml</code>)</li>
+<li>Updated <strong>all scripts</strong> related to alacritty</li>
+<li>Small improvements and bugs fixed.</li>
+</ul>
+<p><strong>Download :</strong> You can download the latest ISO from <a href="https://ko-fi.com/s/213becbf00" target="_blank" rel="noopener noreferrer"><strong><code>ko-fi</code></strong> ☕</a></p>
+<p><strong>Get the Updated ISO :</strong>  Follow the steps below to get updated files (or re-download files) for free:</p>
+<ul>
+<li>Login to you Ko-fi account</li>
+<li>Go to your <code>Ko-fi Payments History</code></li>
+<li>Select the purchases you've made</li>
+<li>Click on <code>View Details</code></li>
+<li>Then, Click on <code>View Content</code> to download the updated files.</li>
+</ul>]]></content>
+        <author>
+            <name>Aditya Shakya</name>
+            <uri>https://github.com/adi1090x</uri>
+        </author>
+        <category label="wse" term="wse"/>
+        <category label="wayland" term="wayland"/>
+        <category label="sway" term="sway"/>
+        <category label="wayfire" term="wayfire"/>
+        <category label="river" term="river"/>
+        <category label="hyprland" term="hyprland"/>
+        <category label="newm" term="newm"/>
+        <category label="release" term="release"/>
+        <category label="iso" term="iso"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[January 2024 Release]]></title>
+        <id>https://wiki.archcraft.io/fr/news/30-news-release</id>
+        <link href="https://wiki.archcraft.io/fr/news/30-news-release"/>
         <updated>2024-01-08T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Just a regular ISO update]]></summary>
+        <summary type="html"><![CDATA[January 2024 ISO of Archcraft is now available to download. Read the changelogs below to know what's new.]]></summary>
+        <content type="html"><![CDATA[<p>January 2024 ISO of Archcraft is now available to download. Read the changelogs below to know what's new.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="changelogs-">Changelogs :<a href="https://wiki.archcraft.io/fr/news/30-news-release#changelogs-" class="hash-link" aria-label="Lien direct vers Changelogs :" title="Lien direct vers Changelogs :">​</a></h3>
+<ul>
+<li>Updated ISO profile</li>
+<li>Latest base with new packages</li>
+<li>Update all Archcraft and AUR packages</li>
+<li>Migrated <code>alacritty</code> to its new config (<code>yml</code> to <code>toml</code>)</li>
+<li>Updated <strong>all scripts</strong> related to alacritty</li>
+<li>Added <code>tray</code> module in <strong>polybar</strong> and fixed issue with fonts</li>
+<li>Small improvements and bugs fixed.</li>
+</ul>]]></content>
         <author>
             <name>Aditya Shakya</name>
             <uri>https://github.com/adi1090x</uri>
         </author>
+        <category label="v24.01" term="v24.01"/>
+        <category label="release" term="release"/>
+        <category label="iso" term="iso"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[October 2023 Release Available]]></title>
-        <id>21-release-news</id>
-        <link href="https://wiki.archcraft.io/fr/news/21-release-news"/>
+        <title type="html"><![CDATA[Archcraft WSE Release]]></title>
+        <id>https://wiki.archcraft.io/fr/news/29-news-release</id>
+        <link href="https://wiki.archcraft.io/fr/news/29-news-release"/>
+        <updated>2023-10-15T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Exclusive New Archcraft Wayland Special Edition ISO is now available to download. Read the changelogs below to know what's new.]]></summary>
+        <content type="html"><![CDATA[<p><span style="background-color:#e06b74;border-radius:25px;color:#fff;padding:0.2rem 0.4rem">Exclusive</span> New <strong>Archcraft Wayland Special Edition ISO</strong> is now available to download. Read the changelogs below to know what's new.</p>
+<p>This special edition of Archcraft comes with <a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/sway"><code>Sway</code></a>, <a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/wayfire"><code>Wayfire</code></a>, <a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/river"><code>River</code></a>, <a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/hyprland"><code>Hyprland</code></a> and <a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/newm"><code>Newm</code></a> pre-installed, pre-configured and provides you a wayland only Linux experience.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="changelogs-">Changelogs :<a href="https://wiki.archcraft.io/fr/news/29-news-release#changelogs-" class="hash-link" aria-label="Lien direct vers Changelogs :" title="Lien direct vers Changelogs :">​</a></h3>
+<ul>
+<li>Updated ISO profile</li>
+<li>Latest base with new packages</li>
+<li>Updated all wayland compositors<!-- -->
+<ul>
+<li>Added better example for multi-monitor support in...<!-- -->
+<ul>
+<li>Sway: <code>~/.config/sway/sway-output</code></li>
+<li>Wayfire: <code>~/.config/wayfire.ini</code></li>
+<li>River: <code>~/.config/river/init</code></li>
+<li>Hyprland: <code>~/.config/hypr/hyprland.conf</code></li>
+<li>Newm: <code>~/.config/newm/config.py</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Added <code>wipe</code> ability in ABIF</li>
+<li>Fixed issue with <code>help and tips</code> app</li>
+<li>Small improvements and bugs fixed.</li>
+</ul>
+<p><strong>Download :</strong> You can download the latest ISO from <a href="https://ko-fi.com/s/213becbf00" target="_blank" rel="noopener noreferrer"><strong><code>ko-fi</code></strong> ☕</a></p>
+<p><strong>Get the Updated ISO :</strong>  Follow the steps below to get updated files (or re-download files) for free:</p>
+<ul>
+<li>Login to you Ko-fi account</li>
+<li>Go to your <code>Ko-fi Payments History</code></li>
+<li>Select the purchases you've made</li>
+<li>Click on <code>View Details</code></li>
+<li>Then, Click on <code>View Content</code> to download the updated files.</li>
+</ul>]]></content>
+        <author>
+            <name>Aditya Shakya</name>
+            <uri>https://github.com/adi1090x</uri>
+        </author>
+        <category label="wse" term="wse"/>
+        <category label="wayland" term="wayland"/>
+        <category label="sway" term="sway"/>
+        <category label="wayfire" term="wayfire"/>
+        <category label="river" term="river"/>
+        <category label="hyprland" term="hyprland"/>
+        <category label="newm" term="newm"/>
+        <category label="release" term="release"/>
+        <category label="iso" term="iso"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Archcraft Prime Release]]></title>
+        <id>https://wiki.archcraft.io/fr/news/28-news-release</id>
+        <link href="https://wiki.archcraft.io/fr/news/28-news-release"/>
+        <updated>2023-10-14T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Exclusive New Archcraft Prime ISO is now available to download. Read the changelogs below to know what's new.]]></summary>
+        <content type="html"><![CDATA[<p><span style="background-color:#c778dd;border-radius:25px;color:#fff;padding:0.2rem 0.4rem">Exclusive</span> New <strong>Archcraft Prime ISO</strong> is now available to download. Read the changelogs below to know what's new.</p>
+<p><strong>Archcraft Prime</strong> offers every (<code>Not the one released after Prime</code>) exclusive stuff of Archcraft in <em><strong>One Single ISO</strong></em>. It has <a href="https://wiki.archcraft.io/fr/docs/window-managers/stacking-wm/openbox"><code>Openbox Premium</code></a>, <a href="https://wiki.archcraft.io/fr/docs/window-managers/tiling-wm/bspwm"><code>Bspwm Premium</code></a> and <a href="https://wiki.archcraft.io/fr/docs/window-managers/tiling-wm/i3wm"><code>i3wm Premium</code></a> as well as all the exclusive wayland compositors (<a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/sway"><code>Sway</code></a>, <a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/wayfire"><code>Wayfire</code></a>, <a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/river"><code>River</code></a>, <a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/hyprland"><code>Hyprland</code></a> and <a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/newm"><code>Newm</code></a>) pre-installed.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="changelogs-">Changelogs :<a href="https://wiki.archcraft.io/fr/news/28-news-release#changelogs-" class="hash-link" aria-label="Lien direct vers Changelogs :" title="Lien direct vers Changelogs :">​</a></h3>
+<ul>
+<li>Updated ISO profile</li>
+<li>Latest base with new packages</li>
+<li>Added <code>archcraft-randr</code> app to manager display and monitors (Only X11)</li>
+<li>Updated all window managers<!-- -->
+<ul>
+<li>Clean PKGBUILDs (<code>with only needed deps</code>) and updated code</li>
+<li>Directory <strong>openbox-themes</strong> now merged into <strong>openbox</strong>, new config structure for openbox</li>
+<li>Added <strong>example layouts</strong> for multi-monitors in <code>bspwmrc</code> (single, two-monitors, three-monitors layouts)</li>
+<li>Added multi-monitor support in all available WMs (use <code>archcraft-randr</code>)</li>
+</ul>
+</li>
+<li>Updated all wayland compositors<!-- -->
+<ul>
+<li>Added better example for multi-monitor support in...<!-- -->
+<ul>
+<li>Sway: <code>~/.config/sway/sway-output</code></li>
+<li>Wayfire: <code>~/.config/wayfire.ini</code></li>
+<li>River: <code>~/.config/river/init</code></li>
+<li>Hyprland: <code>~/.config/hypr/hyprland.conf</code></li>
+<li>Newm: <code>~/.config/newm/config.py</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Added <code>wipe</code> ability in ABIF</li>
+<li>Fixed issue with <code>help and tips</code> app</li>
+<li>Removed <code>python2</code> as it's not needed anymore</li>
+<li>Small improvements and bugs fixed.</li>
+</ul>
+<p><strong>Download :</strong> You can download the latest ISO from <a href="https://ko-fi.com/s/c925a2a8c1" target="_blank" rel="noopener noreferrer"><strong><code>ko-fi</code></strong> ☕</a></p>
+<p><strong>Get the Updated ISO :</strong>  Follow the steps below to get updated files (or re-download files) for free:</p>
+<ul>
+<li>Login to you Ko-fi account</li>
+<li>Go to your <code>Ko-fi Payments History</code></li>
+<li>Select the purchases you've made</li>
+<li>Click on <code>View Details</code></li>
+<li>Then, Click on <code>View Content</code> to download the updated files.</li>
+</ul>]]></content>
+        <author>
+            <name>Aditya Shakya</name>
+            <uri>https://github.com/adi1090x</uri>
+        </author>
+        <category label="prime" term="prime"/>
+        <category label="openbox" term="openbox"/>
+        <category label="bspwm" term="bspwm"/>
+        <category label="i3wm" term="i3wm"/>
+        <category label="sway" term="sway"/>
+        <category label="wayfire" term="wayfire"/>
+        <category label="river" term="river"/>
+        <category label="hyprland" term="hyprland"/>
+        <category label="newm" term="newm"/>
+        <category label="release" term="release"/>
+        <category label="iso" term="iso"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[October 2023 Release]]></title>
+        <id>https://wiki.archcraft.io/fr/news/27-news-release</id>
+        <link href="https://wiki.archcraft.io/fr/news/27-news-release"/>
         <updated>2023-10-12T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Just a regular ISO update]]></summary>
+        <summary type="html"><![CDATA[October 2023 ISO of Archcraft is now available to download. Read the changelogs below to know what's new.]]></summary>
+        <content type="html"><![CDATA[<p>October 2023 ISO of Archcraft is now available to download. Read the changelogs below to know what's new.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="changelogs-">Changelogs :<a href="https://wiki.archcraft.io/fr/news/27-news-release#changelogs-" class="hash-link" aria-label="Lien direct vers Changelogs :" title="Lien direct vers Changelogs :">​</a></h3>
+<ul>
+<li>Updated ISO profile</li>
+<li>Latest base with new packages</li>
+<li>Added <code>archcraft-randr</code> app to manager display and monitors</li>
+<li>Updated all window managers<!-- -->
+<ul>
+<li>Clean PKGBUILDs (<code>with only needed deps</code>) and updated code</li>
+<li>Directory <strong>openbox-themes</strong> now merged into <strong>openbox</strong>, new config structure for openbox</li>
+<li>Added <strong>example layouts</strong> for multi-monitors in <code>bspwmrc</code> (single, two-monitors, three-monitors layouts)</li>
+<li>Added multi-monitor support in all available WMs (use <code>archcraft-randr</code>)</li>
+<li>And, more...</li>
+</ul>
+</li>
+<li>Added <code>wipe</code> ability in ABIF</li>
+<li>Fixed issue with <code>help and tips</code> app</li>
+<li>Removed <code>python2</code> as it's not needed anymore</li>
+<li>Small improvements and bugs fixed.</li>
+</ul>
+<blockquote>
+<p><strong><code>Info</code></strong> : Now, package update for WMs will not replace your modified configs (previously, backing-up your configs in <code>~/.config</code>).</p>
+<p>Instead, It'll install new updates in separate directory (eg: <code>~/.config/openbox_pacnew_2023-10-12</code>), It'll be your choice to use your current config or updated one.</p>
+<p>You can use <code>meld</code> to merge updates in your current modified configs.</p>
+</blockquote>]]></content>
         <author>
             <name>Aditya Shakya</name>
             <uri>https://github.com/adi1090x</uri>
         </author>
+        <category label="v23.10" term="v23.10"/>
+        <category label="release" term="release"/>
+        <category label="iso" term="iso"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Updated Archcraft LXDE ISO]]></title>
-        <id>20-release-news</id>
-        <link href="https://wiki.archcraft.io/fr/news/20-release-news"/>
+        <title type="html"><![CDATA[Archcraft LXDE Release]]></title>
+        <id>https://wiki.archcraft.io/fr/news/26-news-release</id>
+        <link href="https://wiki.archcraft.io/fr/news/26-news-release"/>
         <updated>2023-07-24T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[New ISO of Archcraft LXDE is now available to download.]]></summary>
+        <summary type="html"><![CDATA[New ISO of Archcraft LXDE is now available to download. Read the changelogs below to know what's new.]]></summary>
+        <content type="html"><![CDATA[<p>New ISO of Archcraft LXDE is now available to download. Read the changelogs below to know what's new.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="changelogs-">Changelogs :<a href="https://wiki.archcraft.io/fr/news/26-news-release#changelogs-" class="hash-link" aria-label="Lien direct vers Changelogs :" title="Lien direct vers Changelogs :">​</a></h3>
+<ul>
+<li>Updated ISO base and profile</li>
+<li>Updated the ISO with latest packages</li>
+<li>Added New Themes and Wallpapers</li>
+<li>Fixed the directory issue on lxde-panel</li>
+<li>Bug Fixes, Etc.</li>
+</ul>]]></content>
         <author>
             <name>Aditya Shakya</name>
             <uri>https://github.com/adi1090x</uri>
         </author>
+        <category label="flavor" term="flavor"/>
+        <category label="lxde" term="lxde"/>
+        <category label="release" term="release"/>
+        <category label="iso" term="iso"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Updated Archcraft XFCE ISO]]></title>
-        <id>19-release-news</id>
-        <link href="https://wiki.archcraft.io/fr/news/19-release-news"/>
+        <title type="html"><![CDATA[Archcraft XFCE Release]]></title>
+        <id>https://wiki.archcraft.io/fr/news/25-news-release</id>
+        <link href="https://wiki.archcraft.io/fr/news/25-news-release"/>
         <updated>2023-07-21T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[New ISO of Archcraft XFCE is now available to download.]]></summary>
+        <summary type="html"><![CDATA[New ISO of Archcraft XFCE is now available to download. Read the changelogs below to know what's new.]]></summary>
+        <content type="html"><![CDATA[<p>New ISO of Archcraft XFCE is now available to download. Read the changelogs below to know what's new.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="changelogs-">Changelogs :<a href="https://wiki.archcraft.io/fr/news/25-news-release#changelogs-" class="hash-link" aria-label="Lien direct vers Changelogs :" title="Lien direct vers Changelogs :">​</a></h3>
+<ul>
+<li>Updated ISO base and profile</li>
+<li>Updated the ISO with latest packages</li>
+<li>Added New Themes and Wallpapers</li>
+<li>Fixed the directory issue on xfce-panel</li>
+<li>Bug Fixes, Etc.</li>
+</ul>]]></content>
         <author>
             <name>Aditya Shakya</name>
             <uri>https://github.com/adi1090x</uri>
         </author>
+        <category label="flavor" term="flavor"/>
+        <category label="xfce" term="xfce"/>
+        <category label="release" term="release"/>
+        <category label="iso" term="iso"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[July 2023 Release Available]]></title>
-        <id>18-release-news</id>
-        <link href="https://wiki.archcraft.io/fr/news/18-release-news"/>
+        <title type="html"><![CDATA[Archcraft WSE Release]]></title>
+        <id>https://wiki.archcraft.io/fr/news/24-news-release</id>
+        <link href="https://wiki.archcraft.io/fr/news/24-news-release"/>
+        <updated>2023-07-11T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Exclusive New Archcraft Wayland Special Edition ISO is now available to download. Read the changelogs below to know what's new.]]></summary>
+        <content type="html"><![CDATA[<p><span style="background-color:#e06b74;border-radius:25px;color:#fff;padding:0.2rem 0.4rem">Exclusive</span> New <strong>Archcraft Wayland Special Edition ISO</strong> is now available to download. Read the changelogs below to know what's new.</p>
+<p>This special edition of Archcraft comes with <a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/sway"><code>Sway</code></a>, <a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/wayfire"><code>Wayfire</code></a>, <a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/river"><code>River</code></a>, <a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/hyprland"><code>Hyprland</code></a> and <a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/newm"><code>Newm</code></a> pre-installed, pre-configured and provides you a wayland only Linux experience.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="changelogs-">Changelogs :<a href="https://wiki.archcraft.io/fr/news/24-news-release#changelogs-" class="hash-link" aria-label="Lien direct vers Changelogs :" title="Lien direct vers Changelogs :">​</a></h3>
+<ul>
+<li>Updated ISO profile with latest archiso</li>
+<li>Latest base with new packages</li>
+<li>Fixed sddm not saving the last used session issue</li>
+<li>Added a calculator app</li>
+<li>Added Welcome and Help-and-Tips App</li>
+<li>Fixed Scaling issue in QT apps in wayland</li>
+<li><strong><code>Sway, Wayfire, River, Hyprland</code></strong>
+<ul>
+<li>Added <code>bluetooth</code> module on Waybar</li>
+<li>Added a rofi <code>bluetooth</code> applet</li>
+<li>Added <code>alacritty</code> terminal</li>
+<li>Added <code>pywal</code> support</li>
+<li>Improved a lot of scripts</li>
+<li>etc</li>
+</ul>
+</li>
+<li>Many small bugs fixed.</li>
+</ul>
+<p><strong>Download :</strong> You can download the latest ISO from <a href="https://ko-fi.com/s/213becbf00" target="_blank" rel="noopener noreferrer"><strong><code>ko-fi</code></strong> ☕</a></p>
+<p><strong>Get the Updated ISO :</strong>  Follow the steps below to get updated files (or re-download files) for free:</p>
+<ul>
+<li>Login to you Ko-fi account</li>
+<li>Go to your <code>Ko-fi Payments History</code></li>
+<li>Select the purchases you've made</li>
+<li>Click on <code>View Details</code></li>
+<li>Then, Click on <code>View Content</code> to download the updated files.</li>
+</ul>]]></content>
+        <author>
+            <name>Aditya Shakya</name>
+            <uri>https://github.com/adi1090x</uri>
+        </author>
+        <category label="wse" term="wse"/>
+        <category label="wayland" term="wayland"/>
+        <category label="sway" term="sway"/>
+        <category label="wayfire" term="wayfire"/>
+        <category label="river" term="river"/>
+        <category label="hyprland" term="hyprland"/>
+        <category label="newm" term="newm"/>
+        <category label="release" term="release"/>
+        <category label="iso" term="iso"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Archcraft Prime Release]]></title>
+        <id>https://wiki.archcraft.io/fr/news/23-news-release</id>
+        <link href="https://wiki.archcraft.io/fr/news/23-news-release"/>
+        <updated>2023-07-10T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Exclusive New Archcraft Prime ISO is now available to download. Read the changelogs below to know what's new.]]></summary>
+        <content type="html"><![CDATA[<p><span style="background-color:#c778dd;border-radius:25px;color:#fff;padding:0.2rem 0.4rem">Exclusive</span> New <strong>Archcraft Prime ISO</strong> is now available to download. Read the changelogs below to know what's new.</p>
+<p><strong>Archcraft Prime</strong> offers every (<code>Not the one released after Prime</code>) exclusive stuff of Archcraft in <em><strong>One Single ISO</strong></em>. It has <a href="https://wiki.archcraft.io/fr/docs/window-managers/stacking-wm/openbox"><code>Openbox Premium</code></a>, <a href="https://wiki.archcraft.io/fr/docs/window-managers/tiling-wm/bspwm"><code>Bspwm Premium</code></a> and <a href="https://wiki.archcraft.io/fr/docs/window-managers/tiling-wm/i3wm"><code>i3wm Premium</code></a> as well as all the exclusive wayland compositors (<a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/sway"><code>Sway</code></a>, <a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/wayfire"><code>Wayfire</code></a>, <a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/river"><code>River</code></a>, <a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/hyprland"><code>Hyprland</code></a> and <a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/newm"><code>Newm</code></a>) pre-installed.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="changelogs-">Changelogs :<a href="https://wiki.archcraft.io/fr/news/23-news-release#changelogs-" class="hash-link" aria-label="Lien direct vers Changelogs :" title="Lien direct vers Changelogs :">​</a></h3>
+<ul>
+<li>Updated ISO profile with latest archiso</li>
+<li>Latest base with new packages</li>
+<li>Fixed <code>xfce-power-manager</code> issue (not locking the screen on lid close)</li>
+<li>Fixed sddm not saving the last used session issue</li>
+<li>Added a calculator app</li>
+<li>Added Welcome and Help-and-Tips App</li>
+<li>Fixed Scaling issue in QT apps in wayland</li>
+<li><strong><code>Openbox WM</code></strong>
+<ul>
+<li>Added <code>tint2</code> as alternate panel (in all themes)</li>
+<li>Ability to switch between panels</li>
+<li>Added <code>bluetooth</code> module on both panels</li>
+<li>Added a rofi <code>bluetooth</code> applet</li>
+<li>Fixed window resizing issue via each side of window</li>
+<li>etc</li>
+</ul>
+</li>
+<li><strong><code>BSPWM</code></strong>
+<ul>
+<li>Added <code>bluetooth</code> module on polybar (in all themes)</li>
+<li>Added a rofi <code>bluetooth</code> applet</li>
+<li>etc</li>
+</ul>
+</li>
+<li><strong><code>I3wm</code></strong>
+<ul>
+<li>Added <code>bluetooth</code> module on polybar (in all themes)</li>
+<li>Added a rofi <code>bluetooth</code> applet</li>
+<li>etc</li>
+</ul>
+</li>
+<li><strong><code>Sway, Wayfire, River, Hyprland</code></strong>
+<ul>
+<li>Added <code>bluetooth</code> module on Waybar</li>
+<li>Added a rofi <code>bluetooth</code> applet</li>
+<li>Added <code>alacritty</code> terminal</li>
+<li>Added <code>pywal</code> support</li>
+<li>Improved a lot of scripts</li>
+<li>etc</li>
+</ul>
+</li>
+<li>Many small bugs fixed.</li>
+</ul>
+<p><strong>Download :</strong> You can download the latest ISO from <a href="https://ko-fi.com/s/c925a2a8c1" target="_blank" rel="noopener noreferrer"><strong><code>ko-fi</code></strong> ☕</a></p>
+<p><strong>Get the Updated ISO :</strong>  Follow the steps below to get updated files (or re-download files) for free:</p>
+<ul>
+<li>Login to you Ko-fi account</li>
+<li>Go to your <code>Ko-fi Payments History</code></li>
+<li>Select the purchases you've made</li>
+<li>Click on <code>View Details</code></li>
+<li>Then, Click on <code>View Content</code> to download the updated files.</li>
+</ul>]]></content>
+        <author>
+            <name>Aditya Shakya</name>
+            <uri>https://github.com/adi1090x</uri>
+        </author>
+        <category label="prime" term="prime"/>
+        <category label="openbox" term="openbox"/>
+        <category label="bspwm" term="bspwm"/>
+        <category label="i3wm" term="i3wm"/>
+        <category label="sway" term="sway"/>
+        <category label="wayfire" term="wayfire"/>
+        <category label="river" term="river"/>
+        <category label="hyprland" term="hyprland"/>
+        <category label="newm" term="newm"/>
+        <category label="release" term="release"/>
+        <category label="iso" term="iso"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[July 2023 Release]]></title>
+        <id>https://wiki.archcraft.io/fr/news/22-news-release</id>
+        <link href="https://wiki.archcraft.io/fr/news/22-news-release"/>
         <updated>2023-07-05T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Just a regular ISO update]]></summary>
+        <summary type="html"><![CDATA[July 2023 ISO of Archcraft is now available to download. Read the changelogs below to know what's new.]]></summary>
+        <content type="html"><![CDATA[<p>July 2023 ISO of Archcraft is now available to download. Read the changelogs below to know what's new.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="changelogs-">Changelogs :<a href="https://wiki.archcraft.io/fr/news/22-news-release#changelogs-" class="hash-link" aria-label="Lien direct vers Changelogs :" title="Lien direct vers Changelogs :">​</a></h3>
+<ul>
+<li>Updated ISO profile with latest archiso</li>
+<li>Latest base with new packages</li>
+<li>Fixed <code>xfce-power-manager</code> issue (not locking the screen on lid close)</li>
+<li>Fixed sddm not saving the last used session issue</li>
+<li>Added a calculator app</li>
+<li><strong><code>Openbox WM</code></strong>
+<ul>
+<li>Added <code>tint2</code> as alternate panel (in all themes)</li>
+<li>Ability to switch between panels</li>
+<li>Added <code>bluetooth</code> module on both panels</li>
+<li>Added a rofi <code>bluetooth</code> applet</li>
+<li>Fixed window resizing issue via each side of window</li>
+<li>etc</li>
+</ul>
+</li>
+<li><strong><code>BSPWM</code></strong>
+<ul>
+<li>Added <code>bluetooth</code> module on polybar (in all themes)</li>
+<li>Added a rofi <code>bluetooth</code> applet</li>
+<li>etc</li>
+</ul>
+</li>
+<li>Many small bugs fixed.</li>
+</ul>]]></content>
         <author>
             <name>Aditya Shakya</name>
             <uri>https://github.com/adi1090x</uri>
         </author>
+        <category label="v23.07" term="v23.07"/>
+        <category label="release" term="release"/>
+        <category label="iso" term="iso"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Archcraft XFCE and LXDE ISOs (April 2023)]]></title>
-        <id>17-release-news</id>
-        <link href="https://wiki.archcraft.io/fr/news/17-release-news"/>
+        <title type="html"><![CDATA[Archcraft Prime Release]]></title>
+        <id>https://wiki.archcraft.io/fr/news/21-news-release</id>
+        <link href="https://wiki.archcraft.io/fr/news/21-news-release"/>
+        <updated>2023-05-06T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Exclusive New Archcraft Prime ISO is now available to download. Read the changelogs below to know what's new.]]></summary>
+        <content type="html"><![CDATA[<p><span style="background-color:#c778dd;border-radius:25px;color:#fff;padding:0.2rem 0.4rem">Exclusive</span> New <strong>Archcraft Prime ISO</strong> is now available to download. Read the changelogs below to know what's new.</p>
+<p><strong>Archcraft Prime</strong> offers every (<code>Not the one released after Prime</code>) exclusive stuff of Archcraft in <em><strong>One Single ISO</strong></em>. It has <a href="https://wiki.archcraft.io/fr/docs/window-managers/stacking-wm/openbox"><code>Openbox Premium</code></a>, <a href="https://wiki.archcraft.io/fr/docs/window-managers/tiling-wm/bspwm"><code>Bspwm Premium</code></a> and <a href="https://wiki.archcraft.io/fr/docs/window-managers/tiling-wm/i3wm"><code>i3wm Premium</code></a> as well as all the exclusive wayland compositors (<a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/sway"><code>Sway</code></a>, <a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/wayfire"><code>Wayfire</code></a>, <a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/river"><code>River</code></a>, <a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/hyprland"><code>Hyprland</code></a> and <a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/newm"><code>Newm</code></a>) pre-installed.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="changelogs-">Changelogs :<a href="https://wiki.archcraft.io/fr/news/21-news-release#changelogs-" class="hash-link" aria-label="Lien direct vers Changelogs :" title="Lien direct vers Changelogs :">​</a></h3>
+<ul>
+<li>Nothing Much, Just Updated The ISO with Fixed NEWM</li>
+</ul>
+<p><strong>Download :</strong> You can download the latest ISO from <a href="https://ko-fi.com/s/c925a2a8c1" target="_blank" rel="noopener noreferrer"><strong><code>ko-fi</code></strong> ☕</a></p>
+<p><strong>Get the Updated ISO :</strong>  Follow the steps below to get updated files (or re-download files) for free:</p>
+<ul>
+<li>Login to you Ko-fi account</li>
+<li>Go to your <code>Ko-fi Payments History</code></li>
+<li>Select the purchases you've made</li>
+<li>Click on <code>View Details</code></li>
+<li>Then, Click on <code>View Content</code> to download the updated files.</li>
+</ul>]]></content>
+        <author>
+            <name>Aditya Shakya</name>
+            <uri>https://github.com/adi1090x</uri>
+        </author>
+        <category label="prime" term="prime"/>
+        <category label="openbox" term="openbox"/>
+        <category label="bspwm" term="bspwm"/>
+        <category label="i3wm" term="i3wm"/>
+        <category label="sway" term="sway"/>
+        <category label="wayfire" term="wayfire"/>
+        <category label="river" term="river"/>
+        <category label="hyprland" term="hyprland"/>
+        <category label="newm" term="newm"/>
+        <category label="release" term="release"/>
+        <category label="iso" term="iso"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Archcraft WSE Release]]></title>
+        <id>https://wiki.archcraft.io/fr/news/20-news-release</id>
+        <link href="https://wiki.archcraft.io/fr/news/20-news-release"/>
+        <updated>2023-05-06T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Exclusive New Archcraft Wayland Special Edition ISO is now available to download. Read the changelogs below to know what's new.]]></summary>
+        <content type="html"><![CDATA[<p><span style="background-color:#e06b74;border-radius:25px;color:#fff;padding:0.2rem 0.4rem">Exclusive</span> New <strong>Archcraft Wayland Special Edition ISO</strong> is now available to download. Read the changelogs below to know what's new.</p>
+<p>This special edition of Archcraft comes with <a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/sway"><code>Sway</code></a>, <a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/wayfire"><code>Wayfire</code></a>, <a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/river"><code>River</code></a>, <a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/hyprland"><code>Hyprland</code></a> and <a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/newm"><code>Newm</code></a> pre-installed, pre-configured and provides you a wayland only Linux experience.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="changelogs-">Changelogs :<a href="https://wiki.archcraft.io/fr/news/20-news-release#changelogs-" class="hash-link" aria-label="Lien direct vers Changelogs :" title="Lien direct vers Changelogs :">​</a></h3>
+<ul>
+<li>Fixed pacman-init issue</li>
+<li>Added ability to choose desktop in the installer (calamares)</li>
+<li>Fixed auto-login issue</li>
+<li>etc</li>
+</ul>
+<p><strong>Download :</strong> You can download the latest ISO from <a href="https://ko-fi.com/s/213becbf00" target="_blank" rel="noopener noreferrer"><strong><code>ko-fi</code></strong> ☕</a></p>
+<p><strong>Get the Updated ISO :</strong>  Follow the steps below to get updated files (or re-download files) for free:</p>
+<ul>
+<li>Login to you Ko-fi account</li>
+<li>Go to your <code>Ko-fi Payments History</code></li>
+<li>Select the purchases you've made</li>
+<li>Click on <code>View Details</code></li>
+<li>Then, Click on <code>View Content</code> to download the updated files.</li>
+</ul>]]></content>
+        <author>
+            <name>Aditya Shakya</name>
+            <uri>https://github.com/adi1090x</uri>
+        </author>
+        <category label="wse" term="wse"/>
+        <category label="wayland" term="wayland"/>
+        <category label="sway" term="sway"/>
+        <category label="wayfire" term="wayfire"/>
+        <category label="river" term="river"/>
+        <category label="hyprland" term="hyprland"/>
+        <category label="newm" term="newm"/>
+        <category label="release" term="release"/>
+        <category label="iso" term="iso"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Archcraft Prime Release]]></title>
+        <id>https://wiki.archcraft.io/fr/news/19-news-release</id>
+        <link href="https://wiki.archcraft.io/fr/news/19-news-release"/>
+        <updated>2023-04-28T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Exclusive Archcraft Prime ISO is now available to download. Read the changelogs below to know what's new.]]></summary>
+        <content type="html"><![CDATA[<p><span style="background-color:#c778dd;border-radius:25px;color:#fff;padding:0.2rem 0.4rem">Exclusive</span> <strong>Archcraft Prime ISO</strong> is now available to download. Read the changelogs below to know what's new.</p>
+<p><strong>Archcraft Prime</strong> offers every (<code>Not the one released after Prime</code>) exclusive stuff of Archcraft in <em><strong>One Single ISO</strong></em>. It has <a href="https://wiki.archcraft.io/fr/docs/window-managers/stacking-wm/openbox"><code>Openbox Premium</code></a>, <a href="https://wiki.archcraft.io/fr/docs/window-managers/tiling-wm/bspwm"><code>Bspwm Premium</code></a> and <a href="https://wiki.archcraft.io/fr/docs/window-managers/tiling-wm/i3wm"><code>i3wm Premium</code></a> as well as all the exclusive wayland compositors (<a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/sway"><code>Sway</code></a>, <a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/wayfire"><code>Wayfire</code></a>, <a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/river"><code>River</code></a>, <a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/hyprland"><code>Hyprland</code></a> and <a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/newm"><code>Newm</code></a>) pre-installed.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="changelogs-">Changelogs :<a href="https://wiki.archcraft.io/fr/news/19-news-release#changelogs-" class="hash-link" aria-label="Lien direct vers Changelogs :" title="Lien direct vers Changelogs :">​</a></h3>
+<ul>
+<li>Created the ISO base from scratch</li>
+<li>Grub2 bootloader with themes</li>
+<li>Customized Plymouth &amp; SDDM</li>
+<li>Basic Applications Only, No Bloatware</li>
+<li>Calamares Installer (Graphical) with ability to choose WMs/WCs</li>
+<li>ABIF (CLI) Installer as secondary installer</li>
+<li>Full Network Manager Support, Various VPN plugins</li>
+<li>Built-in Bluetooth Support</li>
+<li>Pipewire For Sound/Audio (Systemwide, Bluetooth, Jack)</li>
+<li>Built-in Printer Support</li>
+<li>Almost All Audio, Video and Image Codecs</li>
+<li>Full File manager functionality (Mounting, Networking, Archiving, etc)</li>
+<li>Built-in AUR support</li>
+<li>Minimal User Interface</li>
+<li>All Premium Window Managers (Openbox, Bspwm and i3wm)</li>
+<li>All Exclusive Wayland Compositors (Sway, Wayfire, River, Hyprland, Newm)</li>
+<li>Archcraft Icons, Themes, Wallpapers, Fonts</li>
+<li>Etc</li>
+</ul>
+<p><strong>Download :</strong> You can download the latest ISO from <a href="https://ko-fi.com/s/c925a2a8c1" target="_blank" rel="noopener noreferrer"><strong><code>ko-fi</code></strong> ☕</a></p>]]></content>
+        <author>
+            <name>Aditya Shakya</name>
+            <uri>https://github.com/adi1090x</uri>
+        </author>
+        <category label="prime" term="prime"/>
+        <category label="openbox" term="openbox"/>
+        <category label="bspwm" term="bspwm"/>
+        <category label="i3wm" term="i3wm"/>
+        <category label="sway" term="sway"/>
+        <category label="wayfire" term="wayfire"/>
+        <category label="river" term="river"/>
+        <category label="hyprland" term="hyprland"/>
+        <category label="newm" term="newm"/>
+        <category label="release" term="release"/>
+        <category label="iso" term="iso"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Archcraft WSE Release]]></title>
+        <id>https://wiki.archcraft.io/fr/news/18-news-release</id>
+        <link href="https://wiki.archcraft.io/fr/news/18-news-release"/>
+        <updated>2023-04-15T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Exclusive New Archcraft Wayland Special Edition ISO is now available to download. Read the changelogs below to know what's new.]]></summary>
+        <content type="html"><![CDATA[<p><span style="background-color:#e06b74;border-radius:25px;color:#fff;padding:0.2rem 0.4rem">Exclusive</span> New <strong>Archcraft Wayland Special Edition ISO</strong> is now available to download. Read the changelogs below to know what's new.</p>
+<p>This special edition of Archcraft comes with <a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/sway"><code>Sway</code></a>, <a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/wayfire"><code>Wayfire</code></a>, <a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/river"><code>River</code></a>, <a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/hyprland"><code>Hyprland</code></a> and <a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/newm"><code>Newm</code></a> pre-installed, pre-configured and provides you a wayland only Linux experience.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="changelogs-">Changelogs :<a href="https://wiki.archcraft.io/fr/news/18-news-release#changelogs-" class="hash-link" aria-label="Lien direct vers Changelogs :" title="Lien direct vers Changelogs :">​</a></h3>
+<ul>
+<li>Using <code>sddm-git</code> now, Solved shutdown/reboot issue</li>
+<li>Using new method to boot the ISO on Nvidia Machines</li>
+<li>Updated the Installers with (possible) Nvidia support</li>
+<li>Updated the base system with latest packages</li>
+<li><strong><code>Updated All the wayland compositors</code></strong>
+<ul>
+<li>Updated the config structure</li>
+<li>Added Rofi menu, applets and scripts (network, music, etc)</li>
+<li>Fixed area screenshot overlay issue</li>
+<li>Fixed nerwork-applet overlay issue in hyprland</li>
+<li>Modified the configs for waybar, wlogout and wofi (added separate colors.css file)</li>
+<li>Changes gtk themes in sway, wayfire and hyprland</li>
+<li>Updated lockscreen script in sway</li>
+<li>Added two packages for NEWM (one normal and one blur)</li>
+<li>Added spotify module in waybar in all WCs</li>
+<li>Animated MPD and spotify modules in waybar</li>
+</ul>
+</li>
+<li>Many Bug fixes, etc</li>
+</ul>
+<p><strong>Download :</strong> You can download the latest ISO from <a href="https://ko-fi.com/s/213becbf00" target="_blank" rel="noopener noreferrer"><strong><code>ko-fi</code></strong> ☕</a></p>
+<p><strong>Get the Updated ISO :</strong>  Follow the steps below to get updated files (or re-download files) for free:</p>
+<ul>
+<li>Login to you Ko-fi account</li>
+<li>Go to your <code>Ko-fi Payments History</code></li>
+<li>Select the purchases you've made</li>
+<li>Click on <code>View Details</code></li>
+<li>Then, Click on <code>View Content</code> to download the updated files.</li>
+</ul>]]></content>
+        <author>
+            <name>Aditya Shakya</name>
+            <uri>https://github.com/adi1090x</uri>
+        </author>
+        <category label="wse" term="wse"/>
+        <category label="wayland" term="wayland"/>
+        <category label="sway" term="sway"/>
+        <category label="wayfire" term="wayfire"/>
+        <category label="river" term="river"/>
+        <category label="hyprland" term="hyprland"/>
+        <category label="newm" term="newm"/>
+        <category label="release" term="release"/>
+        <category label="iso" term="iso"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Archcraft XFCE and LXDE Release]]></title>
+        <id>https://wiki.archcraft.io/fr/news/17-news-release</id>
+        <link href="https://wiki.archcraft.io/fr/news/17-news-release"/>
         <updated>2023-04-02T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[New ISOs of Archcraft XFCE and LXDE is now available to download.]]></summary>
+        <summary type="html"><![CDATA[New ISO of Archcraft XFCE and LXDE are now available to download. Read the changelogs below to know what's new.]]></summary>
+        <content type="html"><![CDATA[<p>New ISO of Archcraft XFCE and LXDE are now available to download. Read the changelogs below to know what's new.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="changelogs-">Changelogs :<a href="https://wiki.archcraft.io/fr/news/17-news-release#changelogs-" class="hash-link" aria-label="Lien direct vers Changelogs :" title="Lien direct vers Changelogs :">​</a></h3>
+<p><strong><code>Just a regular ISO update</code></strong></p>
+<ul>
+<li>Updated the ISOs with latest packages</li>
+<li>Bug Fixes, Etc.</li>
+</ul>]]></content>
         <author>
             <name>Aditya Shakya</name>
             <uri>https://github.com/adi1090x</uri>
         </author>
+        <category label="flavor" term="flavor"/>
+        <category label="xfce" term="xfce"/>
+        <category label="lxde" term="lxde"/>
+        <category label="release" term="release"/>
+        <category label="iso" term="iso"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[April 2023 Release Available]]></title>
-        <id>16-release-news</id>
-        <link href="https://wiki.archcraft.io/fr/news/16-release-news"/>
+        <title type="html"><![CDATA[April 2023 Release]]></title>
+        <id>https://wiki.archcraft.io/fr/news/16-news-release</id>
+        <link href="https://wiki.archcraft.io/fr/news/16-news-release"/>
         <updated>2023-04-02T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Just a regular ISO update]]></summary>
+        <summary type="html"><![CDATA[April 2023 ISO of Archcraft is now available to download. Read the changelogs below to know what's new.]]></summary>
+        <content type="html"><![CDATA[<p>April 2023 ISO of Archcraft is now available to download. Read the changelogs below to know what's new.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="changelogs-">Changelogs :<a href="https://wiki.archcraft.io/fr/news/16-news-release#changelogs-" class="hash-link" aria-label="Lien direct vers Changelogs :" title="Lien direct vers Changelogs :">​</a></h3>
+<ul>
+<li>Updated the ISO with latest packages</li>
+<li>Enabled <em>single click activation</em> on rofi menu and applets</li>
+<li>Fixed <em>polybar sound/volume modules not updating</em> issue</li>
+<li>Replaced <code>picom-ibhagwan-git</code> with official <code>picom</code>, But...<!-- -->
+<ul>
+<li>There are config files added for few forks of picom.</li>
+<li>You can install <code>picom-jonaburg-git</code> from AUR, config file is already added in Archcraft.</li>
+<li>You can install <code>picom-ibhagwan-git</code> from AUR, config file is already added in Archcraft.</li>
+<li>Whichever picom fork you use, make sure you use the config file added for that, Just rename it to <code>picom.conf</code></li>
+<li>For ex: If using <code>picom-jonaburg-git</code>, copy <strong>picom-jonaburg.conf</strong> to <strong>picom.conf</strong></li>
+<li>You can see which compositor is currently in use in openbox (Preferences &gt; Compositor)</li>
+</ul>
+</li>
+<li>Fixed Minor bugs, etc</li>
+</ul>]]></content>
         <author>
             <name>Aditya Shakya</name>
             <uri>https://github.com/adi1090x</uri>
         </author>
+        <category label="v23.04" term="v23.04"/>
+        <category label="release" term="release"/>
+        <category label="iso" term="iso"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Updated Archcraft LXDE ISO]]></title>
-        <id>15-release-news</id>
-        <link href="https://wiki.archcraft.io/fr/news/15-release-news"/>
+        <title type="html"><![CDATA[Archcraft LXDE Release]]></title>
+        <id>https://wiki.archcraft.io/fr/news/15-news-release</id>
+        <link href="https://wiki.archcraft.io/fr/news/15-news-release"/>
         <updated>2023-01-22T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[New ISO of Archcraft LXDE is now available to download.]]></summary>
+        <summary type="html"><![CDATA[New ISO of Archcraft LXDE is now available to download. Read the changelogs below to know what's new.]]></summary>
+        <content type="html"><![CDATA[<p>New ISO of Archcraft LXDE is now available to download. Read the changelogs below to know what's new.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="changelogs-">Changelogs :<a href="https://wiki.archcraft.io/fr/news/15-news-release#changelogs-" class="hash-link" aria-label="Lien direct vers Changelogs :" title="Lien direct vers Changelogs :">​</a></h3>
+<ul>
+<li>Updated ISO Base</li>
+<li>Created New Theming System</li>
+<li>User Can Create Their Own Themes Easily</li>
+<li>Bug Fixes, Etc.</li>
+</ul>]]></content>
         <author>
             <name>Aditya Shakya</name>
             <uri>https://github.com/adi1090x</uri>
         </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Updated Archcraft XFCE ISO]]></title>
-        <id>14-release-news</id>
-        <link href="https://wiki.archcraft.io/fr/news/14-release-news"/>
-        <updated>2023-01-20T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[New ISO of Archcraft XFCE is now available to download.]]></summary>
-        <author>
-            <name>Aditya Shakya</name>
-            <uri>https://github.com/adi1090x</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[January 2023 Release Available]]></title>
-        <id>13-release-news</id>
-        <link href="https://wiki.archcraft.io/fr/news/13-release-news"/>
-        <updated>2023-01-01T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Major Release]]></summary>
-        <author>
-            <name>Aditya Shakya</name>
-            <uri>https://github.com/adi1090x</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Archcraft LXDE Released]]></title>
-        <id>12-release-news</id>
-        <link href="https://wiki.archcraft.io/fr/news/12-release-news"/>
-        <updated>2022-10-10T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[New Flavor (LXDE) of Archcraft is now available to download.]]></summary>
-        <author>
-            <name>Aditya Shakya</name>
-            <uri>https://github.com/adi1090x</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Archcraft XFCE Released]]></title>
-        <id>11-release-news</id>
-        <link href="https://wiki.archcraft.io/fr/news/11-release-news"/>
-        <updated>2022-10-07T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[New Flavor (XFCE) of Archcraft is now available to download.]]></summary>
-        <author>
-            <name>Aditya Shakya</name>
-            <uri>https://github.com/adi1090x</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[September 2022 Release Available]]></title>
-        <id>10-release-news</id>
-        <link href="https://wiki.archcraft.io/fr/news/10-release-news"/>
-        <updated>2022-09-16T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Just a regular ISO update]]></summary>
-        <author>
-            <name>Aditya Shakya</name>
-            <uri>https://github.com/adi1090x</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[July 2022 Release Available]]></title>
-        <id>09-release-news</id>
-        <link href="https://wiki.archcraft.io/fr/news/09-release-news"/>
-        <updated>2022-07-18T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Just a regular ISO update]]></summary>
-        <author>
-            <name>Aditya Shakya</name>
-            <uri>https://github.com/adi1090x</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[June 2022 Release Available]]></title>
-        <id>08-release-news</id>
-        <link href="https://wiki.archcraft.io/fr/news/08-release-news"/>
-        <updated>2022-06-08T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Just a regular ISO update]]></summary>
-        <author>
-            <name>Aditya Shakya</name>
-            <uri>https://github.com/adi1090x</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[April 2022 Release Available]]></title>
-        <id>07-release-news</id>
-        <link href="https://wiki.archcraft.io/fr/news/07-release-news"/>
-        <updated>2022-04-07T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Just a regular ISO update]]></summary>
-        <author>
-            <name>Aditya Shakya</name>
-            <uri>https://github.com/adi1090x</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[February 2022 Release Available]]></title>
-        <id>06-release-news</id>
-        <link href="https://wiki.archcraft.io/fr/news/06-release-news"/>
-        <updated>2022-02-02T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[New ISO of Archcraft is now available to download.]]></summary>
-        <author>
-            <name>Aditya Shakya</name>
-            <uri>https://github.com/adi1090x</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Archcraft XFCE Released]]></title>
-        <id>05-release-xfce-news</id>
-        <link href="https://wiki.archcraft.io/fr/news/05-release-xfce-news"/>
-        <updated>2021-11-30T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[New Flavor (XFCE) of Archcraft is now available to download.]]></summary>
-        <author>
-            <name>Aditya Shakya</name>
-            <uri>https://github.com/adi1090x</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Archcraft Lite Released]]></title>
-        <id>04-release-lite-news</id>
-        <link href="https://wiki.archcraft.io/fr/news/04-release-lite-news"/>
-        <updated>2021-11-13T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[New Flavor (Lite) of Archcraft is now available to download.]]></summary>
-        <author>
-            <name>Aditya Shakya</name>
-            <uri>https://github.com/adi1090x</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Version d'octobre disponible]]></title>
-        <id>03-release-news</id>
-        <link href="https://wiki.archcraft.io/fr/news/03-release-news"/>
-        <updated>2021-10-05T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[La nouvelle ISO d'Archcraft est maintenant disponible au téléchargement.]]></summary>
-        <author>
-            <name>Aditya Shakya</name>
-            <uri>https://github.com/adi1090x</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Problèmes dans la version de septembre]]></title>
-        <id>02-issue-news</id>
-        <link href="https://wiki.archcraft.io/fr/news/02-issue-news"/>
-        <updated>2021-09-30T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<span]]></summary>
-        <author>
-            <name>Aditya Shakya</name>
-            <uri>https://github.com/adi1090x</uri>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Version de septembre disponible]]></title>
-        <id>01-release-news</id>
-        <link href="https://wiki.archcraft.io/fr/news/01-release-news"/>
-        <updated>2021-09-25T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<span]]></summary>
-        <author>
-            <name>Aditya Shakya</name>
-            <uri>https://github.com/adi1090x</uri>
-        </author>
+        <category label="flavor" term="flavor"/>
+        <category label="lxde" term="lxde"/>
+        <category label="release" term="release"/>
+        <category label="iso" term="iso"/>
     </entry>
 </feed>

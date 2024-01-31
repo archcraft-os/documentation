@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkArchcraft_Wiki=self.webpackChunkArchcraft_Wiki||[]).push([[9560],{7932:a=>{a.exports=JSON.parse('{"label":"gtk","permalink":"/fr/blog/tags/gtk","allTagsPath":"/fr/blog/tags","count":1,"unlisted":false}')}}]);

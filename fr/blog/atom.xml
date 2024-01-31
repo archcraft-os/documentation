@@ -2,31 +2,113 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wiki.archcraft.io/fr/blog</id>
     <title>Archcraft Blog</title>
-    <updated>2021-07-20T00:00:00.000Z</updated>
+    <updated>2024-01-30T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wiki.archcraft.io/fr/blog"/>
     <subtitle>Archcraft Blog</subtitle>
     <icon>https://wiki.archcraft.io/fr/img/favicon.svg</icon>
     <entry>
-        <title type="html"><![CDATA[Changer les thèmes et les icônes dans bspwm]]></title>
-        <id>02-post-bspwm</id>
-        <link href="https://wiki.archcraft.io/fr/blog/02-post-bspwm"/>
-        <updated>2021-07-20T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Dans Archcraft, BSPWM utilise xsettingsd, un démon qui implimente la specification XSETTINGS]]></summary>
+        <title type="html"><![CDATA[How to fix invalid or corrupted package (PGP signature)issue?]]></title>
+        <id>https://wiki.archcraft.io/fr/blog/02-post-pacman</id>
+        <link href="https://wiki.archcraft.io/fr/blog/02-post-pacman"/>
+        <updated>2024-01-30T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[If you get invalid or corrupted package (PGP signature) error, do :]]></summary>
+        <content type="html"><![CDATA[<p>If you get <code>invalid or corrupted package (PGP signature) error</code>, do :</p>
+<ul>
+<li>Open a terminal</li>
+<li>Run: <code>sudo pacman -S archlinux-keyring</code></li>
+<li>Then Run: <code>sudo pacman-key --init</code></li>
+<li>Then Run: <code>sudo pacman-key --populate</code></li>
+<li>Done! (Also delete the corrupted pkgs too.)</li>
+</ul>]]></content>
         <author>
             <name>Aditya Shakya</name>
             <uri>https://github.com/adi1090x</uri>
         </author>
+        <category label="howto" term="howto"/>
+        <category label="theme" term="theme"/>
+        <category label="openbox" term="openbox"/>
+        <category label="bspwm" term="bspwm"/>
+        <category label="wm" term="wm"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Ajouter ma musique en mpd]]></title>
-        <id>01-post-mpd</id>
-        <link href="https://wiki.archcraft.io/fr/blog/01-post-mpd"/>
-        <updated>2021-07-20T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Afin d'ajouter vos musiques favoris à mpd, (en les mettant dans le dossier ~/Music bien évidement) suivez ces instructions :]]></summary>
+        <title type="html"><![CDATA[How to create my own themes in openbox and bspwm?]]></title>
+        <id>https://wiki.archcraft.io/fr/blog/01-post-theme</id>
+        <link href="https://wiki.archcraft.io/fr/blog/01-post-theme"/>
+        <updated>2024-01-30T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Creating your own themes is super easy now. In this short guide, I'll make a new theme for openbox. The same steps will also be applied to create a new theme in bspwm. Follow the steps below:]]></summary>
+        <content type="html"><![CDATA[<p>Creating your own themes is super easy now. In this short guide, I'll make a new theme for <strong>openbox</strong>. The same steps will also be applied to create a new theme in bspwm. Follow the steps below:</p>
+<ul>
+<li>Open file manager and go to <code>~/.config/openbox-themes/themes</code>. For bspwm, go to <code>~/.config/bspwm/themes</code></li>
+<li>Now, Copy an existing theme and give it a name. eg: copy <strong>default</strong> to <strong>mytheme</strong></li>
+<li>At this point, You have got a new theme and you can see it in <code>Preferences &gt; Change Style</code></li>
+<li>Now, Change to <strong>mytheme</strong> directory and start working on your theme.</li>
+<li>Put the <strong>wallpaper</strong> you want to use for the theme. Make sure the name of the file should be <code>wallpaper</code></li>
+<li>Edit <code>theme.bash</code> file to change: <strong>Colors, Fonts, Icons, GTK &amp; Openbox Theme</strong> and basically everything.</li>
+<li>Go to <strong>polybar</strong> directory and change it's appearance, position, size, etc.</li>
+<li>Go to <strong>rofi</strong> directory and change it's layout, size, position, etc.</li>
+<li>Use your own creativity.</li>
+<li>And... That's it, You have your own theme!</li>
+</ul>]]></content>
         <author>
             <name>Aditya Shakya</name>
             <uri>https://github.com/adi1090x</uri>
         </author>
+        <category label="howto" term="howto"/>
+        <category label="theme" term="theme"/>
+        <category label="openbox" term="openbox"/>
+        <category label="bspwm" term="bspwm"/>
+        <category label="wm" term="wm"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How to change theme and icons in Bspwm?]]></title>
+        <id>https://wiki.archcraft.io/fr/blog/02-post-bspwm</id>
+        <link href="https://wiki.archcraft.io/fr/blog/02-post-bspwm"/>
+        <updated>2021-07-20T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[In Archcraft, Bspwm use xsettingsd, a daemon that implements the XSETTINGS specification.]]></summary>
+        <content type="html"><![CDATA[<p>In Archcraft, Bspwm use <code>xsettingsd</code>, a daemon that implements the <em>XSETTINGS</em> specification.
+To change gtk theme, icons and cursor theme, you need to edit the <strong>~/.config/bspwm/xsettingsd</strong> file.</p>
+<ul>
+<li>Edit <strong>~/.config/bspwm/xsettingsd</strong> file with your favorite text editor</li>
+</ul>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">$ vim ~/.config/bspwm/xsettingsd</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copier le code" title="Copier" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<ul>
+<li>Change the values of following lines according to the stuff you want to apply</li>
+</ul>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">Net/ThemeName "Arc-Dark"</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Net/IconThemeName "Arc-Circle"</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Gtk/CursorThemeName "Pear"</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copier le code" title="Copier" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<ul>
+<li>Restart the <code>xsettingsd</code> daemon. Have a look at <a href="https://github.com/derat/xsettingsd/wiki/Settings" target="_blank" rel="noopener noreferrer">this</a> for all available options.</li>
+</ul>]]></content>
+        <author>
+            <name>Aditya Shakya</name>
+            <uri>https://github.com/adi1090x</uri>
+        </author>
+        <category label="howto" term="howto"/>
+        <category label="bspwm" term="bspwm"/>
+        <category label="xsettingsd" term="xsettingsd"/>
+        <category label="gtk" term="gtk"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How to add my music in the player?]]></title>
+        <id>https://wiki.archcraft.io/fr/blog/01-post-mpd</id>
+        <link href="https://wiki.archcraft.io/fr/blog/01-post-mpd"/>
+        <updated>2021-07-20T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[To add your favorite music in mpd, (assuming your songs are stored in ~/Music directory) follow the steps below :]]></summary>
+        <content type="html"><![CDATA[<p>To add your favorite music in <code>mpd</code>, (<em>assuming your songs are stored in <code>~/Music</code> directory</em>) follow the steps below :</p>
+<ul>
+<li>Open a terminal and run <strong>ncmpcpp</strong></li>
+<li>In <code>ncmpcpp</code>, press <kbd>2</kbd> to open <strong>song browser</strong></li>
+<li>In browser tab, press <kbd>u</kbd> to update the <strong>music database</strong></li>
+<li>Select your songs and press <kbd>SPACE</kbd> to add the songs in your <strong>current playlist</strong></li>
+<li>Done!</li>
+</ul>]]></content>
+        <author>
+            <name>Aditya Shakya</name>
+            <uri>https://github.com/adi1090x</uri>
+        </author>
+        <category label="howto" term="howto"/>
+        <category label="mpd" term="mpd"/>
+        <category label="ncmpcpp" term="ncmpcpp"/>
+        <category label="polybar" term="polybar"/>
     </entry>
 </feed>

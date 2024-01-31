@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkArchcraft_Wiki=self.webpackChunkArchcraft_Wiki||[]).push([[3161],{4724:function(a){a.exports=JSON.parse('{"allTagsPath":"/pt-BR/blog/tags","slug":"/pt-BR/blog/tags/polybar","name":"polybar","count":1,"permalink":"/pt-BR/blog/tags/polybar"}')}}]);

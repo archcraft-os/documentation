@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkArchcraft_Wiki=self.webpackChunkArchcraft_Wiki||[]).push([[2535],{5641:function(e){e.exports=JSON.parse('{"title":"Yeni G\xf6nderiler","items":[{"title":"bspwm\'de tema ve ikonlar\u0131 de\u011fi\u015ftirme","permalink":"/tr/blog/02-post-bspwm"},{"title":"mpd\'de kendi m\xfczi\u011fini ekleme","permalink":"/tr/blog/01-post-mpd"}]}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkArchcraft_Wiki=self.webpackChunkArchcraft_Wiki||[]).push([[3760],{8818:e=>{e.exports=JSON.parse('{"label":"lxde","permalink":"/news/tags/lxde","allTagsPath":"/news/tags","count":5,"unlisted":false}')}}]);

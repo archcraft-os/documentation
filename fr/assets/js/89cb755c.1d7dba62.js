@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkArchcraft_Wiki=self.webpackChunkArchcraft_Wiki||[]).push([[6461],{3493:function(e){e.exports=JSON.parse('{"allTagsPath":"/fr/news/tags","slug":"/fr/news/tags/lite","name":"lite","count":1,"permalink":"/fr/news/tags/lite"}')}}]);
