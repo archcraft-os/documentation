@@ -1,6 +1,6 @@
 ---
 slug: 02-post-bspwm
-title: Change themes and icons in bspwm
+title: How to change theme and icons in Bspwm?
 authors: adi1090x
 tags: [howto, bspwm, xsettingsd, gtk]
 ---

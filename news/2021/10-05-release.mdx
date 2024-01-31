@@ -1,20 +1,33 @@
 ---
-slug: 03-release-news
-title: October 2021 Release Available
+slug: 02-news-release
+title: October 2021 Release
 authors: adi1090x
 tags: [v21.10, release, iso]
+hide_table_of_contents: true
 ---
 
-**New ISO of Archcraft is now available to download.**
+<!-- Badges -->
+export const Highlight = ({children, color}) => (
+  <span
+    style={{
+      backgroundColor: color,
+      borderRadius: '4px',
+      color: '#fff',
+      padding: '0.2rem',
+    }}>
+    {children}
+  </span>
+);
+
+October 2021 ISO of Archcraft is now available to download. Read the changelogs below to know what's new.
+
+<!--truncate-->
 
 Many users faced issues with the September release, due to the bug in the installer.
 However it was not a big issue and can be fixed easily, But there are people who are completely new to Linux in general.
 So, this release belongs to them. This release fixes every issue on the previous release.
 
-<!--truncate-->
-
-### Changelog
-
+### Changelogs :
 **`Bug Fix Release for v21.09`**
 - Fixed `drivers getting removed via installer` bug (backlight, external monitor issues)
 - Removed support for `flatpak` as it caused issue with thunar and plank (and other gtk applications)

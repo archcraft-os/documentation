@@ -7,21 +7,21 @@
     "message": "Communauté",
     "description": "The title of the footer links column with title=Community in the footer"
   },
-  "link.title.Github": {
-    "message": "Github",
-    "description": "The title of the footer links column with title=Github in the footer"
+  "link.title.Source": {
+    "message": "Source",
+    "description": "The title of the footer links column with title=Source in the footer"
   },
   "link.title.More": {
-    "message": "Encore plus",
+    "message": "More",
     "description": "The title of the footer links column with title=More in the footer"
   },
   "link.item.label.Home": {
-    "message": "Accueil",
+    "message": "Maison",
     "description": "The label of footer link with label=Home linking to https://archcraft.io"
   },
-  "link.item.label.Wiki": {
-    "message": "Wiki",
-    "description": "The label of footer link with label=Wiki linking to /docs/intro"
+  "link.item.label.Docs": {
+    "message": "Docs",
+    "description": "The label of footer link with label=Docs linking to /docs/intro"
   },
   "link.item.label.Tutorials": {
     "message": "Tutoriels",
@@ -47,32 +47,32 @@
     "message": "Matrix",
     "description": "The label of footer link with label=Matrix linking to https://matrix.to/#/#archcraft:matrix.org"
   },
-  "link.item.label.Source": {
-    "message": "Le code source",
-    "description": "The label of footer link with label=Source linking to https://github.com/archcraft-os/archcraft"
+  "link.item.label.Archcraft": {
+    "message": "Archcraft",
+    "description": "The label of footer link with label=Archcraft linking to https://github.com/archcraft-os/archcraft"
   },
   "link.item.label.Releases": {
-    "message": "Versions",
-    "description": "The label of footer link with label=Releases linking to https://github.com/archcraft-os/releases"
+    "message": "Sorties",
+    "description": "The label of footer link with label=Releases linking to https://sourceforge.net/projects/archcraft/files"
   },
   "link.item.label.Issues": {
     "message": "Problèmes",
     "description": "The label of footer link with label=Issues linking to https://github.com/archcraft-os/archcraft/issues"
   },
   "link.item.label.Documentations": {
-    "message": "Documentation",
+    "message": "Documentations",
     "description": "The label of footer link with label=Documentations linking to https://github.com/archcraft-os/documentation"
   },
-  "link.item.label.Donate": {
-    "message": "Faire un don",
-    "description": "The label of footer link with label=Donate linking to https://archcraft.io/donate"
+  "link.item.label.Release Cycle": {
+    "message": "Cycle de publication",
+    "description": "The label of footer link with label=Release Cycle linking to https://archcraft.io/more"
   },
   "link.item.label.Sourceforge": {
     "message": "Sourceforge",
     "description": "The label of footer link with label=Sourceforge linking to https://sourceforge.net/projects/archcraft"
   },
   "copyright": {
-    "message": "Droits d'auteur © 2021 Archcraft | Aditya Shakya",
+    "message": "droits d'auteur © 2024 Archcraft | Aditya Shakya",
     "description": "The footer copyright"
   }
 }

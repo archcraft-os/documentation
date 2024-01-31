@@ -1,24 +1,37 @@
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+// @ts-check
+// `@type` JSDoc annotations allow editor autocompletion and type checking
+// (when paired with `@ts-check`).
+// There are various equivalent ways to declare your Docusaurus config.
+// See: https://docusaurus.io/docs/api/docusaurus-config
 
-// With JSDoc @type annotations, IDEs can provide config autocompletion
-/** @type {import('@docusaurus/types').DocusaurusConfig} */
-(module.exports = {
+import {themes as prismThemes} from 'prism-react-renderer';
+
+/** @type {import('@docusaurus/types').Config} */
+const config = {
   title: 'Archcraft',
   tagline: 'Yet another minimal Linux distribution, based on Arch Linux.',
+  favicon: 'img/favicon.svg',
+
+  // Set the production url of your site here
+  url: 'https://wiki.archcraft.io',
+  // Set the /<baseUrl>/ pathname under which your site is served
+  // For GitHub pages deployment, it is often '/<projectName>/'
+  baseUrl: '/',
+
+  // GitHub pages deployment config.
+  // If you aren't using GitHub pages, you don't need these.
   organizationName: 'archcraft-os', // Usually your GitHub org/user name.
   projectName: 'documentation', // Usually your repo name.
-  url: 'https://wiki.archcraft.io',
-  baseUrl: '/',
+
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.svg',
-  trailingSlash: false,
 
-  // Translation
+  // Even if you don't use internationalization, you can use this field to set
+  // useful metadata like html lang. For example, if your site is Chinese, you
+  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'fr', 'pl', 'tr', 'pt-BR', 'zh'],
+    locales: ['en', 'fr'],
     localeConfigs: {
       en: {
         label: 'English',
@@ -28,27 +41,12 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
         label: 'Français',
         direction: 'ltr',
       },
-      pl: {
-        label: 'Polski',
-        direction: 'ltr',
-      },
-      tr: {
-        label: 'Türkçe',
-        direction: 'ltr',
-      },
-      'pt-BR': {
-        label: 'Português(Brasil)',
-        direction: 'ltr',
-      },
-      'zh': {
-        label: 'Chinese(简体)',
-        direction: 'ltr',
-      }
     },
   },
 
-  // News Blog Section
+  // Plugins
   plugins: [
+    // News Blog Section
     [
       '@docusaurus/plugin-content-blog',
       {
@@ -71,34 +69,48 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
         showReadingTime: false,
         blogTitle: 'News',
         blogSidebarTitle: 'Latest News',
-        blogSidebarCount: 5,
+        blogSidebarCount: 15,
       },
     ],
+    // Premium Blog Section
+/**    [
+      '@docusaurus/plugin-content-blog',
+      {
+        id: 'premium',
+        routeBasePath: 'premium',
+        path: './premium',
+        showReadingTime: false,
+        blogTitle: 'Premium',
+        blogSidebarTitle: 'Latest News',
+        blogSidebarCount: 10,
+      },
+    ], **/
   ],
 
   presets: [
     [
-      '@docusaurus/preset-classic',
+      'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
+          sidebarPath: './sidebars.js',
           // Please change this to your repo.
-          editLocalizedFiles: true,
-          editUrl: 'https://github.com/archcraft-os/documentation/edit/main/',
+          // Remove this to remove the "edit this page" links.
+          editUrl:
+            'https://github.com/archcraft-os/documentation/edit/main/',
         },
         blog: {
           showReadingTime: true,
           blogTitle: 'Tutorials',
           blogSidebarTitle: 'Recent posts',
-          blogSidebarCount: 10,
+          blogSidebarCount: 15,
           // Please change this to your repo.
-          editLocalizedFiles: true,
+          // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/archcraft-os/documentation/edit/main/',
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: './src/css/custom.css',
         },
       }),
     ],
@@ -107,53 +119,116 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      hideableSidebar: true,
-      announcementBar: {
-        id: 'announcementBar-2', // Increment on change
-        content: `⭐️ If you love Archcraft, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/archcraft-os/archcraft">GitHub</a>️ ⭐`,
+      colorMode: {
+        defaultMode: 'light',
+        disableSwitch: false,
+        respectPrefersColorScheme: false,
       },
+      // The meta image URL for the site. Relative to your site's "static" directory. Cannot be SVGs. Can be external URLs too.
+      image: 'img/meta.jpg',
+      announcementBar: {
+        id: 'announcementBar', // Increment on change
+        content: `⭐️ If you love Archcraft, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/archcraft-os/archcraft">GitHub</a>️ ⭐`,
+        backgroundColor: '#f5f6f7',
+        textColor: '#1e2128',
+        isCloseable: true,
+      },
+      // Replace with your project's social card
       navbar: {
+		hideOnScroll: false,
         title: 'Archcraft',
         logo: {
-          alt: 'Logo',
+          alt: 'Archcraft Logo',
           src: 'img/logo.svg',
+          srcDark: 'img/logo_dark.svg',
+          href: '/',
+          target: '_self',
+          width: 32,
+          height: 32,
+          className: 'custom-navbar-logo-class',
+          style: {},
         },
         items: [
           {
-            type: 'doc',
-            docId: 'intro',
+            type: 'docSidebar',
+            sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'Wiki',
+            label: 'Docs',
           },
-          { to: '/blog', label: 'Tutorials', position: 'left' },
+          { to: '/blog', label: 'Tutorials', position: 'left'},
           { to: '/news', label: 'News', position: 'left' },
-          { type: 'localeDropdown', position: 'right' },
+          //{ to: '/premium', label: 'Premium', position: 'left' },
+          {
+			html: "<a href='https://ko-fi.com/adi1090x' target='_blank'><img height='32' style='border:0px;height:32px;' src='https://storage.ko-fi.com/cdn/kofi2.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>",
+			href: 'https://ko-fi.com/adi1090x',
+			position: 'right',
+			target: '_blank',
+		  },
+          {
+            type: 'localeDropdown',
+            position: 'right',
+            dropdownItemsAfter: [
+              {
+                type: 'html',
+                value: '<hr style="margin: 0.3rem 0;">',
+              },
+              {
+                to: 'docs/contrib/contrib-translate',
+                label: 'Help me translate',
+              },
+            ],
+          },
           {
             href: 'https://github.com/archcraft-os',
             position: 'right',
+            label: 'Github',
             className: 'header-github-link',
-            'aria-label': 'Project Page',
+            'aria-label': 'GitHub Repository',
           },
+          /**{
+            type: 'search',
+            position: 'right',
+          },**/
         ],
       },
-      // Search bar
-      algolia: {
-        apiKey: '802115dbf963e638e1641f03bd41c646',
-        indexName: 'archcraft',
+    algolia: {
+      // The application ID provided by Algolia
+      appId: 'BH4D9OD16A',
 
-        // Optional: see doc section below
-        contextualSearch: true,
+      // Public API key: it is safe to commit it
+      apiKey: '802115dbf963e638e1641f03bd41c646',
 
-        // Optional: see doc section below
-        appId: 'BH4D9OD16A',
+      indexName: 'archcraft',
 
-        // Optional: Algolia search parameters
-        searchParameters: {},
+      // Optional: see doc section below
+      contextualSearch: true,
 
-        //... other Algolia params
+      // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
+      externalUrlRegex: 'external\\.com|domain\\.com',
+
+      // Optional: Replace parts of the item URLs from Algolia. Useful when using the same search index for multiple deployments using a different baseUrl. You can use regexp or string in the `from` param. For example: localhost:3000 vs myCompany.com/docs
+      replaceSearchResultPathname: {
+        from: '/docs/', // or as RegExp: /\/docs\//
+        to: '/',
       },
+
+      // Optional: Algolia search parameters
+      searchParameters: {},
+
+      // Optional: path for search page that enabled by default (`false` to disable it)
+      searchPagePath: 'search',
+
+      //... other Algolia params
+    },
       footer: {
         style: 'light',
+        /** logo: {
+          alt: 'Archcraft Logo',
+          src: 'img/logo.svg',
+          href: 'https://archcraft.io/',
+          width: 48,
+          height: 48,
+        }, **/
         links: [
           {
             title: 'Archcraft',
@@ -163,7 +238,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
                 to: 'https://archcraft.io',
               },
               {
-                label: 'Wiki',
+                label: 'Docs',
                 to: '/docs/intro',
               },
               {
@@ -198,15 +273,15 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
             ],
           },
           {
-            title: 'Github',
+            title: 'Source',
             items: [
               {
-                label: 'Source',
+                label: 'Archcraft',
                 to: 'https://github.com/archcraft-os/archcraft',
               },
               {
                 label: 'Releases',
-                to: 'https://github.com/archcraft-os/releases',
+                to: 'https://sourceforge.net/projects/archcraft/files',
               },
               {
                 label: 'Issues',
@@ -235,8 +310,10 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
         copyright: `Copyright © ${new Date().getFullYear()} Archcraft | Aditya Shakya`,
       },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
+        theme: prismThemes.github,
+        darkTheme: prismThemes.dracula,
       },
     }),
-});
+};
+
+export default config;

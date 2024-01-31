@@ -2,382 +2,382 @@
 sidebar_position: 2
 ---
 
-# Installer Archcraft avec ABIF
+# Install Archcraft With ABIF
 
-**`ABIF`** est le 2éme installeur sur Archcraft, Il est sous terminal et trés puissant. On expecte les gens qui savent ce qu'ils font d'utiliser cet installeur pour installer Archcraft.
+**`ABIF`** is the secondary installer in Archcraft, It is based on the command line and very powerful (*I personally use it*).
+It is expected that the people who use this installer to install Archcraft, know what they are doing.
 
-> *On recommende pas d'utiliser cet installeur pour des débutants, Utilisez [Calamares](./install-with-calamares) à la place.*<br/>
-> *Mais si vous voulez continuer avec cette méthode, continuez à lire.*
+> *I won't recommend using this installer if you're a beginner, Use [Calamares](./install-with-calamares) instead.*<br/>
+*But if you still want to use this installer, You can follow this guide.*
 
-Dans ce guide, je vais installer Archcraft sur un système UEFI avec `Encryption` et `LVM` en utilisant **`ABIF`**. 
-Le processus sera le même si vous utilisez le BIOS.
+In this guide, I'll be installing Archcraft on an UEFI system with `Encryption` and `LVM` by using **`ABIF`**. 
+The process will be the same if you are using BIOS.
 
-Je suppose que vous avez déjà créé une [USB bootable](../boot-iso/boot-with-usb) avec l'ISO d'Archcraft.
-sélectionnez **Boot Archcraft**. Lancez l'installateur via l'app de bienvenue ou le menu.
+I'm assuming that you have already created a [bootable USB](../boot-iso/boot-with-usb) with Archcraft ISO, boot system with it and
+select **Boot Archcraft**. Launch the installer via either welcome app or menu.
 
-Sélectionnez la langue de l'installateur et appuyez sur <kbd>Enter</kbd>.
+Select the installer language and press <kbd>Enter</kbd>
 
 ![img](./abif/1.png)
 
-### Préparer l'installation
+### Prepare Installation
 
-Sélectionnez `Préparez l'installation` et appuyez sur <kbd>Enter</kbd>.
+Select `Prepare Installation` and press <kbd>Enter</kbd>
 
 ![img](./abif/2.png)
 
-Sélectionnez `Set Virtual Console`, choisissez votre disposition et appuyez sur <kbd>Enter</kbd>.
+Select `Set Virtual Console`, Choose your layout and press <kbd>Enter</kbd>
 
 ![img](./abif/3.png)
 
-Sélectionnez `Set Desktop Keyboard Layout`, choisissez votre disposition et appuyez sur <kbd>Enter</kbd>.
+Select `Set Desktop Keyboard Layout`, Choose your layout and press <kbd>Enter</kbd>
 
 ![img](./abif/4.png)
 
-### Partitionner le disque
+### Partition Disk
 
-Sélectionnez `List Devices` et appuyez sur <kbd>Enter</kbd>.
+Select `List Devices` and press <kbd>Enter</kbd>
 
 ![img](./abif/5.png)
 
-Ici, Vous pouvez voir les disques et partitions disponibles sur votre système.
+Here, You can see available disks and partitions on your system.
 
 ![img](./abif/6.png)
 
-Si votre disque est déjà partitionné, vous pouvez sauter cette étape et passer à :
+If your disk is already partitioned, you can skip this and move to :
 
-- [Configuration du chiffrement LUKS](#configuration-du-chiffrement-luks) (*Si vous voulez utiliser `Encryption`*)
-- [Configurer LVM](#configurer-lvm) (*Si vous voulez configurer `LVM`*)
-- [Monter Les Partitions](#monter-les-partitions) (*Si vous voulez juste une installation normale*)
+- [Setup LUKS](#setup-luks-encryption) (*If you want to use `Encryption`*)
+- [Setup LVM](#setup-lvm) (*If you want to setup `LVM`*)
+- [Mount Partitions](#mount-partitions) (*If you just want a normal installation*)
 
-Si vous voulez faire le partitionnement, sélectionnez `Partition Disk` et appuyez sur <kbd>Enter</kbd>.
+If you want to do the partitioning, Select `Partition Disk` and press <kbd>Enter</kbd>
 
 ![img](./abif/7.png)
 
-Sélectionnez `Votre disque` et appuyez sur <kbd>Entrée</kbd>.
+Select `Your Disk` and press <kbd>Enter</kbd>
 
 ![img](./abif/8.png)
 
-Choisissez n'importe quel utilitaire de partitionnement (* En utilisant `gparted` ici*) et appuyez sur <kbd>Enter</kbd>
+Choose any partitioning utility (* Using `gparted` here*) and press <kbd>Enter</kbd>
 
 ![img](./abif/9.png)
 
-Faites le partitionnement et quand vous avez terminé, quittez `gparted`.
+Do the partitioning and when you're done, exit `gparted`
 
 :::caution
 
-Si votre système a déjà une partition EFI, assurez-vous qu'elle a au moins `100MB de stockage libre`, ou l'installation échouera.
+If your system already has an EFI partition, Make sure it has at least `100MB of free storage`, or the installation will fail.
 
 :::
 
 ![img](./abif/10.png)
 
-### Configuration du chiffrement LUKS
+### Setup LUKS Encryption
 
-Si vous ne voulez pas utiliser **Disk Encryption**, vous pouvez sauter cette étape et passer à :
+If you don't want to use **Disk Encryption**, You can skip this and move to :
 
-- [Configurer LVM](#configurer-lvm) (*Si vous voulez configurer `LVM`*)
-- [Monter Les Partitions](#monter-les-partitions) (*Si vous voulez juste une installation normale*)
+- [Setup LVM](#setup-lvm) (*If you want to setup `LVM`*)
+- [Mount Partitions](#mount-partitions) (*If you don't want to use `LVM`*)
 
-Si vous voulez utiliser **Disk Encryption**, sélectionnez `LUKS Encryption` et appuyez sur <kbd>Enter</kbd>.
+If you want to use **Disk Encryption**, Select `LUKS Encryption` and press <kbd>Enter</kbd>
 
 ![img](./abif/11.png)
 
-Je vais juste aller avec `LUKS automatique` mais si vous avez des préférences, Utilisez cela et appuyez sur <kbd>Enter</kbd>.
+I'll just go with `Automatic LUKS` but if you have preferences, Use that and press <kbd>Enter</kbd>
 
 ![img](./abif/12.png)
 
-Sélectionnez la partition que vous voulez crypter (*Je vais crypter root qui est `/dev/sda2`*) et appuyez sur <kbd>Enter</kbd>.
+Select the partition you want to encrypt (*I'll encrypt root which is `/dev/sda2`*) and press <kbd>Enter</kbd>
 
 ![img](./abif/13.png)
 
-Entrez le nom pour le `Dispositif de bloc crypté` et appuyez sur <kbd>Enter</kbd>.
+Enter the name for `Encrypted block device` and press <kbd>Enter</kbd>
 
 ![img](./abif/14.png)
 
-Tapez un `mot de passe` fort et appuyez sur <kbd>Enter</kbd>, Recommencez.
+Type a strong `password` and press <kbd>Enter</kbd>, Do it again.
 
 ![img](./abif/15.png)
 
-Vous pouvez revoir votre configuration LUKS ici. Quand vous avez terminé, appuyez sur <kbd>Enter</kbd> pour sortir.
+You can review your LUKS setup here. When done, press <kbd>Enter</kbd> to exit
 
 ![img](./abif/16.png)
 
-Répétez le processus pour crypter d'autres partitions (*par ex : `/home`*).
-Lorsque vous avez terminé, sélectionnez `Back` et appuyez sur <kbd>Enter</kbd>.
+Repeat the process to encrypt other partitions (*for ex : `/home`*).
+When you're done, Select `Back` and press <kbd>Enter</kbd>
 
 ![img](./abif/17.png)
 
-### Configurer LVM
+### Setup LVM
 
-Si vous ne voulez pas configurer **Logical Volumes**, Vous pouvez sauter cette étape et passer à [Monter Les Partitions](#monter-les-partitions).<br/>
-Si vous le faites, sélectionnez `Gestion des volumes logiques` et appuyez sur <kbd>Entrée</kbd>.
+If you don't want to set up **Logical Volumes**, You can skip this and move to [Mount Partitions](#mount-partitions).<br/>
+If you do, Select `Logical Volume Management` and press <kbd>Enter</kbd>
 
 ![img](./abif/18.png)
 
-Créez d'abord un **Groupe de volumes**, Sélectionnez `Créer un VG et un ou des LV(s)` et appuyez sur <kbd>Entrée</kbd>.
+Create a **Volume Group** first, Select `Create VG and LV(s)` and press <kbd>Enter</kbd>
 
 ![img](./abif/19.png)
 
-Entrez le nom du `groupe` et appuyez sur <kbd>Enter</kbd>.
+Enter the name of the `group` and press <kbd>Enter</kbd>
 
 ![img](./abif/20.png)
 
-Sélectionnez les `Partitions` (*utiliser <kbd>SPACE</kbd>*) que vous voulez ajouter au groupe LV et appuyez sur <kbd>Enter</kbd>.
+Select the `Partitions` (*use <kbd>SPACE</kbd>*) you want to add to the LV group and press <kbd>Enter</kbd>
 
 ![img](./abif/21.png)
 
-Appuyez sur <kbd>Enter</kbd> pour confirmer la création du groupe.
+Press <kbd>Enter</kbd> to confirm the creation of the group.
 
 ![img](./abif/22.png)
 
-Vous obtiendrez un dialogue, confirmant que le groupe a été créé. Appuyez sur <kbd>Enter</kbd> pour quitter.
+You'll get a dialog, confirming that the group has been created. press <kbd>Enter</kbd> to exit.
 
 ![img](./abif/23.png)
 
-Sélectionnez le `Nombre` de volumes dans le groupe (*Nous avons choisi deux partitions à ajouter dans le groupe plus tôt*) et appuyez sur <kbd>Enter</kbd>.
+Select the `Numbers` of volumes in the group (*We choose two partition to add in the group earlier*) and press <kbd>Enter</kbd>
 
 ![img](./abif/24.png)
 
-Entrez le nom du premier LV (*pour `root`*) et appuyez sur <kbd>Enter</kbd>
+Enter the name of first LV (*for `root`*) and press <kbd>Enter</kbd>
 
 ![img](./abif/25.png)
 
-Entrez la taille de la `LV` et appuyez sur <kbd>Enter</kbd>.
+Enter the size of the `LV` and press <kbd>Enter</kbd>
 
 ![img](./abif/26.png)
 
-Vous verrez que le LV a été créé. Appuyez sur <kbd>Enter</kbd> pour sortir.
+You'll see that the LV has been created. press <kbd>Enter</kbd> to exit.
 
 ![img](./abif/27.png)
 
-Faites la même chose pour le deuxième LV, Entrez le nom et appuyez sur <kbd>Enter</kbd>. La taille sera sélectionnée automatiquement.
+Do the same for the second LV, Enter name and press <kbd>Enter</kbd>. The size will be selected automatically.
 
 ![img](./abif/28.png)
 
-Appuyez sur <kbd>Enter</kbd> pour voir votre schéma LVM.
+Press <kbd>Enter</kbd> to view your LVM scheme.
 
 ![img](./abif/29.png)
 
-Lorsque vous avez terminé et appuyez sur <kbd>Enter</kbd> pour quitter.
+When you're done and press <kbd>Enter</kbd> to exit.
 
 ![img](./abif/30.png)
 
-### Monter les partitions
+### Mount Partitions
 
-Maintenant que nous avons configuré les partitions, (*Encryptage et LVM*). Il est temps de les monter pour l'installation.
+Now that we have set up Partitions, (*Encryption and LVM*). It's time to mount them for installation.
 
-Sélectionnez `Mount Partitions` et appuyez sur <kbd>Enter</kbd>.
+Select `Mount Partitions` and press <kbd>Enter</kbd>
 
 ![img](./abif/31.png)
 
-Sélectionnez la `Root Partition` et appuyez sur <kbd>Enter</kbd>. Gardez à l'esprit que :
+Select the `Root Partition` and press <kbd>Enter</kbd>. Keep in mind that :
 
-- Si vous configurez **LVM** (*avec cryptage*), choisissez cela pour `root` (*par ex : dans cette configuration **/dev/mapper/archcraft-lvol_root** sera la racine*).
-- Si vous avez configuré **Cryptage** seulement (*pas de LVM*), choisissez cela pour `root` (*dev/mapper/cryptroot*)
-- Si vous n'avez pas configuré *Encryptage* ou *LVM*, choisissez `root` normalement (*/dev/sda2*)
+- If you setup **LVM** (*with encryption*), choose that for `root` (*for ex : in this setup **/dev/mapper/archcraft-lvol_root** will be the root*)
+- If you setup **Encryption** only (*no LVM*), choose that for `root` (*/dev/mapper/cryptroot*)
+- If you've not setup *Encryption* or *LVM*, choose `root` normally (*/dev/sda2*)
 
 ![img](./abif/32.png)
 
-Sélectionnez `ext4` comme système de fichiers (*vous pouvez choisir tout autre type de fs*) et appuyez sur <kbd>Enter</kbd>.
+Select `ext4` as file system (*you can choose any other fs type*) and press <kbd>Enter</kbd>
 
 ![img](./abif/33.png)
 
-Sélectionnez `Yes` et appuyez sur <kbd>Enter</kbd> pour formater la partition, Ignorez les autres trucs.
+Select `Yes` and press <kbd>Enter</kbd> to format the partition, Ignore other stuff.
 
 ![img](./abif/34.png)
 
-Si vous avez mis en place une **Partition de remplacement**, vous pouvez la monter ici. Vous pouvez aussi utiliser un `Swapfile` si vous voulez.
-Sélectionnez ce que vous préférez et appuyez sur <kbd>Entrée</kbd>.
+If you have set up a **Swap Partition**, You can mount it here. You can also use a `Swapfile` if you want.
+Select whatever you prefer and press <kbd>Enter</kbd>
 
 ![img](./abif/35.png)
 
-Maintenant, montez la partition `boot`. Sélectionnez votre partition `EFI` (*/dev/sda1*) et appuyez sur <kbd>Enter</kbd>.
+Now, Mount the `boot` partition. Select your `EFI partition` (*/dev/sda1*) and press <kbd>Enter</kbd>
 
 ![img](./abif/36.png)
 
 :::danger
 
-Votre système peut déjà avoir une partition **EFI**. Dans ce cas **`NE LA FORMATTEZ PAS`** ou vous ne pourrez pas démarrer sur les autres OS installés (Disons windows)<br/>.
-Montez simplement la partition EFI dans `/boot`.
+Your system may already have an **EFI** partition. In that case **`DO NOT FORMAT IT`** or you won't be able to boot into other installed OS (Let's say windows)<br/>
+Just mount the EFI partition to `/boot`
 
 :::
 
-Sélectionnez `No` si vous ne voulez pas formater la partition EFI et appuyez sur <kbd>Enter</kbd>.
+Select `No` if you don't want to format the EFI partition and press <kbd>Enter</kbd>
 
 ![img](./abif/37.png)
 
-Sélectionnez `/boot` comme point de montage et appuyez sur <kbd>Enter</kbd>.
+Select `/boot` as mount point and press <kbd>Enter</kbd>
 
 ![img](./abif/38.png)
 
-Et, maintenant vous pouvez monter le reste des partitions (*par ex : /home*) ici. Sélectionnez-le et appuyez sur <kbd>Enter</kbd>
+And, Now you can mount the rest of the partitions (*for ex: /home*) here. Select it and press <kbd>Enter</kbd>
 
 ![img](./abif/39.png)
 
-Encore une fois, sélectionnez `ext4` (*ou tout autre*) comme FS et appuyez sur <kbd>Enter</kbd>.
+Again, Select `ext4` (*or any other*) as FS and press <kbd>Enter</kbd>
 
 ![img](./abif/40.png)
 
-Entrez le `point de montage` pour la partition et et appuyez sur <kbd>Enter</kbd>.
+Enter the `mount point` for the partition and and press <kbd>Enter</kbd>
 
 ![img](./abif/41.png)
 
-Lorsque vous avez fini de monter toutes les partitions, sélectionnez `Done` et appuyez sur <kbd>Enter</kbd> pour sortir.
+When you're done mounting all the partitions, Select `Done` and press <kbd>Enter</kbd> to exit
 
 ![img](./abif/42.png)
 
-Sélectionnez `Back` et appuyez sur <kbd>Enter</kbd> pour aller à l'installation.
+Select `Back` and press <kbd>Enter</kbd> to go to Installation.
 
 ![img](./abif/43.png)
 
-### Installer la base
+### Install Base
 
-Maintenant que toutes les partitions sont montées et prêtes, installons les **`Paquets Base`**.
+Now all the partitions are mounted and ready, Let's install the **`Base packages`**
 
-Sélectionnez `Install Base` et appuyez sur <kbd>Enter</kbd>.
+Select `Install Base` and press <kbd>Enter</kbd>
 
 ![img](./abif/44.png)
 
-Sélectionnez `Installer les paquets de base` et appuyez sur <kbd>Enter</kbd>.
+Select `Install Base Packages` and press <kbd>Enter</kbd>
 
 ![img](./abif/45.png)
 
-Attendez que l'installation soit terminée. En attendant, [Égayez votre humeur...](https://youtu.be/dQw4w9WgXcQ?t=5)
+Wait for the installation to complete. In the meantime, [Lighten Up Your Mood...](https://youtu.be/dQw4w9WgXcQ?t=5)
 
 ![img](./abif/46.png)
 
-Après que l'installation soit faite, Sélectionnez `Run Mkinitcpio` et appuyez sur <kbd>Enter</kbd>
+After the installation is done, Select `Run Mkinitcpio` and press <kbd>Enter</kbd>
 
 ![img](./abif/47.png)
 
-Cela va générer les fichiers **initramfs-linux** et **initramfs-linux-fallback**.
+This will generate the **initramfs-linux** and **initramfs-linux-fallback**.
 
 ![img](./abif/48.png)
 
-Sélectionnez `Install Bootloader` et appuyez sur <kbd>Enter</kbd>.
+Select `Install Bootloader` and press <kbd>Enter</kbd>
 
 ![img](./abif/49.png)
 
-Sélectionnez `grub` comme chargeur de démarrage et appuyez sur <kbd>Enter</kbd>.
+Select `grub` as bootloader and press <kbd>Enter</kbd>
 
 ![img](./abif/50.png)
 
-Sélectionnez `Yes` pour que *grub* soit le chargeur de démarrage par défaut et appuyez sur <kbd>Enter</kbd>.
+Select `Yes` to make *grub* default bootloader and press <kbd>Enter</kbd>
 
 ![img](./abif/51.png)
 
-Sélectionnez `Back` et appuyez sur <kbd>Enter</kbd> pour quitter l'installation.
+Select `Back` and press <kbd>Enter</kbd> to exit installation.
 
 ![img](./abif/52.png)
 
-### Configurer la base
+### Configure Base
 
-Archcraft est installé sur votre système. Il est temps de configurer votre installation.
+Archcraft is installed on your system. It's time to configure your installation.
 
-Sélectionnez `Configurer la base` et appuyez sur <kbd>Enter</kbd>.
+Select `Configure Base` and press <kbd>Enter</kbd>
 
 ![img](./abif/53.png)
 
-Sélectionnez `Générer FSTAB` et appuyez sur <kbd>Enter</kbd>.
+Select `Generate FSTAB` and press <kbd>Enter</kbd>
 
 ![img](./abif/54.png)
 
-Sélectionnez `Part UUID` pour **UEFI** et `Device UUID` pour **BIOS** et appuyez sur <kbd>Enter</kbd>.
+Select `Part UUID` for **UEFI** and `Device UUID` for **BIOS** and press <kbd>Enter</kbd>
 
 ![img](./abif/55.png)
 
-Sélectionnez `Set Hostname` et appuyez sur <kbd>Enter</kbd>.
+Select `Set Hostname` and press <kbd>Enter</kbd>
 
 ![img](./abif/56.png)
 
-Entrez le `nom d'hôte` de votre système et appuyez sur <kbd>Enter</kbd>.
+Enter the `hostname` for your system and press <kbd>Enter</kbd>
 
 ![img](./abif/57.png)
 
-Sélectionnez `Set System Locale` et appuyez sur <kbd>Enter</kbd>.
+Select `Set System Locale` and press <kbd>Enter</kbd>
 
 ![img](./abif/58.png)
 
-Sélectionnez la locale que vous voulez utiliser (*`en_US.UTF-8` pour l'anglais américain*) et appuyez sur <kbd>Enter</kbd>.
+Select the locale you want to use (*`en_US.UTF-8` for US English*) and press <kbd>Enter</kbd>
 
 ![img](./abif/59.png)
 
-Sélectionnez `Set Timezone and Clock` et appuyez sur <kbd>Enter</kbd>.
+Select `Set Timezone and Clock` and press <kbd>Enter</kbd>
 
 ![img](./abif/60.png)
 
-Sélectionnez votre `Fuseau horaire` (par exemple : *`ASIA`*) et appuyez sur <kbd>Enter</kbd>.
+Select your `Time Zone` (eg : *`ASIA`*) and press <kbd>Enter</kbd>
 
 ![img](./abif/61.png)
 
-Sélectionnez votre `Région` (ex : *`Kolkata`*) et appuyez sur <kbd>Enter</kbd>.
+Select your `Region` (eg : *`Kolkata`*) and press <kbd>Enter</kbd>
 
 ![img](./abif/62.png)
 
-Sélectionnez `Oui` et appuyez sur <kbd>Entrée</kbd>.
+Select `Yes` and press <kbd>Enter</kbd>
 
 ![img](./abif/63.png)
 
-Sélectionnez `utc` et appuyez sur <kbd>Enter</kbd>.
-
+Select `utc` and press <kbd>Enter</kbd>
 
 :::info
 
-Pour le double démarrage avec Windows, il est recommandé de [configurer Windows pour qu'il utilise l'UTC](https://wiki.archlinux.org/title/System_time#UTC_in_Microsoft_Windows),
-plutôt que Linux pour utiliser l'heure locale. (*Windows utilise par défaut l'heure locale*)
+To dual boot with Windows it is recommended to [configure Windows to use UTC](https://wiki.archlinux.org/title/System_time#UTC_in_Microsoft_Windows),
+rather than Linux to use localtime. (*Windows by default uses localtime*)
 
 :::
 
 ![img](./abif/64.png)
 
-Sélectionnez `Set Root Password` pour définir un mot de passe pour **root** et appuyez sur <kbd>Enter</kbd>.
+Select `Set Root Password` to set a password for **root** and press <kbd>Enter</kbd>
 
 ![img](./abif/65.png)
 
-Sélectionnez `Add New User(s)` pour créer un ou plusieurs nouveaux comptes utilisateurs et appuyez sur <kbd>Enter</kbd>.
+Select `Add New User(s)` to create new user account(s) and press <kbd>Enter</kbd>
 
 ![img](./abif/66.png)
 
-Entrez `username` et appuyez sur <kbd>Enter</kbd>.
+Enter `username` and press <kbd>Enter</kbd>
 
 ![img](./abif/67.png)
 
-Saisissez `mot de passe` pour votre compte utilisateur et appuyez sur <kbd>Enter</kbd>. Confirmez le mot de passe.
+Enter `password` for your user account and press <kbd>Enter</kbd>. Confirm the password.
 
 ![img](./abif/68.png)
 
-Sélectionnez `Security and systemd Tweaks` pour régler ces trucs (*Si vous savez quoi faire*) et appuyez sur <kbd>Enter</kbd>.
+Select `Security and systemd Tweaks` to tweak that stuff (*If you know what to do*) and press <kbd>Enter</kbd>
 
 ![img](./abif/69.png)
 
-Lorsque vous avez terminé, sélectionnez `Back` et appuyez sur <kbd>Enter</kbd> pour sortir.
+When you're done, Select `Back` and press <kbd>Enter</kbd> to exit.
 
 ![img](./abif/70.png)
 
-### Revoir les fichiers de configuration
+### Review Config files
 
-Sélectionnez `Review Configuration Files` et appuyez sur <kbd>Enter</kbd>.
+Select `Review Configuration Files` and press <kbd>Enter</kbd>
 
 ![img](./abif/71.png)
 
-Sélectionnez le `fichier` que vous voulez visualiser et appuyez sur <kbd>Enter</kbd>. Lorsque vous avez terminé, sélectionnez `Back` pour quitter.
+Select the `file` you want to view and press <kbd>Enter</kbd>. When you're done, Select `Back` to exit.
 
 ![img](./abif/72.png)
 
-### Terminer
+### Finish
 
-Tout est terminé... Vous pouvez maintenant **`Quitter le programme d'installation`** et redémarrer le système.
+Everything is completed... You can now **`Quit the installer`** and reboot the system.
 
-Sélectionnez `Done` et appuyez sur <kbd>Enter</kbd>.
+Select `Done` and press <kbd>Enter</kbd>
 
 ![img](./abif/73.png)
 
-Sélectionnez `Yes` et appuyez sur <kbd>Enter</kbd> pour quitter.
+Select `Yes` and press <kbd>Enter</kbd> to quit.
 
 ![img](./abif/74.png)
 
-Redémarrez dans votre système nouvellement installé.
+Reboot into your newly installed system.
 
 ![img](./abif/75.png)
 
-**Et voilà, c'est fait ! Archcraft est installé sur votre système. Profitez-en !**
+**Well, That’s it! Archcraft is installed on your system. Enjoy!**

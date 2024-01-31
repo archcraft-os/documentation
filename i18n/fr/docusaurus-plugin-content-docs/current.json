@@ -4,16 +4,44 @@
     "description": "The label for version current"
   },
   "sidebar.tutorialSidebar.category.Boot Archcraft": {
-    "message": "Botte Archcraft",
+    "message": "Boot Archcraft",
     "description": "The label for category Boot Archcraft in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Install Archcraft": {
-    "message": "Installer Archcraft",
+    "message": "Install Archcraft",
     "description": "The label for category Install Archcraft in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Window Managers": {
     "message": "Window Managers",
     "description": "The label for category Window Managers in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Stacking WMs": {
+    "message": "Stacking WMs",
+    "description": "The label for category Stacking WMs in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Tiling WMs": {
+    "message": "Tiling WMs",
+    "description": "The label for category Tiling WMs in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Dynamic WMs": {
+    "message": "Dynamic WMs",
+    "description": "The label for category Dynamic WMs in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Wayland Compositors": {
+    "message": "Wayland Compositors",
+    "description": "The label for category Wayland Compositors in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Premium ISOs": {
+    "message": "Premium ISOs",
+    "description": "The label for category Premium ISOs in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Desktop Environment": {
+    "message": "Desktop Environment",
+    "description": "The label for category Desktop Environment in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Archcraftify": {
+    "message": "Archcraftify",
+    "description": "The label for category Archcraftify in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Contribution": {
     "message": "Contribution",

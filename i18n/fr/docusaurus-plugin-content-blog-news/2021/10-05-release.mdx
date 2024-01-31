@@ -1,24 +1,37 @@
 ---
-slug: 03-release-news
-title: Version d'octobre disponible
+slug: 02-news-release
+title: October 2021 Release
 authors: adi1090x
 tags: [v21.10, release, iso]
+hide_table_of_contents: true
 ---
 
-**La nouvelle ISO d'Archcraft est maintenant disponible au téléchargement.**
+<!-- Badges -->
+export const Highlight = ({children, color}) => (
+  <span
+    style={{
+      backgroundColor: color,
+      borderRadius: '4px',
+      color: '#fff',
+      padding: '0.2rem',
+    }}>
+    {children}
+  </span>
+);
 
-De nombreux utilisateurs ont rencontré des problèmes avec la version de septembre, en raison d'un bug dans l'installateur.
-Cependant, ce n'était pas un gros problème et peut être corrigé facilement, mais il y a des gens qui sont complètement nouveaux à Linux en général.
-Cette version leur est donc destinée. Cette version corrige les problèmes de la version précédente.
+October 2021 ISO of Archcraft is now available to download. Read the changelogs below to know what's new.
 
 <!--truncate-->
 
-### Changelog
+Many users faced issues with the September release, due to the bug in the installer.
+However it was not a big issue and can be fixed easily, But there are people who are completely new to Linux in general.
+So, this release belongs to them. This release fixes every issue on the previous release.
 
-**`Libération de correction de bugs pour la v21.09`**
-- Correction du bug des `pilotes supprimés par l'installateur` (problèmes de rétro-éclairage, de moniteur externe).
-- Suppression de la prise en charge de `flatpak` car elle causait des problèmes avec thunar et plank (et d'autres applications gtk)
-- Suppression du support pour `snaps` (la communauté Arch le détestait vraiment)
-- Remplacement de `lightdm` par **`sddm`**, car webkit2-greeter causait des problèmes sur les vieilles machines
-- Amélioration de `openbox`, `bspwm`, `polybar` et d'autres choses.
-- Et... J'ai appris que je n'ai pas ~~nécessairement~~ à ajouter tout ce que les gens suggèrent
+### Changelogs :
+**`Bug Fix Release for v21.09`**
+- Fixed `drivers getting removed via installer` bug (backlight, external monitor issues)
+- Removed support for `flatpak` as it caused issue with thunar and plank (and other gtk applications)
+- Removed support for `snaps` (Arch community really hated it)
+- Replaced `lightdm` with **`sddm`**, as webkit2-greeter was causing issues on older machines
+- Improved `openbox`, `bspwm`, `polybar` and other stuff
+- And... I learned that I don't ~~need to~~ have to add everything people suggest

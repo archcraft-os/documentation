@@ -6,15 +6,6 @@ sidebar_position: 3
 
 After installing Archcraft, there are few things you should do...
 
-### Black Screen After Install / Liveboot
-If you get a black screen after booting the installed ISO or the live ISO, It maybe because of compositor. In that case, to solve this issue :
-- Login to a tty by pressing `ctrl+alt+f2/f3...`
-- Edit the `~/.config/picom.conf` file and use `glx` as backend.
-- If that does not work, Uninstall the compositor `picom-ibhagwan-git`
-```bash
-$ sudo pacman -Rsn picom-ibhagwan-git
-```
-
 ### Update System
 Refresh package database and Update your new installation.
 ```bash
@@ -25,6 +16,7 @@ If you get `invalid or corrupted package (PGP signature)` error, do...
 
 ```bash
 $ sudo pacman -S archlinux-keyring
+$ sudo pacman-key --init
 $ sudo pacman-key --populate
 ```
 
@@ -86,22 +78,6 @@ Fix lock screen layout on hidpi or low resolution displays.
 # Update the lockscreen wallpaper
 
 $ betterlockscreen -u /usr/share/backgrounds/groot.jpg
-```
-
-### Remove Unnecessary Modules From Initrd
-Let's say you've installed Archcraft (with `ABIF`) on a machine which has an Intel GPU. In this case you only need **`i915`** module. Delete other modules from the array and rebuild initrd.
-
-```bash
-# Edit mkinitcpio.conf file
-$ sudo vim /etc/mkinitcpio.conf
-
-# Change line 7 from
-MODULES=(i915? amdgpu? radeon? nouveau? vboxvideo? vmwgfx?)
-# To
-MODULES=(i915)
-
-# Save file and rebuild initrd
-$ sudo mkinitcpio -p linux						
 ```
 
 Well, that's pretty much everything for now, go ahead and enjoy Archcraft.

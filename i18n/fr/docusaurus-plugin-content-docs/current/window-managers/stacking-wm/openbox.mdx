@@ -1,0 +1,493 @@
+---
+sidebar_position: 1
+hide_table_of_contents: false
+---
+
+# Openbox
+
+<!-- Theme ---------------------------------------- -->
+<!-- Tabs -->
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<!-- Badges -->
+export const Highlight = ({children, color}) => (
+  <span
+    style={{
+      backgroundColor: color,
+      borderRadius: '4px',
+      color: '#fff',
+      padding: '0 0.2rem 0 0.2rem',
+    }}>
+    {children}
+  </span>
+);
+
+<!-- Add your stuff after this -------------------- -->
+
+Openbox is a lightweight, powerful, and highly configurable stacking window manager. It allows you to change almost every aspect of how you interact with your desktop and invent completely new ways to use and control it. It's the **default window manager** in Archcraft.
+
+[![video](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/openbox/main.png)](https://youtu.be/ci_nMh0-7vA)
+
+:::tip[Openbox Premium]
+
+The Ultimate Openbox Configuration With **Extra Functionality And Themes** (25 Pre-Made + Infinite Auto Generated Themes With `pywal`)
+
+Get Openbox Premium From [**`ko-fi`**](https://ko-fi.com/s/9b2de4919f) And Support Archcraft Development.
+
+:::
+
+<!-- Installation --------------------------------- -->
+
+## Installation
+
+Since Openbox is the default window manager of Archcraft, It comes pre-installed. But if you choose another window manager (let's say `bspwm`) during installation of Archcraft or you ever want to install/reinstall Openbox again, Then :
+
+<Tabs>
+
+<TabItem value="wm_1" label="Regular" default>
+
+Open a terminal and run the following command to install the regular version of Openbox :
+```bash
+$ sudo pacman -Sy archcraft-openbox
+```
+</TabItem>
+
+<TabItem value="wm_2" label="Premium" default>
+
+Download the premium package from [ko-fi](https://ko-fi.com/s/9b2de4919f), and save it in a directory. Open a terminal in same directory and run the following command to install Openbox premium :
+```bash
+$ sudo pacman -U archcraft-openbox-premium-X.Y-Z-any.pkg.tar.zst
+```
+</TabItem>
+
+</Tabs>
+
+:::info[Archcraft Prime]
+
+<Highlight color="#62aeef">Openbox Premium</Highlight> comes pre-installed on [**`Archcraft Prime ISO`**](https://ko-fi.com/s/c925a2a8c1)
+
+:::
+
+<!-- Configuration -------------------------------- -->
+
+## Configuration
+
+Openbox is pre-configured in Archcraft. In this section, We'll see how the openbox window manager is configured, what tools and utilities are used to make it look and work like a complete desktop environment.
+
+### Config Structure
+
+The configuration structure of Openbox WM in Archcraft looks something like this:
+
+```
+~/.config
+├── alacritty                       : terminal config
+├── dconf                           : dconf database for plank config
+├── dunst                           : dunst config for notifications
+├── nitrogen                        : nitrogen config for setting wallpapers
+├── obmenu-generator                : obmenu-generator config for menus
+├── openbox                         : openbox config
+│   ├── scripts                     : scripts used for openbox
+│   ├── themes                      : all themes (polybar, rofi configs) 
+│   ├── autostart                   : startup file
+│   ├── environment                 : script path and other env variables
+│   ├── menu-STYLE.xml              : menu file(s)
+│   └── rc.xml                      : main config file
+├── xfce4                           : xfce config specific for openbox
+│   └── xfconf                      : 
+│       └── xfce-perchannel-xml     : 
+│           └── xfce4-terminal.xml  : xfce terminal config
+│           └── xsettings.xml       : theme, icons and fonts config
+└── picom.conf                      : compositor config
+```
+
+### Terminal
+
+**Alacritty** is the default terminal. In the openbox window manager, alacritty is launched with its default config file. If you need to change anything, make sure you modify the config files in `~/.config/alacritty` directory. These are the following config files you can modify to change the behaviour of your terminal:
+
+**`~/.config/alacritty/alacritty.toml`** : Main configuration file <br/>
+**`~/.config/alacritty/colors.toml`** : Colors configurations <br/>
+**`~/.config/alacritty/fonts.toml`** : Fonts configurations
+
+> If you need any help with alacritty config, run : `man 5 alacritty` in terminal.
+
+:::tip
+
+XFCE Terminal is also installed as an alternate terminal in openbox. If alacritty doesn't work for you (see the reasons in [faqs](/docs/window-managers/stacking-wm/openbox#faqs)), use this one.
+
+:::
+
+:::warning
+
+When you change the `theme`, the **colors.toml** and **fonts.toml** file get overwritten by the theme script.
+
+When you change the color-scheme via the openbox menu `Preferences > Terminal Colors`, the **colors.toml** file gets overwritten.
+
+When you change the fonts via the openbox menu `Preferences > Change Font > Terminal`, the **fonts.toml** file gets overwritten.
+
+:::
+
+### Notification
+
+**Dunst** is used as a notification daemon for notifications in openbox. In the openbox window manager, dunst is launched with its default config file, which is `~/.config/dunst/dunstrc`. So, If you need to modify anything, make sure you edit this file.
+
+> If you need any help with dunst config, run : `man 5 dunst` in terminal.
+
+:::warning
+
+When you change the `theme`, the fonts and colors in **dunstrc** file get overwritten by the theme script.
+
+When you change the fonts via the openbox menu `Preferences > Change Font > Notifications`, the fonts in **dunstrc** file get overwritten.
+
+:::
+
+### Wallpaper
+
+**Nitrogen** sets the wallpaper in the openbox. If you want to change the wallpaper, just use Nitrogen application or you can go to openbox menu `Preferences > Change Wallpaper`
+
+### Statusbar
+
+There are two statusbar available in Archcraft's openbox window manager, **Polybar** and **Tint2**. To switch between them, Use openbox menu `Preferences > Panel / Bar`.
+
+The configurations for both polybar and tint2 can be found inside the _currently applied theme's directory_, which is inside the _themes_ directory of openbox `~/.config/openbox/themes`
+
+Let's say that the currently applied theme is `default` and you want to modify the **polybar** settings, or perhaps want to add/remove modules, then you need to edit the following files :
+
+**`~/.config/openbox/themes/default/polybar/config.ini`** : Main config file <br/>
+**`~/.config/openbox/themes/default/polybar/colors.ini`** : Colors config file <br/>
+**`~/.config/openbox/themes/default/polybar/modules.ini`** : Modules config file
+
+> If you need any help with polybar config, visit : [polybar wiki](https://github.com/polybar/polybar/wiki)
+
+Same goes for **tint2**, Edit the `~/.config/openbox/themes/default/tint2/tint2rc` file to modify the settings, add/remove items, etc.
+
+> If you need any help with tint2 config, run : `man tint2` in the terminal.
+
+:::warning
+
+When you change the `theme`, the fonts in **config.ini** file and **colors.ini** file of polybar get overwritten by the theme script.
+
+When you change the fonts via the openbox menu `Preferences > Change Font > Status Bar`, the fonts in **config.ini** file of polybar get overwritten.
+
+:::
+
+### Launchers and Applets
+
+**Rofi** is used for application launchers, command runner and various applets. To modify the rofi config, edit `~/.config/rofi/config.rasi` file.
+
+> If you need any help with rofi config, run : `man rofi` in terminal.
+
+The scripts for rofi that are used in openbox can be found it `~/.config/openbox/scripts` directory. These are the following scripts that uses rofi to provide the launchers and applets in openbox :
+
+**`rofi-askpass`** : rofi based `sudo` frontend to get root password <br/>
+**`rofi-bluetooth`** : bluetooth applet to quickly connect to BT devices <br/>
+**`rofi-launcher`** : an application launcher, cmd runner, file manager and task manager  <br/>
+**`rofi-music`** : music applet, that controls MPD with `mpc` <br/>
+**`rofi-powermenu`** : power menu, with confirmation dialog <br/>
+**`rofi-runner`** : quickly lets you run a command <br/>
+**`rofi-screenshot`** : screenshot applet that works with maim <br/>
+
+If you want to modify any applet or perhaps want to extend the functionality of the applet, just edit these scripts.
+
+The configuration of each script can be found inside the _currenty applied theme's directory_, which is inside the themes directory of openbox `~/.config/openbox/themes`
+
+Let's say that the currently applied theme is `default` and you want to modify the looks of **launcher**, then you need to edit the `~/.config/openbox/themes/default/rofi/launcher.rasi` file. Same goes for every other applet, Edit the respective file in the same directory.
+
+> If you need any help with rofi theming, run : `man rofi-theme` in terminal.
+
+To change the colors and fonts of the launchers and applets, Edit the `~/.config/openbox/themes/<THEME>/rofi/shared/colors.rasi` and `~/.config/openbox/themes/<THEME>/rofi/shared/fonts.rasi` files.
+
+:::warning
+
+When you change the `theme`, the **shared/colors.rasi** and **shared/fonts.rasi** files get overwritten by the theme script.
+
+When you change the fonts via the openbox menu `Preferences > Change Font > Launchers`, the **shared/fonts.rasi** file gets overwritten.
+
+:::
+
+### Compositor
+
+**Picom** is used for compositing. It's a lightweight compositor with shadowing, advanced blurring and fading. In openbox, picom is launched with its default config file, which is `~/.config/picom.conf`. 
+
+If you need to change anything related to picom, you have two methods:
+- Edit the picom config file directly.
+- Use the Openbox menu `Preferences > Compositor`
+
+> If you need any help with picom config, check the picom's default config file in `/etc/xdg/picom.conf`
+
+:::info
+
+If you're having screen-tearing issues, using `glx` backend can solve this issue. <br/>
+If you're facing lagging, hangs and freezes, try switching between `xrender` and `glx` backend.  
+
+:::
+
+:::warning
+
+When you change the `theme`, things like _backend_, _shadows_, _blurring_ in **picom.conf** file gets overwritten by theme script.
+
+:::
+
+### Window Manager
+
+The configuration of openbox is available in `~/.config/openbox`. To configure openbox window manager, these are the files that are used :
+
+#### Openbox specific config files
+**`autostart`** : provides autostart mechanism. Edit this file to run your apps on startup. <br/>
+**`environment`** : used to export and set env variables. Edit this file to set ENV vars. <br/>
+**`menu-STYLE.xml`** : defines the type and behaviour of the desktop menu, accessible by right-clicking the background. Edit this file to add/remove menu entries. <br/>
+**`rc.xml`** : main configuration file, responsible for determining the behaviour and settings of the overall session. Edit this file to add/remove keybindings, mousebinding, window rules, etc. <br/>
+
+#### Other files to extend functionality
+**`~/.config/obmenu-generator`** : generates dynamic applications menu<br/>
+**`/usr/share/archcraft/openbox/pipemenus`** : pipe menus for various operations<br/>
+**`/usr/share/archcraft/openbox/icons`** : icons used for openbox menu<br/>
+
+> If you need any help with openbox configuration, visit : [openbox wiki](http://openbox.org/wiki/Help:Contents)
+
+:::warning
+
+When you change the `theme`, things like _theme_, _fonts_, _button layout_, _padding_ and _menu style_ in **rc.xml** file gets overwritten by the theme script.
+
+:::
+
+<!-- Keybindings ---------------------------------- -->
+
+## Keybindings
+
+Here's a list of some important keybinds you need to know for operating openbox easily in Archcraft. To see all the keybinds, _Right click on the desktop and go to Keybinds_. If you want to modify or add new keybinds, Edit `~/.config/openbox/rc.xml` file.
+
+### Applications
+
+| Keys | Action |
+| --- | --- |
+| <kbd>super + Return</kbd> | Open terminal (alacritty) |
+| <kbd>super + T</kbd> | Open terminal in fullscreen mode |
+| <kbd>super + F</kbd> | Open file manager (thunar) |
+| <kbd>super + E</kbd> | Open text editor (geany) |
+| <kbd>super + W</kbd> | Open web browser (firefox) |
+
+### Menu and Applets
+
+| Keys | Action |
+| --- | --- |
+| <kbd>alt + F1</kbd> | Open application launcher |
+| <kbd>super</kbd> | Open application launcher |
+| <kbd>super + n</kbd> | Open network manager applet |
+| <kbd>super + b</kbd> | Open bluetooth applet |
+| <kbd>super + m</kbd> | Open music applet |
+| <kbd>super + x</kbd> | Open powermenu applet |
+| <kbd>super + s</kbd> | Open screenshots applet |
+| <kbd>super + r</kbd> | Open command runner |
+| <kbd>super + Space</kbd> | Open root menu |
+| <kbd>alt + Space</kbd> | Open client menu |
+| <kbd>alt + shift + Space</kbd> | Open client list combined menu |
+| <kbd>alt + ctrl + Space</kbd> | Open openbox application menu |
+
+### Hardware Keys
+
+| Keys | Action |
+| --- | --- |
+| <kbd>Print</kbd> | Take screenshot |
+| <kbd>alt + Print</kbd> | Take screenshot in 5 seconds delay |
+| <kbd>shift + Print</kbd> | Take screenshot in 10 seconds delay |
+| <kbd>ctrl + Print</kbd> | Take screenshot of currently focused window |
+| <kbd>super + Print</kbd> | Take screenshot of selected area |
+| <kbd>XF86AudioRaiseVolume</kbd> | Increase volume |
+| <kbd>XF86AudioLowerVolume</kbd> | Decrease volume |
+| <kbd>XF86AudioMute</kbd> | Toggle mute speakers |
+| <kbd>XF86AudioMicMute</kbd> | Toggle mute microphone |
+| <kbd>XF86Audio + Next/Prev/Play/Stop</kbd> | Media controls (MPD) |
+| <kbd>XF86MonBrightnessUp</kbd> | Increase display brightness |
+| <kbd>XF86MonBrightnessDown</kbd> | Decrease display brightness |
+
+### Workspaces
+| Keys | Action |
+| --- | --- |
+| <kbd>super + 1/2/3/4/5</kbd> | Switch to respective workspace |
+| <kbd>super + shift + 1/2/3/4/5</kbd> | Send active window to respective workspace |
+| <kbd>ctrl + alt + Left/Right</kbd> | Switch to previous/next workspace |
+| <kbd>super + shift + Left/Right</kbd> | Send active window to previous/next workspace |
+| <kbd>super + Equal</kbd> | Add new desktop |
+| <kbd>super + Minus</kbd> | Removed last desktop |
+| <kbd>super + D</kbd> | Toggle show desktop |
+
+### Window Management
+
+| Keys | Action |
+| --- | --- |
+| <kbd>super + Tab</kbd> | Switch between applications (All workspaces) |
+| <kbd>alt + Tab</kbd> | Switch between applications (Current workspaces) |
+| <kbd>super + alt + Up/Down/Left/Right</kbd> | Move active window Up/Down/Left/Right relatively |
+| <kbd>super + ctrl + Up/Down/Left/Right</kbd> | Resize active window relatively |
+| <kbd>super + alt + R</kbd> | Toggle interactive resize |
+| <kbd>super + alt + M</kbd> | Toggle interactive move |
+| <kbd>super + Left/Right</kbd> | Move window to the left/right edge of the screen |
+| <kbd>super + Up/Down</kbd> | Maximize/Center window respectively |
+| <kbd>super + shift + Up/Down</kbd> | Move window to the up/down edge of the screen |
+| <kbd>super + h/j/k/l</kbd> | Move window to TopLeft/BottomLeft/TopRight/BottomRight |
+| <kbd>super + shift + h/j/k/l</kbd> | Tile window to TopLeft/BottomLeft/TopRight/BottomRight |
+| <kbd>super + c/q</kbd> | Close application |
+| <kbd>alt + F4</kbd> | Close application |
+| <kbd>alt + F5</kbd> | Iconify/Minimize current application |
+| <kbd>alt + F6</kbd> | Toggle maximize |
+| <kbd>alt + F7</kbd> | Toggle shade |
+| <kbd>alt + F8</kbd> | Toggle decorations |
+| <kbd>alt + F9</kbd> | Toggle omnipresent/sticky |
+| <kbd>alt + F10</kbd> | Toggle fullscreen |
+| <kbd>alt + F11</kbd> | Toggle always on top |
+| <kbd>alt + F12</kbd> | Toggle always on bottom |
+
+### Window Manager
+
+| Keys | Action |
+| --- | --- |
+| <kbd>ctrl + shift + R</kbd> | Reconfigure Openbox WM |
+| <kbd>ctrl + shift + BackSpace</kbd> | Restart Openbox WM |
+| <kbd>ctrl + alt + Delete</kbd> | Exit Openbox WM |
+
+### Misc Keys
+
+| Keys | Action |
+| --- | --- |
+| <kbd>ctrl + alt + T</kbd> | Open alternate (xfce) terminal |
+| <kbd>ctrl + alt + V</kbd> | Open vim in terminal |
+| <kbd>ctrl + alt + R</kbd> | Open ranger in terminal |
+| <kbd>ctrl + alt + H</kbd> | Open htop in terminal |
+| <kbd>ctrl + alt + M</kbd> | Open ncmpcpp with album art in terminal |
+| <kbd>ctrl + alt + L</kbd> | Trigger lockscreen |
+| <kbd>super + P</kbd> | Run colorpicker  |
+| <kbd>super + Escape</kbd> | Run xkill  |
+
+<!-- Themes --------------------------------------- -->
+
+## Screenshots
+
+### Desktop
+
+Here's few screenshots of `Openbox` desktop. These'll give you an idea of the experience of openbox in Archcraft. 
+
+|Desktop 1|Desktop 2|Desktop 3|Desktop 4|Desktop 5|Desktop 6|
+|---|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/openbox/desktop/desktop_1.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/openbox/desktop/desktop_2.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/openbox/desktop/desktop_3.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/openbox/desktop/desktop_4.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/openbox/desktop/desktop_5.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/openbox/desktop/desktop_6.png)|
+
+|Desktop 7|Desktop 8|Desktop 9|Desktop 10|Desktop 11|Desktop 12|
+|---|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/openbox/desktop/desktop_7.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/openbox/desktop/desktop_8.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/openbox/desktop/desktop_9.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/openbox/desktop/desktop_10.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/openbox/desktop/desktop_11.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/openbox/desktop/desktop_12.png)|
+
+### Themes
+
+To Change the theme/style, Right click on the desktop and go to `Preferences > Change Style`
+
+<Tabs>
+
+<TabItem value="wm_1" label="Regular" default>
+
+There are **10 styles** available in regular openbox.
+
+|Theme 1|Theme 2|Theme 3|Theme 4|Theme 5|
+|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/openbox/themes/theme_1.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/openbox/themes/theme_2.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/openbox/themes/theme_3.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/openbox/themes/theme_9.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/openbox/themes/theme_13.png)|
+
+|Theme 6|Theme 7|Theme 8|Theme 9|Theme 10|
+|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/openbox/themes/theme_14.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/openbox/themes/theme_18.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/openbox/themes/theme_22.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/openbox/themes/theme_23.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/openbox/themes/theme_25.png)|
+
+</TabItem>
+
+<TabItem value="wm_2" label="Premium" default>
+
+There are **25 styles** (plus infinite auto-generated themes with `pywal`) available for Openbox premium.
+
+|Theme 1|Theme 2|Theme 3|Theme 4|Theme 5|
+|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/openbox/themes/theme_1.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/openbox/themes/theme_2.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/openbox/themes/theme_3.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/openbox/themes/theme_4.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/openbox/themes/theme_5.png)|
+
+|Theme 6|Theme 7|Theme 8|Theme 9|Theme 10|
+|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/openbox/themes/theme_6.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/openbox/themes/theme_7.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/openbox/themes/theme_8.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/openbox/themes/theme_9.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/openbox/themes/theme_10.png)|
+
+|Theme 11|Theme 12|Theme 13|Theme 14|Theme 15|
+|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/openbox/themes/theme_11.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/openbox/themes/theme_12.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/openbox/themes/theme_13.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/openbox/themes/theme_14.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/openbox/themes/theme_15.png)|
+
+|Theme 16|Theme 17|Theme 18|Theme 19|Theme 20|
+|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/openbox/themes/theme_16.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/openbox/themes/theme_17.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/openbox/themes/theme_18.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/openbox/themes/theme_19.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/openbox/themes/theme_20.png)|
+
+|Theme 21|Theme 22|Theme 23|Theme 24|Theme 25|
+|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/openbox/themes/theme_21.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/openbox/themes/theme_22.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/openbox/themes/theme_23.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/openbox/themes/theme_24.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/openbox/themes/theme_25.png)|
+
+</TabItem>
+
+<TabItem value="wm_3" label="Random" default>
+
+Auto Generated themes with `pywal`. This feature is only available in Openbox premium. <br/>
+Go to `Preferences > Change Style > Current` and click on **✤ Change Colors** to apply a random theme.
+
+![gif](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/openbox/random/random.gif)
+
+</TabItem>
+
+</Tabs>
+
+<!-- FAQs ----------------------------------------- -->
+
+## FAQs
+
+<details>
+<summary><b>How to update my config to new configs?</b></summary>
+
+When a new version of Archcraft Openbox get released, And you update the system by `sudo pacman -Syu` or you update the openbox package by `sudo pacman -S archcraft-openbox`, New config files get installed as **openbox_pacnew_YYYY-MM-DD** in your `~/.config` directory.
+
+To use new configs, backup your old `~/.config/openbox` directory and move `~/.config/openbox_pacnew_YYYY-MM-DD` to `~/.config/openbox` and login again.
+
+> For `Openbox Premium`, download the updated package from ko-fi (for free) and just install it to update to new configs.
+
+</details>
+
+<details>
+<summary><b>How to open apps as root in openbox?</b></summary>
+
+To open apps as root, Go to openbox menu `Apps As Root`, select the app and type your root password to open the app.
+
+</details>
+
+<details>
+<summary><b>How to change desktop theme in openbox?</b></summary>
+
+To change desktop theme, Go to openbox menu `Preferences > Change Style` and select the theme you want to use.
+
+</details>
+
+<details>
+<summary><b>How to change GTK theme, icons and cursor?</b></summary>
+
+To change GTK theme, icons and fonts in openbox session, use `xfce4-appearance-settings` application. <br/>
+You can open this app either via openbox menu `Preferences > Appearance Settings` or type _Appearance_ in app launcher.
+
+To change the openbox theme, use `obconf` app. <br/>
+You can open this app either via openbox menu `Preferences > Openbox > Settings` or type _obconf_ in app launcher.
+
+</details>
+
+<details>
+<summary><b>How to manage multiple monitors and resolution in openbox?</b></summary>
+
+If you use multiple monitors with openbox window manager, you can manage them via two methods :
+
+1. Run `launcher` and type either _Manager Monitors_ or _archcraft-randr_ and use the app.
+2. Go to openbox menu `Preferences > Display / Monitor` and use the menu.
+
+</details>
+
+<details>
+<summary><b>Why Alacritty is not working on my computer?</b></summary>
+
+Since Alacritty is a OpenGL based terminal emulator, It may not work on some computer hardwares. You can make it work on such computers by following these methods :
+
+1. Open alacritty with **LIBGL_ALWAYS_SOFTWARE=1** variable. Edit the keybindings/script launching alacritty and replace `alacritty` with `LIBGL_ALWAYS_SOFTWARE=1 alacritty`
+2. Edit **/usr/share/applications/Alacritty.desktop** desktop file and replace `Exec=alacritty` with `Exec=env LIBGL_ALWAYS_SOFTWARE=1 alacritty`
+
+</details>

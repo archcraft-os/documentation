@@ -1,0 +1,501 @@
+---
+sidebar_position: 1
+hide_table_of_contents: false
+---
+
+# Qtile
+
+<!-- Theme ---------------------------------------- -->
+<!-- Tabs -->
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<!-- Badges -->
+export const Highlight = ({children, color}) => (
+  <span
+    style={{
+      backgroundColor: color,
+      borderRadius: '4px',
+      color: '#fff',
+      padding: '0 0.2rem 0 0.2rem',
+    }}>
+    {children}
+  </span>
+);
+
+<!-- Add your stuff after this -------------------- -->
+
+Qtile is a full-featured, hackable tiling window manager written in Python. Qtile is simple, small, and extensible. It is easy to write your own layouts, widgets, and built-in commands. It is written and configured entirely in Python, which means you can leverage the full power and flexibility of the language to make it fit your needs.
+
+[![video](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/qtile/main.png)](https://youtu.be/3K7nMyB6Fqs)
+
+:::tip[Qtile Premium]
+
+The Ultimate Qtile Configuration With **Modular Configs, Extra Functionality And Themes** (26 Pre-Made + Infinite Auto Generated Themes With `pywal`)
+
+Get Qtile Premium From [**`ko-fi`**](https://ko-fi.com/s/5c90ab1bee) And Support Archcraft Development.
+
+:::
+
+<!-- Installation --------------------------------- -->
+
+## Installation
+
+Once you finish installing Archcraft, **Qtile** can be installed on the top of it. It's pre-configured and ready to go.
+
+<Tabs>
+
+<TabItem value="wm_1" label="Regular" default>
+
+Open a terminal and run the following command to install the regular version of Qtile :
+```bash
+$ sudo pacman -Sy archcraft-qtile
+```
+</TabItem>
+
+<TabItem value="wm_2" label="Premium" default>
+
+Download the premium package from [ko-fi](https://ko-fi.com/s/5c90ab1bee), and save it in a directory. Open a terminal in same directory and run the following command to install Qtile premium :
+```bash
+$ sudo pacman -U archcraft-qtile-premium-X.Y-Z-any.pkg.tar.zst
+```
+</TabItem>
+
+</Tabs>
+
+:::info[Archcraft Prime]
+
+<Highlight color="#62aeef">Qtile Premium</Highlight> comes pre-installed on [**`Archcraft Prime ISO`**](https://ko-fi.com/s/c925a2a8c1)
+
+:::
+
+<!-- Configuration -------------------------------- -->
+
+## Configuration
+
+Qtile is pre-configured in Archcraft. In this section, We'll see how the Qtile window manager is configured, what tools and utilities are used to make it look and work like a complete desktop environment.
+
+### Config Structure
+
+The configuration structure of Qtile in Archcraft looks something like this:
+
+```
+~/.config
+└── qtile           : Qtile config directory
+    ├── alacritty   : terminal config
+    ├── scripts     : scripts used for Qtile
+    ├── themes      : all themes (polybar, rofi configs) 
+    ├── config.py   : main Qtile config file
+    ├── dunstrc     : dunst config for notifications
+    ├── picom.conf  : compositor config
+    └── xsettingsd  : gtk themes, icons and fonts config file
+```
+
+### Terminal
+
+**Alacritty** is the default terminal. In the Qtile window manager, alacritty is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `~/.config/qtile/alacritty` directory. These are the following config files you can modify to change the behaviour of your terminal:
+
+**`~/.config/qtile/alacritty/alacritty.toml`** : Main configuration file <br/>
+**`~/.config/qtile/alacritty/colors.toml`** : Colors configurations <br/>
+**`~/.config/qtile/alacritty/fonts.toml`** : Fonts configurations
+
+> If you need any help with alacritty config, run : `man 5 alacritty` in terminal.
+
+:::warning
+
+When you change the `theme`, the **colors.toml** and **fonts.toml** file get overwritten by the theme script.
+
+> This is applicable only in <Highlight color="#c778dd">Qtile Premium</Highlight> as themes are only available in it. On regular version, there's only one theme.
+
+:::
+
+### Notification
+
+**Dunst** is used as a notification daemon for notifications in Qtile. In the Qtile window manager, dunst is launched with an alternative config file, which is `~/.config/qtile/dunstrc`. So, If you need to modify anything, make sure you edit this file.
+
+> If you need any help with dunst config, run : `man 5 dunst` in terminal.
+
+:::warning
+
+When you change the `theme`, the fonts and colors in **dunstrc** file get overwritten by the theme script.
+
+> This is applicable only in <Highlight color="#c778dd">Qtile Premium</Highlight> as themes are only available in it. On regular version, there's only one theme.
+
+:::
+
+### Wallpaper
+
+**hsetroot** sets the wallpaper in the Qtile. If you want to change the wallpaper, Edit the following scripts :
+
+<Tabs>
+
+<TabItem value="wm_1" label="Regular" default>
+
+Edit `~/.config/qtile/scripts/qtile_autostart` script and add the path to your wallpaper.
+```bash
+# Restore wallpaper
+hsetroot -cover '/path/to/your/wallpaper'
+```
+</TabItem>
+
+<TabItem value="wm_2" label="Premium" default>
+
+Edit `~/.config/qtile/themes/wallpaper.sh` script and add the path to your wallpaper.
+```bash
+WALLPAPER='/path/to/your/wallpaper'
+```
+:::warning
+
+When you change the `theme`, the script `wallpaper.sh` get overwritten by the theme script.
+
+:::
+
+</TabItem>
+
+</Tabs>
+
+### Statusbar
+
+**Polybar** is used as the statusbar in Archcraft's Qtile window manager.
+
+<Tabs>
+
+<TabItem value="wm_1" label="Regular" default>
+
+The configurations for polybar can be found inside the _theme_ directory directory of Qtile `~/.config/qtile/theme`
+
+If you want to modify the **polybar** settings, or perhaps want to add/remove modules, then you need to edit the following files :
+
+**`~/.config/qtile/theme/polybar/config.ini`** : Main config file <br/>
+**`~/.config/qtile/theme/polybar/colors.ini`** : Colors config file <br/>
+**`~/.config/qtile/theme/polybar/modules.ini`** : Modules config file
+
+> If you need any help with polybar config, visit : [polybar wiki](https://github.com/polybar/polybar/wiki)
+
+</TabItem>
+
+<TabItem value="wm_2" label="Premium" default>
+
+The configurations for polybar can be found inside the _currently applied theme's directory_, which is inside the _themes_ directory of Qtile `~/.config/qtile/themes`
+
+Let's say that the currently applied theme is `default` and you want to modify the **polybar** settings, or perhaps want to add/remove modules, then you need to edit the following files :
+
+**`~/.config/qtile/themes/default/polybar/config.ini`** : Main config file <br/>
+**`~/.config/qtile/themes/default/polybar/colors.ini`** : Colors config file <br/>
+**`~/.config/qtile/themes/default/polybar/modules.ini`** : Modules config file
+
+> If you need any help with polybar config, visit : [polybar wiki](https://github.com/polybar/polybar/wiki)
+
+:::warning
+
+When you change the `theme`, the fonts in **config.ini** file and **colors.ini** file of polybar get overwritten by the theme script.
+
+:::
+
+</TabItem>
+
+</Tabs>
+
+### Launchers and Applets
+
+**Rofi** is used for application launchers, command runner and various applets. To modify the rofi config, edit `~/.config/rofi/config.rasi` file.
+
+> If you need any help with rofi config, run : `man rofi` in terminal.
+
+The scripts for rofi that are used in Qtile can be found it `~/.config/qtile/scripts` directory. These are the following scripts that uses rofi to provide the launchers and applets in Qtile :
+
+**`rofi_askpass`** : rofi based `sudo` frontend to get root password <br/>
+**`rofi_asroot`** : applet to open apps as root <br/>
+**`rofi_bluetooth`** : bluetooth applet to quickly connect to BT devices <br/>
+**`rofi_launcher`** : an application launcher, cmd runner, file manager and task manager  <br/>
+**`rofi_music`** : music applet, that controls MPD with `mpc` <br/>
+**`rofi_powermenu`** : power menu, with confirmation dialog <br/>
+**`rofi_runner`** : quickly lets you run a command <br/>
+**`rofi_screenshot`** : screenshot applet that works with maim <br/>
+**`rofi_themes`** : applet to change the themes **`only in premium`** <br/>
+
+If you want to modify any applet or perhaps want to extend the functionality of the applet, just edit these scripts above.
+
+<Tabs>
+
+<TabItem value="wm_1" label="Regular" default>
+
+The configuration of each script can be found inside the _theme_ directory of Qtile `~/.config/qtile/theme`
+
+Let's say you want to modify the looks of **launcher**, then you need to edit the `~/.config/qtile/theme/rofi/launcher.rasi` file. Same goes for every other applet, Edit the respective file in the same directory.
+
+> If you need any help with rofi theming, run : `man rofi-theme` in terminal.
+
+To change the colors and fonts of the launchers and applets, Edit the `~/.config/qtile/theme/rofi/shared/colors.rasi` and `~/.config/qtile/theme/rofi/shared/fonts.rasi` files.
+
+</TabItem>
+
+<TabItem value="wm_2" label="Premium" default>
+
+The configuration of each script can be found inside the _currenty applied theme's directory_, which is inside the themes directory of Qtile `~/.config/qtile/themes`
+
+Let's say that the currently applied theme is `default` and you want to modify the looks of **launcher**, then you need to edit the `~/.config/qtile/themes/default/rofi/launcher.rasi` file. Same goes for every other applet, Edit the respective file in the same directory.
+
+> If you need any help with rofi theming, run : `man rofi-theme` in terminal.
+
+To change the colors and fonts of the launchers and applets, Edit the `~/.config/qtile/themes/<THEME>/rofi/shared/colors.rasi` and `~/.config/qtile/themes/<THEME>/rofi/shared/fonts.rasi` files.
+
+:::warning
+
+When you change the `theme`, the **shared/colors.rasi** and **shared/fonts.rasi** files get overwritten by the theme script.
+
+:::
+
+</TabItem>
+
+</Tabs>
+
+### Compositor
+
+**Picom** is used for compositing. It's a lightweight compositor with shadowing, advanced blurring and fading. In Qtile, picom is launched with an alternative config file, which is `~/.config/qtile/picom.conf`. 
+
+If you need to change anything related to picom, Edit this picom config file.
+
+> If you need any help with picom config, check the picom's default config file in `/etc/xdg/picom.conf`
+
+:::info
+
+If you're having screen-tearing issues, using `glx` backend can solve this issue. <br/>
+If you're facing lagging, hangs and freezes, try switching between `xrender` and `glx` backend.  
+
+:::
+
+:::warning
+
+When you change the `theme`, things like _backend_, _shadows_, _blurring_ in **picom.conf** file gets overwritten by theme script.
+
+> This is applicable only in <Highlight color="#c778dd">Qtile Premium</Highlight> as themes are only available in it. On regular version, there's only one theme.
+
+:::
+
+### Window Manager
+
+The configuration of Qtile is available in `~/.config/qtile`. To configure Qtile window manager, this is the main file that is used :
+
+**`~/.config/qtile/config.py`** : main Qtile config file with general settings, keybindings, layouts and window rules.<br/>
+
+> If you need any help with Qtile configuration, visit : [Qtile docs](https://docs.qtile.org/en/stable/)
+
+:::warning
+
+When you change the `theme`, things like _border colors_, _border width_, _margins _and _gaps_ in **config.py** file gets overwritten by the theme script.
+
+> This is applicable only in <Highlight color="#c778dd">Qtile Premium</Highlight> as themes are only available in it. On regular version, there's only one theme.
+
+:::
+
+<!-- Keybindings ---------------------------------- -->
+
+## Keybindings
+
+Here's a list of some important keybinds you need to know for operating Qtile easily. If you want to view, modify or add new keybinds, Edit `~/.config/qtile/config.py` file.
+
+### Applications
+
+| Keys | Action |
+| --- | --- |
+| <kbd>super + Return</kbd> | Open terminal (alacritty) |
+| <kbd>super + shift + Return</kbd> | Open floating terminal |
+| <kbd>super + alt + Return</kbd> | Open fullscreen terminal |
+| <kbd>super + shift + F</kbd> | Open file manager (thunar) |
+| <kbd>super + shift + E</kbd> | Open text editor (geany) |
+| <kbd>super + shift + W</kbd> | Open web browser (firefox) |
+
+### Menu and Applets
+
+| Keys | Action |
+| --- | --- |
+| <kbd>super</kbd> | Open application launcher |
+| <kbd>alt + F1</kbd> | Open application launcher |
+| <kbd>alt + F2</kbd> | Open command runner |
+| <kbd>super + n</kbd> | Open network manager applet |
+| <kbd>super + m</kbd> | Open music applet |
+| <kbd>super + x</kbd> | Open powermenu applet |
+| <kbd>super + s</kbd> | Open screenshots applet |
+| <kbd>super + r</kbd> | Open apps as root applet |
+| <kbd>super + t</kbd> | Open theme applet **`only in premium`** |
+
+### Hardware Keys
+
+| Keys | Action |
+| --- | --- |
+| <kbd>Print</kbd> | Take screenshot |
+| <kbd>ctrl + Print</kbd> | Take screenshot in 5 seconds delay |
+| <kbd>shift + Print</kbd> | Take screenshot in 10 seconds delay |
+| <kbd>ctrl + shift + Print</kbd> | Take screenshot of currently focused window |
+| <kbd>super + Print</kbd> | Take screenshot of selected area |
+| <kbd>XF86AudioRaiseVolume</kbd> | Increase volume |
+| <kbd>XF86AudioLowerVolume</kbd> | Decrease volume |
+| <kbd>XF86AudioMute</kbd> | Toggle mute speakers |
+| <kbd>XF86AudioMicMute</kbd> | Toggle mute microphone |
+| <kbd>XF86Audio + Next/Prev/Play/Stop</kbd> | Media controls (MPD) |
+| <kbd>XF86MonBrightnessUp</kbd> | Increase display brightness |
+| <kbd>XF86MonBrightnessDown</kbd> | Decrease display brightness |
+
+### Workspaces
+| Keys | Action |
+| --- | --- |
+| <kbd>super + 1..8</kbd> | Switch to respective group |
+| <kbd>super + shift + 1..8</kbd> | Move focused window to respective group |
+| <kbd>super + alt + Left/Right</kbd> | Go to next/prev group |
+| <kbd>super + B</kbd> | Switch group back-and-forth |
+
+### Window Management
+
+| Keys | Action |
+| --- | --- |
+| <kbd>super + C/Q</kbd> | Close focued window |
+| <kbd>super + Left/Right/Up/Down</kbd> | Sets focus to the nearest window in the given direction |
+| <kbd>super + shift + Left/Right/Up/Down</kbd> | Move focused window in the given direction |
+| <kbd>super + ctrl + Left/Right/Up/Down</kbd> | Resizing windows |
+| <kbd>super + F</kbd> | Toggle fullscreen |
+| <kbd>super + Space</kbd> | Toggle floating/tiling |
+| <kbd>super + Tab</kbd> | Move window focus to other window |
+| <kbd>super + shift + Space</kbd> | Toggle between different layouts |
+| <kbd>super + Equal</kbd> | Increase the space for master window |
+| <kbd>super + Minus</kbd> | Decrease the space for master window |
+| <kbd>super + shift + S</kbd> | Toggle between split and unsplit sides of stack |
+| <kbd>super +  shift + R</kbd> | Toggle Resize mode |
+| <kbd>super +  shift + L</kbd> | Toggle Layout mode |
+
+### Window Manager
+
+| Keys | Action |
+| --- | --- |
+| <kbd>super + ctrl + R</kbd> | Reload Qtile |
+| <kbd>super + ctrl + S</kbd> | Restart Qtile |
+| <kbd>super + ctrl + Q</kbd> | Quit Qtile |
+
+### Misc Keys
+
+| Keys | Action |
+| --- | --- |
+| <kbd>ctrl + alt + V</kbd> | Open vim in terminal |
+| <kbd>ctrl + alt + R</kbd> | Open ranger in terminal |
+| <kbd>ctrl + alt + H</kbd> | Open htop in terminal |
+| <kbd>ctrl + alt + M</kbd> | Open ncmpcpp with album art in terminal |
+| <kbd>ctrl + alt + L</kbd> | Trigger lockscreen |
+| <kbd>super + P</kbd> | Run colorpicker  |
+
+<!-- Themes --------------------------------------- -->
+
+## Screenshots
+
+### Desktop
+
+Here's few screenshots of `Qtile` desktop. These'll give you an idea of the experience of qtile in Archcraft. 
+
+|Desktop 1|Desktop 2|Desktop 3|Desktop 4|
+|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/qtile/desktop/desktop_1.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/qtile/desktop/desktop_2.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/qtile/desktop/desktop_3.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/qtile/desktop/desktop_4.png)|
+
+|Desktop 5|Desktop 6|Desktop 7|Desktop 8|
+|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/qtile/desktop/desktop_5.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/qtile/desktop/desktop_6.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/qtile/desktop/desktop_7.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/qtile/desktop/desktop_8.png)|
+
+|Desktop 9|Desktop 10|Desktop 11|Desktop 12|
+|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/qtile/desktop/desktop_9.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/qtile/desktop/desktop_10.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/qtile/desktop/desktop_11.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/qtile/desktop/desktop_12.png)|
+
+|Desktop 13|Desktop 14|Desktop 15|Desktop 16|
+|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/qtile/desktop/desktop_13.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/qtile/desktop/desktop_14.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/qtile/desktop/desktop_15.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/qtile/desktop/desktop_16.png)|
+
+### Themes
+
+<Tabs>
+
+<TabItem value="wm_1" label="Regular" default>
+
+There's only one theme available on regular qtile.
+
+![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/qtile/themes/theme_1.png)
+
+</TabItem>
+
+<TabItem value="wm_2" label="Premium" default>
+
+There are **26 styles** (plus infinite auto-generated themes with `pywal`) available for qtile premium. <br/>
+To Change the theme/style, Press `SUPER + T` and select the theme/style from the applet.
+
+|Theme 1|Theme 2|Theme 3|Theme 4|Theme 5|
+|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/qtile/themes/theme_1.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/qtile/themes/theme_2.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/qtile/themes/theme_3.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/qtile/themes/theme_4.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/qtile/themes/theme_5.png)|
+
+|Theme 6|Theme 7|Theme 8|Theme 9|Theme 10|
+|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/qtile/themes/theme_6.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/qtile/themes/theme_7.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/qtile/themes/theme_8.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/qtile/themes/theme_9.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/qtile/themes/theme_10.png)|
+
+|Theme 11|Theme 12|Theme 13|Theme 14|Theme 15|
+|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/qtile/themes/theme_11.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/qtile/themes/theme_12.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/qtile/themes/theme_13.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/qtile/themes/theme_14.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/qtile/themes/theme_15.png)|
+
+|Theme 16|Theme 17|Theme 18|Theme 19|Theme 20|
+|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/qtile/themes/theme_16.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/qtile/themes/theme_17.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/qtile/themes/theme_18.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/qtile/themes/theme_19.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/qtile/themes/theme_20.png)|
+
+|Theme 21|Theme 22|Theme 23|Theme 24|Theme 25|Theme 26|
+|---|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/qtile/themes/theme_21.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/qtile/themes/theme_22.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/qtile/themes/theme_23.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/qtile/themes/theme_24.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/qtile/themes/theme_25.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/qtile/themes/theme_26.png)|
+
+</TabItem>
+
+<TabItem value="wm_3" label="Random" default>
+
+Auto Generated themes with `pywal`. This feature is only available in qtile premium. <br/>
+Press `SUPER + T` and select **Random** to apply a random theme.
+
+![gif](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/qtile/random/random.gif)
+
+</TabItem>
+
+</Tabs>
+
+<!-- FAQs ----------------------------------------- -->
+
+## FAQs
+
+<details>
+<summary><b>How to update my config to new configs?</b></summary>
+
+When a new version of Archcraft Qtile get released, And you update the system by `sudo pacman -Syu` or you update the Qtile package by `sudo pacman -S archcraft-qtile`, New config files get installed as **qtile_pacnew_YYYY-MM-DD** in your `~/.config` directory.
+
+To use new configs, backup your old `~/.config/qtile` directory and move `~/.config/qtile_pacnew_YYYY-MM-DD` to `~/.config/qtile` and login again.
+
+> For `Qtile premium`, download the updated package from ko-fi (for free) and just install it to update to new configs.
+
+</details>
+
+<details>
+<summary><b>How to change GTK theme, icons and cursor?</b></summary>
+
+To change GTK theme, icons and cursor in Qtile session, Edit `~/.config/qtile/xsettingsd` file and restart Qtile to apply the changes.
+```ini
+Net/ThemeName "Arc-Dark"
+Net/IconThemeName "Zafiro"
+Gtk/CursorThemeName "Qogirr"
+```
+
+</details>
+
+<details>
+<summary><b>How to manage multiple monitors and resolution in Qtile?</b></summary>
+
+If you use multiple monitors with Qtile window manager, you can manage them by running _Manager Monitors_ or `archcraft-randr` app.
+
+</details>
+
+<details>
+<summary><b>Why Alacritty is not working on my computer?</b></summary>
+
+Since Alacritty is a OpenGL based terminal emulator, It may not work on some computer hardwares. You can make it work on such computers by following these methods :
+
+1. Open alacritty with **LIBGL_ALWAYS_SOFTWARE=1** variable. Edit the keybindings/script launching alacritty and replace `alacritty` with `LIBGL_ALWAYS_SOFTWARE=1 alacritty`
+2. Edit **/usr/share/applications/Alacritty.desktop** desktop file and replace `Exec=alacritty` with `Exec=env LIBGL_ALWAYS_SOFTWARE=1 alacritty`
+
+</details>

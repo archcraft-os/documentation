@@ -1,0 +1,89 @@
+---
+sidebar_position: 3
+hide_table_of_contents: true
+---
+
+# Boot Archcraft in VMs
+
+<!-- Tabs -->
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+
+<TabItem value="article" label="Article">
+
+If you're planning to boot Archcraft in Virtual Machines (_For Ex: Virtualbox_), You may notices some issue (which are not issues exactly) mentioned below :
+
+- Desktop not scaling automatically when changing resolution
+- Wallpaper get stretched when going into fullscreen mode
+- Statusbar not scaled accordingly
+- Screen flickering after changing the theme
+- Cursor is not visible
+- etc
+
+These are not issues, Exactly. See Archcraft uses standalone window managers only, not desktop environments. So When you go into fullscreen mode or when you change the resolution, Things like wallpaper and statusbar doesn't get updated/reloaded automatically, Unlike in a typical desktop environments.
+
+To deal with these scenarios, you can do these things to get the best experience with Archcraft in VMs :
+
+<details>
+<summary>1. How to change resolution the correct way?</summary>
+
+As mentioned already, Archcraft doesn't use DEs which means when you change the resolution, the wallpaper and status bar won't update automatically.
+
+But Archcraft comes with few utilities to solve this problem. So when you change the resolution :
+- Use `archcraft-randr` application. Open app launcher and either type **Manage Monitors** or **randr** and use the application. It's a rofi based applet and when you change the mode via this app, the wallpaper and statusbar gets updated as well. This will work in all sessions.
+- If you're in **Openbox**, Right click on desktop, Go to `Preferences > Display / Monitors` and change the resolution/mode. It'll do the same, But only works in Openbox.
+
+</details>
+
+<details>
+<summary>2. How to fix stretched wallpaper and statusbar?</summary>
+
+Use `archcraft-randr` application, and select the **auto** option.
+
+</details>
+
+<details>
+<summary>3. How to fix screen flickering after changing the theme?</summary>
+
+When you change the theme, the backend for compositor (_picom_) changes to **glx**. It may cause issues in VMs on some hardwares. The solution to this problem is switching back the backend to **xrender**.
+- If you're in openbox, Go to `Preferences > Compositor > use 'xrender' backend`
+- In any other session (_bspwm_), Edit the respective picom config file. For Ex : `~/.config/bspwm/picom.conf`
+
+</details>
+
+<details>
+<summary>4. How to fix invisible cursor?</summary>
+
+There are two possible causes for this problem :
+1. **`In Xorg`** : the **glx** backend of picom compositor, the solution is switching back to **xrender**.
+2. **`In Wayland`** : When using certain graphics drivers (e.g. the VMSVGA graphics controller or the proprietary NVIDIA driver), the cursor is invisible. This can be fixed by using software cursors : `export WLR_NO_HARDWARE_CURSORS=1`
+
+</details>
+
+:::danger
+
+Wayland Compositors doesn't work in Virtual Machines. That means [**`Archcraft Wayland Special Edition ISO`**](https://ko-fi.com/s/213becbf00) and the wayland compositors on [**`Archcraft Prime ISO`**](https://ko-fi.com/s/c925a2a8c1) won't work on Virtual Machines.
+
+:::
+
+:::warning
+
+In virtualbox, If you enable **3D Acceleration** and use the default `VMSVGA` display drivers, There's a possibility that the Wayland Compositors work on it. But that may or may not work. 
+
+> For me, this method worked in the previous version of virtualbox. But it's no longer working for me and I'm not able to run any wayland compositor on virtualbox.
+
+:::
+
+</TabItem>
+
+<TabItem value="video" label="Video">
+
+Here's a youtube video about booting Archcraft in Virtualbox.
+
+[![video](https://i3.ytimg.com/vi/5nTNVcqkqfw/maxresdefault.jpg)](https://youtu.be/5nTNVcqkqfw)
+
+</TabItem>
+
+</Tabs>

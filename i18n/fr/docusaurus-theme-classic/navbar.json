@@ -3,9 +3,13 @@
     "message": "Archcraft",
     "description": "The title in the navbar"
   },
-  "item.label.Wiki": {
-    "message": "Wiki",
-    "description": "Navbar item with label Wiki"
+  "logo.alt": {
+    "message": "Archcraft Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Docs": {
+    "message": "Docs",
+    "description": "Navbar item with label Docs"
   },
   "item.label.Tutorials": {
     "message": "Tutoriels",
@@ -14,5 +18,9 @@
   "item.label.News": {
     "message": "Nouvelles",
     "description": "Navbar item with label News"
+  },
+  "item.label.Github": {
+    "message": "Github",
+    "description": "Navbar item with label Github"
   }
 }

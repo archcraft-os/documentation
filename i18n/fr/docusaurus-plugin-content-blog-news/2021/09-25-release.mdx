@@ -1,10 +1,12 @@
 ---
-slug: 01-release-news
-title: Version de septembre disponible
+slug: 01-news-release
+title: September 2021 Release
 authors: adi1090x
 tags: [v21.09, release, iso]
+hide_table_of_contents: true
 ---
 
+<!-- Badges -->
 export const Highlight = ({children, color}) => (
   <span
     style={{
@@ -17,43 +19,41 @@ export const Highlight = ({children, color}) => (
   </span>
 );
 
-**Un nouveau ISO est maintenant disponible a télécharger**
+September 2021 ISO of Archcraft is now available to download. Read the changelogs below to know what's new.
 
-Aprés un travail dûr de 3 mois, je vous présente Le <Highlight color="#C778DD">Nouveau Archcraft </Highlight>
-### Quoi de neuf ? (un oeuf :D)
-- Reconstruit depuis 0 (pour de meilleures maintenances et mises à jours)
-- Une nouvell **`base`**, **`logo`**, **`paquets`**, **`repository`**, etc
-- Le probléme de l'écran noir avec les GPU Nvidia a était réglé
 <!--truncate-->
-- Le probléme du **`Kernel additionnel`** avec Grub a était réglé
-- Le support des **`snaps`** et **`flatpak`** on était activé
-- L'ajout d'un **`GUI`** pour pacman (avec `aur` , `snap` et `flatpak`)
-- L'activation du **`chaotic aur`** par défault 
-- L'activation du **`bluetooth`** par défault 
-- L'activation d' **`Os-prober`** par défault 
-- Enabled **`on-demand rehash`** for `zsh`
-- L'activation de **`l'actualisation sur demande`** pour `zsh`
-- Utilisation de **`lightdm`** avec **`webkit2-greeter`** comme gestionnaire d'affichage par défaut
-- Utilisation de **`firefox`** comme navigateur web par défaut
-- Nouveaux thèmes **`plymouth`** et **`grub`**.
-- Nouveaux thèmes **`gtk`**, **`icon`**, **`cursor`** et différents packs de **`wallpaper`**.
-- Nouvelles applications **`welcome`**, **`about`**, **`help and tips`**.
-- Nouvelles **`polices`** géniales et mises à jour **`nerd fonts`**.
-- Nouveaux **`styles`** et **`thèmes`** pour `openbox (15+)` et `bspwm (20)`.
-- **Configurations`** :
-  - Bureau `bspwm` redessiné (polybar, rofi, etc)
-  - Nouvelle configuration `openbox`.
-  - Menu openbox amélioré, nouveaux pipemenus, différents styles de menu
-  - Menu pipe `Xrandr` pour ajuster la résolution et gérer facilement les multi-moniteurs. 
-  - Compositeur `Picom` (`ibhagwan fork`) avec flou dual_kawase et coins arrondis.
-  - Meilleures captures d'écran avec `maim` et enregistrement d'écran avec `ffmpeg`.
-  - Détection automatique de `network-interface`, `battery`, et `gpu cards` pour polybar.
-  - Inclus tous mes thèmes `polybar` et `rofi`.
-  - Style machine à écrire pour `pyroom` pour une expérience d'écriture agréable
-- **`Programmes en ligne de commande`** :
-  - `vim` avec [ultimate vimrc](https://github.com/amix/vimrc) (nerd-tree, lightline, etc)
-  - `neovim` avec [Nvchad](https://github.com/NvChad/NvChad) (la configuration ultime de nvim)
-  - `ranger` avec [icons](https://github.com/alexanderjeurissen/ranger_devicons), coloration syntaxique et aperçus (images, vidéos, pdf, etc)
-  - `oh-my-zsh` avec [spaceship-prompt](https://github.com/spaceship-prompt/spaceship-prompt)
-  - `ncmpcpp` avec support des illustrations d'album
 
+### Changelogs :
+- Created from scratch (for better updates and easy maintenance)
+- New **`base`**, **`logo`**, **`packages`**, **`repository`**, etc
+- Fixed blackscreen issue on some Nvidia GPUs
+- Fixed **`additional kernel`** issue with grub
+- Enabled **`snap`** and **`flatpak`** support
+- Added **`graphical frontend`** for pacman (with `aur`, `snaps`, `flatpak` integration)
+- Enabled **`chaotic aur`** by default
+- Enabled **`bluetooth`** services by default
+- Enabled **`os-prober`** by default
+- Enabled **`on-demand rehash`** for `zsh`
+- Using **`lightdm`** with **`webkit2-greeter`** as default display manager
+- Using **`firefox`** as the default web browser
+- New **`plymouth`** theme, **`grub`** themes
+- New **`gtk`**, **`icon`**, **`cursor`** themes and different **`wallpaper`** packs
+- New **`welcome`**, **`about`**, **`help and tips`** apps
+- New awesome **`fonts`** and updated **`nerd fonts`**
+- New **`styles`** and **`themes`** for `openbox (15+)` and `bspwm (20)`
+- **`Configurations`** :
+  - Redesigned `bspwm` desktop (polybar, rofi, etc)
+  - Completely new `openbox` config
+  - Improved openbox menu, new pipemenus, different menu styles
+  - `Xrandr` pipemenu to adjust resolution and manage multi-monitors easily 
+  - `Picom` compositor (`ibhagwan fork`) with dual_kawase blur and rounded corners.
+  - Better screenshots with `maim` and screen recording with `ffmpeg`
+  - Auto-detection of `network-interface`, `battery`, and `gpu cards` for polybar.
+  - Included all my `polybar` and `rofi` themes
+  - Typewriter style for `pyroom` for a pleasant writing experience
+- **`Command line programs`** :
+  - `vim` with [ultimate vimrc](https://github.com/amix/vimrc) (nerd-tree, lightline, etc)
+  - `neovim` with [Nvchad](https://github.com/NvChad/NvChad) (the ultimate nvim config)
+  - `ranger` with [icons](https://github.com/alexanderjeurissen/ranger_devicons), syntax highlighting and previews (images, videos, pdf, etc)
+  - `oh-my-zsh` with [spaceship-prompt](https://github.com/spaceship-prompt/spaceship-prompt)
+  - `ncmpcpp` with album art support
