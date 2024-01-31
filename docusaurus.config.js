@@ -193,10 +193,12 @@ const config = {
       },
     algolia: {
       // The application ID provided by Algolia
-      appId: 'BH4D9OD16A',
+      //appId: 'BH4D9OD16A',	//old
+      appId: '2UJTUGCIC9',
 
       // Public API key: it is safe to commit it
-      apiKey: '802115dbf963e638e1641f03bd41c646',
+      //apiKey: '802115dbf963e638e1641f03bd41c646',		//old
+      apiKey: '238d08a98c808dd56ff18e6f04130a51',
 
       indexName: 'archcraft',
 
