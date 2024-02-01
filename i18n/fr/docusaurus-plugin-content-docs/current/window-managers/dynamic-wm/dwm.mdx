@@ -25,4 +25,292 @@ export const Highlight = ({children, color}) => (
 
 <!-- Add your stuff after this -------------------- -->
 
-Work In Progress...
+dwm is a dynamic window manager for Xorg. It manages windows in tiled, stacked, and full-screen layouts, as well as many others with the help of optional patches. Layouts can be applied dynamically, optimizing the environment for the application in use and the task being performed. dwm is extremely lightweight and fast, written in C and with a stated design goal of remaining under 2000 source lines of code. It provides multihead support for xrandr and Xinerama.
+
+![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/dwm/main.png)
+
+<!-- Installation --------------------------------- -->
+
+## Installation
+
+Once you finish installing Archcraft, **dwm** can be installed on the top of it. It's pre-configured and ready to go. Open a terminal and run the following command to install dwm :
+```bash
+$ sudo pacman -Sy archcraft-dwm
+```
+
+<!-- Configuration -------------------------------- -->
+
+## Configuration
+
+dwm is pre-configured in Archcraft. In this section, We'll see how the dwm window manager is configured, what tools and utilities are used to make it look and work like a complete desktop environment.
+
+### Config Structure
+
+The configuration structure of dwm in Archcraft looks something like this:
+
+```
+/opt
+└── dwm-source                : dwm source code
+    └── config.def.h          : dwm config file
+/usr
+└── share
+    └── archcraft
+        └── dwm
+            ├── alacritty     : terminal config
+            ├── scripts       : scripts used for dwm
+            ├── theme         : desktop theme (polybar, rofi configs) 
+            ├── dunstrc       : dunst config for notifications
+            ├── picom.conf    : compositor config
+            └── xsettingsd    : gtk themes, icons and fonts config file
+```
+
+### Terminal
+
+**Alacritty** is the default terminal. In dwm window manager, alacritty is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `/usr/share/archcraft/dwm/alacritty` directory. These are the following config files you can modify to change the behaviour of your terminal:
+
+**`/usr/share/archcraft/dwm/alacritty/alacritty.toml`** : Main configuration file <br/>
+**`/usr/share/archcraft/dwm/alacritty/colors.toml`** : Colors configurations <br/>
+**`/usr/share/archcraft/dwm/alacritty/fonts.toml`** : Fonts configurations
+
+> If you need any help with alacritty config, run : `man 5 alacritty` in terminal.
+
+### Notification
+
+**Dunst** is used as a notification daemon for notifications in dwm. In dwm window manager, dunst is launched with an alternative config file, which is `/usr/share/archcraft/dwm/dunstrc`. So, If you need to modify anything, make sure you edit this file.
+
+> If you need any help with dunst config, run : `man 5 dunst` in terminal.
+
+### Wallpaper
+
+**hsetroot** sets the wallpaper in the dwm. If you want to change the wallpaper, Edit `/usr/share/archcraft/dwm/scripts/dwm_autostart` script and add the path to your wallpaper :
+```bash
+# Restore wallpaper
+hsetroot -cover '/path/to/your/wallpaper'
+```
+
+### Statusbar
+
+**xsetroot** is used to generate the elements on statusbar in Archcraft's dwm window manager.
+
+Edit `/usr/share/archcraft/dwm/scripts/dwm_bar` script to add/remove/modify the statusbar elements.
+
+### Launchers and Applets
+
+**Rofi** is used for application launchers, command runner and various applets. To modify the rofi config, edit `~/.config/rofi/config.rasi` file.
+
+> If you need any help with rofi config, run : `man rofi` in terminal.
+
+The scripts for rofi that are used in dwm can be found it `/usr/share/archcraft/dwm/scripts` directory. These are the following scripts that uses rofi to provide the launchers and applets :
+
+**`rofi_askpass`** : rofi based `sudo` frontend to get root password <br/>
+**`rofi_asroot`** : applet to open apps as root <br/>
+**`rofi_bluetooth`** : bluetooth applet to quickly connect to BT devices <br/>
+**`rofi_launcher`** : an application launcher, cmd runner, file manager and task manager  <br/>
+**`rofi_layouts`** : applet to change the layouts <br/>
+**`rofi_music`** : music applet, that controls MPD with `mpc` <br/>
+**`rofi_powermenu`** : power menu, with confirmation dialog <br/>
+**`rofi_runner`** : quickly lets you run a command <br/>
+**`rofi_screenshot`** : screenshot applet that works with maim <br/>
+**`rofi_windows`** : applet to manage opened windows <br/>
+
+If you want to modify any applet or perhaps want to extend the functionality of the applet, just edit these scripts above.
+
+The configuration of each script can be found inside the _theme_ directory of dwm `/usr/share/archcraft/dwm/theme`
+
+Let's say you want to modify the looks of **launcher**, then you need to edit the `/usr/share/archcraft/dwm/theme/rofi/launcher.rasi` file. Same goes for every other applet, Edit the respective file in the same directory.
+
+> If you need any help with rofi theming, run : `man rofi-theme` in terminal.
+
+To change the colors and fonts of the launchers and applets, Edit the `/usr/share/archcraft/dwm/theme/rofi/shared/colors.rasi` and `/usr/share/archcraft/dwm/theme/rofi/shared/fonts.rasi` files.
+
+### Compositor
+
+**Picom** is used for compositing. It's a lightweight compositor with shadowing, advanced blurring and fading. In dwm, picom is launched with an alternative config file, which is `/usr/share/archcraft/dwm/picom.conf`. 
+
+If you need to change anything related to picom, Edit this picom config file.
+
+> If you need any help with picom config, check the picom's default config file in `/etc/xdg/picom.conf`
+
+:::info
+
+If you're having screen-tearing issues, using `glx` backend can solve this issue. <br/>
+If you're facing lagging, hangs and freezes, try switching between `xrender` and `glx` backend.  
+
+:::
+
+### Window Manager
+
+`/opt/dwm-source/config.def.h` is the main configuration file of dwm. If you need to change anything or perhaps you want to add/remove/change keybindings, Edit this file and recompile dwm and then install the new binary.
+
+> If you need any help with dwm configuration and customisation, visit : [suckless.org](https://dwm.suckless.org/customisation/)
+
+<!-- Keybindings ---------------------------------- -->
+
+## Keybindings
+
+Here's a list of some important keybinds you need to know for operating dwm easily. If you want to view, modify or add new keybinds, Edit `/opt/dwm-source/config.def.h` file.
+
+### Applications
+
+| Keys | Action |
+| --- | --- |
+| <kbd>super + Return</kbd> | Open terminal (st) |
+| <kbd>super + ctrl + Return</kbd> | Open terminal (alacritty) |
+| <kbd>super + shift + Return</kbd> | Open floating terminal (alacritty) |
+| <kbd>super + alt + Return</kbd> | Open fullscreen terminal (alacritty) |
+| <kbd>super + shift + F</kbd> | Open file manager (thunar) |
+| <kbd>super + shift + E</kbd> | Open text editor (geany) |
+| <kbd>super + shift + W</kbd> | Open web browser (firefox) |
+
+### Menu and Applets
+
+| Keys | Action |
+| --- | --- |
+| <kbd>super</kbd> | Open application launcher |
+| <kbd>alt + F1</kbd> | Open application launcher |
+| <kbd>alt + F2</kbd> | Open command runner |
+| <kbd>super + N</kbd> | Open network manager applet |
+| <kbd>super + B</kbd> | Open bluetooth applet |
+| <kbd>super + M</kbd> | Open music applet |
+| <kbd>super + X</kbd> | Open powermenu applet |
+| <kbd>super + S</kbd> | Open screenshots applet |
+| <kbd>super + R</kbd> | Open apps as root applet |
+| <kbd>super + W</kbd> | Open window applet |
+
+### Hardware Keys
+
+| Keys | Action |
+| --- | --- |
+| <kbd>Print</kbd> | Take screenshot |
+| <kbd>alt + Print</kbd> | Take screenshot in 5 seconds delay |
+| <kbd>shift + Print</kbd> | Take screenshot in 10 seconds delay |
+| <kbd>ctrl + Print</kbd> | Take screenshot of currently focused window |
+| <kbd>super + Print</kbd> | Take screenshot of selected area |
+| <kbd>XF86AudioRaiseVolume</kbd> | Increase volume |
+| <kbd>XF86AudioLowerVolume</kbd> | Decrease volume |
+| <kbd>XF86AudioMute</kbd> | Toggle mute speakers |
+| <kbd>XF86AudioMicMute</kbd> | Toggle mute microphone |
+| <kbd>XF86MonBrightnessUp</kbd> | Increase display brightness |
+| <kbd>XF86MonBrightnessDown</kbd> | Decrease display brightness |
+
+### Window Management
+
+| Keys | Action |
+| --- | --- |
+| <kbd>super + 1..9</kbd> | Switch to respective tag |
+| <kbd>super + C</kbd> | Close focued window |
+| <kbd>super + shift + Equal</kbd> | Increase border width |
+| <kbd>super + shift + Minus</kbd> | Decrease border width |
+| <kbd>super + shift + BackSpace</kbd> | Restore default border width |
+| <kbd>super + shift + Bracket_Left</kbd> | Increase gaps |
+| <kbd>super + shift + Bracket_Right</kbd> | Decrease gaps |
+| <kbd>super + shift + Backslash</kbd> | Restore default gaps |
+| <kbd>super + shift + G</kbd> | Toggle gaps |
+| <kbd>super + shift + I</kbd> | Increase inner gaps |
+| <kbd>super + shift + ctrl + I</kbd> | Decrease inner gaps |
+| <kbd>super + ctrl + O</kbd> | Increase outer gaps |
+| <kbd>super + shift + ctrl + O</kbd> | Decrease outer gaps |
+| <kbd>super + J/K</kbd> | Cycle window |
+| <kbd>super + shift + J/K</kbd> | Switch master |
+| <kbd>super + Left/Right</kbd> | Cycle window |
+| <kbd>super + shift + Left/Right</kbd> | Switch master |
+| <kbd>super + I</kbd> | Increase master vertically |
+| <kbd>super + U</kbd> | Decrease master horizontally |
+| <kbd>super + H/L</kbd> | Shrink left/right |
+| <kbd>super + Left/Right</kbd> | Shrink left/right |
+| <kbd>super + shift + B</kbd> | Toggle bar |
+| <kbd>super + Tab</kbd> | Switch to master |
+| <kbd>alt + Tab</kbd> | Switch to last tag |
+| <kbd>super + D</kbd> | Hide window |
+| <kbd>super + shift + D</kbd> | Restore window |
+
+### Layouts
+| Keys | Action |
+| --- | --- |
+| <kbd>alt + ctrl + Space</kbd> | Run rofi layouts applet |
+| <kbd>super + ctrl + Comma/Period</kbd> | Cycle layouts |
+| <kbd>super + shift + Space</kbd> | Toggle floating |
+| <kbd>super + F</kbd> | Toggle fullscreen |
+| <kbd>super + Space</kbd> | Set last layout |
+| <kbd>super + T</kbd> | Set Tile layout|
+| <kbd>super + G</kbd> | Set Grid layout |
+| <kbd>super + shift + M</kbd> | Set Monocle layout |
+| <kbd>super + shift + S</kbd> | Set Spiral layout |
+| <kbd>super + shift + T</kbd> | Set Stack layout |
+| <kbd>super + shift + C</kbd> | Set Centered-Master layout |
+| <kbd>super + shift + X</kbd> | Set Tatami layout |
+
+### Window Manager
+
+| Keys | Action |
+| --- | --- |
+| <kbd>super + shift + R</kbd> | Restart dwm |
+| <kbd>super + ctrl + Q</kbd> | Quit dwm |
+
+### Misc Keys
+
+| Keys | Action |
+| --- | --- |
+| <kbd>ctrl + alt + M</kbd> | Open ncmpcpp with album art in terminal |
+| <kbd>ctrl + alt + L</kbd> | Trigger lockscreen |
+| <kbd>super + P</kbd> | Run colorpicker  |
+| <kbd>super + Escape</kbd> | Run xkill |
+
+<!-- Themes --------------------------------------- -->
+
+## Screenshots
+
+Here's few screenshots of `dwm` desktop. These'll give you an idea of the experience of dwm in Archcraft. 
+
+|Desktop 1|Desktop 2|Desktop 3|Desktop 4|
+|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/dwm/desktop/desktop_1.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/dwm/desktop/desktop_2.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/dwm/desktop/desktop_3.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/dwm/desktop/desktop_4.png)|
+
+|Desktop 5|Desktop 6|Desktop 7|Desktop 8|
+|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/dwm/desktop/desktop_5.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/dwm/desktop/desktop_6.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/dwm/desktop/desktop_7.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/dwm/desktop/desktop_8.png)|
+
+|Desktop 9|Desktop 10|Desktop 11|Desktop 12|
+|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/dwm/desktop/desktop_9.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/dwm/desktop/desktop_10.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/dwm/desktop/desktop_11.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/dwm/desktop/desktop_12.png)|
+
+|Desktop 13|Desktop 14|Desktop 15|Desktop 16|
+|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/dwm/desktop/desktop_13.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/dwm/desktop/desktop_14.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/dwm/desktop/desktop_15.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/dwm/desktop/desktop_16.png)|
+
+|Desktop 17|Desktop 18|Desktop 19|Desktop 20|
+|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/dwm/desktop/desktop_17.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/dwm/desktop/desktop_18.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/dwm/desktop/desktop_19.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/dwm/desktop/desktop_20.png)|
+
+<!-- FAQs ----------------------------------------- -->
+
+## FAQs
+
+<details>
+<summary><b>How to change GTK theme, icons and cursor?</b></summary>
+
+To change GTK theme, icons and cursor in dwm session, Edit `/usr/share/archcraft/dwm/xsettingsd` file and restart dwm to apply the changes.
+```ini
+Net/ThemeName "Arc-Dark"
+Net/IconThemeName "Zafiro-Blue"
+Gtk/CursorThemeName "Qogirr"
+```
+
+</details>
+
+<details>
+<summary><b>How to manage multiple monitors and resolution in dwm?</b></summary>
+
+If you use multiple monitors with dwm window manager, you can manage them by running _Manager Monitors_ or `archcraft-randr` app.
+
+</details>
+
+<details>
+<summary><b>Why Alacritty is not working on my computer?</b></summary>
+
+Since Alacritty is a OpenGL based terminal emulator, It may not work on some computer hardwares. You can make it work on such computers by following these methods :
+
+1. Open alacritty with **LIBGL_ALWAYS_SOFTWARE=1** variable. Edit the keybindings/script launching alacritty and replace `alacritty` with `LIBGL_ALWAYS_SOFTWARE=1 alacritty`
+2. Edit **/usr/share/applications/Alacritty.desktop** desktop file and replace `Exec=alacritty` with `Exec=env LIBGL_ALWAYS_SOFTWARE=1 alacritty`
+
+</details>

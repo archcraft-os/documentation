@@ -25,4 +25,290 @@ export const Highlight = ({children, color}) => (
 
 <!-- Add your stuff after this -------------------- -->
 
-Work In Progress...
+Manual tiling window manager for X11 using Xlib and Glib. The layout is based on splitting frames into subframes which can be split again or can be filled with windows (similar to i3/ musca). Tags (or workspaces or virtual desktops or …) can be added/removed at runtime. Each tag contains its own layout. Exactly one tag is viewed on each monitor. The tags are monitor independent (similar to xmonad). It is configured at runtime via ipc calls from herbstclient. So the configuration file is just a script which is run on startup.
+
+![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/herbstluftwm/main.png)
+
+<!-- Installation --------------------------------- -->
+
+## Installation
+
+Once you finish installing Archcraft, **herbstluftwm** can be installed on the top of it. It's pre-configured and ready to go. Open a terminal and run the following command to install it :
+```bash
+$ sudo pacman -Sy archcraft-herbstluftwm
+```
+
+<!-- Configuration -------------------------------- -->
+
+## Configuration
+
+herbstluftwm is pre-configured in Archcraft. In this section, We'll see how the herbstluftwm window manager is configured, what tools and utilities are used to make it look and work like a complete desktop environment.
+
+### Config Structure
+
+The configuration structure of herbstluftwm in Archcraft looks something like this:
+
+```
+~/.config
+└── herbstluftwm    : herbstluftwm config directory
+    ├── alacritty   : terminal config
+    ├── scripts     : scripts used for herbstluftwm
+    ├── themes      : desktop theme (polybar, rofi configs) 
+    ├── autostart   : main herbstluftwm config file
+    ├── dunstrc     : dunst config for notifications
+    ├── picom.conf  : compositor config
+    └── xsettingsd  : gtk themes, icons and fonts config file
+```
+
+### Terminal
+
+**Alacritty** is the default terminal. In the herbstluftwm window manager, alacritty is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `~/.config/herbstluftwm/alacritty` directory. These are the following config files you can modify to change the behaviour of your terminal:
+
+**`~/.config/herbstluftwm/alacritty/alacritty.toml`** : Main configuration file <br/>
+**`~/.config/herbstluftwm/alacritty/colors.toml`** : Colors configurations <br/>
+**`~/.config/herbstluftwm/alacritty/fonts.toml`** : Fonts configurations
+
+> If you need any help with alacritty config, run : `man 5 alacritty` in terminal.
+
+### Notification
+
+**Dunst** is used as a notification daemon for notifications in herbstluftwm. In the herbstluftwm window manager, dunst is launched with an alternative config file, which is `~/.config/herbstluftwm/dunstrc`. So, If you need to modify anything, make sure you edit this file.
+
+> If you need any help with dunst config, run : `man 5 dunst` in terminal.
+
+### Wallpaper
+
+**hsetroot** sets the wallpaper in the herbstluftwm. If you want to change the wallpaper, Edit `~/.config/herbstluftwm/scripts/herb_autostart` script and add the path to your wallpaper :
+```bash
+# Restore wallpaper
+hsetroot -cover '/path/to/your/wallpaper'
+#hsetroot -solid "#BDBAB5"
+```
+
+### Statusbar
+
+**Polybar** is used as the statusbar in Archcraft's herbstluftwm window manager.
+
+The configurations for polybar can be found inside the _theme_ directory directory of herbstluftwm `~/.config/herbstluftwm/theme`
+
+If you want to modify the **polybar** settings, or perhaps want to add/remove modules, then you need to edit the following files :
+
+**`~/.config/herbstluftwm/theme/polybar/config.ini`** : Main config file <br/>
+**`~/.config/herbstluftwm/theme/polybar/colors.ini`** : Colors config file <br/>
+**`~/.config/herbstluftwm/theme/polybar/modules.ini`** : Modules config file
+
+> If you need any help with polybar config, visit : [polybar wiki](https://github.com/polybar/polybar/wiki)
+
+### Launchers and Applets
+
+**Rofi** is used for application launchers, command runner and various applets. To modify the rofi config, edit `~/.config/rofi/config.rasi` file.
+
+> If you need any help with rofi config, run : `man rofi` in terminal.
+
+The scripts for rofi that are used in herbstluftwm can be found it `~/.config/herbstluftwm/scripts` directory. These are the following scripts that uses rofi to provide the launchers and applets in herbstluftwm :
+
+**`rofi_askpass`** : rofi based `sudo` frontend to get root password <br/>
+**`rofi_asroot`** : applet to open apps as root <br/>
+**`rofi_bluetooth`** : bluetooth applet to quickly connect to BT devices <br/>
+**`rofi_launcher`** : an application launcher, cmd runner, file manager and task manager  <br/>
+**`rofi_music`** : music applet, that controls MPD with `mpc` <br/>
+**`rofi_powermenu`** : power menu, with confirmation dialog <br/>
+**`rofi_runner`** : quickly lets you run a command <br/>
+**`rofi_screenshot`** : screenshot applet that works with maim <br/>
+**`rofi_windows`** : applet to manage opened windows <br/>
+
+If you want to modify any applet or perhaps want to extend the functionality of the applet, just edit these scripts above.
+
+The configuration of each script can be found inside the _theme_ directory of herbstluftwm `~/.config/herbstluftwm/theme`
+
+Let's say you want to modify the looks of **launcher**, then you need to edit the `~/.config/herbstluftwm/theme/rofi/launcher.rasi` file. Same goes for every other applet, Edit the respective file in the same directory.
+
+> If you need any help with rofi theming, run : `man rofi-theme` in terminal.
+
+To change the colors and fonts of the launchers and applets, Edit the `~/.config/herbstluftwm/theme/rofi/shared/colors.rasi` and `~/.config/herbstluftwm/theme/rofi/shared/fonts.rasi` files.
+
+### Compositor
+
+**Picom** is used for compositing. It's a lightweight compositor with shadowing, advanced blurring and fading. In herbstluftwm, picom is launched with an alternative config file, which is `~/.config/herbstluftwm/picom.conf`. 
+
+If you need to change anything related to picom, Edit this picom config file.
+
+> If you need any help with picom config, check the picom's default config file in `/etc/xdg/picom.conf`
+
+:::info
+
+If you're having screen-tearing issues, using `glx` backend can solve this issue. <br/>
+If you're facing lagging, hangs and freezes, try switching between `xrender` and `glx` backend.  
+
+:::
+
+### Window Manager
+
+The configuration of herbstluftwm is available in `~/.config/herbstluftwm`. To configure herbstluftwm window manager, this is the main file that is used :
+
+**`autostart`** : main configuration file responsible for determining the behaviour and settings of the overall session. Edit this file to set window rules, configure tags, layouts, and herbstluftwm appearance.
+
+> If you need any help with herbstluftwm configuration, visit : [herbstluftwm.org](https://herbstluftwm.org/tutorial.html) <br/>
+
+<!-- Keybindings ---------------------------------- -->
+
+## Keybindings
+
+Here's a list of some important keybinds you need to know for operating herbstluftwm easily. If you want to view, modify or add new keybinds, Edit `~/.config/herbstluftwm/autostart` file.
+
+### Applications
+
+| Keys | Action |
+| --- | --- |
+| <kbd>super + Return</kbd> | Open terminal (alacritty) |
+| <kbd>super + shift + Return</kbd> | Open floating terminal |
+| <kbd>super + alt + Return</kbd> | Open fullscreen terminal |
+| <kbd>super + shift + F</kbd> | Open file manager (thunar) |
+| <kbd>super + shift + E</kbd> | Open text editor (geany) |
+| <kbd>super + shift + W</kbd> | Open web browser (firefox) |
+
+### Menu and Applets
+
+| Keys | Action |
+| --- | --- |
+| <kbd>super</kbd> | Open application launcher |
+| <kbd>alt + F1</kbd> | Open application launcher |
+| <kbd>alt + F2</kbd> | Open command runner |
+| <kbd>super + N</kbd> | Open network manager applet |
+| <kbd>super + B</kbd> | Open bluetooth applet |
+| <kbd>super + M</kbd> | Open music applet |
+| <kbd>super + X</kbd> | Open powermenu applet |
+| <kbd>super + S</kbd> | Open screenshots applet |
+| <kbd>super + R</kbd> | Open apps as root applet |
+| <kbd>super + W</kbd> | Open window applet |
+
+### Hardware Keys
+
+| Keys | Action |
+| --- | --- |
+| <kbd>Print</kbd> | Take screenshot |
+| <kbd>alt + Print</kbd> | Take screenshot in 5 seconds delay |
+| <kbd>shift + Print</kbd> | Take screenshot in 10 seconds delay |
+| <kbd>ctrl + Print</kbd> | Take screenshot of currently focused window |
+| <kbd>super + Print</kbd> | Take screenshot of selected area |
+| <kbd>XF86AudioRaiseVolume</kbd> | Increase volume |
+| <kbd>XF86AudioLowerVolume</kbd> | Decrease volume |
+| <kbd>XF86AudioMute</kbd> | Toggle mute speakers |
+| <kbd>XF86AudioMicMute</kbd> | Toggle mute microphone |
+| <kbd>XF86Audio + Next/Prev/Play/Stop</kbd> | Media controls (MPD) |
+| <kbd>XF86MonBrightnessUp</kbd> | Increase display brightness |
+| <kbd>XF86MonBrightnessDown</kbd> | Decrease display brightness |
+
+### Workspaces
+| Keys | Action |
+| --- | --- |
+| <kbd>super + 1..9</kbd> | Switch to respective tag |
+| <kbd>super + shift + 1..9</kbd> | Send focused client to respective tag |
+| <kbd>super + Comma/Period</kbd> | Cycle through tags |
+| <kbd>super + BackSpace</kbd> | Cycle monitor |
+
+### Window Management
+
+| Keys | Action |
+| --- | --- |
+| <kbd>super + C</kbd> | Close focused client |
+| <kbd>super + Left/Right/Up/Down</kbd> | Focus left, right, top and bottom clients respectively |
+| <kbd>super + H/L/K/J</kbd> | Focus left, right, top and bottom clients respectively |
+| <kbd>super + shift + Left/Right/Up/Down</kbd> | Move clients in tiling and floating mode |
+| <kbd>super + shift + H/L/K/J</kbd> | Move clients in tiling and floating mode |
+| <kbd>super + ctrl + Left/Right/Up/Down</kbd> | Resize frames and floating clients |
+| <kbd>super + ctrl + H/L/K/J</kbd> | Resize frames and floating clients |
+| <kbd>super + U</kbd> | Splitting frames, create an empty frame at bottom |
+| <kbd>super + O</kbd> | Splitting frames, create an empty frame in right |
+| <kbd>super + ctrl + S</kbd> | Let the current frame explode into subframes |
+| <kbd>super + D</kbd> | Remove subframes |
+| <kbd>super + Tab</kbd> | Cycle clients |
+| <kbd>alt + Tab</kbd> | Cycle clients |
+| <kbd>super + I</kbd> | Jump to urgent client |
+| <kbd>super + F</kbd> | Toggle fullscreen |
+| <kbd>super + shift + Space</kbd> | Toggle focus between floating and tiled clients |
+| <kbd>super + ctrl + Space</kbd> | Toggle floating |
+| <kbd>super + shift + M</kbd> | Focus minimized clients |
+| <kbd>super + ctrl + M</kbd> | Jump to last minimized client |
+| <kbd>super + G</kbd> | Toggle pseudotile |
+| <kbd>super + Space</kbd> | Cycles through the available layouts |
+
+### Window Manager
+
+| Keys | Action |
+| --- | --- |
+| <kbd>super + shift + R</kbd> | Reload herbstluftwm |
+| <kbd>super + shift + Q</kbd> | Quit herbstluftwm |
+
+### Misc Keys
+
+| Keys | Action |
+| --- | --- |
+| <kbd>ctrl + alt + M</kbd> | Open ncmpcpp with album art in terminal |
+| <kbd>ctrl + alt + L</kbd> | Trigger lockscreen |
+| <kbd>super + P</kbd> | Run colorpicker  |
+| <kbd>super + Escape</kbd> | Run xkill  |
+
+<!-- Themes --------------------------------------- -->
+
+## Screenshots
+
+Here's few screenshots of `herbstluftwm` desktop. These'll give you an idea of the experience of herbstluftwm in Archcraft. 
+
+|Desktop 1|Desktop 2|Desktop 3|Desktop 4|
+|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/herbstluftwm/desktop/desktop_1.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/herbstluftwm/desktop/desktop_2.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/herbstluftwm/desktop/desktop_3.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/herbstluftwm/desktop/desktop_4.png)|
+
+|Desktop 5|Desktop 6|Desktop 7|Desktop 8|
+|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/herbstluftwm/desktop/desktop_5.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/herbstluftwm/desktop/desktop_6.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/herbstluftwm/desktop/desktop_7.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/herbstluftwm/desktop/desktop_8.png)|
+
+|Desktop 9|Desktop 10|Desktop 11|Desktop 12|
+|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/herbstluftwm/desktop/desktop_9.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/herbstluftwm/desktop/desktop_10.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/herbstluftwm/desktop/desktop_11.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/herbstluftwm/desktop/desktop_12.png)|
+
+|Desktop 13|Desktop 14|Desktop 15|Desktop 16|
+|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/herbstluftwm/desktop/desktop_13.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/herbstluftwm/desktop/desktop_14.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/herbstluftwm/desktop/desktop_15.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/herbstluftwm/desktop/desktop_16.png)|
+
+<!-- FAQs ----------------------------------------- -->
+
+## FAQs
+
+<details>
+<summary><b>How to update my config to new configs?</b></summary>
+
+When a new version of Archcraft herbstluftwm get released, And you update the system by `sudo pacman -Syu` or you update the herbstluftwm package by `sudo pacman -S archcraft-herbstluftwm`, New config files get installed as **herbstluftwm_pacnew_YYYY-MM-DD** in your `~/.config` directory.
+
+To use new configs, backup your old `~/.config/herbstluftwm` directory and move `~/.config/herbstluftwm_pacnew_YYYY-MM-DD` to `~/.config/herbstluftwm` and login again.
+
+</details>
+
+<details>
+<summary><b>How to change GTK theme, icons and cursor?</b></summary>
+
+To change GTK theme, icons and cursor in herbstluftwm session, Edit `~/.config/herbstluftwm/xsettingsd` file and restart herbstluftwm to apply the changes.
+```ini
+Net/ThemeName "Adwaita-dark"
+Net/IconThemeName "Zafiro"
+Gtk/CursorThemeName "Qogirr"
+```
+
+</details>
+
+<details>
+<summary><b>How to manage multiple monitors and resolution in herbstluftwm?</b></summary>
+
+If you use multiple monitors with herbstluftwm window manager, you can manage them by running _Manager Monitors_ or `archcraft-randr` app.
+
+</details>
+
+<details>
+<summary><b>Why Alacritty is not working on my computer?</b></summary>
+
+Since Alacritty is a OpenGL based terminal emulator, It may not work on some computer hardwares. You can make it work on such computers by following these methods :
+
+1. Open alacritty with **LIBGL_ALWAYS_SOFTWARE=1** variable. Edit the keybindings/script launching alacritty and replace `alacritty` with `LIBGL_ALWAYS_SOFTWARE=1 alacritty`
+2. Edit **/usr/share/applications/Alacritty.desktop** desktop file and replace `Exec=alacritty` with `Exec=env LIBGL_ALWAYS_SOFTWARE=1 alacritty`
+
+</details>
