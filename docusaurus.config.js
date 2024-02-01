@@ -122,7 +122,7 @@ const config = {
       colorMode: {
         defaultMode: 'light',
         disableSwitch: false,
-        respectPrefersColorScheme: false,
+        respectPrefersColorScheme: true,
       },
       // The meta image URL for the site. Relative to your site's "static" directory. Cannot be SVGs. Can be external URLs too.
       image: 'img/meta.jpg',
@@ -193,12 +193,12 @@ const config = {
       },
     algolia: {
       // The application ID provided by Algolia
-      //appId: 'BH4D9OD16A',	//old
-      appId: '2UJTUGCIC9',
+      appId: 'BH4D9OD16A',
+      //appId: '2UJTUGCIC9', //another
 
       // Public API key: it is safe to commit it
-      //apiKey: '802115dbf963e638e1641f03bd41c646',		//old
-      apiKey: '238d08a98c808dd56ff18e6f04130a51',
+      apiKey: '802115dbf963e638e1641f03bd41c646',
+      //apiKey: '238d08a98c808dd56ff18e6f04130a51', //another
 
       indexName: 'archcraft',
 
