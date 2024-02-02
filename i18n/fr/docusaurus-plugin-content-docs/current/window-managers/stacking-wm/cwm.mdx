@@ -25,4 +25,303 @@ export const Highlight = ({children, color}) => (
 
 <!-- Add your stuff after this -------------------- -->
 
-Work In Progress...
+cwm is an X11 window manager with a focus on getting out of your way so you can be productive. It was originally derived from evilwm, but the codebase has since been re-written from scratch.
+
+![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/cwm/main.png)
+
+<!-- Installation --------------------------------- -->
+
+## Installation
+
+Once you finish installing Archcraft, **cwm** can be installed on the top of it. It's pre-configured and ready to go. Open a terminal and run the following command to install cwm :
+```bash
+$ sudo pacman -Sy archcraft-cwm
+```
+
+<!-- Configuration -------------------------------- -->
+
+## Configuration
+
+cwm is pre-configured in Archcraft. In this section, We'll see how the cwm window manager is configured, what tools and utilities are used to make it look and work like a complete desktop environment.
+
+### Config Structure
+
+The configuration structure of cwm in Archcraft looks something like this:
+
+```
+/usr/bin/run-cwm   : Autostart programs
+~/.cwmrc           : main cwm config file
+~/.cwm             : cwm config directory
+├── alacritty      : terminal config
+├── scripts        : scripts used for cwm
+├── theme          : desktop theme (polybar, rofi configs) 
+├── dunstrc        : dunst config for notifications
+├── picom.conf     : compositor config
+└── xsettingsd     : gtk themes, icons and fonts config file
+```
+
+### Terminal
+
+**Alacritty** is the default terminal. In the cwm window manager, alacritty is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `~/.cwm/alacritty` directory. These are the following config files you can modify to change the behaviour of your terminal:
+
+**`~/.cwm/alacritty/alacritty.toml`** : Main configuration file <br/>
+**`~/.cwm/alacritty/colors.toml`** : Colors configurations <br/>
+**`~/.cwm/alacritty/fonts.toml`** : Fonts configurations
+
+> If you need any help with alacritty config, run : `man 5 alacritty` in terminal.
+
+### Notification
+
+**Dunst** is used as a notification daemon for notifications in cwm. In the cwm window manager, dunst is launched with an alternative config file, which is `~/.cwm/dunstrc`. So, If you need to modify anything, make sure you edit this file.
+
+> If you need any help with dunst config, run : `man 5 dunst` in terminal.
+
+### Wallpaper
+
+**hsetroot** sets the wallpaper in the cwm. If you want to change the wallpaper, Edit `/usr/bin/run-cwm` script and add the path to your wallpaper :
+```bash
+# Restore wallpaper
+hsetroot -cover '/path/to/your/wallpaper'
+```
+
+### Statusbar
+
+**Polybar** is used as the statusbar in Archcraft's cwm window manager.
+
+The configurations for polybar can be found inside the _theme_ directory directory of cwm `~/.cwm/theme`
+
+If you want to modify the **polybar** settings, or perhaps want to add/remove modules, then you need to edit the following files :
+
+**`~/.cwm/theme/polybar/config.ini`** : Main config file <br/>
+**`~/.cwm/theme/polybar/colors.ini`** : Colors config file <br/>
+**`~/.cwm/theme/polybar/modules.ini`** : Modules config file
+
+> If you need any help with polybar config, visit : [polybar wiki](https://github.com/polybar/polybar/wiki)
+
+### Launchers and Applets
+
+**Rofi** is used for application launchers, command runner and various applets. To modify the rofi config, edit `~/.config/rofi/config.rasi` file.
+
+> If you need any help with rofi config, run : `man rofi` in terminal.
+
+The scripts for rofi that are used in cwm can be found it `~/.cwm/scripts` directory. These are the following scripts that uses rofi to provide the launchers and applets in cwm :
+
+**`rofi_askpass`** : rofi based `sudo` frontend to get root password <br/>
+**`rofi_asroot`** : applet to open apps as root <br/>
+**`rofi_bluetooth`** : bluetooth applet to quickly connect to BT devices <br/>
+**`rofi_launcher`** : an application launcher, cmd runner, file manager and task manager  <br/>
+**`rofi_music`** : music applet, that controls MPD with `mpc` <br/>
+**`rofi_powermenu`** : power menu, with confirmation dialog <br/>
+**`rofi_runner`** : quickly lets you run a command <br/>
+**`rofi_screenshot`** : screenshot applet that works with maim <br/>
+
+If you want to modify any applet or perhaps want to extend the functionality of the applet, just edit these scripts above.
+
+The configuration of each script can be found inside the _theme_ directory of cwm `~/.cwm/theme`
+
+Let's say you want to modify the looks of **launcher**, then you need to edit the `~/.cwm/theme/rofi/launcher.rasi` file. Same goes for every other applet, Edit the respective file in the same directory.
+
+> If you need any help with rofi theming, run : `man rofi-theme` in terminal.
+
+To change the colors and fonts of the launchers and applets, Edit the `~/.cwm/theme/rofi/shared/colors.rasi` and `~/.cwm/theme/rofi/shared/fonts.rasi` files.
+
+### Compositor
+
+**Picom** is used for compositing. It's a lightweight compositor with shadowing, advanced blurring and fading. In cwm, picom is launched with an alternative config file, which is `~/.cwm/picom.conf`. 
+
+If you need to change anything related to picom, Edit this picom config file.
+
+> If you need any help with picom config, check the picom's default config file in `/etc/xdg/picom.conf`
+
+:::info
+
+If you're having screen-tearing issues, using `glx` backend can solve this issue. <br/>
+If you're facing lagging, hangs and freezes, try switching between `xrender` and `glx` backend.  
+
+:::
+
+### Window Manager
+
+The configuration of cwm is available in your home directory. To configure cwm window manager, this is the main file that is used :
+
+**`~/.cwmrc`** : main configuration file responsible for determining the behaviour and settings of the overall session. Edit this file to configure keybindings, colors, menu and cwm appearance. <br/>
+
+> If you need any help with cwm configuration, run : `man cwm` and `man cwmrc` in terminal.
+
+<!-- Keybindings ---------------------------------- -->
+
+## Keybindings
+
+Here's a list of some important keybinds you need to know for operating cwm easily. If you want to view, modify or add new keybinds, Edit `~/.cwmrc` file.
+
+### Applications
+
+| Keys | Action |
+| --- | --- |
+| <kbd>super + Return</kbd> | Open terminal (alacritty) |
+| <kbd>super + shift + Return</kbd> | Open fullscreen terminal |
+| <kbd>super + F</kbd> | Open file manager (thunar) |
+| <kbd>super + E</kbd> | Open text editor (geany) |
+| <kbd>super + W</kbd> | Open web browser (firefox) |
+
+### Menu and Applets
+
+| Keys | Action |
+| --- | --- |
+| <kbd>super</kbd> | Open application launcher |
+| <kbd>alt + F1</kbd> | Open application launcher |
+| <kbd>alt + F2</kbd> | Open command runner |
+| <kbd>super + N</kbd> | Open network manager applet |
+| <kbd>super + B</kbd> | Open bluetooth applet |
+| <kbd>super + M</kbd> | Open music applet |
+| <kbd>super + X</kbd> | Open powermenu applet |
+| <kbd>super + S</kbd> | Open screenshots applet |
+| <kbd>super + R</kbd> | Open apps as root applet |
+| <kbd>alt + ctrl + W</kbd> | Launch window search menu |
+| <kbd>alt + ctrl + A</kbd> | Launch application search menu |
+| <kbd>alt + ctrl + G</kbd> | Launch group search menu |
+
+### Hardware Keys
+
+| Keys | Action |
+| --- | --- |
+| <kbd>Print</kbd> | Take screenshot |
+| <kbd>alt + Print</kbd> | Take screenshot in 5 seconds delay |
+| <kbd>shift + Print</kbd> | Take screenshot in 10 seconds delay |
+| <kbd>ctrl + Print</kbd> | Take screenshot of currently focused window |
+| <kbd>super + Print</kbd> | Take screenshot of selected area |
+| <kbd>XF86AudioRaiseVolume</kbd> | Increase volume |
+| <kbd>XF86AudioLowerVolume</kbd> | Decrease volume |
+| <kbd>XF86AudioMute</kbd> | Toggle mute speakers |
+| <kbd>XF86AudioMicMute</kbd> | Toggle mute microphone |
+| <kbd>XF86MonBrightnessUp</kbd> | Increase display brightness |
+| <kbd>XF86MonBrightnessDown</kbd> | Decrease display brightness |
+
+### Groups
+| Keys | Action |
+| --- | --- |
+| <kbd>super + NUM</kbd> | Show only group NUM, where NUM is 1-9, hiding other groups |
+| <kbd>super + shift + NUM</kbd> | Hide current window from display and move to group NUM, where NUM is 1-9 |
+| <kbd>super + alt + NUM</kbd> | Toggle visibility of group NUM, where NUM is 1-9 |
+| <kbd>super + ctrl + NUM</kbd> | Close all windows in group NUM, where NUM is 1-9 |
+| <kbd>super + shift + B</kbd> | Show only the previously active group |
+| <kbd>super + shift + A</kbd> | Toggle visibility of all groups |
+| <kbd>super + shift + G</kbd> | Toggle group membership of current window |
+| <kbd>ctrl + alt + Right/Left</kbd> | Forward/Reverse cycle through groups |
+
+### Window Management
+
+| Keys | Action |
+| --- | --- |
+| <kbd>super + C/Q</kbd> | Close focused client |
+| <kbd>super + Tab</kbd> | Forward/Reverse cycle through windows |
+| <kbd>alt + Tab</kbd> | Forward/Reverse cycle through windows in current group |
+| <kbd>super + I</kbd> | Hide current window |
+| <kbd>super + T</kbd> | Freeze current window geometry |
+| <kbd>super + shift + R</kbd> | Label current window |
+| <kbd>super + O</kbd> | Stick current window to all groups |
+| <kbd>super + Space</kbd> | Fullscreen current window |
+| <kbd>super + shift + Space</kbd> | Maximize current window |
+| <kbd>ctrl + alt + V</kbd> | Vertically maximize current window |
+| <kbd>ctrl + alt + H</kbd> | Horizontally maximize current window |
+| <kbd>ctrl + alt + shift + V</kbd> | Vertically maximize current window placing it in left of the screen |
+| <kbd>ctrl + alt + shift + H</kbd> | Horizontally maximize current window placing it at top of the screen |
+| <kbd>super + shift + Left/Right/Up/Down</kbd> | Move window by 10px directionally |
+| <kbd>super + shift + H/J/K/L</kbd> | Move window by 100px directionally |
+| <kbd>super + ctrl + Left/Right/Up/Down</kbd> | Resize window by 10px directionally |
+| <kbd>super + ctrl + H/J/K/L</kbd> | Resize window by 100px directionally |
+| <kbd>super + Left/Right/Up/Down</kbd> | Snap window to the screen edges |
+| <kbd>super + H/J/K/L</kbd> | Snap window to the screen edges |
+
+### Window Manager
+
+| Keys | Action |
+| --- | --- |
+| <kbd>super + ctrl + R</kbd> | Restart CWM |
+| <kbd>super + ctrl + Q</kbd> | Quit CWM |
+
+### Misc Keys
+
+| Keys | Action |
+| --- | --- |
+| <kbd>ctrl + alt + M</kbd> | Run ncmpcpp with album art |
+| <kbd>ctrl + alt + L</kbd> | Trigger lockscreen |
+| <kbd>super + P</kbd> | Run colorpicker  |
+
+## Mouse Bindings
+
+| Button | Action |
+| --- | --- |
+| <kbd>alt + Button_1</kbd> | Raise current window |
+| <kbd>alt + Button_3</kbd> | Lower current window |
+| <kbd>alt + Button_2</kbd> | Hide current window |
+| <kbd>super + Button_1</kbd> | Move current window |
+| <kbd>super + Button_3</kbd> | Resize current window |
+| <kbd>super + Button_2</kbd> | Freeze current window geometry |
+| <kbd>Button_1</kbd> | Launch window search menu |
+| <kbd>Button_3</kbd> | Launch application search menu |
+| <kbd>Button_2</kbd> | Launch group search menu |
+
+<!-- Themes --------------------------------------- -->
+
+## Screenshots
+
+Here's few screenshots of `cwm` desktop. These'll give you an idea of the experience of cwm in Archcraft. 
+
+|Desktop 1|Desktop 2|Desktop 3|Desktop 4|
+|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/cwm/desktop/desktop_1.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/cwm/desktop/desktop_2.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/cwm/desktop/desktop_3.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/cwm/desktop/desktop_4.png)|
+
+|Desktop 5|Desktop 6|Desktop 7|Desktop 8|
+|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/cwm/desktop/desktop_5.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/cwm/desktop/desktop_6.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/cwm/desktop/desktop_7.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/cwm/desktop/desktop_8.png)|
+
+|Desktop 9|Desktop 10|Desktop 11|Desktop 12|
+|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/cwm/desktop/desktop_9.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/cwm/desktop/desktop_10.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/cwm/desktop/desktop_11.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/cwm/desktop/desktop_12.png)|
+
+<!-- FAQs ----------------------------------------- -->
+
+## FAQs
+
+<details>
+<summary><b>How to update my config to new configs?</b></summary>
+
+When a new version of Archcraft cwm get released, And you update the system by `sudo pacman -Syu` or you update the cwm package by `sudo pacman -S archcraft-cwm`, New config files get installed as **~/.cwm_pacnew_YYYY-MM-DD** and **~/.cwmrc_pacnew_YYYY-MM-DD** in your home directory.
+
+To use new configs : 
+- backup your old `~/.cwm` directory and `~/.cwmrc` file 
+- move `~/.cwm_pacnew_YYYY-MM-DD` to `~/.cwm`
+- move `~/.cwmrc_pacnew_YYYY-MM-DD` to `~/.cwmrc`
+- logout and login again.
+
+</details>
+
+<details>
+<summary><b>How to change GTK theme, icons and cursor?</b></summary>
+
+To change GTK theme, icons and cursor in cwm session, Edit `~/.cwm/xsettingsd` file and restart cwm to apply the changes.
+```ini
+Net/ThemeName "Arc-Dark"
+Net/IconThemeName "Arc-Circle"
+Gtk/CursorThemeName "Future"
+```
+
+</details>
+
+<details>
+<summary><b>How to manage multiple monitors and resolution in cwm?</b></summary>
+
+If you use multiple monitors with cwm window manager, you can manage them by running _Manager Monitors_ or `archcraft-randr` app.
+
+</details>
+
+<details>
+<summary><b>Why Alacritty is not working on my computer?</b></summary>
+
+Since Alacritty is a OpenGL based terminal emulator, It may not work on some computer hardwares. You can make it work on such computers by following these methods :
+
+1. Open alacritty with **LIBGL_ALWAYS_SOFTWARE=1** variable. Edit the keybindings/script launching alacritty and replace `alacritty` with `LIBGL_ALWAYS_SOFTWARE=1 alacritty`
+2. Edit **/usr/share/applications/Alacritty.desktop** desktop file and replace `Exec=alacritty` with `Exec=env LIBGL_ALWAYS_SOFTWARE=1 alacritty`
+
+</details>

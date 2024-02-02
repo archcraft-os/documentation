@@ -25,4 +25,314 @@ export const Highlight = ({children, color}) => (
 
 <!-- Add your stuff after this -------------------- -->
 
-Work In Progress...
+Fluxbox is a window manager for X11. It is based on the fluxbox 0.61.1 code, but with significant enhancements. Fluxbox provides a number of window management features such as tabbing and grouping. All Fluxbox configuration is stored in plaintext files; however, some settings are exposed graphically in the configuration menu.
+
+![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/fluxbox/main.png)
+
+<!-- Installation --------------------------------- -->
+
+## Installation
+
+Once you finish installing Archcraft, **fluxbox** can be installed on the top of it. It's pre-configured and ready to go. Open a terminal and run the following command to install fluxbox :
+```bash
+$ sudo pacman -Sy archcraft-fluxbox
+```
+
+<!-- Configuration -------------------------------- -->
+
+## Configuration
+
+fluxbox is pre-configured in Archcraft. In this section, We'll see how the fluxbox window manager is configured, what tools and utilities are used to make it look and work like a complete desktop environment.
+
+### Config Structure
+
+The configuration structure of fluxbox in Archcraft looks something like this:
+
+```
+~/.fluxbox         : fluxbox config directory
+├── alacritty      : terminal config
+├── backgrounds    : wallpapers
+├── scripts        : scripts used for fluxbox
+├── styles         : fluxbox styles/themes
+├── theme          : desktop theme (polybar, rofi configs) 
+├── apps           : window configuration of specific apps
+├── dunstrc        : dunst config for notifications
+├── init           : main fluxbox configuration file
+├── keys           : fluxbox keyboard shortcuts file
+├── menu           : fluxbox menu config file
+├── picom.conf     : compositor config
+├── startup        : launch startup apps
+├── windowmenu     : config file for altering the window menu
+└── xsettingsd     : gtk themes, icons and fonts config file
+```
+
+### Terminal
+
+**Alacritty** is the default terminal. In the fluxbox window manager, alacritty is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `~/.fluxbox/alacritty` directory. These are the following config files you can modify to change the behaviour of your terminal:
+
+**`~/.fluxbox/alacritty/alacritty.toml`** : Main configuration file <br/>
+**`~/.fluxbox/alacritty/colors.toml`** : Colors configurations <br/>
+**`~/.fluxbox/alacritty/fonts.toml`** : Fonts configurations
+
+> If you need any help with alacritty config, run : `man 5 alacritty` in terminal.
+
+### Notification
+
+**Dunst** is used as a notification daemon for notifications in fluxbox. In the fluxbox window manager, dunst is launched with an alternative config file, which is `~/.fluxbox/dunstrc`. So, If you need to modify anything, make sure you edit this file.
+
+> If you need any help with dunst config, run : `man 5 dunst` in terminal.
+
+### Wallpaper
+
+**hsetroot** sets the wallpaper in the fluxbox. If you want to change the wallpaper, Edit `~/.fluxbox/startup` script and add the path to your wallpaper :
+```bash
+# Restore wallpaper
+hsetroot -cover '/path/to/your/wallpaper'
+```
+
+> To change the wallpaper quickly, Right click on desktop and go to `Fluxbox > Backgrounds`
+
+### Statusbar
+
+**Polybar** is used as the statusbar in Archcraft's fluxbox window manager.
+
+The configurations for polybar can be found inside the _theme_ directory directory of fluxbox `~/.fluxbox/theme`
+
+If you want to modify the **polybar** settings, or perhaps want to add/remove modules, then you need to edit the following files :
+
+**`~/.fluxbox/theme/polybar/config.ini`** : Main config file <br/>
+**`~/.fluxbox/theme/polybar/colors.ini`** : Colors config file <br/>
+**`~/.fluxbox/theme/polybar/modules.ini`** : Modules config file
+
+> If you need any help with polybar config, visit : [polybar wiki](https://github.com/polybar/polybar/wiki)
+
+:::tip
+
+If you want to use the default fluxbox toolbar instead of polybar, Edit `~/.fluxbox/init` file and enable it.
+```
+...
+session.screen0.toolbar.visible: true
+...
+```
+
+Also, edit `~/.fluxbox/startup` script and disable polybar on startup.
+:::
+
+### Launchers and Applets
+
+**Rofi** is used for application launchers, command runner and various applets. To modify the rofi config, edit `~/.config/rofi/config.rasi` file.
+
+> If you need any help with rofi config, run : `man rofi` in terminal.
+
+The scripts for rofi that are used in fluxbox can be found it `~/.fluxbox/scripts` directory. These are the following scripts that uses rofi to provide the launchers and applets in fluxbox :
+
+**`rofi_askpass`** : rofi based `sudo` frontend to get root password <br/>
+**`rofi_asroot`** : applet to open apps as root <br/>
+**`rofi_bluetooth`** : bluetooth applet to quickly connect to BT devices <br/>
+**`rofi_launcher`** : an application launcher, cmd runner, file manager and task manager  <br/>
+**`rofi_music`** : music applet, that controls MPD with `mpc` <br/>
+**`rofi_powermenu`** : power menu, with confirmation dialog <br/>
+**`rofi_runner`** : quickly lets you run a command <br/>
+**`rofi_screenshot`** : screenshot applet that works with maim <br/>
+**`rofi_status`** : applet to show various system informations <br/>
+**`rofi_windows`** : applet to manage opened windows
+
+If you want to modify any applet or perhaps want to extend the functionality of the applet, just edit these scripts above.
+
+The configuration of each script can be found inside the _theme_ directory of fluxbox `~/.fluxbox/theme`
+
+Let's say you want to modify the looks of **launcher**, then you need to edit the `~/.fluxbox/theme/rofi/launcher.rasi` file. Same goes for every other applet, Edit the respective file in the same directory.
+
+> If you need any help with rofi theming, run : `man rofi-theme` in terminal.
+
+To change the colors and fonts of the launchers and applets, Edit the `~/.fluxbox/theme/rofi/shared/colors.rasi` and `~/.fluxbox/theme/rofi/shared/fonts.rasi` files.
+
+### Compositor
+
+**Picom** is used for compositing. It's a lightweight compositor with shadowing, advanced blurring and fading. In fluxbox, picom is launched with an alternative config file, which is `~/.fluxbox/picom.conf`. 
+
+If you need to change anything related to picom, Edit this picom config file.
+
+> If you need any help with picom config, check the picom's default config file in `/etc/xdg/picom.conf`
+
+:::info
+
+If you're having screen-tearing issues, using `glx` backend can solve this issue. <br/>
+If you're facing lagging, hangs and freezes, try switching between `xrender` and `glx` backend.  
+
+:::
+
+### Window Manager
+
+The configuration of fluxbox is available in your home directory. To configure fluxbox window manager, these are the files that are used :
+
+**`apps`** : a configuration file for remembering the window configuration of specific apps <br/>
+**`init`** : the main fluxbox resource configuration file <br/>
+**`keys`** : the fluxbox keyboard shortcuts (hotkeys) file <br/>
+**`menu`** : the fluxbox menu config <br/>
+**`startup`** : where to launch startup apps <br/>
+**`windowmenu`** : a configuration file for altering the Window Menu itself
+
+> If you need any help with fluxbox configuration, See the manpages. Also visit [Fluxbox Wiki](https://fluxboxwiki.github.io/)
+
+<!-- Keybindings ---------------------------------- -->
+
+## Keybindings
+
+Here's a list of some important keybinds you need to know for operating fluxbox easily. If you want to view, modify or add new keybinds, Edit `~/.fluxbox/keys` file.
+
+### Applications
+
+| Keys | Action |
+| --- | --- |
+| <kbd>super + Return</kbd> | Open terminal (alacritty) |
+| <kbd>super + T</kbd> | Open fullscreen terminal |
+| <kbd>super + F</kbd> | Open file manager (thunar) |
+| <kbd>super + E</kbd> | Open text editor (geany) |
+| <kbd>super + W</kbd> | Open web browser (firefox) |
+
+### Menu and Applets
+
+| Keys | Action |
+| --- | --- |
+| <kbd>super</kbd> | Open application launcher |
+| <kbd>alt + F1</kbd> | Open application launcher |
+| <kbd>alt + F2</kbd> | Open command runner |
+| <kbd>super + R</kbd> | Open command runner |
+| <kbd>super + N</kbd> | Open network manager applet |
+| <kbd>super + B</kbd> | Open bluetooth applet |
+| <kbd>super + M</kbd> | Open music applet |
+| <kbd>super + X</kbd> | Open powermenu applet |
+| <kbd>super + S</kbd> | Open status applet |
+| <kbd>super + Space</kbd> | Open fluxbox root menu |
+| <kbd>alt + Space</kbd> | Open fluxbox window menu |
+
+### Hardware Keys
+
+| Keys | Action |
+| --- | --- |
+| <kbd>Print</kbd> | Take screenshot |
+| <kbd>alt + Print</kbd> | Take screenshot in 5 seconds delay |
+| <kbd>shift + Print</kbd> | Take screenshot in 10 seconds delay |
+| <kbd>ctrl + Print</kbd> | Take screenshot of currently focused window |
+| <kbd>super + Print</kbd> | Take screenshot of selected area |
+| <kbd>XF86AudioRaiseVolume</kbd> | Increase volume |
+| <kbd>XF86AudioLowerVolume</kbd> | Decrease volume |
+| <kbd>XF86AudioMute</kbd> | Toggle mute speakers |
+| <kbd>XF86AudioMicMute</kbd> | Toggle mute microphone |
+| <kbd>XF86Audio + Next/Prev/Play/Stop</kbd> | Media controls (MPD) |
+| <kbd>XF86MonBrightnessUp</kbd> | Increase display brightness |
+| <kbd>XF86MonBrightnessDown</kbd> | Decrease display brightness |
+
+### Workspaces
+| Keys | Action |
+| --- | --- |
+| <kbd>super + 1..5</kbd> | Switch to respective workspace |
+| <kbd>super + shift + 1..5</kbd> | Send the current window to respective workspace |
+| <kbd>super + ctrl + 1..5</kbd> | Send the current window and change to respective workspace |
+| <kbd>super + shift + Left/Right</kbd> | Send the current window and follow it to previous/next workspace |
+
+### Window Management
+
+| Keys | Action |
+| --- | --- |
+| <kbd>super + C/Q</kbd> | Close focused window |
+| <kbd>super + D</kbd> | Toggle show desktop |
+| <kbd>alt + F4</kbd> | Close window |
+| <kbd>alt + F5</kbd> | Minimize window |
+| <kbd>alt + F6</kbd> | Maximize window |
+| <kbd>alt + F7</kbd> | Toggle decorations |
+| <kbd>alt + F11</kbd> | Toggle fullscreen |
+| <kbd>alt + Tab</kbd> | Cycle opened windows |
+| <kbd>super + Tab</kbd> | Cycle through tabs in the current window |
+| <kbd>ctrl + 1..9</kbd> | Go to a specific tab in the current window |
+| <kbd>super + shift + D</kbd> | Remove the current tab from the tab group, placing it in its own window |
+| <kbd>ctrl + alt + Left/Right/Up/Down</kbd> | Move focused window |
+| <kbd>ctrl + super + Left/Right/Up/Down</kbd> | Resize focused window |
+| <kbd>super + Left/Right/Up/Down</kbd> | Window snapping |
+| <kbd>super + H</kbd> | Arrange windows horizontally |
+| <kbd>super + V</kbd> | Arrange windows vertically |
+| <kbd>super + shift + H</kbd> | Arrange windows stack right |
+| <kbd>super + shift + L</kbd> | Arrange windows stack left |
+| <kbd>super + shift + J</kbd> | Arrange windows stack bottom |
+| <kbd>super + shift + K</kbd> | Arrange windows stack top |
+
+### Window Manager
+
+| Keys | Action |
+| --- | --- |
+| <kbd>ctrl + alt + Delete</kbd> | Quit fluxbox |
+| <kbd>ctrl + alt + BackSpace</kbd> | Restart fluxbox |
+| <kbd>ctrl + alt + R</kbd> | Reconfigure fluxbox |
+
+### Misc Keys
+
+| Keys | Action |
+| --- | --- |
+| <kbd>ctrl + alt + M</kbd> | Run ncmpcpp with album art |
+| <kbd>ctrl + alt + L</kbd> | Trigger lockscreen |
+| <kbd>super + P</kbd> | Run colorpicker  |
+| <kbd>super + Escape</kbd> | Run xkill |
+
+<!-- Themes --------------------------------------- -->
+
+## Screenshots
+
+Here's few screenshots of `fluxbox` desktop. These'll give you an idea of the experience of fluxbox in Archcraft. 
+
+|Desktop 1|Desktop 2|Desktop 3|Desktop 4|
+|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/fluxbox/desktop/desktop_1.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/fluxbox/desktop/desktop_2.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/fluxbox/desktop/desktop_3.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/fluxbox/desktop/desktop_4.png)|
+
+|Desktop 5|Desktop 6|Desktop 7|Desktop 8|
+|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/fluxbox/desktop/desktop_5.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/fluxbox/desktop/desktop_6.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/fluxbox/desktop/desktop_7.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/fluxbox/desktop/desktop_8.png)|
+
+|Desktop 9|Desktop 10|Desktop 11|Desktop 12|
+|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/fluxbox/desktop/desktop_9.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/fluxbox/desktop/desktop_10.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/fluxbox/desktop/desktop_11.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/fluxbox/desktop/desktop_12.png)|
+
+<!-- FAQs ----------------------------------------- -->
+
+## FAQs
+
+<details>
+<summary><b>How to update my config to new configs?</b></summary>
+
+When a new version of Archcraft fluxbox get released, And you update the system by `sudo pacman -Syu` or you update the fluxbox package by `sudo pacman -S archcraft-fluxbox`, New config files get installed as **~/.fluxbox_pacnew_YYYY-MM-DD** in your home directory.
+
+To use new configs : 
+- backup your old `~/.fluxbox` directory 
+- move `~/.fluxbox_pacnew_YYYY-MM-DD` to `~/.fluxbox`
+- logout and login again.
+
+</details>
+
+<details>
+<summary><b>How to change GTK theme, icons and cursor?</b></summary>
+
+To change GTK theme, icons and cursor in fluxbox session, Edit `~/.fluxbox/xsettingsd` file and restart fluxbox to apply the changes.
+```ini
+Net/ThemeName "Arc-Dark"
+Net/IconThemeName "Arc-Circle"
+Gtk/CursorThemeName "Qogirr"
+```
+
+</details>
+
+<details>
+<summary><b>How to manage multiple monitors and resolution in fluxbox?</b></summary>
+
+If you use multiple monitors with fluxbox window manager, you can manage them by running _Manager Monitors_ or `archcraft-randr` app.
+
+</details>
+
+<details>
+<summary><b>Why Alacritty is not working on my computer?</b></summary>
+
+Since Alacritty is a OpenGL based terminal emulator, It may not work on some computer hardwares. You can make it work on such computers by following these methods :
+
+1. Open alacritty with **LIBGL_ALWAYS_SOFTWARE=1** variable. Edit the keybindings/script launching alacritty and replace `alacritty` with `LIBGL_ALWAYS_SOFTWARE=1 alacritty`
+2. Edit **/usr/share/applications/Alacritty.desktop** desktop file and replace `Exec=alacritty` with `Exec=env LIBGL_ALWAYS_SOFTWARE=1 alacritty`
+
+</details>

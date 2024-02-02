@@ -25,4 +25,288 @@ export const Highlight = ({children, color}) => (
 
 <!-- Add your stuff after this -------------------- -->
 
-Work In Progress...
+Xmonad is a tiling window manager for X. Windows are arranged automatically to tile the screen without gaps or overlap, maximizing screen use. Xmonad is written, configured and extensible in Haskell. Custom layout algorithms, key bindings and other extensions may be written by the user in configuration files. Layouts are applied dynamically, and different layouts may be used on each workspace. Xinerama is fully supported, allowing windows to be tiled on several physical screens. 
+
+![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/xmonad/main.png)
+
+<!-- Installation --------------------------------- -->
+
+## Installation
+
+Once you finish installing Archcraft, **xmonad** can be installed on the top of it. It's pre-configured and ready to go. Open a terminal and run the following command to install xmonad :
+```bash
+$ sudo pacman -Sy archcraft-xmonad
+```
+
+<!-- Configuration -------------------------------- -->
+
+## Configuration
+
+xmonad is pre-configured in Archcraft. In this section, We'll see how the xmonad window manager is configured, what tools and utilities are used to make it look and work like a complete desktop environment.
+
+### Config Structure
+
+The configuration structure of xmonad in Archcraft looks something like this:
+
+```
+~/.xmonad        : xmonad config directory
+├── alacritty    : terminal config
+├── scripts      : scripts used for xmonad
+├── theme        : desktop theme (polybar, rofi configs) 
+├── dunstrc      : dunst config for notifications
+├── picom.conf   : compositor config
+├── xmonad.hs    : main xmonad config file
+└── xsettingsd   : gtk themes, icons and fonts config file
+```
+
+### Terminal
+
+**Alacritty** is the default terminal. In the xmonad window manager, alacritty is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `~/.xmonad/alacritty` directory. These are the following config files you can modify to change the behaviour of your terminal:
+
+**`~/.xmonad/alacritty/alacritty.toml`** : Main configuration file <br/>
+**`~/.xmonad/alacritty/colors.toml`** : Colors configurations <br/>
+**`~/.xmonad/alacritty/fonts.toml`** : Fonts configurations
+
+> If you need any help with alacritty config, run : `man 5 alacritty` in terminal.
+
+### Notification
+
+**Dunst** is used as a notification daemon for notifications in xmonad. In the xmonad window manager, dunst is launched with an alternative config file, which is `~/.xmonad/dunstrc`. So, If you need to modify anything, make sure you edit this file.
+
+> If you need any help with dunst config, run : `man 5 dunst` in terminal.
+
+### Wallpaper
+
+**hsetroot** sets the wallpaper in the xmonad. If you want to change the wallpaper, Edit `~/.xmonad/scripts/xmonad_autostart` script and add the path to your wallpaper :
+```bash
+# Restore wallpaper
+hsetroot -cover '/path/to/your/wallpaper'
+```
+
+### Statusbar
+
+**Polybar** is used as the statusbar in Archcraft's xmonad window manager.
+
+The configurations for polybar can be found inside the _theme_ directory directory of xmonad `~/.xmonad/theme`
+
+If you want to modify the **polybar** settings, or perhaps want to add/remove modules, then you need to edit the following files :
+
+**`~/.xmonad/theme/polybar/config.ini`** : Main config file <br/>
+**`~/.xmonad/theme/polybar/colors.ini`** : Colors config file <br/>
+**`~/.xmonad/theme/polybar/modules.ini`** : Modules config file
+
+> If you need any help with polybar config, visit : [polybar wiki](https://github.com/polybar/polybar/wiki)
+
+### Launchers and Applets
+
+**Rofi** is used for application launchers, command runner and various applets. To modify the rofi config, edit `~/.config/rofi/config.rasi` file.
+
+> If you need any help with rofi config, run : `man rofi` in terminal.
+
+The scripts for rofi that are used in xmonad can be found it `~/.xmonad/scripts` directory. These are the following scripts that uses rofi to provide the launchers and applets in xmonad :
+
+**`rofi_askpass`** : rofi based `sudo` frontend to get root password <br/>
+**`rofi_asroot`** : applet to open apps as root <br/>
+**`rofi_bluetooth`** : bluetooth applet to quickly connect to BT devices <br/>
+**`rofi_launcher`** : an application launcher, cmd runner, file manager and task manager  <br/>
+**`rofi_music`** : music applet, that controls MPD with `mpc` <br/>
+**`rofi_powermenu`** : power menu, with confirmation dialog <br/>
+**`rofi_runner`** : quickly lets you run a command <br/>
+**`rofi_screenshot`** : screenshot applet that works with maim <br/>
+**`rofi_windows`** : applet to manage opened windows <br/>
+
+If you want to modify any applet or perhaps want to extend the functionality of the applet, just edit these scripts above.
+
+The configuration of each script can be found inside the _theme_ directory of xmonad `~/.xmonad/theme`
+
+Let's say you want to modify the looks of **launcher**, then you need to edit the `~/.xmonad/theme/rofi/launcher.rasi` file. Same goes for every other applet, Edit the respective file in the same directory.
+
+> If you need any help with rofi theming, run : `man rofi-theme` in terminal.
+
+To change the colors and fonts of the launchers and applets, Edit the `~/.xmonad/theme/rofi/shared/colors.rasi` and `~/.xmonad/theme/rofi/shared/fonts.rasi` files.
+
+### Compositor
+
+**Picom** is used for compositing. It's a lightweight compositor with shadowing, advanced blurring and fading. In xmonad, picom is launched with an alternative config file, which is `~/.xmonad/picom.conf`. 
+
+If you need to change anything related to picom, Edit this picom config file.
+
+> If you need any help with picom config, check the picom's default config file in `/etc/xdg/picom.conf`
+
+:::info
+
+If you're having screen-tearing issues, using `glx` backend can solve this issue. <br/>
+If you're facing lagging, hangs and freezes, try switching between `xrender` and `glx` backend.  
+
+:::
+
+### Window Manager
+
+The configuration of xmonad is available in `~/.xmonad`. To configure xmonad window manager, this is the main file that is used :
+
+**`xmonad.hs`** : main configuration file responsible for determining the behaviour and settings of the overall session. Edit this file to set window rules, configure workspaces, layouts, and xmonad appearance.
+
+> If you need any help with xmonad configuration, visit : [xmonad.org](https://xmonad.org/documentation.html) <br/>
+
+<!-- Keybindings ---------------------------------- -->
+
+## Keybindings
+
+Here's a list of some important keybinds you need to know for operating xmonad easily. If you want to view, modify or add new keybinds, Edit `~/.xmonad/xmonad.hs` file.
+
+### Applications
+
+| Keys | Action |
+| --- | --- |
+| <kbd>super + Return</kbd> | Open terminal (alacritty) |
+| <kbd>super + shift + Return</kbd> | Open floating terminal |
+| <kbd>super + alt + Return</kbd> | Open fullscreen terminal |
+| <kbd>super + shift + F</kbd> | Open file manager (thunar) |
+| <kbd>super + shift + E</kbd> | Open text editor (geany) |
+| <kbd>super + shift + W</kbd> | Open web browser (firefox) |
+
+### Menu and Applets
+
+| Keys | Action |
+| --- | --- |
+| <kbd>super</kbd> | Open application launcher |
+| <kbd>alt + F1</kbd> | Open application launcher |
+| <kbd>alt + F2</kbd> | Open command runner |
+| <kbd>super + N</kbd> | Open network manager applet |
+| <kbd>super + B</kbd> | Open bluetooth applet |
+| <kbd>super + M</kbd> | Open music applet |
+| <kbd>super + X</kbd> | Open powermenu applet |
+| <kbd>super + S</kbd> | Open screenshots applet |
+| <kbd>super + R</kbd> | Open apps as root applet |
+| <kbd>super + W</kbd> | Open window applet |
+
+### Hardware Keys
+
+| Keys | Action |
+| --- | --- |
+| <kbd>Print</kbd> | Take screenshot |
+| <kbd>alt + Print</kbd> | Take screenshot in 5 seconds delay |
+| <kbd>shift + Print</kbd> | Take screenshot in 10 seconds delay |
+| <kbd>ctrl + Print</kbd> | Take screenshot of currently focused window |
+| <kbd>super + Print</kbd> | Take screenshot of selected area |
+| <kbd>XF86AudioRaiseVolume</kbd> | Increase volume |
+| <kbd>XF86AudioLowerVolume</kbd> | Decrease volume |
+| <kbd>XF86AudioMute</kbd> | Toggle mute speakers |
+| <kbd>XF86AudioMicMute</kbd> | Toggle mute microphone |
+| <kbd>XF86Audio + Next/Prev/Play/Stop</kbd> | Media controls (MPD) |
+| <kbd>XF86MonBrightnessUp</kbd> | Increase display brightness |
+| <kbd>XF86MonBrightnessDown</kbd> | Decrease display brightness |
+
+### Workspaces
+| Keys | Action |
+| --- | --- |
+| <kbd>super + 1..9,0</kbd> | Switch to respective workspace |
+| <kbd>super + shift + 1..9,0</kbd> | Send focused client to respective workspace |
+| <kbd>super + Y/U/I</kbd> | Switch to physical/Xinerama screens 1, 2, or 3 |
+| <kbd>super + shift + Y/U/I</kbd> | Move client to screen 1, 2, or 3 |
+
+### Window Management
+
+| Keys | Action |
+| --- | --- |
+| <kbd>super + C</kbd> | Close focused window |
+| <kbd>super + ctrl + G</kbd> | Toggle all gaps |
+| <kbd>super + shift + G</kbd> | Reset the gaps |
+| <kbd>super + ctrl + T</kbd> | Increase the left-hand gap |
+| <kbd>super + shift + T</kbd> | Decrease the left-hand gap |
+| <kbd>super + ctrl + Y</kbd> | Increase the top gap |
+| <kbd>super + shift + Y</kbd> | Decrease the top gap |
+| <kbd>super + ctrl + U</kbd> | Increase the bottom gap |
+| <kbd>super + shift + U</kbd> | Decrease the bottom gap |
+| <kbd>super + ctrl + I</kbd> | Increase the right-hand gap |
+| <kbd>super + shift + I</kbd> | Decrease the right-hand gap |
+| <kbd>super + shift + R</kbd> | Resize viewed windows to the correct size |
+| <kbd>super + shift + M</kbd> | Move focus to the master window |
+| <kbd>super + shift + S</kbd> | Swap the focused window and the master window |
+| <kbd>super + shift + T</kbd> | Push window back into tiling |
+| <kbd>super + Space</kbd> | Rotate through the available layout algorithms |
+| <kbd>super + shift + Space</kbd> | Reset the layouts on the current workspace to default |
+| <kbd>super + Tab</kbd> | Move focus to the next window |
+| <kbd>super + Left/J</kbd> | Move focus to the next window |
+| <kbd>super + Right/K</kbd> | Move focus to the previous window |
+| <kbd>super + shift + Left/J</kbd> | Swap the focused window with the next window |
+| <kbd>super + shift + Right/K</kbd> | Swap the focused window with the previous window |
+| <kbd>super + H</kbd> | Shrink the master area |
+| <kbd>super + ctrl + Left</kbd> | Shrink the master area |
+| <kbd>super + L</kbd> | Expand the master area |
+| <kbd>super + ctrl + Right</kbd> | Expand the master area |
+| <kbd>super + Comma</kbd> | Increase the number of windows in the master area |
+| <kbd>super + Period</kbd> | Decrease the number of windows in the master area |
+| <kbd>super + Q</kbd> | Recompile and restart xmonad |
+
+### Misc Keys
+
+| Keys | Action |
+| --- | --- |
+| <kbd>ctrl + alt + L</kbd> | Trigger lockscreen |
+| <kbd>super + P</kbd> | Run colorpicker  |
+| <kbd>super + Escape</kbd> | Run xkill |
+
+<!-- Themes --------------------------------------- -->
+
+## Screenshots
+
+Here's few screenshots of `xmonad` desktop. These'll give you an idea of the experience of xmonad in Archcraft. 
+
+|Desktop 1|Desktop 2|Desktop 3|Desktop 4|
+|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/xmonad/desktop/desktop_1.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/xmonad/desktop/desktop_2.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/xmonad/desktop/desktop_3.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/xmonad/desktop/desktop_4.png)|
+
+|Desktop 5|Desktop 6|Desktop 7|Desktop 8|
+|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/xmonad/desktop/desktop_5.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/xmonad/desktop/desktop_6.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/xmonad/desktop/desktop_7.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/xmonad/desktop/desktop_8.png)|
+
+|Desktop 9|Desktop 10|Desktop 11|Desktop 12|
+|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/xmonad/desktop/desktop_9.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/xmonad/desktop/desktop_10.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/xmonad/desktop/desktop_11.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/xmonad/desktop/desktop_12.png)|
+
+|Desktop 13|Desktop 14|Desktop 15|Desktop 16|
+|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/xmonad/desktop/desktop_13.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/xmonad/desktop/desktop_14.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/xmonad/desktop/desktop_15.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/xmonad/desktop/desktop_16.png)|
+
+<!-- FAQs ----------------------------------------- -->
+
+## FAQs
+
+<details>
+<summary><b>How to update my config to new configs?</b></summary>
+
+When a new version of Archcraft xmonad get released, And you update the system by `sudo pacman -Syu` or you update the xmonad package by `sudo pacman -S archcraft-xmonad`, New config files get installed as **~/.xmonad_pacnew_YYYY-MM-DD** in your home directory.
+
+To use new configs, backup your old `~/.xmonad` directory and move `~/.xmonad_pacnew_YYYY-MM-DD` to `~/.xmonad` and login again.
+
+</details>
+
+<details>
+<summary><b>How to change GTK theme, icons and cursor?</b></summary>
+
+To change GTK theme, icons and cursor in xmonad session, Edit `~/.xmonad/xsettingsd` file and restart xmonad to apply the changes.
+```ini
+Net/ThemeName "Rick"
+Net/IconThemeName "Zafiro-Red"
+Gtk/CursorThemeName "Qogirr-Dark"
+```
+
+</details>
+
+<details>
+<summary><b>How to manage multiple monitors and resolution in xmonad?</b></summary>
+
+If you use multiple monitors with xmonad window manager, you can manage them by running _Manager Monitors_ or `archcraft-randr` app.
+
+</details>
+
+<details>
+<summary><b>Why Alacritty is not working on my computer?</b></summary>
+
+Since Alacritty is a OpenGL based terminal emulator, It may not work on some computer hardwares. You can make it work on such computers by following these methods :
+
+1. Open alacritty with **LIBGL_ALWAYS_SOFTWARE=1** variable. Edit the keybindings/script launching alacritty and replace `alacritty` with `LIBGL_ALWAYS_SOFTWARE=1 alacritty`
+2. Edit **/usr/share/applications/Alacritty.desktop** desktop file and replace `Exec=alacritty` with `Exec=env LIBGL_ALWAYS_SOFTWARE=1 alacritty`
+
+</details>
