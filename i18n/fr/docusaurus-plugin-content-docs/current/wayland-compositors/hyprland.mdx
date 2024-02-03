@@ -53,7 +53,7 @@ Get Hyprland From [**`ko-fi`**](https://ko-fi.com/s/71d0e298d9) And Support Arch
 
 ## Installation
 
-Follow the instructions below to install hyprland :
+Follow the instructions below to install Hyprland :
 
 - Download **hyprland.tar.gz** file from [ko-fi](https://ko-fi.com/s/71d0e298d9), and save it in a directory.
 - Open a terminal in same directory and run the following command to extract the tar file :
@@ -88,9 +88,13 @@ If you want to install this setup on Arch Linux or on any other distro, follow t
 ```bash
 $ mkdir -p ~/.config/hypr
 ```
-- Copy Everything from _`dotfiles/STYLE`_ to **`~/.config/hypr`** 
+- To install **dark** style, Copy Everything from _`dotfiles/dark`_ to **`~/.config/hypr`**
 ```bash
 $ cp -r ./dotfiles/dark/* ~/.config/hypr/
+```
+- To install **catppuccin** style, Copy Everything from _`dotfiles/catppuccin`_ to **`~/.config/hypr`**
+```bash
+$ cp -r ./dotfiles/catppuccin/* ~/.config/hypr/
 ```
 - Logout and login to your amazingly configured Hyprland WC.
 
@@ -110,29 +114,29 @@ $ cp -r ./dotfiles/dark/* ~/.config/hypr/
 
 ## Configuration
 
-Hyprland is pre-configured in Archcraft. In this section, We'll see how the hyprland wayland compositor is configured, what tools and utilities are used to make it look and work like a complete desktop environment.
+Hyprland is pre-configured in Archcraft. In this section, We'll see how the Hyprland wayland compositor is configured, what tools and utilities are used to make it look and work like a complete desktop environment.
 
 ### Config Structure
 
-The configuration structure of hyprland in Archcraft looks something like this:
+The configuration structure of Hyprland in Archcraft looks something like this:
 
 ```
 ~/.config
-└── hypr               : Hyprland config directory
-    ├── alacritty      : Alacritty Terminal config
-    ├── foot           : Foot Terminal config
-    ├── mako           : Notification daemon config
-    │   └── icons      : Notification icons
-    ├── rofi           : Rofi config files
-    ├── scripts        : Various scripts for functionality
-    ├── theme          : Current Theme and Pywal Themes
-    ├── wallpapers     : Wallpapers
-    ├── waybar         : Statusbar config
-    ├── wlogout        : Wlogout config
-    │   └── icons      : Session icons
-    ├── wofi           : Launcher config
-    ├── hyprland.conf  : Hyprland config file
-    └── hyprtheme.conf : Colors and theme elements file
+└── hypr               : hyprland config directory
+    ├── alacritty      : alacritty terminal config
+    ├── foot           : foot terminal config
+    ├── mako           : notification daemon config
+    │   └── icons      : notification icons
+    ├── rofi           : rofi config files
+    ├── scripts        : various scripts for functionality
+    ├── theme          : current theme and pywal themes
+    ├── wallpapers     : wallpapers
+    ├── waybar         : statusbar config
+    ├── wlogout        : wlogout config
+    │   └── icons      : session icons
+    ├── wofi           : launcher config
+    ├── hyprland.conf  : hyprland config file
+    └── hyprtheme.conf : colors and theme elements file
 ```
 
 ### Terminal
@@ -141,7 +145,7 @@ The configuration structure of hyprland in Archcraft looks something like this:
 
 <TabItem value="wc_1" label="Default" default>
 
-**Alacritty** is the default terminal. In the hyprland wayland compositor, alacritty is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `~/.config/hypr/alacritty` directory. These are the following config files you can modify to change the behaviour of your alacritty terminal:
+**Alacritty** is the default terminal. In the Hyprland wayland compositor, alacritty is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `~/.config/hypr/alacritty` directory. These are the following config files you can modify to change the behaviour of your alacritty terminal:
 
 **`~/.config/hypr/alacritty/alacritty.toml`** : Main configuration file <br/>
 **`~/.config/hypr/alacritty/colors.toml`** : Colors configurations <br/>
@@ -153,7 +157,7 @@ The configuration structure of hyprland in Archcraft looks something like this:
 
 <TabItem value="wc_2" label="Alternate" default>
 
-**Foot** is the secondary/alternate terminal. In the hyprland wayland compositor, foot is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `~/.config/hypr/foot` directory. These are the following config files you can modify to change the behaviour of your foot terminal:
+**Foot** is the secondary/alternate terminal. In the Hyprland wayland compositor, foot is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `~/.config/hypr/foot` directory. These are the following config files you can modify to change the behaviour of your foot terminal:
 
 **`~/.config/hypr/foot/foot.ini`** : Main configuration file <br/>
 **`~/.config/hypr/foot/colors.ini`** : Colors configurations <br/>
@@ -179,7 +183,7 @@ When you change the `theme`, the **colors.toml** file of alacritty and **colors.
 
 ### Notification
 
-**Mako** is used as a notification daemon for notifications in hyprland. In the hyprland wayland compositor, mako is launched with an alternative config file, which is `~/.config/hypr/mako/config`. So, If you need to modify anything, make sure you edit this file.
+**Mako** is used as a notification daemon for notifications in Hyprland. In the Hyprland wayland compositor, mako is launched with an alternative config file, which is `~/.config/hypr/mako/config`. So, If you need to modify anything, make sure you edit this file.
 
 > If you need any help with mako config, run : `man 5 mako` in terminal.
 
@@ -191,7 +195,7 @@ When you change the `theme`, the colors in **config** file get overwritten by th
 
 ### Wallpaper
 
-**swaybg** sets the wallpaper in the hyprland. If you want to change the wallpaper, Edit `~/.config/hypr/scripts/wallpaper` script and add your wallpaper here :
+**swaybg** sets the wallpaper in the Hyprland. If you want to change the wallpaper, Edit `~/.config/hypr/scripts/wallpaper` script and add your wallpaper here :
 ```bash
 WALLPAPER='/path/to/your/wallpaper'
 ```
@@ -203,7 +207,7 @@ When you change the `theme`, the wallpaper path in `wallpaper` script get overwr
 
 ### Statusbar
 
-**Waybar** is used as the statusbar in Archcraft's hyprland wayland compositor.
+**Waybar** is used as the statusbar in Archcraft's Hyprland wayland compositor.
 
 The configurations for waybar can be found inside `~/.config/hypr/waybar`. If you want to modify the **waybar** settings, or perhaps want to add/remove modules, then you need to edit the following files :
 
@@ -230,7 +234,7 @@ When you change the `theme`, the **colors.css** file of waybar get overwritten b
 
 > If you need any help with rofi config, run : `man rofi` in terminal.
 
-The scripts for rofi that are used in hyprland can be found it `~/.config/hypr/scripts` directory. These are the following scripts that uses rofi to provide the launchers and applets in hyprland :
+The scripts for rofi that are used in Hyprland can be found it `~/.config/hypr/scripts` directory. These are the following scripts that uses rofi to provide the launchers and applets in Hyprland :
 
 **`rofi_bluetooth`** : bluetooth applet to quickly connect to BT devices <br/>
 **`rofi_launcher`** : an application launcher, cmd runner, file manager and task manager  <br/>
@@ -258,7 +262,7 @@ Alternatively, **Wofi** is used for application launcher and powermenu.
 
 > If you need any help with wofi config, run : `man 5 wofi` in terminal.
 
-The scripts for wofi that are used in hyprland can be found it `~/.config/hypr/scripts` directory. These are the following scripts that uses wofi to provide the launchers and powermenu applets in hyprland :
+The scripts for wofi that are used in Hyprland can be found it `~/.config/hypr/scripts` directory. These are the following scripts that uses wofi to provide the launchers and powermenu applets in Hyprland :
 
 **`wofi_menu`** : application launcher  <br/>
 **`wofi_powermenu`** : power menu, with confirmation dialog
@@ -273,7 +277,7 @@ To change the colors and fonts of the launchers and applets, Edit the `~/.config
 
 <TabItem value="wc_3" label="Wlogout" default>
 
-**Wlogout**, A Wayland logout menu is also configured for session management is hyprland.
+**Wlogout**, A Wayland logout menu is also configured for session management is Hyprland.
 
 Edit `~/.config/hypr/scripts/wlogout` script to adjust the looks of wlogout. The configuration of wlogout can be found inside `~/.config/hypr/wlogout` directory.
 
@@ -299,7 +303,7 @@ When you change the `theme`, the **shared/colors.rasi** file of rofi and **style
 
 ### wayland compositor
 
-The configuration of hyprland is available in `~/.config/hypr`. To configure hyprland wayland compositor, these are the files that are used :
+The configuration of Hyprland is available in `~/.config/hypr`. To configure Hyprland wayland compositor, these are the files that are used :
 
 **`hyprland.conf`** : main configuration file for general settings, input/output settings, keybindings and window rules, etc <br/>
 **`hyprtheme.conf`** : theme configuration, fonts, colors, borders, gaps etc.
@@ -316,7 +320,7 @@ When you change the `theme`, colors in **hyprtheme.conf** file gets overwritten 
 
 ## Keybindings
 
-Here's a list of some important keybinds you need to know for operating hyprland easily. If you want to view, modify or add new keybinds, Edit `~/.config/hypr/hyprland.conf` file.
+Here's a list of some important keybinds you need to know for operating Hyprland easily. If you want to view, modify or add new keybinds, Edit `~/.config/hypr/hyprland.conf` file.
 
 ### Applications
 
@@ -426,7 +430,7 @@ More Information: [NVIDIA#Installation](https://wiki.archlinux.org/title/NVIDIA#
 
 ### Desktop
 
-Here's few screenshots of `Hyprland` desktop. These'll give you an idea of the experience of hyprland in Archcraft. 
+Here's few screenshots of `Hyprland` desktop. These'll give you an idea of the experience of Hyprland in Archcraft. 
 
 <Tabs>
 
@@ -519,7 +523,7 @@ $ export WLR_NO_HARDWARE_CURSORS=1
 <details>
 <summary><b>How to change GTK theme, icons and cursor?</b></summary>
 
-To change GTK theme, icons and cursor in hyprland session, Edit `~/.config/hypr/scripts/gtkthemes` script and restart hyprland to apply the changes.
+To change GTK theme, icons and cursor in Hyprland session, Edit `~/.config/hypr/scripts/gtkthemes` script and restart Hyprland to apply the changes.
 ```bash
 THEME='Manhattan'
 ICONS='Luv-Folders-Dark'
@@ -530,9 +534,9 @@ CURSOR='Qogirr'
 </details>
 
 <details>
-<summary><b>How to manage multiple monitors and resolution in hyprland?</b></summary>
+<summary><b>How to manage multiple monitors and resolution in Hyprland?</b></summary>
 
-If you use multiple monitors with hyprland wayland compositor, you can manage them as follow:
+If you use multiple monitors with Hyprland wayland compositor, you can manage them as follow:
 
 1. You can get the names of your outputs with `wlr-randr`
 2. Edit `~/.config/hypr/hyprland.conf` file and use the information you get by the command above:

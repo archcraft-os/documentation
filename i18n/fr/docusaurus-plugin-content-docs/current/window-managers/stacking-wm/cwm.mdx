@@ -25,7 +25,7 @@ export const Highlight = ({children, color}) => (
 
 <!-- Add your stuff after this -------------------- -->
 
-cwm is an X11 window manager with a focus on getting out of your way so you can be productive. It was originally derived from evilwm, but the codebase has since been re-written from scratch.
+CWM is an X11 window manager with a focus on getting out of your way so you can be productive. It was originally derived from evilwm, but the codebase has since been re-written from scratch.
 
 ![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/cwm/main.png)
 
@@ -33,7 +33,7 @@ cwm is an X11 window manager with a focus on getting out of your way so you can 
 
 ## Installation
 
-Once you finish installing Archcraft, **cwm** can be installed on the top of it. It's pre-configured and ready to go. Open a terminal and run the following command to install cwm :
+Once you finish installing Archcraft, **CWM** can be installed on the top of it. It's pre-configured and ready to go. Open a terminal and run the following command to install CWM :
 ```bash
 $ sudo pacman -Sy archcraft-cwm
 ```
@@ -42,11 +42,11 @@ $ sudo pacman -Sy archcraft-cwm
 
 ## Configuration
 
-cwm is pre-configured in Archcraft. In this section, We'll see how the cwm window manager is configured, what tools and utilities are used to make it look and work like a complete desktop environment.
+CWM is pre-configured in Archcraft. In this section, We'll see how the CWM window manager is configured, what tools and utilities are used to make it look and work like a complete desktop environment.
 
 ### Config Structure
 
-The configuration structure of cwm in Archcraft looks something like this:
+The configuration structure of CWM in Archcraft looks something like this:
 
 ```
 /usr/bin/run-cwm   : Autostart programs
@@ -62,7 +62,7 @@ The configuration structure of cwm in Archcraft looks something like this:
 
 ### Terminal
 
-**Alacritty** is the default terminal. In the cwm window manager, alacritty is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `~/.cwm/alacritty` directory. These are the following config files you can modify to change the behaviour of your terminal:
+**Alacritty** is the default terminal. In the CWM window manager, alacritty is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `~/.cwm/alacritty` directory. These are the following config files you can modify to change the behaviour of your terminal:
 
 **`~/.cwm/alacritty/alacritty.toml`** : Main configuration file <br/>
 **`~/.cwm/alacritty/colors.toml`** : Colors configurations <br/>
@@ -72,13 +72,13 @@ The configuration structure of cwm in Archcraft looks something like this:
 
 ### Notification
 
-**Dunst** is used as a notification daemon for notifications in cwm. In the cwm window manager, dunst is launched with an alternative config file, which is `~/.cwm/dunstrc`. So, If you need to modify anything, make sure you edit this file.
+**Dunst** is used as a notification daemon for notifications in CWM. In the CWM window manager, dunst is launched with an alternative config file, which is `~/.cwm/dunstrc`. So, If you need to modify anything, make sure you edit this file.
 
 > If you need any help with dunst config, run : `man 5 dunst` in terminal.
 
 ### Wallpaper
 
-**hsetroot** sets the wallpaper in the cwm. If you want to change the wallpaper, Edit `/usr/bin/run-cwm` script and add the path to your wallpaper :
+**hsetroot** sets the wallpaper in the CWM. If you want to change the wallpaper, Edit `/usr/bin/run-cwm` script and add the path to your wallpaper :
 ```bash
 # Restore wallpaper
 hsetroot -cover '/path/to/your/wallpaper'
@@ -86,9 +86,9 @@ hsetroot -cover '/path/to/your/wallpaper'
 
 ### Statusbar
 
-**Polybar** is used as the statusbar in Archcraft's cwm window manager.
+**Polybar** is used as the statusbar in Archcraft's CWM window manager.
 
-The configurations for polybar can be found inside the _theme_ directory directory of cwm `~/.cwm/theme`
+The configurations for polybar can be found inside the _theme_ directory directory of CWM `~/.cwm/theme`
 
 If you want to modify the **polybar** settings, or perhaps want to add/remove modules, then you need to edit the following files :
 
@@ -104,7 +104,7 @@ If you want to modify the **polybar** settings, or perhaps want to add/remove mo
 
 > If you need any help with rofi config, run : `man rofi` in terminal.
 
-The scripts for rofi that are used in cwm can be found it `~/.cwm/scripts` directory. These are the following scripts that uses rofi to provide the launchers and applets in cwm :
+The scripts for rofi that are used in CWM can be found it `~/.cwm/scripts` directory. These are the following scripts that uses rofi to provide the launchers and applets in CWM :
 
 **`rofi_askpass`** : rofi based `sudo` frontend to get root password <br/>
 **`rofi_asroot`** : applet to open apps as root <br/>
@@ -117,7 +117,7 @@ The scripts for rofi that are used in cwm can be found it `~/.cwm/scripts` direc
 
 If you want to modify any applet or perhaps want to extend the functionality of the applet, just edit these scripts above.
 
-The configuration of each script can be found inside the _theme_ directory of cwm `~/.cwm/theme`
+The configuration of each script can be found inside the _theme_ directory of CWM `~/.cwm/theme`
 
 Let's say you want to modify the looks of **launcher**, then you need to edit the `~/.cwm/theme/rofi/launcher.rasi` file. Same goes for every other applet, Edit the respective file in the same directory.
 
@@ -127,7 +127,7 @@ To change the colors and fonts of the launchers and applets, Edit the `~/.cwm/th
 
 ### Compositor
 
-**Picom** is used for compositing. It's a lightweight compositor with shadowing, advanced blurring and fading. In cwm, picom is launched with an alternative config file, which is `~/.cwm/picom.conf`. 
+**Picom** is used for compositing. It's a lightweight compositor with shadowing, advanced blurring and fading. In CWM, picom is launched with an alternative config file, which is `~/.cwm/picom.conf`. 
 
 If you need to change anything related to picom, Edit this picom config file.
 
@@ -142,7 +142,7 @@ If you're facing lagging, hangs and freezes, try switching between `xrender` and
 
 ### Window Manager
 
-The configuration of cwm is available in your home directory. To configure cwm window manager, this is the main file that is used :
+The configuration of CWM is available in your home directory. To configure CWM window manager, this is the main file that is used :
 
 **`~/.cwmrc`** : main configuration file responsible for determining the behaviour and settings of the overall session. Edit this file to configure keybindings, colors, menu and cwm appearance. <br/>
 
@@ -152,7 +152,7 @@ The configuration of cwm is available in your home directory. To configure cwm w
 
 ## Keybindings
 
-Here's a list of some important keybinds you need to know for operating cwm easily. If you want to view, modify or add new keybinds, Edit `~/.cwmrc` file.
+Here's a list of some important keybinds you need to know for operating CWM easily. If you want to view, modify or add new keybinds, Edit `~/.cwmrc` file.
 
 ### Applications
 
@@ -266,7 +266,7 @@ Here's a list of some important keybinds you need to know for operating cwm easi
 
 ## Screenshots
 
-Here's few screenshots of `cwm` desktop. These'll give you an idea of the experience of cwm in Archcraft. 
+Here's few screenshots of `CWM` desktop. These'll give you an idea of the experience of CWM in Archcraft. 
 
 |Desktop 1|Desktop 2|Desktop 3|Desktop 4|
 |---|---|---|---|
@@ -287,7 +287,7 @@ Here's few screenshots of `cwm` desktop. These'll give you an idea of the experi
 <details>
 <summary><b>How to update my config to new configs?</b></summary>
 
-When a new version of Archcraft cwm get released, And you update the system by `sudo pacman -Syu` or you update the cwm package by `sudo pacman -S archcraft-cwm`, New config files get installed as **~/.cwm_pacnew_YYYY-MM-DD** and **~/.cwmrc_pacnew_YYYY-MM-DD** in your home directory.
+When a new version of Archcraft CWM get released, And you update the system by `sudo pacman -Syu` or you update the CWM package by `sudo pacman -S archcraft-cwm`, New config files get installed as **~/.cwm_pacnew_YYYY-MM-DD** and **~/.cwmrc_pacnew_YYYY-MM-DD** in your home directory.
 
 To use new configs : 
 - backup your old `~/.cwm` directory and `~/.cwmrc` file 
@@ -300,8 +300,8 @@ To use new configs :
 <details>
 <summary><b>How to change GTK theme, icons and cursor?</b></summary>
 
-To change GTK theme, icons and cursor in cwm session, Edit `~/.cwm/xsettingsd` file and restart cwm to apply the changes.
-```ini
+To change GTK theme, icons and cursor in CWM session, Edit `~/.cwm/xsettingsd` file and restart CWM to apply the changes.
+```bash
 Net/ThemeName "Arc-Dark"
 Net/IconThemeName "Arc-Circle"
 Gtk/CursorThemeName "Future"
@@ -310,9 +310,9 @@ Gtk/CursorThemeName "Future"
 </details>
 
 <details>
-<summary><b>How to manage multiple monitors and resolution in cwm?</b></summary>
+<summary><b>How to manage multiple monitors and resolution in CWM?</b></summary>
 
-If you use multiple monitors with cwm window manager, you can manage them by running _Manager Monitors_ or `archcraft-randr` app.
+If you use multiple monitors with CWM window manager, you can manage them by running _Manager Monitors_ or `archcraft-randr` app.
 
 </details>
 

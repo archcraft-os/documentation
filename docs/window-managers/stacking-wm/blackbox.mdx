@@ -33,7 +33,7 @@ Fast, lightweight window manager for X, without all those annoying library depen
 
 ## Installation
 
-Once you finish installing Archcraft, **blackbox** can be installed on the top of it. It's pre-configured and ready to go. Open a terminal and run the following command to install blackbox :
+Once you finish installing Archcraft, **Blackbox** can be installed on the top of it. It's pre-configured and ready to go. Open a terminal and run the following command to install Blackbox :
 ```bash
 $ sudo pacman -Sy archcraft-blackbox
 ```
@@ -42,11 +42,11 @@ $ sudo pacman -Sy archcraft-blackbox
 
 ## Configuration
 
-blackbox is pre-configured in Archcraft. In this section, We'll see how the blackbox window manager is configured, what tools and utilities are used to make it look and work like a complete desktop environment.
+Blackbox is pre-configured in Archcraft. In this section, We'll see how the Blackbox window manager is configured, what tools and utilities are used to make it look and work like a complete desktop environment.
 
 ### Config Structure
 
-The configuration structure of blackbox in Archcraft looks something like this:
+The configuration structure of Blackbox in Archcraft looks something like this:
 
 ```
 /usr/bin/run-blackbox   : Autostart programs
@@ -65,7 +65,7 @@ The configuration structure of blackbox in Archcraft looks something like this:
 
 ### Terminal
 
-**Alacritty** is the default terminal. In the blackbox window manager, alacritty is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `~/.blackbox/alacritty` directory. These are the following config files you can modify to change the behaviour of your terminal:
+**Alacritty** is the default terminal. In the Blackbox window manager, alacritty is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `~/.blackbox/alacritty` directory. These are the following config files you can modify to change the behaviour of your terminal:
 
 **`~/.blackbox/alacritty/alacritty.toml`** : Main configuration file <br/>
 **`~/.blackbox/alacritty/colors.toml`** : Colors configurations <br/>
@@ -75,13 +75,13 @@ The configuration structure of blackbox in Archcraft looks something like this:
 
 ### Notification
 
-**Dunst** is used as a notification daemon for notifications in blackbox. In the blackbox window manager, dunst is launched with an alternative config file, which is `~/.blackbox/dunstrc`. So, If you need to modify anything, make sure you edit this file.
+**Dunst** is used as a notification daemon for notifications in Blackbox. In the Blackbox window manager, dunst is launched with an alternative config file, which is `~/.blackbox/dunstrc`. So, If you need to modify anything, make sure you edit this file.
 
 > If you need any help with dunst config, run : `man 5 dunst` in terminal.
 
 ### Wallpaper
 
-**hsetroot** sets the wallpaper in the blackbox. If you want to change the wallpaper, Edit `/usr/bin/run-blackbox` script and add the path to your wallpaper :
+**hsetroot** sets the wallpaper in the Blackbox. If you want to change the wallpaper, Edit `/usr/bin/run-blackbox` script and add the path to your wallpaper :
 ```bash
 # Restore wallpaper
 hsetroot -cover '/path/to/your/wallpaper'
@@ -89,9 +89,9 @@ hsetroot -cover '/path/to/your/wallpaper'
 
 ### Statusbar
 
-**Polybar** is used as the statusbar in Archcraft's blackbox window manager.
+**Polybar** is used as the statusbar in Archcraft's Blackbox window manager.
 
-The configurations for polybar can be found inside the _theme_ directory directory of blackbox `~/.blackbox/theme`
+The configurations for polybar can be found inside the _theme_ directory directory of Blackbox `~/.blackbox/theme`
 
 If you want to modify the **polybar** settings, or perhaps want to add/remove modules, then you need to edit the following files :
 
@@ -107,7 +107,7 @@ If you want to modify the **polybar** settings, or perhaps want to add/remove mo
 
 > If you need any help with rofi config, run : `man rofi` in terminal.
 
-The scripts for rofi that are used in blackbox can be found it `~/.blackbox/scripts` directory. These are the following scripts that uses rofi to provide the launchers and applets in blackbox :
+The scripts for rofi that are used in Blackbox can be found it `~/.blackbox/scripts` directory. These are the following scripts that uses rofi to provide the launchers and applets in Blackbox :
 
 **`rofi_askpass`** : rofi based `sudo` frontend to get root password <br/>
 **`rofi_asroot`** : applet to open apps as root <br/>
@@ -120,7 +120,7 @@ The scripts for rofi that are used in blackbox can be found it `~/.blackbox/scri
 
 If you want to modify any applet or perhaps want to extend the functionality of the applet, just edit these scripts above.
 
-The configuration of each script can be found inside the _theme_ directory of blackbox `~/.blackbox/theme`
+The configuration of each script can be found inside the _theme_ directory of Blackbox `~/.blackbox/theme`
 
 Let's say you want to modify the looks of **launcher**, then you need to edit the `~/.blackbox/theme/rofi/launcher.rasi` file. Same goes for every other applet, Edit the respective file in the same directory.
 
@@ -130,7 +130,7 @@ To change the colors and fonts of the launchers and applets, Edit the `~/.blackb
 
 ### Compositor
 
-**Picom** is used for compositing. It's a lightweight compositor with shadowing, advanced blurring and fading. In blackbox, picom is launched with an alternative config file, which is `~/.blackbox/picom.conf`. 
+**Picom** is used for compositing. It's a lightweight compositor with shadowing, advanced blurring and fading. In Blackbox, picom is launched with an alternative config file, which is `~/.blackbox/picom.conf`. 
 
 If you need to change anything related to picom, Edit this picom config file.
 
@@ -145,7 +145,7 @@ If you're facing lagging, hangs and freezes, try switching between `xrender` and
 
 ### Window Manager
 
-The configuration of blackbox is available in your home directory. To configure blackbox window manager, these are the files that are used :
+The configuration of Blackbox is available in your home directory. To configure Blackbox window manager, these are the files that are used :
 
 **`~/.blackboxrc`** : main configuration file responsible for determining the behaviour and settings of the overall session. Edit this file to configure slit, toolbar, workspaces, menu and blackbox appearance. <br/>
 **`~/.blackbox/sxhkdrc`** : keyboard shortcuts, Edit this file to add/remove keybindings. <br/>
@@ -158,7 +158,7 @@ The configuration of blackbox is available in your home directory. To configure 
 
 ## Keybindings
 
-Here's a list of some important keybinds you need to know for operating blackbox easily. If you want to view, modify or add new keybinds, Edit `~/.blackbox/sxhkdrc` file.
+Here's a list of some important keybinds you need to know for operating Blackbox easily. If you want to view, modify or add new keybinds, Edit `~/.blackbox/sxhkdrc` file.
 
 ### Applications
 
@@ -218,7 +218,7 @@ Here's a list of some important keybinds you need to know for operating blackbox
 
 ## Screenshots
 
-Here's few screenshots of `blackbox` desktop. These'll give you an idea of the experience of blackbox in Archcraft. 
+Here's few screenshots of `Blackbox` desktop. These'll give you an idea of the experience of Blackbox in Archcraft. 
 
 |Desktop 1|Desktop 2|Desktop 3|Desktop 4|
 |---|---|---|---|
@@ -243,7 +243,7 @@ Here's few screenshots of `blackbox` desktop. These'll give you an idea of the e
 <details>
 <summary><b>How to update my config to new configs?</b></summary>
 
-When a new version of Archcraft blackbox get released, And you update the system by `sudo pacman -Syu` or you update the blackbox package by `sudo pacman -S archcraft-blackbox`, New config files get installed as **~/.blackbox_pacnew_YYYY-MM-DD** and **~/.blackboxrc_pacnew_YYYY-MM-DD** in your home directory.
+When a new version of Archcraft Blackbox get released, And you update the system by `sudo pacman -Syu` or you update the Blackbox package by `sudo pacman -S archcraft-blackbox`, New config files get installed as **~/.blackbox_pacnew_YYYY-MM-DD** and **~/.blackboxrc_pacnew_YYYY-MM-DD** in your home directory.
 
 To use new configs : 
 - backup your old `~/.blackbox` directory and `~/.blackboxrc` file 
@@ -256,8 +256,8 @@ To use new configs :
 <details>
 <summary><b>How to change GTK theme, icons and cursor?</b></summary>
 
-To change GTK theme, icons and cursor in blackbox session, Edit `~/.blackbox/xsettingsd` file and restart blackbox to apply the changes.
-```ini
+To change GTK theme, icons and cursor in Blackbox session, Edit `~/.blackbox/xsettingsd` file and restart Blackbox to apply the changes.
+```bash
 Net/ThemeName "Kripton"
 Net/IconThemeName "Zafiro"
 Gtk/CursorThemeName "Qogirr"
@@ -266,9 +266,9 @@ Gtk/CursorThemeName "Qogirr"
 </details>
 
 <details>
-<summary><b>How to manage multiple monitors and resolution in blackbox?</b></summary>
+<summary><b>How to manage multiple monitors and resolution in Blackbox?</b></summary>
 
-If you use multiple monitors with blackbox window manager, you can manage them by running _Manager Monitors_ or `archcraft-randr` app.
+If you use multiple monitors with Blackbox window manager, you can manage them by running _Manager Monitors_ or `archcraft-randr` app.
 
 </details>
 

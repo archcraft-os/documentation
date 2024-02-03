@@ -33,7 +33,7 @@ Xmonad is a tiling window manager for X. Windows are arranged automatically to t
 
 ## Installation
 
-Once you finish installing Archcraft, **xmonad** can be installed on the top of it. It's pre-configured and ready to go. Open a terminal and run the following command to install xmonad :
+Once you finish installing Archcraft, **Xmonad** can be installed on the top of it. It's pre-configured and ready to go. Open a terminal and run the following command to install Xmonad :
 ```bash
 $ sudo pacman -Sy archcraft-xmonad
 ```
@@ -42,11 +42,11 @@ $ sudo pacman -Sy archcraft-xmonad
 
 ## Configuration
 
-xmonad is pre-configured in Archcraft. In this section, We'll see how the xmonad window manager is configured, what tools and utilities are used to make it look and work like a complete desktop environment.
+Xmonad is pre-configured in Archcraft. In this section, We'll see how the Xmonad window manager is configured, what tools and utilities are used to make it look and work like a complete desktop environment.
 
 ### Config Structure
 
-The configuration structure of xmonad in Archcraft looks something like this:
+The configuration structure of Xmonad in Archcraft looks something like this:
 
 ```
 ~/.xmonad        : xmonad config directory
@@ -61,7 +61,7 @@ The configuration structure of xmonad in Archcraft looks something like this:
 
 ### Terminal
 
-**Alacritty** is the default terminal. In the xmonad window manager, alacritty is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `~/.xmonad/alacritty` directory. These are the following config files you can modify to change the behaviour of your terminal:
+**Alacritty** is the default terminal. In the Xmonad window manager, alacritty is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `~/.xmonad/alacritty` directory. These are the following config files you can modify to change the behaviour of your terminal:
 
 **`~/.xmonad/alacritty/alacritty.toml`** : Main configuration file <br/>
 **`~/.xmonad/alacritty/colors.toml`** : Colors configurations <br/>
@@ -71,13 +71,13 @@ The configuration structure of xmonad in Archcraft looks something like this:
 
 ### Notification
 
-**Dunst** is used as a notification daemon for notifications in xmonad. In the xmonad window manager, dunst is launched with an alternative config file, which is `~/.xmonad/dunstrc`. So, If you need to modify anything, make sure you edit this file.
+**Dunst** is used as a notification daemon for notifications in Xmonad. In the Xmonad window manager, dunst is launched with an alternative config file, which is `~/.xmonad/dunstrc`. So, If you need to modify anything, make sure you edit this file.
 
 > If you need any help with dunst config, run : `man 5 dunst` in terminal.
 
 ### Wallpaper
 
-**hsetroot** sets the wallpaper in the xmonad. If you want to change the wallpaper, Edit `~/.xmonad/scripts/xmonad_autostart` script and add the path to your wallpaper :
+**hsetroot** sets the wallpaper in the Xmonad. If you want to change the wallpaper, Edit `~/.xmonad/scripts/xmonad_autostart` script and add the path to your wallpaper :
 ```bash
 # Restore wallpaper
 hsetroot -cover '/path/to/your/wallpaper'
@@ -85,9 +85,9 @@ hsetroot -cover '/path/to/your/wallpaper'
 
 ### Statusbar
 
-**Polybar** is used as the statusbar in Archcraft's xmonad window manager.
+**Polybar** is used as the statusbar in Archcraft's Xmonad window manager.
 
-The configurations for polybar can be found inside the _theme_ directory directory of xmonad `~/.xmonad/theme`
+The configurations for polybar can be found inside the _theme_ directory directory of Xmonad `~/.xmonad/theme`
 
 If you want to modify the **polybar** settings, or perhaps want to add/remove modules, then you need to edit the following files :
 
@@ -103,7 +103,7 @@ If you want to modify the **polybar** settings, or perhaps want to add/remove mo
 
 > If you need any help with rofi config, run : `man rofi` in terminal.
 
-The scripts for rofi that are used in xmonad can be found it `~/.xmonad/scripts` directory. These are the following scripts that uses rofi to provide the launchers and applets in xmonad :
+The scripts for rofi that are used in Xmonad can be found it `~/.xmonad/scripts` directory. These are the following scripts that uses rofi to provide the launchers and applets in Xmonad :
 
 **`rofi_askpass`** : rofi based `sudo` frontend to get root password <br/>
 **`rofi_asroot`** : applet to open apps as root <br/>
@@ -117,7 +117,7 @@ The scripts for rofi that are used in xmonad can be found it `~/.xmonad/scripts`
 
 If you want to modify any applet or perhaps want to extend the functionality of the applet, just edit these scripts above.
 
-The configuration of each script can be found inside the _theme_ directory of xmonad `~/.xmonad/theme`
+The configuration of each script can be found inside the _theme_ directory of Xmonad `~/.xmonad/theme`
 
 Let's say you want to modify the looks of **launcher**, then you need to edit the `~/.xmonad/theme/rofi/launcher.rasi` file. Same goes for every other applet, Edit the respective file in the same directory.
 
@@ -127,7 +127,7 @@ To change the colors and fonts of the launchers and applets, Edit the `~/.xmonad
 
 ### Compositor
 
-**Picom** is used for compositing. It's a lightweight compositor with shadowing, advanced blurring and fading. In xmonad, picom is launched with an alternative config file, which is `~/.xmonad/picom.conf`. 
+**Picom** is used for compositing. It's a lightweight compositor with shadowing, advanced blurring and fading. In Xmonad, picom is launched with an alternative config file, which is `~/.xmonad/picom.conf`. 
 
 If you need to change anything related to picom, Edit this picom config file.
 
@@ -142,17 +142,17 @@ If you're facing lagging, hangs and freezes, try switching between `xrender` and
 
 ### Window Manager
 
-The configuration of xmonad is available in `~/.xmonad`. To configure xmonad window manager, this is the main file that is used :
+The configuration of Xmonad is available in `~/.xmonad`. To configure Xmonad window manager, this is the main file that is used :
 
 **`xmonad.hs`** : main configuration file responsible for determining the behaviour and settings of the overall session. Edit this file to set window rules, configure workspaces, layouts, and xmonad appearance.
 
-> If you need any help with xmonad configuration, visit : [xmonad.org](https://xmonad.org/documentation.html) <br/>
+> If you need any help with xmonad configuration, visit : [xmonad.org](https://xmonad.org/documentation.html)
 
 <!-- Keybindings ---------------------------------- -->
 
 ## Keybindings
 
-Here's a list of some important keybinds you need to know for operating xmonad easily. If you want to view, modify or add new keybinds, Edit `~/.xmonad/xmonad.hs` file.
+Here's a list of some important keybinds you need to know for operating Xmonad easily. If you want to view, modify or add new keybinds, Edit `~/.xmonad/xmonad.hs` file.
 
 ### Applications
 
@@ -251,7 +251,7 @@ Here's a list of some important keybinds you need to know for operating xmonad e
 
 ## Screenshots
 
-Here's few screenshots of `xmonad` desktop. These'll give you an idea of the experience of xmonad in Archcraft. 
+Here's few screenshots of `Xmonad` desktop. These'll give you an idea of the experience of Xmonad in Archcraft. 
 
 |Desktop 1|Desktop 2|Desktop 3|Desktop 4|
 |---|---|---|---|
@@ -276,7 +276,7 @@ Here's few screenshots of `xmonad` desktop. These'll give you an idea of the exp
 <details>
 <summary><b>How to update my config to new configs?</b></summary>
 
-When a new version of Archcraft xmonad get released, And you update the system by `sudo pacman -Syu` or you update the xmonad package by `sudo pacman -S archcraft-xmonad`, New config files get installed as **~/.xmonad_pacnew_YYYY-MM-DD** in your home directory.
+When a new version of Archcraft Xmonad get released, And you update the system by `sudo pacman -Syu` or you update the Xmonad package by `sudo pacman -S archcraft-xmonad`, New config files get installed as **~/.xmonad_pacnew_YYYY-MM-DD** in your home directory.
 
 To use new configs, backup your old `~/.xmonad` directory and move `~/.xmonad_pacnew_YYYY-MM-DD` to `~/.xmonad` and login again.
 
@@ -285,8 +285,8 @@ To use new configs, backup your old `~/.xmonad` directory and move `~/.xmonad_pa
 <details>
 <summary><b>How to change GTK theme, icons and cursor?</b></summary>
 
-To change GTK theme, icons and cursor in xmonad session, Edit `~/.xmonad/xsettingsd` file and restart xmonad to apply the changes.
-```ini
+To change GTK theme, icons and cursor in Xmonad session, Edit `~/.xmonad/xsettingsd` file and restart Xmonad to apply the changes.
+```bash
 Net/ThemeName "Rick"
 Net/IconThemeName "Zafiro-Red"
 Gtk/CursorThemeName "Qogirr-Dark"
@@ -295,9 +295,9 @@ Gtk/CursorThemeName "Qogirr-Dark"
 </details>
 
 <details>
-<summary><b>How to manage multiple monitors and resolution in xmonad?</b></summary>
+<summary><b>How to manage multiple monitors and resolution in Xmonad?</b></summary>
 
-If you use multiple monitors with xmonad window manager, you can manage them by running _Manager Monitors_ or `archcraft-randr` app.
+If you use multiple monitors with Xmonad window manager, you can manage them by running _Manager Monitors_ or `archcraft-randr` app.
 
 </details>
 

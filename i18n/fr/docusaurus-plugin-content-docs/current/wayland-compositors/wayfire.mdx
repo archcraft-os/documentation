@@ -39,7 +39,7 @@ Get Wayfire From [**`ko-fi`**](https://ko-fi.com/s/f379e986f4) And Support Archc
 
 ## Installation
 
-Follow the instructions below to install wayfire :
+Follow the instructions below to install Wayfire :
 
 - Download **wayfire.tar.gz** file from [ko-fi](https://ko-fi.com/s/f379e986f4), and save it in a directory.
 - Open a terminal in same directory and run the following command to extract the tar file :
@@ -85,28 +85,28 @@ $ cp -r ./dotfiles/* ~/.config/
 
 ## Configuration
 
-Wayfire is pre-configured in Archcraft. In this section, We'll see how the wayfire wayland compositor is configured, what tools and utilities are used to make it look and work like a complete desktop environment.
+Wayfire is pre-configured in Archcraft. In this section, We'll see how the Wayfire wayland compositor is configured, what tools and utilities are used to make it look and work like a complete desktop environment.
 
 ### Config Structure
 
-The configuration structure of wayfire in Archcraft looks something like this:
+The configuration structure of Wayfire in Archcraft looks something like this:
 
 ```
 ~/.config
-├── wayfire.ini       : Master config file
-└── wayfire           : Shared Files
-    ├── alacritty     : Alacritty Terminal config
-    ├── foot          : Foot Terminal config
-    ├── mako          : Notification daemon config
-    │   └── icons     : Notification icons
-    ├── rofi          : Rofi config files
-    ├── scripts       : Various scripts for functionality
-    ├── theme         : Current Theme and Pywal Themes
-    ├── wallpapers    : Wallpapers
-    ├── waybar        : Statusbar config
-    ├── wlogout       : Wlogout config
-    │   └── icons     : Session icons
-    └── wofi          : Launcher config
+├── wayfire.ini       : master config file
+└── wayfire           : shared Files
+    ├── alacritty     : alacritty terminal config
+    ├── foot          : foot terminal config
+    ├── mako          : notification daemon config
+    │   └── icons     : notification icons
+    ├── rofi          : rofi config files
+    ├── scripts       : various scripts for functionality
+    ├── theme         : current theme and pywal themes
+    ├── wallpapers    : wallpapers
+    ├── waybar        : statusbar config
+    ├── wlogout       : wlogout config
+    │   └── icons     : session icons
+    └── wofi          : launcher config
 ```
 
 ### Terminal
@@ -115,7 +115,7 @@ The configuration structure of wayfire in Archcraft looks something like this:
 
 <TabItem value="wc_1" label="Default" default>
 
-**Alacritty** is the default terminal. In the wayfire wayland compositor, alacritty is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `~/.config/wayfire/alacritty` directory. These are the following config files you can modify to change the behaviour of your alacritty terminal:
+**Alacritty** is the default terminal. In the Wayfire wayland compositor, alacritty is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `~/.config/wayfire/alacritty` directory. These are the following config files you can modify to change the behaviour of your alacritty terminal:
 
 **`~/.config/wayfire/alacritty/alacritty.toml`** : Main configuration file <br/>
 **`~/.config/wayfire/alacritty/colors.toml`** : Colors configurations <br/>
@@ -127,7 +127,7 @@ The configuration structure of wayfire in Archcraft looks something like this:
 
 <TabItem value="wc_2" label="Alternate" default>
 
-**Foot** is the secondary/alternate terminal. In the wayfire wayland compositor, foot is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `~/.config/wayfire/foot` directory. These are the following config files you can modify to change the behaviour of your foot terminal:
+**Foot** is the secondary/alternate terminal. In the Wayfire wayland compositor, foot is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `~/.config/wayfire/foot` directory. These are the following config files you can modify to change the behaviour of your foot terminal:
 
 **`~/.config/wayfire/foot/foot.ini`** : Main configuration file <br/>
 **`~/.config/wayfire/foot/colors.ini`** : Colors configurations <br/>
@@ -153,7 +153,7 @@ When you change the `theme`, the **colors.toml** file of alacritty and **colors.
 
 ### Notification
 
-**Mako** is used as a notification daemon for notifications in wayfire. In the wayfire wayland compositor, mako is launched with an alternative config file, which is `~/.config/wayfire/mako/config`. So, If you need to modify anything, make sure you edit this file.
+**Mako** is used as a notification daemon for notifications in Wayfire. In the Wayfire wayland compositor, mako is launched with an alternative config file, which is `~/.config/wayfire/mako/config`. So, If you need to modify anything, make sure you edit this file.
 
 > If you need any help with mako config, run : `man 5 mako` in terminal.
 
@@ -165,7 +165,7 @@ When you change the `theme`, the colors in **config** file get overwritten by th
 
 ### Wallpaper
 
-**swaybg** sets the wallpaper in the wayfire. If you want to change the wallpaper, Edit `~/.config/wayfire/scripts/wallpaper` script and add your wallpaper here :
+**swaybg** sets the wallpaper in the Wayfire. If you want to change the wallpaper, Edit `~/.config/wayfire/scripts/wallpaper` script and add your wallpaper here :
 ```bash
 WALLPAPER='/path/to/your/wallpaper'
 ```
@@ -177,7 +177,7 @@ When you change the `theme`, the wallpaper path in `wallpaper` script get overwr
 
 ### Statusbar
 
-**Waybar** is used as the statusbar in Archcraft's wayfire wayland compositor.
+**Waybar** is used as the statusbar in Archcraft's Wayfire wayland compositor.
 
 The configurations for waybar can be found inside `~/.config/wayfire/waybar`. If you want to modify the **waybar** settings, or perhaps want to add/remove modules, then you need to edit the following files :
 
@@ -204,7 +204,7 @@ When you change the `theme`, the **colors.css** file of waybar get overwritten b
 
 > If you need any help with rofi config, run : `man rofi` in terminal.
 
-The scripts for rofi that are used in wayfire can be found it `~/.config/wayfire/scripts` directory. These are the following scripts that uses rofi to provide the launchers and applets in wayfire :
+The scripts for rofi that are used in Wayfire can be found it `~/.config/wayfire/scripts` directory. These are the following scripts that uses rofi to provide the launchers and applets in Wayfire :
 
 **`rofi_bluetooth`** : bluetooth applet to quickly connect to BT devices <br/>
 **`rofi_launcher`** : an application launcher, cmd runner, file manager and task manager  <br/>
@@ -232,7 +232,7 @@ Alternatively, **Wofi** is used for application launcher and powermenu.
 
 > If you need any help with wofi config, run : `man 5 wofi` in terminal.
 
-The scripts for wofi that are used in wayfire can be found it `~/.config/wayfire/scripts` directory. These are the following scripts that uses wofi to provide the launchers and powermenu applets in wayfire :
+The scripts for wofi that are used in Wayfire can be found it `~/.config/wayfire/scripts` directory. These are the following scripts that uses wofi to provide the launchers and powermenu applets in Wayfire :
 
 **`wofi_menu`** : application launcher  <br/>
 **`wofi_powermenu`** : power menu, with confirmation dialog
@@ -247,7 +247,7 @@ To change the colors and fonts of the launchers and applets, Edit the `~/.config
 
 <TabItem value="wc_3" label="Wlogout" default>
 
-**Wlogout**, A Wayland logout menu is also configured for session management is wayfire.
+**Wlogout**, A Wayland logout menu is also configured for session management is Wayfire.
 
 Edit `~/.config/wayfire/scripts/wlogout` script to adjust the looks of wlogout. The configuration of wlogout can be found inside `~/.config/wayfire/wlogout` directory.
 
@@ -273,7 +273,7 @@ When you change the `theme`, the **shared/colors.rasi** file of rofi and **style
 
 ### wayland compositor
 
-The main configuration file of wayfire is `~/.config/wayfire.ini`. Edit this file for everything, from plugins to keybindings, etc. The changes are automatically loaded in-place.
+The main configuration file of Wayfire is `~/.config/wayfire.ini`. Edit this file for everything, from plugins to keybindings, etc. The changes are automatically loaded in-place.
 
 > If you need any help with wayfire configuration, visit : [Wayfire Configuration](https://github.com/WayfireWM/wayfire/wiki/Configuration)
 
@@ -287,7 +287,7 @@ When you change the `theme`, colors in **wayfire.ini** file gets overwritten by 
 
 ## Keybindings
 
-Here's a list of some important keybinds you need to know for operating wayfire easily. If you want to view, modify or add new keybinds, Edit `~/.config/wayfire.ini` file.
+Here's a list of some important keybinds you need to know for operating Wayfire easily. If you want to view, modify or add new keybinds, Edit `~/.config/wayfire.ini` file.
 
 ### Applications
 
@@ -430,7 +430,7 @@ More Information: [NVIDIA#Installation](https://wiki.archlinux.org/title/NVIDIA#
 
 ### Desktop
 
-Here's few screenshots of `Wayfire` desktop. These'll give you an idea of the experience of wayfire in Archcraft. 
+Here's few screenshots of `Wayfire` desktop. These'll give you an idea of the experience of Wayfire in Archcraft. 
 
 |Desktop 1|Desktop 2|Desktop 3|Desktop 4|
 |---|---|---|---|
@@ -462,7 +462,7 @@ To Change the theme, Click on `Color Palette` icon on waybar. To apply a random 
 
 <TabItem value="wc_1" label="Default Theme" default>
 
-There's only one theme available for wayfire.
+There's only one theme available for Wayfire.
 
 ![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/wayfire/main.png)
 
@@ -509,7 +509,7 @@ $ export WLR_NO_HARDWARE_CURSORS=1
 <details>
 <summary><b>How to change GTK theme, icons and cursor?</b></summary>
 
-To change GTK theme, icons and cursor in wayfire session, Edit `~/.config/wayfire/scripts/gtkthemes` script and restart wayfire to apply the changes.
+To change GTK theme, icons and cursor in Wayfire session, Edit `~/.config/wayfire/scripts/gtkthemes` script and restart Wayfire to apply the changes.
 ```bash
 THEME='Manhattan'
 ICONS='Luv-Folders-Dark'
@@ -520,9 +520,9 @@ CURSOR='Qogirr-Dark'
 </details>
 
 <details>
-<summary><b>How to manage multiple monitors and resolution in wayfire?</b></summary>
+<summary><b>How to manage multiple monitors and resolution in Wayfire?</b></summary>
 
-If you use multiple monitors with wayfire wayland compositor, you can manage them as follow:
+If you use multiple monitors with Wayfire wayland compositor, you can manage them as follow:
 
 1. You can get the names of your outputs with `wlr-randr`
 2. Edit `~/.config/wayfire.ini` file and modify the output configuration section as follow :

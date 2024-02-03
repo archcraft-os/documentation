@@ -25,7 +25,7 @@ export const Highlight = ({children, color}) => (
 
 <!-- Add your stuff after this -------------------- -->
 
-dwm is a dynamic window manager for Xorg. It manages windows in tiled, stacked, and full-screen layouts, as well as many others with the help of optional patches. Layouts can be applied dynamically, optimizing the environment for the application in use and the task being performed. dwm is extremely lightweight and fast, written in C and with a stated design goal of remaining under 2000 source lines of code. It provides multihead support for xrandr and Xinerama.
+DWM is a dynamic window manager for Xorg. It manages windows in tiled, stacked, and full-screen layouts, as well as many others with the help of optional patches. Layouts can be applied dynamically, optimizing the environment for the application in use and the task being performed. dwm is extremely lightweight and fast, written in C and with a stated design goal of remaining under 2000 source lines of code. It provides multihead support for xrandr and Xinerama.
 
 ![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/dwm/main.png)
 
@@ -33,7 +33,7 @@ dwm is a dynamic window manager for Xorg. It manages windows in tiled, stacked, 
 
 ## Installation
 
-Once you finish installing Archcraft, **dwm** can be installed on the top of it. It's pre-configured and ready to go. Open a terminal and run the following command to install dwm :
+Once you finish installing Archcraft, **DWM** can be installed on the top of it. It's pre-configured and ready to go. Open a terminal and run the following command to install DWM :
 ```bash
 $ sudo pacman -Sy archcraft-dwm
 ```
@@ -42,11 +42,11 @@ $ sudo pacman -Sy archcraft-dwm
 
 ## Configuration
 
-dwm is pre-configured in Archcraft. In this section, We'll see how the dwm window manager is configured, what tools and utilities are used to make it look and work like a complete desktop environment.
+DWM is pre-configured in Archcraft. In this section, We'll see how the DWM window manager is configured, what tools and utilities are used to make it look and work like a complete desktop environment.
 
 ### Config Structure
 
-The configuration structure of dwm in Archcraft looks something like this:
+The configuration structure of DWM in Archcraft looks something like this:
 
 ```
 /opt
@@ -66,7 +66,7 @@ The configuration structure of dwm in Archcraft looks something like this:
 
 ### Terminal
 
-**Alacritty** is the default terminal. In dwm window manager, alacritty is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `/usr/share/archcraft/dwm/alacritty` directory. These are the following config files you can modify to change the behaviour of your terminal:
+**Alacritty** is the default terminal. In DWM window manager, alacritty is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `/usr/share/archcraft/dwm/alacritty` directory. These are the following config files you can modify to change the behaviour of your terminal:
 
 **`/usr/share/archcraft/dwm/alacritty/alacritty.toml`** : Main configuration file <br/>
 **`/usr/share/archcraft/dwm/alacritty/colors.toml`** : Colors configurations <br/>
@@ -76,13 +76,13 @@ The configuration structure of dwm in Archcraft looks something like this:
 
 ### Notification
 
-**Dunst** is used as a notification daemon for notifications in dwm. In dwm window manager, dunst is launched with an alternative config file, which is `/usr/share/archcraft/dwm/dunstrc`. So, If you need to modify anything, make sure you edit this file.
+**Dunst** is used as a notification daemon for notifications in DWM. In DWM window manager, dunst is launched with an alternative config file, which is `/usr/share/archcraft/dwm/dunstrc`. So, If you need to modify anything, make sure you edit this file.
 
 > If you need any help with dunst config, run : `man 5 dunst` in terminal.
 
 ### Wallpaper
 
-**hsetroot** sets the wallpaper in the dwm. If you want to change the wallpaper, Edit `/usr/share/archcraft/dwm/scripts/dwm_autostart` script and add the path to your wallpaper :
+**hsetroot** sets the wallpaper in the DWM. If you want to change the wallpaper, Edit `/usr/share/archcraft/dwm/scripts/dwm_autostart` script and add the path to your wallpaper :
 ```bash
 # Restore wallpaper
 hsetroot -cover '/path/to/your/wallpaper'
@@ -90,7 +90,7 @@ hsetroot -cover '/path/to/your/wallpaper'
 
 ### Statusbar
 
-**xsetroot** is used to generate the elements on statusbar in Archcraft's dwm window manager.
+**xsetroot** is used to generate the elements on statusbar in Archcraft's DWM window manager.
 
 Edit `/usr/share/archcraft/dwm/scripts/dwm_bar` script to add/remove/modify the statusbar elements.
 
@@ -100,7 +100,7 @@ Edit `/usr/share/archcraft/dwm/scripts/dwm_bar` script to add/remove/modify the 
 
 > If you need any help with rofi config, run : `man rofi` in terminal.
 
-The scripts for rofi that are used in dwm can be found it `/usr/share/archcraft/dwm/scripts` directory. These are the following scripts that uses rofi to provide the launchers and applets :
+The scripts for rofi that are used in DWM can be found it `/usr/share/archcraft/dwm/scripts` directory. These are the following scripts that uses rofi to provide the launchers and applets :
 
 **`rofi_askpass`** : rofi based `sudo` frontend to get root password <br/>
 **`rofi_asroot`** : applet to open apps as root <br/>
@@ -115,7 +115,7 @@ The scripts for rofi that are used in dwm can be found it `/usr/share/archcraft/
 
 If you want to modify any applet or perhaps want to extend the functionality of the applet, just edit these scripts above.
 
-The configuration of each script can be found inside the _theme_ directory of dwm `/usr/share/archcraft/dwm/theme`
+The configuration of each script can be found inside the _theme_ directory of DWM `/usr/share/archcraft/dwm/theme`
 
 Let's say you want to modify the looks of **launcher**, then you need to edit the `/usr/share/archcraft/dwm/theme/rofi/launcher.rasi` file. Same goes for every other applet, Edit the respective file in the same directory.
 
@@ -125,7 +125,7 @@ To change the colors and fonts of the launchers and applets, Edit the `/usr/shar
 
 ### Compositor
 
-**Picom** is used for compositing. It's a lightweight compositor with shadowing, advanced blurring and fading. In dwm, picom is launched with an alternative config file, which is `/usr/share/archcraft/dwm/picom.conf`. 
+**Picom** is used for compositing. It's a lightweight compositor with shadowing, advanced blurring and fading. In DWM, picom is launched with an alternative config file, which is `/usr/share/archcraft/dwm/picom.conf`. 
 
 If you need to change anything related to picom, Edit this picom config file.
 
@@ -140,15 +140,15 @@ If you're facing lagging, hangs and freezes, try switching between `xrender` and
 
 ### Window Manager
 
-`/opt/dwm-source/config.def.h` is the main configuration file of dwm. If you need to change anything or perhaps you want to add/remove/change keybindings, Edit this file and recompile dwm and then install the new binary.
+`/opt/dwm-source/config.def.h` is the main configuration file of DWM. If you need to change anything or perhaps you want to add/remove/change keybindings, Edit this file and recompile DWM and then install the new binary.
 
-> If you need any help with dwm configuration and customisation, visit : [suckless.org](https://dwm.suckless.org/customisation/)
+> If you need any help with DWM configuration and customisation, visit : [suckless.org](https://dwm.suckless.org/customisation/)
 
 <!-- Keybindings ---------------------------------- -->
 
 ## Keybindings
 
-Here's a list of some important keybinds you need to know for operating dwm easily. If you want to view, modify or add new keybinds, Edit `/opt/dwm-source/config.def.h` file.
+Here's a list of some important keybinds you need to know for operating DWM easily. If you want to view, modify or add new keybinds, Edit `/opt/dwm-source/config.def.h` file.
 
 ### Applications
 
@@ -260,7 +260,7 @@ Here's a list of some important keybinds you need to know for operating dwm easi
 
 ## Screenshots
 
-Here's few screenshots of `dwm` desktop. These'll give you an idea of the experience of dwm in Archcraft. 
+Here's few screenshots of `DWM` desktop. These'll give you an idea of the experience of DWM in Archcraft. 
 
 |Desktop 1|Desktop 2|Desktop 3|Desktop 4|
 |---|---|---|---|
@@ -289,8 +289,8 @@ Here's few screenshots of `dwm` desktop. These'll give you an idea of the experi
 <details>
 <summary><b>How to change GTK theme, icons and cursor?</b></summary>
 
-To change GTK theme, icons and cursor in dwm session, Edit `/usr/share/archcraft/dwm/xsettingsd` file and restart dwm to apply the changes.
-```ini
+To change GTK theme, icons and cursor in DWM session, Edit `/usr/share/archcraft/dwm/xsettingsd` file and restart DWM to apply the changes.
+```bash
 Net/ThemeName "Arc-Dark"
 Net/IconThemeName "Zafiro-Blue"
 Gtk/CursorThemeName "Qogirr"
@@ -301,7 +301,7 @@ Gtk/CursorThemeName "Qogirr"
 <details>
 <summary><b>How to manage multiple monitors and resolution in dwm?</b></summary>
 
-If you use multiple monitors with dwm window manager, you can manage them by running _Manager Monitors_ or `archcraft-randr` app.
+If you use multiple monitors with DWM window manager, you can manage them by running _Manager Monitors_ or `archcraft-randr` app.
 
 </details>
 

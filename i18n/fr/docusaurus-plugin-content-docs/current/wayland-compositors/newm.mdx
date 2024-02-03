@@ -25,7 +25,7 @@ export const Highlight = ({children, color}) => (
 
 <!-- Add your stuff after this -------------------- -->
 
-newm is a Wayland compositor written with laptops and touchpads in mind. The idea is, instead of placing windows inside the small viewport (that is, the monitor) to arrange them along an arbitrarily large two-dimensional wall (generally without windows overlapping) and focus the compositors job on moving around along this wall efficiently and providing ways to the user to rearrange the wall such that he finds the overall layout intuitive.
+NEWM is a Wayland compositor written with laptops and touchpads in mind. The idea is, instead of placing windows inside the small viewport (that is, the monitor) to arrange them along an arbitrarily large two-dimensional wall (generally without windows overlapping) and focus the compositors job on moving around along this wall efficiently and providing ways to the user to rearrange the wall such that he finds the overall layout intuitive.
 
 <Tabs>
 
@@ -53,7 +53,7 @@ Get NEWM From [**`ko-fi`**](https://ko-fi.com/s/524182856f) And Support Archcraf
 
 ## Installation
 
-Follow the instructions below to install newm :
+Follow the instructions below to install NEWM :
 
 - Download **newm.tar.gz** file from [ko-fi](https://ko-fi.com/s/524182856f), and save it in a directory.
 - Open a terminal in same directory and run the following command to extract the tar file :
@@ -120,31 +120,31 @@ $ sudo install -Dm 755 dotfiles/shared/00-lock.sh /usr/lib/systemd/system-sleep/
 
 ## Configuration
 
-NEWM is pre-configured in Archcraft. In this section, We'll see how the newm wayland compositor is configured, what tools and utilities are used to make it look and work like a complete desktop environment.
+NEWM is pre-configured in Archcraft. In this section, We'll see how the NEWM wayland compositor is configured, what tools and utilities are used to make it look and work like a complete desktop environment.
 
 ### Config Structure
 
-The configuration structure of newm in Archcraft looks something like this:
+The configuration structure of NEWM in Archcraft looks something like this:
 
 ```
 ~/.config
-└── newm              : Newm config directory
-    ├── foot          : Terminal config
-    ├── mako          : Notification daemon config
-    │   └── icons     : Notification icons
-    ├── rofi          : Rofi config files
-    ├── scripts       : Various scripts for functionality
-    ├── wallpapers    : Wallpapers
-    ├── waybar        : Statusbar config
-    ├── wlogout       : Wlogout config
-    │   └── icons     : Session icons
-    ├── wofi          : Launcher config
-    └── config.py     : Main config file for NEWM
+└── newm              : newm config directory
+    ├── foot          : terminal config
+    ├── mako          : notification daemon config
+    │   └── icons     : notification icons
+    ├── rofi          : rofi config files
+    ├── scripts       : various scripts for functionality
+    ├── wallpapers    : wallpapers
+    ├── waybar        : statusbar config
+    ├── wlogout       : wlogout config
+    │   └── icons     : session icons
+    ├── wofi          : launcher config
+    └── config.py     : main config file for newm
 ```
 
 ### Terminal
 
-**Foot** is the default terminal. In the newm wayland compositor, foot is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `~/.config/newm/foot` directory. These are the following config files you can modify to change the behaviour of your foot terminal:
+**Foot** is the default terminal. In the NEWM wayland compositor, foot is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `~/.config/newm/foot` directory. These are the following config files you can modify to change the behaviour of your foot terminal:
 
 **`~/.config/newm/foot/foot.ini`** : Main configuration file <br/>
 **`~/.config/newm/foot/colors.ini`** : Colors configurations <br/>
@@ -154,7 +154,7 @@ The configuration structure of newm in Archcraft looks something like this:
 
 ### Notification
 
-**Mako** is used as a notification daemon for notifications in newm. In the newm wayland compositor, mako is launched with an alternative config file, which is `~/.config/newm/mako/config`. So, If you need to modify anything, make sure you edit this file.
+**Mako** is used as a notification daemon for notifications in NEWM. In the NEWM wayland compositor, mako is launched with an alternative config file, which is `~/.config/newm/mako/config`. So, If you need to modify anything, make sure you edit this file.
 
 > If you need any help with mako config, run : `man 5 mako` in terminal.
 
@@ -176,7 +176,7 @@ background = {
 
 ### Statusbar
 
-**Waybar** is used as the statusbar in Archcraft's newm wayland compositor.
+**Waybar** is used as the statusbar in Archcraft's NEWM wayland compositor.
 
 The configurations for waybar can be found inside `~/.config/newm/waybar`. If you want to modify the **waybar** settings, or perhaps want to add/remove modules, then you need to edit the following files :
 
@@ -197,7 +197,7 @@ The configurations for waybar can be found inside `~/.config/newm/waybar`. If yo
 
 > If you need any help with rofi config, run : `man rofi` in terminal.
 
-The scripts for rofi that are used in newm can be found it `~/.config/newm/scripts` directory. These are the following scripts that uses rofi to provide the launchers and applets in newm :
+The scripts for rofi that are used in NEWM can be found it `~/.config/newm/scripts` directory. These are the following scripts that uses rofi to provide the launchers and applets in NEWM :
 
 **`rofi_bluetooth`** : bluetooth applet to quickly connect to BT devices <br/>
 **`rofi_launcher`** : an application launcher, cmd runner, file manager and task manager  <br/>
@@ -225,7 +225,7 @@ Alternatively, **Wofi** is used for application launcher and powermenu.
 
 > If you need any help with wofi config, run : `man 5 wofi` in terminal.
 
-The scripts for wofi that are used in newm can be found it `~/.config/newm/scripts` directory. These are the following scripts that uses wofi to provide the launchers and powermenu applets in newm :
+The scripts for wofi that are used in NEWM can be found it `~/.config/newm/scripts` directory. These are the following scripts that uses wofi to provide the launchers and powermenu applets in NEWM :
 
 **`wofi_menu`** : application launcher  <br/>
 **`wofi_powermenu`** : power menu, with confirmation dialog
@@ -240,7 +240,7 @@ To change the colors and fonts of the launchers and applets, Edit the `~/.config
 
 <TabItem value="wc_3" label="Wlogout" default>
 
-**Wlogout**, A Wayland logout menu is also configured for session management is newm.
+**Wlogout**, A Wayland logout menu is also configured for session management is NEWM.
 
 Edit `~/.config/newm/scripts/wlogout` script to adjust the looks of wlogout. The configuration of wlogout can be found inside `~/.config/newm/wlogout` directory.
 
@@ -260,7 +260,7 @@ By default, rofi is used as app launcher. But, If you want to use wofi instead o
 
 ### wayland compositor
 
-The main configuration file of newm is `~/.config/newm/config.py`. Edit this script for everything, from startup programs to input/output config to keybindings, etc.
+The main configuration file of NEWM is `~/.config/newm/config.py`. Edit this script for everything, from startup programs to input/output config to keybindings, etc.
 
 > If you need any help with newm configuration, visit : [Newm Docs](https://git.sr.ht/~atha/newm-atha/tree/HEAD/doc/config.md)
 
@@ -268,7 +268,7 @@ The main configuration file of newm is `~/.config/newm/config.py`. Edit this scr
 
 ## Keybindings
 
-Here's a list of some important keybinds you need to know for operating newm easily. If you want to view, modify or add new keybinds, Edit `~/.config/newm/config.py` file.
+Here's a list of some important keybinds you need to know for operating NEWM easily. If you want to view, modify or add new keybinds, Edit `~/.config/newm/config.py` file.
 
 ### Applications
 
@@ -377,7 +377,7 @@ More Information: [NVIDIA#Installation](https://wiki.archlinux.org/title/NVIDIA#
 
 ### Desktop
 
-Here's few screenshots of `NEWM` desktop. These'll give you an idea of the experience of newm in Archcraft. 
+Here's few screenshots of `NEWM` desktop. These'll give you an idea of the experience of NEWM in Archcraft. 
 
 <Tabs>
 
@@ -415,7 +415,7 @@ Here's few screenshots of `NEWM` desktop. These'll give you an idea of the exper
 
 ### Themes
 
-There are two themes available for newm.
+There are two themes available for NEWM.
 
 <Tabs>
 
@@ -460,7 +460,7 @@ $ export WLR_NO_HARDWARE_CURSORS=1
 <details>
 <summary><b>How to change GTK theme, icons and cursor?</b></summary>
 
-To change GTK theme, icons and cursor in newm session, Edit `~/.config/newm/scripts/gtkthemes` script and restart newm to apply the changes.
+To change GTK theme, icons and cursor in NEWM session, Edit `~/.config/newm/scripts/gtkthemes` script and restart NEWM to apply the changes.
 ```bash
 THEME='Nordic'
 ICONS='Qogir-Dark'
@@ -471,9 +471,9 @@ CURSOR='Qogirr-Dark'
 </details>
 
 <details>
-<summary><b>How to manage multiple monitors and resolution in newm?</b></summary>
+<summary><b>How to manage multiple monitors and resolution in NEWM?</b></summary>
 
-If you use multiple monitors with newm wayland compositor, you can manage them as follow:
+If you use multiple monitors with NEWM wayland compositor, you can manage them as follow:
 
 1. You can get the names of your outputs with `wlr-randr`
 2. Edit `~/.config/newm/config.py` file and use the information you get by the command above:

@@ -5,6 +5,12 @@
   "Yet another minimal Linux distribution, based on Arch Linux.": {
     "message": "Encore une autre distribution Linux minimale, basée sur Arch Linux."
   },
+  "Get Started": {
+    "message": "Commencer"
+  },
+  "Download": {
+    "message": "Télécharger"
+  },
   "Welcome to Archcraft Wiki": {
     "message": "Bienvenue sur Wiki Archcraft"
   },

@@ -25,7 +25,7 @@ export const Highlight = ({children, color}) => (
 
 <!-- Add your stuff after this -------------------- -->
 
-evilwm is a minimalist window manager for the X Window system. It is minimalist in that it omits unnecessary stuff like window decorations and icons. But it is very usable in that it provides good keyboard control with repositioning and maximize toggles, solid window drags, snap-to-border support, and virtual desktops.
+EvilWM is a minimalist window manager for the X Window system. It is minimalist in that it omits unnecessary stuff like window decorations and icons. But it is very usable in that it provides good keyboard control with repositioning and maximize toggles, solid window drags, snap-to-border support, and virtual desktops.
 
 ![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/evilwm/main.png)
 
@@ -33,7 +33,7 @@ evilwm is a minimalist window manager for the X Window system. It is minimalist 
 
 ## Installation
 
-Once you finish installing Archcraft, **evilwm** can be installed on the top of it. It's pre-configured and ready to go. Open a terminal and run the following command to install evilwm :
+Once you finish installing Archcraft, **EvilWM** can be installed on the top of it. It's pre-configured and ready to go. Open a terminal and run the following command to install EvilWM :
 ```bash
 $ sudo pacman -Sy archcraft-evilwm
 ```
@@ -42,11 +42,11 @@ $ sudo pacman -Sy archcraft-evilwm
 
 ## Configuration
 
-evilwm is pre-configured in Archcraft. In this section, We'll see how the evilwm window manager is configured, what tools and utilities are used to make it look and work like a complete desktop environment.
+EvilWM is pre-configured in Archcraft. In this section, We'll see how the EvilWM window manager is configured, what tools and utilities are used to make it look and work like a complete desktop environment.
 
 ### Config Structure
 
-The configuration structure of evilwm in Archcraft looks something like this:
+The configuration structure of EvilWM in Archcraft looks something like this:
 
 ```
 /usr/bin/run-evilwm     : Autostart programs
@@ -63,7 +63,7 @@ The configuration structure of evilwm in Archcraft looks something like this:
 
 ### Terminal
 
-**Alacritty** is the default terminal. In the evilwm window manager, alacritty is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `~/.evilwm/alacritty` directory. These are the following config files you can modify to change the behaviour of your terminal:
+**Alacritty** is the default terminal. In the EvilWM window manager, alacritty is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `~/.evilwm/alacritty` directory. These are the following config files you can modify to change the behaviour of your terminal:
 
 **`~/.evilwm/alacritty/alacritty.toml`** : Main configuration file <br/>
 **`~/.evilwm/alacritty/colors.toml`** : Colors configurations <br/>
@@ -73,13 +73,13 @@ The configuration structure of evilwm in Archcraft looks something like this:
 
 ### Notification
 
-**Dunst** is used as a notification daemon for notifications in evilwm. In the evilwm window manager, dunst is launched with an alternative config file, which is `~/.evilwm/dunstrc`. So, If you need to modify anything, make sure you edit this file.
+**Dunst** is used as a notification daemon for notifications in EvilWM. In the EvilWM window manager, dunst is launched with an alternative config file, which is `~/.evilwm/dunstrc`. So, If you need to modify anything, make sure you edit this file.
 
 > If you need any help with dunst config, run : `man 5 dunst` in terminal.
 
 ### Wallpaper
 
-**hsetroot** sets the wallpaper in the evilwm. If you want to change the wallpaper, Edit `/usr/bin/run-evilwm` script and add the path to your wallpaper :
+**hsetroot** sets the wallpaper in the EvilWM. If you want to change the wallpaper, Edit `/usr/bin/run-evilwm` script and add the path to your wallpaper :
 ```bash
 # Restore wallpaper
 hsetroot -cover '/path/to/your/wallpaper'
@@ -87,9 +87,9 @@ hsetroot -cover '/path/to/your/wallpaper'
 
 ### Statusbar
 
-**Polybar** is used as the statusbar in Archcraft's evilwm window manager.
+**Polybar** is used as the statusbar in Archcraft's EvilWM window manager.
 
-The configurations for polybar can be found inside the _theme_ directory directory of evilwm `~/.evilwm/theme`
+The configurations for polybar can be found inside the _theme_ directory directory of EvilWM `~/.evilwm/theme`
 
 If you want to modify the **polybar** settings, or perhaps want to add/remove modules, then you need to edit the following files :
 
@@ -105,7 +105,7 @@ If you want to modify the **polybar** settings, or perhaps want to add/remove mo
 
 > If you need any help with rofi config, run : `man rofi` in terminal.
 
-The scripts for rofi that are used in evilwm can be found it `~/.evilwm/scripts` directory. These are the following scripts that uses rofi to provide the launchers and applets in evilwm :
+The scripts for rofi that are used in EvilWM can be found it `~/.evilwm/scripts` directory. These are the following scripts that uses rofi to provide the launchers and applets in EvilWM :
 
 **`rofi_askpass`** : rofi based `sudo` frontend to get root password <br/>
 **`rofi_asroot`** : applet to open apps as root <br/>
@@ -118,7 +118,7 @@ The scripts for rofi that are used in evilwm can be found it `~/.evilwm/scripts`
 
 If you want to modify any applet or perhaps want to extend the functionality of the applet, just edit these scripts above.
 
-The configuration of each script can be found inside the _theme_ directory of evilwm `~/.evilwm/theme`
+The configuration of each script can be found inside the _theme_ directory of EvilWM `~/.evilwm/theme`
 
 Let's say you want to modify the looks of **launcher**, then you need to edit the `~/.evilwm/theme/rofi/launcher.rasi` file. Same goes for every other applet, Edit the respective file in the same directory.
 
@@ -128,7 +128,7 @@ To change the colors and fonts of the launchers and applets, Edit the `~/.evilwm
 
 ### Compositor
 
-**Picom** is used for compositing. It's a lightweight compositor with shadowing, advanced blurring and fading. In evilwm, picom is launched with an alternative config file, which is `~/.evilwm/picom.conf`. 
+**Picom** is used for compositing. It's a lightweight compositor with shadowing, advanced blurring and fading. In EvilWM, picom is launched with an alternative config file, which is `~/.evilwm/picom.conf`. 
 
 If you need to change anything related to picom, Edit this picom config file.
 
@@ -143,7 +143,7 @@ If you're facing lagging, hangs and freezes, try switching between `xrender` and
 
 ### Window Manager
 
-The configuration of evilwm is available in your home directory. To configure evilwm window manager, these are the files that are used :
+The configuration of EvilWM is available in your home directory. To configure EvilWM window manager, these are the files that are used :
 
 **`~/.evilwmrc`** : main configuration file responsible for determining the behaviour and settings of the overall session. Edit this file to configure evilwm specific keybindings and evilwm appearance. <br/>
 **`~/.evilwm/sxhkdrc`** : keyboard shortcuts, Edit this file to add/remove other keybindings.
@@ -155,7 +155,7 @@ The configuration of evilwm is available in your home directory. To configure ev
 
 ## Keybindings
 
-Here's a list of some important keybinds you need to know for operating evilwm easily. If you want to view, modify or add new keybinds, Edit `~/.evilwmrc` and `~/.evilwm/sxhkdrc` files.
+Here's a list of some important keybinds you need to know for operating EvilWM easily. If you want to view, modify or add new keybinds, Edit `~/.evilwmrc` and `~/.evilwm/sxhkdrc` files.
 
 ### Applications
 
@@ -244,7 +244,7 @@ Here's a list of some important keybinds you need to know for operating evilwm e
 
 ## Screenshots
 
-Here's few screenshots of `evilwm` desktop. These'll give you an idea of the experience of evilwm in Archcraft. 
+Here's few screenshots of `EvilWM` desktop. These'll give you an idea of the experience of EvilWM in Archcraft. 
 
 |Desktop 1|Desktop 2|Desktop 3|Desktop 4|
 |---|---|---|---|
@@ -265,7 +265,7 @@ Here's few screenshots of `evilwm` desktop. These'll give you an idea of the exp
 <details>
 <summary><b>How to update my config to new configs?</b></summary>
 
-When a new version of Archcraft evilwm get released, And you update the system by `sudo pacman -Syu` or you update the evilwm package by `sudo pacman -S archcraft-evilwm`, New config files get installed as **~/.evilwm_pacnew_YYYY-MM-DD** and **~/.evilwmrc_pacnew_YYYY-MM-DD** in your home directory.
+When a new version of Archcraft EvilWM get released, And you update the system by `sudo pacman -Syu` or you update the EvilWM package by `sudo pacman -S archcraft-evilwm`, New config files get installed as **~/.evilwm_pacnew_YYYY-MM-DD** and **~/.evilwmrc_pacnew_YYYY-MM-DD** in your home directory.
 
 To use new configs : 
 - backup your old `~/.evilwm` directory and `~/.evilwmrc` file 
@@ -278,8 +278,8 @@ To use new configs :
 <details>
 <summary><b>How to change GTK theme, icons and cursor?</b></summary>
 
-To change GTK theme, icons and cursor in evilwm session, Edit `~/.evilwm/xsettingsd` file and restart evilwm to apply the changes.
-```ini
+To change GTK theme, icons and cursor in EvilWM session, Edit `~/.evilwm/xsettingsd` file and restart EvilWM to apply the changes.
+```bash
 Net/ThemeName "Sweet-Dark"
 Net/IconThemeName "Zafiro-Purple"
 Gtk/CursorThemeName "Sweet"
@@ -288,9 +288,9 @@ Gtk/CursorThemeName "Sweet"
 </details>
 
 <details>
-<summary><b>How to manage multiple monitors and resolution in evilwm?</b></summary>
+<summary><b>How to manage multiple monitors and resolution in EvilWM?</b></summary>
 
-If you use multiple monitors with evilwm window manager, you can manage them by running _Manager Monitors_ or `archcraft-randr` app.
+If you use multiple monitors with EvilWM window manager, you can manage them by running _Manager Monitors_ or `archcraft-randr` app.
 
 </details>
 

@@ -25,7 +25,7 @@ export const Highlight = ({children, color}) => (
 
 <!-- Add your stuff after this -------------------- -->
 
-Sway is a tiling Wayland compositor and a drop-in replacement for the i3 wayland compositor for X11. It works with your existing i3 configuration and supports most of i3's features, plus a few extras.
+Sway is a tiling Wayland compositor and a drop-in replacement for the i3 window manager for X11. It works with your existing i3 configuration and supports most of i3's features, plus a few extras.
 
 [![video](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/sway/main.png)](https://youtu.be/ASlQcf8Jc0I)
 
@@ -39,7 +39,7 @@ Get Sway From [**`ko-fi`**](https://ko-fi.com/s/10f2e87af3) And Support Archcraf
 
 ## Installation
 
-Follow the instructions below to install sway :
+Follow the instructions below to install Sway :
 
 - Download **sway.tar.gz** file from [ko-fi](https://ko-fi.com/s/10f2e87af3), and save it in a directory.
 - Open a terminal in same directory and run the following command to extract the tar file :
@@ -89,33 +89,33 @@ $ cp -r ./dotfiles/* ~/.config/sway/
 
 ## Configuration
 
-Sway is pre-configured in Archcraft. In this section, We'll see how the sway wayland compositor is configured, what tools and utilities are used to make it look and work like a complete desktop environment.
+Sway is pre-configured in Archcraft. In this section, We'll see how the Sway wayland compositor is configured, what tools and utilities are used to make it look and work like a complete desktop environment.
 
 ### Config Structure
 
-The configuration structure of sway in Archcraft looks something like this:
+The configuration structure of Sway in Archcraft looks something like this:
 
 ```
 ~/.config
-└── sway              : Sway config directory
-    ├── alacritty     : Alacritty Terminal config
-    ├── foot          : Foot Terminal config
-    ├── mako          : Notification daemon config
-    │   └── icons     : Notification icons
-    ├── rofi          : Rofi config files
-    ├── scripts       : Various scripts for functionality
-    ├── theme         : Current Theme and Pywal Themes
-    ├── wallpapers    : Wallpapers
-    ├── waybar        : Statusbar config
-    ├── wlogout       : Wlogout config
-    │   └── icons     : Session icons
-    ├── wofi          : Launcher config
-    ├── config        : Main sway config
-    ├── sway-idle     : Sway idle config
-    ├── sway-input    : Sway input config
-    ├── sway-modes    : Sway mode config
-    ├── sway-output   : Sway output config
-    └── sway-theme    : Sway theme config
+└── sway              : sway config directory
+    ├── alacritty     : alacritty terminal config
+    ├── foot          : foot terminal config
+    ├── mako          : notification daemon config
+    │   └── icons     : notification icons
+    ├── rofi          : rofi config files
+    ├── scripts       : various scripts for functionality
+    ├── theme         : current theme and pywal themes
+    ├── wallpapers    : wallpapers
+    ├── waybar        : statusbar config
+    ├── wlogout       : wlogout config
+    │   └── icons     : session icons
+    ├── wofi          : launcher config
+    ├── config        : main sway config
+    ├── sway-idle     : sway idle config
+    ├── sway-input    : sway input config
+    ├── sway-modes    : sway mode config
+    ├── sway-output   : sway output config
+    └── sway-theme    : sway theme config
 ```
 
 ### Terminal
@@ -124,7 +124,7 @@ The configuration structure of sway in Archcraft looks something like this:
 
 <TabItem value="wc_1" label="Default" default>
 
-**Alacritty** is the default terminal. In the sway wayland compositor, alacritty is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `~/.config/sway/alacritty` directory. These are the following config files you can modify to change the behaviour of your alacritty terminal:
+**Alacritty** is the default terminal. In the Sway wayland compositor, alacritty is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `~/.config/sway/alacritty` directory. These are the following config files you can modify to change the behaviour of your alacritty terminal:
 
 **`~/.config/sway/alacritty/alacritty.toml`** : Main configuration file <br/>
 **`~/.config/sway/alacritty/colors.toml`** : Colors configurations <br/>
@@ -136,7 +136,7 @@ The configuration structure of sway in Archcraft looks something like this:
 
 <TabItem value="wc_2" label="Alternate" default>
 
-**Foot** is the secondary/alternate terminal. In the sway wayland compositor, foot is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `~/.config/sway/foot` directory. These are the following config files you can modify to change the behaviour of your foot terminal:
+**Foot** is the secondary/alternate terminal. In the Sway wayland compositor, foot is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `~/.config/sway/foot` directory. These are the following config files you can modify to change the behaviour of your foot terminal:
 
 **`~/.config/sway/foot/foot.ini`** : Main configuration file <br/>
 **`~/.config/sway/foot/colors.ini`** : Colors configurations <br/>
@@ -162,7 +162,7 @@ When you change the `theme`, the **colors.toml** file of alacritty and **colors.
 
 ### Notification
 
-**Mako** is used as a notification daemon for notifications in sway. In the sway wayland compositor, mako is launched with an alternative config file, which is `~/.config/sway/mako/config`. So, If you need to modify anything, make sure you edit this file.
+**Mako** is used as a notification daemon for notifications in Sway. In the Sway wayland compositor, mako is launched with an alternative config file, which is `~/.config/sway/mako/config`. So, If you need to modify anything, make sure you edit this file.
 
 > If you need any help with mako config, run : `man 5 mako` in terminal.
 
@@ -174,7 +174,7 @@ When you change the `theme`, the colors in **config** file get overwritten by th
 
 ### Wallpaper
 
-**swaybg** sets the wallpaper in the sway. If you want to change the wallpaper, Edit `~/.config/sway/sway-output` file and add your wallpaper here :
+**swaybg** sets the wallpaper in the Sway. If you want to change the wallpaper, Edit `~/.config/sway/sway-output` file and add your wallpaper here :
 ```ini
 ## Set wallpaper on all monitors
 output * bg /path/to/your/wallpaper fill
@@ -187,7 +187,7 @@ When you change the `theme`, the wallpaper path in `sway-output` file get overwr
 
 ### Statusbar
 
-**Waybar** is used as the statusbar in Archcraft's sway wayland compositor.
+**Waybar** is used as the statusbar in Archcraft's Sway wayland compositor.
 
 The configurations for waybar can be found inside `~/.config/sway/waybar`. If you want to modify the **waybar** settings, or perhaps want to add/remove modules, then you need to edit the following files :
 
@@ -214,7 +214,7 @@ When you change the `theme`, the **colors.css** file of waybar get overwritten b
 
 > If you need any help with rofi config, run : `man rofi` in terminal.
 
-The scripts for rofi that are used in sway can be found it `~/.config/sway/scripts` directory. These are the following scripts that uses rofi to provide the launchers and applets in sway :
+The scripts for rofi that are used in Sway can be found it `~/.config/sway/scripts` directory. These are the following scripts that uses rofi to provide the launchers and applets in Sway :
 
 **`rofi_bluetooth`** : bluetooth applet to quickly connect to BT devices <br/>
 **`rofi_launcher`** : an application launcher, cmd runner, file manager and task manager  <br/>
@@ -242,7 +242,7 @@ Alternatively, **Wofi** is used for application launcher and powermenu.
 
 > If you need any help with wofi config, run : `man 5 wofi` in terminal.
 
-The scripts for wofi that are used in sway can be found it `~/.config/sway/scripts` directory. These are the following scripts that uses wofi to provide the launchers and powermenu applets in sway :
+The scripts for wofi that are used in Sway can be found it `~/.config/sway/scripts` directory. These are the following scripts that uses wofi to provide the launchers and powermenu applets in Sway :
 
 **`wofi_menu`** : application launcher  <br/>
 **`wofi_powermenu`** : power menu, with confirmation dialog
@@ -257,7 +257,7 @@ To change the colors and fonts of the launchers and applets, Edit the `~/.config
 
 <TabItem value="wc_3" label="Wlogout" default>
 
-**Wlogout**, A Wayland logout menu is also configured for session management is sway.
+**Wlogout**, A Wayland logout menu is also configured for session management is Sway.
 
 Edit `~/.config/sway/scripts/wlogout` script to adjust the looks of wlogout. The configuration of wlogout can be found inside `~/.config/sway/wlogout` directory.
 
@@ -283,7 +283,7 @@ When you change the `theme`, the **shared/colors.rasi** file of rofi and **style
 
 ### wayland compositor
 
-The configuration of sway is available in `~/.config/sway`. To configure sway wayland compositor, these are the files that are used :
+The configuration of Sway is available in `~/.config/sway`. To configure Sway wayland compositor, these are the files that are used :
 
 **`config`** : main configuration file for general settings, keybindings and window rules <br/>
 **`sway-idle`** : idle configuration, what happen when system goes in idle state <br/>
@@ -304,7 +304,7 @@ When you change the `theme`, colors in **sway-theme** file gets overwritten by t
 
 ## Keybindings
 
-Here's a list of some important keybinds you need to know for operating sway easily. If you want to view, modify or add new keybinds, Edit `~/.config/sway/config` and `~/.config/sway/sway-modes` files.
+Here's a list of some important keybinds you need to know for operating Sway easily. If you want to view, modify or add new keybinds, Edit `~/.config/sway/config` and `~/.config/sway/sway-modes` files.
 
 ### Applications
 
@@ -323,13 +323,13 @@ Here's a list of some important keybinds you need to know for operating sway eas
 | --- | --- |
 | <kbd>alt + F1</kbd> | Open application launcher |
 | <kbd>alt + F2</kbd> | Open command runner |
-| <kbd>super + d</kbd> | Open application launcher |
-| <kbd>super + r</kbd> | Open command runner |
-| <kbd>super + n</kbd> | Open network manager applet |
-| <kbd>super + m</kbd> | Open music applet |
-| <kbd>super + x</kbd> | Open powermenu applet |
-| <kbd>super + s</kbd> | Open screenshots applet |
-| <kbd>super + b</kbd> | Open bluetooth applet |
+| <kbd>super + D</kbd> | Open application launcher |
+| <kbd>super + R</kbd> | Open command runner |
+| <kbd>super + N</kbd> | Open network manager applet |
+| <kbd>super + M</kbd> | Open music applet |
+| <kbd>super + X</kbd> | Open powermenu applet |
+| <kbd>super + S</kbd> | Open screenshots applet |
+| <kbd>super + B</kbd> | Open bluetooth applet |
 
 ### Hardware Keys
 
@@ -432,7 +432,7 @@ More Information: [NVIDIA#Installation](https://wiki.archlinux.org/title/NVIDIA#
 
 ### Desktop
 
-Here's few screenshots of `Sway` desktop. These'll give you an idea of the experience of sway in Archcraft. 
+Here's few screenshots of `Sway` desktop. These'll give you an idea of the experience of Sway in Archcraft. 
 
 |Desktop 1|Desktop 2|Desktop 3|Desktop 4|
 |---|---|---|---|
@@ -458,7 +458,7 @@ To Change the theme, Click on `Color Palette` icon on waybar. To apply a random 
 
 <TabItem value="wc_1" label="Default Theme" default>
 
-There's only one theme available for sway.
+There's only one theme available for Sway.
 
 ![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/sway/main.png)
 
@@ -505,8 +505,8 @@ $ export WLR_NO_HARDWARE_CURSORS=1
 <details>
 <summary><b>How to change GTK theme, icons and cursor?</b></summary>
 
-To change GTK theme, icons and cursor in sway session, Edit `~/.config/sway/sway-theme` file and restart sway to apply the changes.
-```ini
+To change GTK theme, icons and cursor in Sway session, Edit `~/.config/sway/sway-theme` file and restart Sway to apply the changes.
+```bash
 gsettings set $gnome-schema gtk-theme 'Manhattan'
 gsettings set $gnome-schema icon-theme 'Luv-Folders-Dark'
 gsettings set $gnome-schema cursor-theme 'Qogirr'
@@ -516,9 +516,9 @@ gsettings set $gnome-schema font-name 'Noto Sans 9'
 </details>
 
 <details>
-<summary><b>How to manage multiple monitors and resolution in sway?</b></summary>
+<summary><b>How to manage multiple monitors and resolution in Sway?</b></summary>
 
-If you use multiple monitors with sway wayland compositor, you can manage them as follow:
+If you use multiple monitors with Sway wayland compositor, you can manage them as follow:
 
 1. You can get a list of output names with: `swaymsg -t get_outputs`
 2. Edit `~/.config/sway/sway-output` file and use the information you get by the command above:

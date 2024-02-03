@@ -79,3 +79,18 @@ div[class^='announcementBar_'] {
 .hero__subtitle {
   font-family: 'Quicksand', sans-serif;
 }
+
+/* Hero Buttons */
+.button {
+  background: var(--ifm-color-primary);
+  border-radius: 50px;
+}
+.button:hover {
+  background: #98c379;
+}
+.button--dl {
+  background: #98c379;
+}
+.button--dl:hover {
+  background: var(--ifm-color-primary);
+}

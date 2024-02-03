@@ -35,10 +35,6 @@
     "message": "Premium ISOs",
     "description": "The label for category Premium ISOs in sidebar tutorialSidebar"
   },
-  "sidebar.tutorialSidebar.category.Desktop Environment": {
-    "message": "Desktop Environment",
-    "description": "The label for category Desktop Environment in sidebar tutorialSidebar"
-  },
   "sidebar.tutorialSidebar.category.Archcraftify": {
     "message": "Archcraftify",
     "description": "The label for category Archcraftify in sidebar tutorialSidebar"

@@ -319,6 +319,7 @@ const config = {
           'PHp',
           'bash',
           'ini',
+          'lua',
           'diff',
           'json',
           'scss',

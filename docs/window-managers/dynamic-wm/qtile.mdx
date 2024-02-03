@@ -277,9 +277,9 @@ When you change the `theme`, things like _backend_, _shadows_, _blurring_ in **p
 
 The configuration of Qtile is available in `~/.config/qtile`. To configure Qtile window manager, this is the main file that is used :
 
-**`~/.config/qtile/config.py`** : main Qtile config file with general settings, keybindings, layouts and window rules.<br/>
+**`~/.config/qtile/config.py`** : main qtile config file with general settings, keybindings, layouts and window rules.<br/>
 
-> If you need any help with Qtile configuration, visit : [Qtile docs](https://docs.qtile.org/en/stable/)
+> If you need any help with qtile configuration, visit : [Qtile docs](https://docs.qtile.org/en/stable/)
 
 :::warning
 
@@ -313,12 +313,12 @@ Here's a list of some important keybinds you need to know for operating Qtile ea
 | <kbd>super</kbd> | Open application launcher |
 | <kbd>alt + F1</kbd> | Open application launcher |
 | <kbd>alt + F2</kbd> | Open command runner |
-| <kbd>super + n</kbd> | Open network manager applet |
-| <kbd>super + m</kbd> | Open music applet |
-| <kbd>super + x</kbd> | Open powermenu applet |
-| <kbd>super + s</kbd> | Open screenshots applet |
-| <kbd>super + r</kbd> | Open apps as root applet |
-| <kbd>super + t</kbd> | Open theme applet **`only in premium`** |
+| <kbd>super + N</kbd> | Open network manager applet |
+| <kbd>super + M</kbd> | Open music applet |
+| <kbd>super + X</kbd> | Open powermenu applet |
+| <kbd>super + S</kbd> | Open screenshots applet |
+| <kbd>super + R</kbd> | Open apps as root applet |
+| <kbd>super + T</kbd> | Open theme applet **`only in premium`** |
 
 ### Hardware Keys
 
@@ -388,7 +388,7 @@ Here's a list of some important keybinds you need to know for operating Qtile ea
 
 ### Desktop
 
-Here's few screenshots of `Qtile` desktop. These'll give you an idea of the experience of qtile in Archcraft. 
+Here's few screenshots of `Qtile` desktop. These'll give you an idea of the experience of Qtile in Archcraft. 
 
 |Desktop 1|Desktop 2|Desktop 3|Desktop 4|
 |---|---|---|---|
@@ -412,7 +412,7 @@ Here's few screenshots of `Qtile` desktop. These'll give you an idea of the expe
 
 <TabItem value="wm_1" label="Regular" default>
 
-There's only one theme available on regular qtile.
+There's only one theme available on regular Qtile.
 
 ![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/qtile/themes/theme_1.png)
 
@@ -420,7 +420,7 @@ There's only one theme available on regular qtile.
 
 <TabItem value="wm_2" label="Premium" default>
 
-There are **26 styles** (plus infinite auto-generated themes with `pywal`) available for qtile premium. <br/>
+There are **26 styles** (plus infinite auto-generated themes with `pywal`) available for Qtile premium. <br/>
 To Change the theme/style, Press `SUPER + T` and select the theme/style from the applet.
 
 |Theme 1|Theme 2|Theme 3|Theme 4|Theme 5|
@@ -447,7 +447,7 @@ To Change the theme/style, Press `SUPER + T` and select the theme/style from the
 
 <TabItem value="wm_3" label="Random" default>
 
-Auto Generated themes with `pywal`. This feature is only available in qtile premium. <br/>
+Auto Generated themes with `pywal`. This feature is only available in Qtile premium. <br/>
 Press `SUPER + T` and select **Random** to apply a random theme.
 
 ![gif](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/qtile/random/random.gif)
@@ -467,7 +467,7 @@ When a new version of Archcraft Qtile get released, And you update the system by
 
 To use new configs, backup your old `~/.config/qtile` directory and move `~/.config/qtile_pacnew_YYYY-MM-DD` to `~/.config/qtile` and login again.
 
-> For `Qtile premium`, download the updated package from ko-fi (for free) and just install it to update to new configs.
+> For `Qtile Premium`, download the updated package from ko-fi (for free) and just install it to update to new configs.
 
 </details>
 
@@ -475,7 +475,7 @@ To use new configs, backup your old `~/.config/qtile` directory and move `~/.con
 <summary><b>How to change GTK theme, icons and cursor?</b></summary>
 
 To change GTK theme, icons and cursor in Qtile session, Edit `~/.config/qtile/xsettingsd` file and restart Qtile to apply the changes.
-```ini
+```bash
 Net/ThemeName "Arc-Dark"
 Net/IconThemeName "Zafiro"
 Gtk/CursorThemeName "Qogirr"

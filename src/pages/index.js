@@ -19,9 +19,14 @@ function HomepageHeader() {
         <p className="hero__subtitle"><Translate>Yet another minimal Linux distribution, based on Arch Linux.</Translate></p>
         <div className={styles.buttons}>
           <Link
-            className="button button--secondary button--lg	"
+            className="button button--lg"
             to="/docs/intro">
             <Translate>Get Started</Translate>
+          </Link>
+          <Link
+            className="button button--dl button--lg"
+            to="https://archcraft.io/download#second">
+            <Translate>Download</Translate>
           </Link>
         </div>
       </div>

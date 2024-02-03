@@ -33,7 +33,7 @@ Bite-sized window manager written in C. It is controlled via a command-line clie
 
 ## Installation
 
-Once you finish installing Archcraft, **berry** can be installed on the top of it. It's pre-configured and ready to go. Open a terminal and run the following command to install berry :
+Once you finish installing Archcraft, **Berry** can be installed on the top of it. It's pre-configured and ready to go. Open a terminal and run the following command to install Berry :
 ```bash
 $ sudo pacman -Sy archcraft-berry
 ```
@@ -42,11 +42,11 @@ $ sudo pacman -Sy archcraft-berry
 
 ## Configuration
 
-berry is pre-configured in Archcraft. In this section, We'll see how the berry window manager is configured, what tools and utilities are used to make it look and work like a complete desktop environment.
+Berry is pre-configured in Archcraft. In this section, We'll see how the Berry window manager is configured, what tools and utilities are used to make it look and work like a complete desktop environment.
 
 ### Config Structure
 
-The configuration structure of berry in Archcraft looks something like this:
+The configuration structure of Berry in Archcraft looks something like this:
 
 ```
 ~/.config
@@ -63,7 +63,7 @@ The configuration structure of berry in Archcraft looks something like this:
 
 ### Terminal
 
-**Alacritty** is the default terminal. In the berry window manager, alacritty is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `~/.config/berry/alacritty` directory. These are the following config files you can modify to change the behaviour of your terminal:
+**Alacritty** is the default terminal. In the Berry window manager, alacritty is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `~/.config/berry/alacritty` directory. These are the following config files you can modify to change the behaviour of your terminal:
 
 **`~/.config/berry/alacritty/alacritty.toml`** : Main configuration file <br/>
 **`~/.config/berry/alacritty/colors.toml`** : Colors configurations <br/>
@@ -73,13 +73,13 @@ The configuration structure of berry in Archcraft looks something like this:
 
 ### Notification
 
-**Dunst** is used as a notification daemon for notifications in berry. In the berry window manager, dunst is launched with an alternative config file, which is `~/.config/berry/dunstrc`. So, If you need to modify anything, make sure you edit this file.
+**Dunst** is used as a notification daemon for notifications in Berry. In the Berry window manager, dunst is launched with an alternative config file, which is `~/.config/berry/dunstrc`. So, If you need to modify anything, make sure you edit this file.
 
 > If you need any help with dunst config, run : `man 5 dunst` in terminal.
 
 ### Wallpaper
 
-**hsetroot** sets the wallpaper in the berry. If you want to change the wallpaper, Edit `~/.config/berry/scripts/berry_autostart` script and add the path to your wallpaper :
+**hsetroot** sets the wallpaper in the Berry. If you want to change the wallpaper, Edit `~/.config/berry/scripts/berry_autostart` script and add the path to your wallpaper :
 ```bash
 # Restore wallpaper
 hsetroot -cover '/path/to/your/wallpaper'
@@ -87,9 +87,9 @@ hsetroot -cover '/path/to/your/wallpaper'
 
 ### Statusbar
 
-**Polybar** is used as the statusbar in Archcraft's berry window manager.
+**Polybar** is used as the statusbar in Archcraft's Berry window manager.
 
-The configurations for polybar can be found inside the _theme_ directory directory of berry `~/.config/berry/theme`
+The configurations for polybar can be found inside the _theme_ directory directory of Berry `~/.config/berry/theme`
 
 If you want to modify the **polybar** settings, or perhaps want to add/remove modules, then you need to edit the following files :
 
@@ -105,7 +105,7 @@ If you want to modify the **polybar** settings, or perhaps want to add/remove mo
 
 > If you need any help with rofi config, run : `man rofi` in terminal.
 
-The scripts for rofi that are used in berry can be found it `~/.config/berry/scripts` directory. These are the following scripts that uses rofi to provide the launchers and applets in berry :
+The scripts for rofi that are used in Berry can be found it `~/.config/berry/scripts` directory. These are the following scripts that uses rofi to provide the launchers and applets in Berry :
 
 **`rofi_askpass`** : rofi based `sudo` frontend to get root password <br/>
 **`rofi_asroot`** : applet to open apps as root <br/>
@@ -119,7 +119,7 @@ The scripts for rofi that are used in berry can be found it `~/.config/berry/scr
 
 If you want to modify any applet or perhaps want to extend the functionality of the applet, just edit these scripts above.
 
-The configuration of each script can be found inside the _theme_ directory of berry `~/.config/berry/theme`
+The configuration of each script can be found inside the _theme_ directory of Berry `~/.config/berry/theme`
 
 Let's say you want to modify the looks of **launcher**, then you need to edit the `~/.config/berry/theme/rofi/launcher.rasi` file. Same goes for every other applet, Edit the respective file in the same directory.
 
@@ -129,7 +129,7 @@ To change the colors and fonts of the launchers and applets, Edit the `~/.config
 
 ### Compositor
 
-**Picom** is used for compositing. It's a lightweight compositor with shadowing, advanced blurring and fading. In berry, picom is launched with an alternative config file, which is `~/.config/berry/picom.conf`. 
+**Picom** is used for compositing. It's a lightweight compositor with shadowing, advanced blurring and fading. In Berry, picom is launched with an alternative config file, which is `~/.config/berry/picom.conf`. 
 
 If you need to change anything related to picom, Edit this picom config file.
 
@@ -144,10 +144,10 @@ If you're facing lagging, hangs and freezes, try switching between `xrender` and
 
 ### Window Manager
 
-The configuration of berry is available in `~/.config/berry`. To configure berry window manager, these are the files that are used :
+The configuration of Berry is available in `~/.config/berry`. To configure Berry window manager, these are the files that are used :
 
-**`autostart`** : main configuration file responsible for determining the behaviour and settings of the overall session. Edit this file to configure berry's appearance. <br/>
-**`sxhkdrc`** : berry does not handle any keyboard input and instead provides the `berryc` program as its interface. So, For keyboard shortcuts, a hotkey daemon `sxhkd` is used. Edit this file to add/remove keybindings.
+**`autostart`** : main configuration file responsible for determining the behaviour and settings of the overall session. Edit this file to configure Berry's appearance. <br/>
+**`sxhkdrc`** : Berry does not handle any keyboard input and instead provides the `berryc` program as its interface. So, For keyboard shortcuts, a hotkey daemon `sxhkd` is used. Edit this file to add/remove keybindings.
 
 > If you need any help with berry configuration, visit : [berrywm.org](https://berrywm.org/) <br/>
 > If you need any help with sxhkd configuration, run : `man sxhkd` in terminal.
@@ -156,7 +156,7 @@ The configuration of berry is available in `~/.config/berry`. To configure berry
 
 ## Keybindings
 
-Here's a list of some important keybinds you need to know for operating berry easily. If you want to view, modify or add new keybinds, Edit `~/.config/berry/sxhkdrc` file.
+Here's a list of some important keybinds you need to know for operating Berry easily. If you want to view, modify or add new keybinds, Edit `~/.config/berry/sxhkdrc` file.
 
 ### Applications
 
@@ -242,7 +242,7 @@ Here's a list of some important keybinds you need to know for operating berry ea
 
 ## Screenshots
 
-Here's few screenshots of `berry` desktop. These'll give you an idea of the experience of berry in Archcraft. 
+Here's few screenshots of `Berry` desktop. These'll give you an idea of the experience of Berry in Archcraft. 
 
 |Desktop 1|Desktop 2|Desktop 3|Desktop 4|
 |---|---|---|---|
@@ -263,7 +263,7 @@ Here's few screenshots of `berry` desktop. These'll give you an idea of the expe
 <details>
 <summary><b>How to update my config to new configs?</b></summary>
 
-When a new version of Archcraft berry get released, And you update the system by `sudo pacman -Syu` or you update the berry package by `sudo pacman -S archcraft-berry`, New config files get installed as **berry_pacnew_YYYY-MM-DD** in your `~/.config` directory.
+When a new version of Archcraft Berry get released, And you update the system by `sudo pacman -Syu` or you update the Berry package by `sudo pacman -S archcraft-berry`, New config files get installed as **berry_pacnew_YYYY-MM-DD** in your `~/.config` directory.
 
 To use new configs, backup your old `~/.config/berry` directory and move `~/.config/berry_pacnew_YYYY-MM-DD` to `~/.config/berry` and login again.
 
@@ -272,8 +272,8 @@ To use new configs, backup your old `~/.config/berry` directory and move `~/.con
 <details>
 <summary><b>How to change GTK theme, icons and cursor?</b></summary>
 
-To change GTK theme, icons and cursor in berry session, Edit `~/.config/berry/xsettingsd` file and restart berry to apply the changes.
-```ini
+To change GTK theme, icons and cursor in Berry session, Edit `~/.config/berry/xsettingsd` file and restart Berry to apply the changes.
+```bash
 Net/ThemeName "Catppuccin-Mocha"
 Net/IconThemeName "Luv-Folders-Dark"
 Gtk/CursorThemeName "Sweet"
@@ -282,9 +282,9 @@ Gtk/CursorThemeName "Sweet"
 </details>
 
 <details>
-<summary><b>How to manage multiple monitors and resolution in berry?</b></summary>
+<summary><b>How to manage multiple monitors and resolution in Berry?</b></summary>
 
-If you use multiple monitors with berry window manager, you can manage them by running _Manager Monitors_ or `archcraft-randr` app.
+If you use multiple monitors with Berry window manager, you can manage them by running _Manager Monitors_ or `archcraft-randr` app.
 
 </details>
 

@@ -73,7 +73,7 @@ $ sudo pacman -U archcraft-openbox-premium-X.Y-Z-any.pkg.tar.zst
 
 ## Configuration
 
-Openbox is pre-configured in Archcraft. In this section, We'll see how the openbox window manager is configured, what tools and utilities are used to make it look and work like a complete desktop environment.
+Openbox is pre-configured in Archcraft. In this section, We'll see how the Openbox window manager is configured, what tools and utilities are used to make it look and work like a complete desktop environment.
 
 ### Config Structure
 
@@ -103,7 +103,7 @@ The configuration structure of Openbox WM in Archcraft looks something like this
 
 ### Terminal
 
-**Alacritty** is the default terminal. In the openbox window manager, alacritty is launched with its default config file. If you need to change anything, make sure you modify the config files in `~/.config/alacritty` directory. These are the following config files you can modify to change the behaviour of your terminal:
+**Alacritty** is the default terminal. In the Openbox window manager, alacritty is launched with its default config file. If you need to change anything, make sure you modify the config files in `~/.config/alacritty` directory. These are the following config files you can modify to change the behaviour of your terminal:
 
 **`~/.config/alacritty/alacritty.toml`** : Main configuration file <br/>
 **`~/.config/alacritty/colors.toml`** : Colors configurations <br/>
@@ -113,7 +113,7 @@ The configuration structure of Openbox WM in Archcraft looks something like this
 
 :::tip
 
-XFCE Terminal is also installed as an alternate terminal in openbox. If alacritty doesn't work for you (see the reasons in [faqs](/docs/window-managers/stacking-wm/openbox#faqs)), use this one.
+XFCE Terminal is also installed as an alternate terminal in Openbox. If alacritty doesn't work for you (see the reasons in [FAQs](/docs/window-managers/stacking-wm/openbox#faqs)), use this one.
 
 :::
 
@@ -129,7 +129,7 @@ When you change the fonts via the openbox menu `Preferences > Change Font > Term
 
 ### Notification
 
-**Dunst** is used as a notification daemon for notifications in openbox. In the openbox window manager, dunst is launched with its default config file, which is `~/.config/dunst/dunstrc`. So, If you need to modify anything, make sure you edit this file.
+**Dunst** is used as a notification daemon for notifications in Openbox. In the Openbox window manager, dunst is launched with its default config file, which is `~/.config/dunst/dunstrc`. So, If you need to modify anything, make sure you edit this file.
 
 > If you need any help with dunst config, run : `man 5 dunst` in terminal.
 
@@ -143,13 +143,13 @@ When you change the fonts via the openbox menu `Preferences > Change Font > Noti
 
 ### Wallpaper
 
-**Nitrogen** sets the wallpaper in the openbox. If you want to change the wallpaper, just use Nitrogen application or you can go to openbox menu `Preferences > Change Wallpaper`
+**Nitrogen** sets the wallpaper in the Openbox. If you want to change the wallpaper, just use Nitrogen application or you can go to openbox menu `Preferences > Change Wallpaper`
 
 ### Statusbar
 
-There are two statusbar available in Archcraft's openbox window manager, **Polybar** and **Tint2**. To switch between them, Use openbox menu `Preferences > Panel / Bar`.
+There are two statusbar available in Archcraft's Openbox window manager, **Polybar** and **Tint2**. To switch between them, Use openbox menu `Preferences > Panel / Bar`.
 
-The configurations for both polybar and tint2 can be found inside the _currently applied theme's directory_, which is inside the _themes_ directory of openbox `~/.config/openbox/themes`
+The configurations for both polybar and tint2 can be found inside the _currently applied theme's directory_, which is inside the _themes_ directory of Openbox `~/.config/openbox/themes`
 
 Let's say that the currently applied theme is `default` and you want to modify the **polybar** settings, or perhaps want to add/remove modules, then you need to edit the following files :
 
@@ -177,7 +177,7 @@ When you change the fonts via the openbox menu `Preferences > Change Font > Stat
 
 > If you need any help with rofi config, run : `man rofi` in terminal.
 
-The scripts for rofi that are used in openbox can be found it `~/.config/openbox/scripts` directory. These are the following scripts that uses rofi to provide the launchers and applets in openbox :
+The scripts for rofi that are used in Openbox can be found it `~/.config/openbox/scripts` directory. These are the following scripts that uses rofi to provide the launchers and applets in Openbox :
 
 **`rofi-askpass`** : rofi based `sudo` frontend to get root password <br/>
 **`rofi-bluetooth`** : bluetooth applet to quickly connect to BT devices <br/>
@@ -189,7 +189,7 @@ The scripts for rofi that are used in openbox can be found it `~/.config/openbox
 
 If you want to modify any applet or perhaps want to extend the functionality of the applet, just edit these scripts.
 
-The configuration of each script can be found inside the _currenty applied theme's directory_, which is inside the themes directory of openbox `~/.config/openbox/themes`
+The configuration of each script can be found inside the _currenty applied theme's directory_, which is inside the themes directory of Openbox `~/.config/openbox/themes`
 
 Let's say that the currently applied theme is `default` and you want to modify the looks of **launcher**, then you need to edit the `~/.config/openbox/themes/default/rofi/launcher.rasi` file. Same goes for every other applet, Edit the respective file in the same directory.
 
@@ -207,11 +207,11 @@ When you change the fonts via the openbox menu `Preferences > Change Font > Laun
 
 ### Compositor
 
-**Picom** is used for compositing. It's a lightweight compositor with shadowing, advanced blurring and fading. In openbox, picom is launched with its default config file, which is `~/.config/picom.conf`. 
+**Picom** is used for compositing. It's a lightweight compositor with shadowing, advanced blurring and fading. In Openbox, picom is launched with its default config file, which is `~/.config/picom.conf`. 
 
 If you need to change anything related to picom, you have two methods:
 - Edit the picom config file directly.
-- Use the Openbox menu `Preferences > Compositor`
+- Use the openbox menu `Preferences > Compositor`
 
 > If you need any help with picom config, check the picom's default config file in `/etc/xdg/picom.conf`
 
@@ -230,7 +230,7 @@ When you change the `theme`, things like _backend_, _shadows_, _blurring_ in **p
 
 ### Window Manager
 
-The configuration of openbox is available in `~/.config/openbox`. To configure openbox window manager, these are the files that are used :
+The configuration of Openbox is available in `~/.config/openbox`. To configure Openbox window manager, these are the files that are used :
 
 #### Openbox specific config files
 **`autostart`** : provides autostart mechanism. Edit this file to run your apps on startup. <br/>
@@ -255,7 +255,7 @@ When you change the `theme`, things like _theme_, _fonts_, _button layout_, _pad
 
 ## Keybindings
 
-Here's a list of some important keybinds you need to know for operating openbox easily in Archcraft. To see all the keybinds, _Right click on the desktop and go to Keybinds_. If you want to modify or add new keybinds, Edit `~/.config/openbox/rc.xml` file.
+Here's a list of some important keybinds you need to know for operating Openbox easily in Archcraft. To see all the keybinds, _Right click on the desktop and go to Keybinds_. If you want to modify or add new keybinds, Edit `~/.config/openbox/rc.xml` file.
 
 ### Applications
 
@@ -273,12 +273,12 @@ Here's a list of some important keybinds you need to know for operating openbox 
 | --- | --- |
 | <kbd>alt + F1</kbd> | Open application launcher |
 | <kbd>super</kbd> | Open application launcher |
-| <kbd>super + n</kbd> | Open network manager applet |
-| <kbd>super + b</kbd> | Open bluetooth applet |
-| <kbd>super + m</kbd> | Open music applet |
-| <kbd>super + x</kbd> | Open powermenu applet |
-| <kbd>super + s</kbd> | Open screenshots applet |
-| <kbd>super + r</kbd> | Open command runner |
+| <kbd>super + N</kbd> | Open network manager applet |
+| <kbd>super + B</kbd> | Open bluetooth applet |
+| <kbd>super + M</kbd> | Open music applet |
+| <kbd>super + X</kbd> | Open powermenu applet |
+| <kbd>super + S</kbd> | Open screenshots applet |
+| <kbd>super + R</kbd> | Open command runner |
 | <kbd>super + Space</kbd> | Open root menu |
 | <kbd>alt + Space</kbd> | Open client menu |
 | <kbd>alt + shift + Space</kbd> | Open client list combined menu |
@@ -325,9 +325,9 @@ Here's a list of some important keybinds you need to know for operating openbox 
 | <kbd>super + Left/Right</kbd> | Move window to the left/right edge of the screen |
 | <kbd>super + Up/Down</kbd> | Maximize/Center window respectively |
 | <kbd>super + shift + Up/Down</kbd> | Move window to the up/down edge of the screen |
-| <kbd>super + h/j/k/l</kbd> | Move window to TopLeft/BottomLeft/TopRight/BottomRight |
-| <kbd>super + shift + h/j/k/l</kbd> | Tile window to TopLeft/BottomLeft/TopRight/BottomRight |
-| <kbd>super + c/q</kbd> | Close application |
+| <kbd>super + H/J/K/L</kbd> | Move window to TopLeft/BottomLeft/TopRight/BottomRight |
+| <kbd>super + shift + H/J/K/L</kbd> | Tile window to TopLeft/BottomLeft/TopRight/BottomRight |
+| <kbd>super + C/Q</kbd> | Close application |
 | <kbd>alt + F4</kbd> | Close application |
 | <kbd>alt + F5</kbd> | Iconify/Minimize current application |
 | <kbd>alt + F6</kbd> | Toggle maximize |
@@ -365,7 +365,7 @@ Here's a list of some important keybinds you need to know for operating openbox 
 
 ### Desktop
 
-Here's few screenshots of `Openbox` desktop. These'll give you an idea of the experience of openbox in Archcraft. 
+Here's few screenshots of `Openbox` desktop. These'll give you an idea of the experience of Openbox in Archcraft. 
 
 |Desktop 1|Desktop 2|Desktop 3|Desktop 4|Desktop 5|Desktop 6|
 |---|---|---|---|---|---|
@@ -383,7 +383,7 @@ To Change the theme/style, Right click on the desktop and go to `Preferences > C
 
 <TabItem value="wm_1" label="Regular" default>
 
-There are **10 styles** available in regular openbox.
+There are **10 styles** available in regular Openbox.
 
 |Theme 1|Theme 2|Theme 3|Theme 4|Theme 5|
 |---|---|---|---|---|
@@ -439,7 +439,7 @@ Go to `Preferences > Change Style > Current` and click on **✤ Change Colors** 
 <details>
 <summary><b>How to update my config to new configs?</b></summary>
 
-When a new version of Archcraft Openbox get released, And you update the system by `sudo pacman -Syu` or you update the openbox package by `sudo pacman -S archcraft-openbox`, New config files get installed as **openbox_pacnew_YYYY-MM-DD** in your `~/.config` directory.
+When a new version of Archcraft Openbox get released, And you update the system by `sudo pacman -Syu` or you update the Openbox package by `sudo pacman -S archcraft-openbox`, New config files get installed as **openbox_pacnew_YYYY-MM-DD** in your `~/.config` directory.
 
 To use new configs, backup your old `~/.config/openbox` directory and move `~/.config/openbox_pacnew_YYYY-MM-DD` to `~/.config/openbox` and login again.
 
@@ -464,7 +464,7 @@ To change desktop theme, Go to openbox menu `Preferences > Change Style` and sel
 <details>
 <summary><b>How to change GTK theme, icons and cursor?</b></summary>
 
-To change GTK theme, icons and fonts in openbox session, use `xfce4-appearance-settings` application. <br/>
+To change GTK theme, icons and fonts in Openbox session, use `xfce4-appearance-settings` application. <br/>
 You can open this app either via openbox menu `Preferences > Appearance Settings` or type _Appearance_ in app launcher.
 
 To change the openbox theme, use `obconf` app. <br/>
@@ -473,9 +473,9 @@ You can open this app either via openbox menu `Preferences > Openbox > Settings`
 </details>
 
 <details>
-<summary><b>How to manage multiple monitors and resolution in openbox?</b></summary>
+<summary><b>How to manage multiple monitors and resolution in Openbox?</b></summary>
 
-If you use multiple monitors with openbox window manager, you can manage them via two methods :
+If you use multiple monitors with Openbox window manager, you can manage them via two methods :
 
 1. Run `launcher` and type either _Manager Monitors_ or _archcraft-randr_ and use the app.
 2. Go to openbox menu `Preferences > Display / Monitor` and use the menu.

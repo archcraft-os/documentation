@@ -39,7 +39,7 @@ Get River From [**`ko-fi`**](https://ko-fi.com/s/69957c0587) And Support Archcra
 
 ## Installation
 
-Follow the instructions below to install river :
+Follow the instructions below to install River :
 
 - Download **river.tar.gz** file from [ko-fi](https://ko-fi.com/s/69957c0587), and save it in a directory.
 - Open a terminal in same directory and run the following command to extract the tar file :
@@ -89,26 +89,26 @@ $ cp -r ./dotfiles/* ~/.config/river/
 
 ## Configuration
 
-River is pre-configured in Archcraft. In this section, We'll see how the river wayland compositor is configured, what tools and utilities are used to make it look and work like a complete desktop environment.
+River is pre-configured in Archcraft. In this section, We'll see how the River wayland compositor is configured, what tools and utilities are used to make it look and work like a complete desktop environment.
 
 ### Config Structure
 
-The configuration structure of river in Archcraft looks something like this:
+The configuration structure of River in Archcraft looks something like this:
 
 ```
 ~/.config
-└── river             : River config directory
-    ├── alacritty     : Alacritty Terminal config
-    ├── foot          : Foot Terminal config
-    ├── mako          : Notification daemon config
-    │   └── icons     : Notification icons
-    ├── rofi          : Rofi config files
-    ├── scripts       : Various scripts for functionality
-    ├── theme         : Current Theme and Pywal Themes
-    ├── wallpapers    : Wallpapers
-    ├── waybar        : Statusbar config
-    ├── wofi          : Launcher, Powermenu config
-    └── init          : River init file (main config)
+└── river             : river config directory
+    ├── alacritty     : alacritty terminal config
+    ├── foot          : foot terminal config
+    ├── mako          : notification daemon config
+    │   └── icons     : notification icons
+    ├── rofi          : rofi config files
+    ├── scripts       : various scripts for functionality
+    ├── theme         : current theme and pywal themes
+    ├── wallpapers    : wallpapers
+    ├── waybar        : statusbar config
+    ├── wofi          : launcher, Powermenu config
+    └── init          : river init file (main config)
 ```
 
 ### Terminal
@@ -117,7 +117,7 @@ The configuration structure of river in Archcraft looks something like this:
 
 <TabItem value="wc_1" label="Default" default>
 
-**Alacritty** is the default terminal. In the river wayland compositor, alacritty is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `~/.config/river/alacritty` directory. These are the following config files you can modify to change the behaviour of your alacritty terminal:
+**Alacritty** is the default terminal. In the River wayland compositor, alacritty is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `~/.config/river/alacritty` directory. These are the following config files you can modify to change the behaviour of your alacritty terminal:
 
 **`~/.config/river/alacritty/alacritty.toml`** : Main configuration file <br/>
 **`~/.config/river/alacritty/colors.toml`** : Colors configurations <br/>
@@ -129,7 +129,7 @@ The configuration structure of river in Archcraft looks something like this:
 
 <TabItem value="wc_2" label="Alternate" default>
 
-**Foot** is the secondary/alternate terminal. In the river wayland compositor, foot is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `~/.config/river/foot` directory. These are the following config files you can modify to change the behaviour of your foot terminal:
+**Foot** is the secondary/alternate terminal. In the River wayland compositor, foot is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `~/.config/river/foot` directory. These are the following config files you can modify to change the behaviour of your foot terminal:
 
 **`~/.config/river/foot/foot.ini`** : Main configuration file <br/>
 **`~/.config/river/foot/colors.ini`** : Colors configurations <br/>
@@ -155,7 +155,7 @@ When you change the `theme`, the **colors.toml** file of alacritty and **colors.
 
 ### Notification
 
-**Mako** is used as a notification daemon for notifications in river. In the river wayland compositor, mako is launched with an alternative config file, which is `~/.config/river/mako/config`. So, If you need to modify anything, make sure you edit this file.
+**Mako** is used as a notification daemon for notifications in River. In the River wayland compositor, mako is launched with an alternative config file, which is `~/.config/river/mako/config`. So, If you need to modify anything, make sure you edit this file.
 
 > If you need any help with mako config, run : `man 5 mako` in terminal.
 
@@ -167,7 +167,7 @@ When you change the `theme`, the colors in **config** file get overwritten by th
 
 ### Wallpaper
 
-**swaybg** sets the wallpaper in the river. If you want to change the wallpaper, Edit `~/.config/river/scripts/wallpaper` script and add your wallpaper here :
+**swaybg** sets the wallpaper in the River. If you want to change the wallpaper, Edit `~/.config/river/scripts/wallpaper` script and add your wallpaper here :
 ```bash
 WALLPAPER='/path/to/your/wallpaper'
 ```
@@ -179,7 +179,7 @@ When you change the `theme`, the wallpaper path in `wallpaper` script get overwr
 
 ### Statusbar
 
-**Waybar** is used as the statusbar in Archcraft's river wayland compositor.
+**Waybar** is used as the statusbar in Archcraft's River wayland compositor.
 
 The configurations for waybar can be found inside `~/.config/river/waybar`. If you want to modify the **waybar** settings, or perhaps want to add/remove modules, then you need to edit the following files :
 
@@ -206,7 +206,7 @@ When you change the `theme`, the **colors.css** file of waybar get overwritten b
 
 > If you need any help with rofi config, run : `man rofi` in terminal.
 
-The scripts for rofi that are used in river can be found it `~/.config/river/scripts` directory. These are the following scripts that uses rofi to provide the launchers and applets in river :
+The scripts for rofi that are used in River can be found it `~/.config/river/scripts` directory. These are the following scripts that uses rofi to provide the launchers and applets in River :
 
 **`rofi_bluetooth`** : bluetooth applet to quickly connect to BT devices <br/>
 **`rofi_launcher`** : an application launcher, cmd runner, file manager and task manager  <br/>
@@ -234,7 +234,7 @@ Alternatively, **Wofi** is used for application launcher and powermenu.
 
 > If you need any help with wofi config, run : `man 5 wofi` in terminal.
 
-The scripts for wofi that are used in river can be found it `~/.config/river/scripts` directory. These are the following scripts that uses wofi to provide the launchers and powermenu applets in river :
+The scripts for wofi that are used in River can be found it `~/.config/river/scripts` directory. These are the following scripts that uses wofi to provide the launchers and powermenu applets in River :
 
 **`wofi_menu`** : application launcher  <br/>
 **`wofi_powermenu`** : power menu, with confirmation dialog
@@ -263,7 +263,7 @@ When you change the `theme`, the **shared/colors.rasi** file of rofi and **style
 
 ### wayland compositor
 
-The main configuration file of river is `~/.config/river/init`. Edit this file for everything, from startup programs to input/output config to keybindings, etc.
+The main configuration file of River is `~/.config/river/init`. Edit this file for everything, from startup programs to input/output config to keybindings, etc.
 
 > If you need any help with river configuration, visit : [River Wiki](https://github.com/riverwm/river/wiki)
 
@@ -277,7 +277,7 @@ When you change the `theme`, colors in **init** file gets overwritten by the the
 
 ## Keybindings
 
-Here's a list of some important keybinds you need to know for operating river easily. If you want to view, modify or add new keybinds, Edit `~/.config/river/init` file.
+Here's a list of some important keybinds you need to know for operating River easily. If you want to view, modify or add new keybinds, Edit `~/.config/river/init` file.
 
 ### Applications
 
@@ -386,7 +386,7 @@ More Information: [NVIDIA#Installation](https://wiki.archlinux.org/title/NVIDIA#
 
 ### Desktop
 
-Here's few screenshots of `River` desktop. These'll give you an idea of the experience of river in Archcraft. 
+Here's few screenshots of `River` desktop. These'll give you an idea of the experience of River in Archcraft. 
 
 |Desktop 1|Desktop 2|Desktop 3|Desktop 4|
 |---|---|---|---|
@@ -412,7 +412,7 @@ To Change the theme, Click on `Color Palette` icon on waybar. To apply a random 
 
 <TabItem value="wc_1" label="Default Theme" default>
 
-There's only one theme available for river.
+There's only one theme available for River.
 
 ![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/river/main.png)
 
@@ -459,7 +459,7 @@ $ export WLR_NO_HARDWARE_CURSORS=1
 <details>
 <summary><b>How to change GTK theme, icons and cursor?</b></summary>
 
-To change GTK theme, icons and cursor in river session, Edit `~/.config/river/init` file and restart river to apply the changes.
+To change GTK theme, icons and cursor in River session, Edit `~/.config/river/init` file and restart River to apply the changes.
 ```lua
 local gsettings = {
   ['org.gnome.desktop.interface'] = {
@@ -475,9 +475,9 @@ local gsettings = {
 </details>
 
 <details>
-<summary><b>How to manage multiple monitors and resolution in river?</b></summary>
+<summary><b>How to manage multiple monitors and resolution in River?</b></summary>
 
-If you use multiple monitors with river wayland compositor, you can manage them as follow:
+If you use multiple monitors with River wayland compositor, you can manage them as follow:
 
 1. You can get the names of your outputs with `wlr-randr`
 2. Edit `~/.config/river/init` file and use the information you get by the command above:

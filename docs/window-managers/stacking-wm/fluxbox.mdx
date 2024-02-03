@@ -33,7 +33,7 @@ Fluxbox is a window manager for X11. It is based on the fluxbox 0.61.1 code, but
 
 ## Installation
 
-Once you finish installing Archcraft, **fluxbox** can be installed on the top of it. It's pre-configured and ready to go. Open a terminal and run the following command to install fluxbox :
+Once you finish installing Archcraft, **Fluxbox** can be installed on the top of it. It's pre-configured and ready to go. Open a terminal and run the following command to install Fluxbox :
 ```bash
 $ sudo pacman -Sy archcraft-fluxbox
 ```
@@ -42,11 +42,11 @@ $ sudo pacman -Sy archcraft-fluxbox
 
 ## Configuration
 
-fluxbox is pre-configured in Archcraft. In this section, We'll see how the fluxbox window manager is configured, what tools and utilities are used to make it look and work like a complete desktop environment.
+Fluxbox is pre-configured in Archcraft. In this section, We'll see how the Fluxbox window manager is configured, what tools and utilities are used to make it look and work like a complete desktop environment.
 
 ### Config Structure
 
-The configuration structure of fluxbox in Archcraft looks something like this:
+The configuration structure of Fluxbox in Archcraft looks something like this:
 
 ```
 ~/.fluxbox         : fluxbox config directory
@@ -68,7 +68,7 @@ The configuration structure of fluxbox in Archcraft looks something like this:
 
 ### Terminal
 
-**Alacritty** is the default terminal. In the fluxbox window manager, alacritty is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `~/.fluxbox/alacritty` directory. These are the following config files you can modify to change the behaviour of your terminal:
+**Alacritty** is the default terminal. In the Fluxbox window manager, alacritty is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `~/.fluxbox/alacritty` directory. These are the following config files you can modify to change the behaviour of your terminal:
 
 **`~/.fluxbox/alacritty/alacritty.toml`** : Main configuration file <br/>
 **`~/.fluxbox/alacritty/colors.toml`** : Colors configurations <br/>
@@ -78,13 +78,13 @@ The configuration structure of fluxbox in Archcraft looks something like this:
 
 ### Notification
 
-**Dunst** is used as a notification daemon for notifications in fluxbox. In the fluxbox window manager, dunst is launched with an alternative config file, which is `~/.fluxbox/dunstrc`. So, If you need to modify anything, make sure you edit this file.
+**Dunst** is used as a notification daemon for notifications in Fluxbox. In the Fluxbox window manager, dunst is launched with an alternative config file, which is `~/.fluxbox/dunstrc`. So, If you need to modify anything, make sure you edit this file.
 
 > If you need any help with dunst config, run : `man 5 dunst` in terminal.
 
 ### Wallpaper
 
-**hsetroot** sets the wallpaper in the fluxbox. If you want to change the wallpaper, Edit `~/.fluxbox/startup` script and add the path to your wallpaper :
+**hsetroot** sets the wallpaper in the Fluxbox. If you want to change the wallpaper, Edit `~/.fluxbox/startup` script and add the path to your wallpaper :
 ```bash
 # Restore wallpaper
 hsetroot -cover '/path/to/your/wallpaper'
@@ -94,9 +94,9 @@ hsetroot -cover '/path/to/your/wallpaper'
 
 ### Statusbar
 
-**Polybar** is used as the statusbar in Archcraft's fluxbox window manager.
+**Polybar** is used as the statusbar in Archcraft's Fluxbox window manager.
 
-The configurations for polybar can be found inside the _theme_ directory directory of fluxbox `~/.fluxbox/theme`
+The configurations for polybar can be found inside the _theme_ directory directory of Fluxbox `~/.fluxbox/theme`
 
 If you want to modify the **polybar** settings, or perhaps want to add/remove modules, then you need to edit the following files :
 
@@ -108,8 +108,8 @@ If you want to modify the **polybar** settings, or perhaps want to add/remove mo
 
 :::tip
 
-If you want to use the default fluxbox toolbar instead of polybar, Edit `~/.fluxbox/init` file and enable it.
-```
+If you want to use the default Fluxbox toolbar instead of polybar, Edit `~/.fluxbox/init` file and enable it.
+```ini
 ...
 session.screen0.toolbar.visible: true
 ...
@@ -124,7 +124,7 @@ Also, edit `~/.fluxbox/startup` script and disable polybar on startup.
 
 > If you need any help with rofi config, run : `man rofi` in terminal.
 
-The scripts for rofi that are used in fluxbox can be found it `~/.fluxbox/scripts` directory. These are the following scripts that uses rofi to provide the launchers and applets in fluxbox :
+The scripts for rofi that are used in Fluxbox can be found it `~/.fluxbox/scripts` directory. These are the following scripts that uses rofi to provide the launchers and applets in Fluxbox :
 
 **`rofi_askpass`** : rofi based `sudo` frontend to get root password <br/>
 **`rofi_asroot`** : applet to open apps as root <br/>
@@ -139,7 +139,7 @@ The scripts for rofi that are used in fluxbox can be found it `~/.fluxbox/script
 
 If you want to modify any applet or perhaps want to extend the functionality of the applet, just edit these scripts above.
 
-The configuration of each script can be found inside the _theme_ directory of fluxbox `~/.fluxbox/theme`
+The configuration of each script can be found inside the _theme_ directory of Fluxbox `~/.fluxbox/theme`
 
 Let's say you want to modify the looks of **launcher**, then you need to edit the `~/.fluxbox/theme/rofi/launcher.rasi` file. Same goes for every other applet, Edit the respective file in the same directory.
 
@@ -149,7 +149,7 @@ To change the colors and fonts of the launchers and applets, Edit the `~/.fluxbo
 
 ### Compositor
 
-**Picom** is used for compositing. It's a lightweight compositor with shadowing, advanced blurring and fading. In fluxbox, picom is launched with an alternative config file, which is `~/.fluxbox/picom.conf`. 
+**Picom** is used for compositing. It's a lightweight compositor with shadowing, advanced blurring and fading. In Fluxbox, picom is launched with an alternative config file, which is `~/.fluxbox/picom.conf`. 
 
 If you need to change anything related to picom, Edit this picom config file.
 
@@ -164,7 +164,7 @@ If you're facing lagging, hangs and freezes, try switching between `xrender` and
 
 ### Window Manager
 
-The configuration of fluxbox is available in your home directory. To configure fluxbox window manager, these are the files that are used :
+The configuration of Fluxbox is available in your home directory. To configure Fluxbox window manager, these are the files that are used :
 
 **`apps`** : a configuration file for remembering the window configuration of specific apps <br/>
 **`init`** : the main fluxbox resource configuration file <br/>
@@ -179,7 +179,7 @@ The configuration of fluxbox is available in your home directory. To configure f
 
 ## Keybindings
 
-Here's a list of some important keybinds you need to know for operating fluxbox easily. If you want to view, modify or add new keybinds, Edit `~/.fluxbox/keys` file.
+Here's a list of some important keybinds you need to know for operating Fluxbox easily. If you want to view, modify or add new keybinds, Edit `~/.fluxbox/keys` file.
 
 ### Applications
 
@@ -278,7 +278,7 @@ Here's a list of some important keybinds you need to know for operating fluxbox 
 
 ## Screenshots
 
-Here's few screenshots of `fluxbox` desktop. These'll give you an idea of the experience of fluxbox in Archcraft. 
+Here's few screenshots of `Fluxbox` desktop. These'll give you an idea of the experience of Fluxbox in Archcraft. 
 
 |Desktop 1|Desktop 2|Desktop 3|Desktop 4|
 |---|---|---|---|
@@ -299,7 +299,7 @@ Here's few screenshots of `fluxbox` desktop. These'll give you an idea of the ex
 <details>
 <summary><b>How to update my config to new configs?</b></summary>
 
-When a new version of Archcraft fluxbox get released, And you update the system by `sudo pacman -Syu` or you update the fluxbox package by `sudo pacman -S archcraft-fluxbox`, New config files get installed as **~/.fluxbox_pacnew_YYYY-MM-DD** in your home directory.
+When a new version of Archcraft Fluxbox get released, And you update the system by `sudo pacman -Syu` or you update the Fluxbox package by `sudo pacman -S archcraft-fluxbox`, New config files get installed as **~/.fluxbox_pacnew_YYYY-MM-DD** in your home directory.
 
 To use new configs : 
 - backup your old `~/.fluxbox` directory 
@@ -311,8 +311,8 @@ To use new configs :
 <details>
 <summary><b>How to change GTK theme, icons and cursor?</b></summary>
 
-To change GTK theme, icons and cursor in fluxbox session, Edit `~/.fluxbox/xsettingsd` file and restart fluxbox to apply the changes.
-```ini
+To change GTK theme, icons and cursor in Fluxbox session, Edit `~/.fluxbox/xsettingsd` file and restart Fluxbox to apply the changes.
+```bash
 Net/ThemeName "Arc-Dark"
 Net/IconThemeName "Arc-Circle"
 Gtk/CursorThemeName "Qogirr"
@@ -321,9 +321,9 @@ Gtk/CursorThemeName "Qogirr"
 </details>
 
 <details>
-<summary><b>How to manage multiple monitors and resolution in fluxbox?</b></summary>
+<summary><b>How to manage multiple monitors and resolution in Fluxbox?</b></summary>
 
-If you use multiple monitors with fluxbox window manager, you can manage them by running _Manager Monitors_ or `archcraft-randr` app.
+If you use multiple monitors with Fluxbox window manager, you can manage them by running _Manager Monitors_ or `archcraft-randr` app.
 
 </details>
 
