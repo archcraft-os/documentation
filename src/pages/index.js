@@ -14,8 +14,16 @@ function HomepageHeader() {
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
+        <img className="banner__img" alt="Banner" src="https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/openbox/main.png"/>
         <h1 className="hero__title"><Translate>Archcraft</Translate></h1>
         <p className="hero__subtitle"><Translate>Yet another minimal Linux distribution, based on Arch Linux.</Translate></p>
+        <div className={styles.buttons}>
+          <Link
+            className="button button--secondary button--lg	"
+            to="/docs/intro">
+            <Translate>Get Started</Translate>
+          </Link>
+        </div>
       </div>
     </header>
   );

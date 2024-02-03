@@ -120,17 +120,17 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       colorMode: {
-        defaultMode: 'light',
+        defaultMode: 'dark',
         disableSwitch: false,
-        respectPrefersColorScheme: true,
+        //respectPrefersColorScheme: true,
       },
       // The meta image URL for the site. Relative to your site's "static" directory. Cannot be SVGs. Can be external URLs too.
       image: 'img/meta.jpg',
       announcementBar: {
         id: 'announcementBar', // Increment on change
         content: `⭐️ If you love Archcraft, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/archcraft-os/archcraft">GitHub</a>️ ⭐`,
-        backgroundColor: '#f5f6f7',
-        textColor: '#1e2128',
+        //backgroundColor: '#f5f6f7',
+        //textColor: '#1e2128',
         isCloseable: true,
       },
       // Replace with your project's social card
@@ -181,7 +181,6 @@ const config = {
           {
             href: 'https://github.com/archcraft-os',
             position: 'right',
-            label: 'Github',
             className: 'header-github-link',
             'aria-label': 'GitHub Repository',
           },
@@ -312,6 +311,29 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} Archcraft | Aditya Shakya`,
       },
       prism: {
+        additionalLanguages: [
+          'java',
+          'latex',
+          'haskell',
+          'matlab',
+          'PHp',
+          'bash',
+          'ini',
+          'diff',
+          'json',
+          'scss',
+        ],
+        magicComments: [
+          {
+            className: 'theme-code-block-highlighted-line',
+            line: 'highlight-next-line',
+            block: {start: 'highlight-start', end: 'highlight-end'},
+          },
+          {
+            className: 'code-block-error-line',
+            line: 'This will error',
+          },
+        ],
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
       },
