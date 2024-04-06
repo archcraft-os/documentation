@@ -1,0 +1,46 @@
+---
+slug: 35-news-release
+title: April 2024 Release
+authors: adi1090x
+tags: [v24.04, release, iso]
+hide_table_of_contents: true
+---
+
+<!-- Badges -->
+export const Highlight = ({children, color}) => (
+  <span
+    style={{
+      backgroundColor: color,
+      borderRadius: '4px',
+      color: '#fff',
+      padding: '0.2rem',
+    }}>
+    {children}
+  </span>
+);
+
+April 2024 ISO of Archcraft is now available to download. Read the changelogs below to know what's new.
+
+<!--truncate-->
+
+### Changelogs :
+- Updated ISO profile
+- Latest base with new packages
+- Update all Archcraft and AUR packages
+- Update all Window Manager's Configs
+- Added latest version of `calamares` installer and it's config (_fixed autologin issue_)
+- Added a new `grub` package (_fixed issue with installation on `xfs` filesystem_)
+- Added grub hooks package (_to install grub on every update_)
+- Added `archcraft-arandr` (GUI) package to manage screen layouts (_save and restore them_)
+- Fixed QT theming issue, added configs for QT6
+- Improved thunar actions functionalities
+  - open terminal according to session
+  - open as root according to session
+  - permanently sets the wallpaper in supported sessions
+- Small improvements and bugs fixed.
+
+> Run: `sudo pacman -Syyu` to update your existing installation.
+>
+> Install `archcraft-hooks-grub` after update (needed for new grub) and remove `grub-update` package.
+>
+> Install `archcraft-arandr` after update (to manage screen layouts with a GUI, save and restore your layouts)
