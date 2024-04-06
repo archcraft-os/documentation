@@ -2,11 +2,51 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wiki.archcraft.io/fr/news</id>
     <title>Archcraft Blog</title>
-    <updated>2024-01-12T00:00:00.000Z</updated>
+    <updated>2024-04-06T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wiki.archcraft.io/fr/news"/>
     <subtitle>Archcraft Blog</subtitle>
     <icon>https://wiki.archcraft.io/fr/img/favicon.svg</icon>
+    <entry>
+        <title type="html"><![CDATA[April 2024 Release]]></title>
+        <id>https://wiki.archcraft.io/fr/news/35-news-release</id>
+        <link href="https://wiki.archcraft.io/fr/news/35-news-release"/>
+        <updated>2024-04-06T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[April 2024 ISO of Archcraft is now available to download. Read the changelogs below to know what's new.]]></summary>
+        <content type="html"><![CDATA[<p>April 2024 ISO of Archcraft is now available to download. Read the changelogs below to know what's new.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="changelogs-">Changelogs :<a href="https://wiki.archcraft.io/fr/news/35-news-release#changelogs-" class="hash-link" aria-label="Lien direct vers Changelogs :" title="Lien direct vers Changelogs :">​</a></h3>
+<ul>
+<li>Updated ISO profile</li>
+<li>Latest base with new packages</li>
+<li>Update all Archcraft and AUR packages</li>
+<li>Update all Window Manager's Configs</li>
+<li>Added latest version of <code>calamares</code> installer and it's config (<em>fixed autologin issue</em>)</li>
+<li>Added a new <code>grub</code> package (<em>fixed issue with installation on <code>xfs</code> filesystem</em>)</li>
+<li>Added grub hooks package (<em>to install grub on every update</em>)</li>
+<li>Added <code>archcraft-arandr</code> (GUI) package to manage screen layouts (<em>save and restore them</em>)</li>
+<li>Fixed QT theming issue, added configs for QT6</li>
+<li>Improved thunar actions functionalities<!-- -->
+<ul>
+<li>open terminal according to session</li>
+<li>open as root according to session</li>
+<li>permanently sets the wallpaper in supported sessions</li>
+</ul>
+</li>
+<li>Small improvements and bugs fixed.</li>
+</ul>
+<blockquote>
+<p>Run: <code>sudo pacman -Syyu</code> to update your existing installation.</p>
+<p>Install <code>archcraft-hooks-grub</code> after update (needed for new grub) and remove <code>grub-update</code> package.</p>
+<p>Install <code>archcraft-arandr</code> after update (to manage screen layouts with a GUI, save and restore your layouts)</p>
+</blockquote>]]></content>
+        <author>
+            <name>Aditya Shakya</name>
+            <uri>https://github.com/adi1090x</uri>
+        </author>
+        <category label="v24.04" term="v24.04"/>
+        <category label="release" term="release"/>
+        <category label="iso" term="iso"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Archcraft LXDE Release]]></title>
         <id>https://wiki.archcraft.io/fr/news/34-news-release</id>
@@ -785,29 +825,6 @@
             <uri>https://github.com/adi1090x</uri>
         </author>
         <category label="v23.04" term="v23.04"/>
-        <category label="release" term="release"/>
-        <category label="iso" term="iso"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Archcraft LXDE Release]]></title>
-        <id>https://wiki.archcraft.io/fr/news/15-news-release</id>
-        <link href="https://wiki.archcraft.io/fr/news/15-news-release"/>
-        <updated>2023-01-22T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[New ISO of Archcraft LXDE is now available to download. Read the changelogs below to know what's new.]]></summary>
-        <content type="html"><![CDATA[<p>New ISO of Archcraft LXDE is now available to download. Read the changelogs below to know what's new.</p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="changelogs-">Changelogs :<a href="https://wiki.archcraft.io/fr/news/15-news-release#changelogs-" class="hash-link" aria-label="Lien direct vers Changelogs :" title="Lien direct vers Changelogs :">​</a></h3>
-<ul>
-<li>Updated ISO Base</li>
-<li>Created New Theming System</li>
-<li>User Can Create Their Own Themes Easily</li>
-<li>Bug Fixes, Etc.</li>
-</ul>]]></content>
-        <author>
-            <name>Aditya Shakya</name>
-            <uri>https://github.com/adi1090x</uri>
-        </author>
-        <category label="flavor" term="flavor"/>
-        <category label="lxde" term="lxde"/>
         <category label="release" term="release"/>
         <category label="iso" term="iso"/>
     </entry>
