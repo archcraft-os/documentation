@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkArchcraft_Wiki=self.webpackChunkArchcraft_Wiki||[]).push([[8292],{1404:e=>{e.exports=JSON.parse('{"permalink":"/news/tags/sway/page/2","page":2,"postsPerPage":10,"totalPages":2,"totalCount":12,"previousPage":"/news/tags/sway","blogDescription":"Blog","blogTitle":"News"}')}}]);
