@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkArchcraft_Wiki=self.webpackChunkArchcraft_Wiki||[]).push([[4030],{25038:a=>{a.exports=JSON.parse('{"label":"openbox","permalink":"/fr/blog/tags/openbox","allTagsPath":"/fr/blog/tags","count":2,"unlisted":false}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkArchcraft_Wiki=self.webpackChunkArchcraft_Wiki||[]).push([[9661],{41892:(r,e,c)=>{c.r(e),c.d(e,{default:()=>k});c(67294);var s=c(90512),a=c(10833),t=c(35281),u=c(18790),i=c(7372),h=c(85893);function k(r){return(0,h.jsx)(a.FG,{className:(0,s.Z)(t.k.wrapper.docsPages),children:(0,h.jsx)(i.Z,{children:(0,u.H)(r.route.routes)})})}}}]);

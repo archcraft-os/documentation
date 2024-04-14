@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkArchcraft_Wiki=self.webpackChunkArchcraft_Wiki||[]).push([[2162],{1640:e=>{e.exports=JSON.parse('{"permalink":"/fr/blog/tags/theme","page":1,"postsPerPage":10,"totalPages":1,"totalCount":2,"blogDescription":"Blog","blogTitle":"Tutorials"}')}}]);

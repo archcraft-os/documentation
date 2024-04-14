@@ -4,10 +4,27 @@
         <title>Archcraft Blog</title>
         <link>https://wiki.archcraft.io/news</link>
         <description>Archcraft Blog</description>
-        <lastBuildDate>Wed, 10 Apr 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 14 Apr 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Archcraft XFCE and LXDE Discontinued]]></title>
+            <link>https://wiki.archcraft.io/news/38-news-release</link>
+            <guid>https://wiki.archcraft.io/news/38-news-release</guid>
+            <pubDate>Sun, 14 Apr 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Discontinued Archcraft XFCE and Archcraft LXDE flavors are discontinued.]]></description>
+            <content:encoded><![CDATA[<p><span style="background-color:#e06b74;border-radius:25px;color:#fff;padding:0.2rem 0.4rem">Discontinued</span> <strong>Archcraft XFCE</strong> and <strong>Archcraft LXDE</strong> flavors are discontinued.</p>
+<p><strong>Due to a very limited user-base, I've no plans on maintaining those flavors anymore.</strong></p>
+<p>You can still use the previous releases without any issues. All the updates will be provided via Arch Linux repositories anyway.</p>
+<p>So, As long as you keep updating it, You'll have everything latest and up-to-date. Except, Of course Archcraft XFCE and LXDE configs. Those are...</p>
+<p><img decoding="async" loading="lazy" src="https://media1.tenor.com/m/_BtFie_gpcIAAAAd/thanos-avengers-endgame.gif" alt="gone" class="img_ev3q"></p>]]></content:encoded>
+            <category>flavor</category>
+            <category>xfce</category>
+            <category>lxde</category>
+            <category>discontinued</category>
+            <category>iso</category>
+        </item>
         <item>
             <title><![CDATA[Archcraft Prime Release]]></title>
             <link>https://wiki.archcraft.io/news/36-news-release</link>
@@ -760,55 +777,6 @@
             <category>openbox</category>
             <category>bspwm</category>
             <category>i3wm</category>
-            <category>sway</category>
-            <category>wayfire</category>
-            <category>river</category>
-            <category>hyprland</category>
-            <category>newm</category>
-            <category>release</category>
-            <category>iso</category>
-        </item>
-        <item>
-            <title><![CDATA[Archcraft WSE Release]]></title>
-            <link>https://wiki.archcraft.io/news/18-news-release</link>
-            <guid>https://wiki.archcraft.io/news/18-news-release</guid>
-            <pubDate>Sat, 15 Apr 2023 00:00:00 GMT</pubDate>
-            <description><![CDATA[Exclusive New Archcraft Wayland Special Edition ISO is now available to download. Read the changelogs below to know what's new.]]></description>
-            <content:encoded><![CDATA[<p><span style="background-color:#e06b74;border-radius:25px;color:#fff;padding:0.2rem 0.4rem">Exclusive</span> New <strong>Archcraft Wayland Special Edition ISO</strong> is now available to download. Read the changelogs below to know what's new.</p>
-<p>This special edition of Archcraft comes with <a href="https://wiki.archcraft.io/docs/wayland-compositors/sway"><code>Sway</code></a>, <a href="https://wiki.archcraft.io/docs/wayland-compositors/wayfire"><code>Wayfire</code></a>, <a href="https://wiki.archcraft.io/docs/wayland-compositors/river"><code>River</code></a>, <a href="https://wiki.archcraft.io/docs/wayland-compositors/hyprland"><code>Hyprland</code></a> and <a href="https://wiki.archcraft.io/docs/wayland-compositors/newm"><code>Newm</code></a> pre-installed, pre-configured and provides you a wayland only Linux experience.</p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="changelogs-">Changelogs :<a href="https://wiki.archcraft.io/news/18-news-release#changelogs-" class="hash-link" aria-label="Direct link to Changelogs :" title="Direct link to Changelogs :">​</a></h3>
-<ul>
-<li>Using <code>sddm-git</code> now, Solved shutdown/reboot issue</li>
-<li>Using new method to boot the ISO on Nvidia Machines</li>
-<li>Updated the Installers with (possible) Nvidia support</li>
-<li>Updated the base system with latest packages</li>
-<li><strong><code>Updated All the wayland compositors</code></strong>
-<ul>
-<li>Updated the config structure</li>
-<li>Added Rofi menu, applets and scripts (network, music, etc)</li>
-<li>Fixed area screenshot overlay issue</li>
-<li>Fixed nerwork-applet overlay issue in hyprland</li>
-<li>Modified the configs for waybar, wlogout and wofi (added separate colors.css file)</li>
-<li>Changes gtk themes in sway, wayfire and hyprland</li>
-<li>Updated lockscreen script in sway</li>
-<li>Added two packages for NEWM (one normal and one blur)</li>
-<li>Added spotify module in waybar in all WCs</li>
-<li>Animated MPD and spotify modules in waybar</li>
-</ul>
-</li>
-<li>Many Bug fixes, etc</li>
-</ul>
-<p><strong>Download :</strong> You can download the latest ISO from <a href="https://ko-fi.com/s/213becbf00" target="_blank" rel="noopener noreferrer"><strong><code>ko-fi</code></strong> ☕</a></p>
-<p><strong>Get the Updated ISO :</strong>  Follow the steps below to get updated files (or re-download files) for free:</p>
-<ul>
-<li>Login to you Ko-fi account</li>
-<li>Go to your <code>Ko-fi Payments History</code></li>
-<li>Select the purchases you've made</li>
-<li>Click on <code>View Details</code></li>
-<li>Then, Click on <code>View Content</code> to download the updated files.</li>
-</ul>]]></content:encoded>
-            <category>wse</category>
-            <category>wayland</category>
             <category>sway</category>
             <category>wayfire</category>
             <category>river</category>

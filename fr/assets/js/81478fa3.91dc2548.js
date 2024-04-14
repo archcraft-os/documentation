@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkArchcraft_Wiki=self.webpackChunkArchcraft_Wiki||[]).push([[9266],{50454:a=>{a.exports=JSON.parse('{"label":"polybar","permalink":"/fr/blog/tags/polybar","allTagsPath":"/fr/blog/tags","count":1,"unlisted":false}')}}]);
