@@ -27,16 +27,47 @@ export const Highlight = ({children, color}) => (
 
 Xmonad is a tiling window manager for X. Windows are arranged automatically to tile the screen without gaps or overlap, maximizing screen use. Xmonad is written, configured and extensible in Haskell. Custom layout algorithms, key bindings and other extensions may be written by the user in configuration files. Layouts are applied dynamically, and different layouts may be used on each workspace. Xinerama is fully supported, allowing windows to be tiled on several physical screens. 
 
-![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/xmonad/main.png)
+[![video](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/xmonad/main.png)](https://youtu.be/-lJl8bWV0U8)
+
+:::tip[Xmonad Premium]
+
+The Ultimate Xmonad Configuration With **Modular Configs, Extra Functionality And Themes** (27 Pre-Made + Infinite Auto Generated Themes With `pywal`)
+
+Get Xmonad Premium From [**`ko-fi`**](https://ko-fi.com/s/3f5db76f5b) And Support Archcraft Development.
+
+:::
 
 <!-- Installation --------------------------------- -->
 
 ## Installation
 
-Once you finish installing Archcraft, **Xmonad** can be installed on the top of it. It's pre-configured and ready to go. Open a terminal and run the following command to install Xmonad :
+Once you finish installing Archcraft, **Xmonad** can be installed on the top of it. It's pre-configured and ready to go.
+
+<Tabs>
+
+<TabItem value="wm_1" label="Regular" default>
+
+Open a terminal and run the following command to install the regular version of Xmonad :
 ```bash
 $ sudo pacman -Sy archcraft-xmonad
 ```
+</TabItem>
+
+<TabItem value="wm_2" label="Premium" default>
+
+Download the premium package from [ko-fi](https://ko-fi.com/s/3f5db76f5b), and save it in a directory. Open a terminal in same directory and run the following command to install Xmonad premium :
+```bash
+$ sudo pacman -U archcraft-xmonad-premium-X.Y-Z-any.pkg.tar.zst
+```
+</TabItem>
+
+</Tabs>
+
+:::danger[Archcraft Prime]
+
+<Highlight color="#62aeef">Xmonad Premium</Highlight> is not pre-installed on [**`Archcraft Prime ISO`**](https://ko-fi.com/s/c925a2a8c1)
+
+:::
 
 <!-- Configuration -------------------------------- -->
 
@@ -49,53 +80,121 @@ Xmonad is pre-configured in Archcraft. In this section, We'll see how the Xmonad
 The configuration structure of Xmonad in Archcraft looks something like this:
 
 ```
-~/.xmonad        : xmonad config directory
-├── alacritty    : terminal config
-├── scripts      : scripts used for xmonad
-├── theme        : desktop theme (polybar, rofi configs) 
-├── dunstrc      : dunst config for notifications
-├── picom.conf   : compositor config
-├── xmonad.hs    : main xmonad config file
-└── xsettingsd   : gtk themes, icons and fonts config file
+~/.config
+└── xmonad          : Xmonad config directory
+    ├── alacritty   : terminal config
+    ├── scripts     : scripts used for Xmonad
+    ├── themes      : all themes (polybar, rofi configs) 
+    ├── dunstrc     : dunst config for notifications
+    ├── picom.conf  : compositor config
+    ├── xmonad.hs   : main Xmonad config file
+    └── xsettingsd  : gtk themes, icons and fonts config file
 ```
 
 ### Terminal
 
-**Alacritty** is the default terminal. In the Xmonad window manager, alacritty is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `~/.xmonad/alacritty` directory. These are the following config files you can modify to change the behaviour of your terminal:
+**Alacritty** is the default terminal. In the Xmonad window manager, alacritty is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `~/.config/xmonad/alacritty` directory. These are the following config files you can modify to change the behaviour of your terminal:
 
-**`~/.xmonad/alacritty/alacritty.toml`** : Main configuration file <br/>
-**`~/.xmonad/alacritty/colors.toml`** : Colors configurations <br/>
-**`~/.xmonad/alacritty/fonts.toml`** : Fonts configurations
+**`~/.config/xmonad/alacritty/alacritty.toml`** : Main configuration file <br/>
+**`~/.config/xmonad/alacritty/colors.toml`** : Colors configurations <br/>
+**`~/.config/xmonad/alacritty/fonts.toml`** : Fonts configurations
 
 > If you need any help with alacritty config, run : `man 5 alacritty` in terminal.
 
+:::warning
+
+When you change the `theme`, the **colors.toml** and **fonts.toml** file get overwritten by the theme script.
+
+> This is applicable only in <Highlight color="#c778dd">Xmonad Premium</Highlight> as themes are only available in it. On regular version, there's only one theme.
+
+:::
+
 ### Notification
 
-**Dunst** is used as a notification daemon for notifications in Xmonad. In the Xmonad window manager, dunst is launched with an alternative config file, which is `~/.xmonad/dunstrc`. So, If you need to modify anything, make sure you edit this file.
+**Dunst** is used as a notification daemon for notifications in Xmonad. In the Xmonad window manager, dunst is launched with an alternative config file, which is `~/.config/xmonad/dunstrc`. So, If you need to modify anything, make sure you edit this file.
 
 > If you need any help with dunst config, run : `man 5 dunst` in terminal.
 
+:::warning
+
+When you change the `theme`, the fonts and colors in **dunstrc** file get overwritten by the theme script.
+
+> This is applicable only in <Highlight color="#c778dd">Xmonad Premium</Highlight> as themes are only available in it. On regular version, there's only one theme.
+
+:::
+
 ### Wallpaper
 
-**hsetroot** sets the wallpaper in the Xmonad. If you want to change the wallpaper, Edit `~/.xmonad/scripts/xmonad_autostart` script and add the path to your wallpaper :
+**hsetroot** sets the wallpaper in the Xmonad. If you want to change the wallpaper, Edit the following scripts :
+
+<Tabs>
+
+<TabItem value="wm_1" label="Regular" default>
+
+Edit `~/.config/xmonad/scripts/xmonad_autostart` script and add the path to your wallpaper.
 ```bash
 # Restore wallpaper
 hsetroot -cover '/path/to/your/wallpaper'
 ```
+</TabItem>
+
+<TabItem value="wm_2" label="Premium" default>
+
+Edit `~/.config/xmonad/themes/wallpaper.sh` script and add the path to your wallpaper.
+```bash
+WALLPAPER='/path/to/your/wallpaper'
+```
+:::warning
+
+When you change the `theme`, the script `wallpaper.sh` get overwritten by the theme script.
+
+:::
+
+</TabItem>
+
+</Tabs>
 
 ### Statusbar
 
 **Polybar** is used as the statusbar in Archcraft's Xmonad window manager.
 
-The configurations for polybar can be found inside the _theme_ directory directory of Xmonad `~/.xmonad/theme`
+<Tabs>
+
+<TabItem value="wm_1" label="Regular" default>
+
+The configurations for polybar can be found inside the _theme_ directory directory of Xmonad `~/.config/xmonad/theme`
 
 If you want to modify the **polybar** settings, or perhaps want to add/remove modules, then you need to edit the following files :
 
-**`~/.xmonad/theme/polybar/config.ini`** : Main config file <br/>
-**`~/.xmonad/theme/polybar/colors.ini`** : Colors config file <br/>
-**`~/.xmonad/theme/polybar/modules.ini`** : Modules config file
+**`~/.config/xmonad/theme/polybar/config.ini`** : Main config file <br/>
+**`~/.config/xmonad/theme/polybar/colors.ini`** : Colors config file <br/>
+**`~/.config/xmonad/theme/polybar/modules.ini`** : Modules config file
 
 > If you need any help with polybar config, visit : [polybar wiki](https://github.com/polybar/polybar/wiki)
+
+</TabItem>
+
+<TabItem value="wm_2" label="Premium" default>
+
+The configurations for polybar can be found inside the _currently applied theme's directory_, which is inside the _themes_ directory of Xmonad `~/.config/xmonad/themes`
+
+Let's say that the currently applied theme is `default` and you want to modify the **polybar** settings, or perhaps want to add/remove modules, then you need to edit the following files :
+
+**`~/.config/xmonad/themes/default/polybar/config.ini`** : Main config file <br/>
+**`~/.config/xmonad/themes/default/polybar/colors.ini`** : Colors config file <br/>
+**`~/.config/xmonad/themes/default/polybar/modules.ini`** : Modules config file
+
+> If you need any help with polybar config, visit : [polybar wiki](https://github.com/polybar/polybar/wiki)
+
+:::warning
+
+When you change the `theme`, the fonts in **config.ini** file and **colors.ini** file of polybar get overwritten by the theme script.
+
+:::
+
+</TabItem>
+
+</Tabs>
 
 ### Launchers and Applets
 
@@ -103,7 +202,7 @@ If you want to modify the **polybar** settings, or perhaps want to add/remove mo
 
 > If you need any help with rofi config, run : `man rofi` in terminal.
 
-The scripts for rofi that are used in Xmonad can be found it `~/.xmonad/scripts` directory. These are the following scripts that uses rofi to provide the launchers and applets in Xmonad :
+The scripts for rofi that are used in Xmonad can be found it `~/.config/xmonad/scripts` directory. These are the following scripts that uses rofi to provide the launchers and applets in Xmonad :
 
 **`rofi_askpass`** : rofi based `sudo` frontend to get root password <br/>
 **`rofi_asroot`** : applet to open apps as root <br/>
@@ -113,21 +212,48 @@ The scripts for rofi that are used in Xmonad can be found it `~/.xmonad/scripts`
 **`rofi_powermenu`** : power menu, with confirmation dialog <br/>
 **`rofi_runner`** : quickly lets you run a command <br/>
 **`rofi_screenshot`** : screenshot applet that works with maim <br/>
-**`rofi_windows`** : applet to manage opened windows <br/>
+**`rofi_themes`** : applet to change the themes **`only in premium`** <br/>
+**`rofi_windows`** : applet to manage open windows <br/>
 
 If you want to modify any applet or perhaps want to extend the functionality of the applet, just edit these scripts above.
 
-The configuration of each script can be found inside the _theme_ directory of Xmonad `~/.xmonad/theme`
+<Tabs>
 
-Let's say you want to modify the looks of **launcher**, then you need to edit the `~/.xmonad/theme/rofi/launcher.rasi` file. Same goes for every other applet, Edit the respective file in the same directory.
+<TabItem value="wm_1" label="Regular" default>
+
+The configuration of each script can be found inside the _theme_ directory of Xmonad `~/.config/xmonad/theme`
+
+Let's say you want to modify the looks of **launcher**, then you need to edit the `~/.config/xmonad/theme/rofi/launcher.rasi` file. Same goes for every other applet, Edit the respective file in the same directory.
 
 > If you need any help with rofi theming, run : `man rofi-theme` in terminal.
 
-To change the colors and fonts of the launchers and applets, Edit the `~/.xmonad/theme/rofi/shared/colors.rasi` and `~/.xmonad/theme/rofi/shared/fonts.rasi` files.
+To change the colors and fonts of the launchers and applets, Edit the `~/.config/xmonad/theme/rofi/shared/colors.rasi` and `~/.config/xmonad/theme/rofi/shared/fonts.rasi` files.
+
+</TabItem>
+
+<TabItem value="wm_2" label="Premium" default>
+
+The configuration of each script can be found inside the _currenty applied theme's directory_, which is inside the themes directory of Xmonad `~/.config/xmonad/themes`
+
+Let's say that the currently applied theme is `default` and you want to modify the looks of **launcher**, then you need to edit the `~/.config/xmonad/themes/default/rofi/launcher.rasi` file. Same goes for every other applet, Edit the respective file in the same directory.
+
+> If you need any help with rofi theming, run : `man rofi-theme` in terminal.
+
+To change the colors and fonts of the launchers and applets, Edit the `~/.config/xmonad/themes/<THEME>/rofi/shared/colors.rasi` and `~/.config/xmonad/themes/<THEME>/rofi/shared/fonts.rasi` files.
+
+:::warning
+
+When you change the `theme`, the **shared/colors.rasi** and **shared/fonts.rasi** files get overwritten by the theme script.
+
+:::
+
+</TabItem>
+
+</Tabs>
 
 ### Compositor
 
-**Picom** is used for compositing. It's a lightweight compositor with shadowing, advanced blurring and fading. In Xmonad, picom is launched with an alternative config file, which is `~/.xmonad/picom.conf`. 
+**Picom** is used for compositing. It's a lightweight compositor with shadowing, advanced blurring and fading. In Xmonad, picom is launched with an alternative config file, which is `~/.config/xmonad/picom.conf`. 
 
 If you need to change anything related to picom, Edit this picom config file.
 
@@ -140,19 +266,35 @@ If you're facing lagging, hangs and freezes, try switching between `xrender` and
 
 :::
 
+:::warning
+
+When you change the `theme`, things like _backend_, _shadows_, _blurring_ in **picom.conf** file gets overwritten by theme script.
+
+> This is applicable only in <Highlight color="#c778dd">Xmonad Premium</Highlight> as themes are only available in it. On regular version, there's only one theme.
+
+:::
+
 ### Window Manager
 
-The configuration of Xmonad is available in `~/.xmonad`. To configure Xmonad window manager, this is the main file that is used :
+The configuration of Xmonad is available in `~/.config/xmonad`. To configure Xmonad window manager, this is the main file that is used :
 
-**`xmonad.hs`** : main configuration file responsible for determining the behaviour and settings of the overall session. Edit this file to set window rules, configure workspaces, layouts, and xmonad appearance.
+**`~/.config/xmonad/xmonad.hs`** : main xmonad config file with general settings, keybindings, layouts and window rules.<br/>
 
-> If you need any help with xmonad configuration, visit : [xmonad.org](https://xmonad.org/documentation.html)
+> If you need any help with xmonad configuration, visit : [Xmonad docs](https://xmonad.org/documentation.html)
+
+:::warning
+
+When you change the `theme`, things like _border colors_, _border width_, in **xmonad.hs** file gets overwritten by the theme script.
+
+> This is applicable only in <Highlight color="#c778dd">Xmonad Premium</Highlight> as themes are only available in it. On regular version, there's only one theme.
+
+:::
 
 <!-- Keybindings ---------------------------------- -->
 
 ## Keybindings
 
-Here's a list of some important keybinds you need to know for operating Xmonad easily. If you want to view, modify or add new keybinds, Edit `~/.xmonad/xmonad.hs` file.
+Here's a list of some important keybinds you need to know for operating Xmonad easily. If you want to view, modify or add new keybinds, Edit `~/.config/xmonad/xmonad.hs` file.
 
 ### Applications
 
@@ -178,6 +320,7 @@ Here's a list of some important keybinds you need to know for operating Xmonad e
 | <kbd>super + X</kbd> | Open powermenu applet |
 | <kbd>super + S</kbd> | Open screenshots applet |
 | <kbd>super + R</kbd> | Open apps as root applet |
+| <kbd>super + T</kbd> | Open theme applet **`only in premium`** |
 | <kbd>super + W</kbd> | Open window applet |
 
 ### Hardware Keys
@@ -221,10 +364,11 @@ Here's a list of some important keybinds you need to know for operating Xmonad e
 | <kbd>super + ctrl + I</kbd> | Increase the right-hand gap |
 | <kbd>super + shift + I</kbd> | Decrease the right-hand gap |
 | <kbd>super + shift + R</kbd> | Resize viewed windows to the correct size |
-| <kbd>super + shift + M</kbd> | Move focus to the master window |
-| <kbd>super + shift + S</kbd> | Swap the focused window and the master window |
-| <kbd>super + shift + T</kbd> | Push window back into tiling |
-| <kbd>super + Space</kbd> | Rotate through the available layout algorithms |
+| <kbd>super + alt + M</kbd> | Move focus to the master window |
+| <kbd>super + shift + M</kbd> | Swap the focused window and the master window |
+| <kbd>super + F</kbd> | Toggle fullscreen |
+| <kbd>super + Space</kbd> | Toggle between floating and tiling |
+| <kbd>super + ctrl + Space</kbd> | Rotate through the available layout algorithms |
 | <kbd>super + shift + Space</kbd> | Reset the layouts on the current workspace to default |
 | <kbd>super + Tab</kbd> | Move focus to the next window |
 | <kbd>super + Left/J</kbd> | Move focus to the next window |
@@ -238,11 +382,16 @@ Here's a list of some important keybinds you need to know for operating Xmonad e
 | <kbd>super + Comma</kbd> | Increase the number of windows in the master area |
 | <kbd>super + Period</kbd> | Decrease the number of windows in the master area |
 | <kbd>super + Q</kbd> | Recompile and restart xmonad |
+| <kbd>super + shift + Slash</kbd> | Run xmessage with a summary of the default keybindings |
 
 ### Misc Keys
 
 | Keys | Action |
 | --- | --- |
+| <kbd>ctrl + alt + V</kbd> | Open vim in terminal |
+| <kbd>ctrl + alt + R</kbd> | Open ranger in terminal |
+| <kbd>ctrl + alt + H</kbd> | Open htop in terminal |
+| <kbd>ctrl + alt + M</kbd> | Open ncmpcpp with album art in terminal |
 | <kbd>ctrl + alt + L</kbd> | Trigger lockscreen |
 | <kbd>super + P</kbd> | Run colorpicker  |
 | <kbd>super + Escape</kbd> | Run xkill |
@@ -250,6 +399,8 @@ Here's a list of some important keybinds you need to know for operating Xmonad e
 <!-- Themes --------------------------------------- -->
 
 ## Screenshots
+
+### Desktop
 
 Here's few screenshots of `Xmonad` desktop. These'll give you an idea of the experience of Xmonad in Archcraft. 
 
@@ -269,6 +420,60 @@ Here's few screenshots of `Xmonad` desktop. These'll give you an idea of the exp
 |---|---|---|---|
 |![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/xmonad/desktop/desktop_13.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/xmonad/desktop/desktop_14.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/xmonad/desktop/desktop_15.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/xmonad/desktop/desktop_16.png)|
 
+### Themes
+
+<Tabs>
+
+<TabItem value="wm_1" label="Regular" default>
+
+There's only one theme available on regular Xmonad.
+
+![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/xmonad/themes/theme_1.png)
+
+</TabItem>
+
+<TabItem value="wm_2" label="Premium" default>
+
+There are **27 styles** (plus infinite auto-generated themes with `pywal`) available for Xmonad premium. <br/>
+To Change the theme/style, Press `SUPER + T` and select the theme/style from the applet.
+
+|Theme 1|Theme 2|Theme 3|Theme 4|Theme 5|
+|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/xmonad/themes/theme_1.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/xmonad/themes/theme_2.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/xmonad/themes/theme_3.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/xmonad/themes/theme_4.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/xmonad/themes/theme_5.png)|
+
+|Theme 6|Theme 7|Theme 8|Theme 9|Theme 10|
+|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/xmonad/themes/theme_6.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/xmonad/themes/theme_7.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/xmonad/themes/theme_8.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/xmonad/themes/theme_9.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/xmonad/themes/theme_10.png)|
+
+|Theme 11|Theme 12|Theme 13|Theme 14|Theme 15|
+|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/xmonad/themes/theme_11.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/xmonad/themes/theme_12.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/xmonad/themes/theme_13.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/xmonad/themes/theme_14.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/xmonad/themes/theme_15.png)|
+
+|Theme 16|Theme 17|Theme 18|Theme 19|Theme 20|
+|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/xmonad/themes/theme_16.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/xmonad/themes/theme_17.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/xmonad/themes/theme_18.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/xmonad/themes/theme_19.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/xmonad/themes/theme_20.png)|
+
+|Theme 21|Theme 22|Theme 23|Theme 24|Theme 25|
+|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/xmonad/themes/theme_21.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/xmonad/themes/theme_22.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/xmonad/themes/theme_23.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/xmonad/themes/theme_24.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/xmonad/themes/theme_25.png)|
+
+|Theme 26|Theme 27|
+|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/xmonad/themes/theme_26.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/xmonad/themes/theme_27.png)|
+
+</TabItem>
+
+<TabItem value="wm_3" label="Random" default>
+
+Auto Generated themes with `pywal`. This feature is only available in Xmonad premium. <br/>
+Press `SUPER + T` and select **Random** to apply a random theme.
+
+![gif](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/xmonad/random/random.gif)
+
+</TabItem>
+
+</Tabs>
+
 <!-- FAQs ----------------------------------------- -->
 
 ## FAQs
@@ -276,16 +481,18 @@ Here's few screenshots of `Xmonad` desktop. These'll give you an idea of the exp
 <details>
 <summary><b>How to update my config to new configs?</b></summary>
 
-When a new version of Archcraft Xmonad get released, And you update the system by `sudo pacman -Syu` or you update the Xmonad package by `sudo pacman -S archcraft-xmonad`, New config files get installed as **~/.xmonad_pacnew_YYYY-MM-DD** in your home directory.
+When a new version of Archcraft Xmonad get released, And you update the system by `sudo pacman -Syu` or you update the Xmonad package by `sudo pacman -S archcraft-xmonad`, New config files get installed as **xmonad_pacnew_YYYY-MM-DD** in your `~/.config` directory.
 
-To use new configs, backup your old `~/.xmonad` directory and move `~/.xmonad_pacnew_YYYY-MM-DD` to `~/.xmonad` and login again.
+To use new configs, backup your old `~/.config/xmonad` directory and move `~/.config/xmonad_pacnew_YYYY-MM-DD` to `~/.config/xmonad` and login again.
+
+> For `Xmonad Premium`, download the updated package from ko-fi (for free) and just install it to update to new configs.
 
 </details>
 
 <details>
 <summary><b>How to change GTK theme, icons and cursor?</b></summary>
 
-To change GTK theme, icons and cursor in Xmonad session, Edit `~/.xmonad/xsettingsd` file and restart Xmonad to apply the changes.
+To change GTK theme, icons and cursor in Xmonad session, Edit `~/.config/xmonad/xsettingsd` file and restart Xmonad to apply the changes.
 ```bash
 Net/ThemeName "Rick"
 Net/IconThemeName "Zafiro-Red"
