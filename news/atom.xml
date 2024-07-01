@@ -2,11 +2,40 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wiki.archcraft.io/news</id>
     <title>Archcraft Blog</title>
-    <updated>2024-04-14T00:00:00.000Z</updated>
+    <updated>2024-07-01T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wiki.archcraft.io/news"/>
     <subtitle>Archcraft Blog</subtitle>
     <icon>https://wiki.archcraft.io/img/favicon.svg</icon>
+    <entry>
+        <title type="html"><![CDATA[July 2024 Release]]></title>
+        <id>https://wiki.archcraft.io/news/39-news-release</id>
+        <link href="https://wiki.archcraft.io/news/39-news-release"/>
+        <updated>2024-07-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[July 2024 ISO of Archcraft is now available to download. Read the changelogs below to know what's new.]]></summary>
+        <content type="html"><![CDATA[<p>July 2024 ISO of Archcraft is now available to download. Read the changelogs below to know what's new.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="changelogs-">Changelogs :<a href="https://wiki.archcraft.io/news/39-news-release#changelogs-" class="hash-link" aria-label="Direct link to Changelogs :" title="Direct link to Changelogs :">​</a></h3>
+<ul>
+<li>Updated ISO profile</li>
+<li>Latest base with new packages</li>
+<li>Update all Archcraft and AUR packages</li>
+<li>Update Openbox Configs</li>
+<li>Added Firewall (<code>ufw</code>) with GUI (<code>gufw</code>)</li>
+<li>Added <code>apparmor</code> for MAC (<em>mandatory access control</em>)</li>
+<li>Replaced rofi with ibonn's rofi fork, fixed focusing issue in wayland compositors</li>
+<li>Small improvements and bugs fixed.</li>
+</ul>
+<blockquote>
+<p>Run: <code>sudo pacman -Syyu</code> to update your existing installation.</p>
+</blockquote>]]></content>
+        <author>
+            <name>Aditya Shakya</name>
+            <uri>https://github.com/adi1090x</uri>
+        </author>
+        <category label="v24.07" term="v24.07"/>
+        <category label="release" term="release"/>
+        <category label="iso" term="iso"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Archcraft XFCE and LXDE Discontinued]]></title>
         <id>https://wiki.archcraft.io/news/38-news-release</id>
@@ -810,52 +839,6 @@
         </author>
         <category label="wse" term="wse"/>
         <category label="wayland" term="wayland"/>
-        <category label="sway" term="sway"/>
-        <category label="wayfire" term="wayfire"/>
-        <category label="river" term="river"/>
-        <category label="hyprland" term="hyprland"/>
-        <category label="newm" term="newm"/>
-        <category label="release" term="release"/>
-        <category label="iso" term="iso"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Archcraft Prime Release]]></title>
-        <id>https://wiki.archcraft.io/news/19-news-release</id>
-        <link href="https://wiki.archcraft.io/news/19-news-release"/>
-        <updated>2023-04-28T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Exclusive Archcraft Prime ISO is now available to download. Read the changelogs below to know what's new.]]></summary>
-        <content type="html"><![CDATA[<p><span style="background-color:#c778dd;border-radius:25px;color:#fff;padding:0.2rem 0.4rem">Exclusive</span> <strong>Archcraft Prime ISO</strong> is now available to download. Read the changelogs below to know what's new.</p>
-<p><strong>Archcraft Prime</strong> offers every (<code>Not the one released after Prime</code>) exclusive stuff of Archcraft in <em><strong>One Single ISO</strong></em>. It has <a href="https://wiki.archcraft.io/docs/window-managers/stacking-wm/openbox"><code>Openbox Premium</code></a>, <a href="https://wiki.archcraft.io/docs/window-managers/tiling-wm/bspwm"><code>Bspwm Premium</code></a> and <a href="https://wiki.archcraft.io/docs/window-managers/tiling-wm/i3wm"><code>i3wm Premium</code></a> as well as all the exclusive wayland compositors (<a href="https://wiki.archcraft.io/docs/wayland-compositors/sway"><code>Sway</code></a>, <a href="https://wiki.archcraft.io/docs/wayland-compositors/wayfire"><code>Wayfire</code></a>, <a href="https://wiki.archcraft.io/docs/wayland-compositors/river"><code>River</code></a>, <a href="https://wiki.archcraft.io/docs/wayland-compositors/hyprland"><code>Hyprland</code></a> and <a href="https://wiki.archcraft.io/docs/wayland-compositors/newm"><code>Newm</code></a>) pre-installed.</p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="changelogs-">Changelogs :<a href="https://wiki.archcraft.io/news/19-news-release#changelogs-" class="hash-link" aria-label="Direct link to Changelogs :" title="Direct link to Changelogs :">​</a></h3>
-<ul>
-<li>Created the ISO base from scratch</li>
-<li>Grub2 bootloader with themes</li>
-<li>Customized Plymouth &amp; SDDM</li>
-<li>Basic Applications Only, No Bloatware</li>
-<li>Calamares Installer (Graphical) with ability to choose WMs/WCs</li>
-<li>ABIF (CLI) Installer as secondary installer</li>
-<li>Full Network Manager Support, Various VPN plugins</li>
-<li>Built-in Bluetooth Support</li>
-<li>Pipewire For Sound/Audio (Systemwide, Bluetooth, Jack)</li>
-<li>Built-in Printer Support</li>
-<li>Almost All Audio, Video and Image Codecs</li>
-<li>Full File manager functionality (Mounting, Networking, Archiving, etc)</li>
-<li>Built-in AUR support</li>
-<li>Minimal User Interface</li>
-<li>All Premium Window Managers (Openbox, Bspwm and i3wm)</li>
-<li>All Exclusive Wayland Compositors (Sway, Wayfire, River, Hyprland, Newm)</li>
-<li>Archcraft Icons, Themes, Wallpapers, Fonts</li>
-<li>Etc</li>
-</ul>
-<p><strong>Download :</strong> You can download the latest ISO from <a href="https://ko-fi.com/s/c925a2a8c1" target="_blank" rel="noopener noreferrer"><strong><code>ko-fi</code></strong> ☕</a></p>]]></content>
-        <author>
-            <name>Aditya Shakya</name>
-            <uri>https://github.com/adi1090x</uri>
-        </author>
-        <category label="prime" term="prime"/>
-        <category label="openbox" term="openbox"/>
-        <category label="bspwm" term="bspwm"/>
-        <category label="i3wm" term="i3wm"/>
         <category label="sway" term="sway"/>
         <category label="wayfire" term="wayfire"/>
         <category label="river" term="river"/>
