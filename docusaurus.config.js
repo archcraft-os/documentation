@@ -208,7 +208,7 @@ const config = {
       // Optional: Replace parts of the item URLs from Algolia. Useful when using the same search index for multiple deployments using a different baseUrl. You can use regexp or string in the `from` param. For example: localhost:3000 vs myCompany.com/docs
       replaceSearchResultPathname: {
         from: '/docs/', // or as RegExp: /\/docs\//
-        to: '/docs',
+        to: '/docs/',
       },
 
       // Optional: Algolia search parameters
