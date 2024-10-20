@@ -1,0 +1,140 @@
+---
+slug: 03-archcraft-update
+title: Update Archcraft to October 2024 version
+authors: adi1090x
+tags: [archcraft, update, os]
+hide_table_of_contents: true
+---
+
+<!-- Badges -->
+export const Highlight = ({children, color}) => (
+  <span
+    style={{
+      backgroundColor: color,
+      borderRadius: '25px',
+      color: '#fff',
+      padding: '0.2rem 0.4rem',
+    }}>
+    {children}
+  </span>
+);
+
+<Highlight color="#e06b74"><b>MAJOR</b></Highlight> The most recent Archcraft October ISO has undergone significant modifications that cannot be fully implemented through a Pacman update. To upgrade your current installation to the most recent Archcraft version, some manual tasks must be completed.
+
+<!--truncate-->
+
+To ensure a seamless and successful upgrade, please adhere to the following steps:
+
+## Perform a comprehensive system upgrade
+
+Commence the process by upgrading the system. To achieve this, launch a terminal and execute the following command:
+
+```bash
+sudo pacman -Syyu
+```
+Upon completion, proceed to reboot the computer. Post-reboot, you may encounter certain unexpected changes, such as:
+
+- Compromised Openbox themes
+- Truncated icons/glyphs within Rofi
+- Issues with the Picom compositor
+- And so on
+
+Fret not, for we shall rectify these matters. Simply adhere to the subsequent steps:
+
+### 1. Install `archcraft-skeleton` package
+A new package called `archcraft-skeleton` is now available for installation. This package contains updated configuration files for Picom and other applications.
+
+Since the old configuration files already exist on your system and are not associated with any specific package, you will need to overwrite them with the new files. To do this, simply run the following command:
+```bash
+sudo pacman -S --overwrite "*" archcraft-skeleton
+```
+
+### 2. Install New Cursor, Icons, and Themes
+The repository now includes numerous new cursor, icon, and GTK themes. These new themes will not be automatically installed during system upgrades because they are part of a group package. To install all the new cursor, icon, and GTK themes, execute the following command:
+```bash
+sudo pacman -S archcraft-cursors archcraft-icons archcraft-themes
+```
+
+### 3. Update the Openbox Window Manager Configuration
+
+The Openbox window manager has undergone significant visual updates, particularly with icon and nerd fonts. These changes may cause glyphs to break in various components like Polybar, Rofi, and other places where custom icons are used. To address this, you have two options:
+
+1. **Manual Update**:
+   - Use the tool `meld` to compare and merge the new and old configurations. The updated configuration files should be located in your config directory under `openbox_pacnew_YYYY-MM-DD`. Open these files with `meld` and integrate the necessary changes into your existing setup.
+
+2. **Automated Update**:
+   - If you'd like to streamline the process, you can back up your existing Openbox configuration and apply the new files. To do this, execute the following commands in your terminal:
+
+   ```bash
+   cp -rf ~/.config/openbox ~/.config/openbox_backup_$(date +%Y-%m-%d)
+   mv ~/.config/openbox_pacnew_YYYY-MM-DD ~/.config/openbox
+   ```
+
+After completing these steps, log out and log back in to apply the new configurations.
+
+### 4. Update the BSPWM Window Manager Configuration
+
+Similar to Openbox, the BSPWM window manager has also undergone several visual changes. You have two options to update BSPWM:
+
+1. **Manual Update**:
+   - As with Openbox, you can use `meld` to compare the new and old BSPWM configuration directories. The new configuration files will be installed in your config directory under `bspwm_pacnew_YYYY-MM-DD`. Use `meld` to review and apply changes as needed.
+
+2. **Automated Update**:
+   - For a simpler approach, back up your current BSPWM configuration and replace it with the new files by running:
+
+   ```bash
+   cp -rf ~/.config/bspwm ~/.config/bspwm_backup_$(date +%Y-%m-%d)
+   mv ~/.config/bspwm_pacnew_YYYY-MM-DD ~/.config/bspwm
+   ```
+
+After these changes, log out and log back in to activate the new configuration.
+
+### 5. Update the Picom Compositor Configuration
+
+The package installed in Step 1 (`archcraft-skeleton`) includes updated configuration files for Picom. To apply the new Picom configuration, simply copy the `picom.conf` file from `/etc/skel` to your local config directory by running:
+
+```bash
+cp /etc/skel/.config/picom.conf ~/.config/picom.conf
+```
+
+After copying, restart the Picom compositor to apply the new configuration.
+
+### 6. Miscellaneous Updates
+
+In addition to the major changes, there are a few minor updates that you may want to apply.
+
+#### a. Updated Alacritty Configuration
+The Alacritty terminal configuration has been updated. You can copy the new configuration files from `/etc/skel` to your home directory by running the following command:
+
+```bash
+cp -r /etc/skel/.config/alacritty ~/.config/alacritty
+```
+
+#### b. New Kitty Terminal Configuration
+Support for the Kitty terminal has been added to both Openbox and BSPWM. To start using Kitty, install it and copy the configuration files to your home directory:
+
+```bash
+sudo pacman -S kitty
+cp -r /etc/skel/.config/kitty ~/.config/kitty
+```
+
+#### c. Updated Neofetch Configuration
+The Neofetch configuration has also been updated. If you prefer to use the latest version, copy the new configuration files with this command:
+
+```bash
+cp -r /etc/skel/.config/neofetch ~/.config/neofetch
+```
+
+#### d. Updated Zsh Theme Configuration
+The Archcraft Zsh theme has been updated as well. If you'd like to use the new theme, copy the updated configuration files by running:
+
+```bash
+cp -r /etc/skel/.oh-my-zsh ~/.oh-my-zsh
+```
+___
+
+These are the necessary changes to fully update your installation to the latest release. Please note that if you are using a window manager other than Openbox or BSPWM, those configurations have not been updated yet. However, updates for those will be available soon. I am currently focused on preparing new ISO releases, after which I will work on updating the additional window managers.
+
+I hope this guide has been helpful in assisting you with the update process. Stay tuned for further updates.
+
+Take care!
