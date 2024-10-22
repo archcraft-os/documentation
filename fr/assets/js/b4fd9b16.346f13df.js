@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkArchcraft_Wiki=self.webpackChunkArchcraft_Wiki||[]).push([[8122],{65872:e=>{e.exports=JSON.parse('{"permalink":"/fr/news/tags/release/page/5","page":5,"postsPerPage":10,"totalPages":5,"totalCount":43,"previousPage":"/fr/news/tags/release/page/4","blogDescription":"Blog","blogTitle":"News"}')}}]);
