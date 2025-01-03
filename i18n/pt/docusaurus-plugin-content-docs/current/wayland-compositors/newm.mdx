@@ -1,0 +1,492 @@
+---
+sidebar_position: 5
+hide_table_of_contents: false
+---
+
+# NEWM
+
+<!-- Theme ---------------------------------------- -->
+<!-- Tabs -->
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<!-- Badges -->
+export const Highlight = ({children, color}) => (
+  <span
+    style={{
+      backgroundColor: color,
+      borderRadius: '4px',
+      color: '#fff',
+      padding: '0 0.2rem 0 0.2rem',
+    }}>
+    {children}
+  </span>
+);
+
+<!-- Adicione suas coisas depois disso -------------------- -->
+
+NEWM é um compositor Wayland escrito com laptops e touchpads em mente. A ideia é, em vez de posicionar as janelas dentro de uma pequena viewport (isto é, o monitor), para organizá-las arbitrariamente em uma grande parede bi-dimensional (geralmente sem sobreposição de janelas) e focar o trabalho dos compositores em mover ao redor e ao longo dessa parede eficientemente e provendo formas para o usuário rearranjar a parede de tal forma a encontrar um layout intuitivo.
+
+<Tabs>
+
+<TabItem value="wc_1" label="Solid" default>
+
+[![video](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/newm/style_1/main.png)](https://youtu.be/dCHtwyD1wzo)
+
+</TabItem>
+
+<TabItem value="wc_2" label="Blur" default>
+
+![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/newm/style_2/main.png)
+
+</TabItem>
+
+</Tabs>
+
+:::tip[Archcraft NEWM]
+
+Garanta o NEWM em [**`ko-fi`**](https://ko-fi.com/s/524182856f) e dê suporte ao desenvolvimento do Archcraft.
+
+:::
+
+<!-- Instalação --------------------------------- -->
+
+## Instalação
+
+Siga as intruções abaxo para instalar o NEWM:
+
+- Baixe o arquivo **newm.tar.gz** em [ko-fi](https://ko-fi.com/s/524182856f), e salve-o em uma pasta.
+- Abra o terminal na mesma pasta e execute o seguinte comando para extrair o arquivo tar:
+```bash
+$ tar -xzvf newm_YYYY-MM-DD.tar.gz
+```
+- Depois de extrair o arquivo, mude para o diretório extraído onde está o **`newm`**
+
+<Tabs>
+
+<TabItem value="wc_1" label="Instale No Archcraft" default>
+
+No Archcraft, você pode simplesmente instalar o arquivo no diretório **pkgs**:
+
+**Para instalar a versão solid:**
+```bash
+$ sudo pacman -U archcraft-newm-X.Y-Z-any.pkg.tar.zst
+```
+
+**Para istalar a versão blur:**
+```bash
+$ sudo pacman -U archcraft-newm-blur-X.Y-Z-any.pkg.tar.zst
+```
+
+</TabItem>
+
+<TabItem value="wc_2" label="Instale em outras distribuições" default>
+
+Se você quer instalar no Arch Linux ou em qualquer outra distribuição, siga os pontos abaixo:
+- Instale os seguintes programas em sua disto Linux: [`newm-atha`](https://git.sr.ht/~atha/newm-atha), `wtype` `alacritty` `wlroots` `wl-clipboard` `waybar` `wofi` `foot` `mako` `grim` `slurp` `wf-recorder` `light` `yad` `wlogout` `thunar` `geany` `mpv` `mpd` `mpc` `viewnior` `imagemagick` `xfce-polkit` `xorg-xwayland` `xdg-desktop-portal-wlr` `playerctl`
+- Depois de instalar esses programas, crie uma pasta _newm_ em **`~/.config`**
+```bash
+$ mkdir -p ~/.config/newm
+```
+- Para instalar o estilo **solid**, copie tudo de _`dotfiles/dolid`_ para **`~/.config/newm`**
+```bash
+$ cp -r ./dotfiles/solid/* ~/.config/newm/
+```
+- Para instalar o estilo **blur**, copie tudo de _`dotfiles/blur`_ para **`~/.config/newm`**
+```bash
+$ cp -r ./dotfiles/blur/* ~/.config/newm/
+```
+- Para lançar apropriadamente o newm em seu sistema, instale os arquios adicionaisfornecidos em _`shared`_:
+```bash
+$ sudo install -Dm 755 dotfiles/shared/open-wl /usr/local/bin/open-wl
+$ sudo install -Dm 755 dotfiles/shared/run_newm /usr/local/bin/run_newm
+$ sudo install -Dm 755 dotfiles/shared/00-lock.sh /usr/lib/systemd/system-sleep/00-lock.sh
+```
+- Faça logout e login em seu maravolhoso NEWM WC já configurado.
+
+> Instale as **fontes** de `fonts` e **tema GTK, ícones e cursor** do diretório `gtk` para uma aparência geral.
+
+</TabItem>
+
+</Tabs>
+
+:::info[Archcraft Prime]
+
+<Highlight color="#62aeef">NEWM</Highlight> vem pré-instalado nas ISOs [**`Archcraft WSE`**](https://ko-fi.com/s/213becbf00) e [**`Archcraft Prime`**](https://ko-fi.com/s/c925a2a8c1) .
+
+:::
+
+<!-- Configuração -------------------------------- -->
+
+## Configuração
+
+NEWM é pré-configurado no Archcraft. Nesta seção, veremos como o compositor wayland NEWM é configurado, quais ferramentas e utilidades são usadas para fazê-lo parecer e funcionar como um ambiente de desktop completo.
+
+### Estrutura de Configuração
+
+A estrutura de configuração do NEWM no Archcraft parece com isso:
+
+```
+~/.config
+└── newm              : diretório de configuração do newm
+    ├── foot          : configuração do terminal
+    ├── mako          : config do daemon de notificação
+    │   └── icons     : ícones de otificação
+    ├── rofi          : arquivos de config do rofi
+    ├── scripts       : vários scripts para funcinalidades
+    ├── wallpapers    : wallpapers
+    ├── waybar        : config da barra de status
+    ├── wlogout       : config do wlogout
+    │   └── icons     : ícones da sessão
+    ├── wofi          : config do lançador
+    └── config.py     : arquivo de config principal do newm
+```
+
+### Terminal
+
+**Foot** é o terminal padrão. No compositor wayland NEWM, foot é lançado com arquivos de config alternativos. Se você precisa mudar alguma coisa, tenha certeza de modificar os arquivos de config em `~/.config/newm/foot`. Aqui estão os seguintes arquivos de config que você pode modificar o comportamento do terminal foot:
+
+**`~/.config/newm/foot/foot.ini`** : arquivo de configuração principal <br/>
+**`~/.config/newm/foot/colors.ini`** : configurações de cores <br/>
+**`~/.config/newm/foot/fonts.ini`** : configurações de fontes
+
+> Se você precisa de alguma ajuda com a config do foot, execue: `man foot.ini` no terminal.
+
+### Notificação
+
+**Mako** é usado como daemon para notificações no NEWM. No compositor wayland NEWM, mako é lançado com arquivo de config alternativo, que é `~/.config/newm/mako/config`. Então, se você precisa modificar algo, tenha certeza de editar esse arquivo.
+
+> Se você precisa de alguma ajuda com a config do mako, execute: `man 5 mako` no terminal.
+
+### Wallpaper
+
+Se você quer trocar o wallpaper, edite o script `~/.config/newm/config.py` e adicione seu wallpaper aqui:
+```py
+background = {
+    ##-- Apply selected wallpaper on each startup and config reload
+    #'path': os.environ['HOME'] + '/path/to/your/wallpapers',
+
+    ##-- Apply random wallpaper on each startup and config reload
+    'path': os.environ["HOME"] + f"/path/to/your/wallpapers-directory/wallpaper-{random.randrange(1, 6)}.jpg",
+
+    'time_scale': 0.125,
+    'anim': True,
+}
+```
+
+### Barra de status
+
+**Waybar** é usado como barra de status no compositor wayland NEWM do Archcraft.
+
+As configurações para waybar podem ser encontradas dentro de `/.config/newm/waybar`. Se você quer modificar as preferências da **waybar**, ou talvez adicionar/remover módulos, então você precisa editar os seguintes arquivos:
+
+**`~/.config/newm/waybar/config`** : Arquivo de config principal <br/>
+**`~/.config/newm/waybar/modules`** : Arquivo de config dos módulos <br/>
+**`~/.config/newm/waybar/style.css`** : Aquivo de CSS para estilo <br/>
+**`~/.config/newm/waybar/colors.css`** : Arquivo de cores CSS <br/>
+
+> Se você precisa de alguma ajuda com a config da waybar, execute: `man waybar`
+
+### Lançadores e Applets
+
+<Tabs>
+
+<TabItem value="wc_1" label="Rofi" default>
+
+**Rofi** é usado para lanar aplicações, executar comandos e vários applets. para modificar a config do rofi, edite o arquivo `~/.config/rofi/config.rasi`.
+
+> Se você precisa de alguma ajuda com a config do rofi, execute `man rofi` no terinal.
+
+Os scripts para o rofi que são usados no NEWM podem ser encontrados em `~/.config/newm/scripts`. Aqui estão os seguintes scripts que são usados pelo rofi para fornecer os lançadores e applets no NEWM:
+
+**`rofi_bluetooth`** : applet de bluetooth para conoctar rapidamente em dispositivos BT <br/>
+**`rofi_launcher`** : um lançador de aplicativos, executor de cmd, gestor de arquivos e de tarefas  <br/>
+**`rofi_music`** : applet de música, ele controla o MPD com `mpc` <br/>
+**`rofi_network`** : applet de gerenciados de conexão <br/>
+**`rofi_powermenu`** : menu de energia, com diálogo de confirmação <br/>
+**`rofi_runner`** : te permite executar um comando rapidamente <br/>
+**`rofi_screenshot`** : applet de captura de tela que trabalha com grim <br/>
+
+Se você quiser modificar qualquer applet ou talvez queira extender sua funcionalidade, basta editar esses scripts.
+
+A configuração de cada script pode ser encontrada no diretório `~/.config/newm/rofi`.
+
+Digamos que você queira modificar a aparência do **lançador**, então você precisa editar o arquivo `~/.config/newm/rofi/laucher.rasi`. O mesmo para outro applet, edite o arquivo respectivo no mesmo diretório.
+
+> Se você precisa de alguma ajuda com o tema do rofi, execute: `man rofi-theme` no terminal.
+
+Para mudar as cores e fontes dos lançadores e applets, edite os arquivos `~/.config/newm/rofi/shared/colors.rasi` e `~/.config/newm/rofi/shared/fonts.rasi`.
+
+</TabItem>
+
+<TabItem value="wc_2" label="Wofi" default>
+
+Alternativamente, **Wofi** é usado como lançador de aplicções e menu de energia.
+
+> Se você precisar de alguma ajuda com a config do wofi, execute: `man 5 wofi` no terminal.
+
+Os scripts para o wofi que são usados no NEWM podem ser encontrados no diretório `~/.config/newm/scripts`. Aqui estão os seguintes scripts que o wofi usa para fornecer os lançadores e o menu de energia no NEWM:
+
+**`wofi_menu`** : lançador de aplicação  <br/>
+**`wofi_powermenu`** : menu de energia, com diálogo de confirmação
+
+Se você quer modificar algum applet ou talvez extender sua funcionalidade, basta editar esses scripts.
+
+A configuração do wofi pode ser encontrada no diretório `~/.config/newm/wofi`.
+
+Para mudar as cores e fontes dos lançadores e applets, edite o arquivo `~/.config/newm/wofi/stile.css`.
+
+</TabItem>
+
+<TabItem value="wc_3" label="Wlogout" default>
+
+**Wlogout**, um menu de logout wayland também é configurado para gerenciamento de sessão é NEWM. 
+
+Edite o script `~/.config/newm/scripts/wlogout` para ajustar a aparência do Wlogout. A configuração do wlogout  pode ser encontrada dentro da pasta `~/.config/newm/wlogout`.
+
+Se você quer usar o wlogout em vez do rofi ou wofi, edite o arquivo de config `~/.config/newm/config.py` e descomente os atalhos para wlogout.
+
+> Se você precisa de alguma ajuda com a config do wlogout, execute: `man wlogout` no terminal.
+
+</TabItem>
+
+</Tabs>
+
+:::tip
+
+Por padrão, rofi é usado como lançador de app. Mas, se você quiser usar o Wofi no lugar do rofi, edite o arquivo de config `~/.config/newm/config.py` e descomente os atalhos do wofi (e comente os atalhos do rofi).
+
+:::
+
+### Compositor Wayland
+
+O arquivo de configuração principal do NEWM é `~/.config/newm/config.py`. Edite esse script para tudo, de programas que vão iniciar até config de entrada/saída para atalhos de teclado, etc.
+
+> Se você percisa de alguma ajuda coma aconfig do newm, visite: [Newm Docs](https://git.sr.ht/~atha/newm-atha/tree/HEAD/doc/config.md)
+
+<!-- Atalhos de teclado ---------------------------------- -->
+
+## Atalhos de teclado
+
+Aqui está uma lista dos atalhos mais importantes que você precisa saber para operar facilmente o NEWM. Se você quiser ver, modificar ou adicicionar novos atalhos, edite o arquivo `~/.config/newm/config.py.
+
+### Aplicações
+
+| Atalho | Ação |
+| --- | --- |
+| <kbd>super + Return</kbd> | Abre o terminal |
+| <kbd>super + shift + Return</kbd> | Abre o terminal flutuante |
+| <kbd>super + alt + Return</kbd> | Abre o terminal com a geometria selecionada |
+| <kbd>super + F</kbd> | Abre o gerenciador de arquivos (thunar) |
+| <kbd>super + E</kbd> | Abre o editor de texto (geany) |
+| <kbd>super + W</kbd> | Abre o navegador (firefox) |
+
+### Menu e Applets
+
+| Atalho | Ação |
+| --- | --- |
+| <kbd>alt + F1</kbd> | Abre o lançador de aplicativos |
+| <kbd>super + D</kbd> | Abre o lançador de aplicativos |
+| <kbd>super + R</kbd> | Abre o executor de comando |
+| <kbd>super + N</kbd> | Abre o applet de gerenciamento de conexão |
+| <kbd>super + M</kbd> | Abre o applet de música |
+| <kbd>super + X</kbd> | Abre o menu de energia |
+| <kbd>super + S</kbd> | Abre o applet de captura de tela |
+| <kbd>super + B</kbd> | Abre o applet de buetooth |
+
+### Atalhos de Hardware
+
+| Atalho | Ação |
+| --- | --- |
+| <kbd>Print</kbd> | Tira um screenshot |
+| <kbd>alt + Print</kbd> | Tira um screenshot com 5 segundos de atraso |
+| <kbd>shift + Print</kbd> | Tira um screenshot com 10 segundos de atraso |
+| <kbd>super + Print</kbd> | Tira um screenshot da áres selecionada |
+| <kbd>XF86AudioRaiseVolume</kbd> | Aumenta o volume |
+| <kbd>XF86AudioLowerVolume</kbd> | Diminui o volume |
+| <kbd>XF86AudioMute</kbd> | Alterna o modo mudo dos altofalantes |
+| <kbd>XF86AudioMicMute</kbd> | Alterna o modo mudo do microfone |
+| <kbd>XF86MonBrightnessUp</kbd> | Aumenta o brilho da tela |
+| <kbd>XF86MonBrightnessDown</kbd> | Diminui o brilho da tela |
+
+### Gerenciamento de Janelas
+
+| Atalho | Ação |
+| --- | --- |
+| <kbd>super</kbd> | Alterna a visão geral |
+| <kbd>super + C/Q</kbd> | Fecha a janela em foco |
+| <kbd>super + Espaço</kbd> | Alterna o modo tela cheia |
+| <kbd>super + shift + Space</kbd> | Alterna o modo flutuante |
+| <kbd>super + S</kbd> | Troca a visão de sobreposição b/w |
+| <kbd>super + Igual</kbd> | Aumenta a escala / Mais zoom |
+| <kbd>super + Menos</kbd> | Diminui a escala / Menos zoom |
+| <kbd>super + Esquerda</kbd> | Muda o foco para a janela da esquerda |
+| <kbd>super + Direita</kbd> | Muda o foco para a janela da direita |
+| <kbd>super + Cima</kbd> | Muda o foco para a janela de cima |
+| <kbd>super + Baixo</kbd> | Muda o foco para a janela de baixo |
+| <kbd>super + shift + Esquerda/Direita/Cima/Baixo</kbd> | Move para o respectivo lado |
+| <kbd>super + ctrl + Esquerda/Direita/Cima/Baixo</kbd> | Redimensiona respectivamente |
+
+### Atalhos variados
+
+| Atalho | Ação |
+| --- | --- |
+| <kbd>super + P</kbd> | Executa o seletor de cores  |
+| <kbd>ctrl + alt + L</kbd> | Ativa o bloqueio de tela |
+| <kbd>super + shift + C</kbd> | Recarrega a config do newm |
+| <kbd>ctrl + alt + Delete</kbd> | Sai do NEWM |
+
+### Gestos no Touchpad
+
+| Gesto | Ação |
+| --- | --- |
+| <kbd>super + move-1</kbd> | Move a janela |
+| <kbd>super + swipe-2</kbd> | Redimensiona a janela |
+| <kbd>swipe-3</kbd> | Rola entre as janelas |
+| <kbd>swipe-4</kbd> | Ajusta a escala |
+
+<!-- Nvidia --------------------------------------- -->
+
+## Nvidia
+
+Se você está usando `Archcraft` e instalou os pacotes providos, não há mais nada que você tenha que fazer para rodar em uma máquina Nvidia. Quando você instala o Archcraft em máquina com Nvidia, ele faz todas as operações (mencionadas abaixo) requeridas para rodar o compositor wayland em sua máquina. O compositor deverá funcionar bem.
+
+Se você está rodando alguma outra distribuição e quer instalar na sua máquina com Nvidia, você precisa fazer alguns ajuses. Nesse guia, estarei assumindo que você está usando **Arch Linux**. Siga os passos abaixo para fazer este compositor wayland funcionar com Nvidia:
+
+- Instale **Nvidia Dnewms** no seu sistema. [NVIDIA](https://wiki.archlinux.org/title/NVIDIA) 
+- Edite o arquivo `/etc/mkinitcpio.conf` e adicione os módulos de kernel**`nvidia`** 
+```
+MODULES="nvidia nvidia_modeset nvidia_uvm nvidia_drm"
+```
+
+- No mesmo arquivo, remova o hook `kms` da variável de hooks se tiver
+- Reconstrua o seu arquivo initrd com: `sudo mkinitcpio -P linux`
+- Edite o arquivo `/etc/default/grub` e adicione o parâmetro **`nvidia_drm.modeset=1`** do kernel para Nvidia
+```
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash nvidia_drm.modeset=1 ..."
+```
+
+- Atualize sua configuração do grub com: `sudo grub-mkconfig -o /boot/grub/grub.cfg`
+- Reinicie sua máquina Nvidia e faça login no seu compositor wayland, isso deve funcionar agora.
+
+Mais informações: [NVIDIA#Installation](https://wiki.archlinux.org/title/NVIDIA#Installation), [NVIDIA#DRM_kernel_mode_setting](https://wiki.archlinux.org/title/NVIDIA#DRM_kernel_mode_setting)
+
+<!-- Temas --------------------------------------- -->
+
+## Screenshots
+
+### Desktop
+
+Aqui estão algumas capturas de tela do `NEWM`. Elas te darão uma ideia da experiência do NEWM no Archcraft.
+
+<Tabs>
+
+<TabItem value="wc_1" label="Solid" default>
+
+|Desktop 1|Desktop 2|Desktop 3|Desktop 4|Desktop 5|
+|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/newm/style_1/desktop/desktop_1.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/newm/style_1/desktop/desktop_2.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/newm/style_1/desktop/desktop_3.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/newm/style_1/desktop/desktop_4.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/newm/style_1/desktop/desktop_5.png)|
+
+|Desktop 6|Desktop 7|Desktop 8|Desktop 9|Desktop 10|
+|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/newm/style_1/desktop/desktop_6.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/newm/style_1/desktop/desktop_7.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/newm/style_1/desktop/desktop_8.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/newm/style_1/desktop/desktop_9.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/newm/style_1/desktop/desktop_10.png)|
+
+|Desktop 11|Desktop 12|
+|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/newm/style_1/desktop/desktop_11.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/newm/style_1/desktop/desktop_12.png)|
+
+</TabItem>
+
+<TabItem value="wc_2" label="Blur" default>
+
+|Desktop 1|Desktop 2|Desktop 3|Desktop 4|Desktop 5|
+|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/newm/style_2/desktop/desktop_1.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/newm/style_2/desktop/desktop_2.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/newm/style_2/desktop/desktop_3.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/newm/style_2/desktop/desktop_4.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/newm/style_2/desktop/desktop_5.png)|
+
+|Desktop 6|Desktop 7|Desktop 8|Desktop 9|Desktop 10|
+|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/newm/style_2/desktop/desktop_6.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/newm/style_2/desktop/desktop_7.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/newm/style_2/desktop/desktop_8.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/newm/style_2/desktop/desktop_9.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/newm/style_2/desktop/desktop_10.png)|
+
+</TabItem>
+
+</Tabs>
+
+> Confira todos os vídeos aqui: [NEWM Playlist](https://youtube.com/playlist?list=PLXH9dADRlWHaXM3Q8G_gaunljITif3cUl)
+
+### Temas
+
+Existem dois temas disponíveis para o NEWM.
+
+<Tabs>
+
+<TabItem value="wc_1" label="Solid" default>
+![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/newm/style_1/main.png)
+</TabItem>
+
+<TabItem value="wc_2" label="Blur" default>
+![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/newm/style_2/main.png)
+</TabItem>
+
+</Tabs>
+
+<!-- FAQs ----------------------------------------- -->
+
+## FAQs
+
+<details>
+<summary><b>Como atualizar as minhas configurações para as novas?</b></summary>
+
+Baixe o pacote atualizado em ko-fi (de graça) e apenas instale-o para atualizar para as novas configurações.
+
+#### Passos para pegar as atualizações (ou baixar os arquivos novamente):
+- Faça login na sua conta do Ko-fi
+- Vá para o seu `Histórico e Pagamentos Ko-fi`
+- Selecione as compras que você fez
+- Clique em `Ver Detalhes`
+- Depois, clique em `Ver Conteúdo` para baixar os arquivos atualizados.
+
+</details>
+
+<details>
+<summary><b>Por que meu cursor não está visível?</b></summary>
+
+Quando usamos certos drivers gráficos (ex: o controlador gráfico VMSVGA ou o driver proprietário da Nvidia), o cursor fica invisível. Isso pode ser consertado usando um software de cursor:
+```bash
+$ export WLR_NO_HARDWARE_CURSORS=1
+```
+
+</details>
+
+<details>
+<summary><b>Como mudar o tema GTK, ícones e cursor?</b></summary>
+
+Para mudar o tema GTK, ícones e cursor na sessão do NEWM, edite o script `~/.config/newm/scripts/gtkthemes` e reinicie o NEWM para aplicar as mudanças.
+```bash
+THEME='Nordic'
+ICONS='Qogir-Dark'
+FONT='Noto Sans 9'
+CURSOR='Qogirr-Dark'
+```
+
+</details>
+
+<details>
+<summary><b>Como gerenciar múltiplos monitores e resoluções no NEWM?</b></summary>
+
+Se você usa vários monitores como compositor wayland NEWM, você pode gerenciá-los como a seguir:
+
+1. Você pode dar nomes para as suas saídas com `wlr-randr`
+2. Edite `~/.config/newm/config.py` e use a informação que você pegou com o comando acima:
+```py
+outputs = [
+	##-- Laptop Display, Mode: 1920x1080, Scale: 1
+    { 'name': 'eDP-1', 'scale': 1.0, 'width': 1920, 'height': 1080,
+      'mHz': 60, 'pos_x': 0, 'pos_y': 0 , 'anim': True },
+
+	##-- External Monitor, Mode: 1920x1080, Scale: 1.5, Position: Right of Laptop
+    { 'name': 'HDMI-A-1', 'scale': 1.5, 'width': 1920, 'height': 1080,
+      'mHz': 60, 'pos_x': 1920, 'pos_y': 0 , 'anim': True },
+]
+```
+
+</details>

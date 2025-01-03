@@ -31,7 +31,7 @@ const config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'fr'],
+    locales: ['en', 'fr', 'pt'],
     localeConfigs: {
       en: {
         label: 'English',
@@ -41,6 +41,10 @@ const config = {
         label: 'Français',
         direction: 'ltr',
       },
+      pt: {
+        label: 'Portugês',
+        direction: 'ltr'
+      }
     },
   },
 

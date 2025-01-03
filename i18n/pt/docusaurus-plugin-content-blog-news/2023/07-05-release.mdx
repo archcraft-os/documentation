@@ -1,0 +1,43 @@
+---
+slug: 22-news-release
+title: Versão de Julho de 2023
+authors: adi1090x
+tags: [v23.07, release, iso]
+hide_table_of_contents: true
+---
+
+<!-- Badges -->
+export const Highlight = ({children, color}) => (
+  <span
+    style={{
+      backgroundColor: color,
+      borderRadius: '4px',
+      color: '#fff',
+      padding: '0.2rem',
+    }}>
+    {children}
+  </span>
+);
+
+ISO do Archcraft de julho de 2023 está disponível para download. Veja abaixo o que há de novo.
+
+<!--truncate-->
+
+### Changelogs :
+- Perfil da ISO atualizada com o novo archiso
+- Base mais recente com novos pacotes
+- Corrigido p erro do `xfce-power-manager` (não bloqueia a tela no lid close)
+- Corrigido erro do sddm que não salva a última sessão usada
+- Adicionado aplicativo de calculadora
+- **`Openbox WM`**
+  - Adicionado `tint2` como painel alternativo (em todos os temas)
+  - Capacidade de trocar entre os painéis
+  - Adicionado módulo `bluetooth` em ambos os painéis
+  - Adicionado um applet `bluetooth` no rofi
+  - Corrigido erro de redimensionamento de janela pela lateral da janela
+  - etc
+- **`BSPWM`**
+  - Adicionado o módulo `bluetooth` na polybar (em todos os temas)
+  - Adicionado um applet para `bluetooth` no rofi
+  - etc
+- Algumas correções de pequenos bugs.

@@ -1,0 +1,408 @@
+---
+sidebar_position: 2
+hide_table_of_contents: false
+---
+
+# Archcraft Prime
+
+<!-- Theme ---------------------------------------- -->
+<!-- Tabs -->
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<!-- Badges -->
+export const Highlight = ({children, color}) => (
+  <span
+    style={{
+      backgroundColor: color,
+      borderRadius: '25px',
+      color: '#fff',
+      padding: '0.2rem 0.6rem',
+    }}>
+    {children}
+  </span>
+);
+
+<!-- Adicione suas coisas depois disso -------------------- -->
+
+**Archcraft Prime : Uma Experiência Exclusiva Ultimate**
+ 
+![gif](https://raw.githubusercontent.com/archcraft-os/misc-files/main/gifs/prime.gif)
+
+## Introdução
+
+**Archcraft Prime** oferece todas (`Nada lançado depois do Prime`) as coisas exclusivas do Archcraft em ***Uma Única ISO***. Nele temos [`Openbox Premium`](/docs/window-managers/stacking-wm/openbox), [`Bspwm Premium`](/docs/window-managers/tiling-wm/bspwm) e [`i3wm Premium`](/docs/window-managers/tiling-wm/i3wm) assim comotodos os compositores wayland exclusivos([`Sway`](/docs/wayland-compositors/sway), [`Wayfire`](/docs/wayland-compositors/wayfire), [`River`](/docs/wayland-compositors/river), [`Hyprland`](/docs/wayland-compositors/hyprland) e [`Newm`](/docs/wayland-compositors/newm)) pre-instalados.
+
+Esse sabor do Archcraft é um resultado da sugestão de muitas pessoas e enquetes ([discord](https://discord.com/channels/888837929789710387/890046536778678355/1091409213147844658), [telegram](https://t.me/archcraftos/48993)) que eu fiz nas comunidades. Baseado na votação da maioria a favor da criação deste sabor, eu paresento o **`Archcraft Prime`**.
+
+Ele é basicamente um **Pacote** com tudo que o Archcraft oferece com exclusividade. A ideia por trás disso vem de tudo por menos e se o usuário quer tudo, ele não precisa ter tudo separadamente, e instalar tudo individualmente, em vez disso, ele pode ter tudo em um pacote completo com tudo o que ele precisa, instale a ISO (e escolha seu WM ou WC favorito)
+
+<!-- Download ------------------------------------- -->
+
+## Download
+
+Você pode baixar a ISO em <Highlight color="#50545b"><a href="https://ko-fi.com/s/c925a2a8c1" target="_blank">ko-fi ☕</a></Highlight>
+
+> O `nome de usuário` e `senha` padrão são **liveuser**
+
+### Instalação
+
+Para criar um USB bootável, veja [Criar um USB Bootável](/docs/boot-iso/boot-with-usb) <br/>
+Para instruções para instalação gráfica, veja [Instalar o Archcraft com Calamaress](/docs/install-archcraft/install-with-calamares) <br/>
+Para instruções para instalação CLI, veja [Instalar o  Archcraft com ABIF](/docs/install-archcraft/install-with-abif)
+
+### Atualizar
+
+sSe você é um usuário Prime, você não precisa reinstalar a ISO para atualizar o sistema. Siga os passos abaixo para atualizar seu Prime:
+
+- Na base regular, apenas execute o código a seguir para atualizar seu sistema - 
+```bash
+$ sudo pacman -Syyu
+``` 
+- Quando uma nova ISO do Prime é lançada, uma **Atualização de Pacote** também é lançada com a ISO para os usuários Prime. Use esta atualização de pacotes para atualizar coisas específicas do Prime.
+  - Baixe o pacote de atualização `atualizacao-existente-prime-MES-ANO.tar.gz` pelo ko-fi.
+  - Extraia com: `tar -xzvf atualizacao-existente-prime-MES-ANO.tar.gz
+  - Vá para o diretório extrído: `cd atualizacao-existente-prime-MES-ANO`
+  - Abra o terminal no m,esmo diretporio e execute o script de atualização: `./01_update.sh`
+  - É isso.
+
+<!-- Changelogs ----------------------------------- -->
+
+## Changelogs
+
+<details>
+<summary><b>Changelog (Outubro de 2024) : 8ª ISO</b></summary>
+
+**Data** : `22 de outubro de 2024`
+
+- Prefil da ISO atualizada
+- Última base com novos pacotes
+- Todos os pacotes Archcraft e AUR atualizados
+- Adicionado **novo Cursor, ícones e temas GTK** (com atualizações dos existentes)
+- Adicionado **novos temas do openbox wm** (atualizados os existentes)
+- Adicionado **novos icones e fontes nerd** (atualizados os existentes)
+- Temas atualizados entre todos os WMs e WCs (Polybar, Waybar, Rofi, Wofi, etc.)
+- Adicionados **5 novos temas/estilos** para openbox wm
+- Adicionados **4 novos sets de ícones** para o menu do openbox
+- Aciocionado suporte para o terminal `kitty` em todos os WMs e WCs
+- Atualizada a configuração do `alacritty` em todos os WMs e WCs
+- Atualizada a configuração do `foot` em todos os WCs
+- Adicionada nova configuração para `neofetch`
+- Tema do `zsh` atualizado
+- Adicionada nova configuração para o `picon`
+- **wayfire** : Atualizado para `0.9.0`, configurações atualizadas, novos plugins adicionados
+- **river** : Configurações atualizadas, erro com WMs flutuantes corrigido
+- **Hyprland** : Atualizado para `0.44.1`, configurações atualizadas, hyprlock atualizado, etc
+- Vários erros corrigidos, e mais!
+- Various bug fixes, and more!
+
+</details>
+
+<details>
+<summary><b>Changelog (Julho de 2024) : 7ª ISO</b></summary>
+
+**Data** : `4 de julho de 2024`
+
+- Perfil da ISO atualizado
+- Base atualizada com novos pacotes
+- Todos os pacotes Archcrafty e AUR atualizados
+- Configurações do Openbox atualizada
+- Adicionado Firewall (`ufw`) com GUI (`gufw`)
+- Adicionado `apparmor` para MAC (_controle de acosse mandatório_)
+- Pequenas melhorias e correçoes de bugs.
+
+</details>
+
+<details>
+<summary><b>Changelog (Abril de 2024) : 6ª ISO</b></summary>
+
+**Data** : `10 de abril de 2024`
+
+- Perfil da ISO atualizado
+- Última base com pacotes novos
+- Todos os pacotes do Archcraft e do AUR atualizados
+- Adicionado a última versão do instalados `calamares` e sua configuração (_corrigido o problema de autologin_)
+- Adicionado o novo pacote do `grub` (_corrigido o problema com a instalação no sistema de arquivos `xfs`_)
+- Adicionados pacotes de hook do grub (_para instalar o grub em todas as atualizações_)
+- Adicionado o pacote `arcgcraft-arandr` (GUI) para gerenciar os layouts de tela (_salvar e restaurar_)
+- Corrigido o problema do tema QT, adicionado configurações para QT6
+- Atualizados todos os window managers:
+  - Experiência em Desktop melhorada
+  - Openbox: Corrigido alguns pipemenus e configurações e temas atualizados (detecção de bateria, etc)
+  - Bspwm: Configurações e temas atualizados (detecção de bateria, etc)
+  - i3wm: Configurações e temas atualizados (detecção de bateria, etc)
+- Atualizados todo os compositores wayland:
+  - Adicionado o applet do rofi `abrir-como-root` em todos os WCs
+  - Hyprland: Adicionado o `hyprlock` & `hyptidle` e atualizadas as configurações para v0.38.0
+  - Newm: Corrigido o erro com rofi app-id e nomes de sessão
+- Ações e funcionalidades do Thunar melhorados
+  - Abrir o terminal de acordo com a sessão
+  - Abrir como root de acordo com a sessão
+  - Troca o papel de parede permanentemente em sessões suportadas
+- Pequenas melhorias e correções de bugs.
+
+</details>
+
+<details>
+<summary><b>Changelog (Janeiro de 2024) : 5ª ISO</b></summary>
+
+**Data** : `9 de janeiro de 2024`
+
+- Perfil da ISO atualizado
+- Última base com pacotes novos
+- Todos os pacotes do Archcraft e AUR atualizados
+- Todos os window managers atualizados
+  - Openbox: Corrigidos alguns pipemenus e configurações e temas atualizados
+  - Bspwm: Atualizados as configurações e temas (módulo de bandeja para polybar)
+  - i3wm: Atualizados as configurações e temas (módulo de bandeja para polybar)
+- Todos os compositores wayland atualizados
+  - Sway: Bugs corrigidos e configurações atualizadas
+  - Wayfire: Migrado para v0.8.0 e configurações atualizadas de acordo
+  - River: Bugs corrigidos e configurações atualizadas
+  - Hyprland: Usando minha própria construção do Hyprland para estabilidade e configuração atualizada para v0.34.0
+  - Newm: Corrigido o problema com a waybar se escondendo atrás das janelas e configurações atualizadas
+- Migação do `alacritty` para sua nova configuração (`yml` para toml`)
+- **Todos os scripts** relacionados ao alacritty atualizados
+- Pequenas melhorias e correção de bugs.
+
+</details>
+
+<details>
+<summary><b>Changelog (Outubro de 2023) : 4ª ISO</b></summary>
+
+**Data** : `14 de outubro de 2023`
+
+- Perfil da ISO atualizado
+- Última base com pacotes novos
+- Adicionado o app `archcraft-randr` para gerenciar a tela e monitor (Somente X11)
+- Todos os window managers atualizados
+  - PKGBUILDs limpos (`com somente as dependências necessárias`) e código atualizado
+  - Diretório **openbox-themes** agora está mesclado em **openbox**, nova estrutura de configuração para openbox
+  - Adicionado **exemplos de layouts** para muilti-monitor em `bspwmrc` (layouts para um, dois, ou três monitores)
+  - Adicionado suporte para multi-monitor em todos os WMs disponíveis (use `archcraft-randr`)
+- Todos os compositores wayland atualizados
+  - Adicionado um exemplo melhor para o suporte multi-monitor em...
+    - Sway: `~/.config/sway/sway-output`
+    - Wayfire: `~/.config/wayfire.ini`
+    - River: `~/.config/river/init`
+    - Hyprland: `~/.config/hypr/hyprland.conf`
+    - Newm: `~/.config/newm/config.py`
+- Adicionado a abilidade de `wipe` no ABIF
+- Corrigido o problema com o app `ajuda e dicas`
+- Removido `python2`, não é necessário mais
+- Pequenas melhorias e correção de bugs.
+
+</details>
+
+<details>
+<summary><b>Changelog (Julho de 2023) : 3ª ISO</b></summary>
+
+**Data** : `10 de julho de 2023`
+
+- Perfil da ISO atualizado com o archiso mais recente
+- Última base com pacotes novos
+- Corrigido o problema com `xfce-power-manager` (não bloqueia a tela quando é fechado)
+- Corrigido o problema do sddm não salvando a última sessão usada
+- Adicionado o app de calculadora
+- Adicionado o app de Boas-Vindas e Ajuda-e-Dicas
+- Corrigido o problema de escala nos apps QT no wayland
+- **`Openbox WM`**
+  - Adicionado o `tint2` como painel alternativo (em todos os temas)
+  - Abilidade de trocar entre os painéis
+  - Adicionado o módulo de `bluetooth` em ambos os painéis
+  - Adicionado o applet de `bluetooth` no rofi
+  - Corrigido o problema de redimensionamento de janela em cada lado da janela
+  - etc
+- **`BSPWM`**
+  - Adicionado o módulo de `bluetooth` na polybar (em todos os temas)
+  - Adicionado o applet de `bluetooth` no rofi
+  - etc
+- **`I3wm`**
+  - Adicionado o módulo de `bluetooth` na polybar (em todos os temas)
+  - Adicionado o applet de `bluetooth` no rofi
+  - etc
+- **`Sway, Wayfire, River, Hyprland`**
+  - Adicionado o módulo de `bluetooth` na polybar (em todos os temas)
+  - Adicionado o applet de `bluetooth` no rofi
+  - Adicionado o terminal `alacritty`
+  - Adicionado o suporte `pywal`
+  - Melhoria de um monte de scripts
+  - etc
+- Alguns pequenos bugs corrigidos.
+
+</details>
+
+<details>
+<summary><b>Changelog (Maio de 2023) : 2ª ISO</b></summary>
+
+**Data** : `6 de maio de 2023`
+
+- Nada demais, apenas atualização da ISO e correção do NEWM
+
+</details>
+
+<details>
+<summary><b>Changelog (Abril de 2023) : 1ª ISO</b></summary>
+
+**Data** : `28 de abril de 2023`
+
+- Base da ISO criada do zero
+- Inicializador Grub2 com temas
+- Plymouth & SDDM customizados
+- Apenas aplicações básicas, nada desnecessário
+- Instalador Calamares (Gráfico) com abilidade de escolher WMs/WCs
+- Instalador ABIF (CLI) como instalador secundário
+- Suporte completo para gerenciamento de Network, vários plugins de VPN
+- Suporte para Bluetooth integrado
+- Pipewire para Som/Áudio (Systemwide, Bluetooth, Jack)
+- Suporte para impressora integrado
+- Quase todos codecs de áudio, vídeo e imagem
+- Funcionadlidade completa para o gerenciador de arquivos (montagem, conexão, arquivamento, etc)
+- Suporte ao AUR integrado
+- Interface de usuário mínima
+- Todos os Window Managers Premium (Openbox, Bspwm, i3wm)
+- Todos os compositores wayland exclusivos (Sway, Wayfire, River, Hyprland, Newm)
+- Ícones, temas, papéis de parede e fontes do Archcraft
+- Etc
+
+</details>
+
+<!-- Compatibilidade -------------------------------- -->
+
+## Compatibilidade
+
+### Máquinas Virtuais
+
+Essa ISO funciona em VMs (Virtualbox, VMware, Qemu, etc). Mas **somente os Window Managers** (X11) vão funcionar. Todos os **compositores wayland não funcionam**. Se funcionar, serão muito lentos devido ao suporte 3D precário.
+
+### Nvidia
+
+Não existe suporte oficial para Nvidia. Infelizmente, seus drivers são muito confusos, e seu produtos aleatórios, é impossível ajudar se os `copositores wayland nessa ISO` não funcionar na sua máquina. todo caso pode ser aleatório, e funcionar perfeitamente, ou não funcionar de jeito nenhum. Então...<br\>
+A `ISO` tem tudo configurado **fora-da-caixa**, para rodar um _compositor wayland_ usando **Nvidia**. É preciso de todos os módulos habilitados no `mkinitcpio.conf` e no **initrd**, `parâmetros do Kernel` adicionados, e é necessário os drivers de vídeo proprietários instalados.<br\>
+***Agora, é sua escolha tentar isso.***
+
+**Atualização:** Como reportado, usuários são capazes de inicializar e instalar a ISO nas suas máquinas Nvidia.
+
+**Mais Informações: ** [Instalação do Sway](https://wiki.archlinux.org/title/Sway#Installation), [Hyprland Nvidia](https://wiki.hyprland.org/Nvidia/), [requerimentos do wayland](https://wiki.archlinux.org/title/wayland#Requirements), [DRM_kernel_mode_setting](https://wiki.archlinux.org/title/NVIDIA#DRM_kernel_mode_setting), [Instalação#NVIDIA](https://wiki.archlinux.org/title/NVIDIA#Installation)
+
+### Intel Iris XE
+
+Alguns usuários reportaram que os Compositores Wayland dessa ISO não funcionam em sistemas com GPUs `Intel Iris XE`.
+
+**Atualização: ** Eu pessoalmente testei a ISO com um sistema com `Nvidia + Intel iris XE` system (***Dell Inspiron 5520***) e a ISO funcionou bem.
+
+<!-- Screenshots ---------------------------------- -->
+
+## Screenshots
+
+Clique na imagem para ver todas as screenshots.
+
+<Tabs>
+
+<TabItem value="wm_1" label="Openbox" default>
+[![imgs](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/openbox/main.png)](/docs/window-managers/stacking-wm/openbox#screenshots)
+</TabItem>
+<TabItem value="wm_2" label="Bspwm" default>
+[![imgs](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/bspwm/main.png)](/docs/window-managers/tiling-wm/bspwm#screenshots)
+</TabItem>
+<TabItem value="wm_3" label="i3wm" default>
+[![imgs](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/i3wm/main.png)](/docs/window-managers/tiling-wm/i3wm#screenshots)
+</TabItem>
+<TabItem value="wc_1" label="Sway" default>
+[![imgs](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/sway/main.png)](/docs/wayland-compositors/sway#screenshots)
+</TabItem>
+<TabItem value="wc_2" label="Wayfire" default>
+[![imgs](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/wayfire/main.png)](/docs/wayland-compositors/wayfire#screenshots)
+</TabItem>
+<TabItem value="wc_3" label="River" default>
+[![imgs](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/river/main.png)](/docs/wayland-compositors/river#screenshots)
+</TabItem>
+<TabItem value="wc_4" label="Hyprland" default>
+[![imgs](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/hyprland/style_1/main.png)](/docs/wayland-compositors/hyprland#screenshots)
+</TabItem>
+<TabItem value="wc_5" label="NEWM" default>
+[![imgs](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/newm/style_1/main.png)](/docs/wayland-compositors/newm#screenshots)
+</TabItem>
+</Tabs>
+
+<!-- Vídeos --------------------------------------- -->
+
+## Vídeos
+
+<Tabs>
+<TabItem value="wm_1" label="Openbox" default>
+[![imgs](https://raw.githubusercontent.com/archcraft-os/misc-files/main/thumbnails/openbox.png)](https://youtu.be/ci_nMh0-7vA)
+</TabItem>
+<TabItem value="wm_2" label="Bspwm" default>
+[![imgs](https://raw.githubusercontent.com/archcraft-os/misc-files/main/thumbnails/bspwm.png)](https://youtu.be/GnF9CK_gwW4)
+</TabItem>
+<TabItem value="wm_3" label="i3wm" default>
+[![imgs](https://raw.githubusercontent.com/archcraft-os/misc-files/main/thumbnails/i3wm.png)](https://youtu.be/NYCX8o-fmoo)
+</TabItem>
+<TabItem value="wc_1" label="Sway" default>
+[![video](https://raw.githubusercontent.com/archcraft-os/misc-files/main/thumbnails/sway.png)](https://youtu.be/ASlQcf8Jc0I)
+</TabItem>
+<TabItem value="wc_2" label="Wayfire" default>
+[![video](https://raw.githubusercontent.com/archcraft-os/misc-files/main/thumbnails/wayfire.png)](https://youtube.com/playlist?list=PLXH9dADRlWHYk_5Boqiu7L3HcLVC83TWU)
+</TabItem>
+<TabItem value="wc_3" label="River" default>
+[![video](https://raw.githubusercontent.com/archcraft-os/misc-files/main/thumbnails/river.png)](https://youtu.be/MwnK6arB2Rc)
+</TabItem>
+<TabItem value="wc_4" label="Hyprland" default>
+[![video](https://raw.githubusercontent.com/archcraft-os/misc-files/main/thumbnails/hyprland_1.png)](https://youtu.be/t6Zd2F7rtPw)
+</TabItem>
+<TabItem value="wc_5" label="NEWM" default>
+[![video](https://raw.githubusercontent.com/archcraft-os/misc-files/main/thumbnails/newm_1.png)](https://youtube.com/playlist?list=PLXH9dADRlWHaXM3Q8G_gaunljITif3cUl)
+</TabItem>
+</Tabs>
+
+<!-- FAQs ----------------------------------------- -->
+
+## FAQs
+
+<details>
+<summary><b>Como usar o Archcraft Prime?</b></summary>
+
+Para qualquer ajuda com as Configurações e Atalhos de Teclado, visite a página do window manager e compositos wayland respectivo.
+
+</details>
+
+<details>
+<summary><b>Como atualizar a ISO/Pacote de atualização?</b></summary>
+
+Siga os passos abaixo para atualizar (ou baixar os arquivos novamente):
+- Faça login na sua conta do Ko-fi
+- Vá para seu `Histórico de pagamentos Ko-fi`
+- Selecione suas compras
+- Click em `Ver Detalhes`
+- depois, clique em `Ver Conteúdo` para baixar os arquivos atualizados.
+
+</details>
+
+<details>
+<summary><b>Posso ter o reembolso se a ISO não funcionar para mim?</b></summary>
+
+Primeiro de tudo, este é o **modelo de doação** do Archcraft, onde você `doa para o suporte` do seu projeto open-source favorito.
+
+O Archcraft não aceita doações. Essas coisas exclusivas ajudam o Archcraft em todas as suas necessidades financeiras. A ideia por trás disso, **Você ajuda o Archcraft e em troca você ganha um presente. Ganhar-ganhar para ambos!**
+
+Todos os cenários são claramente mencionados nesta página([veja a compatibilidade](/docs/premium/wse#compatibility)), sobre o funcionamento desta ISO. Se você ***ainda escolher continuar com isso*** (sabendo todos os detalhes sobre isso) e a ISO não funcionar para você. **`Por favor, nao pergunte sobre reembolso ou trocas`**. Eu vpu, definitivamente, te ajudar com seu problemas e tentar resolvê-los o mais rápido possível.
+
+</details>
+
+<details>
+<summary><b>Eu preciso de ajuda com a ISO</b></summary>
+
+Os melhores lugares para se encontrar ajuda rápida são nas **Comunidades Archcraft**. Então junte-se à elas e procure por ajuda lá. Nos links no rodapé da página
+
+Se você tiver problemas com isso, mande-me um e-mail para **adi1090x@gmail.com** e sinta-se à vontade para pedir ajuda.
+
+
+</details>
+
+<details>
+<summary><b>Onde eu reporto os problemas?</b></summary>
+
+Se você encontrou um erro na ISO e quiser reportá-lo, abra uma issue no [Github](https://github.com/archcraft-os/archcraft-prime/issues)
+
+</details>
