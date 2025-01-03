@@ -4,10 +4,28 @@
         <title>Archcraft Blog</title>
         <link>https://wiki.archcraft.io/fr/news</link>
         <description>Archcraft Blog</description>
-        <lastBuildDate>Tue, 22 Oct 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 03 Jan 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>fr</language>
+        <item>
+            <title><![CDATA[January 2025 Release]]></title>
+            <link>https://wiki.archcraft.io/fr/news/45-news-release</link>
+            <guid>https://wiki.archcraft.io/fr/news/45-news-release</guid>
+            <pubDate>Fri, 03 Jan 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[January 2025 ISO of Archcraft is now available to download. Read the changelogs below to know what's new.]]></description>
+            <content:encoded><![CDATA[<p>January 2025 ISO of Archcraft is now available to download. Read the changelogs below to know what's new.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="changelogs-">Changelogs :<a href="https://wiki.archcraft.io/fr/news/45-news-release#changelogs-" class="hash-link" aria-label="Lien direct vers Changelogs :" title="Lien direct vers Changelogs :">​</a></h3>
+<ul>
+<li>Updated ISO profile to <code>archiso 82-1</code></li>
+<li>Latest base with new packages</li>
+<li>Update all Archcraft and AUR packages</li>
+<li>Small improvements and bugs fixed.</li>
+</ul>]]></content:encoded>
+            <category>v25.01</category>
+            <category>release</category>
+            <category>iso</category>
+        </item>
         <item>
             <title><![CDATA[Archcraft Prime Release]]></title>
             <link>https://wiki.archcraft.io/fr/news/43-news-release</link>
@@ -734,26 +752,6 @@
 </ul>]]></content:encoded>
             <category>flavor</category>
             <category>lxde</category>
-            <category>release</category>
-            <category>iso</category>
-        </item>
-        <item>
-            <title><![CDATA[Archcraft XFCE Release]]></title>
-            <link>https://wiki.archcraft.io/fr/news/25-news-release</link>
-            <guid>https://wiki.archcraft.io/fr/news/25-news-release</guid>
-            <pubDate>Fri, 21 Jul 2023 00:00:00 GMT</pubDate>
-            <description><![CDATA[New ISO of Archcraft XFCE is now available to download. Read the changelogs below to know what's new.]]></description>
-            <content:encoded><![CDATA[<p>New ISO of Archcraft XFCE is now available to download. Read the changelogs below to know what's new.</p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="changelogs-">Changelogs :<a href="https://wiki.archcraft.io/fr/news/25-news-release#changelogs-" class="hash-link" aria-label="Lien direct vers Changelogs :" title="Lien direct vers Changelogs :">​</a></h3>
-<ul>
-<li>Updated ISO base and profile</li>
-<li>Updated the ISO with latest packages</li>
-<li>Added New Themes and Wallpapers</li>
-<li>Fixed the directory issue on xfce-panel</li>
-<li>Bug Fixes, Etc.</li>
-</ul>]]></content:encoded>
-            <category>flavor</category>
-            <category>xfce</category>
             <category>release</category>
             <category>iso</category>
         </item>

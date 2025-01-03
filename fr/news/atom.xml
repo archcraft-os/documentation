@@ -2,11 +2,33 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wiki.archcraft.io/fr/news</id>
     <title>Archcraft Blog</title>
-    <updated>2024-10-22T00:00:00.000Z</updated>
+    <updated>2025-01-03T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wiki.archcraft.io/fr/news"/>
     <subtitle>Archcraft Blog</subtitle>
     <icon>https://wiki.archcraft.io/fr/img/favicon.svg</icon>
+    <entry>
+        <title type="html"><![CDATA[January 2025 Release]]></title>
+        <id>https://wiki.archcraft.io/fr/news/45-news-release</id>
+        <link href="https://wiki.archcraft.io/fr/news/45-news-release"/>
+        <updated>2025-01-03T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[January 2025 ISO of Archcraft is now available to download. Read the changelogs below to know what's new.]]></summary>
+        <content type="html"><![CDATA[<p>January 2025 ISO of Archcraft is now available to download. Read the changelogs below to know what's new.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="changelogs-">Changelogs :<a href="https://wiki.archcraft.io/fr/news/45-news-release#changelogs-" class="hash-link" aria-label="Lien direct vers Changelogs :" title="Lien direct vers Changelogs :">​</a></h3>
+<ul>
+<li>Updated ISO profile to <code>archiso 82-1</code></li>
+<li>Latest base with new packages</li>
+<li>Update all Archcraft and AUR packages</li>
+<li>Small improvements and bugs fixed.</li>
+</ul>]]></content>
+        <author>
+            <name>Aditya Shakya</name>
+            <uri>https://github.com/adi1090x</uri>
+        </author>
+        <category label="v25.01" term="v25.01"/>
+        <category label="release" term="release"/>
+        <category label="iso" term="iso"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Archcraft Prime Release]]></title>
         <id>https://wiki.archcraft.io/fr/news/43-news-release</id>
@@ -809,30 +831,6 @@
         </author>
         <category label="flavor" term="flavor"/>
         <category label="lxde" term="lxde"/>
-        <category label="release" term="release"/>
-        <category label="iso" term="iso"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Archcraft XFCE Release]]></title>
-        <id>https://wiki.archcraft.io/fr/news/25-news-release</id>
-        <link href="https://wiki.archcraft.io/fr/news/25-news-release"/>
-        <updated>2023-07-21T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[New ISO of Archcraft XFCE is now available to download. Read the changelogs below to know what's new.]]></summary>
-        <content type="html"><![CDATA[<p>New ISO of Archcraft XFCE is now available to download. Read the changelogs below to know what's new.</p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="changelogs-">Changelogs :<a href="https://wiki.archcraft.io/fr/news/25-news-release#changelogs-" class="hash-link" aria-label="Lien direct vers Changelogs :" title="Lien direct vers Changelogs :">​</a></h3>
-<ul>
-<li>Updated ISO base and profile</li>
-<li>Updated the ISO with latest packages</li>
-<li>Added New Themes and Wallpapers</li>
-<li>Fixed the directory issue on xfce-panel</li>
-<li>Bug Fixes, Etc.</li>
-</ul>]]></content>
-        <author>
-            <name>Aditya Shakya</name>
-            <uri>https://github.com/adi1090x</uri>
-        </author>
-        <category label="flavor" term="flavor"/>
-        <category label="xfce" term="xfce"/>
         <category label="release" term="release"/>
         <category label="iso" term="iso"/>
     </entry>
