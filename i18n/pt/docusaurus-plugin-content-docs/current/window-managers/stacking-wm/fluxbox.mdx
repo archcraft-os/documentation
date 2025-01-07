@@ -1,0 +1,341 @@
+---
+sidebar_position: 7
+hide_table_of_contents: false
+---
+
+# Fluxbox
+
+<!-- Theme ---------------------------------------- -->
+<!-- Tabs -->
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<!-- Badges -->
+export const Highlight = ({children, color}) => (
+  <span
+    style={{
+      backgroundColor: color,
+      borderRadius: '4px',
+      color: '#fff',
+      padding: '0 0.2rem 0 0.2rem',
+    }}>
+    {children}
+  </span>
+);
+
+<!-- Adicione suas coisas depois disso -------------------- -->
+
+Fluxbox é um gerenciador de janelas para X11. Ele é baseado no código do Fluxbox 0.61.1, mas com aprimoramentos significativos. O Fluxbox oferece diversos recursos de gerenciamento de janelas, como abas (tabbing) e agrupamento. Toda a configuração do Fluxbox é armazenada em arquivos de texto simples; no entanto, algumas configurações podem ser ajustadas graficamente através do menu de configuração.
+
+![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/fluxbox/main.png)
+
+<!-- Instalação --------------------------------- -->
+
+## Instalação
+
+Depois de concluir a instalação do Archcraft, o **Fluxbox** pode ser instalado sobre ele. Ele já vem pré-configurado e pronto para usar. Abra um terminal e execute o seguinte comando para instalar o Fluxbox:
+
+```bash
+$ sudo pacman -Sy archcraft-fluxbox
+```
+
+<!-- Configuração -------------------------------- -->
+
+## Configuração
+
+O Fluxbox já vem pré-configurado no Archcraft. Nesta seção, veremos como o gerenciador de janelas Fluxbox é configurado, quais ferramentas e utilitários são usados para torná-lo completo, como um ambiente de desktop.
+
+### Estrutura de Configuração
+
+A estrutura de configuração do Fluxbox no Archcraft é mais ou menos assim:
+
+```
+~/.fluxbox         : diretório de configuração do fluxbox
+├── alacritty      : configuração do terminal
+├── backgrounds    : papéis de parede
+├── scripts        : scripts usados para o fluxbox
+├── styles         : estilos/temas do fluxbox
+├── theme          : tema de desktop (configurações do polybar, rofi)
+├── apps           : configuração das janelas de aplicativos específicos
+├── dunstrc        : configuração do dunst para notificações
+├── init           : arquivo de configuração principal do fluxbox
+├── keys           : arquivo de atalhos de teclado do fluxbox
+├── menu           : arquivo de configuração do menu do fluxbox
+├── picom.conf     : configuração do compositor
+├── startup        : aplicativos de inicialização
+├── windowmenu     : arquivo de configuração para alterar o menu da janela
+└── xsettingsd     : arquivo de configuração de temas GTK, ícones e fontes
+```
+
+### Terminal
+
+**Alacritty** é o terminal padrão. No gerenciador de janelas Fluxbox, o alacritty é iniciado com um arquivo de configuração alternativo. Se você precisar alterar algo, certifique-se de modificar os arquivos de configuração no diretório `~/.fluxbox/alacritty`. Estes são os arquivos de configuração que você pode modificar para alterar o comportamento do seu terminal:
+
+**`~/.fluxbox/alacritty/alacritty.toml`** : Arquivo de configuração principal <br/>
+**`~/.fluxbox/alacritty/colors.toml`** : Configurações de cores <br/>
+**`~/.fluxbox/alacritty/fonts.toml`** : Configurações de fontes
+
+> Se precisar de ajuda com a configuração do alacritty, execute: `man 5 alacritty` no terminal.
+
+### Notificações
+
+**Dunst** é usado como o daemon de notificações no Fluxbox. No gerenciador de janelas Fluxbox, o dunst é iniciado com um arquivo de configuração alternativo, que é o `~/.fluxbox/dunstrc`. Portanto, se você precisar modificar algo, edite este arquivo.
+
+> Se precisar de ajuda com a configuração do dunst, execute: `man 5 dunst` no terminal.
+
+### Papel de Parede
+
+**hsetroot** define o papel de parede no Fluxbox. Se você quiser mudar o papel de parede, edite o script `~/.fluxbox/startup` e adicione o caminho para o seu papel de parede:
+```bash
+# Restaurar o papel de parede
+hsetroot -cover '/caminho/para/seu/papel/de/parede'
+```
+
+> Para mudar o papel de parede rapidamente, clique com o botão direito na área de trabalho e vá para `Fluxbox > Backgrounds`
+
+### Barra de Status
+
+**Polybar** é utilizado como a barra de status no gerenciador de janelas Fluxbox do Archcraft.
+
+As configurações do polybar podem ser encontradas dentro do diretório _theme_ do Fluxbox `~/.fluxbox/theme`
+
+Se você quiser modificar as configurações do **polybar**, ou talvez adicionar/remover módulos, precisará editar os seguintes arquivos:
+
+**`~/.fluxbox/theme/polybar/config.ini`** : Arquivo de configuração principal <br/>
+**`~/.fluxbox/theme/polybar/colors.ini`** : Arquivo de configurações de cores <br/>
+**`~/.fluxbox/theme/polybar/modules.ini`** : Arquivo de configurações de módulos
+
+> Se precisar de ajuda com a configuração do polybar, visite: [wiki do polybar](https://github.com/polybar/polybar/wiki)
+
+:::tip
+
+Se você quiser usar a barra de ferramentas padrão do Fluxbox em vez do polybar, edite o arquivo `~/.fluxbox/init` e habilite-o.
+```ini
+...
+session.screen0.toolbar.visible: true
+...
+```
+
+Além disso, edite o script `~/.fluxbox/startup` e desabilite o polybar na inicialização.
+:::
+
+### lançadores e Applets
+
+**Rofi** é usado como lançador de aplicativos, executor de comandos e vários applets. Para modificar a configuração do rofi, edite o arquivo `~/.config/rofi/config.rasi`.
+
+> Se precisar de ajuda com a configuração do rofi, execute: `man rofi` no terminal.
+
+Os scripts para rofi usados no Fluxbox podem ser encontrados no diretório `~/.fluxbox/scripts`. Estes são os seguintes scripts que utilizam rofi para fornecer lançadores e applets no Fluxbox:
+
+**`rofi_askpass`** : Frontend baseado no rofi para `sudo` obter senha de root <br/>
+**`rofi_asroot`** : applet para abrir aplicativos como root <br/>
+**`rofi_bluetooth`** : applet de bluetooth para conectar rapidamente a dispositivos BT <br/>
+**`rofi_launcher`** : lançador de aplicativos, executador de comandos, gerenciador de arquivos e gerenciador de tarefas <br/>
+**`rofi_music`** : applet de música, que controla o MPD com `mpc` <br/>
+**`rofi_powermenu`** : menu de energia, com diálogo de confirmação <br/>
+**`rofi_runner`** : executa rapidamente um comando <br/>
+**`rofi_screenshot`** : applet de captura de tela que funciona com maim <br/>
+**`rofi_status`** : applet para exibir várias informações do sistema <br/>
+**`rofi_windows`** : applet para gerenciar janelas abertas
+
+Se você quiser modificar qualquer applet ou talvez estender a funcionalidade do applet, basta editar os scripts acima.
+
+A configuração de cada script pode ser encontrada dentro do diretório _theme_ do Fluxbox `~/.fluxbox/theme`
+
+Por exemplo, se você quiser modificar a aparência do **launcher**, então você precisará editar o arquivo `~/.fluxbox/theme/rofi/launcher.rasi`. O mesmo vale para cada outro applet, edite o arquivo respectivo no mesmo diretório.
+
+> Se precisar de ajuda com o tema do rofi, execute: `man rofi-theme` no terminal.
+
+Para alterar as cores e fontes dos Lançadores e applets, edite os arquivos `~/.fluxbox/theme/rofi/shared/colors.rasi` e `~/.fluxbox/theme/rofi/shared/fonts.rasi`.
+
+### Compositor
+
+**Picom** é utilizado para composição. É um compositor leve com sombreamento, desfoque avançado e transições. No Fluxbox, o picom é iniciado com um arquivo de configuração alternativo, que é o `~/.fluxbox/picom.conf`. 
+
+Se você precisar alterar algo relacionado ao picom, edite este arquivo de configuração.
+
+> Se precisar de ajuda com a configuração do picom, verifique o arquivo de configuração padrão do picom em `/etc/xdg/picom.conf`
+
+:::info
+
+Se você está tendo problemas de "screen-tearing", usar o backend `glx` pode resolver este problema. <br/>
+Se você está enfrentando lentidão, travamentos ou congelamentos, tente alternar entre os backends `xrender` e `glx`.
+
+:::
+
+### Gerenciador de Janelas
+
+A configuração do Fluxbox está disponível no seu diretório home. Para configurar o gerenciador de janelas Fluxbox, os seguintes arquivos são utilizados:
+
+**`apps`**: um arquivo de configuração para lembrar a configuração de janelas de aplicativos específicos <br/>
+**`init`**: o arquivo de configuração principal de recursos do fluxbox <br/>
+**`keys`**: o arquivo de atalhos de teclado (hotkeys) do fluxbox <br/>
+**`menu`**: a configuração do menu do fluxbox <br/>
+**`startup`**: onde os aplicativos de inicialização são lançados <br/>
+**`windowmenu`**: um arquivo de configuração para alterar o próprio Menu de Janelas
+
+> Se precisar de ajuda com a configuração do fluxbox, consulte as manpages. Também visite [Fluxbox Wiki](https://fluxboxwiki.github.io/)
+
+<!-- Atalhos de Teclado ---------------------------------- -->
+
+## Atalhos de Teclado
+
+Aqui está uma lista de alguns atalhos importantes que você precisa conhecer para operar o Fluxbox facilmente. Se você quiser visualizar, modificar ou adicionar novos atalhos, edite o arquivo `~/.fluxbox/keys`.
+
+### Aplicativos
+
+| Atalho | Ação |
+| --- | --- |
+| <kbd>super + Return</kbd> | Abre terminal (alacritty) |
+| <kbd>super + T</kbd> | Abre terminal em tela cheia |
+| <kbd>super + F</kbd> | Abre gerenciador de arquivos (thunar) |
+| <kbd>super + E</kbd> | Abre editor de texto (geany) |
+| <kbd>super + W</kbd> | Abre navegador web (firefox) |
+
+### Menu e Applets
+
+| Atalho | Ação |
+| --- | --- |
+| <kbd>super</kbd> | Abre lançador de aplicativos |
+| <kbd>alt + F1</kbd> | Abre lançador de aplicativos |
+| <kbd>alt + F2</kbd> | Abre executador de comandos |
+| <kbd>super + R</kbd> | Abre executador de comandos |
+| <kbd>super + N</kbd> | Abre applet de gerenciador de rede |
+| <kbd>super + B</kbd> | Abre applet de bluetooth |
+| <kbd>super + M</kbd> | Abre applet de música |
+| <kbd>super + X</kbd> | Abre applet de menu de energia |
+| <kbd>super + S</kbd> | Abre applet de status |
+| <kbd>super + Space</kbd> | Abre menu raiz do fluxbox |
+| <kbd>alt + Space</kbd> | Abre menu de janela do fluxbox |
+
+### Teclas de Hardware
+
+| Atalho | Ação |
+| --- | --- |
+| <kbd>Print</kbd> | Tira captura de tela |
+| <kbd>alt + Print</kbd> | Tira captura de tela com atraso de 5 segundos |
+| <kbd>shift + Print</kbd> | Tira captura de tela com atraso de 10 segundos |
+| <kbd>ctrl + Print</kbd> | Tira captura de tela da janela focada |
+| <kbd>super + Print</kbd> | Tira captura de tela da área selecionada |
+| <kbd>XF86AudioRaiseVolume</kbd> | Aumenta volume |
+| <kbd>XF86AudioLowerVolume</kbd> | Diminui volume |
+| <kbd>XF86AudioMute</kbd> | Alterna mudo dos alto-falantes |
+| <kbd>XF86AudioMicMute</kbd> | Alterna mudo do microfone |
+| <kbd>XF86Audio + Next/Prev/Play/Stop</kbd> | Controles de mídia (MPD) |
+| <kbd>XF86MonBrightnessUp</kbd> | Aumenta brilho da tela |
+| <kbd>XF86MonBrightnessDown</kbd> | Diminui brilho da tela |
+
+### Espaços de Trabalho
+
+| Atalho | Ação |
+| --- | --- |
+| <kbd>super + 1..5</kbd> | Muda para o respectivo espaço de trabalho |
+| <kbd>super + shift + 1..5</kbd> | Move a janela atual para o respectivo espaço de trabalho |
+| <kbd>super + ctrl + 1..5</kbd> | Move a janela atual e mudar para o respectivo espaço de trabalho |
+| <kbd>super + shift + Left/Right</kbd> | Move a janela atual e segui-la para o espaço de trabalho anterior/próximo |
+
+### Gerenciamento de Janelas
+
+| Atalho | Ação |
+| --- | --- |
+| <kbd>super + C/Q</kbd> | Fecha a janela focada |
+| <kbd>super + D</kbd> | Alterna exibição da área de trabalho |
+| <kbd>alt + F4</kbd> | Fecha janela |
+| <kbd>alt + F5</kbd> | Minimiza janela |
+| <kbd>alt + F6</kbd> | Maximiza janela |
+| <kbd>alt + F7</kbd> | Alterna decorações |
+| <kbd>alt + F11</kbd> | Alterna modo tela cheia |
+| <kbd>alt + Tab</kbd> | Alterna entre janelas abertas |
+| <kbd>super + Tab</kbd> | Alterna entre abas na janela atual |
+| <kbd>ctrl + 1..9</kbd> | Ir para uma aba específica na janela atual |
+| <kbd>super + shift + D</kbd> | Remove a aba atual do grupo de abas, colocando-a em sua própria janela |
+| <kbd>ctrl + alt + Left/Right/Up/Down</kbd> | Move a janela focada |
+| <kbd>ctrl + super + Left/Right/Up/Down</kbd> | Redimensiona a janela focada |
+| <kbd>super + Left/Right/Up/Down</kbd> | Ajuste de janela |
+| <kbd>super + H</kbd> | Organizar janelas horizontalmente |
+| <kbd>super + V</kbd> | Organizar janelas verticalmente |
+| <kbd>super + shift + H</kbd> | Organizar janelas em pilha à direita |
+| <kbd>super + shift + L</kbd> | Organizar janelas em pilha à esquerda |
+| <kbd>super + shift + J</kbd> | Organizar janelas em pilha para baixo |
+| <kbd>super + shift + K</kbd> | Organizar janelas em pilha para cima |
+
+### Gerenciador de Janelas
+
+| Atalho | Ação |
+| --- | --- |
+| <kbd>ctrl + alt + Delete</kbd> | Sai do fluxbox |
+| <kbd>ctrl + alt + BackSpace</kbd> | Reinicia o fluxbox |
+| <kbd>ctrl + alt + R</kbd> | Reconfigura o fluxbox |
+
+### Teclas Diversas
+
+| Atalho | Ação |
+| --- | --- |
+| <kbd>ctrl + alt + M</kbd> | Executa ncmpcpp com arte do álbum |
+| <kbd>ctrl + alt + L</kbd> | Aciona tela de bloqueio |
+| <kbd>super + P</kbd> | Executa seletor de cores |
+| <kbd>super + Escape</kbd> | Executa xkill |
+
+<!-- Temas --------------------------------------- -->
+
+## Screenshots
+
+Aqui estão algumas capturas de tela do `Fluxbox`. Elas te darão uma ideia da experiência do Fluxbox no Archcraft
+
+|Desktop 1|Desktop 2|Desktop 3|Desktop 4|
+|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/fluxbox/desktop/desktop_1.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/fluxbox/desktop/desktop_2.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/fluxbox/desktop/desktop_3.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/fluxbox/desktop/desktop_4.png)|
+
+|Desktop 5|Desktop 6|Desktop 7|Desktop 8|
+|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/fluxbox/desktop/desktop_5.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/fluxbox/desktop/desktop_6.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/fluxbox/desktop/desktop_7.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/fluxbox/desktop/desktop_8.png)|
+
+|Desktop 9|Desktop 10|Desktop 11|Desktop 12|
+|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/fluxbox/desktop/desktop_9.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/fluxbox/desktop/desktop_10.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/fluxbox/desktop/desktop_11.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/fluxbox/desktop/desktop_12.png)|
+
+<!-- FAQs ----------------------------------------- -->
+
+## FAQs
+
+<details>
+<summary><b>Como atualizar minha configuração para as novas configurações?</b></summary>
+
+Quando uma nova versão do Archcraft Fluxbox for lançada, e você atualizar o sistema usando `sudo pacman -Syu` ou atualizar o pacote Fluxbox com `sudo pacman -S archcraft-fluxbox`, novos arquivos de configuração serão instalados como **~/.fluxbox_pacnew_YYYY-MM-DD** no seu diretório pessoal.
+
+Para usar as novas configurações:
+- Faça um backup do seu diretório `~/.fluxbox`.
+- Mova `~/.fluxbox_pacnew_YYYY-MM-DD` para `~/.fluxbox`.
+- Faça logout e login novamente.
+
+</details>
+
+<details>
+<summary><b>Como mudar o tema GTK, ícones e cursor?</b></summary>
+
+Para mudar o tema GTK, ícones e cursor na sessão do Fluxbox, edite o arquivo `~/.fluxbox/xsettingsd` e reinicie o Fluxbox para aplicar as mudanças:
+
+```bash
+Net/ThemeName "Arc-Dark"
+Net/IconThemeName "Arc-Circle"
+Gtk/CursorThemeName "Qogirr"
+```
+
+</details>
+
+<details>
+<summary><b>Como gerenciar múltiplos monitores e resolução no Fluxbox?</b></summary>
+
+Se você usa múltiplos monitores com o Fluxbox, pode gerenciá-los executando o _Manager Monitors_ ou o aplicativo `archcraft-randr`.
+
+</details>
+
+<details>
+<summary><b>Por que o Alacritty não está funcionando no meu computador?</b></summary>
+
+Como o Alacritty é um emulador de terminal baseado em OpenGL, ele pode não funcionar em alguns hardwares. Você pode fazer com que ele funcione nesses computadores seguindo esses métodos:
+
+1. Abra o Alacritty com a variável **LIBGL_ALWAYS_SOFTWARE=1**. Edite os keybindings ou o script que inicia o Alacritty e substitua `alacritty` por `LIBGL_ALWAYS_SOFTWARE=1 alacritty`.
+2. Edite o arquivo **/usr/share/applications/Alacritty.desktop** e substitua `Exec=alacritty` por `Exec=env LIBGL_ALWAYS_SOFTWARE=1 alacritty`.
+
+</details>

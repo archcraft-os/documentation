@@ -1,0 +1,310 @@
+---
+sidebar_position: 6
+hide_table_of_contents: false
+---
+
+# EvilWM
+
+<!-- Theme ---------------------------------------- -->
+<!-- Tabs -->
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<!-- Badges -->
+export const Highlight = ({children, color}) => (
+  <span
+    style={{
+      backgroundColor: color,
+      borderRadius: '4px',
+      color: '#fff',
+      padding: '0 0.2rem 0 0.2rem',
+    }}>
+    {children}
+  </span>
+);
+
+<!-- Adicione suas coisas depois disso -------------------- -->
+
+O **EvilWM** é um gerenciador de janelas minimalista para o sistema de janelas X. Ele é minimalista porque omite elementos desnecessários, como decorações de janelas e ícones. Porém, é bastante utilizável, oferecendo um bom controle por teclado com recursos como reposicionamento e alternâncias de maximização, arrasto de janelas sólido, suporte para encaixar na borda e desktops virtuais.
+
+![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/evilwm/main.png)
+
+<!-- Instalação --------------------------------- -->
+
+## Instalação
+
+Após concluir a instalação do Archcraft, o **EvilWM** pode ser instalado sobre ele. Ele já vem pré-configurado e pronto para uso. Abra um terminal e execute o seguinte comando para instalar o EvilWM:
+
+```bash
+$ sudo pacman -Sy archcraft-evilwm
+```
+
+<!-- Configuração -------------------------------- -->
+
+## Configuration
+
+O EvilWM já vem pré-configurado no Archcraft. Nesta seção, veremos como o gerenciador de janelas EvilWM é configurado, quais ferramentas e utilitários são usados para torná-lo completo, como um ambiente de desktop.
+
+### Estrutura de Configuração
+
+A estrutura de configuração do EvilWM no Archcraft é algo como isto:
+
+```
+/usr/bin/run-evilwm     : Programas de inicialização automática
+~/.evilwmrc             : Arquivo de configuração principal do evilwm
+~/.evilwm               : Diretório de configuração do evilwm
+├── alacritty           : Configuração do terminal
+├── scripts             : Scripts usados pelo evilwm
+├── theme               : Tema de desktop (configurações do polybar, rofi)
+├── dunstrc             : Arquivo de configuração do dunst para notificações
+├── picom.conf          : Arquivo de configuração do compositor
+├── sxhkdrc             : Arquivo de configuração dos atalhos de teclado
+└── xsettingsd          : Arquivo de configuração de temas GTK, ícones e fontes
+```
+
+### Terminal
+
+**Alacritty** é o terminal padrão. No gerenciador de janelas EvilWM, o Alacritty é iniciado com um arquivo de configuração alternativo. Se você precisar alterar algo, certifique-se de modificar os arquivos de configuração no diretório `~/.evilwm/alacritty`. Estes são os arquivos de configuração que você pode modificar para alterar o comportamento do seu terminal:
+
+**`~/.evilwm/alacritty/alacritty.toml`** : Arquivo de configuração principal <br/>
+**`~/.evilwm/alacritty/colors.toml`** : Configurações de cores <br/>
+**`~/.evilwm/alacritty/fonts.toml`** : Configurações de fontes
+
+> Se precisar de ajuda com a configuração do alacritty, execute: `man 5 alacritty` no terminal.
+
+### Notificação
+
+**Dunst** é usado como o daemon de notificações no EvilWM. No gerenciador de janelas EvilWM, o Dunst é iniciado com um arquivo de configuração alternativo, que é o `~/.evilwm/dunstrc`. Então, se precisar modificar algo, certifique-se de editar esse arquivo.
+
+> Se precisar de ajuda com a configuração do dunst, execute: `man 5 dunst` no terminal.
+
+### Papel de parede
+
+**hsetroot** define o papel de parede no EvilWM. Se você quiser alterar o papel de parede, edite o script `/usr/bin/run-evilwm` e adicione o caminho para o seu papel de parede:
+
+```bash
+# Restaurar o papel de parede
+hsetroot -cover '/caminho/para/seu/papel/de/parede'
+```
+
+### Barra de status
+
+**Polybar** é utilizado como a barra de status no gerenciador de janelas EvilWM do Archcraft.
+
+As configurações para o Polybar podem ser encontradas dentro do diretório _theme_ do EvilWM em `~/.evilwm/theme`.
+
+Se você deseja modificar as configurações do **polybar**, ou talvez adicionar/remover módulos, você precisará editar os seguintes arquivos:
+
+**`~/.evilwm/theme/polybar/config.ini`** : Arquivo principal de configuração <br/>
+**`~/.evilwm/theme/polybar/colors.ini`** : Arquivo de configuração das cores <br/>
+**`~/.evilwm/theme/polybar/modules.ini`** : Arquivo de configuração dos módulos
+
+> Se precisar de ajuda com a configuração do polybar, visite: [wiki do polybar](https://github.com/polybar/polybar/wiki)
+
+### Lançadores e Applets
+
+**Rofi** é usado como lançador de aplicativos, executor de comandos e vários applets. Para modificar a configuração do rofi, edite o arquivo `~/.config/rofi/config.rasi`.
+
+> Se precisar de ajuda com a configuração do rofi, execute: `man rofi` no terminal.
+
+Os scripts para rofi usados no EvilWM podem ser encontrados no diretório `~/.evilwm/scripts`. Estes são os seguintes scripts que utilizam o rofi para fornecer lançadores e applets no EvilWM:
+
+**`rofi_askpass`** : Frontend baseado em rofi para obter a senha de root <br/>
+**`rofi_asroot`** : Applet para abrir aplicativos como root <br/>
+**`rofi_bluetooth`** : Applet de Bluetooth para conectar rapidamente aos dispositivos BT <br/>
+**`rofi_launcher`** : Lançador de aplicativos, executador de comandos, gerenciador de arquivos e gerenciador de tarefas  <br/>
+**`rofi_music`** : Applet de música, que controla o MPD com `mpc` <br/>
+**`rofi_powermenu`** : Menu de energia, com caixa de diálogo de confirmação <br/>
+**`rofi_runner`** : Permite executar rapidamente um comando <br/>
+**`rofi_screenshot`** : Applet de captura de tela que funciona com maim <br/>
+
+Se você quiser modificar algum applet ou talvez estender a funcionalidade do applet, basta editar esses scripts acima.
+
+A configuração de cada script pode ser encontrada dentro do diretório _theme_ do EvilWM em `~/.evilwm/theme`.
+
+Por exemplo, se você deseja modificar a aparência do **launcher**, edite o arquivo `~/.evilwm/theme/rofi/launcher.rasi`. O mesmo se aplica a cada outro applet, edite o arquivo respectivo no mesmo diretório.
+
+> Se precisar de ajuda com a personalização de temas no rofi, execute: `man rofi-theme` no terminal.
+
+Para mudar as cores e fontes dos lançadores e applets, edite os arquivos `~/.evilwm/theme/rofi/shared/colors.rasi` e `~/.evilwm/theme/rofi/shared/fonts.rasi`.
+
+### Compositor
+
+**Picom** é usado para composição de janelas no EvilWM. Ele é um compositor leve com sombreamento, desfoque avançado e efeitos de fading. No EvilWM, o picom é iniciado com um arquivo de configuração alternativo, que é o `~/.evilwm/picom.conf`.
+
+Se você precisar alterar algo relacionado ao picom, basta editar esse arquivo de configuração.
+
+> Se precisar de ajuda com a configuração do picom, consulte o arquivo de configuração padrão do picom em `/etc/xdg/picom.conf`.
+
+:::info
+
+Se você estiver enfrentando problemas de rasgo de tela (screen tearing), usar o backend `glx` pode resolver o problema. <br/>
+Se estiver enfrentando lentidão, travamentos ou congelamentos, tente alternar entre os backends `xrender` e `glx`.
+
+:::
+
+### Gerenciador de Janelas (Window Manager)
+
+A configuração do EvilWM está disponível no seu diretório pessoal. Para configurar o EvilWM, estes são os arquivos utilizados:
+
+**`~/.evilwmrc`**: arquivo de configuração principal responsável por determinar o comportamento e as configurações da sessão. Edite este arquivo para configurar os atalhos específicos do EvilWM e a aparência do gerenciador de janelas. <br/>
+**`~/.evilwm/sxhkdrc`**: configurações dos atalhos de teclado. Edite este arquivo para adicionar ou remover outros atalhos de teclado.
+
+> Se precisar de ajuda com a configuração do EvilWM, execute: `man evilwm` no terminal. <br/>
+> Se precisar de ajuda com a configuração do sxhkd, execute: `man sxhkd` no terminal.
+
+<!-- Atalhos de teclado ---------------------------------- -->
+
+### Atalhos de Teclado
+
+Aqui está uma lista de alguns atalhos de teclado importantes que você precisa saber para operar o EvilWM com facilidade. Se você deseja visualizar, modificar ou adicionar novos atalhos, edite os arquivos `~/.evilwmrc` e `~/.evilwm/sxhkdrc`.
+
+### Aplicativos
+
+| Atalho | Ação |
+| --- | --- |
+| <kbd>super + Return</kbd> | Abre terminal (alacritty) |
+| <kbd>super + shift + Return</kbd> | Abre terminal em tela cheia |
+| <kbd>super + F</kbd> | Abre gerenciador de arquivos (thunar) |
+| <kbd>super + E</kbd> | Abre editor de texto (geany) |
+| <kbd>super + W</kbd> | Abre navegador web (firefox) |
+
+### Menu e Applets
+
+| Atalho | Ação |
+| --- | --- |
+| <kbd>super</kbd> | Abre lançador de aplicativos |
+| <kbd>alt + F1</kbd> | Abre lançador de aplicativos |
+| <kbd>alt + F2</kbd> | Abre executador de comandos |
+| <kbd>super + N</kbd> | Abre applet de gerenciador de rede |
+| <kbd>super + B</kbd> | Abre applet de bluetooth |
+| <kbd>super + M</kbd> | Abre applet de música |
+| <kbd>super + X</kbd> | Abre applet de menu de energia |
+| <kbd>super + S</kbd> | Abre applet de capturas de tela |
+| <kbd>super + R</kbd> | Abre applet para abrir aplicativos como root |
+
+### Atalhos de Hardware
+
+| Atalho | Ação |
+| --- | --- |
+| <kbd>Print</kbd> | Tira captura de tela |
+| <kbd>alt + Print</kbd> | Tira captura de tela com atraso de 5 segundos |
+| <kbd>shift + Print</kbd> | Tira captura de tela com atraso de 10 segundos |
+| <kbd>ctrl + Print</kbd> | Tira captura de tela da janela atualmente focada |
+| <kbd>super + Print</kbd> | Tira captura de tela de uma área selecionada |
+| <kbd>XF86AudioRaiseVolume</kbd> | Aumenta volume |
+| <kbd>XF86AudioLowerVolume</kbd> | Diminui volume |
+| <kbd>XF86AudioMute</kbd> | Ativa/desativa o mudo dos alto-falantes |
+| <kbd>XF86AudioMicMute</kbd> | Ativa/desativa o mudo do microfone |
+| <kbd>XF86Audio + Next/Prev/Play/Stop</kbd> | Controles de mídia (MPD) |
+| <kbd>XF86MonBrightnessUp</kbd> | Aumenta o brilho da tela |
+| <kbd>XF86MonBrightnessDown</kbd> | Diminui o brilho da tela |
+
+### Desktops Virtuais
+
+| Atalho | Ação |
+| --- | --- |
+| <kbd>super + 1..8</kbd> | Alterna para o respectivo desktop virtual |
+| <kbd>ctrl + alt + Left/Right</kbd> | Alterna para o desktop virtual anterior/próximo |
+| <kbd>ctrl + alt + B</kbd> | Alterna para o último desktop virtual visível |
+
+### Gerenciador de Janelas
+
+| Atalho | Ação |
+| --- | --- |
+| <kbd>super + C</kbd> | Deleta uma janela |
+| <kbd>super + Q</kbd> | Mata uma janela |
+| <kbd>super + D</kbd> | Alterna dock |
+| <kbd>super + Space</kbd> | Alterna visibilidade em todos os desktops virtuais |
+| <kbd>super + I</kbd> | Mostra informações extras sobre a janela atual |
+| <kbd>super + alt + L</kbd> | Baixa a janela atual |
+| <kbd>super + alt + R</kbd> | Eleva a janela atual |
+| <kbd>super + Tab</kbd> | Alterna para a próxima janela |
+| <kbd>super + Left/Right/Up/Down</kbd> | Move uma janela na direção especificada |
+| <kbd>super + H</kbd> | Move a janela para o canto superior esquerdo da tela |
+| <kbd>super + K</kbd> | Move a janela para o canto superior direito da tela |
+| <kbd>super + J</kbd> | Move a janela para o canto inferior esquerdo da tela |
+| <kbd>super + L</kbd> | Move a janela para o canto inferior direito da tela |
+| <kbd>super + ctrl + Left/Right/Up/Down</kbd> | Redimensiona uma janela na direção especificada |
+| <kbd>super + shift + V</kbd> | Maximiza verticalmente a janela atual |
+| <kbd>super + shift + H</kbd> | Maximiza horizontalmente a janela atual |
+| <kbd>super + shift + B</kbd> | Maximiza verticalmente e horizontalmente a janela atual |
+| <kbd>super + ctrl + Q</kbd> | Sai do EvilWM |
+
+### Atalhos Diversas
+
+| Atalho | Ação |
+| --- | --- |
+| <kbd>ctrl + alt + V</kbd> | Abri vim no terminal |
+| <kbd>ctrl + alt + R</kbd> | Abri ranger no terminal |
+| <kbd>ctrl + alt + H</kbd> | Abri htop no terminal |
+| <kbd>ctrl + alt + M</kbd> | Executa ncmpcpp com arte do álbum |
+| <kbd>ctrl + alt + L</kbd> | Ativa a tela de bloqueio |
+| <kbd>ctrl + alt + Delete</kbd> | Executa xkill |
+| <kbd>super + Escape</kbd> | Recarrega o arquivo de configuração do sxhkd |
+| <kbd>super + P</kbd> | Executa o colorpicker |
+
+<!-- Temas --------------------------------------- -->
+
+## Screenshots
+
+Aqui estão algumas capturas de tela do `EvilWM`. Elas te darão uma ideia da experiência do EvilWM no Archcraft
+Here's few screenshots of `EvilWM` desktop. These'll give you an idea of the experience of EvilWM in Archcraft. 
+
+|Desktop 1|Desktop 2|Desktop 3|Desktop 4|
+|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/evilwm/desktop/desktop_1.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/evilwm/desktop/desktop_2.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/evilwm/desktop/desktop_3.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/evilwm/desktop/desktop_4.png)|
+
+|Desktop 5|Desktop 6|Desktop 7|Desktop 8|
+|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/evilwm/desktop/desktop_5.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/evilwm/desktop/desktop_6.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/evilwm/desktop/desktop_7.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/evilwm/desktop/desktop_8.png)|
+
+|Desktop 9|Desktop 10|Desktop 11|Desktop 12|
+|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/evilwm/desktop/desktop_9.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/evilwm/desktop/desktop_10.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/evilwm/desktop/desktop_11.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/evilwm/desktop/desktop_12.png)|
+
+<!-- FAQs ----------------------------------------- -->
+
+## FAQs
+
+<details>
+<summary><b>Como atualizar minha configuração para as novas configurações?</b></summary>
+
+Quando uma nova versão do Archcraft EvilWM for lançada, e você atualizar o sistema com o comando `sudo pacman -Syu` ou atualizar o pacote EvilWM com `sudo pacman -S archcraft-evilwm`, novos arquivos de configuração serão instalados como **~/.evilwm_pacnew_YYYY-MM-DD** e **~/.evilwmrc_pacnew_YYYY-MM-DD** no seu diretório pessoal.
+
+Para usar as novas configurações:
+- Faça um backup do seu diretório antigo `~/.evilwm` e do arquivo `~/.evilwmrc`
+- Mova `~/.evilwm_pacnew_YYYY-MM-DD` para `~/.evilwm`
+- Mova `~/.evilwmrc_pacnew_YYYY-MM-DD` para `~/.evilwmrc`
+- Saia e entre novamente.
+
+</details>
+
+<details>
+<summary><b>Como mudar o tema GTK, ícones e cursor?</b></summary>
+
+Para mudar o tema GTK, ícones e cursor na sessão EvilWM, edite o arquivo `~/.evilwm/xsettingsd` e reinicie o EvilWM para aplicar as mudanças.
+```bash
+Net/ThemeName "Sweet-Dark"
+Net/IconThemeName "Zafiro-Purple"
+Gtk/CursorThemeName "Sweet"
+```
+
+</details>
+
+<details>
+<summary><b>Como gerenciar múltiplos monitores e resoluções no EvilWM?</b></summary>
+
+Se você usa múltiplos monitores com o gerenciador de janelas EvilWM, você pode gerenciá-los executando o _Manager Monitors_ ou o aplicativo `archcraft-randr`.
+
+</details>
+
+<details>
+<summary><b>Por que o Alacritty não está funcionando no meu computador?</b></summary>
+
+Como o Alacritty é um emulador de terminal baseado em OpenGL, ele pode não funcionar em alguns hardwares. Você pode fazer com que ele funcione nesses computadores seguindo os métodos abaixo:
+
+1. Abra o Alacritty com a variável **LIBGL_ALWAYS_SOFTWARE=1**. Edite as teclas de atalho/script que iniciam o Alacritty e substitua `alacritty` por `LIBGL_ALWAYS_SOFTWARE=1 alacritty`
+2. Edite o arquivo de desktop **/usr/share/applications/Alacritty.desktop** e substitua `Exec=alacritty` por `Exec=env LIBGL_ALWAYS_SOFTWARE=1 alacritty`
+
+</details>

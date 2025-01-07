@@ -1,0 +1,525 @@
+---
+sidebar_position: 2
+hide_table_of_contents: false
+---
+
+# i3wm
+
+<!-- Theme ---------------------------------------- -->
+<!-- Tabs -->
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<!-- Badges -->
+export const Highlight = ({children, color}) => (
+  <span
+    style={{
+      backgroundColor: color,
+      borderRadius: '4px',
+      color: '#fff',
+      padding: '0 0.2rem 0 0.2rem',
+    }}>
+    {children}
+  </span>
+);
+
+<!-- Adicione suas coisas depois disso -------------------- -->
+
+i3 é um gerenciador de janelas de mosaico dinâmico inspirado no wmii, voltado principalmente para desenvolvedores e usuários avançados. Os objetivos declarados para o i3 incluem documentação clara, suporte adequado para múltiplos monitores, uma estrutura em árvore para janelas e diferentes modos, semelhantes aos do vim.
+
+[![video](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/i3wm/main.png)](https://youtu.be/NYCX8o-fmoo)
+
+:::tip[i3wm Premium]
+
+A configuração definitiva do i3wm com **Configurações Modulares, Funcionalidades Extras e Temas** (25 Temas Predefinidos + Temas Infinitos Auto-gerados com `pywal`)
+
+Adquira o i3wm Premium no [**`ko-fi`**](https://ko-fi.com/s/a529474abf) e apoie o desenvolvimento do Archcraft.
+
+:::
+
+<!-- Instalação --------------------------------- -->
+
+## Installation
+
+Após instalar o Archcraft, o **i3wm** pode ser instalado em cima dele. Ele já vem pré-configurado e pronto para uso.
+
+<Tabs>
+
+<TabItem value="wm_1" label="Regular" default>
+
+Abra um terminal e execute o seguinte comando para instalar a versão regular do i3wm:
+```bash
+$ sudo pacman -Sy archcraft-i3wm
+```
+</TabItem>
+
+<TabItem value="wm_2" label="Premium">
+
+Baixe o pacote premium no [ko-fi](https://ko-fi.com/s/a529474abf) e salve-o em um diretório. Abra um terminal nesse diretório e execute o seguinte comando para instalar o i3wm premium:
+```bash
+$ sudo pacman -U archcraft-i3wm-premium-X.Y-Z-any.pkg.tar.zst
+```
+</TabItem>
+
+</Tabs>
+
+:::info[Archcraft Prime]
+
+<Highlight color="#62aeef">i3wm Premium</Highlight> já vem pré-instalado no [**`Archcraft Prime ISO`**](https://ko-fi.com/s/c925a2a8c1).
+
+:::
+
+<!-- Configuração -------------------------------- -->
+
+## Configuração
+
+O i3wm já vem pré-configurado no Archcraft. Nesta seção, veremos como o gerenciador de janelas i3wm é configurado, quais ferramentas e utilitários são usados para fazer com que ele funcione como um ambiente de desktop completo.
+
+### Estrutura de Configuração
+
+A estrutura de configuração do i3wm no Archcraft é semelhante a isto:
+
+```
+~/.config
+└── i3              : diretório de configuração do i3wm
+    ├── alacritty   : configuração do terminal
+    ├── config.d    : arquivos modulares de configuração do i3wm
+    ├── i3status    : arquivos de configuração do i3status
+    ├── scripts     : scripts usados pelo i3wm
+    ├── themes      : todos os temas (polybar, rofi configs)
+    ├── config      : arquivo de configuração principal do i3wm
+    ├── dunstrc     : configuração do dunst para notificações
+    ├── picom.conf  : configuração do compositor
+    └── xsettingsd  : arquivo de configuração de temas gtk, ícones e fontes
+```
+
+### Terminal
+
+**Alacritty** é o terminal padrão. No gerenciador de janelas i3wm, o alacritty é iniciado com um arquivo de configuração alternativo. Se precisar alterar algo, certifique-se de modificar os arquivos de configuração no diretório `~/.config/i3/alacritty`. Estes são os arquivos de configuração que você pode modificar para mudar o comportamento do terminal:
+
+**`~/.config/i3/alacritty/alacritty.toml`** : Arquivo de configuração principal <br/>
+**`~/.config/i3/alacritty/colors.toml`** : Configuração de cores <br/>
+**`~/.config/i3/alacritty/fonts.toml`** : Configuração de fontes
+
+> Se precisar de ajuda com a configuração do alacritty, execute : `man 5 alacritty` no terminal.
+
+:::warning
+
+Quando você altera o **tema**, os arquivos **colors.toml** e **fonts.toml** são sobrescritos pelo script do tema.
+
+> Isso se aplica apenas à versão **i3wm Premium**, pois os temas estão disponíveis apenas nela. Na versão regular, há apenas um tema.
+
+:::
+
+### Notificação
+
+**Dunst** é o daemon de notificações usado para notificações no i3wm. No gerenciador de janelas i3wm, o dunst é iniciado com um arquivo de configuração alternativo, que é o `~/.config/i3/dunstrc`. Portanto, se precisar modificar algo, certifique-se de editar este arquivo.
+
+> Se precisar de ajuda com a configuração do dunst, execute : `man 5 dunst` no terminal.
+
+:::warning
+
+Quando você altera o **tema**, as fontes e cores no arquivo **dunstrc** são sobrescritas pelo script do tema.
+
+> Isso se aplica apenas à versão **i3wm Premium**, pois os temas estão disponíveis apenas nela. Na versão regular, há apenas um tema.
+
+:::
+
+### Papel de Parede
+
+**hsetroot** define o papel de parede no i3wm. Se você quiser alterar o papel de parede, edite os seguintes scripts:
+
+<Tabs>
+
+<TabItem value="wm_1" label="Regular" default>
+
+Edite o script `~/.config/i3/scripts/i3_autostart` e adicione o caminho para o seu papel de parede.
+```bash
+# Restaurar papel de parede
+hsetroot -cover '/caminho/para/seu/papel_de_parede'
+```
+</TabItem>
+
+<TabItem value="wm_2" label="Premium" default>
+
+Edite o script `~/.config/i3/themes/wallpaper.sh` e adicione o caminho para o seu papel de parede.
+```bash
+WALLPAPER='/caminho/para/seu/papel_de_parede'
+```
+:::warning
+
+Quando você altera o **tema**, o script `wallpaper.sh` é sobrescrito pelo script do tema.
+
+:::
+
+</TabItem>
+
+</Tabs>
+
+### Statusbar
+
+**Polybar** é utilizado como a barra de status no gerenciador de janelas i3wm do Archcraft.
+
+<Tabs>
+
+<TabItem value="wm_1" label="Regular" default>
+
+As configurações para o Polybar podem ser encontradas no diretório _theme_ do i3wm em `~/.config/i3/theme`.
+
+Se você deseja modificar as configurações do **polybar**, ou talvez adicionar/remover módulos, edite os seguintes arquivos:
+
+**`~/.config/i3/theme/polybar/config.ini`** : Arquivo de configuração principal <br/>
+**`~/.config/i3/theme/polybar/colors.ini`** : Arquivo de configuração de cores <br/>
+**`~/.config/i3/theme/polybar/modules.ini`** : Arquivo de configuração de módulos
+
+> Se precisar de ajuda com a configuração do polybar, visite : [wiki do polybar](https://github.com/polybar/polybar/wiki)
+
+</TabItem>
+
+<TabItem value="wm_2" label="Premium" default>
+
+As configurações para o Polybar podem ser encontradas dentro do diretório _do tema atualmente aplicado_, que está localizado no diretório _themes_ do i3wm em `~/.config/i3/themes`.
+
+Suponha que o tema atualmente aplicado seja `default` e você queira modificar as configurações do **polybar**, ou talvez adicionar/remover módulos, edite os seguintes arquivos:
+
+**`~/.config/i3/themes/default/polybar/config.ini`** : Arquivo de configuração principal <br/>
+**`~/.config/i3/themes/default/polybar/colors.ini`** : Arquivo de configuração de cores <br/>
+**`~/.config/i3/themes/default/polybar/modules.ini`** : Arquivo de configuração de módulos
+
+> Se precisar de ajuda com a configuração do polybar, visite : [wiki do polybar](https://github.com/polybar/polybar/wiki)
+
+:::warning
+
+Quando você altera o **tema**, as fontes nos arquivos **config.ini** e **colors.ini** do polybar são sobrescritas pelo script do tema.
+
+:::
+
+</TabItem>
+
+</Tabs>
+
+### Launchers and Applets
+
+**Rofi** é utilizado para lançadores de aplicativos, execução de comandos e vários applets. Para modificar a configuração do Rofi, edite o arquivo `~/.config/rofi/config.rasi`.
+
+> Se precisar de ajuda com a configuração do rofi, execute: `man rofi` no terminal.
+
+Os scripts usados pelo rofi no i3wm podem ser encontrados no diretório `~/.config/i3/scripts`. Estes são os seguintes scripts que usam o rofi para fornecer os lançadores e applets no i3wm:
+
+- **`rofi_askpass`**: Interface gráfica baseada no rofi para obter a senha de root via `sudo`
+- **`rofi_asroot`**: Applet para abrir aplicativos como root
+- **`rofi_bluetooth`**: Applet para gerenciar dispositivos Bluetooth
+- **`rofi_launcher`**: Lançador de aplicativos, gerenciador de arquivos e tarefas
+- **`rofi_music`**: Applet de música, controla o MPD com `mpc`
+- **`rofi_powermenu`**: Menu de energia com caixa de diálogo de confirmação
+- **`rofi_runner`**: Permite executar um comando rapidamente
+- **`rofi_screenshot`**: Applet para tirar screenshots usando `maim`
+- **`rofi_themes`**: Applet para mudar os temas **(somente no premium)**
+- **`rofi_windows`**: Applet para gerenciar janelas abertas
+
+Se você quiser modificar algum applet ou estender sua funcionalidade, basta editar os scripts listados acima.
+
+<Tabs>
+
+<TabItem value="wm_1" label="Regular" default>
+
+A configuração de cada script pode ser encontrada no diretório _theme_ do i3wm em `~/.config/i3/theme`.
+
+Por exemplo, se você quiser modificar a aparência do **launcher**, edite o arquivo `~/.config/i3/theme/rofi/launcher.rasi`. O mesmo vale para qualquer outro applet, basta editar o arquivo correspondente no mesmo diretório.
+
+> Se precisar de ajuda com a personalização do tema do rofi, execute: `man rofi-theme` no terminal.
+
+Para alterar as cores e fontes dos lançadores e applets, edite os arquivos `~/.config/i3/theme/rofi/shared/colors.rasi` e `~/.config/i3/theme/rofi/shared/fonts.rasi`.
+
+</TabItem>
+
+<TabItem value="wm_2" label="Premium" default>
+
+A configuração de cada script pode ser encontrada no diretório _do tema atualmente aplicado_, que está localizado no diretório _themes_ do i3wm em `~/.config/i3/themes`.
+
+Por exemplo, se o tema atualmente aplicado for `default` e você quiser modificar a aparência do **launcher**, edite o arquivo `~/.config/i3/themes/default/rofi/launcher.rasi`. O mesmo vale para qualquer outro applet, basta editar o arquivo correspondente no mesmo diretório.
+
+> Se precisar de ajuda com a personalização do tema do rofi, execute: `man rofi-theme` no terminal.
+
+Para alterar as cores e fontes dos lançadores e applets, edite os arquivos `~/.config/i3/themes/<THEME>/rofi/shared/colors.rasi` e `~/.config/i3/themes/<THEME>/rofi/shared/fonts.rasi`.
+
+:::warning
+
+Quando você altera o **tema**, os arquivos **shared/colors.rasi** e **shared/fonts.rasi** são sobrescritos pelo script do tema.
+
+:::
+
+</TabItem>
+
+</Tabs>
+
+### Compositor
+
+**Picom** é utilizado para a composição de janelas. É um compositor leve que oferece sombreamento, desfoque avançado e transições de opacidade. No i3wm, o picom é lançado com um arquivo de configuração alternativo, que é `~/.config/i3/picom.conf`.
+
+Se precisar modificar qualquer coisa relacionada ao picom, edite este arquivo de configuração do picom.
+
+> Se precisar de ajuda com a configuração do picom, confira o arquivo de configuração padrão do picom em `/etc/xdg/picom.conf`.
+
+:::info
+
+Se você estiver enfrentando problemas de tearing de tela, usar o backend `glx` pode resolver esse problema. <br/>
+Se estiver enfrentando atrasos, travamentos e congelamentos, tente alternar entre os backends `xrender` e `glx`.
+
+:::
+
+:::warning
+
+Quando você altera o **tema**, configurações como _backend_, _sombreamento_ e _desfoque_ no arquivo **picom.conf** são sobrescritas pelo script do tema.
+
+> Isso é aplicável apenas no **i3wm Premium**, pois os temas estão disponíveis somente nele. Na versão regular, há apenas um tema.
+
+:::
+
+### Window Manager
+
+A configuração do **i3wm** está disponível em `~/.config/i3`. Para configurar o gerenciador de janelas **i3wm**, estes são os arquivos utilizados:
+
+- **`~/.config/i3/config`**: arquivo principal de configuração do i3wm com configurações gerais.
+- **`~/.config/i3/config.d/01_theme.conf`**: arquivo de configuração do tema, que inclui configurações como cores, tamanho da borda e espaçamento (gaps).
+- **`~/.config/i3/config.d/02_keybindings.conf`**: todas as configurações de atalhos de teclado.
+- **`~/.config/i3/config.d/03_mousebindings.conf`**: todas as configurações de atalhos do mouse.
+- **`~/.config/i3/config.d/04_modes.conf`**: configurações dos atalhos de modo do i3.
+- **`~/.config/i3/config.d/05_rules.conf`**: todas as regras de janela.
+- **`~/.config/i3/i3status/config`**: configurações dos módulos do i3status.
+- **`~/.config/i3/i3status/statusbar.conf`**: arquivo de configuração do statusbar do i3status.
+
+> Se precisar de ajuda com a configuração do i3wm, visite a [documentação do i3wm](https://i3wm.org/docs/).
+
+:::warning
+
+Quando você altera o **tema**, coisas como _cores de borda_, _largura da borda_ e _gaps_ no arquivo **01_theme.conf** serão sobrescritas pelo script do tema.
+
+> Isso é aplicável apenas no **i3wm Premium**, pois os temas estão disponíveis somente nele. Na versão regular, há apenas um tema.
+
+:::
+
+<!-- Atalhos de teclado ---------------------------------- -->
+
+### Keybindings
+
+Aqui está uma lista de alguns atalhos importantes para operar o **i3wm** de maneira fácil. Se você quiser visualizar, modificar ou adicionar novos atalhos, edite os arquivos `~/.config/i3/config.d/02_keybindings.conf` e `~/.config/i3/config.d/04_modes.conf`.
+
+#### Applications
+
+| Atalho | Ação |
+| --- | --- |
+| <kbd>super + Return</kbd> | Abre terminal (alacritty) |
+| <kbd>super + shift + Return</kbd> | Abre terminal flutuante |
+| <kbd>super + alt + Return</kbd> | Abre terminal em tela cheia |
+| <kbd>super + shift + F</kbd> | Abre gerenciador de arquivos (thunar) |
+| <kbd>super + shift + E</kbd> | Abre editor de texto (geany) |
+| <kbd>super + shift + W</kbd> | Abre navegador web (firefox) |
+
+#### Menu e Applets
+
+| Atalho | Ação |
+| --- | --- |
+| <kbd>super</kbd> | Abre lançador de aplicativos |
+| <kbd>alt + F1</kbd> | Abre lançador de aplicativos |
+| <kbd>super + N</kbd> | Abre applet do gerenciador de rede |
+| <kbd>super + M</kbd> | Abre applet de música |
+| <kbd>super + X</kbd> | Abre applet de menu de energia |
+| <kbd>super + S</kbd> | Abre applet de captura de tela |
+| <kbd>super + R</kbd> | Abre apps como root |
+| <kbd>super + T</kbd> | Abre applet de temas **`somente no premium`** |
+| <kbd>super + W</kbd> | Abre applet de gerenciamento de janelas |
+
+#### Atalhos de Hardware
+
+| Atalho | Ação |
+| --- | --- |
+| <kbd>Print</kbd> | Tira captura de tela |
+| <kbd>ctrl + Print</kbd> | Tira captura de tela com 5 segundos de atraso |
+| <kbd>shift + Print</kbd> | Tira captura de tela com 10 segundos de atraso |
+| <kbd>ctrl + shift + Print</kbd> | Tira captura de tela da janela focada |
+| <kbd>super + Print</kbd> | Tira captura de tela da área selecionada |
+| <kbd>XF86AudioRaiseVolume</kbd> | Aumenta volume |
+| <kbd>XF86AudioLowerVolume</kbd> | Diminui volume |
+| <kbd>XF86AudioMute</kbd> | Alterna mudo nos alto-falantes |
+| <kbd>XF86AudioMicMute</kbd> | Alterna mudo no microfone |
+| <kbd>XF86Audio + Next/Prev/Play/Stop</kbd> | Controle de mídia (MPD) |
+| <kbd>XF86MonBrightnessUp</kbd> | Aumenta brilho da tela |
+| <kbd>XF86MonBrightnessDown</kbd> | Diminui brilho da tela |
+
+#### Workspaces
+
+| Atalho | Ação |
+| --- | --- |
+| <kbd>super + 1..10</kbd> | Muda para o workspace respectivo |
+| <kbd>super + shift + 1..10</kbd> | Move container focado para o workspace respectivo |
+| <kbd>super + ctrl + Left/Right</kbd> | Move um container para o próximo/anterior workspace |
+| <kbd>super + B</kbd> | Alterna entre workspaces |
+| <kbd>super + shift + B</kbd> | Move container entre workspaces |
+
+#### Gerenciamento de Janelas
+
+| Atalho | Ação |
+| --- | --- |
+| <kbd>super + C/Q</kbd> | Fecha janela focada |
+| <kbd>super + H/V</kbd> | Dividi em orientação horizontal/vertical |
+| <kbd>super + shift + S</kbd> | Defini layout de pilha |
+| <kbd>super + shift + T</kbd> | Defini layout de abas |
+| <kbd>super + shift + D</kbd> | Defini layout padrão |
+| <kbd>super + shift + L</kbd> | Alterna entre pilha/abas/dividido |
+| <kbd>super + shift + V</kbd> | Alterna entre horizontal/vertical |
+| <kbd>super + shift + O</kbd> | Janelas flutuantes fixas |
+| <kbd>super + F</kbd> | Alterna tela cheia |
+| <kbd>super + Space</kbd> | Alterna flutuante/tiling |
+| <kbd>super + shift + Space</kbd> | Alterna foco entre containers flutuantes/tiling |
+| <kbd>super + Left/Right/Up/Down</kbd> | Defini foco no container mais próximo na direção indicada |
+| <kbd>super + shift + Left/Right/Up/Down</kbd> | Move janela focada na direção indicada |
+| <kbd>super + Y</kbd> | Altera estilo da borda |
+| <kbd>super + A</kbd> | Define foco no container pai |
+| <kbd>super + D</kbd> | Define foco no container filho |
+| <kbd>super + Tab</kbd> | Define foco automaticamente no container adjacente |
+| <kbd>super + alt + C</kbd> | Move container flutuante para o centro de todas as saídas |
+| <kbd>super + alt + P</kbd> | Move container flutuante para a posição atual do cursor |
+| <kbd>super + alt + Left/Right/Up/Down</kbd> | Redimensiona containers/janelas |
+| <kbd>super + Minus</kbd> | Torna a janela focada uma scratchpad |
+| <kbd>super + shift + Minus</kbd> | Mostra a primeira janela scratchpad |
+| <kbd>super + shift + R</kbd> | Alterna modo de redimensionamento |
+| <kbd>super + shift + M</kbd> | Alterna modo de redimensionamento |
+| <kbd>super + shift + G</kbd> | Alterna modo de gaps |
+
+#### Gerenciador de Janelas
+
+| Atalho | Ação |
+| --- | --- |
+| <kbd>ctrl + shift + R</kbd> | Reinicia i3wm |
+| <kbd>super + shift + C</kbd> | Recarrega i3wm |
+| <kbd>super + shift + Q</kbd> | Sai do i3wm |
+
+#### Teclas Diversas
+
+| Atalho | Ação |
+| --- | --- |
+| <kbd>ctrl + alt + V</kbd> | Abre vim no terminal |
+| <kbd>ctrl + alt + R</kbd> | Abre ranger no terminal |
+| <kbd>ctrl + alt + H</kbd> | Abre htop no terminal |
+| <kbd>ctrl + alt + M</kbd> | Abre ncmpcpp com arte do álbum no terminal |
+| <kbd>ctrl + alt + L</kbd> | Aciona tela de bloqueio |
+| <kbd>super + P</kbd> | Executa seletor de cores |
+
+<!-- Temas --------------------------------------- -->
+
+## Screenshots
+
+### Desktop
+
+Aqui estão algumas capturas de tela do `i3wm`. Elas te darão uma ideia da experiências do i3wm no Archcraft
+
+|Desktop 1|Desktop 2|Desktop 3|Desktop 4|
+|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/i3wm/desktop/desktop_1.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/i3wm/desktop/desktop_2.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/i3wm/desktop/desktop_3.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/i3wm/desktop/desktop_4.png)|
+
+|Desktop 5|Desktop 6|Desktop 7|Desktop 8|
+|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/i3wm/desktop/desktop_5.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/i3wm/desktop/desktop_6.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/i3wm/desktop/desktop_7.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/i3wm/desktop/desktop_8.png)|
+
+|Desktop 9|Desktop 10|Desktop 11|Desktop 12|
+|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/i3wm/desktop/desktop_9.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/i3wm/desktop/desktop_10.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/i3wm/desktop/desktop_11.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/i3wm/desktop/desktop_12.png)|
+
+|Desktop 13|Desktop 14|Desktop 15|Desktop 16|
+|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/i3wm/desktop/desktop_13.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/i3wm/desktop/desktop_14.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/i3wm/desktop/desktop_15.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/i3wm/desktop/desktop_16.png)|
+
+### Themes
+
+<Tabs>
+
+<TabItem value="wm_1" label="Regular" default>
+
+No **i3wm regular** está disponível apenas um tema.
+
+![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/i3wm/themes/theme_1.png)
+
+</TabItem>
+
+<TabItem value="wm_2" label="Premium" default>
+
+O **i3wm Premium** oferece **25 estilos** (além de temas infinitos gerados automaticamente com `pywal`).<br/>
+Para mudar o tema/estilo, pressione `SUPER + T` e selecione o tema/estilo no applet.
+
+|Tema 1|Tema 2|Tema 3|Tema 4|Tema 5|
+|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/i3wm/themes/theme_1.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/i3wm/themes/theme_2.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/i3wm/themes/theme_3.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/i3wm/themes/theme_4.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/i3wm/themes/theme_5.png)|
+
+|Tema 6|Tema 7|Tema 8|Tema 9|Tema 10|
+|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/i3wm/themes/theme_6.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/i3wm/themes/theme_7.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/i3wm/themes/theme_8.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/i3wm/themes/theme_9.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/i3wm/themes/theme_10.png)|
+
+|Tema 11|Tema 12|Tema 13|Tema 14|Tema 15|
+|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/i3wm/themes/theme_11.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/i3wm/themes/theme_12.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/i3wm/themes/theme_13.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/i3wm/themes/theme_14.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/i3wm/themes/theme_15.png)|
+
+|Tema 16|Tema 17|Tema 18|Tema 19|Tema 20|
+|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/i3wm/themes/theme_16.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/i3wm/themes/theme_17.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/i3wm/themes/theme_18.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/i3wm/themes/theme_19.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/i3wm/themes/theme_20.png)|
+
+|Tema 21|Tema 22|Tema 23|Tema 24|Tema 25|
+|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/i3wm/themes/theme_21.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/i3wm/themes/theme_22.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/i3wm/themes/theme_23.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/i3wm/themes/theme_24.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/i3wm/themes/theme_25.png)|
+
+</TabItem>
+
+<TabItem value="wm_3" label="Random" default>
+
+Temas gerados automaticamente com `pywal`. Esse recurso está disponível apenas no i3wm Premium.<br/>
+Pressione `SUPER + T` e selecione **Random** para aplicar um tema aleatório.
+
+![gif](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/i3wm/random/random.gif)
+
+</TabItem>
+
+</Tabs>
+
+<!-- FAQs ----------------------------------------- -->
+
+## FAQs
+
+<details>
+<summary><b>Como atualizar minha config para as novas configs?</b></summary>
+
+Quando uma nova versão do Archcraft i3wm é lançada, e você atualiza o sistema com `sudo pacman -Syu` ou atualiza o pacote do i3wm com `sudo pacman -S archcraft-i3wm`, novos arquivos de configuração são instalados como **i3_pacnew_YYYY-MM-DD** no diretório `~/.config`.
+
+Para usar os novos configs, faça um backup do seu antigo diretório `~/.config/i3`, mova `~/.config/i3_pacnew_YYYY-MM-DD` para `~/.config/i3` e faça login novamente.
+
+> Para o `i3wm Premium`, baixe o pacote atualizado do Ko-fi (de graça) e instale-o para atualizar para os novos configs.
+
+</details>
+
+<details>
+<summary><b>Como mudar o tema GTK, ícones e cursor?</b></summary>
+
+Para mudar o tema GTK, os ícones e o cursor na sua sessão i3wm, edite o arquivo `~/.config/i3/xsettingsd` e reinicie o i3wm para aplicar as mudanças.
+```bash
+Net/ThemeName "Arc-Dark"
+Net/IconThemeName "Zafiro"
+Gtk/CursorThemeName "Qogirr"
+```
+
+</details>
+
+<details>
+<summary><b>Como gerenciar múltiplos monitores e resolução no i3wm?</b></summary>
+
+Se você usa múltiplos monitores com o gerenciador de janelas i3wm, você pode gerenciá-los executando o _Manager Monitors_ ou o app `archcraft-randr`.
+
+</details>
+
+<details>
+<summary><b>Por que o Alacritty não está funcionando no meu computador?</b></summary>
+
+Como o Alacritty é um emulador de terminal baseado em OpenGL, ele pode não funcionar em alguns hardwares de computador. Você pode fazê-lo funcionar em tais computadores seguindo estes métodos:
+
+1. Abra o Alacritty com a variável **LIBGL_ALWAYS_SOFTWARE=1**. Edite as teclas de atalho ou o script que abre o Alacritty e substitua `alacritty` por `LIBGL_ALWAYS_SOFTWARE=1 alacritty`.
+2. Edite o arquivo desktop **/usr/share/applications/Alacritty.desktop** e substitua `Exec=alacritty` por `Exec=env LIBGL_ALWAYS_SOFTWARE=1 alacritty`.
+
+</details>

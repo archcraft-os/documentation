@@ -1,0 +1,45 @@
+---
+slug: 05-news-release
+title: Versão de abril de 2022
+authors: adi1090x
+tags: [v22.04, release, iso]
+hide_table_of_contents: true
+---
+
+<!-- Badges -->
+export const Highlight = ({children, color}) => (
+  <span
+    style={{
+      backgroundColor: color,
+      borderRadius: '4px',
+      color: '#fff',
+      padding: '0.2rem',
+    }}>
+    {children}
+  </span>
+);
+
+ISO do Archcraft de abril de 2022 está disponível para download. Veja abaixo o que há de novo.
+
+<!--truncate-->
+
+### Changelog
+
+- Removido um monte de pacote desnecessário (`pamac`, `pcmanfm`, `leafpad`, `bmon`, `bashtop`, `neovim` e muito mais)
+- Todos os pacotes e window managers atualizados
+- Pequenas mudanças no `Openbox`
+  - Estilo dos scrpts atualizados (dunst consertado, adicionado a opção para efeitos automáticos)
+  - CMDs rápidos removidos
+  - Polybars e rofi menus extras removidos (lancadores e powermenu)
+  - Removido pipemenus para laçador, powermenu, polybar, gerador de wallpaper
+- Pequenas mudanças no `BSPWM`
+  - Usando o Thunar como gestor de arquivos padrão
+  - Troca de fontes no tertminal
+- Removido network applets de todos os window managers
+- Ajustado a largura do menu de network menu height e a visibilidade das senhas em todos os WMs
+- Resolvido a bagunça no layout do dunst em todos os WMs
+- Instalador ABIF atualizado para corrigir a criação de usuário
+- Neovim removido (Nvchad config, estava quebrando com frequencia)
+- Usando um único lockscreen para todos os WMs
+- Removido alguns scripts como `tasks`, `color-picker`, `wallpaper-generator`, etc.
+- E mais..., Basicamente o sistema foi limpo e foi removido coisas inúteis.
