@@ -4,10 +4,52 @@
         <title>Archcraft Blog</title>
         <link>https://wiki.archcraft.io/fr/news</link>
         <description>Archcraft Blog</description>
-        <lastBuildDate>Mon, 06 Jan 2025 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 07 Jan 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>fr</language>
+        <item>
+            <title><![CDATA[Archcraft Prime Release]]></title>
+            <link>https://wiki.archcraft.io/fr/news/47-news-release</link>
+            <guid>https://wiki.archcraft.io/fr/news/47-news-release</guid>
+            <pubDate>Tue, 07 Jan 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Exclusive New Archcraft Prime ISO is now available to download. Read the changelogs below to know what's new.]]></description>
+            <content:encoded><![CDATA[<p><span style="background-color:#c778dd;border-radius:25px;color:#fff;padding:0.2rem 0.4rem">Exclusive</span> New <strong>Archcraft Prime ISO</strong> is now available to download. Read the changelogs below to know what's new.</p>
+<p><strong>Archcraft Prime</strong> offers every (<code>Not the one released after Prime</code>) exclusive stuff of Archcraft in <em><strong>One Single ISO</strong></em>. It has <a href="https://wiki.archcraft.io/fr/docs/window-managers/stacking-wm/openbox"><code>Openbox Premium</code></a>, <a href="https://wiki.archcraft.io/fr/docs/window-managers/tiling-wm/bspwm"><code>Bspwm Premium</code></a> and <a href="https://wiki.archcraft.io/fr/docs/window-managers/tiling-wm/i3wm"><code>i3wm Premium</code></a> as well as all the exclusive wayland compositors (<a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/sway"><code>Sway</code></a>, <a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/wayfire"><code>Wayfire</code></a>, <a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/river"><code>River</code></a>, <a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/hyprland"><code>Hyprland</code></a> and <a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/newm"><code>Newm</code></a>) pre-installed.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="changelogs-">Changelogs :<a href="https://wiki.archcraft.io/fr/news/47-news-release#changelogs-" class="hash-link" aria-label="Lien direct vers Changelogs :" title="Lien direct vers Changelogs :">​</a></h3>
+<ul>
+<li>Updated ISO profile to <code>archiso 82-1</code></li>
+<li>Latest base with new packages</li>
+<li>Update all Archcraft and AUR packages</li>
+<li>Updated <code>hyprland</code> to latest release</li>
+<li>Fixed broken <code>newm</code> compositor</li>
+<li>Small improvements and bugs fixed</li>
+</ul>
+<blockquote>
+<p>The <em><strong>January update package</strong></em> for your <strong>Existing PRIME Installation</strong> is now available for download.</p>
+<p>Follow <a href="https://wiki.archcraft.io/docs/premium/prime#update" target="_blank" rel="noopener noreferrer">these instruction</a> to perform the Update.</p>
+</blockquote>
+<p><strong>Download :</strong> You can download the latest ISO from <a href="https://ko-fi.com/s/c925a2a8c1" target="_blank" rel="noopener noreferrer"><strong><code>ko-fi</code></strong> ☕</a></p>
+<p><strong>Get the Updated ISO :</strong>  Follow the steps below to get updated files (or re-download files) for free:</p>
+<ul>
+<li>Login to you Ko-fi account</li>
+<li>Go to your <code>Ko-fi Payments History</code></li>
+<li>Select the purchases you've made</li>
+<li>Click on <code>View Details</code></li>
+<li>Then, Click on <code>View Content</code> to download the updated files.</li>
+</ul>]]></content:encoded>
+            <category>prime</category>
+            <category>openbox</category>
+            <category>bspwm</category>
+            <category>i3wm</category>
+            <category>sway</category>
+            <category>wayfire</category>
+            <category>river</category>
+            <category>hyprland</category>
+            <category>newm</category>
+            <category>release</category>
+            <category>iso</category>
+        </item>
         <item>
             <title><![CDATA[Archcraft WSE Release]]></title>
             <link>https://wiki.archcraft.io/fr/news/46-news-release</link>
@@ -737,41 +779,6 @@
             <category>river</category>
             <category>hyprland</category>
             <category>newm</category>
-            <category>release</category>
-            <category>iso</category>
-        </item>
-        <item>
-            <title><![CDATA[October 2023 Release]]></title>
-            <link>https://wiki.archcraft.io/fr/news/27-news-release</link>
-            <guid>https://wiki.archcraft.io/fr/news/27-news-release</guid>
-            <pubDate>Thu, 12 Oct 2023 00:00:00 GMT</pubDate>
-            <description><![CDATA[October 2023 ISO of Archcraft is now available to download. Read the changelogs below to know what's new.]]></description>
-            <content:encoded><![CDATA[<p>October 2023 ISO of Archcraft is now available to download. Read the changelogs below to know what's new.</p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="changelogs-">Changelogs :<a href="https://wiki.archcraft.io/fr/news/27-news-release#changelogs-" class="hash-link" aria-label="Lien direct vers Changelogs :" title="Lien direct vers Changelogs :">​</a></h3>
-<ul>
-<li>Updated ISO profile</li>
-<li>Latest base with new packages</li>
-<li>Added <code>archcraft-randr</code> app to manager display and monitors</li>
-<li>Updated all window managers<!-- -->
-<ul>
-<li>Clean PKGBUILDs (<code>with only needed deps</code>) and updated code</li>
-<li>Directory <strong>openbox-themes</strong> now merged into <strong>openbox</strong>, new config structure for openbox</li>
-<li>Added <strong>example layouts</strong> for multi-monitors in <code>bspwmrc</code> (single, two-monitors, three-monitors layouts)</li>
-<li>Added multi-monitor support in all available WMs (use <code>archcraft-randr</code>)</li>
-<li>And, more...</li>
-</ul>
-</li>
-<li>Added <code>wipe</code> ability in ABIF</li>
-<li>Fixed issue with <code>help and tips</code> app</li>
-<li>Removed <code>python2</code> as it's not needed anymore</li>
-<li>Small improvements and bugs fixed.</li>
-</ul>
-<blockquote>
-<p><strong><code>Info</code></strong> : Now, package update for WMs will not replace your modified configs (previously, backing-up your configs in <code>~/.config</code>).</p>
-<p>Instead, It'll install new updates in separate directory (eg: <code>~/.config/openbox_pacnew_2023-10-12</code>), It'll be your choice to use your current config or updated one.</p>
-<p>You can use <code>meld</code> to merge updates in your current modified configs.</p>
-</blockquote>]]></content:encoded>
-            <category>v23.10</category>
             <category>release</category>
             <category>iso</category>
         </item>
