@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkArchcraft_Wiki=self.webpackChunkArchcraft_Wiki||[]).push([[2773],{58243:e=>{e.exports=JSON.parse('{"permalink":"/fr/news/tags/wayland","page":1,"postsPerPage":10,"totalPages":2,"totalCount":11,"nextPage":"/fr/news/tags/wayland/page/2","blogDescription":"Blog","blogTitle":"News"}')}}]);
