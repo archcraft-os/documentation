@@ -1,0 +1,308 @@
+---
+sidebar_position: 2
+hide_table_of_contents: false
+---
+
+# 2bwm
+
+<!-- Theme ---------------------------------------- -->
+<!-- Tabs -->
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<!-- Badges -->
+export const Highlight = ({children, color}) => (
+  <span
+    style={{
+      backgroundColor: color,
+      borderRadius: '4px',
+      color: '#fff',
+      padding: '0 0.2rem 0 0.2rem',
+    }}>
+    {children}
+  </span>
+);
+
+<!-- Adicione suas coisas depois disso -------------------- -->
+
+O 2bwm é um gerenciador de janelas (WM) rápido e leve, com a particularidade de possuir duas bordas. Ele foi desenvolvido utilizando a biblioteca XCB e é derivado do mcwm, criado por Michael Cardell. No 2bwm, tudo é acessível pelo teclado, mas também é possível usar um dispositivo apontador para mover, redimensionar e elevar/baixar as janelas.
+
+![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/2bwm/main.png)
+
+<!-- Instalação --------------------------------- -->
+
+## Instalação
+
+Após concluir a instalação do Archcraft, o **2bwm** pode ser instalado sobre ele. O gerenciador já vem pré-configurado e pronto para uso. Abra um terminal e execute o seguinte comando para instalar o 2bwm:  
+```bash
+$ sudo pacman -Sy archcraft-2bwm
+```
+
+<!-- Configuração -------------------------------- -->
+
+## Configuração
+
+O **2bwm** já vem pré-configurado no Archcraft. Nesta seção, veremos como o gerenciador de janelas 2bwm é configurado, quais ferramentas e utilitários são utilizados para fazê-lo se parecer e funcionar como um ambiente de desktop completo.
+
+### Estrutura de Configuração
+
+A estrutura de configuração do **2bwm** no Archcraft é semelhante a esta:
+
+```
+/opt
+└── 2bwm-source               : Código-fonte do 2bwm
+    └── config.h              : Arquivo de configuração do 2bwm
+/usr
+└── share
+    └── archcraft
+        └── 2bwm
+            ├── alacritty     : Configuração do terminal
+            ├── scripts       : Scripts utilizados pelo 2bwm
+            ├── theme         : Tema do desktop (configurações do polybar e rofi)
+            ├── dunstrc       : Configuração do dunst para notificações
+            ├── picom.conf    : Configuração do compositor
+            └── xsettingsd    : Arquivo de configuração para temas GTK, ícones e fontes
+```
+
+### Terminal
+
+O **Alacritty** é o terminal padrão. No gerenciador de janelas 2bwm, o Alacritty é iniciado com um arquivo de configuração alternativo. Se precisar alterar algo, certifique-se de modificar os arquivos de configuração no diretório `/usr/share/archcraft/2bwm/alacritty`. Estes são os arquivos de configuração que você pode alterar para modificar o comportamento do terminal:
+
+**`/usr/share/archcraft/2bwm/alacritty/alacritty.toml`**: Arquivo principal de configuração <br/>
+**`/usr/share/archcraft/2bwm/alacritty/colors.toml`**: Configurações de cores <br/>
+**`/usr/share/archcraft/2bwm/alacritty/fonts.toml`**: Configurações de fontes
+
+> Se precisar de ajuda com a configuração do Alacritty, execute: `man 5 alacritty` no terminal.
+
+### Notificações
+
+O **Dunst** é utilizado como daemon de notificações no 2bwm. No gerenciador de janelas 2bwm, o Dunst é iniciado com um arquivo de configuração alternativo, localizado em `/usr/share/archcraft/2bwm/dunstrc`. Portanto, se precisar modificar algo, edite este arquivo.
+
+> Se precisar de ajuda com a configuração do Dunst, execute: `man 5 dunst` no terminal.
+
+### Papel de Parede
+
+O **hsetroot** é usado para definir o papel de parede no 2bwm. Se você deseja alterar o papel de parede, edite o script `/usr/share/archcraft/2bwm/scripts/2bwm_autostart` e adicione o caminho para o seu papel de parede:  
+```bash
+# Restaurar papel de parede
+hsetroot -cover '/path/to/your/wallpaper'
+```
+
+### Barra de Status
+
+O **Polybar** é usado como a barra de status no gerenciador de janelas 2bwm do Archcraft.
+
+As configurações do Polybar estão localizadas no diretório _theme_ do 2bwm: `/usr/share/archcraft/2bwm/theme`.
+
+Se você deseja modificar as configurações do **Polybar** ou adicionar/remover módulos, será necessário editar os seguintes arquivos:
+
+**`/usr/share/archcraft/2bwm/theme/polybar/config.ini`**: Arquivo principal de configuração <br/>
+**`/usr/share/archcraft/2bwm/theme/polybar/colors.ini`**: Arquivo de configuração de cores <br/>
+**`/usr/share/archcraft/2bwm/theme/polybar/modules.ini`**: Arquivo de configuração de módulos
+
+> Se precisar de ajuda com a configuração do Polybar, visite: [Polybar Wiki](https://github.com/polybar/polybar/wiki)
+
+### Launchers e Applets
+
+O **Rofi** é utilizado como lançador de aplicativos, executor de comandos e para vários applets. Para modificar a configuração do Rofi, edite o arquivo `~/.config/rofi/config.rasi`.
+
+> Se precisar de ajuda com a configuração do Rofi, execute: `man rofi` no terminal.
+
+Os scripts do Rofi usados no 2bwm estão localizados no diretório `/usr/share/archcraft/2bwm/scripts`. Estes são os scripts disponíveis que utilizam o Rofi para fornecer os launchers e applets:
+
+**`rofi_askpass`**: Interface baseada no Rofi para `sudo`, solicitando a senha de root <br/>
+**`rofi_asroot`**: Applet para abrir aplicativos como root <br/>
+**`rofi_bluetooth`**: Applet para conexão rápida a dispositivos Bluetooth <br/>
+**`rofi_launcher`**: Lançador de aplicativos, executor de comandos, gerenciador de arquivos e de tarefas <br/>
+**`rofi_music`**: Applet de música que controla o MPD com o `mpc` <br/>
+**`rofi_powermenu`**: Menu de energia com diálogo de confirmação <br/>
+**`rofi_runner`**: Executor de comandos rápidos <br/>
+**`rofi_screenshot`**: Applet para capturas de tela que utiliza o maim <br/>
+
+Se você deseja modificar algum applet ou estender sua funcionalidade, basta editar os scripts mencionados acima.
+
+A configuração visual de cada script pode ser encontrada no diretório _theme_ do 2bwm: `/usr/share/archcraft/2bwm/theme`.
+
+Por exemplo, se você deseja modificar a aparência do **launcher**, edite o arquivo `/usr/share/archcraft/2bwm/theme/rofi/launcher.rasi`. O mesmo vale para os outros applets; edite o arquivo correspondente no mesmo diretório.
+
+> Se precisar de ajuda com a personalização do tema do Rofi, execute: `man rofi-theme` no terminal.
+
+Para alterar as cores e fontes dos launchers e applets, edite os arquivos `/usr/share/archcraft/2bwm/theme/rofi/shared/colors.rasi` e `/usr/share/archcraft/2bwm/theme/rofi/shared/fonts.rasi`.
+
+### Compositor
+
+O **Picom** é utilizado para composição. Ele é um compositor leve que oferece sombreamento, desfoque avançado e efeitos de transição. No 2bwm, o Picom é iniciado com um arquivo de configuração alternativo localizado em `/usr/share/archcraft/2bwm/picom.conf`.
+
+Se precisar alterar algo relacionado ao Picom, edite esse arquivo de configuração.
+
+> Se precisar de ajuda com a configuração do Picom, consulte o arquivo de configuração padrão em `/etc/xdg/picom.conf`.
+
+:::info
+
+Se você estiver enfrentando problemas de screen-tearing, usar o backend `glx` pode resolver o problema.  
+Caso enfrente lentidão, travamentos ou congelamentos, experimente alternar entre os backends `xrender` e `glx`.
+
+:::
+
+### Gerenciador de Janelas
+
+O arquivo **`/opt/2bwm-source/config.h`** é o arquivo principal de configuração do 2bwm. Se você precisar alterar algo, ou se deseja adicionar/remover/alterar as teclas de atalho, edite este arquivo, recompile o 2bwm e, em seguida, instale o novo binário.
+
+> Se precisar de ajuda com a configuração e personalização do 2bwm, execute: `man 2bwm` no terminal.
+
+<!-- Atalhos de teclado ---------------------------------- -->
+
+## Atalhos de teclado
+
+Aqui está uma lista de alguns atalhos de teclado importantes que você precisa conhecer para operar o 2bwm com facilidade. Se você deseja visualizar, modificar ou adicionar novos atalhos, edite o arquivo `/opt/2bwm-source/config.h`.
+
+### Aplicativos
+
+| Atalho | Ação |
+| --- | --- |
+| <kbd>super + Return</kbd> | Abre o terminal (alacritty) |
+| <kbd>super + shift + Return</kbd> | Abre o terminasl em tela cheia |
+| <kbd>super + F</kbd> | Abre o gerenciador de arquivos (thunar) |
+| <kbd>super + E</kbd> | Abre o editor de texto (geany) |
+| <kbd>super + W</kbd> | Abre o navegador (firefox) |
+
+### Menu e Applets
+
+| Atalho | Ação |
+| --- | --- |
+| <kbd>super</kbd> | Abre o lançador de aplicativos |
+| <kbd>alt + F1</kbd> | Abre o lançador de aplicativos |
+| <kbd>alt + F2</kbd> | Abre o executor de comandos |
+| <kbd>super + N</kbd> | Abre o applet de gerenciamento de conexão |
+| <kbd>super + B</kbd> | Abre o applet de bluetooth |
+| <kbd>super + M</kbd> | Abre o applet de música |
+| <kbd>super + X</kbd> | Abre o applet de menu de energia |
+| <kbd>super + S</kbd> | Abre o applet de screenshots |
+| <kbd>super + R</kbd> | Abre o applet para abrir como root |
+
+### Atalhos de Hardware
+
+| Atalho | Ação |
+| --- | --- |
+| <kbd>Print</kbd> | Tira um screenshot |
+| <kbd>alt + Print</kbd> | Tira um screenshot com 5 segundos de espera |
+| <kbd>shift + Print</kbd> | Tira um screenshot com 10 segundos de espera |
+| <kbd>ctrl + Print</kbd> | Tira um screenshot da janela em foco |
+| <kbd>super + Print</kbd> | Tira um screenshot da área selecionada |
+| <kbd>XF86AudioRaiseVolume</kbd> | Ayumenta o vomlume |
+| <kbd>XF86AudioLowerVolume</kbd> | Diminui o volume |
+| <kbd>XF86AudioMute</kbd> | Alterna o mudo nos auto-falantes |
+| <kbd>XF86AudioMicMute</kbd> | Alterna o mudo do microfone |
+| <kbd>XF86MonBrightnessUp</kbd> | Aumenta o brilho da tela |
+| <kbd>XF86MonBrightnessDown</kbd> | Diminui o brilho da tela |
+
+### Áreas de Trabalho
+
+| Atalho | Ação |
+| --- | --- |
+| <kbd>super + 1..9,0</kbd> | Troca para a respectiva área de trabalho |
+| <kbd>super + ctrl + Right/Left</kbd> | Área de trabalho seguinte/anterior |
+| <kbd>super + ctrl + shift + Right/Left</kbd> | Move a janela para a área de trabalho seguinte/anterior |
+| <kbd>super + Comma/Period</kbd> | Tela seguinte/anterior |
+
+### Gerenciamento de Janela
+
+| Atalho | Ação |
+| --- | --- |
+| <kbd>super + C/Q</kbd> | Fecha a janela em foco |
+| <kbd>super + Tab</kbd> | Foca na janela seguinte/anterior |
+| <kbd>super + Up/Down/Left/Right</kbd> | Move a janela direcionalmente |
+| <kbd>super + shift + Up/Down/Left/Right</kbd> | Redimensiona a janela direcionalmente |
+| <kbd>super + alt + Left/Right</kbd> | Redimensiona mantendo a proporção da janela |
+| <kbd>super + G</kbd> | Transporta a janela para o centro da tela |
+| <kbd>super + shift + G</kbd> | Transporta a janela para o centro Y da tela |
+| <kbd>super + ctrl + G</kbd> | Transporta a janela para o centro X da tela |
+| <kbd>super + H</kbd> | Transporta a janela para o canto superior esquerdo da tela |
+| <kbd>super + K</kbd> | Transporta a janela para o canto superior direito da tela |
+| <kbd>super + J</kbd> | Transporta a janela para o canto inferior esquerdo da tela |
+| <kbd>super + L</kbd> | Transporta a janela para o canto inferior direito da tela |
+| <kbd>super + shift + M</kbd> | Maximiza a janela |
+| <kbd>super + shift + F</kbd> | Coloca a janela em tela cheia |
+| <kbd>super + V</kbd> | Maximiza verticalmente |
+| <kbd>super + shift + V</kbd> | Maximiza horizontalmente |
+| <kbd>super + shift + H</kbd> | Maximiza e mover verticalmente para a esquerda |
+| <kbd>super + shift + L</kbd> | Maximiza e mover verticalmente para a direita |
+| <kbd>super + shift + J</kbd> | Maximiza e mover horizontalmente para a esquerda |
+| <kbd>super + shift + K</kbd> | Maximiza e mover horizontalmente para a direita |
+| <kbd>super + shift + ctrl + K</kbd> | Maximiza e mover: dobrar metade verticalmente |
+| <kbd>super + shift + ctrl + H</kbd> | Maximiza e mover: dobrar metade horizontalmente |
+| <kbd>super + shift + ctrl + J</kbd> | Maximiza e mover: expandir verticalmente |
+| <kbd>super + shift + ctrl + L</kbd> | Maximiza e mover: expandir horizontalmente |
+| <kbd>super + I</kbd> | Minimiza a janela |
+| <kbd>super + A</kbd> | Torna a janela imortal (não pode ser fechada) |
+| <kbd>super + Z</kbd> | Eleva ou abaixa uma janela |
+| <kbd>super + T</kbd> | Torna a janela sempre visível acima de outras |
+| <kbd>super + D</kbd> | Torna a janela visível em todas as áreas de trabalho |
+| <kbd>super + Y</kbd> | Alterna modo "sloppy" |
+| <kbd>super + Space</kbd> | Torna a janela metade e centralizada |
+
+### Gerenciador de Janela
+
+| Atalho | Ação |
+| --- | --- |
+| <kbd>super + ctrl + R</kbd> | Reinicia o 2bwm |
+| <kbd>super + ctrl + Q</kbd> | Sai do 2bwm |
+
+### Atalhos Variados
+
+| Atalho | Ação |
+| --- | --- |
+| <kbd>ctrl + alt + M</kbd> | Abre o ncmpcpp com a arte do álbum no terminal |
+| <kbd>ctrl + alt + L</kbd> | Aciona o bloqueio de tela |
+| <kbd>super + P</kbd> | Executa o seletor de cor |
+
+<!-- Temas --------------------------------------- -->
+
+## Screenshots
+
+Aqui estão algumas capturas de tela da área de trabalho do **2bwm**. Elas lhe darão uma ideia da experiência do **2bwm** no Archcraft.
+
+|Desktop 1|Desktop 2|Desktop 3|Desktop 4|
+|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/2bwm/desktop/desktop_1.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/2bwm/desktop/desktop_2.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/2bwm/desktop/desktop_3.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/2bwm/desktop/desktop_4.png)|
+
+|Desktop 5|Desktop 6|Desktop 7|Desktop 8|
+|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/2bwm/desktop/desktop_5.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/2bwm/desktop/desktop_6.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/2bwm/desktop/desktop_7.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/2bwm/desktop/desktop_8.png)|
+
+|Desktop 9|Desktop 10|Desktop 11|Desktop 12|
+|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/2bwm/desktop/desktop_9.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/2bwm/desktop/desktop_10.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/2bwm/desktop/desktop_11.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/2bwm/desktop/desktop_12.png)|
+
+<!-- FAQs ----------------------------------------- -->
+
+## FAQs
+
+<details>
+<summary><b>Como mudar o tema GTK, ícones e cursor?</b></summary>
+
+Para mudar o tema GTK, os ícones e o cursor na sessão do 2bwm, edite o arquivo `/usr/share/archcraft/2bwm/xsettingsd` e reinicie o 2bwm para aplicar as mudanças.
+```bash
+Net/ThemeName "Nordic"
+Net/IconThemeName "Zafiro"
+Gtk/CursorThemeName "Qogirr"
+```
+
+</details>
+
+<details>
+<summary><b>Como gerenciar múltiplos monitores e resoluções no 2bwm?</b></summary>
+
+Se você usar múltiplos monitores com o gerenciador de janelas 2bwm, pode gerenciá-los executando o aplicativo _Manager Monitors_ ou `archcraft-randr`.
+
+</details>
+
+<details>
+<summary><b>Por que o Alacritty não está funcionando no meu computador?</b></summary>
+
+Como o Alacritty é um emulador de terminal baseado em OpenGL, ele pode não funcionar em alguns hardwares de computador. Você pode fazê-lo funcionar nesses computadores seguindo estes métodos:
+
+1. Abra o Alacritty com a variável **LIBGL_ALWAYS_SOFTWARE=1**. Edite os atalhos de teclado ou o script que inicia o Alacritty e substitua `alacritty` por `LIBGL_ALWAYS_SOFTWARE=1 alacritty`.
+2. Edite o arquivo de área de trabalho **/usr/share/applications/Alacritty.desktop** e substitua `Exec=alacritty` por `Exec=env LIBGL_ALWAYS_SOFTWARE=1 alacritty`.
+
+</details>

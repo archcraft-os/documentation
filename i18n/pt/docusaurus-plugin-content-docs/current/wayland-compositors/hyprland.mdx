@@ -1,0 +1,565 @@
+---
+sidebar_position: 4
+hide_table_of_contents: false
+---
+
+# Hyprland
+
+<!-- Theme ---------------------------------------- -->
+<!-- Tabs -->
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<!-- Badges -->
+export const Highlight = ({children, color}) => (
+  <span
+    style={{
+      backgroundColor: color,
+      borderRadius: '4px',
+      color: '#fff',
+      padding: '0 0.2rem 0 0.2rem',
+    }}>
+    {children}
+  </span>
+);
+
+<!-- Adicione suas coisas depois disso -------------------- -->
+
+Hyprland é um compositor Wayland dinâmico de tiling baseado no wlroots que não se sacrifica na aparência.
+
+<Tabs>
+
+<TabItem value="wc_1" label="Dark" default>
+
+[![video](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/hyprland/style_1/main.png)](https://youtu.be/t6Zd2F7rtPw)
+
+</TabItem>
+
+<TabItem value="wc_2" label="Catppuccin" default>
+
+![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/hyprland/style_2/main.png)
+
+</TabItem>
+
+</Tabs>
+
+:::tip[Archcraft Hyprland]
+
+Baixe o Hyprland em [**`ko-fi`**](https://ko-fi.com/s/71d0e298d9) And Support Archcraft Development.
+
+:::
+
+<!-- Instalação --------------------------------- -->
+
+## Instalação
+
+Siga as instruções abaixo para instalar o Hyprland:
+
+- Baixe o arquivo **hyprland.tar.gz** em [ko-fi](https://ko-fi.com/s/71d0e298d9), e salve em um diretório.
+- Abra o terminal no mesmo diretório e execute o seguinte comando para extrair o arquivo tar:
+```bash
+$ tar -xzvf hyprland_YYYY-MM-DD.tar.gz
+```
+- Depois de extraído, mude para o diretório extraído que deve ser **`hyprland`**
+
+<Tabs>
+
+<TabItem value="wc_1" label="Instale No Archcraft" default>
+
+No Archcraft, você pode simplesmente instalar os pacotes no diretório **pkgs**:
+**Para instalar a versão dark:**
+```bash
+$ sudo pacman -U archcraft-hyprland-X.Y-Z-any.pkg.tar.zst
+```
+
+**Para instalar a versão catppuccin:**
+```bash
+$ sudo pacman -U archcraft-hyprland-catppuccin-X.Y-Z-any.pkg.tar.zst
+```
+
+</TabItem>
+
+<TabItem value="wc_2" label="Instale em Outra Distribuição" default>
+
+Se você quiser instalar esse setup no Arch Linux ou em qualquer outra distribuição, siga os pontos abaixo:
+- Instale os seguintes programas em sua distribuição Linux: [`hyprland`](https://github.com/vaxerski/Hyprland), `swaybg` `swayidle` `swaylock` `wlroots` `wl-clipboard` `waybar` `wofi` `foot` `mako` `grim` `slurp` `wf-recorder` `light` `yad` `thunar` `geany` `mpv` `mpd` `mpc` `viewnior` `imagemagick` `xfce-polkit` `xorg-xwayland` `xdg-desktop-portal-wlr` `playerctl` `pastel` `python-pywal` `alacritty` `rofi` `pulsemixer`
+- Depois de instalar os programas acima, crie uma pasta chamada hypr em **`~/.config`**
+```bash
+$ mkdir -p ~/.config/hypr
+```
+- Para instalar o estilo **dark**, copie tudo de  _`dotfiles/dark`_ para **`~/.config/hypr`**
+```bash
+$ cp -r ./dotfiles/dark/* ~/.config/hypr/
+```
+- Para instalar o estilo **catppuccin**, copie tudo de _`dotfiles/catppuccin`_ para **`~/.config/hypr`**
+```bash
+$ cp -r ./dotfiles/catppuccin/* ~/.config/hypr/
+```
+- Faça log out e log in em seu incrivelmente configurado Hyprland WC.
+
+> Instale as **fontes** de `fonts` e **Tema GTK, Ícones e Cursores** da pasta `gtk` para uma aparência geral.
+
+</TabItem>
+
+</Tabs>
+
+:::info[Archcraft Prime]
+
+<Highlight color="#62aeef">Hyprland</Highlight> vem pré-instalado nas ISOs [**`Archcraft WSE`**](https://ko-fi.com/s/213becbf00) e [**`Archcraft Prime`**](https://ko-fi.com/s/c925a2a8c1).
+
+:::
+
+<!-- Configuração -------------------------------- -->
+
+## Configuração
+
+Hyprland é pré-configurado no Archcraft. Nesta seção, nós veremos como o compositor wayland Hyprland é configurado, quais ferramentas e utilitários são usados para fazê-lo parecer e funcionar como um ambiente gráfico completo.
+
+### Estrutura de Configuração
+
+A estrutura de configuração do Hyprland no Archcraft se parece com isso:
+
+```
+~/.config
+└── hypr               : pasta de configuração do hyprland
+    ├── alacritty      : configuração do terminal alacritty
+    ├── foot           : configuração do terminal foot
+    ├── mako           : configuração do daemon de notificação
+    │   └── icons      : ícones de notificação
+    ├── rofi           : arquivos de configuração de rofi
+    ├── scripts        : vários scripts para funcionalidades
+    ├── theme          : tema atual e temas do pywal
+    ├── wallpapers     : wallpapers
+    ├── waybar         : configurações da barra de status
+    ├── wlogout        : configurações do wlogout
+    │   └── icons      : ícones da sessão
+    ├── wofi           : configuraçẽs do lancador
+    ├── hyprland.conf  : arquivo de configuração do hyprland
+    └── hyprtheme.conf : arquivo de cores e elementos de tema
+```
+
+### Terminal
+
+<Tabs>
+
+<TabItem value="wc_1" label="Default" default>
+
+**Alacritty** é o terminal padrão. No compositor wayland Hyprland , alacritty é lançado com um arquivo de configuração alternativo. Se você precisar mudar algo, tenha certeza que está modificando o arquivo de configuração em `~/.config/hypr/alacritty`. Você pode mudar os seguintes arquivos de configuração para alterar o comportamento do seu terminal alacritty.
+
+**`~/.config/hypr/alacritty/alacritty.toml`** : Arquivo de configuração principal <br/>
+**`~/.config/hypr/alacritty/colors.toml`** : Configurações de cor <br/>
+**`~/.config/hypr/alacritty/fonts.toml`** : Configurações de fontes
+
+> Se você precisar de qualquer ajuda com a configuração do alacritty, execute: `man 5 alacritty` no terminal.
+
+</TabItem>
+
+<TabItem value="wc_2" label="Alternativa" default>
+
+**Foot** é o terminal secundário/alternativo. No compositor wayland Hyprland, foot é lançado com um arquivo de configuração alternativo. Se você precisar mudar algo, tenha certeza que está modificando o arquivo de configuração em `~/.config/hypr/foot`. Você pode mudar os seguintes arquivos de configuração para alterar o comportamento do seu terminal foot.
+
+**`~/.config/hypr/foot/foot.ini`** : Arquivo de configuração principal <br/>
+**`~/.config/hypr/foot/colors.ini`** : Configurações de cores <br/>
+**`~/.config/hypr/foot/fonts.ini`** : Configurações de fontes
+
+> Se você precisar de qualquer ajuda com as configurações do foot, execute: `man foot.ini` no terminal.
+
+</TabItem>
+
+</Tabs>
+
+:::tip
+
+Por padrão, alacritty é usado, mas, se você quiser usar o foot como seu terminal padrão, basta editar o arquivo `~/.config/hypr/hyprland.config` e comentar a combinação de teclas para **`Terminal : alacritty`** e descomentar a combinação de teclas para **`Terminal : foot`**
+
+:::
+
+:::warning
+
+Quando você mudar o `tema`, o arquivo **colors.toml** do alacritty e o arquivo **colors.ini** do foot vão ser sobrescritos pelo script do tema.
+
+:::
+
+### Notificação
+
+**Mako** é usado como daemon de notificação no Hyprland. No compositor wayland Hyprland, mako é lançado com um arquivo de configuração alternativo, que é `~/.config/hypr/mako/config`. Então, Se você precisar modificar algo, tenha certeza de modificar este arquivo.
+
+> Se você precisar de alguma ajuda com as configurações do mako, execute `man 5 mako` no terminal.
+
+:::warning
+
+Quando você muda o `tema`, as cores no arquivo de **configuração** serão sobreescritas pelo script de tema.
+
+:::
+
+### Wallpaper
+
+**swaybg** põe o papel de parede no Hyprland. Se você quiser mudar o papel de parede, edite o script `~/.config/hypr/scripts/wallpaper` e adicione o seu papel de parede aqui:
+```bash
+WALLPAPER='/path/to/your/wallpaper'
+```
+:::warning
+
+Quando você muda o `tema`, o papel de parede no caminho do script `wallpaper` é sobrescrito pelo script de tema.
+
+:::
+
+### Barra de status
+
+**Waybar** é usado como barra de status no compositor wayland Hyprland do Archcraft.
+
+As configurações para waybar podem ser encontradas dentro da pasta `~/.config/hypr/waybar`. Se você quiser mudar as configurações da **waybar**, ou talvez queira adicionar ou remover módulos, então você precisa editar os seguintees arquivos:
+
+**`~/.config/hypr/waybar/config`** : Arquivo de configuração principal file <br/>
+**`~/.config/hypr/waybar/modules`** : Arquivo de configuração de módulos <br/>
+**`~/.config/hypr/waybar/style.css`** : Arquivo para estilo em CSS <br/>
+**`~/.config/hypr/waybar/colors.css`** : Arquivo de cores para CSS <br/>
+
+> Se você precisar de alguma ajuda com a configuração da waybar, execute: `man waybar`
+
+:::warning
+
+Quando você muda o `tema`, o arquivo **colors.css** da waybar é sobreescrito pelo script de tema.
+
+:::
+
+### Lançadpres e Applets
+
+<Tabs>
+
+<TabItem value="wc_1" label="Rofi" default>
+
+**Rofi** é usado como lançador de aplicativos, comandos e vários applets. Para modificar as configurações do rofi, edite o arquivo `~/.config/rofi/config.rasi`.
+
+> Se você precisar de alguma ajuda com as configurações do rofi, execute: `man rofi` no terminal.
+
+Os scripts para o rofi que são usados no Hyprland podem ser encontrados em `~/.config/hypr/scripts`. os seguintes scripts são usados pelo rofi para os lançadores e applets no Hyprland:
+
+**`rofi_bluetooth`** : applet do bluetooth para conectar rapidamente um dispositivo BT <br/>
+**`rofi_launcher`** : um lançador de aplicativo, comando, gestor de arquivos e gerenciador de tarefas  <br/>
+**`rofi_music`** : applet de música, que controla o MPD com `mpc` <br/>
+**`rofi_network`** : applet de gerenciamento de conexão <br/>
+**`rofi_powermenu`** : menu de energia, com diálogo de confirmação <br/>
+**`rofi_runner`** : para executar um comando rápido <br/>
+**`rofi_screenshot`** : applet de captura de tela que funciona com grim <br/>
+
+Se você quer mudar algum applet ou talvez extender sua funcionalidade, basta editar esses scripts.
+
+A configuração de cada script pode ser encontrada dentro na pasta `~/.config/hypr/rofi`.
+
+Digamos que você quer mudar a paarência do **lançador**, então você tem que editar o arquivo `~/.config/hypr/rofi/launcher.rasi`. O mesmo serve para qualquer outro applet, edite o respectivo arquivo no mesmo diretório.
+
+> Se você precisar de alguma ajuda com o tema do rofi, execute: `man rofi-theme` no terminal.
+
+Para mudar as cores e fontes dos lançadores e applets, edite os arquivos `~/.config/hypr/rofi/shared/colors.rasi` e `~/.config/hypr/rofi/shared/fonts.rasi`.
+
+</TabItem>
+
+<TabItem value="wc_2" label="Wofi" default>
+
+Arternativamente, **wofi** é usado para lançar apicativos e menu de energia.
+
+> Se você precisar de ajuda com as configurações do wofi, execute: `man 5 wofi` no terminal.
+
+Os scripts para wofi que são usados no Hyprland podem ser encontrados na pasta `~/.config/hypr/scripts`. Os seguintes scripts são usados pelo wofi para lançadores e menu de applets de menu de energiano Hyprland:
+
+**`wofi_menu`** : lançador de aplicativos  <br/>
+**`wofi_powermenu`** : menu de energia, com diálogo de confirmação
+
+Se você quer modificar algum applet ou talvez extender sua funcionalidade, basta editar essees scripts.
+
+A configuração do wofi pode ser encontrada na pasta `~/.config/hypr/wofi`.
+
+Para mudar as cores e fontes dos lançadores e applets, edite o arquivo `~/.config/hypr/wofi/style.css`.
+
+</TabItem>
+
+<TabItem value="wc_3" label="Wlogout" default>
+
+**Wlogout**, um menu de log out do Wayland também é configurado para gerenciar a sessão no Hyprland.
+
+Edite o script `~/.config/hypr/scripts/wlogout` para ajustar a aparẽncia do wlogout. A configuração do wlogout pode ser encontrada na pasta `~/.config/hypr/wlogout`.
+
+Se você quer usar o wlogout em vez do rofi ou wofi, edite o arquivo de configuração `~/.config/hypr/hyprland.conf` e descomente as combinações do wlogout.
+
+> Se você quiser alguma ajuda com a configuração do wlogout, execute: `man wlogout` no terminal.
+
+</Tabs>
+
+:::tip
+
+Por padrão , rofi é usado como lançador de app. Mas, se você quiser usar o wofi, edite o arquivo de configuração `~/.config/hypr/hyprland.conf` e descomente a combinação de wofi (e, comente a combinação do rofi).
+
+:::
+
+:::warning
+
+Quando você muda o `tema`, o arquivo **shared/colors.rasi** do rofi e o arquivo **style.css** do wofi são sobreescritos pelo script de tema.
+
+:::
+
+### compositor wayland
+
+A configuração do Hyprland está disponível em `~/.config/hypr`. Para configurar o compositor wayland Hyprland, estes são os arquivos usados:
+
+**`hyprland.conf`** : arquivo de configuração principal para configurações gerais, entrada/saída, atalhos de teclado e regras de janela, etc. <br/>
+**`hyprtheme.conf`** : configuração de tema, fonte, cores, bordas, gaps, etc.
+
+> Se você precisar de ajuda com as configurações do hyprland, visite: [Hyprland Wiki](https://wiki.hyprland.org)
+
+:::warning
+
+Quando você muda o `tema`, cores no arquivo **hyprtheme.conf** são sobreescritas pelo scipt de tema.
+
+:::
+
+<!-- Keybindings ---------------------------------- -->
+
+## Atalhos de Teclado
+
+Aqui temos uma lista dos atalhos de teclado mais importantes que você pecisa saber para usar o Hyprland com facilidade. Caso queira ver, modificar ou adicionar novos atalhos, edite o arquivo `~/.config/hypr/hyprland.conf`.
+
+### Applicações
+
+| Teclas | Ação |
+| --- | --- |
+| <kbd>super + Return</kbd> | Abre o terminal |
+| <kbd>super + shift + Return</kbd> | Abre o terminal flutuante |
+| <kbd>super + T</kbd> | Abre o terminal em tela cheia |
+| <kbd>super + shift + F</kbd> | Abre o gestor de arquivos (thunar) |
+| <kbd>super + shift + E</kbd> | Abre o editos de texto (geany) |
+| <kbd>super + shift + W</kbd> | Abe o navegador (firefox) |
+
+### Menu e Applets
+
+| Teclas | Ação |
+| --- | --- |
+| <kbd>super</kbd> | Abre o lançador de aplicativos |
+| <kbd>super + D</kbd> | Abre o lançador de aplicativos |
+| <kbd>super + R</kbd> | Abre o lançador de comando |
+| <kbd>super + N</kbd> | Abre o gerenciador de conexão |
+| <kbd>super + M</kbd> | Abre o applet de música |
+| <kbd>super + X</kbd> | Abre o menu de energia |
+| <kbd>super + A</kbd> | Abre o applet de captura de tela |
+| <kbd>super + B</kbd> | Abre o applet de bluetooth |
+
+### Atalhos de Hardware
+
+| Teclas | Ação |
+| --- | --- |
+| <kbd>Print</kbd> | Tira um screenshot |
+| <kbd>alt + Print</kbd> | Tira um screenshot com 5 segundos de espera |
+| <kbd>shift + Print</kbd> | Tira um screenshot com 10 segundos de espera |
+| <kbd>ctrl + Print</kbd> | Tira um screenshot da janela com foco |
+| <kbd>super + Print</kbd> | Tira um screenshot da área selecionada |
+| <kbd>XF86AudioRaiseVolume</kbd> | Aumenta o volume |
+| <kbd>XF86AudioLowerVolume</kbd> | Diminui o volume |
+| <kbd>XF86AudioMute</kbd> | Alterna o modo mudo |
+| <kbd>XF86AudioMicMute</kbd> | Alterna o modo mudo para o microfone |
+| <kbd>XF86Audio + Next/Prev/Play/Stop</kbd> | Controle de mídia (MPD) |
+| <kbd>XF86MonBrightnessUp</kbd> | Aumenta o brilho da tela |
+| <kbd>XF86MonBrightnessDown</kbd> | Diminui o brilho da tela |
+
+### Áreas de Trabalho
+
+| Teclas | Ação |
+| --- | --- |
+| <kbd>super + 1..8</kbd> | Muda para área de tabalho |
+| <kbd>super + shift + 1..8</kbd> | Envia a janela ativa para a área de trabalho respectiva |
+| <kbd>ctrl + alt + Left/Right</kbd> | Muda para a anterior/próxima área de trablaho |
+| <kbd>ctrl + alt + shift + Left/Right</kbd> | Envia a janela ativa para a anterior/próxima área de trabalho |
+| <kbd>super + ctrl + F</kbd> | Alterna para o modo flutuante na área de trabalho atual |
+| <kbd>super + ctrl + S</kbd> | Alterna para o modo pseudo na área de trabaçho atual |
+
+### Gestor de Janelas
+
+| Teclas | Ação |
+| --- | --- |
+| <kbd>super + C/Q</kbd> | Fecha a janela em foco |
+| <kbd>super + F</kbd> | Alterna para tela cheia |
+| <kbd>super + S</kbd> | Alterna para o modo pseudo |
+| <kbd>super + Space</kbd> | Alterna para flutuante |
+| <kbd>super + Left/Right/Up/Down</kbd> | Muda o foco para a janla respectivamente |
+| <kbd>super + shift + Left/Right/Up/Down</kbd> | Move a janela ativa respectivamente |
+| <kbd>super + ctrl + Left/Right/Up/Down</kbd> | Redimenciona a janela ativa respectivamente |
+| <kbd>super + alt + Left/Right/Up/Down</kbd> | Move a janela flutuante respectivamente |
+| <kbd>super + Tab</kbd> | Troca entre as janelas |
+| <kbd>super + shift + P</kbd> | Alterna o modo fixar |
+| <kbd>super + shift + S</kbd> | Troca para a próxima |
+| <kbd>super + shift + O</kbd> | Alterna para opaco |
+
+### Atalhos Variados
+
+| Teclas | Ação |
+| --- | --- |
+| <kbd>super + P</kbd> | Executa o seletor de cor  |
+| <kbd>ctrl + alt + L</kbd> | Bloqueia a tela |
+| <kbd>ctrl + alt + Delete</kbd> | Sai do Hyprland |
+
+<!-- Nvidia --------------------------------------- -->
+
+## Nvidia
+
+Se você está usando `Archcraft` e instalou os pacotes providos, não há mais nada que você tenha que fazer para rodar em uma máquina Nvidia. Quando você instala o Archcraft em máquina com Nvidia, ele faz todas as operações (mencionadas abaixo) requeridas para rodar o compositor wayland em sua máquina. O compositor deverá funcionar bem.
+
+Se você está rodando alguma outra distribuição e quer instalar na sua máquina com Nvidia, você precisa fazer alguns ajuses. Nesse guia, estarei assumindo que você está usando **Arch Linux**. Siga os passos abaixo para fazer este compositor wayland funcionar com Nvidia:
+
+- Instale **Nvidia Dhyprs** no seu sistema. [NVIDIA](https://wiki.archlinux.org/title/NVIDIA) 
+- Edite o aquivo `/etc/mkinitcpio.conf` e adicione os módulo do kernel **`nvidia`**
+```
+MODULES="nvidia nvidia_modeset nvidia_uvm nvidia_drm"
+```
+
+- No mesmo arquivo, remova o hook `kms` da variável de hooks se tiver
+- Reconstrua o seu arquivo initrd com: `sudo mkinitcpio -P linux`
+- Edite o arquivo `/etc/default/grub` e adicione o parâmetro **`nvidia_drm.modeset=1`** do kernel para Nvidia
+```
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash nvidia_drm.modeset=1 ..."
+```
+
+- Atualize sua configuração do grub com: `sudo grub-mkconfig -o /boot/grub/grub.cfg`
+- Reinicie sua máquina Nvidia e faça login no seu compositor wayland, isso deve funcionar agora.
+
+Mais informações: [NVIDIA#Installation](https://wiki.archlinux.org/title/NVIDIA#Installation), [NVIDIA#DRM_kernel_mode_setting](https://wiki.archlinux.org/title/NVIDIA#DRM_kernel_mode_setting)
+
+<!-- Temas --------------------------------------- -->
+
+## Screenshots
+
+### Desktop
+
+Aqui estão alguns screenshots do `hyprland`. Isso irá te dar uma ideia da experiência do Hyprland no Archcraft.
+
+<Tabs>
+
+<TabItem value="wc_1" label="Dark" default>
+
+|Desktop 1|Desktop 2|Desktop 3|Desktop 4|Desktop 5|
+|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/hyprland/style_1/desktop/desktop_1.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/hyprland/style_1/desktop/desktop_2.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/hyprland/style_1/desktop/desktop_3.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/hyprland/style_1/desktop/desktop_4.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/hyprland/style_1/desktop/desktop_5.png)|
+
+|Desktop 6|Desktop 7|Desktop 8|Desktop 9|Desktop 10|
+|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/hyprland/style_1/desktop/desktop_6.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/hyprland/style_1/desktop/desktop_7.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/hyprland/style_1/desktop/desktop_8.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/hyprland/style_1/desktop/desktop_9.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/hyprland/style_1/desktop/desktop_10.png)|
+
+|Desktop 11|Desktop 12|Desktop 13|Desktop 14|
+|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/hyprland/style_1/desktop/desktop_11.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/hyprland/style_1/desktop/desktop_12.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/hyprland/style_1/desktop/desktop_13.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/hyprland/style_1/desktop/desktop_14.png)|
+
+</TabItem>
+
+<TabItem value="wc_2" label="Catppuccin" default>
+
+|Desktop 1|Desktop 2|Desktop 3|Desktop 4|Desktop 5|
+|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/hyprland/style_2/desktop/desktop_1.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/hyprland/style_2/desktop/desktop_2.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/hyprland/style_2/desktop/desktop_3.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/hyprland/style_2/desktop/desktop_4.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/hyprland/style_2/desktop/desktop_5.png)|
+
+|Desktop 6|Desktop 7|Desktop 8|Desktop 9|Desktop 10|
+|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/hyprland/style_2/desktop/desktop_6.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/hyprland/style_2/desktop/desktop_7.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/hyprland/style_2/desktop/desktop_8.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/hyprland/style_2/desktop/desktop_9.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/hyprland/style_2/desktop/desktop_10.png)|
+
+|Desktop 11|Desktop 12|Desktop 13|Desktop 14|
+|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/hyprland/style_2/desktop/desktop_11.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/hyprland/style_2/desktop/desktop_12.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/hyprland/style_2/desktop/desktop_13.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/hyprland/style_2/desktop/desktop_14.png)|
+
+</TabItem>
+
+</Tabs>
+
+### Temas
+
+Para mudar o tema, clique no ícone `Paleta de Cores` na waybar. Para aplicar um tema aleatório, **`Clique com botão esquerdo`** no módulo de tema e para restaurar o tema padrão, **`Clique com botão direito`** no módulo de tema.
+
+<Tabs>
+
+<TabItem value="wc_1" label="Dark" default>
+
+|Default Theme|Random Themes|
+|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/hyprland/style_1/main.png)|![gif](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/hyprland/style_1/random/random.gif)|
+
+</TabItem>
+
+<TabItem value="wc_2" label="Catppuccin" default>
+
+|Default Theme|Random Themes|
+|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/hyprland/style_2/main.png)|![gif](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/hyprland/style_2/random/random.gif)|
+
+</TabItem>
+
+</Tabs>
+
+<!-- FAQs ----------------------------------------- -->
+
+## FAQs
+
+<details>
+<summary><b>Como atualizar as minhas configurações para as novas?</b></summary>
+
+Baixe o pacote atualizado em ko-fi (de graça) e apenas instale-o para atualizar para as novas configurações.
+
+#### Passos para pegar as atualizações (ou baixar os arquivos novamente):
+- Faça login na sua conta do Ko-fi
+- Vá para o seu `Histórico e Pagamentos Ko-fi`
+- Selecione as compras que você fez
+- Clique em `Ver Detalhes`
+- Depois, clique em `Ver Conteúdo` para baixar os arquivos atualizados.
+
+</details>
+
+<details>
+<summary><b>Por que meu cursor não está visível?</b></summary>
+
+Quando usamos certos drivers gráficos (ex: o controlador gráfico VMSVGA ou o driver proprietário da Nvidia), o cursor fica invisível. Isso pode ser consertado usando um software de cursor:
+```bash
+$ export WLR_NO_HARDWARE_CURSORS=1
+```
+
+</details>
+
+<details>
+<summary><b>Como trocar o tema GTK, icones e cursor?</b></summary>
+
+Para mudar o tema GTK, ícones e cursor no Hyprland, edite o arquivo `~/.config/hypr/scripts/gtkthemes` e reinicie o Hyprland para aplicar as mudanças.
+```bash
+THEME='Manhattan'
+ICONS='Luv-Folders-Dark'
+FONT='Noto Sans 9'
+CURSOR='Qogirr'
+```
+
+</details>
+
+<details>
+<summary><b>Como gerenciar múltiplos monitores e resolução no Hyptland?</b></summary>
+
+Se você usa vários monitores com o compositor wayland Hyprland, você pode gerenciá-los como a seguir:
+
+1. Você pode dar nomes para as saídas com `wlr-randr`
+2. Edite o arquivo `~/.config/hypr/hyprland.conf` e use a informação que você pegou com o comando acima:
+```ini
+# Laptop screen, mode: 1920x1080, scale: 1, gaps of 10 each side
+monitor = eDP-1,1920x1080@60,0x0,1
+monitor = eDP-1,addreserved,10,10,10,10
+monitor = eDP-1,transform,0
+workspace = eDP-1,1
+
+# External monitor, mode: 1920x1080, position: right of laptop, scale: 1.5, gaps of 20 each side, rotated 90d
+monitor = HDMI-A-1,1920x1080@60,1920x0,1.5
+monitor = HDMI-A-1,addreserved,20,20,20,20
+monitor = HDMI-A-1,transform,1
+workspace = HDMI-A-1,2
+```
+
+</details>
+
+<details>
+<summary><b>Por que o Alacritty não está funcionando no meu computador?</b></summary>
+
+Como o Alacritty é um emulador de terminal baseado em OpenGL, ele pode não funcionar em alguns hardwares. Você pode fazê-lo funcionar nestes computadores seguindo esses métodos:
+
+1. Abra o alacritty com a variável **LIBGL_ALWAYS_SOFTWARE=1**. Edite o atalho/script que lança o alacritty e substitua `alacritty` por `LIBGL_ALWAYS_SOFTWARE=1 alacritty`
+2. Edite o arquivo **/usr/share/applications/Alacritty.desktop** e substitua `Exec=alacritty` por `Exec=env LIBGL_ALWAYS_SOFTWARE=1 alacritty`
+
+</details>
