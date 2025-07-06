@@ -44,7 +44,7 @@ export const Highlight = ({children, color}) => (
 
 **Voidcraft** is an installable package that will turn your [Void Linux](https://voidlinux.org/) installation into Archcraft. Once installed on the top of Void Linux, It'll offer everything Archcraft offers on your Void Linux.
 
-**Important** : Voidcraft is created on the top of `Void Linux Live Base (glibc)`(_void-live-x86_64-20240314-base.iso_) and It's ***recommended*** that you install this on a fresh installation of Void Linux.
+**Important** : Voidcraft is created on the top of `Void Linux Live Base (glibc)`(_void-live-x86_64-20250202-base.iso_) and It's ***recommended*** that you install this on a fresh installation of Void Linux.
 
 <!-- Download ------------------------------------- -->
 
@@ -62,6 +62,7 @@ Follow the step below to install Voidcraft :
 - Extract the file : `tar -xzvf voidcraft.tar.gz`
 - Change to extracted directory : `cd voidcraft`
 - Run install script and let it do it's job : `./install.sh`
+- You can run `./install.sh |& tee log.txt` to create a installation log file.
 - Once finished, _reboot your computer_ and you'll have **Voidcraft installed**.
 
 :::info[Video]
@@ -77,7 +78,29 @@ An **asciinema** file `voidcraft.cast` is provided as well, you can play that to
 ## Changelogs
 
 <details>
-<summary><b>Changelog (July 2024) : Last Update</b></summary>
+<summary><b>Changelog (July 2025) : Last Update</b></summary>
+
+**Date** : `July 06th, 2025`
+
+- Added **new cursor, icon, and GTK themes** (along with updates to existing ones)
+- Added **new icon and nerd fonts** (existing ones updated as well)
+- Theme updates across both WMs (Polybar, Rofi, etc.)
+- Added **4 new icon sets** for the openbox menu
+- Added `kitty` terminal support to all WMs
+- Update all Window Manager's Configs
+- Added `archcraft-arandr` (GUI) package to manage screen layouts
+- Improved thunar actions functionalities
+  - open terminal according to session
+  - open as root according to session
+  - permanently sets the wallpaper in supported sessions
+- Added new `neofetch` configuration
+- Updated `zsh` theme
+- Small improvements and bugs fixed.
+
+</details>
+
+<details>
+<summary><b>Changelog (July 2024) : Third Release</b></summary>
 
 **Date** : `July 06th, 2024`
 
