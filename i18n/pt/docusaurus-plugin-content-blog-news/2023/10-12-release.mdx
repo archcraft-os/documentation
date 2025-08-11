@@ -1,0 +1,45 @@
+---
+slug: 27-news-release
+title: Versão de outubro de 2023
+authors: adi1090x
+tags: [v23.10, release, iso]
+hide_table_of_contents: true
+---
+
+<!-- Badges -->
+export const Highlight = ({children, color}) => (
+  <span
+    style={{
+      backgroundColor: color,
+      borderRadius: '4px',
+      color: '#fff',
+      padding: '0.2rem',
+    }}>
+    {children}
+  </span>
+);
+
+ISO do Archcraft de outubro de 2023 está diponível para download. Veja abaixo o que há de novo.
+
+<!--truncate-->
+
+### Changelogs :
+- Atualizado o perfil da ISO
+- Base mais recente com novos pacotes
+- Adicionado aplicativo `archcraft-randr` para gerenciar a tela e monitores
+- Atualizados todos os window managers
+  - PKGBUILDs apagados (`com apenas as dependências necessárias`) e código atualizado
+  - Diretório **openbox-themes** agora é mesclado dentro do **openbox**, nova estrutura de configuração para openbox
+  - Adicionado **exemplos de  layouts** para multi-monitores no `bspwmrc` (layout para único, dois-monitores, três-monitores)
+  - Adicionado suporte para multi-monitor em todas as WMs disponíveis (usando `archcraft-randr`)
+  - e, mais...
+- Adicionado a habilidade de `wipe` no ABIF
+- Corrigido erro do aplicativo `ajuda e dicas`
+- Removido `python2` pois não é preciso mais
+- Pequenas melhorias e correções de bugs.
+
+> **`Info`** : Agora, a atualização dos WMs will não irá repor suas configurações  modificadas (antes, era preciso salvar suas configurações em `~/.config`).
+>
+> Em vez disso, irá instalar novas atualizações em diretórios separados (ex: `~/.config/openbox_pacnew_2023-10-12`), você poderá escolher usar sua configuração atual ou atualizá-la.
+>
+> Você pode usar o `meld` para mesclar as atualizações nas suas configurações modificadas atuais.

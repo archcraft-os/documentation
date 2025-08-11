@@ -1,0 +1,89 @@
+---
+sidebar_position: 3
+hide_table_of_contents: true
+---
+
+# Boot Archcraft in VMs
+
+<!-- Tabs -->
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+
+<TabItem value="article" label="Artigo">
+
+Se você planeja iniciar o Archcraft em uma Máquina Virtual (_Por Ex: Virtualbox_), você pode ter alguns dos problemas (não são exatamente problemas) mencionados abaixo: 
+
+- Desktop não escala automaticamente quando muda a resolução
+- Papel de parede fica rasgado quando vai pro modo tela cheia
+- Barra de status não escala de acordo
+- Tela piscando depois de mudar o tema
+- Cursor nã fica visível
+- etc
+
+Não são problemas, exatamente. O Archcraft usa window managers autonomos, não ambientes gráficos. Então quando você muda para o modo de tela cheia ou muda a resolução, coisas como papel de parede e barra de status podem não ser atualizados ou recarregados automaticamente, diferente de um ambiente gráfico típico
+
+Para lidar com esses cenários, você pode fazer essas coisas para ter a melhor experiência com o Archcraft em VMs:
+
+<details>
+<summary>1. Como mudar a resolução da forma coreta?</summary>
+
+Como mencionado acima, Archcraftnão usa ambientes gráficos, o que significa que quando você muda a resolução, o papel de parede e a barra de status não são atualizados automaticamente.
+
+Mas o Archcraft vem com algumas utilidades para resolver esse problema. Então quando você mudar a resolução:
+- Use a aplicação `archcraft-randr`. Abra o lançador de aplicativos e digite **Manage Monitors** ou **randr** e use a aplicação. Este é um applet do rofi e quando você mudar a resolução com esse apĺicativo, o papel de parede e a barra de status irão atualizar também. Isso vai funcionar em todas as sessões.
+- Se você estiver no **Openbox**, clique com o botão direito na área de trabalho, vá em `Prefeências > Display / Monitores` e mude a resolução/modo. Isso vai fazer o mesmo, mas só funciona no Openbox.
+
+</details>
+
+<details>
+<summary>2. Como corrigir o papel de parede e a barra de status?</summary>
+
+Use a aplicação `archcraft-randr` e selecione a opção **auto**.
+
+</details>
+
+<details>
+<summary>3. Como corrigir a tela piscando depois de mudar o tema?</summary>
+
+Quando você mudar o tema, o backend do compositor (_picom_) muda o **glx**. Isso pode causar problemas em VMs em alguns hardwares. A solução para esse problema é trocar de volta o back para **xrender**.
+- Se você estover no openbox, vá para `Preferências > Compositor > Use o compositor 'xrender'`
+- Em outra sessão (_bspwm_), edite respectivamente o arquivo de configuração do picom. Por ex: `~/.config/bspwm/picom.conf`
+
+</details>
+
+<details>
+<summary>4. Como corrigir o cursor invisível?</summary>
+
+Aqui estão duas possíveis causas para esse problema:
+1. **`No Xorg`**: O **glx**, back do compositor picom, a solução é voltar para o **xrender**.
+2. **`No Wayland`**: Quando certos drivers gráficos são usados (ex: o controle gráfico VMSVGA ou o driver proprietário na NVIDIA), o cursor fica invisível. Isso pode ser consertado usando programas de cursor: `export WLR_NO_HARDWARE_CURSORS=1`
+
+</details>
+
+:::perigo
+
+Compositores Wayland não funcionam em Máquinas Virtuais. Quer dizer que a [**`ISO do Archcraft Wayland Edição Especial`**](https://ko-fi.com/s/213becbf00) e os compositores wayland na [**`ISO do Archcraft Prime`**](https://ko-fi.com/s/c925a2a8c1) não funcionam em Máquinas Virtuais.
+
+:::
+
+:::cuidado
+
+No virtualbox, se você ativar **Aceleração 3D** e usar o driver padrão `VMSVGA`, existe a possibilidade dos Compositores Wayland funcionarem. Mas pode ou não funcionar.
+
+> Para mim, esse método funcionou em uma versão anterior do virtualbox. Mas nã funcionou por muito tempo e eu não estou dusposto a rodar nenhum compositor wayland no virtualbox.
+
+:::
+
+</TabItem>
+
+<TabItem value="video" label="Vídeo">
+
+Aqui está um vídeo sobre iniciar o Archcraft no VirtualBox.
+
+[![vídeo](https://i3.ytimg.com/vi/5nTNVcqkqfw/maxresdefault.jpg)](https://youtu.be/5nTNVcqkqfw)
+
+</TabItem>
+
+</Tabs>

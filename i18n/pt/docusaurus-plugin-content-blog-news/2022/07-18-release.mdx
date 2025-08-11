@@ -1,0 +1,38 @@
+---
+slug: 07-news-release
+title: Versão de julho de 2022
+authors: adi1090x
+tags: [v22.07, release, iso]
+hide_table_of_contents: true
+---
+
+<!-- Badges -->
+export const Highlight = ({children, color}) => (
+  <span
+    style={{
+      backgroundColor: color,
+      borderRadius: '4px',
+      color: '#fff',
+      padding: '0.2rem',
+    }}>
+    {children}
+  </span>
+);
+
+ISO de julho de 2022 está disponível para downnload. Veja abaixo o que há de novo.
+
+<!--truncate-->
+
+Lançamento de julho corrigiu vários preblemas, pacotes atualizados, etc.
+
+### Changelogs :
+- A **base ISO** foi atualizada de acordo com `archiso 65-1` (grub para boot UEFI)
+- Usando compressão `zstd` para mkinitcpio
+- Corrigido o `consolefont` e outros avisos na geração do init
+- Atualizados os arquivos **sddm config** e convenção de nomenclatura
+- Atualizados os arquivos relacionados a usuários e grupos
+- Corrigido o problema do `openbox` como sessão padrão no sddm 
+- Atualizados todos os scripts e arquivos de configuração para todos os WMs
+- **`Novo BSPWM`** : Recriados a configuraçãobase, scripts e **Nova Theme Engine (Infinite Themes)** 
+- Adicionado o **Modo Fácil** no `openbox`, com ícones grandes, fontes e elementos UI
+- Etc

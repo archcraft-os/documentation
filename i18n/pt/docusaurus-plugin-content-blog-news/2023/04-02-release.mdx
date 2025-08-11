@@ -1,0 +1,36 @@
+---
+slug: 16-news-release
+title: Versão de Abril de 2023
+authors: adi1090x
+tags: [v23.04, release, iso]
+hide_table_of_contents: true
+---
+
+<!-- Badges -->
+export const Highlight = ({children, color}) => (
+  <span
+    style={{
+      backgroundColor: color,
+      borderRadius: '4px',
+      color: '#fff',
+      padding: '0.2rem',
+    }}>
+    {children}
+  </span>
+);
+
+ISO do Archcraft de abril de 2023 está disponível para download. Veja abaixo p que há de novo.
+
+<!--truncate-->
+
+### Changelogs :
+- ISO atualizada com pacotes mais novos
+- Ativado _single click activation_ no menu do Rofi e applets
+- Corrigido erro de _polybar sound/volume modules not updating_
+- Substituído `picom-ibhagwan-git` pelo oficial `picom`, mas...
+  - Arquivos adicionados para alguns forks do picom.
+  - Você pode instalar o `picom-jonaburg-git` do AUR, arquivo de configuração adicionado ao Archcraft.
+  - Qualquer fork do picom que você use, tenha certeza que o arquivo de configuração foi adicionado para ele, só renomeie-o para `picom.conf`
+  - Por ex.: se usar o `picom-jonaburg-git`, Copie **picom-jonaburg.conf** para **picom.conf**
+  - Você pode ver qual compositor está sendo usado atualmente no openbox em (Preferências > Compositor)
+- Corrigido pequenos Bugs, etc

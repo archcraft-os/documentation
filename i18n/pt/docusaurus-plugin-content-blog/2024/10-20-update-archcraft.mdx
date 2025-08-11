@@ -1,0 +1,142 @@
+---
+slug: 03-archcraft-update
+title: Atualização do Archcraft versão de outubro de 2024
+authors: adi1090x
+tags: [archcraft, update, os]
+hide_table_of_contents: true
+---
+
+<!-- Badges -->
+export const Highlight = ({children, color}) => (
+  <span
+    style={{
+      backgroundColor: color,
+      borderRadius: '25px',
+      color: '#fff',
+      padding: '0.2rem 0.4rem',
+    }}>
+    {children}
+  </span>
+);
+
+<Highlight color="#e06b74"><b>MAJOR</b></Highlight> A mais recente ISO do Archcraft, de outubro sofreu uma modificação sicnificativa que não pode ser completamente implementada através de uma atualização com Pacman. Para atualizar sua instalação para a versão mais recente do Archcraft, algumas tarefas manuais são necessárias.
+
+<!--truncate-->
+
+Para garantir uma atualização perfeia, favor seguir os passos seguintes:
+
+## Faça uma atualização compreensiva do sistema
+
+Comece o processo com uma atualização do sistema. Para fazer isso, abra o terminal e execute os seguintes comandos:
+
+```bash
+sudo pacman -Syyu
+```
+Depois de completo, reinicie o computador. Após reiniciar, você pode encontrar certas mudanças inesperadas, como:
+
+- Temas do Openbox comprometidos
+- Ícones/Glifos quebrados dentro do Rofi
+- Problemas com o compositor Picom
+- E algo mais
+
+Não se preocupe, vamos corrigir esses assuntos. Simplesmente siga os passos abaixo:
+
+### 1. Instale o pacote `archcraft-skeleton`
+Um novo pacote chamado `archcraft-skeleton` está disponível para instalação. Esse pacote contém arquivos de configurações atualizadas para o Picom e outras aplicações.
+
+Como temos arquivos antigos de configurações existentes no seu sistema que não estão associados a um pacote específico, você terá que sobreescrevê-los com os novos arquivos. Para fazer isso, execute o seguinte comando:
+
+```bash
+sudo pacman -S --overwrite "*" archcraft-skeleton
+```
+
+### 2. Instale novos Cursores, Ícones e Temas
+Agora o repositório tem vários novos cursores, ícones e temas GTK. Esses novos temas não são instalados automaticamente durante a atualização do sistema porque eles fazem parte de um grupo de pacotes. Para instalar todos os novos cursores, ícones e temas GTK, execute o comando a seguir:
+
+```bash
+sudo pacman -S archcraft-cursors archcraft-icons archcraft-themes
+```
+
+### 3. Atualize a configuração do Openbox Window Manager
+
+O gestor de janelas Openbox traz atualizações visuais significativas, particularmente com ícones e fontes nerd. Essas mudancas pode quebrar os glifos em vérios componentes como Polybar, Rofi e outros lugares onde esses ícones custom são usados. Para endereçá-los, você têm duas opções:
+
+1. **Atualização Manual**:
+   - Use a ferramenta `meld` para comparar e mesclar as configurações novas e antigas. Os arquivos de atualização atualizados devem estar localizados no seu diretório de configuração dentro de  `openbox_pacnew_YYYY-MM-DD`. Abra esses arquivos com `meld` e integre as mudanças necessárias na sua configuração existente.
+
+2. **Atualização Automatizada**:
+	- Caso você queira simplificar o processo, você pode salvar sua configuração existente do Openbox e aplicar os novos arquivos. Para fazer isso, execute os seguintes comandos no terminal:
+
+   ```bash
+   cp -rf ~/.config/openbox ~/.config/openbox_backup_$(date +%Y-%m-%d)
+   mv ~/.config/openbox_pacnew_YYYY-MM-DD ~/.config/openbox
+   ```
+
+Depois de completar esses passos, faça log out e log in novamente para aplicar as novas configurações.
+
+### 4. Atualização das configurações do gestor de janelas BSPWM
+
+Similar ao Openbox, o gesto de janelas BSPWM também traz grandes mudanças visuais. Você têm duas opções para atualizar o BSPWM:
+
+1. **Atualização Manual**:
+	- Assim como no Openbox, você pode usar o `meld` para comparar os diretórios de configuração do BSPWM antigos com os novos. Os novos arquivos de configuração estão intalados na sua pasta de configuração dentro da pasta `bspwm_pacnew_YYYY-MM-DD`. Use o `meld` para visualizar e aplicar as mudanças necessárias.
+
+2. **Atualização Automatizada**:
+	- Para uma abordagem simples, salve suas configurações atuais do BSPWM e substitua pelos arquivos novos executando:
+
+   ```bash
+   cp -rf ~/.config/bspwm ~/.config/bspwm_backup_$(date +%Y-%m-%d)
+   mv ~/.config/bspwm_pacnew_YYYY-MM-DD ~/.config/bspwm
+   ```
+
+Depois dessas mudanças, faça log out e log in novamente para ativar a nova configuração.
+
+### 5. Atualização das Configurações do Compositor Picom
+
+O pacote instalado no passo 1 (`archcraft-skeleton`) inclui os arquivos de configuração atualizados para o Picom. Para aplicar a nova configuração do Picom, Simplesmente copie o arquivo `picom.conf` de `/etc/skel` para o seu diretório local executando:
+
+```bash
+cp /etc/skel/.config/picom.conf ~/.config/picom.conf
+```
+
+Depois de cpiar, reinicie o compositor Picom para aplicar a nova configuração.
+
+### 6. Atualizações Variadas
+
+Em adição às maiores mudanças, aqui estão algumas atualizações menores que você queira aplicar.
+
+#### a. Atualização da Configuração do Alacritty
+A configuração do terminal Alacritty foram atualizadas. Você pode copiar os arquivos novos de `/etc/skel` para o seu diretório home usando o comando seguinte:
+
+```bash
+cp -r /etc/skel/.config/alacritty ~/.config/alacritty
+```
+
+#### b. Nova Configuração do Terminal Kitty
+Suporte para o terminal Kitty foi adicionado em Openbox e BSPWM. Para começar a usar o Kitty, instale-o e copie os arquivos de configuração para o seu diretório home:
+
+```bash
+sudo pacman -S kitty
+cp -r /etc/skel/.config/kitty ~/.config/kitty
+```
+
+#### c. Atualização da Configuração do Neofetch
+A configuração do Neofetch foi atualizada. Se você preferir usar a última versão, copie os novos arquivos de configuração com esse comando:
+
+```bash
+cp -r /etc/skel/.config/neofetch ~/.config/neofetch
+```
+
+#### d. Atualização da Configuração do Tema do Zsh
+O tema Archcraft para o Zsh foi atualizado. Se você quiser usar o novo tema, copie os arquivos atualizados com o comando:
+
+```bash
+cp -r /etc/skel/.oh-my-zsh ~/.oh-my-zsh
+```
+___
+
+Essas são as mudanças necessárias para atualizar sua instalação para o nova versão. Por favor note que se você estiver usando um gestor de janelas diferente do Openbox e BSPWM, essas configurações não foram atualizadas ainda. No entanto, atualizações para todos estão a caminho. Atualmente eu estou focado na preparação das novas versões da ISO, depois irei trabalhar em atualizacões para os gestores de janela adicionais.
+
+Eu espero que este guia tenha ajudado você no processo de atualização. Fiquem ligados em atualizações futuras.
+
+Fiquem bem!

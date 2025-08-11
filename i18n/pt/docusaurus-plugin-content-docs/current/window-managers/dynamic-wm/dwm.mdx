@@ -1,0 +1,325 @@
+---
+sidebar_position: 2
+hide_table_of_contents: false
+---
+
+# DWM
+
+Para membros da comunidade Archcraft, edite a página.
+
+
+<!-- Theme ---------------------------------------- -->
+<!-- Tabs -->
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<!-- Badges -->
+export const Highlight = ({children, color}) => (
+  <span
+    style={{
+      backgroundColor: color,
+      borderRadius: '4px',
+      color: '#fff',
+      padding: '0 0.2rem 0 0.2rem',
+    }}>
+    {children}
+  </span>
+);
+
+<!-- Adicione suas coisas depois disso -------------------- -->
+
+DWM é um gerenciador de janelas dinâmico para o Xorg. Ele gerencia janelas em layouts em mosaico, empilhado e tela cheia, além de muitos outros com a ajuda de patches opcionais. Os layouts podem ser aplicados dinamicamente, otimizando o ambiente para o aplicativo em uso e a tarefa que está sendo realizada. O dwm é extremamente leve e rápido, escrito em C, com o objetivo declarado de manter menos de 2000 linhas de código-fonte. Ele oferece suporte multihead para xrandr e Xinerama.
+
+![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/dwm/main.png)
+
+<!-- Instalação --------------------------------- -->
+
+## Instalação
+
+Depois de concluir a instalação do Archcraft, **DWM** pode ser instalado por cima dele. Ele vem pré-configurado e pronto para uso. Abra um terminal e execute o seguinte comando para instalar o DWM:
+```bash
+$ sudo pacman -Sy archcraft-dwm
+```
+
+<!-- Configuração -------------------------------- -->
+
+## Configuração
+
+O **DWM** vem pré-configurado no Archcraft. Nesta seção, veremos como o gerenciador de janelas DWM é configurado, quais ferramentas e utilitários são usados para fazê-lo parecer e funcionar como um ambiente de desktop completo.
+
+### Estrutura de Configuração  
+
+A estrutura de configuração do DWM no Archcraft se parece com algo assim:
+
+```
+/opt  
+└── dwm-source                : código-fonte do dwm  
+    └── config.def.h          : arquivo de configuração do dwm  
+/usr  
+└── share  
+    └── archcraft  
+        └── dwm  
+            ├── alacritty     : configuração do terminal  
+            ├── scripts       : scripts usados pelo dwm  
+            ├── theme         : tema da área de trabalho (configs do polybar, rofi)  
+            ├── dunstrc       : configuração do dunst para notificações  
+            ├── picom.conf    : configuração do compositor  
+            └── xsettingsd    : arquivo de configuração de temas GTK, ícones e fontes  
+```
+
+### Terminal
+
+**Alacritty** é o terminal padrão. No gerenciador de janelas **DWM**, o Alacritty é iniciado com um arquivo de configuração alternativo. Se você precisar modificar algo, certifique-se de alterar os arquivos de configuração no diretório `/usr/share/archcraft/dwm/alacritty`. Estes são os arquivos de configuração que você pode modificar para alterar o comportamento do terminal:
+
+**`/usr/share/archcraft/dwm/alacritty/alacritty.toml`** : Arquivo principal de configuração <br/>  
+**`/usr/share/archcraft/dwm/alacritty/colors.toml`** : Configurações de cores <br/>  
+**`/usr/share/archcraft/dwm/alacritty/fonts.toml`** : Configurações de fontes  
+
+> Se precisar de ajuda com a configuração do Alacritty, execute: `man 5 alacritty` no terminal.
+
+### Notificações  
+
+O **Dunst** é usado como daemon de notificações no **DWM**. No gerenciador de janelas DWM, o Dunst é iniciado com um arquivo de configuração alternativo, localizado em `/usr/share/archcraft/dwm/dunstrc`. Portanto, se precisar modificar algo, certifique-se de editar esse arquivo.  
+
+> Se precisar de ajuda com a configuração do Dunst, execute: `man 5 dunst` no terminal.
+
+### Papel de Parede  
+
+O **hsetroot** é usado para definir o papel de parede no **DWM**. Se você quiser alterar o papel de parede, edite o script `/usr/share/archcraft/dwm/scripts/dwm_autostart` e adicione o caminho para o seu papel de parede:  
+
+```bash
+# Restaurar papel de parede  
+hsetroot -cover '/caminho/para/seu/papel/de/parede'
+```
+```
+
+### Barra de Status  
+
+O **xsetroot** é usado para gerar os elementos na barra de status no gerenciador de janelas **DWM** do Archcraft.  
+
+Edite o script `/usr/share/archcraft/dwm/scripts/dwm_bar` para adicionar, remover ou modificar os elementos da barra de status.
+
+### Launchers e Applets  
+
+O **Rofi** é usado como lançador de aplicativos, executor de comandos e para diversos applets. Para modificar a configuração do Rofi, edite o arquivo `~/.config/rofi/config.rasi`.  
+
+> Se precisar de ajuda com a configuração do Rofi, execute: `man rofi` no terminal.  
+
+Os scripts do Rofi usados no **DWM** podem ser encontrados no diretório `/usr/share/archcraft/dwm/scripts`. Abaixo estão os scripts que utilizam o Rofi para fornecer os lançadores e applets:  
+
+**`rofi_askpass`** : frontend baseado no Rofi para `sudo`, usado para obter a senha de root <br/>  
+**`rofi_asroot`** : applet para abrir aplicativos como root <br/>  
+**`rofi_bluetooth`** : applet para conectar rapidamente a dispositivos Bluetooth <br/>  
+**`rofi_launcher`** : lançador de aplicativos, executor de comandos, gerenciador de arquivos e gerenciador de tarefas <br/>  
+**`rofi_layouts`** : applet para alterar os layouts <br/>  
+**`rofi_music`** : applet de música, que controla o MPD com `mpc` <br/>  
+**`rofi_powermenu`** : menu de energia com diálogo de confirmação <br/>  
+**`rofi_runner`** : permite executar comandos rapidamente <br/>  
+**`rofi_screenshot`** : applet de captura de tela que funciona com `maim` <br/>  
+**`rofi_windows`** : applet para gerenciar janelas abertas <br/>  
+
+Se você quiser modificar qualquer applet ou até mesmo estender suas funcionalidades, basta editar os scripts acima.  
+
+A configuração de cada script pode ser encontrada dentro do diretório **_theme_** do DWM: `/usr/share/archcraft/dwm/theme`.  
+
+Por exemplo, se você quiser modificar a aparência do **launcher**, edite o arquivo `/usr/share/archcraft/dwm/theme/rofi/launcher.rasi`. O mesmo vale para todos os outros applets. Edite o arquivo correspondente no mesmo diretório.  
+
+> Se precisar de ajuda com o tema do Rofi, execute: `man rofi-theme` no terminal.  
+
+Para alterar as cores e fontes dos lançadores e applets, edite os arquivos:  
+- `/usr/share/archcraft/dwm/theme/rofi/shared/colors.rasi`  
+- `/usr/share/archcraft/dwm/theme/rofi/shared/fonts.rasi`  
+
+### Compositor  
+
+O **Picom** é usado para composição de janelas. É um compositor leve com sombreamento, desfoque avançado e efeitos de fade. No **DWM**, o Picom é iniciado com um arquivo de configuração alternativo, que está localizado em `/usr/share/archcraft/dwm/picom.conf`.  
+
+Se precisar alterar qualquer coisa relacionada ao Picom, edite este arquivo de configuração do Picom.  
+
+> Se precisar de ajuda com a configuração do Picom, consulte o arquivo de configuração padrão do Picom em `/etc/xdg/picom.conf`.  
+
+:::info  
+
+Se você estiver enfrentando problemas de **screen tearing**, usar o backend `glx` pode resolver o problema. <br/>  
+Se você estiver enfrentando **lags**, travamentos ou congelamentos, tente alternar entre os backends `xrender` e `glx`.  
+
+:::  
+
+### Gerenciador de Janelas  
+
+`/opt/dwm-source/config.def.h` é o arquivo principal de configuração do **DWM**. Se você precisar alterar algo ou quiser adicionar, remover ou modificar as teclas de atalho (keybindings), edite este arquivo, recompilar o DWM e então instale o novo binário.  
+
+> Se precisar de ajuda com a configuração e personalização do DWM, visite: [suckless.org](https://dwm.suckless.org/customisation/)
+
+<!-- Atalhos de Teclado ---------------------------------- -->
+
+## Atalhos de Teclado
+
+Aqui está uma lista de alguns **atalhos de teclado** importantes que você precisa saber para operar o **DWM** de forma eficiente. Se você quiser visualizar, modificar ou adicionar novos atalhos, edite o arquivo `/opt/dwm-source/config.def.h`.
+
+### Aplicativos  
+
+| Atalhos | Ação |
+| --- | --- |
+| <kbd>super + Return</kbd> | Abre o termianl (st) |
+| <kbd>super + ctrl + Return</kbd> | Abre o terminal (alacritty) |
+| <kbd>super + shift + Return</kbd> | Abre o terminal flutuante (alacritty) |
+| <kbd>super + alt + Return</kbd> | Abre o terminal em tela cheia (alacritty) |
+| <kbd>super + shift + F</kbd> | Abre o gerenciador de arquivos (thunar) |
+| <kbd>super + shift + E</kbd> | Abre o editor de texto (geany) |
+| <kbd>super + shift + W</kbd> | Abre o navegador (firefox) |
+
+### Menu e Applets
+
+| Atalho | Ação |
+| --- | --- |
+| <kbd>super</kbd> | Abre o lançador de aplicativos |
+| <kbd>alt + F1</kbd> | Abre o lançador de aplicativos |
+| <kbd>alt + F2</kbd> | Abre o executor de comandos |
+| <kbd>super + N</kbd> | Abre o applet para gerenciar conexão |
+| <kbd>super + B</kbd> | Abre o applet de bluetooth |
+| <kbd>super + M</kbd> | Abre o applet de música |
+| <kbd>super + X</kbd> | Abre o applet de menu de energia |
+| <kbd>super + S</kbd> | Abre o applet de cptura de tela |
+| <kbd>super + R</kbd> | Abre o applet para lançar aplicativos como root |
+| <kbd>super + W</kbd> | Abre a janela de applets |
+
+### Atalhos de Hardware
+
+| Atalho | Ação |
+| --- | --- |
+| <kbd>Print</kbd> | Tira um screenshot |
+| <kbd>alt + Print</kbd> | Tira um screenshot com 5 segundos de espera |
+| <kbd>shift + Print</kbd> | Tira um screenshot com 10 segundos de espera |
+| <kbd>ctrl + Print</kbd> | Tira um screenshot dajanela em foco |
+| <kbd>super + Print</kbd> | Tira um screenshot da áres selecionada |
+| <kbd>XF86AudioRaiseVolume</kbd> | Aumenta o volume |
+| <kbd>XF86AudioLowerVolume</kbd> | Diminui o volume |
+| <kbd>XF86AudioMute</kbd> | Alterna o mudo dos auto-falantes |
+| <kbd>XF86AudioMicMute</kbd> | Alterna o mudo do microfone |
+| <kbd>XF86MonBrightnessUp</kbd> | Aumenta o brilho da tela |
+| <kbd>XF86MonBrightnessDown</kbd> | Diminui o brilho da tela |
+
+### Gerenciamento de Janela
+
+| Atalho | Ação |
+| --- | --- |
+| <kbd>super + 1..9</kbd> | Troca para a respectiva tag |
+| <kbd>super + C</kbd> | Fecha a janela em foco |
+| <kbd>super + shift + Equal</kbd> | Aumenta  a largura da borda |
+| <kbd>super + shift + Minus</kbd> | Diminui a largura da borda |
+| <kbd>super + shift + BackSpace</kbd> | Restaura a largura da borda para a padrão |
+| <kbd>super + shift + Bracket_Left</kbd> | Aumenta o espaçamento |
+| <kbd>super + shift + Bracket_Right</kbd> | Diminui o espaçamento |
+| <kbd>super + shift + Backslash</kbd> | Restaura o espaçamento para padrão |
+| <kbd>super + shift + G</kbd> | Alterna os espaçamentos |
+| <kbd>super + shift + I</kbd> | Aumenta o espaçamento interno |
+| <kbd>super + shift + ctrl + I</kbd> | Diminui o espaçamento interno |
+| <kbd>super + ctrl + O</kbd> | Aumenta o espaçamento externo |
+| <kbd>super + shift + ctrl + O</kbd> | Diminui o espaçamento externo |
+| <kbd>super + J/K</kbd> | Circula entre as janelas |
+| <kbd>super + shift + J/K</kbd> | Alterna o master |
+| <kbd>super + Left/Right</kbd> | Circula entre as janelas |
+| <kbd>super + shift + Left/Right</kbd> | Alterna o master |
+| <kbd>super + I</kbd> | Aumenta o master verticalmente |
+| <kbd>super + U</kbd> | Diminui o master horizontalmente |
+| <kbd>super + H/L</kbd> | Encolhe à esquerda/direita |
+| <kbd>super + Left/Right</kbd> | Encolhe à esquerda/direita |
+| <kbd>super + shift + B</kbd> | Alterna a barra |
+| <kbd>super + Tab</kbd> | Alterna para o master |
+| <kbd>alt + Tab</kbd> | Troca para a última tag |
+| <kbd>super + D</kbd> | Oculta a janela |
+| <kbd>super + shift + D</kbd> | Restaura a janela |
+
+### Layouts
+
+| Atalho | Ação |
+| --- | --- |
+| <kbd>alt + ctrl + Space</kbd> | Executa o applet de layout do rofi |
+| <kbd>super + ctrl + Comma/Period</kbd> | Circula entre os layouts |
+| <kbd>super + shift + Space</kbd> | Alterna o modo flutuante |
+| <kbd>super + F</kbd> | Alterna o modo tela cheia |
+| <kbd>super + Space</kbd> | Define o último layout |
+| <kbd>super + T</kbd> | Define o layout Ladrilho|
+| <kbd>super + G</kbd> | Define i layout Grade |
+| <kbd>super + shift + M</kbd> | Define o layout Monóculo |
+| <kbd>super + shift + S</kbd> | Define o layout Espiral |
+| <kbd>super + shift + T</kbd> | Define o layout Empilhado |
+| <kbd>super + shift + C</kbd> | Define o layout Master ao Centro |
+| <kbd>super + shift + X</kbd> | Define o layout Tatami |
+
+### Gerenciador de Janela
+
+| Atalho | Ação |
+| --- | --- |
+| <kbd>super + shift + R</kbd> | Reinicia o dwm |
+| <kbd>super + ctrl + Q</kbd> | Sai do dwm |
+
+### Atalhos Variados
+
+| Atalho | Ação |
+| --- | --- |
+| <kbd>ctrl + alt + M</kbd> | Abre o ncmpcpp com a arte do álbum no terminal |
+| <kbd>ctrl + alt + L</kbd> | Aciona o bloqueio de tela |
+| <kbd>super + P</kbd> | Executa o seletor de cores  |
+| <kbd>super + Escape</kbd> | Executa o xkill |
+
+<!-- Temas --------------------------------------- -->
+
+Aqui está a tradução do segmento:
+
+## Capturas de Tela
+
+Aqui estão algumas capturas de tela da área de trabalho `DWM`. Elas vão te dar uma ideia da experiência do DWM no Archcraft.
+
+|Desktop 1|Desktop 2|Desktop 3|Desktop 4|
+|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/dwm/desktop/desktop_1.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/dwm/desktop/desktop_2.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/dwm/desktop/desktop_3.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/dwm/desktop/desktop_4.png)|
+
+|Desktop 5|Desktop 6|Desktop 7|Desktop 8|
+|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/dwm/desktop/desktop_5.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/dwm/desktop/desktop_6.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/dwm/desktop/desktop_7.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/dwm/desktop/desktop_8.png)|
+
+|Desktop 9|Desktop 10|Desktop 11|Desktop 12|
+|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/dwm/desktop/desktop_9.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/dwm/desktop/desktop_10.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/dwm/desktop/desktop_11.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/dwm/desktop/desktop_12.png)|
+
+|Desktop 13|Desktop 14|Desktop 15|Desktop 16|
+|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/dwm/desktop/desktop_13.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/dwm/desktop/desktop_14.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/dwm/desktop/desktop_15.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/dwm/desktop/desktop_16.png)|
+
+|Desktop 17|Desktop 18|Desktop 19|Desktop 20|
+|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/dwm/desktop/desktop_17.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/dwm/desktop/desktop_18.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/dwm/desktop/desktop_19.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/dwm/desktop/desktop_20.png)|
+
+<!-- FAQs ----------------------------------------- -->
+
+## FAQs
+
+<details>
+<summary><b>Como mudar o tema GTK, ícones e cursor?</b></summary>
+
+Para mudar o tema GTK, ícones e cursor na sessão DWM, edite o arquivo `/usr/share/archcraft/dwm/xsettingsd` e reinicie o DWM para aplicar as mudanças.
+```bash
+Net/ThemeName "Arc-Dark"
+Net/IconThemeName "Zafiro-Blue"
+Gtk/CursorThemeName "Qogirr"
+```
+
+</details>
+
+<details>
+<summary><b>Como gerenciar múltiplos monitores e resolução no dwm?</b></summary>
+
+Se você usa múltiplos monitores com o gerenciador de janelas DWM, pode gerenciá-los executando o aplicativo Manager Monitors ou archcraft-randr.
+
+</details>
+
+<details>
+<summary><b>Por que o Alacritty não está funcionando no meu computador?</b></summary>
+
+Como o Alacritty é um emulador de terminal baseado em OpenGL, ele pode não funcionar em alguns hardwares de computador. Você pode fazê-lo funcionar em tais computadores seguindo estes métodos:
+
+1. Abra o alacritty com a variável **LIBGL_ALWAYS_SOFTWARE=1**. Edite as teclas de atalho/script que lançam o alacritty e substitua `alacritty` por `LIBGL_ALWAYS_SOFTWARE=1 alacritty`.
+2. Edite o arquivo de desktop **/usr/share/applications/Alacritty.desktop** e substitua `Exec=alacritty` por `Exec=env LIBGL_ALWAYS_SOFTWARE=1 alacritty`.
+</details>
