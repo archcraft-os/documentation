@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkArchcraft_Wiki=self.webpackChunkArchcraft_Wiki||[]).push([[7497],{19182:e=>{e.exports=JSON.parse('{"permalink":"/news/tags/hyprland/page/3","page":3,"postsPerPage":10,"totalPages":3,"totalCount":22,"previousPage":"/news/tags/hyprland/page/2","blogDescription":"Blog","blogTitle":"News"}')}}]);

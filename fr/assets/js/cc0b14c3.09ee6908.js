@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkArchcraft_Wiki=self.webpackChunkArchcraft_Wiki||[]).push([[1071],{26343:e=>{e.exports=JSON.parse('{"permalink":"/fr/news/tags/wayfire/page/3","page":3,"postsPerPage":10,"totalPages":3,"totalCount":24,"previousPage":"/fr/news/tags/wayfire/page/2","blogDescription":"Blog","blogTitle":"News"}')}}]);
