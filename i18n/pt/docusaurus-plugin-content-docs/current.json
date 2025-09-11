@@ -1,0 +1,50 @@
+{
+  "version.label": {
+    "message": "Pŕoximo",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.Boot Archcraft": {
+    "message": "Boot Archcraft",
+    "description": "The label for category Boot Archcraft in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Install Archcraft": {
+    "message": "Instalar Archcraft",
+    "description": "The label for category Install Archcraft in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Window Managers": {
+    "message": "Window Managers",
+    "description": "The label for category Window Managers in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Stacking WMs": {
+    "message": "Stacking WMs",
+    "description": "The label for category Stacking WMs in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Tiling WMs": {
+    "message": "Tiling WMs",
+    "description": "The label for category Tiling WMs in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Dynamic WMs": {
+    "message": "Dynamic WMs",
+    "description": "The label for category Dynamic WMs in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Wayland Compositors": {
+    "message": "Compositores Wayland",
+    "description": "The label for category Wayland Compositors in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Premium ISOs": {
+    "message": "Premium ISOs",
+    "description": "The label for category Premium ISOs in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Archcraft ARM": {
+    "message": "Archcraft ARM",
+    "description": "The label for category Archcraft ARM in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Archcraftify": {
+    "message": "Archcraftify",
+    "description": "The label for category Archcraftify in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Contribution": {
+    "message": "Contribuição",
+    "description": "The label for category Contribution in sidebar tutorialSidebar"
+  }
+}

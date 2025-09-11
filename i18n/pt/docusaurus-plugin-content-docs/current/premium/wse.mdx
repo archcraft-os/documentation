@@ -1,0 +1,385 @@
+---
+sidebar_position: 1
+hide_table_of_contents: false
+---
+
+# Archcraft WSE
+
+<!-- Theme ---------------------------------------- -->
+<!-- Tabs -->
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<!-- Badges -->
+export const Highlight = ({children, color}) => (
+  <span
+    style={{
+      backgroundColor: color,
+      borderRadius: '25px',
+      color: '#fff',
+      padding: '0.2rem 0.6rem',
+    }}>
+    {children}
+  </span>
+);
+
+<!-- Adicione suas coisas depois disso -------------------- -->
+
+**Edição especial do Archcraft Wayland: Uma experiência ultimate com compositores wayland**
+ 
+![gif](https://raw.githubusercontent.com/archcraft-os/misc-files/main/gifs/wse.gif)
+
+## Introdução
+
+Essa edição especal do Archcraft vem com [`Sway`](/docs/wayland-compositors/sway), [`Wayfire`](/docs/wayland-compositors/wayfire), [`River`](/docs/wayland-compositors/river), [`Hyprland`](/docs/wayland-compositors/hyprland) e [`Newm`](/docs/wayland-compositors/newm) pré instalados, pré configurados e traz a você uma experiência única no Linux.
+
+<!-- Download ------------------------------------- -->
+
+## Download
+
+Você pode baixar a última ISO em <Highlight color="#50545b"><a href="https://ko-fi.com/s/213becbf00" target="_blank">ko-fi ☕</a></Highlight>
+
+> `nome de usuário` e `senha` padrão é **liveuser**
+
+### Instalação
+
+Para criar um USB inicializável, veja [Criar um USB Botável](/docs/boot-iso/boot-with-usb) <br/>
+Para instalação gráfica, veja [Instalar o Archcraft com Calamares](/docs/install-archcraft/install-with-calamares) <br/>
+Para instruções de instalação CLI, veja [Instalar o Archcraft com ABIF](/docs/install-archcraft/install-with-abif)
+
+### Atualização
+
+Se você já é um usuário WSE, você não precisa reinstalar a ISO para atualizar o sistema. Siga os passos abaixo para atualizar seu WSE:
+
+- Na base regular, apenas execute o comando seguinte para atualizar o seu sistema -
+```bash
+$ sudo pacman -Syyu
+``` 
+- Quando uma nova ISO do WSE for lançada, um **Pacote de Atualização** també é laçado para usuários WSE existentes. Use este pacote para atualizar coisas específicas no WSE.
+  - Baixe o pacote de atualização `existing-wse-update-MONTH-YEAR.tar.gz` no ko-fi.
+  - Extraia com: `tar -xzvf existing-wse-update-MONTH-YEAR.tar.gz`
+  - Vá para o diretório extraído: `cd existing-wse-update-MONTH-YEAR`
+  - Abra o terminal nesse diretório e execute o script de atualização: `./01_update.sh`
+  - É isso.
+
+<!-- Changelogs ----------------------------------- -->
+
+## Changelogs
+
+<details>
+<summary><b>Changelog (Outubro de 2024) : 10ª ISO</b></summary>
+
+**Data** : `22 de outubro de 2024`
+
+- Perfil da ISO atualizado
+- Última base com novos pacotes
+- Todos os pacotes Archcraft e AUR atualizados
+- Adicionado **novo cursor, ícones e temas GTK** (alé de atualizar os existentes)
+- Adicionado **novos ícones e fontes nerd** (os existentes foram atualizados)
+- Temas atualizados entre todos os WCs (Waybar, Rofi, Wofi, etc.)
+- Adicionado suporte para o terminal `kitty` em todos os WCs
+- Atualizada as confugurações do `alacitty` em todos os WCs
+- Atualizada a configuração do `foot` em todos os WCs
+- Adicionada noca configuralção do `neofetch`
+- Atualizado o tema do `zsh`
+- **wayfire**: Atualizado para `0.9.0`, configurações atualizadas, adicionados novos plugins
+- **rive**: Configurações atualizadas, erro com WMs flutuantes corrigido
+- **hyprland**: Atualizado para `0.44.1`, configurações atualizadas, hyprlock atualizado, etc
+- Vários erros corrigidos e mais!
+
+</details>
+
+<details>
+<summary><b>Changelog (Jullho de 2024) : 9ª ISO</b></summary>
+
+**Data** : `4 de julho de 2024`
+
+- Perfil da ISO atualizado
+- Última base com pacotes novos
+- Todos os pacotes Archcraft e AUR atualizados
+- Configurações do Openbox atualizadas
+- Adicionado o Firewall (`ufw`) com GUI (`gufw`)
+- Adicionado o `apparmor` para MAC (_controle de acesso mandatório_)
+- Pequenas melhorias e correções de bugs.
+
+</details>
+
+<details>
+<summary><b>Changelog (Abril de 2024) : 8ª ISO</b></summary>
+
+**Data** : `10 de abril de 2024`
+
+- Perfil da ISO atualizado
+- Última base com pacotes novos
+- Todos os pacotes Archcraft e AUR atualizados
+- Adicionado a última versão do instalador `calamares` e suas configurações (_corrigido o erro com auto login_)
+- Adicionado um novo pacote do `grub` (_corigido o erro com a instalação no sistema de arquivos `xfs`_)
+- Adicionados pacotes de hook do grub (_para instalar o grub em todas as atualizações_)
+- Corrigido o erro de tema QT, adicionado confugurações para QT6
+- Atualizados todos os compositores wayland:
+  - Adicionado o applet `abrir-como-root` em todos os WCs
+  - Hyprland: Adicionado o `hyprlock` & `hyptidle` e atializadas as configurações para v0.38.0
+  - Newm: Corrigido o erro com opp-id do rofi e nomes de sessão
+- Funcionalidades das açoes do Thunar melhoradas
+  - Abre o terminal de acordo com a sessão
+  - Abrir como root de acordo com a sessão
+  - Troca permanente de papél de poarede em sessões suportadas
+- Pequenas melhorias e correção de bugs.
+
+</details>
+
+<details>
+<summary><b>Changelog (Janeiro de 2024) : 7ª ISO</b></summary>
+
+**Data** : `9 de janeiro de 2024`
+
+- Perfil da ISO atualizado
+- Última base com pacotes novos
+- Todos os pacotes Archcraft e AUR atualizados
+- Todos os compositores wayland atualizados
+  - Sway: Erros corrigidos e configurações atualizadas
+  - Wayfire: Migrado para v0.8.0 e configurações atualizadas de acordo
+  - River: Erros corrigidos e configurações atualizadas
+  - Hyprland: Usando minha 
+  - Hyprland: Usando minha própria construção do Hyprland para estabilidade e configuração atualizada para v0.34.0
+  - Newm: Corrigido o problema com a waybar se escondendo atrás das janelas e configurações atualizadas
+- Migação do `alacritty` para sua nova configuração (`yml` para toml`)
+- **Todos os scripts** relacionados ao alacritty atualizados
+- Pequenas melhorias e correção de bugs.
+
+</details>
+
+<details>
+<summary><b>Changelog (Outubro de 2023) : 6ª ISO</b></summary>
+
+**Data** : `15 de outubro de 2023`
+
+- Perfil da ISO atualizado
+- Última base com pacotes novos
+- Todos os compositores wayland atualizados
+  - Adicionado um exemplo melhor para o suporte multi-monitor em...
+    - Sway: `~/.config/sway/sway-output`
+    - Wayfire: `~/.config/wayfire.ini`
+    - River: `~/.config/river/init`
+    - Hyprland: `~/.config/hypr/hyprland.conf`
+    - Newm: `~/.config/newm/config.py`
+- Adicionado a abilidade de `wipe` no ABIF
+- Corrigido o problema com o app `ajuda e dicas`
+- Pequenas melhorias e correção de bugs.
+
+</details>
+
+<details>
+<summary><b>Changelog (Julho de 2023) : 5ª ISO</b></summary>
+
+**Data** : `11 de julho de 2023`
+
+- Perfil da ISO atualizado com o archiso mais recente
+- Última base com pacotes novos
+- Corrigido o erro do sddm não salvando a última sessão usada
+- Adicionado o app de calculadora
+- Adicionado o app de Boas-Vindas e Ajuda-e-Dicas
+- Corrigido o problema de escala nos apps QT no wayland
+- **`Sway, Wayfire, River, Hyprland`**
+  - Adicionado o módulo de `bluetooth` na Waybar
+  - Adicionado o applet `bluetooth` no rofi
+  - Adicionado o terminal `alacritty`
+  - Adicionado suporte a `pywal`
+  - Melhoria de um monte de scripts
+  - etc
+- Alguns pequenos bugs corrigidos.
+
+</details>
+
+<details>
+<summary><b>Changelog (Maio de 2023) : 4ª ISO</b></summary>
+
+**Data** : `6 de maio de 2023`
+
+- Corrigido o erro do pacman-init
+- Adicionado a abilidade de escolher o desktop na instalação (calamares)
+- Corrigido o erro de auto-login
+- etc
+
+</details>
+
+<details>
+<summary><b>Changelog (Abril de 2023) : 3ª ISO</b></summary>
+
+**Data** : `15 de abril de 2023`
+
+- Usando o `sddm-git` agora, resolvido o problema de desligar/reiniciar
+- Usando um novo método para iniciar a ISO em máquinas Nvidia
+- Instaladores atualizados com (possível) suporte a Nvidia
+- Base do sistema atualizada com pacotes mais novos
+- **`Todos os compositores wayland atualizados`**
+  - Estrutura de configuração atualizada
+  - Adicionado o menu Rofi, applets e scripts (conexão, música, etc)
+  - Corrigido o ero de sobreposição da área de captura de tela
+  - Corrigido o erro de sobreposição do applet de conexão no hyprland
+  - Configurações de waybar, wlogout e wofi modificadas (adicionados arquivos separados de colors.css)
+  - Mudanças nos temas gtk no sway, wayfire e hyprland
+  - Script de bloqueio de tela atualizado no sway
+  - Adicionados dois pacotes para NEWM (um normal e um blur)
+  - Módulo do spotify adicionado em todos os WCs
+  - Módulos animados para MPD e spotify na waybar
+- Muitos erros corrigidos, etc
+
+</details>
+
+<details>
+<summary><b>Changelog (Janeiro de 2023) : 2ª ISO</b></summary>
+
+**Data** : `10 de janeiro de 2023`
+
+- Adicionado o instalador ABIF (CLI)
+- Base do sistema atualizada
+- Todos os compositores atualizados
+- Correção de erros, etc
+
+</details>
+
+<details>
+<summary><b>Changelog (Outubro de 2022) : 1ª ISO</b></summary>
+
+**Data** : `20 de outubro de 2022`
+
+
+- Base da ISO criada do zero
+- Inicializador Grub2 com temas
+- Plymouth & SDDM customizados
+- Apenas aplicações básicas, nada desnecessário
+- Instalador calamares (gráfico)
+- Suporte completo para gerenciamento de conexão, vários plugins de VPN
+- Suporte para bluetooth integrado
+- Pipewire para Som/Áudio (Systemwide, Bluetooth, Jack)
+- Suporte para impressora integrado
+- Quase todos os codecs de áudio, vídeo e imagem
+- Funcionalidade completa do gerenciador de arquivos (montagem, conexão, arquivamento, etc)
+- Suporte ao AUR integrado
+- Inerface de usuário mínima
+- Múltiplos compositores wayland (Sway, Wayfire, River, Hyprland, Newm)
+- Ícones, temas, papéis de parede e fontes do Archcraft
+- Etc
+
+</details>
+
+<!-- Compatibilidade -------------------------------- -->
+
+## Compatibilidade
+
+### Máquinas Virtuais
+
+Essa ISO funciona em VMs (Virtualbox, VMware, Qemu, etc). Mas **somente os Window Managers** (X11) vão funcionar. Todos os **compositores wayland não funcionam**. Se funcionar, serão muito lentos devido ao suporte 3D precário.
+
+### Nvidia
+
+Não existe suporte oficial para Nvidia. Infelizmente, seus drivers são muito confusos, e seu produtos aleatórios, é impossível ajudar se os `copositores wayland nessa ISO` não funcionar na sua máquina. todo caso pode ser aleatório, e funcionar perfeitamente, ou não funcionar de jeito nenhum. Então...<br\>
+A `ISO` tem tudo configurado **fora-da-caixa**, para rodar um _compositor wayland_ usando **Nvidia**. É preciso de todos os módulos habilitados no `mkinitcpio.conf` e no **initrd**, `parâmetros do Kernel` adicionados, e é necessário os drivers de vídeo proprietários instalados.<br\>
+***Agora, é sua escolha tentar isso.***
+
+**Atualização:** Como reportado, usuários são capazes de inicializar e instalar a ISO nas suas máquinas Nvidia.
+
+**Mais informações:** [Instalação de Sway](https://wiki.archlinux.org/title/Sway#Installation), [Hyprland Nvidia](https://wiki.hyprland.org/Nvidia/), [Requerimentos do wayland](https://wiki.archlinux.org/title/wayland#Requirements), [DRM_kernel_mode_setting](https://wiki.archlinux.org/title/NVIDIA#DRM_kernel_mode_setting), [Instalação#NVIDIA](https://wiki.archlinux.org/title/NVIDIA#Installation)
+
+### Intel Iris XE
+
+Alguns usuários reportaram que os Compositores Wayland dessa ISO não funcionam em sistemas com GPUs `Intel Iris XE`.
+
+**Atualização: ** Eu pessoalmente testei a ISO com um sistema com `Nvidia + Intel iris XE` system (***Dell Inspiron 5520***) e a ISO funcionou bem.
+
+<!-- Screenshots ---------------------------------- -->
+
+## Screenshots
+
+Clique na imagem para ver todas as screenshots.
+
+<Tabs>
+<TabItem value="wc_1" label="Sway" default>
+[![imgs](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/sway/main.png)](/docs/wayland-compositors/sway#screenshots)
+</TabItem>
+<TabItem value="wc_2" label="Wayfire" default>
+[![imgs](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/wayfire/main.png)](/docs/wayland-compositors/wayfire#screenshots)
+</TabItem>
+<TabItem value="wc_3" label="River" default>
+[![imgs](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/river/main.png)](/docs/wayland-compositors/river#screenshots)
+</TabItem>
+<TabItem value="wc_4" label="Hyprland" default>
+[![imgs](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/hyprland/style_1/main.png)](/docs/wayland-compositors/hyprland#screenshots)
+</TabItem>
+<TabItem value="wc_5" label="NEWM" default>
+[![imgs](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/newm/style_1/main.png)](/docs/wayland-compositors/newm#screenshots)
+</TabItem>
+</Tabs>
+
+<!-- Videos --------------------------------------- -->
+
+## Vídeos
+
+<Tabs>
+<TabItem value="wc_1" label="Sway" default>
+[![video](https://raw.githubusercontent.com/archcraft-os/misc-files/main/thumbnails/sway.png)](https://youtu.be/ASlQcf8Jc0I)
+</TabItem>
+<TabItem value="wc_2" label="Wayfire" default>
+[![video](https://raw.githubusercontent.com/archcraft-os/misc-files/main/thumbnails/wayfire.png)](https://youtube.com/playlist?list=PLXH9dADRlWHYk_5Boqiu7L3HcLVC83TWU)
+</TabItem>
+<TabItem value="wc_3" label="River" default>
+[![video](https://raw.githubusercontent.com/archcraft-os/misc-files/main/thumbnails/river.png)](https://youtu.be/MwnK6arB2Rc)
+</TabItem>
+<TabItem value="wc_4" label="Hyprland" default>
+[![video](https://raw.githubusercontent.com/archcraft-os/misc-files/main/thumbnails/hyprland_1.png)](https://youtu.be/t6Zd2F7rtPw)
+</TabItem>
+<TabItem value="wc_5" label="NEWM" default>
+[![video](https://raw.githubusercontent.com/archcraft-os/misc-files/main/thumbnails/newm_1.png)](https://youtube.com/playlist?list=PLXH9dADRlWHaXM3Q8G_gaunljITif3cUl)
+</TabItem>
+</Tabs>
+
+<!-- FAQs ----------------------------------------- -->
+
+## FAQs
+
+<details>
+<summary><b>Como usar Archcraft WSE?</b></summary>
+
+Para qualquer ajuda com as Configurações e Atalhos de Teclado, visite a página do window manager e compositos wayland respectivo.
+
+</details>
+
+<details>
+<summary><b>Como atualizar a ISO/Pacote de atualização?</b></summary>
+
+Siga os passos abaixo para atualizar (ou baixar os arquivos novamente):
+- Faça login na sua conta do Ko-fi
+- Vá para seu `Histórico de pagamentos Ko-fi`
+- Selecione suas compras
+- Click em `Ver Detalhes`
+- depois, clique em `Ver Conteúdo` para baixar os arquivos atualizados.
+
+</details>
+
+<details>
+<summary><b>Posso ter o reembolso se a ISO não funcionar para mim?</b></summary>
+
+Primeiro de tudo, este é o **modelo de doação** do Archcraft, onde você `doa para o suporte` do seu projeto open-source favorito.
+
+O Archcraft não aceita doações. Essas coisas exclusivas ajudam o Archcraft em todas as suas necessidades financeiras. A ideia por trás disso, **Você ajuda o Archcraft e em troca você ganha um presente. Ganhar-ganhar para ambos!**
+
+Todos os cenários são claramente mencionados nesta página([veja a compatibilidade](/docs/premium/wse#compatibility)), sobre o funcionamento desta ISO. Se você ***ainda escolher continuar com isso*** (sabendo todos os detalhes sobre isso) e a ISO não funcionar para você. **`Por favor, nao pergunte sobre reembolso ou trocas`**. Eu vpu, definitivamente, te ajudar com seu problemas e tentar resolvê-los o mais rápido possível.
+
+</details>
+
+<details>
+<summary><b>Eu preciso de ajuda com a ISO</b></summary>
+
+Os melhores lugares para se encontrar ajuda rápida são nas **Comunidades Archcraft**. Então junte-se à elas e procure por ajuda lá. Nos links no rodapé da página
+
+Se você tiver problemas com isso, mande-me um e-mail para **adi1090x@gmail.com** e sinta-se à vontade para pedir ajuda.
+
+</details>
+
+<details>
+<summary><b>Onde eu reporto os problemas?</b></summary>
+
+Se você encontrou um erro na ISO e quiser reportá-lo, abra uma issue no [Github](https://github.com/archcraft-os/archcraft-wayland-special/issues)
+
+</details>

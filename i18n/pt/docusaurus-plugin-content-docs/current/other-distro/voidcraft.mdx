@@ -1,0 +1,256 @@
+---
+sidebar_position: 1
+hide_table_of_contents: false
+---
+
+# Voidcraft
+
+<!-- Theme ---------------------------------------- -->
+<!-- Tabs -->
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<!-- Badges -->
+export const Highlight = ({children, color}) => (
+  <span
+    style={{
+      backgroundColor: color,
+      borderRadius: '25px',
+      color: '#fff',
+      padding: '0.2rem 0.6rem',
+    }}>
+    {children}
+  </span>
+);
+
+<!-- Adicione suas coisas a partir daqui -------------------- -->
+
+**Voidcraft : Experiência do Archcraft no Void Linux**
+
+[![video](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/main.gif)](https://youtu.be/dd0bCn5Mt2E)
+
+## Visão geral
+
+- Transforme seu Void Linux no **Archcraft**
+- Window manager `openbox` totalmente configurado
+- Window manager `bspwm` totalmente configurado
+- Window manager `i3wm` totalm4nte configurado **`Novo`**
+- Muitos **temas/estilos** para ambos (openbox e bspwm) WMs
+- Tudo mais que o Archcraft oferece
+
+:::warning
+**Voidcraft** não é uma ISO ou uma distribuição baseada no Void Linux
+:::
+
+**Voidcraft** é um pacote de instalação para transformar seu [Void Linux](https://voidlinux.org/) no Archcraft. Uma vez instalado em cima do Void Linux, ele irá ter tudo que o Archcraft oferece no seu Void Linux.
+
+**Importante** : Voidcraft é criado em cima do `Void Linux Live Base (glibc)`(_void-live-x86_64-20240314-base.iso_) e é ***recomendado*** que seja instalado em uma nova instalação do Void Linux.
+
+<!-- Download ------------------------------------- -->
+
+## Download
+
+Você pode baixar o pacote atualizado em <Highlight color="#50545b"><a href="https://ko-fi.com/s/94be658a0f" target="_blank">ko-fi ☕</a></Highlight>
+
+### Installation
+
+Siga os passos abaixo para instalar o Ubuntucraft:
+
+- Primeiro, **Instale o Void Linux** no seu computador
+- Baixe o `voidcraft.tar.gz` pelo ko-fi
+- Transfira ou salve o arquivo na sua instalação do Ubuntu
+- Extraia o arquivo: `tar -xzvf voidcraft.tar.gz`
+- Mude para o diretório extraído: `cd voidcraft`
+- Execute o script de instalação e deixe-o fazer o trabalho: `./install.sh`
+- Depois de finalizado _reinicie seu computador_ e você terá o **Voidcraft instalado**.
+
+:::info[Video]
+Veja o [vídeo de instalação](https://youtu.be/dd0bCn5Mt2E)
+:::
+
+:::tip[Asciinema]
+O arquivo **asciinema** `ubuntucraft.cast` é fornecido, você pode executá-lo para ver como o script trabalha antes de usá-lo.
+:::
+
+<!-- Changelogs ----------------------------------- -->
+
+## Changelogs
+
+<details>
+<summary><b>Changelog (Julho de 2024) : última atualização</b></summary>
+
+**Data** : `6 de julho de 2024`
+
+- Adicionado `qt6ct` e sua configuração
+- Adicionado o módulo de Bateria vazia se usado no desktop
+- Atualizados os scripts relacionados a screenshots, cores dinãmicas para seleção de borda
+- Atualizados os scripts do tint2 para bateria e brilho
+- Atualizada as configurações da `polybar`, recarregamentos nas mudanças de tela
+- Corrigidos alguns pipemenus para `openbox`
+- Correção de bugs, etc
+
+</details>
+
+<details>
+<summary><b>Changelog (Janeiro de 2024) : Segundo lançamento</b></summary>
+
+**Data** : `16 de janeiro de 2024`
+
+- Adicionado o window manager `i3wm`
+- Configuração do alacritty migrada para `toml`
+- Scripts relacionados ao alacritty atualizados
+- Atualizadoa as configurações da `polybar`, problema da fonte e adicionado modulos para `bandeja`
+- Corrigido alguns pipemenus para o `openbox`
+- Adicionado uma configuração melhor para multi-monitor no `bspwm`
+- Correção de bugs, etc
+ 
+</details>
+
+<details>
+<summary><b>Changelog (Setembro de 2023) : Primeiro Lançamento</b></summary>
+
+**Data** : `15 de setembro de 2023`
+
+- Voidcraft Lançado
+
+</details>
+
+<!-- Screenshots ---------------------------------- -->
+
+## Screenshots
+
+### Desktop
+
+Aqui estão alguns screenshots do `Openbox`, `Bspwm` e `i3wm`. Eles te darão uma ideia da experiência desses WMs no Ubuntucraft.
+
+<Tabs>
+
+<TabItem value="wm_1" label="Openbox" default>
+
+|Desktop 1|Desktop 2|Desktop 3|Desktop 4|Desktop 5|Desktop 6|
+|---|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/openbox/desktop/desktop_1.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/openbox/desktop/desktop_2.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/openbox/desktop/desktop_3.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/openbox/desktop/desktop_4.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/openbox/desktop/desktop_5.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/openbox/desktop/desktop_6.png)|
+
+|Desktop 7|Desktop 8|Desktop 9|Desktop 10|Desktop 11|Desktop 12|
+|---|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/openbox/desktop/desktop_7.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/openbox/desktop/desktop_8.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/openbox/desktop/desktop_9.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/openbox/desktop/desktop_10.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/openbox/desktop/desktop_11.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/openbox/desktop/desktop_12.png)|
+
+</TabItem>
+
+<TabItem value="wm_2" label="Bspwm" default>
+
+|Desktop 1|Desktop 2|Desktop 3|Desktop 4|Desktop 5|Desktop 6|
+|---|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/bspwm/desktop/desktop_1.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/bspwm/desktop/desktop_2.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/bspwm/desktop/desktop_3.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/bspwm/desktop/desktop_4.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/bspwm/desktop/desktop_5.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/bspwm/desktop/desktop_6.png)|
+
+|Desktop 7|Desktop 8|Desktop 9|Desktop 10|Desktop 11|Desktop 12|
+|---|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/bspwm/desktop/desktop_7.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/bspwm/desktop/desktop_8.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/bspwm/desktop/desktop_9.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/bspwm/desktop/desktop_10.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/bspwm/desktop/desktop_11.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/bspwm/desktop/desktop_12.png)|
+
+|Desktop 13|Desktop 14|
+|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/bspwm/desktop/desktop_13.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/bspwm/desktop/desktop_14.png)|
+
+</TabItem>
+
+<TabItem value="wm_3" label="i3wm" default>
+
+|Desktop 1|Desktop 2|Desktop 3|Desktop 4|Desktop 5|Desktop 6|
+|---|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/i3wm/desktop/desktop_1.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/i3wm/desktop/desktop_2.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/i3wm/desktop/desktop_3.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/i3wm/desktop/desktop_4.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/i3wm/desktop/desktop_5.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/i3wm/desktop/desktop_6.png)|
+
+|Desktop 7|Desktop 8|Desktop 9|Desktop 10|Desktop 11|Desktop 12|
+|---|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/i3wm/desktop/desktop_7.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/i3wm/desktop/desktop_8.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/i3wm/desktop/desktop_9.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/i3wm/desktop/desktop_10.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/i3wm/desktop/desktop_11.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/i3wm/desktop/desktop_12.png)|
+
+|Desktop 13|Desktop 14|
+|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/i3wm/desktop/desktop_13.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/i3wm/desktop/desktop_14.png)|
+
+</TabItem>
+
+</Tabs>
+
+### Temas
+
+<Tabs>
+
+<TabItem value="wm_1" label="Openbox" default>
+
+Temos **10 temas** disponíveis no openbox.
+
+|Theme 1|Theme 2|Theme 3|Theme 4|Theme 5|
+|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/openbox/themes/theme_1.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/openbox/themes/theme_2.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/openbox/themes/theme_3.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/openbox/themes/theme_4.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/openbox/themes/theme_5.png)|
+
+|Theme 6|Theme 7|Theme 8|Theme 9|Theme 10|
+|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/openbox/themes/theme_6.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/openbox/themes/theme_7.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/openbox/themes/theme_8.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/openbox/themes/theme_9.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/openbox/themes/theme_10.png)|
+
+</TabItem>
+
+<TabItem value="wm_2" label="Bspwm" default>
+
+Temos **10 temas** disponíveris no bspwm.
+
+|Theme 1|Theme 2|Theme 3|Theme 4|Theme 5|
+|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/bspwm/themes/theme_1.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/bspwm/themes/theme_2.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/bspwm/themes/theme_3.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/bspwm/themes/theme_4.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/bspwm/themes/theme_5.png)|
+
+|Theme 6|Theme 7|Theme 8|Theme 9|Theme 10|
+|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/bspwm/themes/theme_6.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/bspwm/themes/theme_7.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/bspwm/themes/theme_8.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/bspwm/themes/theme_9.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/bspwm/themes/theme_10.png)|
+
+</TabItem>
+
+<TabItem value="wm_3" label="i3wm" default>
+
+Temos apenas **um tema** disponível no i3wm.
+
+![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/voidcraft/i3wm/desktop/desktop_1.png)
+
+</TabItem>
+</Tabs>
+
+<!-- FAQs ----------------------------------------- -->
+
+## FAQs
+
+<details>
+<summary><b>Como usar o Voidcraft?</b></summary>
+
+Para qualquer ajuda com Configurações e Atalhos de Teclado, Visite a págia do window manager respectivo.
+
+**Openbox :** [`Aqui`](/docs/window-managers/stacking-wm/openbox) <br/>
+**Bspwm :** [`Aqui`](/docs/window-managers/tiling-wm/bspwm) <br/>
+**i3wm :** [`Aqui`](/docs/window-managers/tiling-wm/i3wm)
+
+</details>
+
+<details>
+<summary><b>Como atualizar?</b></summary>
+
+Siga os passos abaixo para atualizar (ou baixar novamente os arquivos):
+- Faça login na sua conta do Ko-fi
+- Vá até o seu `Histórico de Pagamentos Ko-fi`
+- Selecione as compras que você fez
+- Clique em `Ver Detalhes`
+- Depois clique em `Ver conteúdo` para baixar os arquivos atualizados.
+
+</details>
+
+<details>
+<summary><b>Eu preciso de ajuda com Voidcraft</b></summary>
+
+Os melhores lugares para conseguir ajuda rápida são **Comunidades Archcraft**. Então junte-se à elas e peça por ajuda. Os links estão no rodapé dessa wiki.
+
+Caso você tenha algum problema com isso, mande-me um e-mail **adi1090x@gmail.com** e sinta-se à vontade para pedir ajuda.
+
+</details>
+
+<details>
+<summary><b>Onde eu reporto os problemas?</b></summary>
+
+Caso você encontre algun bug e queira reportá-lo, abra uma issue no [Github](https://github.com/archcraft-os/voidcraft/issues)
+
+</details>

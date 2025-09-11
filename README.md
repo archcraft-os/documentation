@@ -1,33 +1,33 @@
 # Archcraft Wiki
 
-Archcraft wiki is built using [Docusaurus 3](https://docusaurus.io/), a modern static website generator.
+Archcraft wiki é feito usando [Docusaurus 3](https://docusaurus.io/), um gerador de website estático moderno.
 
-### Installation
+### Instalação
 
 ```
 $ yarn
 ```
 
-### Local Development
+### Desenvolvimento local
 
 ```
 $ yarn start
 ```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+Esse comando começa o servidor para desenvolvivemnto local e o abre no navegador. As mudanças são refletidas ao vivo sem precisar recomeçar o servidor.
 
-### Build
+### Construir
 
 ```
 $ yarn build
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+Esse comando gera um conteúdo estático na pasta `build` e pode ser usado por qualquer serviço de hospedagem estático.
 
-### Deployment
+### Lançamento
 
 ```
-$ GIT_USER=<Your GitHub username> USE_SSH=true yarn deploy
+$ GIT_USER=<Seu usuário GitHub> USE_SSH=true yarn deploy
 ```
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+Se você estiver usando o GitHub pages para hospedagem, esse comando é uma forma conveniente para criar o site e enviá-lo para o branch `gh-pages`.

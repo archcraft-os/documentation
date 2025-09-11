@@ -1,0 +1,331 @@
+---
+sidebar_position: 5
+hide_table_of_contents: false
+---
+
+# CWM
+
+<!-- Theme ---------------------------------------- -->
+<!-- Tabs -->
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<!-- Badges -->
+export const Highlight = ({children, color}) => (
+  <span
+    style={{
+      backgroundColor: color,
+      borderRadius: '4px',
+      color: '#fff',
+      padding: '0 0.2rem 0 0.2rem',
+    }}>
+    {children}
+  </span>
+);
+
+<!-- Adicione suas coisas depois disso -------------------- -->
+
+CWM é um gerenciador de janelas X11 com foco em não interferir, permitindo que você seja produtivo. Originalmente derivado do evilwm, mas o código foi reescrito do zero desde então.
+
+![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/cwm/main.png)
+
+<!-- Instalação --------------------------------- -->
+
+Instalação
+
+Após concluir a instalação do Archcraft, CWM pode ser instalado em cima dele. Já vem pré-configurado e pronto para uso. Abra um terminal e execute o seguinte comando para instalar o CWM:
+```bash
+$ sudo pacman -Sy archcraft-cwm
+```bash
+
+<!-- Configuração -------------------------------- -->
+
+## Configuração
+
+O CWM já vem pré-configurado no Archcraft. Nesta seção, veremos como o gerenciador de janelas CWM é configurado, quais ferramentas e utilitários são usados para fazê-lo parecer e funcionar como um ambiente de desktop completo.
+
+### Estrutura de Configuração
+
+A estrutura de configuração do CWM no Archcraft é algo como isto:
+
+```
+/usr/bin/run-cwm   : Programas que iniciam automaticamente
+~/.cwmrc           : arquivo principal de configuração do cwm
+~/.cwm             : diretório de configuração do cwm
+├── alacritty      : configuração do terminal
+├── scripts        : scripts usados pelo cwm
+├── theme          : tema do desktop (configurações do polybar, rofi)
+├── dunstrc        : configuração do dunst para notificações
+├── picom.conf     : configuração do compositor
+└── xsettingsd     : arquivo de configuração de temas gtk, ícones e fontes
+```
+
+### Terminal
+
+**Alacritty** é o terminal padrão. No gerenciador de janelas CWM, o alacritty é iniciado com um arquivo de configuração alternativo. Se precisar mudar algo, certifique-se de modificar os arquivos de configuração no diretório `~/.cwm/alacritty`. Abaixo estão os arquivos de configuração que você pode modificar para alterar o comportamento do seu terminal:
+
+**`~/.cwm/alacritty/alacritty.toml`** : Arquivo principal de configuração  
+**`~/.cwm/alacritty/colors.toml`** : Configurações de cores  
+**`~/.cwm/alacritty/fonts.toml`** : Configurações de fontes
+
+> Se precisar de ajuda com a configuração do alacritty, execute: `man 5 alacritty` no terminal.
+
+### Notificação
+
+**Dunst** é usado como o daemon de notificações no CWM. No gerenciador de janelas CWM, o dunst é iniciado com um arquivo de configuração alternativo, que é o `~/.cwm/dunstrc`. Portanto, se precisar modificar algo, certifique-se de editar este arquivo.
+
+> Se precisar de ajuda com a configuração do dunst, execute: `man 5 dunst` no terminal.
+
+### Papel de Parede
+
+**hsetroot** define o papel de parede no CWM. Se quiser mudar o papel de parede, edite o script `/usr/bin/run-cwm` e adicione o caminho do seu papel de parede:
+```bash
+# Restaurar papel de parede
+hsetroot -cover '/caminho/para/seu/papel/de/parede'
+```
+```
+
+### Barra de Status
+
+**Polybar** é usado como a barra de status no gerenciador de janelas CWM do Archcraft.
+
+As configurações do polybar podem ser encontradas dentro do diretório _theme_ do CWM em `~/.cwm/theme`.
+
+Se você quiser modificar as configurações do **polybar**, ou talvez adicionar/remover módulos, será necessário editar os seguintes arquivos:
+
+**`~/.cwm/theme/polybar/config.ini`** : Arquivo principal de configuração  
+**`~/.cwm/theme/polybar/colors.ini`** : Arquivo de configuração das cores  
+**`~/.cwm/theme/polybar/modules.ini`** : Arquivo de configuração dos módulos
+
+> Se precisar de ajuda com a configuração do polybar, visite: [polybar wiki](https://github.com/polybar/polybar/wiki)
+
+### Lançadores e Applets
+
+**Rofi** é usado para lançar aplicativos, executar de comandos e vários applets. Para modificar a configuração do rofi, edite o arquivo `~/.config/rofi/config.rasi`.
+
+> Se precisar de ajuda com a configuração do rofi, execute: `man rofi` no terminal.
+
+Os scripts do rofi usados no CWM podem ser encontrados no diretório `~/.cwm/scripts`. Abaixo estão os scripts que utilizam o rofi para fornecer lançadores e applets no CWM:
+
+**`rofi_askpass`** : frontend baseado em rofi para `sudo`, para obter a senha de root  
+**`rofi_asroot`** : applet para abrir aplicativos como root  
+**`rofi_bluetooth`** : applet de bluetooth para conectar rapidamente a dispositivos BT  
+**`rofi_launcher`** : lançador de aplicativos, executador de comandos, gerenciador de arquivos e gerenciador de tarefas  
+**`rofi_music`** : applet de música, que controla o MPD com `mpc`  
+**`rofi_powermenu`** : menu de energia, com caixa de confirmação  
+**`rofi_runner`** : permite executar rapidamente um comando  
+**`rofi_screenshot`** : applet de captura de tela que funciona com maim  
+
+Se quiser modificar qualquer applet ou talvez estender a funcionalidade de algum, basta editar os scripts acima.
+
+A configuração de cada script pode ser encontrada dentro do diretório _theme_ do CWM em `~/.cwm/theme`.
+
+Digamos que você queira modificar a aparência do **lançador**, então será necessário editar o arquivo `~/.cwm/theme/rofi/launcher.rasi`. O mesmo vale para os outros applets, edite o arquivo respectivo no mesmo diretório.
+
+> Se precisar de ajuda com a personalização do rofi, execute: `man rofi-theme` no terminal.
+
+Para alterar as cores e fontes dos lançadores e applets, edite os arquivos `~/.cwm/theme/rofi/shared/colors.rasi` e `~/.cwm/theme/rofi/shared/fonts.rasi`.
+
+### Compositor
+
+**Picom** é usado para composição. É um compositor leve com sombreamento, desfoque avançado e desvanecimento. No CWM, o picom é iniciado com um arquivo de configuração alternativo, que é o `~/.cwm/picom.conf`.
+
+Se precisar alterar algo relacionado ao picom, edite este arquivo de configuração do picom.
+
+> Se precisar de ajuda com a configuração do picom, consulte o arquivo de configuração padrão do picom em `/etc/xdg/picom.conf`.
+
+:::info
+
+Se você estiver enfrentando problemas de "screen tearing", usar o backend `glx` pode resolver esse problema.  
+Se estiver enfrentando lentidão, travamentos e congelamentos, tente alternar entre os backends `xrender` e `glx`.
+
+:::
+
+### Gerenciador de Janelas
+
+A configuração do CWM está disponível no seu diretório home. Para configurar o gerenciador de janelas CWM, este é o arquivo principal usado:
+
+**`~/.cwmrc`** : arquivo principal de configuração responsável por determinar o comportamento e as configurações da sessão como um todo. Edite este arquivo para configurar as combinações de teclas, cores, menus e aparência do cwm.
+
+> Se precisar de ajuda com a configuração do cwm, execute: `man cwm` e `man cwmrc` no terminal.
+
+<!-- Atalhos de teclado ---------------------------------- -->
+
+## Atalhos de teclado
+
+Aqui está uma lista de alguns atalhos de teclado importantes que você precisa saber para operar o CWM de forma fácil. Se quiser visualizar, modificar ou adicionar novos atalhos, edite o arquivo `~/.cwmrc`.
+
+### Aplicações
+
+| Atalho | Ação |
+| --- | --- |
+| <kbd>super + Return</kbd> | Abre terminal (alacritty) |
+| <kbd>super + shift + Return</kbd> | Abre terminal em tela cheia |
+| <kbd>super + F</kbd> | Abre gerenciador de arquivos (thunar) |
+| <kbd>super + E</kbd> | Abre editor de texto (geany) |
+| <kbd>super + W</kbd> | Abre navegador web (firefox) |
+
+### Menu e Applets
+
+| Atalho | Ação |
+| --- | --- |
+| <kbd>super</kbd> | Abre lançador de aplicativos |
+| <kbd>alt + F1</kbd> | Abre lançador de aplicativos |
+| <kbd>alt + F2</kbd> | Abre executador de comandos |
+| <kbd>super + N</kbd> | Abre applet de gerenciador de rede |
+| <kbd>super + B</kbd> | Abre applet de bluetooth |
+| <kbd>super + M</kbd> | Abre applet de música |
+| <kbd>super + X</kbd> | Abre applet de menu de energia |
+| <kbd>super + S</kbd> | Abre applet de captura de tela |
+| <kbd>super + R</kbd> | Abre applet para abrir aplicativos como root |
+| <kbd>alt + ctrl + W</kbd> | Inicia menu de busca de janelas |
+| <kbd>alt + ctrl + A</kbd> | Inicia menu de busca de aplicativos |
+| <kbd>alt + ctrl + G</kbd> | Inicia menu de busca de grupos |
+
+### Atalhos de Hardware
+
+| Atalho | Ação |
+| --- | --- |
+| <kbd>Print</kbd> | Tira captura de tela |
+| <kbd>alt + Print</kbd> | Tira captura de tela com atraso de 5 segundos |
+| <kbd>shift + Print</kbd> | Tira captura de tela com atraso de 10 segundos |
+| <kbd>ctrl + Print</kbd> | Tira captura de tela da janela atualmente focada |
+| <kbd>super + Print</kbd> | Tira captura de tela da área selecionada |
+| <kbd>XF86AudioRaiseVolume</kbd> | Aumenta o volume |
+| <kbd>XF86AudioLowerVolume</kbd> | Diminui o volume |
+| <kbd>XF86AudioMute</kbd> | Alterna mudo nos alto-falantes |
+| <kbd>XF86AudioMicMute</kbd> | Alterna mudo no microfone |
+| <kbd>XF86MonBrightnessUp</kbd> | Aumenta o brilho da tela |
+| <kbd>XF86MonBrightnessDown</kbd> | Diminui o brilho da tela |
+
+### Grupos
+
+| Atalho | Ação |
+| --- | --- |
+| <kbd>super + NUM</kbd> | Mostra apenas o grupo NUM, onde NUM é de 1 a 9, escondendo outros grupos |
+| <kbd>super + shift + NUM</kbd> | Oculta a janela atual da exibição e mover para o grupo NUM, onde NUM é de 1 a 9 |
+| <kbd>super + alt + NUM</kbd> | Alterna visibilidade do grupo NUM, onde NUM é de 1 a 9 |
+| <kbd>super + ctrl + NUM</kbd> | Fecha todas as janelas no grupo NUM, onde NUM é de 1 a 9 |
+| <kbd>super + shift + B</kbd> | Mostra apenas o grupo previamente ativo |
+| <kbd>super + shift + A</kbd> | Alterna visibilidade de todos os grupos |
+| <kbd>super + shift + G</kbd> | Alterna a associação de grupo da janela atual |
+| <kbd>ctrl + alt + Right/Left</kbd> | Avança/Recua pelo ciclo de grupos |
+
+### Gerenciamento de Janelas
+
+| Atalho | Ação |
+| --- | --- |
+| <kbd>super + C/Q</kbd> | Fecha a janela focada |
+| <kbd>super + Tab</kbd> | Avança/Recua pelo ciclo de janelas |
+| <kbd>alt + Tab</kbd> | Avança/Recua pelo ciclo de janelas no grupo atual |
+| <kbd>super + I</kbd> | Oculta a janela atual |
+| <kbd>super + T</kbd> | Congela a geometria da janela atual |
+| <kbd>super + shift + R</kbd> | Rotula a janela atual |
+| <kbd>super + O</kbd> | Fixa a janela atual em todos os grupos |
+| <kbd>super + Space</kbd> | Coloca a janela atual em tela cheia |
+| <kbd>super + shift + Space</kbd> | Maximiza a janela atual |
+| <kbd>ctrl + alt + V</kbd> | Maximiza verticalmente a janela atual |
+| <kbd>ctrl + alt + H</kbd> | Maximiza horizontalmente a janela atual |
+| <kbd>ctrl + alt + shift + V</kbd> | Maximiza verticalmente a janela atual, colocando-a à esquerda da tela |
+| <kbd>ctrl + alt + shift + H</kbd> | Maximiza horizontalmente a janela atual, colocando-a no topo da tela |
+| <kbd>super + shift + Left/Right/Up/Down</kbd> | Move a janela em 10px na direção escolhida |
+| <kbd>super + shift + H/J/K/L</kbd> | Move a janela em 100px na direção escolhida |
+| <kbd>super + ctrl + Left/Right/Up/Down</kbd> | Redimensiona a janela em 10px na direção escolhida |
+| <kbd>super + ctrl + H/J/K/L</kbd> | Redimensiona a janela em 100px na direção escolhida |
+| <kbd>super + Left/Right/Up/Down</kbd> | Ajusta a janela às bordas da tela |
+| <kbd>super + H/J/K/L</kbd> | Ajusta a janela às bordas da tela |
+
+### Gerenciador de Janelas
+
+| Atalho | Ação |
+| --- | --- |
+| <kbd>super + ctrl + R</kbd> | Reinicia o CWM |
+| <kbd>super + ctrl + Q</kbd> | Sai do CWM |
+
+### Atalhos Diversas
+
+| Atalho | Ação |
+| --- | --- |
+| <kbd>ctrl + alt + M</kbd> | Executa ncmpcpp com arte do álbum |
+| <kbd>ctrl + alt + L</kbd> | Aciona tela de bloqueio |
+| <kbd>super + P</kbd> | Executa seletor de cores |
+
+## Atalhos do Mouse
+
+| Botão | Ação |
+| --- | --- |
+| <kbd>alt + Button_1</kbd> | Eleva a janela atual |
+| <kbd>alt + Button_3</kbd> | Rebaixa a janela atual |
+| <kbd>alt + Button_2</kbd> | Oculta a janela atual |
+| <kbd>super + Button_1</kbd> | Move a janela atual |
+| <kbd>super + Button_3</kbd> | Redimensiona a janela atual |
+| <kbd>super + Button_2</kbd> | Congela a geometria da janela atual |
+| <kbd>Button_1</kbd> | Inicia menu de busca de janelas |
+| <kbd>Button_3</kbd> | Inicia menu de busca de aplicativos |
+| <kbd>Button_2</kbd> | Inicia menu de busca de grupos |
+
+<!-- Temas --------------------------------------- -->
+
+## Screenshots
+
+Aqui estão algumas capturas de tela do `CWM`. Elas te darão uma ideia da experiência do CWM no Archcraft.
+
+|Desktop 1|Desktop 2|Desktop 3|Desktop 4|
+|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/cwm/desktop/desktop_1.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/cwm/desktop/desktop_2.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/cwm/desktop/desktop_3.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/cwm/desktop/desktop_4.png)|
+
+|Desktop 5|Desktop 6|Desktop 7|Desktop 8|
+|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/cwm/desktop/desktop_5.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/cwm/desktop/desktop_6.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/cwm/desktop/desktop_7.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/cwm/desktop/desktop_8.png)|
+
+|Desktop 9|Desktop 10|Desktop 11|Desktop 12|
+|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/cwm/desktop/desktop_9.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/cwm/desktop/desktop_10.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/cwm/desktop/desktop_11.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/cwm/desktop/desktop_12.png)|
+
+<!-- FAQs ----------------------------------------- -->
+
+## FAQs
+
+<details>
+<summary><b>Como atualizar minha configuração para as novas configurações?</b></summary>
+
+Quando uma nova versão do Archcraft CWM é lançada, e você atualiza o sistema com `sudo pacman -Syu` ou atualiza o pacote CWM com `sudo pacman -S archcraft-cwm`, novos arquivos de configuração são instalados como **~/.cwm_pacnew_YYYY-MM-DD** e **~/.cwmrc_pacnew_YYYY-MM-DD** no seu diretório home.
+
+Para usar as novas configurações:
+- Faça backup do seu antigo diretório `~/.cwm` e do arquivo `~/.cwmrc`
+- Mova `~/.cwm_pacnew_YYYY-MM-DD` para `~/.cwm`
+- Mova `~/.cwmrc_pacnew_YYYY-MM-DD` para `~/.cwmrc`
+- Faça logout e login novamente.
+
+</details>
+
+<details>
+<summary><b>Como alterar o tema GTK, ícones e cursor?</b></summary>
+
+Para alterar o tema GTK, ícones e cursor na sessão CWM, edite o arquivo `~/.cwm/xsettingsd` e reinicie o CWM para aplicar as mudanças.
+
+```bash
+Net/ThemeName "Arc-Dark"
+Net/IconThemeName "Arc-Circle"
+Gtk/CursorThemeName "Future"
+```
+```
+
+</details>
+
+<details>
+<summary><b>How to manage multiple monitors and resolution in CWM?</b></summary>
+
+If you use multiple monitors with CWM window manager, you can manage them by running _Manager Monitors_ or `archcraft-randr` app.
+
+</details>
+
+<details>
+<summary><b>Por que o Alacritty não está funcionando no meu computador?</b></summary>
+
+Como o Alacritty é um emulador de terminal baseado em OpenGL, ele pode não funcionar em alguns hardwares de computador. Você pode fazê-lo funcionar em tais computadores seguindo estes métodos:
+
+1. Abra o alacritty com a variável **LIBGL_ALWAYS_SOFTWARE=1**. Edite as configurações de teclas/script que abrem o alacritty e substitua `alacritty` por `LIBGL_ALWAYS_SOFTWARE=1 alacritty`.
+2. Edite o arquivo de desktop **/usr/share/applications/Alacritty.desktop** e substitua `Exec=alacritty` por `Exec=env LIBGL_ALWAYS_SOFTWARE=1 alacritty`.
+
+</details>

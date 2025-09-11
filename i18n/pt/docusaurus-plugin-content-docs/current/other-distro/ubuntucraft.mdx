@@ -1,0 +1,236 @@
+---
+sidebar_position: 2
+hide_table_of_contents: false
+---
+
+# Ubuntucraft
+
+<!-- Theme ---------------------------------------- -->
+<!-- Tabs -->
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<!-- Badges -->
+export const Highlight = ({children, color}) => (
+  <span
+    style={{
+      backgroundColor: color,
+      borderRadius: '25px',
+      color: '#fff',
+      padding: '0.2rem 0.6rem',
+    }}>
+    {children}
+  </span>
+);
+
+<!-- Adicione suas coisas a partir daqui -------------------- -->
+
+**Ubuntucraft : Experiência do Archcraft no Ubuntu**
+
+[![video](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/ubuntucraft/main.gif)](https://youtu.be/nTnqDM8qNTk)
+
+## Visão geral
+
+- Transforme seu Ubuntu no **Archcraft**
+- Window manager `openbox` totalmente configurado
+- Window manager `bspwm` totalmente configurado
+- Window manager `i3wm` totalm4nte configurado **`Novo`**
+- Muitos **temas/estilos** para ambos (openbox e bspwm) WMs
+- Tudo mais que o Archcraft oferece
+
+:::warning
+**Ubuntucraft** não é uma ISO ou uma distribuição baseada no Ubuntu
+:::
+
+**Ubuntucraft** é um pacote de instalação para transformar seu [Ubuntu](https://ubuntu.com/) no Archcraft. Uma vez instalado em cima do Ubuntu, ele irá ter tudo que o Archcraft oferece no seu Ubuntu.
+
+**Importante** : Ubuntucraft é criado em cima do `Ubuntu 22.04 LTS Desktop` e é ***recomendado*** que seja instalado em uma nova instalação do Ubuntu 22.04 LTS.
+
+:::info
+Ele pode funcionar em uma versão mais antiga ou mais nova do Ubuntu, só não foi testado em outras versões.
+:::
+
+<!-- Download ------------------------------------- -->
+
+## Download
+
+Você pode baixar o pacote atualizado em <Highlight color="#50545b"><a href="https://ko-fi.com/s/1d8e3409a8" target="_blank">ko-fi ☕</a></Highlight>
+
+### Installação
+
+Siga os passos abaixo para instalar o Ubuntucraft:
+
+- Primeiro, **Instale o Ubuntu 22.04 LTS** (`Instalação Mínima`) no seu computador
+- Baixe o `ubuntucraft.tar.gz` pelo ko-fi
+- Transfira ou salve o arquivo na sua instalação do Ubuntu
+- Extraia o arquivo: `tar -xzvf ubuntucraft.tar.gz`
+- Mude para o diretório extraído: `cd ubuntucraft`
+- Execute o script de instalação e deixe-o fazer o trabalho: `./install.sh`
+- Depois de finalizado _reinicie seu computador_ e você terá o **Ubuntucraft instalado**.
+
+:::info[Video]
+Veja o [vídeo de instalação](https://youtu.be/nTnqDM8qNTk)
+:::
+
+:::tip[Asciinema]
+O arquivo **asciinema** `ubuntucraft.cast` é fornecido, você pode executá-lo para ver como o script trabalha antes de usá-lo.
+:::
+
+<!-- Changelogs ----------------------------------- -->
+
+## Changelogs
+
+<details>
+<summary><b>Changelog (Janeiro de 2024) : última atualização</b></summary>
+
+**Data** : `14 de janeiro de 2024`
+
+- Adicionado o window manager `i3wm`
+- Configuração do alacritty migrada para `toml`
+- Scripts relacionados ao alacritty atualizados
+- Corrigido alguns pipemenus para o `openbox`
+- Adicionado uma configuração melhor para multi-monitor no `bspwm`
+- `python2` não é mais uma dependência
+- Correção de bugs, etc
+
+</details>
+
+<details>
+<summary><b>Changelog (Agosto de 2023) : Primeira versão</b></summary>
+
+**Data** : `29 de agosto de 2023`
+
+- Ubuntucraft lançado
+
+</details>
+
+<!-- Screenshots ---------------------------------- -->
+
+## Screenshots
+
+### Desktop
+
+Aqui estão alguns screenshots do `Openbox`, `Bspwm` e `i3wm`. Eles te darão uma ideia da experiência desses WMs no Ubuntucraft.
+
+<Tabs>
+
+<TabItem value="wm_1" label="Openbox" default>
+
+|Desktop 1|Desktop 2|Desktop 3|Desktop 4|Desktop 5|
+|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/ubuntucraft/openbox/desktop/desktop_1.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/ubuntucraft/openbox/desktop/desktop_2.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/ubuntucraft/openbox/desktop/desktop_3.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/ubuntucraft/openbox/desktop/desktop_4.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/ubuntucraft/openbox/desktop/desktop_5.png)|
+
+|Desktop 6|Desktop 7|Desktop 8|Desktop 9|Desktop 10|
+|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/ubuntucraft/openbox/desktop/desktop_6.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/ubuntucraft/openbox/desktop/desktop_7.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/ubuntucraft/openbox/desktop/desktop_8.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/ubuntucraft/openbox/desktop/desktop_9.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/ubuntucraft/openbox/desktop/desktop_10.png)|
+</TabItem>
+
+<TabItem value="wm_2" label="Bspwm" default>
+
+|Desktop 1|Desktop 2|Desktop 3|Desktop 4|Desktop 5|Desktop 6|
+|---|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/ubuntucraft/bspwm/desktop/desktop_1.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/ubuntucraft/bspwm/desktop/desktop_2.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/ubuntucraft/bspwm/desktop/desktop_3.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/ubuntucraft/bspwm/desktop/desktop_4.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/ubuntucraft/bspwm/desktop/desktop_5.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/ubuntucraft/bspwm/desktop/desktop_6.png)|
+
+|Desktop 7|Desktop 8|Desktop 9|Desktop 10|Desktop 11|Desktop 12|
+|---|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/ubuntucraft/bspwm/desktop/desktop_7.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/ubuntucraft/bspwm/desktop/desktop_8.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/ubuntucraft/bspwm/desktop/desktop_9.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/ubuntucraft/bspwm/desktop/desktop_10.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/ubuntucraft/bspwm/desktop/desktop_11.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/ubuntucraft/bspwm/desktop/desktop_12.png)|
+
+</TabItem>
+
+<TabItem value="wm_3" label="i3wm" default>
+
+|Desktop 1|Desktop 2|Desktop 3|Desktop 4|Desktop 5|Desktop 6|
+|---|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/ubuntucraft/i3wm/desktop/desktop_1.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/ubuntucraft/i3wm/desktop/desktop_2.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/ubuntucraft/i3wm/desktop/desktop_3.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/ubuntucraft/i3wm/desktop/desktop_4.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/ubuntucraft/i3wm/desktop/desktop_5.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/ubuntucraft/i3wm/desktop/desktop_6.png)|
+
+|Desktop 7|Desktop 8|Desktop 9|Desktop 10|Desktop 11|Desktop 12|
+|---|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/ubuntucraft/i3wm/desktop/desktop_7.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/ubuntucraft/i3wm/desktop/desktop_8.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/ubuntucraft/i3wm/desktop/desktop_9.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/ubuntucraft/i3wm/desktop/desktop_10.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/ubuntucraft/i3wm/desktop/desktop_11.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/ubuntucraft/i3wm/desktop/desktop_12.png)|
+
+</TabItem>
+
+</Tabs>
+
+### Temas
+
+<Tabs>
+
+<TabItem value="wm_1" label="Openbox" default>
+
+Temos **10 temas** disponíveis no openbox.
+
+|Theme 1|Theme 2|Theme 3|Theme 4|Theme 5|
+|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/ubuntucraft/openbox/themes/theme_1.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/ubuntucraft/openbox/themes/theme_2.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/ubuntucraft/openbox/themes/theme_3.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/ubuntucraft/openbox/themes/theme_4.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/ubuntucraft/openbox/themes/theme_5.png)|
+
+|Theme 6|Theme 7|Theme 8|Theme 9|Theme 10|
+|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/ubuntucraft/openbox/themes/theme_6.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/ubuntucraft/openbox/themes/theme_7.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/ubuntucraft/openbox/themes/theme_8.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/ubuntucraft/openbox/themes/theme_9.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/ubuntucraft/openbox/themes/theme_10.png)|
+
+</TabItem>
+
+<TabItem value="wm_2" label="Bspwm" default>
+
+Temos **10 temas** disponíveris no bspwm.
+
+|Theme 1|Theme 2|Theme 3|Theme 4|Theme 5|
+|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/ubuntucraft/bspwm/themes/theme_1.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/ubuntucraft/bspwm/themes/theme_2.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/ubuntucraft/bspwm/themes/theme_3.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/ubuntucraft/bspwm/themes/theme_4.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/ubuntucraft/bspwm/themes/theme_5.png)|
+
+|Theme 6|Theme 7|Theme 8|Theme 9|Theme 10|
+|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/ubuntucraft/bspwm/themes/theme_6.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/ubuntucraft/bspwm/themes/theme_7.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/ubuntucraft/bspwm/themes/theme_8.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/ubuntucraft/bspwm/themes/theme_9.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/ubuntucraft/bspwm/themes/theme_10.png)|
+
+</TabItem>
+
+<TabItem value="wm_3" label="i3wm" default>
+
+Temos apenas **um tema** disponível no i3wm.
+
+![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/ubuntucraft/i3wm/desktop/desktop_1.png)
+
+</TabItem>
+</Tabs>
+
+<!-- FAQs ----------------------------------------- -->
+
+## FAQs
+
+<details>
+<summary><b>Como usar o Ubuntucraft?</b></summary>
+
+Para qualquer ajuda com Configurações e Atalhos de Teclado, Visite a págia do window manager respectivo.
+
+**Openbox :** [`Aqui`](/docs/window-managers/stacking-wm/openbox) <br/>
+**Bspwm :** [`Aqui`](/docs/window-managers/tiling-wm/bspwm) <br/>
+**i3wm :** [`Aqui`](/docs/window-managers/tiling-wm/i3wm)
+
+</details>
+
+<details>
+<summary><b>Como atualizar?</b></summary>
+
+Siga os passos abaixo para atualizar (ou baixar novamente os arquivos):
+- Faça login na sua conta do Ko-fi
+- Vá até o seu `Histórico de Pagamentos Ko-fi`
+- Selecione as compras que você fez
+- Clique em `Ver Detalhes`
+- Depois clique em `Ver conteúdo` para baixar os arquivos atualizados.
+
+</details>
+
+<details>
+<summary><b>Eu preciso de ajuda com Ubuntucraft</b></summary>
+
+Os melhores lugares para conseguir ajuda rápida são **Comunidades Archcraft**. Então junte-se à elas e peça por ajuda. Os links estão no rodapé dessa wiki.
+
+Caso você tenha algum problema com isso, mande-me um e-mail **adi1090x@gmail.com** e sinta-se à vontade para pedir ajuda.
+
+</details>
+
+<details>
+<summary><b>Onde eu reporto os problemas?</b></summary>
+
+Caso você encontre algun bug e queira reportá-lo, abra uma issue no [Github](https://github.com/archcraft-os/ubuntucraft/issues)
+
+</details>

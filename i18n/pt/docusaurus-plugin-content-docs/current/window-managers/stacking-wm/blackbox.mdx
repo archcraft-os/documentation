@@ -1,0 +1,285 @@
+---
+sidebar_position: 4
+hide_table_of_contents: false
+---
+
+# Blackbox
+
+<!-- Theme ---------------------------------------- -->
+<!-- Tabs -->
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<!-- Badges -->
+export const Highlight = ({children, color}) => (
+  <span
+    style={{
+      backgroundColor: color,
+      borderRadius: '4px',
+      color: '#fff',
+      padding: '0 0.2rem 0 0.2rem',
+    }}>
+    {children}
+  </span>
+);
+
+<!-- Adicione suas coisas depois disso -------------------- -->
+
+Blackbox é um gerenciador de janelas rápido e leve para o X, sem aquelas bibliotecas e dependências incômodas. Blackbox é desenvolvido em C++ e contém código completamente original (embora a implementação gráfica seja semelhante à do WindowMaker).
+
+![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/blackbox/main.png)
+
+<!-- Instalação --------------------------------- -->
+
+## Instalação
+
+Após finalizar a instalação do Archcraft, o **Blackbox** pode ser instalado por cima dele. Ele já vem pré-configurado e pronto para uso. Abra um terminal e execute o seguinte comando para instalar o Blackbox:
+
+```bash
+$ sudo pacman -Sy archcraft-blackbox
+```
+
+<!-- Configuração -------------------------------- -->
+
+## Configuração
+
+O Blackbox é pré-configurado no Archcraft. Nesta seção, veremos como o gerenciador de janelas Blackbox é configurado, quais ferramentas e utilitários são usados para torná-lo uma experiência completa de ambiente de desktop.
+
+### Estrutura de Configuração
+
+A estrutura de configuração do Blackbox no Archcraft é semelhante a esta:
+
+```
+/usr/bin/run-blackbox   : Programas de início automático
+~/.blackboxrc           : Arquivo principal de configuração do Blackbox
+~/.blackbox             : Diretório de configuração do Blackbox
+├── alacritty           : Configuração do terminal
+├── scripts             : Scripts usados pelo Blackbox
+├── styles              : Estilos/temas do Blackbox
+├── theme               : Tema de área de trabalho (configurações do polybar, rofi) 
+├── dunstrc             : Configuração do dunst para notificações
+├── menu                : Configuração do menu do Blackbox
+├── picom.conf          : Configuração do compositor
+├── sxhkdrc             : Configuração de teclas de atalho
+└── xsettingsd          : Arquivo de configuração de temas GTK, ícones e fontes
+```
+
+### Terminal
+
+**Alacritty** é o terminal padrão. No gerenciador de janelas Blackbox, o Alacritty é iniciado com um arquivo de configuração alternativo. Se você precisar alterar algo, certifique-se de modificar os arquivos de configuração no diretório `~/.blackbox/alacritty`. Estes são os arquivos de configuração que você pode modificar para alterar o comportamento do seu terminal:
+
+**`~/.blackbox/alacritty/alacritty.toml`** : Arquivo de configuração principal <br/>
+**`~/.blackbox/alacritty/colors.toml`** : Configurações de cores <br/>
+**`~/.blackbox/alacritty/fonts.toml`** : Configurações de fontes
+
+> Se você precisar de ajuda com a configuração do Alacritty, execute: `man 5 alacritty` no terminal.
+
+### Notificação
+
+**Dunst** é usado como um daemon de notificações no Blackbox. No gerenciador de janelas Blackbox, o Dunst é iniciado com um arquivo de configuração alternativo, que é `~/.blackbox/dunstrc`. Portanto, se você precisar modificar algo, certifique-se de editar este arquivo.
+
+> Se você precisar de ajuda com a configuração do Dunst, execute: `man 5 dunst` no terminal.
+
+### Papel de Parede
+
+**hsetroot** define o papel de parede no Blackbox. Se você quiser mudar o papel de parede, edite o script `/usr/bin/run-blackbox` e adicione o caminho para o seu papel de parede:
+
+```bash
+# Restaurar papel de parede
+hsetroot -cover '/caminho/para/seu/papel/de/parede'
+```
+```
+
+### Barra de Status
+
+**Polybar** é usado como a barra de status no gerenciador de janelas Blackbox do Archcraft.
+
+As configurações do Polybar podem ser encontradas dentro do diretório _theme_ do Blackbox em `~/.blackbox/theme`.
+
+Se você deseja modificar as configurações do **polybar**, ou talvez adicionar/remover módulos, você precisará editar os seguintes arquivos:
+
+**`~/.blackbox/theme/polybar/config.ini`** : Arquivo de configuração principal <br/>
+**`~/.blackbox/theme/polybar/colors.ini`** : Arquivo de configuração de cores <br/>
+**`~/.blackbox/theme/polybar/modules.ini`** : Arquivo de configuração de módulos
+
+> Se você precisar de ajuda com a configuração do Polybar, visite: [wiki do Polybar](https://github.com/polybar/polybar/wiki)
+
+### lançadores e Applets
+
+**Rofi** é usado para lançadores de aplicativos, executores de comandos e vários applets. Para modificar a configuração do rofi, edite o arquivo `~/.config/rofi/config.rasi`.
+
+> Se precisar de ajuda com a configuração do rofi, execute: `man rofi` no terminal.
+
+Os scripts para rofi usados no Blackbox podem ser encontrados no diretório `~/.blackbox/scripts`. Estes são os seguintes scripts que usam o rofi para fornecer os lançadores e applets no Blackbox:
+
+**`rofi_askpass`** : Frontend baseado em rofi para o comando `sudo` para obter a senha do root <br/>
+**`rofi_asroot`** : Applet para abrir aplicativos como root <br/>
+**`rofi_bluetooth`** : Applet de Bluetooth para conectar rapidamente a dispositivos BT <br/>
+**`rofi_launcher`** : lançador de aplicativos, executor de comandos, gerenciador de arquivos e gerenciador de tarefas <br/>
+**`rofi_music`** : Applet de música que controla o MPD com `mpc` <br/>
+**`rofi_powermenu`** : Menu de energia com diálogo de confirmação <br/>
+**`rofi_runner`** : Permite rapidamente executar um comando <br/>
+**`rofi_screenshot`** : Applet de captura de tela que funciona com o maim <br/>
+
+Se você deseja modificar qualquer applet ou talvez estender a funcionalidade de algum, basta editar esses scripts.
+
+A configuração de cada script pode ser encontrada dentro do diretório _theme_ do Blackbox em `~/.blackbox/theme`.
+
+Por exemplo, se você deseja modificar a aparência do **launcher**, edite o arquivo `~/.blackbox/theme/rofi/launcher.rasi`. O mesmo vale para outros applets, basta editar o arquivo respectivo no mesmo diretório.
+
+> Se precisar de ajuda com o tema do rofi, execute: `man rofi-theme` no terminal.
+
+Para mudar as cores e fontes dos lançadores e applets, edite os arquivos `~/.blackbox/theme/rofi/shared/colors.rasi` e `~/.blackbox/theme/rofi/shared/fonts.rasi`.
+
+### Compositor
+
+**Picom** é utilizado para composição. É um compositor leve com sombreamento, borramento avançado e desvanecimento. No Blackbox, o picom é iniciado com um arquivo de configuração alternativo, que é o `~/.blackbox/picom.conf`.
+
+Se você precisar alterar algo relacionado ao picom, edite esse arquivo de configuração.
+
+> Se precisar de ajuda com a configuração do picom, consulte o arquivo de configuração padrão do picom em `/etc/xdg/picom.conf`.
+
+:::info
+
+Se você está tendo problemas com tearing (corte na tela), usar o backend `glx` pode resolver esse problema. <br/>
+Se você estiver enfrentando lentidão, travamentos ou congelamentos, tente alternar entre os backends `xrender` e `glx`.  
+:::
+
+### Window Manager
+
+A configuração do Blackbox está disponível no seu diretório pessoal. Para configurar o gerenciador de janelas Blackbox, os seguintes arquivos são utilizados:
+
+**`~/.blackboxrc`** : arquivo de configuração principal responsável por determinar o comportamento e as configurações da sessão geral. Edite este arquivo para configurar o slit, a barra de ferramentas, áreas de trabalho, o menu e a aparência do Blackbox. <br/>
+**`~/.blackbox/sxhkdrc`** : atalhos de teclado. Edite este arquivo para adicionar ou remover keybindings. <br/>
+**`~/.blackbox/menu`** : Menu de clique direito. Edite este arquivo para adicionar ou remover itens do menu.
+
+> Se precisar de ajuda com a configuração do Blackbox, execute: `man blackbox` no terminal. <br/>
+> Se precisar de ajuda com a configuração do sxhkd, execute: `man sxhkd` no terminal.
+
+<!-- Atalhos de teclado ---------------------------------- -->
+
+### Atalhos de teclado
+
+Aqui está uma lista de alguns atalhos importantes que você precisa saber para operar o Blackbox com facilidade. Se você deseja visualizar, modificar ou adicionar novos atalhos, edite o arquivo `~/.blackbox/sxhkdrc`.
+
+### Aplicações
+
+| Atalho | Ação |
+| --- | --- |
+| <kbd>super + Return</kbd> | Abre terminal (alacritty) |
+| <kbd>super + shift + Return</kbd> | Abre terminal em tela cheia |
+| <kbd>super + F</kbd> | Abre gerenciador de arquivos (thunar) |
+| <kbd>super + E</kbd> | Abre editor de texto (geany) |
+| <kbd>super + W</kbd> | Abre navegador (firefox) |
+
+### Menu e Applets
+
+| Atalho | Ação |
+| --- | --- |
+| <kbd>super</kbd> | Abre lançador de aplicativos |
+| <kbd>alt + F1</kbd> | Abre lançador de aplicativos |
+| <kbd>alt + F2</kbd> | Abre executor de comandos |
+| <kbd>super + N</kbd> | Abre applet de gerenciador de rede |
+| <kbd>super + B</kbd> | Abre applet de bluetooth |
+| <kbd>super + M</kbd> | Abre applet de música |
+| <kbd>super + X</kbd> | Abre applet de menu de energia |
+| <kbd>super + S</kbd> | Abre applet de capturas de tela |
+| <kbd>super + R</kbd> | Abre applet para rodar aplicativos como root |
+
+### Atalhos de Hardware
+
+| Atalho | Ação |
+| --- | --- |
+| <kbd>Print</kbd> | Tira captura de tela |
+| <kbd>alt + Print</kbd> | Tira captura de tela com atraso de 5 segundos |
+| <kbd>shift + Print</kbd> | Tira captura de tela com atraso de 10 segundos |
+| <kbd>ctrl + Print</kbd> | Tira captura de tela da janela focada |
+| <kbd>super + Print</kbd> | Tira captura de tela da área selecionada |
+| <kbd>XF86AudioRaiseVolume</kbd> | Aumenta volume |
+| <kbd>XF86AudioLowerVolume</kbd> | Diminui volume |
+| <kbd>XF86AudioMute</kbd> | Alterna mudo nos alto-falantes |
+| <kbd>XF86AudioMicMute</kbd> | Alterna mudo no microfone |
+| <kbd>XF86Audio + Next/Prev/Play/Stop</kbd> | Controles de mídia (MPD) |
+| <kbd>XF86MonBrightnessUp</kbd> | Aumenta brilho da tela |
+| <kbd>XF86MonBrightnessDown</kbd> | Diminui brilho da tela |
+
+### Atalhos Variados
+
+| Atalhos | Ação |
+| --- | --- |
+| <kbd>ctrl + alt + V</kbd> | Abre vim no terminal |
+| <kbd>ctrl + alt + R</kbd> | Abre ranger no terminal |
+| <kbd>ctrl + alt + H</kbd> | Abre htop no terminal |
+| <kbd>ctrl + alt + M</kbd> | Executa ncmpcpp com arte do álbum |
+| <kbd>ctrl + alt + L</kbd> | Aciona tela de bloqueio |
+| <kbd>super + P</kbd> | Executa seletor de cores |
+| <kbd>super + C</kbd> | Executa xkill |
+| <kbd>super + Escape</kbd> | Recarrega o arquivo de configuração do sxhkd |
+
+<!-- Temas --------------------------------------- -->
+
+## Screenshots
+
+Aqui estão algumas capturas de tela do `Blackcox`. Elas te darão uma ideia da experiência do Blackbox no Archcraft.
+
+|Desktop 1|Desktop 2|Desktop 3|Desktop 4|
+|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/blackbox/desktop/desktop_1.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/blackbox/desktop/desktop_2.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/blackbox/desktop/desktop_3.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/blackbox/desktop/desktop_4.png)|
+
+|Desktop 5|Desktop 6|Desktop 7|Desktop 8|
+|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/blackbox/desktop/desktop_5.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/blackbox/desktop/desktop_6.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/blackbox/desktop/desktop_7.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/blackbox/desktop/desktop_8.png)|
+
+|Desktop 9|Desktop 10|Desktop 11|Desktop 12|
+|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/blackbox/desktop/desktop_9.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/blackbox/desktop/desktop_10.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/blackbox/desktop/desktop_11.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/blackbox/desktop/desktop_12.png)|
+
+|Desktop 13|Desktop 14|
+|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/blackbox/desktop/desktop_13.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/blackbox/desktop/desktop_14.png)|
+
+<!-- FAQs ----------------------------------------- -->
+
+## FAQs
+
+<details>
+<summary><b>Como atualizar minha configuração para as novas configurações?</b></summary>
+
+Quando uma nova versão do Archcraft Blackbox for lançada e você atualizar o sistema com `sudo pacman -Syu` ou atualizar o pacote do Blackbox com `sudo pacman -S archcraft-blackbox`, novos arquivos de configuração serão instalados como **~/.blackbox_pacnew_YYYY-MM-DD** e **~/.blackboxrc_pacnew_YYYY-MM-DD** no seu diretório pessoal.
+
+Para usar as novas configurações:
+- faça um backup do seu antigo diretório `~/.blackbox` e do arquivo `~/.blackboxrc`
+- mova `~/.blackbox_pacnew_YYYY-MM-DD` para `~/.blackbox`
+- mova `~/.blackboxrc_pacnew_YYYY-MM-DD` para `~/.blackboxrc`
+- faça logout e login novamente.
+
+</details>
+
+<details>
+<summary><b>Como alterar o tema GTK, ícones e cursor?</b></summary>
+
+Para alterar o tema GTK, os ícones e o cursor na sessão do Blackbox, edite o arquivo `~/.blackbox/xsettingsd` e reinicie o Blackbox para aplicar as mudanças.
+```bash
+Net/ThemeName "Kripton"
+Net/IconThemeName "Zafiro"
+Gtk/CursorThemeName "Qogirr"
+```
+
+</details>
+
+<details>
+<summary><b>Como gerenciar múltiplos monitores e resolução no Blackbox?</b></summary>
+
+Se você usa múltiplos monitores com o gerenciador de janelas Blackbox, você pode gerenciá-los executando o _Manager Monitors_ ou o aplicativo `archcraft-randr`.
+
+</details>
+
+<details>
+<summary><b>Por que o Alacritty não está funcionando no meu computador?</b></summary>
+
+Como o Alacritty é um emulador de terminal baseado em OpenGL, ele pode não funcionar em alguns hardwares de computador. Você pode fazer com que ele funcione nesses computadores seguindo esses métodos:
+
+1. Abra o Alacritty com a variável **LIBGL_ALWAYS_SOFTWARE=1**. Edite as teclas de atalho/script que lançam o Alacritty e substitua `alacritty` por `LIBGL_ALWAYS_SOFTWARE=1 alacritty`.
+2. Edite o arquivo **/usr/share/applications/Alacritty.desktop** e substitua `Exec=alacritty` por `Exec=env LIBGL_ALWAYS_SOFTWARE=1 alacritty`.
+
+</details>
