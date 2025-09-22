@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkArchcraft_Wiki=self.webpackChunkArchcraft_Wiki||[]).push([[7537],{67569:s=>{s.exports=JSON.parse('{"label":"xsettingsd","permalink":"/blog/tags/xsettingsd","allTagsPath":"/blog/tags","count":1,"unlisted":false}')}}]);

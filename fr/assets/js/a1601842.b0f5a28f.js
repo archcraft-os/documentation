@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkArchcraft_Wiki=self.webpackChunkArchcraft_Wiki||[]).push([[1121],{81393:t=>{t.exports=JSON.parse('{"permalink":"/fr/blog/tags/archcraft","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Tutorials"}')}}]);

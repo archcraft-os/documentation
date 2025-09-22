@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkArchcraft_Wiki=self.webpackChunkArchcraft_Wiki||[]).push([[8158],{48158:(c,a,r)=>{r.r(a),r.d(a,{DocSearchModal:()=>e.a1});var e=r(55600)}}]);

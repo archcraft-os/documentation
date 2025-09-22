@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkArchcraft_Wiki=self.webpackChunkArchcraft_Wiki||[]).push([[2130],{50936:s=>{s.exports=JSON.parse('{"blogBasePath":"/fr/news","blogTitle":"News","authorsListPath":"/fr/news/authors"}')}}]);

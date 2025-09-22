@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkArchcraft_Wiki=self.webpackChunkArchcraft_Wiki||[]).push([[4823],{42303:s=>{s.exports=JSON.parse('{"label":"i3wm","permalink":"/news/tags/i-3-wm","allTagsPath":"/news/tags","count":11,"unlisted":false}')}}]);

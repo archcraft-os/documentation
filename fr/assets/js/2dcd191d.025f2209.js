@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkArchcraft_Wiki=self.webpackChunkArchcraft_Wiki||[]).push([[4325],{69357:e=>{e.exports=JSON.parse('{"permalink":"/fr/news/tags/i-3-wm/page/2","page":2,"postsPerPage":10,"totalPages":2,"totalCount":11,"previousPage":"/fr/news/tags/i-3-wm","blogDescription":"Blog","blogTitle":"News"}')}}]);

@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkArchcraft_Wiki=self.webpackChunkArchcraft_Wiki||[]).push([[9778],{7700:e=>{e.exports=JSON.parse('{"permalink":"/fr/news/tags/wse/page/2","page":2,"postsPerPage":10,"totalPages":2,"totalCount":13,"previousPage":"/fr/news/tags/wse","blogDescription":"Blog","blogTitle":"News"}')}}]);

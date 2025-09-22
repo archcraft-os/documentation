@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkArchcraft_Wiki=self.webpackChunkArchcraft_Wiki||[]).push([[7484],{322:s=>{s.exports=JSON.parse('{"label":"v24.07","permalink":"/news/tags/v-24-07","allTagsPath":"/news/tags","count":1,"unlisted":false}')}}]);

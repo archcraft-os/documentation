@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkArchcraft_Wiki=self.webpackChunkArchcraft_Wiki||[]).push([[7016],{49472:e=>{e.exports=JSON.parse('{"name":"docusaurus-plugin-content-blog","id":"news"}')}}]);

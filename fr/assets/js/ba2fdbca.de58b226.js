@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkArchcraft_Wiki=self.webpackChunkArchcraft_Wiki||[]).push([[4135],{71863:t=>{t.exports=JSON.parse('{"permalink":"/fr/blog/tags/os","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Tutorials"}')}}]);
