@@ -1,0 +1,567 @@
+---
+sidebar_position: 5
+hide_table_of_contents: false
+---
+
+# Niri
+
+<!-- Theme ---------------------------------------- -->
+<!-- Tabs -->
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<!-- Badges -->
+export const Highlight = ({children, color}) => (
+  <span
+    style={{
+      backgroundColor: color,
+      borderRadius: '4px',
+      color: '#fff',
+      padding: '0 0.2rem 0 0.2rem',
+    }}>
+    {children}
+  </span>
+);
+
+<!-- Add your stuff after this -------------------- -->
+
+Niri is a **scrollable tiling Wayland compositor**. 
+Unlike Sway or Hyprland, Niri arranges the windows in an infinite horizontal desktop, where you can scroll to the left or to the right.
+It is similar to GNOME's PaperWM and KDE's Karousel.
+
+<Tabs>
+
+<TabItem value="wc_1" label="Dark" default>
+
+[![video](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/niri/main.png)](https://youtu.be/-kOHQqPWs28)
+
+</TabItem>
+
+<TabItem value="wc_2" label="Light" default>
+
+![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/niri/main_light.png)
+
+</TabItem>
+
+</Tabs>
+
+:::tip[Archcraft Niri]
+
+Get Niri From [**`ko-fi`**](https://ko-fi.com/s/b56b660838) And Support Archcraft Development.
+
+:::
+
+<!-- Installation --------------------------------- -->
+
+## Installation
+
+Follow the instructions below to install Niri :
+
+- Download **niri_YYYY-MM-DD.tar.gz** file from [ko-fi](https://ko-fi.com/s/b56b660838), and save it in a directory.
+- Open a terminal in same directory and run the following command to extract the tar file :
+```bash
+$ tar -xzvf niri_YYYY-MM-DD.tar.gz
+```
+- Once the file is extracted, change to the extracted directory which should be **`niri`**
+
+<Tabs>
+
+<TabItem value="wc_1" label="Install On Archcraft" default>
+
+On Archcraft, You can simply install the provided packages in **pkgs** directory :
+```bash
+$ sudo pacman -U archcraft-niri-X.Y-Z-any.pkg.tar.zst
+```
+
+</TabItem>
+
+<TabItem value="wc_2" label="Install On Other Distributions" default>
+		
+If you want to install this setup on Arch Linux or on any other distro, follow the points below : 
+- Install the following programs on your Linux distro: `niri` `hyprlock` `hyprpicker` `swaybg` `swaylock` `wl-clipboard` `waybar` `foot` `mako` `grim` `slurp` `wf-recorder` `light` `yad` `thunar` `geany` `mpv` `mpd` `mpc` `viewnior` `imagemagick` `xfce-polkit` `xwayland-satellite` `xdg-desktop-portal` `xdg-desktop-portal-gtk` `xdg-desktop-portal-gnome` `gnome-keyring` `xorg-xwayland` `playerctl` `pastel` `python-pywal` `alacritty` `kitty` `rofi` `pulsemixer`
+- After installing the programs above, Create niri directory in **`~/.config`**
+```bash
+$ mkdir -p ~/.config/niri
+```
+- Copy Everything from _dotfiles_ to **`~/.config/niri`** 
+```bash
+$ cp -r ./dotfiles/* ~/.config/niri/
+```
+- Logout and login to your amazingly configured Niri WC.
+
+> Install the **fonts** from `fonts` and **GTK theme, icons and cursor** from `gtk` directory for overall appearance.
+
+</TabItem>
+
+</Tabs>
+
+:::danger[Archcraft Prime / WSE]
+
+<Highlight color="#c574dd">Niri</Highlight> does not come pre-installed on [**`Archcraft WSE`**](https://ko-fi.com/s/213becbf00) and [**`Archcraft Prime`**](https://ko-fi.com/s/c925a2a8c1) ISOs.
+
+:::
+
+<!-- Configuration -------------------------------- -->
+
+## Configuration
+
+Niri is pre-configured in Archcraft. In this section, We'll see how the Niri wayland compositor is configured, what tools and utilities are used to make it look and work like a complete desktop environment.
+
+### Config Structure
+
+The configuration structure of Niri in Archcraft looks something like this:
+
+```
+~/.config
+└── niri              : niri config directory
+    ├── alacritty     : alacritty terminal config
+    ├── foot          : foot terminal config
+    ├── kitty         : kitty terminal config
+    ├── mako          : notification daemon config
+    │   └── icons     : notification icons
+    ├── rofi          : rofi config files
+    ├── scripts       : various scripts for functionality
+    ├── theme         : current theme and pywal themes
+    ├── wallpapers    : wallpapers
+    ├── waybar        : statusbar config
+    ├── wlogout       : wlogout config
+    │   └── icons     : session icons
+    ├── config.kdl    : niri config file
+    └── hyprlock.conf : lockscreen config file
+```
+
+### Terminal
+
+<Tabs>
+
+<TabItem value="wc_1" label="Default" default>
+
+**Alacritty** is the default terminal. In the Niri wayland compositor, alacritty is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `~/.config/niri/alacritty` directory. These are the following config files you can modify to change the behaviour of your alacritty terminal:
+
+**`~/.config/niri/alacritty/alacritty.toml`** : Main configuration file <br/>
+**`~/.config/niri/alacritty/colors.toml`** : Colors configurations <br/>
+**`~/.config/niri/alacritty/fonts.toml`** : Fonts configurations
+
+> If you need any help with alacritty config, run : `man 5 alacritty` in terminal.
+
+</TabItem>
+
+<TabItem value="wc_2" label="Kitty" default>
+
+**kitty** is the secondary/alternate terminal. In the Niri wayland compositor, kitty is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `~/.config/niri/kitty` directory. These are the following config files you can modify to change the behaviour of your kitty terminal:
+
+**`~/.config/niri/kitty/kitty.conf`** : Main configuration file <br/>
+**`~/.config/niri/kitty/colors.conf`** : Colors configurations <br/>
+**`~/.config/niri/kitty/fonts.conf`** : Fonts configurations
+
+> If you need any help with kitty config, run : `man kitty.conf` in terminal.
+
+</TabItem>
+
+<TabItem value="wc_3" label="Foot" default>
+
+**Foot** is another alternate terminal. In the Niri wayland compositor, foot is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `~/.config/niri/foot` directory. These are the following config files you can modify to change the behaviour of your foot terminal:
+
+**`~/.config/niri/foot/foot.ini`** : Main configuration file <br/>
+**`~/.config/niri/foot/colors.ini`** : Colors configurations <br/>
+**`~/.config/niri/foot/fonts.ini`** : Fonts configurations
+
+> If you need any help with foot config, run : `man foot.ini` in terminal.
+
+</TabItem>
+
+</Tabs>
+
+:::tip
+
+By Default, alacritty is used But, If you want to use kitty/foot as your default terminal, just edit the `~/.config/niri/config.kdl` file and comment the keybindings for **`Terminal : alacritty`** and uncomment the bindings for **`Terminal : kitty`** or **`Terminal : foot`**
+
+:::
+
+:::warning
+
+When you change the `theme`, the **colors.toml** file of alacritty, **colors.conf** file of kitty and **colors.ini** file of foot get overwritten by the theme script.
+
+:::
+
+### Notification
+
+**Mako** is used as a notification daemon for notifications in Niri. In the Niri wayland compositor, mako is launched with an alternative config file, which is `~/.config/niri/mako/config`. So, If you need to modify anything, make sure you edit this file.
+
+> If you need any help with mako config, run : `man 5 mako` in terminal.
+
+:::warning
+
+When you change the `theme`, the colors in **config** file get overwritten by the theme script.
+
+:::
+
+### Wallpaper
+
+**swaybg** sets the wallpaper in the Niri. If you want to change the wallpaper, Edit `~/.config/niri/scripts/wallpaper` script and add your wallpaper here :
+```bash
+WALLPAPER='/path/to/your/wallpaper'
+```
+:::warning
+
+When you change the `theme`, the wallpaper path in `wallpaper` script get overwritten by the theme script.
+
+:::
+
+### Statusbar
+
+**Waybar** is used as the statusbar in Archcraft's Niri wayland compositor.
+
+The configurations for waybar can be found inside `~/.config/niri/waybar`. If you want to modify the **waybar** settings, or perhaps want to add/remove modules, then you need to edit the following files :
+
+**`~/.config/niri/waybar/config`** : Main config file <br/>
+**`~/.config/niri/waybar/modules`** : Modules config file <br/>
+**`~/.config/niri/waybar/style.css`** : CSS file for styling <br/>
+**`~/.config/niri/waybar/colors.css`** : CSS colors file <br/>
+
+> If you need any help with waybar config, run : `man waybar`
+
+:::warning
+
+When you change the `theme`, the **colors.css** file of waybar get overwritten by the theme script.
+
+:::
+
+### Launchers and Applets
+
+<Tabs>
+
+<TabItem value="wc_1" label="Rofi" default>
+
+**Rofi** is used for application launchers, command runner and various applets. To modify the rofi config, edit `~/.config/rofi/config.rasi` file.
+
+> If you need any help with rofi config, run : `man rofi` in terminal.
+
+The scripts for rofi that are used in Niri can be found it `~/.config/niri/scripts` directory. These are the following scripts that uses rofi to provide the launchers and applets in Niri :
+
+**`rofi_asroot`** : applet to run apps as root user <br/>
+**`rofi_bluetooth`** : bluetooth applet to quickly connect to BT devices <br/>
+**`rofi_launcher`** : an application launcher, cmd runner, file manager and task manager  <br/>
+**`rofi_music`** : music applet, that controls MPD with `mpc` <br/>
+**`rofi_network`** : network manager applet <br/>
+**`rofi_powermenu`** : power menu, with confirmation dialog <br/>
+**`rofi_runner`** : quickly lets you run a command <br/>
+**`rofi_screenshot`** : screenshot applet that works with grim <br/>
+
+If you want to modify any applet or perhaps want to extend the functionality of the applet, just edit these scripts.
+
+The configuration of each script can be found inside `~/.config/niri/rofi` directory.
+
+Let's say that you want to modify the looks of **launcher**, then you need to edit the `~/.config/niri/rofi/launcher.rasi` file. Same goes for every other applet, Edit the respective file in the same directory.
+
+> If you need any help with rofi theming, run : `man rofi-theme` in terminal.
+
+To change the colors and fonts of the launchers and applets, Edit the `~/.config/niri/rofi/shared/colors.rasi` and `~/.config/niri/rofi/shared/fonts.rasi` files.
+
+</TabItem>
+
+<TabItem value="wc_2" label="Wlogout" default>
+
+**Wlogout**, A Wayland logout menu is also configured for session management is Niri.
+
+Edit `~/.config/niri/scripts/wlogout` script to adjust the looks of wlogout. The configuration of wlogout can be found inside `~/.config/niri/wlogout` directory.
+
+If you want to use wlogout instead of rofi, Edit the config file `~/.config/niri/config.kdl` and uncomment wlogout keybindings.
+
+> If you need any help with wlogout config, run : `man wlogout` in terminal.
+
+</TabItem>
+
+</Tabs>
+
+:::warning
+
+When you change the `theme`, the **shared/colors.rasi** file of rofi gets overwritten by the theme script.
+
+:::
+
+### wayland compositor
+
+The configuration of Niri is available in `~/.config/niri`. To configure Niri wayland compositor, Edit this file:
+
+**`config.kdl`** : main configuration file for Top-level, layout, input/output, keybindings and window rules settings, etc <br/>
+
+> If you need any help with niri configuration, visit : [Niri Wiki](https://yalter.github.io/niri/)
+
+:::warning
+
+When you change the `theme`, colors in **config.kdl** file gets overwritten by the theme script.
+
+:::
+
+<!-- Keybindings ---------------------------------- -->
+
+## Keybindings
+
+Here's a list of some important keybinds you need to know for operating Niri easily. If you want to view, modify or add new keybinds, Edit `~/.config/niri/config.kdl` file.
+
+### Applications
+
+| Keys | Action |
+| --- | --- |
+| <kbd>super + Return</kbd> | Open terminal |
+| <kbd>super + shift + Return</kbd> | Open floating terminal |
+| <kbd>super + T</kbd> | Open fullscreen terminal |
+| <kbd>super + shift + F</kbd> | Open file manager (thunar) |
+| <kbd>super + shift + E</kbd> | Open text editor (geany) |
+| <kbd>super + shift + W</kbd> | Open web browser (firefox) |
+
+### Menu and Applets
+
+| Keys | Action |
+| --- | --- |
+| <kbd>super + D</kbd> | Open application launcher |
+| <kbd>Alt + F1</kbd> | Open application launcher |
+| <kbd>Alt + F2</kbd> | Open command runner |
+| <kbd>super + N</kbd> | Open network manager applet |
+| <kbd>super + M</kbd> | Open music applet |
+| <kbd>super + X</kbd> | Open powermenu applet |
+| <kbd>super + R</kbd> | Open asroot applet |
+| <kbd>super + S</kbd> | Open screenshots applet |
+| <kbd>super + B</kbd> | Open bluetooth applet |
+
+### Hardware Keys
+
+| Keys | Action |
+| --- | --- |
+| <kbd>Print</kbd> | Take screenshot |
+| <kbd>alt + Print</kbd> | Take screenshot in 5 seconds delay |
+| <kbd>shift + Print</kbd> | Take screenshot in 10 seconds delay |
+| <kbd>ctrl + Print</kbd> | Take screenshot of currently focused window |
+| <kbd>super + Print</kbd> | Take screenshot of selected area |
+| <kbd>XF86AudioRaiseVolume</kbd> | Increase volume |
+| <kbd>XF86AudioLowerVolume</kbd> | Decrease volume |
+| <kbd>XF86AudioMute</kbd> | Toggle mute speakers |
+| <kbd>XF86AudioMicMute</kbd> | Toggle mute microphone |
+| <kbd>XF86Audio + Next/Prev/Play/Stop</kbd> | Media controls (MPD) |
+| <kbd>XF86MonBrightnessUp</kbd> | Increase display brightness |
+| <kbd>XF86MonBrightnessDown</kbd> | Decrease display brightness |
+
+### Window Management
+
+| Keys | Action |
+| --- | --- |
+| <kbd>super + O</kbd> | Open/close the Overview |
+| <kbd>super + Q</kbd> | Close the focued window |
+| <kbd>super + F</kbd> | Maximize the focused column |
+| <kbd>super + ctrl + F</kbd> | Expand the focused column to available space |
+| <kbd>super + C</kbd> | Center the focused column on the screen |
+| <kbd>super + ctrl + C</kbd> | Center all fully visible columns on screen |
+| <kbd>super + Space</kbd> | Move the focused window between the floating and the tiling layout |
+| <kbd>super + shift + Space</kbd> | Switch focus between the floating and the tiling window |
+| <kbd>super + W</kbd> | Toggle tabbed column display mode |
+| <kbd>super + Left/Right/Up/Down</kbd> | Focus the column/window respectively |
+| <kbd>super + ctrl + Left/Right/Up/Down</kbd> | Move the column/window respectively |
+| <kbd>super + Home/End</kbd> | Focus first/last column  |
+| <kbd>super + ctrl + Home/End</kbd> | Move b/w first/last column  |
+| <kbd>super + shift + Left/Right/Up/Down</kbd> | Focus monitors respectively |
+| <kbd>super + shift + H/J/K/L</kbd> | Focus monitors respectively |
+| <kbd>super + shift + ctrl + Left/Right/Up/Down</kbd> | Move b/w monitors respectively |
+| <kbd>super + shift + ctrl + H/J/K/L</kbd> | Move b/w monitors respectively |
+| <kbd>super + Page_Down/Page_Up</kbd> | Focus to upper/lower workspaces |
+| <kbd>super + U/I</kbd> | Focus to upper/lower workspaces |
+| <kbd>super + ctrl + Page_Down/Page_Up</kbd> | Move to upper/lower workspaces |
+| <kbd>super + ctrl + U/I</kbd> | Move to upper/lower workspaces |
+| <kbd>super + shift + Page_Down/Page_Up</kbd> | Move a single window to upper/lower workspaces |
+| <kbd>super + shift + U/I</kbd> | Move a single window to upper/lower workspaces |
+| <kbd>super + 1..9</kbd> | Focus respective workspace |
+| <kbd>super + ctrl + 1..9</kbd> | Move column to respective workspace |
+| <kbd>super + Tab</kbd> | Switches focus between the current and the previous workspace |
+| <kbd>super + BracketLeft</kbd> | Consume or expel left window |
+| <kbd>super + BracketRight</kbd> | Consume or expel right window |
+| <kbd>super + Comma</kbd> | Consume one window from the right to the bottom of the focused column |
+| <kbd>super + Period</kbd> | Expel the bottom window from the focused column to the right |
+| <kbd>super + G</kbd> | Switch to preset column width |
+| <kbd>super + shift + G</kbd> | Switch to preset window height |
+| <kbd>super + ctrl + G</kbd> | Reset window height |
+| <kbd>super + Minus</kbd> | Set column width by -10%  |
+| <kbd>super + Equal</kbd> | Set column width by +10% |
+| <kbd>super + shift + Minus</kbd> | Set column height by -10%  |
+| <kbd>super + shift + Equal</kbd> | Set column height by +10% |
+
+### Misc Keys
+
+| Keys | Action |
+| --- | --- |
+| <kbd>super + shift + Slash</kbd> | shows a list of important hotkeys |
+| <kbd>super + shift + P</kbd> | Powers off the monitors |
+| <kbd>super + P</kbd> | Run colorpicker  |
+| <kbd>ctrl + alt + L</kbd> | Trigger lockscreen |
+| <kbd>ctrl + alt + Delete</kbd> | Quit Niri |
+
+### Touchpad Gestures
+
+| Gesture | Action |
+| --- | --- |
+| <kbd>super + SwipeUp</kbd> | Increase display brightness |
+| <kbd>super + SwipeDown</kbd> | Decrease display brightness |
+| <kbd>swipe-3 Left/Right</kbd> | Focus/Scroll the windows |
+| <kbd>swipe-3 Up/Down</kbd> | Change the workspace |
+| <kbd>swipe-4</kbd> | Open the Overview |
+
+<!-- Nvidia --------------------------------------- -->
+
+## Nvidia
+
+If you're on `Archcraft` and install the provided package, There's nothing else you need to do in order to run it on Nvidia machine. When you install Archcraft on a machine that has Nvidia, It does all the operations (mentioned below) required to run a wayland compositor on such machines. The compositor should work fine.
+
+If you're running any other distribution and want to install this setup on your Nvidia machine, You need to do some tweaking. In this guide, I'm assuing you're using **Arch Linux**. Follow the steps below to make this wayland compositor work on Nvidia :
+
+- Install **Nvidia Drivers** on your system. [NVIDIA](https://wiki.archlinux.org/title/NVIDIA) 
+- Edit `/etc/mkinitcpio.conf` file and add **`nvidia`** kernel modules
+```
+MODULES="nvidia nvidia_modeset nvidia_uvm nvidia_drm"
+```
+
+- In the same file, Remove `kms` hook from hooks array if present.
+- Rebuild your initrd file with : `sudo mkinitcpio -P linux`
+- Edit `/etc/default/grub` file and add **`nvidia_drm.modeset=1`** kernel parameter for Nvidia
+```
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash nvidia_drm.modeset=1 ..."
+```
+
+- Update your grub config file with : `sudo grub-mkconfig -o /boot/grub/grub.cfg`
+- Reboot your Nvidia Machine and login to your wayland compositor, It should work now.
+
+More Information: [NVIDIA#Installation](https://wiki.archlinux.org/title/NVIDIA#Installation), [NVIDIA#DRM_kernel_mode_setting](https://wiki.archlinux.org/title/NVIDIA#DRM_kernel_mode_setting)
+
+<!-- Themes --------------------------------------- -->
+
+## Screenshots
+
+### Desktop
+
+Here's few screenshots of `Niri` desktop. These'll give you an idea of the experience of Niri in Archcraft. 
+
+<Tabs>
+
+<TabItem value="wc_1" label="Default" default>
+
+|Desktop 1|Desktop 2|Desktop 3|Desktop 4|Desktop 5|
+|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/niri/desktop/desktop_1.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/niri/desktop/desktop_2.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/niri/desktop/desktop_3.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/niri/desktop/desktop_4.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/niri/desktop/desktop_5.png)|
+
+|Desktop 6|Desktop 7|Desktop 8|Desktop 9|Desktop 10|
+|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/niri/desktop/desktop_6.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/niri/desktop/desktop_7.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/niri/desktop/desktop_8.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/niri/desktop/desktop_9.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/niri/desktop/desktop_10.png)|
+
+|Desktop 11|Desktop 12|Desktop 13|Desktop 14|Desktop 15|
+|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/niri/desktop/desktop_11.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/niri/desktop/desktop_12.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/niri/desktop/desktop_13.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/niri/desktop/desktop_14.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/niri/desktop/desktop_15.png)|
+
+|Desktop 16|Desktop 17|Desktop 18|Desktop 19|
+|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/niri/desktop/desktop_16.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/niri/desktop/desktop_17.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/niri/desktop/desktop_18.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/niri/desktop/desktop_19.png)|
+
+</TabItem>
+
+<TabItem value="wc_2" label="Light" default>
+
+|Desktop 1|Desktop 2|Desktop 3|Desktop 4|
+|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/niri/desktop/light/desktop_1.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/niri/desktop/light/desktop_2.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/niri/desktop/light/desktop_3.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/niri/desktop/light/desktop_4.png)|
+
+</TabItem>
+
+</Tabs>
+
+### Themes
+
+To Change the theme, Click on `Color Palette` icon on waybar. To apply a random theme, **`Left Click`** on the theme module and To restore the default theme, **`Right Click`** on the theme module.
+
+To switch between Light/Dark mode, click on module with `moon/sun` icons.
+
+|Default Theme|Random Themes|Workspaces|Lockscreen|
+|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/niri/main.png)|![gif](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/niri/random/random.gif)|![gif](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/niri/workspaces/workspaces.gif)|![gif](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/niri/lock/lock.gif)|
+
+<!-- FAQs ----------------------------------------- -->
+
+## FAQs
+
+<details>
+<summary><b>How to update my config to new configs?</b></summary>
+
+Download the updated package from ko-fi (for free) and just install it to update to new configs.
+
+#### Steps to get updates (or re-download files):
+- Login to you Ko-fi account
+- Go to your `Ko-fi Payments History`
+- Select the purchases you've made
+- Click on `View Details`
+- Then, Click on `View Content` to download the updated files.
+
+</details>
+
+<details>
+<summary><b>Why my cursor is not visible?</b></summary>
+
+When using certain graphics drivers (e.g. the VMSVGA graphics controller or the proprietary NVIDIA dhypr), the cursor is invisible. This can be fixed by using software cursors :
+```bash
+$ export WLR_NO_HARDWARE_CURSORS=1
+```
+
+</details>
+
+<details>
+<summary><b>How to change GTK theme, icons and cursor?</b></summary>
+
+To change GTK theme, icons and cursor in Niri session, Edit `~/.config/niri/scripts/gtkthemes` script and restart Niri to apply the changes.
+```bash
+THEME='Sweet-Dark'
+ICONS='Glassy'
+FONT='Noto Sans 9'
+CURSOR='Sweet'
+```
+
+</details>
+
+<details>
+<summary><b>How to manage multiple monitors and resolution in Niri?</b></summary>
+
+If you use multiple monitors with Niri wayland compositor, you can manage them as follow:
+
+1. You can get the names of your outputs with `niri msg outputs`
+2. Edit `~/.config/niri/config.kdl` file and use the information you get by the command above:
+```json
+output "eDP-1" {
+    //off
+    mode                  "1920x1080@60.027"
+    scale                 1.0
+    transform             "normal"
+    position              x=0 y=0
+    variable-refresh-rate
+    focus-at-startup
+    background-color "#1b202f"
+    backdrop-color "#252b3f"
+}
+
+output "HDMI-A-1" {
+    //off
+    mode                  "1920x1080@60.000"
+    scale                 1.0
+    transform             "normal"
+    position              x=1920 y=0
+    variable-refresh-rate on-demand=true
+    focus-at-startup
+    background-color "#1b202f"
+    backdrop-color "#252b3f"
+}
+```
+
+</details>
+
+<details>
+<summary><b>Why Alacritty is not working on my computer?</b></summary>
+
+Since Alacritty is a OpenGL based terminal emulator, It may not work on some computer hardwares. You can make it work on such computers by following these methods :
+
+1. Open alacritty with **LIBGL_ALWAYS_SOFTWARE=1** variable. Edit the keybindings/script launching alacritty and replace `alacritty` with `LIBGL_ALWAYS_SOFTWARE=1 alacritty`
+2. Edit **/usr/share/applications/Alacritty.desktop** desktop file and replace `Exec=alacritty` with `Exec=env LIBGL_ALWAYS_SOFTWARE=1 alacritty`
+
+</details>
