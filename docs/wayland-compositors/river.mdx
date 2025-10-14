@@ -27,7 +27,7 @@ export const Highlight = ({children, color}) => (
 
 River is a dynamic tiling Wayland compositor with flexible runtime configuration.
 
-[![video](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/river/main.png)](https://youtu.be/MwnK6arB2Rc)
+[![video](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/river/main.gif)](https://youtu.be/MwnK6arB2Rc)
 
 :::tip[Archcraft River]
 
@@ -41,7 +41,7 @@ Get River From [**`ko-fi`**](https://ko-fi.com/s/69957c0587) And Support Archcra
 
 Follow the instructions below to install River :
 
-- Download **river.tar.gz** file from [ko-fi](https://ko-fi.com/s/69957c0587), and save it in a directory.
+- Download **river_YYYY-MM-DD.tar.gz** file from [ko-fi](https://ko-fi.com/s/69957c0587), and save it in a directory.
 - Open a terminal in same directory and run the following command to extract the tar file :
 ```bash
 $ tar -xzvf river_YYYY-MM-DD.tar.gz
@@ -62,7 +62,7 @@ $ sudo pacman -U archcraft-river-X.Y-Z-any.pkg.tar.zst
 <TabItem value="wc_2" label="Install On Other Distributions" default>
 
 If you want to install this setup on Arch Linux or on any other distro, follow the points below : 
-- Install the following programs on your Linux distro: `river` `lua` `lua-posix` `wlr-randr` `swaybg` `swayidle` `swaylock` `wlroots` `wl-clipboard` `waybar` `wofi` `foot` `mako` `grim` `slurp` `wf-recorder` `light` `yad` `thunar` `geany` `mpv` `mpd` `mpc` `viewnior` `imagemagick` `xfce-polkit` `xorg-xwayland` `xdg-desktop-portal-wlr` `playerctl` `pastel` `python-pywal` `alacritty` `rofi` `pulsemixer`
+- Install the following programs on your Linux distro: `river` `wlr-randr` `swaybg` `swayidle` `swaylock` `hyprpicker` `hyprlock` `wl-clipboard` `waybar` `wofi` `foot` `mako` `grim` `slurp` `wf-recorder` `light` `yad` `thunar` `geany` `mpv` `mpd` `mpc` `viewnior` `imagemagick` `xfce-polkit` `xorg-xwayland` `xdg-desktop-portal-wlr` `playerctl` `pastel` `python-pywal` `alacritty` `rofi` `pulsemixer`
 - After installing programs above, Create river directory in **`~/.config`**
 ```bash
 $ mkdir -p ~/.config/river
@@ -99,7 +99,9 @@ The configuration structure of River in Archcraft looks something like this:
 ~/.config
 └── river             : river config directory
     ├── alacritty     : alacritty terminal config
+    ├── config.d      : river config files
     ├── foot          : foot terminal config
+    ├── kitty         : kitty terminal config
     ├── mako          : notification daemon config
     │   └── icons     : notification icons
     ├── rofi          : rofi config files
@@ -107,8 +109,12 @@ The configuration structure of River in Archcraft looks something like this:
     ├── theme         : current theme and pywal themes
     ├── wallpapers    : wallpapers
     ├── waybar        : statusbar config
+    ├── waybar-alt    : alternate statusbar config
+    ├── wlogout       : wlogout config
+    │   └── icons     : session icons
     ├── wofi          : launcher, Powermenu config
-    └── init          : river init file (main config)
+    ├── hyprlock.conf : hyprlock config file
+    └── init          : river init file (source configs from config.d)
 ```
 
 ### Terminal
@@ -127,9 +133,21 @@ The configuration structure of River in Archcraft looks something like this:
 
 </TabItem>
 
-<TabItem value="wc_2" label="Alternate" default>
+<TabItem value="wc_2" label="Kitty" default>
 
-**Foot** is the secondary/alternate terminal. In the River wayland compositor, foot is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `~/.config/river/foot` directory. These are the following config files you can modify to change the behaviour of your foot terminal:
+**kitty** is the secondary/alternate terminal. In the River wayland compositor, kitty is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `~/.config/river/kitty` directory. These are the following config files you can modify to change the behaviour of your kitty terminal:
+
+**`~/.config/river/kitty/kitty.conf`** : Main configuration file <br/>
+**`~/.config/river/kitty/colors.conf`** : Colors configurations <br/>
+**`~/.config/river/kitty/fonts.conf`** : Fonts configurations
+
+> If you need any help with kitty config, run : `man kitty.conf` in terminal.
+
+</TabItem>
+
+<TabItem value="wc_3" label="Foot" default>
+
+**Foot** is another alternate terminal. In the River wayland compositor, foot is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `~/.config/river/foot` directory. These are the following config files you can modify to change the behaviour of your foot terminal:
 
 **`~/.config/river/foot/foot.ini`** : Main configuration file <br/>
 **`~/.config/river/foot/colors.ini`** : Colors configurations <br/>
@@ -143,13 +161,13 @@ The configuration structure of River in Archcraft looks something like this:
 
 :::tip
 
-By Default, alacritty is used But, If you want to use foot as your default terminal, just edit the `~/.config/river/init` file and comment the keybindings for **`Terminal : alacritty`** and uncomment the bindings for **`Terminal : foot`**
+By Default, alacritty is used But, If you want to use kitty/foot as your default terminal, just edit the `~/.config/river/config.d/70-keybindings.sh` file and comment the keybindings for **`Terminal : alacritty`** and uncomment the bindings for **`Terminal : kitty`** or **`Terminal : foot`**
 
 :::
 
 :::warning
 
-When you change the `theme`, the **colors.toml** file of alacritty and **colors.ini** file of foot get overwritten by the theme script.
+When you change the `theme`, the **colors.toml** file of alacritty, **colors.conf** file of kitty and **colors.ini** file of foot get overwritten by the theme script.
 
 :::
 
@@ -247,11 +265,23 @@ To change the colors and fonts of the launchers and applets, Edit the `~/.config
 
 </TabItem>
 
+<TabItem value="wc_3" label="Wlogout" default>
+
+**Wlogout**, A Wayland logout menu is also configured for session management is River.
+
+Edit `~/.config/river/scripts/wlogout` script to adjust the looks of wlogout. The configuration of wlogout can be found inside `~/.config/river/wlogout` directory.
+
+If you want to use wlogout instead of rofi and wofi, Edit the config file `~/.config/river/config` and uncomment wlogout keybindings.
+
+> If you need any help with wlogout config, run : `man wlogout` in terminal.
+
+</TabItem>
+
 </Tabs>
 
 :::tip
 
-By default, rofi is used as app launcher. But, If you want to use wofi instead of rofi, Edit the config file `~/.config/river/init` and uncomment wofi keybindings (and, comment the rofi bindings).
+By default, rofi is used as app launcher. But, If you want to use wofi instead of rofi, Edit the config file `~/.config/river/config.d/70-keybindings.sh` and uncomment wofi keybindings (and, comment the rofi bindings).
 
 :::
 
@@ -263,13 +293,25 @@ When you change the `theme`, the **shared/colors.rasi** file of rofi and **style
 
 ### wayland compositor
 
-The main configuration file of River is `~/.config/river/init`. Edit this file for everything, from startup programs to input/output config to keybindings, etc.
+The configuration of River is available in `~/.config/river/config.d`. To configure River wayland compositor, these are the files that are used :
+
+**`00-vars.sh`** : Variables and helpers <br/>
+**`10-startup.sh`** : Startup programs <br/>
+**`20-output.sh`** : Output/monitors config <br/>
+**`30-input.sh`** : Input devices config <br/>
+**`40-theme.sh`** : River theme config <br/>
+**`50-rules.sh`** : Window rules config <br/>
+**`60-modes.sh`** : Modes config <br/>
+**`70-keybindings.sh`** : Keybindings config <br/>
+**`80-tags.sh`** : Tags config <br/>
+**`90-mouse.sh`** : Mosue binding config  <br/>
+**`99-layout.sh`** : Layout config
 
 > If you need any help with river configuration, visit : [River Wiki](https://github.com/riverwm/river/wiki)
 
 :::warning
 
-When you change the `theme`, colors in **init** file gets overwritten by the theme script.
+When you change the `theme`, colors in **40-theme.sh** file gets overwritten by the theme script.
 
 :::
 
@@ -277,7 +319,7 @@ When you change the `theme`, colors in **init** file gets overwritten by the the
 
 ## Keybindings
 
-Here's a list of some important keybinds you need to know for operating River easily. If you want to view, modify or add new keybinds, Edit `~/.config/river/init` file.
+Here's a list of some important keybinds you need to know for operating River easily. If you want to view, modify or add new keybinds, Edit `~/.config/river/config.d/70-keybindings.sh` file.
 
 ### Applications
 
@@ -408,21 +450,39 @@ Here's few screenshots of `River` desktop. These'll give you an idea of the expe
 
 To Change the theme, Click on `Color Palette` icon on waybar. To apply a random theme, **`Left Click`** on the theme module and To restore the default theme, **`Right Click`** on the theme module.
 
+To switch between Light/Dark mode, click on module with `moon/sun` icons.
+
 <Tabs>
 
 <TabItem value="wc_1" label="Default Theme" default>
 
-There's only one theme available for River.
+Dark theme for River.
 
 ![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/river/main.png)
 
 </TabItem>
 
-<TabItem value="wc_2" label="Random Themes" default>
+<TabItem value="wc_2" label="Light Theme" default>
+
+Light theme for River.
+
+![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/river/main_light.png)
+
+</TabItem>
+
+<TabItem value="wc_3" label="Random Themes" default>
 
 Auto Generated themes with `pywal`.
 
 ![gif](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/river/random/random.gif)
+
+</TabItem>
+
+<TabItem value="wc_4" label="Lockscreen" default>
+
+Changes colors and wallpaper according to dark/light or `pywal` mode.
+
+![gif](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/river/lock.gif)
 
 </TabItem>
 
@@ -459,17 +519,13 @@ $ export WLR_NO_HARDWARE_CURSORS=1
 <details>
 <summary><b>How to change GTK theme, icons and cursor?</b></summary>
 
-To change GTK theme, icons and cursor in River session, Edit `~/.config/river/init` file and restart River to apply the changes.
-```lua
-local gsettings = {
-  ['org.gnome.desktop.interface'] = {
-    ['gtk-theme'] = 'Arc-Dark',
-    ['icon-theme'] = 'Arc-Circle',
-    ['font-name'] = "'Noto Sans 9'",
-    ['cursor-theme'] = river_options['xcursor-theme'][1],
-    ['cursor-size'] = river_options['xcursor-theme'][2],
-  },
-}
+To change GTK theme, icons and cursor in River session, Edit `~/.config/river/scripts/gtkthemes` file and restart River to apply the changes.
+```bash
+THEME='Arc-Dark'
+ICONS='Arc-Circle'
+FONT='Noto Sans 9'
+CURSOR='Qogirr'
+BTN_LAYOUT=':close'
 ```
 
 </details>
@@ -480,26 +536,25 @@ local gsettings = {
 If you use multiple monitors with River wayland compositor, you can manage them as follow:
 
 1. You can get the names of your outputs with `wlr-randr`
-2. Edit `~/.config/river/init` file and use the information you get by the command above:
-```lua
-local outputs = {
--- Laptop screen, mode: 1920x1080, scale: 1
-  ['eDP-1'] = {
-    mode = '1920x1080',
-    pos = '0,0',
-    transform = 'normal',
-    scale = '1.000000',
-    preferred = true,
-  },
--- External monitor, mode: 1920x1080, position: right of laptop, scale: 1.5
-  ['HDMI-A-1'] = {
-    mode = '1920x1080',
-    pos = '1920,0',
-    transform = 'normal',
-    scale = '1.500000',
-    preferred = true,
-  },
-}
+2. Edit `~/.config/river/config.d/20-output.sh` file and use the information you get by the command above:
+```bash
+## Output eDP-1 : Laptop Display
+wlr-randr --output "eDP-1" \
+  --preferred \
+  --mode 1920x1080@60.027000 \
+  --pos 0,0 \
+  --transform normal \
+  --scale 1.0 \
+  --adaptive-sync disabled
+
+## Output HDMI-A-1 : Monitor
+wlr-randr --output "HDMI-A-1" \
+  --mode 1920x1080@60.000000 \
+  --pos 1920,0 \
+  --right-of 'eDP-1' \
+  --transform normal \
+  --scale 1.0 \
+  --adaptive-sync disabled
 ```
 
 </details>

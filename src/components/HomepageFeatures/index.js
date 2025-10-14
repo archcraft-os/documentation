@@ -9,8 +9,8 @@ const FeatureList = [
     Svg: require('../../../static/img/minimal.svg').default,
     description: (
 		<Translate>
-			Archcraft is minimal and lightweight.
-			It can run under 500Mb of memory as It only uses window managers and lightweight applications.
+			Archcraft stays minimal and responsive. 
+			With lightweight apps and window managers, it runs smoothly on under 500 MB of memory.
 		</Translate>
     ),
   },
@@ -19,8 +19,7 @@ const FeatureList = [
     Svg: require('../../../static/img/stunning.svg').default,
     description: (
 		<Translate>
-			Flat and pastel colors, the consistency among all the UI elements, 
-			And various themes make Archcraft look very clean, minimal and Stunning.
+			Flat and pastel colors, consistent UI elements, and multiple themes make Archcraft look clean, minimal, and stunning.
 		</Translate>
     ),
   },
@@ -29,8 +28,7 @@ const FeatureList = [
     Svg: require('../../../static/img/powerful.svg').default,
     description: (
 		<Translate>
-			With latest softwares and built-in support for AUR, and being lightweight, 
-			Archcraft gives you the power to do whatever you want on your Linux PC.
+			With cutting-edge software, seamless AUR access, and a minimal footprint, Archcraft empowers you to do more on your Linux PC.
 		</Translate>
     ),
   },

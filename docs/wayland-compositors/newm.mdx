@@ -55,7 +55,7 @@ Get NEWM From [**`ko-fi`**](https://ko-fi.com/s/524182856f) And Support Archcraf
 
 Follow the instructions below to install NEWM :
 
-- Download **newm.tar.gz** file from [ko-fi](https://ko-fi.com/s/524182856f), and save it in a directory.
+- Download **newm_YYYY-MM-DD.tar.gz** file from [ko-fi](https://ko-fi.com/s/524182856f), and save it in a directory.
 - Open a terminal in same directory and run the following command to extract the tar file :
 ```bash
 $ tar -xzvf newm_YYYY-MM-DD.tar.gz
@@ -67,15 +67,8 @@ $ tar -xzvf newm_YYYY-MM-DD.tar.gz
 <TabItem value="wc_1" label="Install On Archcraft" default>
 
 On Archcraft, You can simply install the provided packages in **pkgs** directory :
-
-**To install solid version :**
 ```bash
 $ sudo pacman -U archcraft-newm-X.Y-Z-any.pkg.tar.zst
-```
-
-**To install blur version :**
-```bash
-$ sudo pacman -U archcraft-newm-blur-X.Y-Z-any.pkg.tar.zst
 ```
 
 </TabItem>
@@ -83,18 +76,14 @@ $ sudo pacman -U archcraft-newm-blur-X.Y-Z-any.pkg.tar.zst
 <TabItem value="wc_2" label="Install On Other Distributions" default>
 
 If you want to install this setup on Arch Linux or on any other distro, follow the points below : 
-- Install the following programs on your Linux distro: [`newm-atha`](https://git.sr.ht/~atha/newm-atha), `wtype` `alacritty` `wlroots` `wl-clipboard` `waybar` `wofi` `foot` `mako` `grim` `slurp` `wf-recorder` `light` `yad` `wlogout` `thunar` `geany` `mpv` `mpd` `mpc` `viewnior` `imagemagick` `xfce-polkit` `xorg-xwayland` `xdg-desktop-portal-wlr` `playerctl`
+- Install the following programs on your Linux distro: [`newm-next-git`](https://github.com/newm-next/newm-next), `wtype` `alacritty` `wl-clipboard` `waybar` `wofi` `foot` `mako` `grim` `slurp` `wf-recorder` `light` `yad` `wlogout` `thunar` `geany` `mpv` `mpd` `mpc` `viewnior` `imagemagick` `xfce-polkit` `xorg-xwayland` `xdg-desktop-portal` `xdg-desktop-portal-wlr` `xdg-desktop-portal-gtk` `playerctl`
 - After installing programs above, Create _newm_ directory in **`~/.config`**
 ```bash
 $ mkdir -p ~/.config/newm
 ```
-- To install **solid** style, Copy Everything from _`dotfiles/solid`_ to **`~/.config/newm`**
+- Copy Everything from _`dotfiles`_ to **`~/.config/newm`**
 ```bash
-$ cp -r ./dotfiles/solid/* ~/.config/newm/
-```
-- To install **blur** style, Copy Everything from _`dotfiles/blur`_ to **`~/.config/newm`**
-```bash
-$ cp -r ./dotfiles/blur/* ~/.config/newm/
+$ cp -r ./dotfiles/* ~/.config/newm/
 ```
 - To launch `Newm` properly on your system, install the additional files provided in _`shared`_ directory :
 ```bash
@@ -129,7 +118,8 @@ The configuration structure of NEWM in Archcraft looks something like this:
 ```
 ~/.config
 └── newm              : newm config directory
-    ├── foot          : terminal config
+    ├── foot          : foot terminal config
+    ├── kitty         : kitty terminal config
     ├── mako          : notification daemon config
     │   └── icons     : notification icons
     ├── rofi          : rofi config files
@@ -144,6 +134,10 @@ The configuration structure of NEWM in Archcraft looks something like this:
 
 ### Terminal
 
+<Tabs>
+
+<TabItem value="wc_1" label="Default" default>
+
 **Foot** is the default terminal. In the NEWM wayland compositor, foot is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `~/.config/newm/foot` directory. These are the following config files you can modify to change the behaviour of your foot terminal:
 
 **`~/.config/newm/foot/foot.ini`** : Main configuration file <br/>
@@ -151,6 +145,22 @@ The configuration structure of NEWM in Archcraft looks something like this:
 **`~/.config/newm/foot/fonts.ini`** : Fonts configurations
 
 > If you need any help with foot config, run : `man foot.ini` in terminal.
+
+</TabItem>
+
+<TabItem value="wc_2" label="Alternate" default>
+
+**kitty** is the secondary/alternate terminal. In the NEWM wayland compositor, kitty is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `~/.config/newm/kitty` directory. These are the following config files you can modify to change the behaviour of your kitty terminal:
+
+**`~/.config/newm/kitty/kitty.conf`** : Main configuration file <br/>
+**`~/.config/newm/kitty/colors.conf`** : Colors configurations <br/>
+**`~/.config/newm/kitty/fonts.conf`** : Fonts configurations
+
+> If you need any help with kitty config, run : `man kitty.conf` in terminal.
+
+</TabItem>
+
+</Tabs>
 
 ### Notification
 
@@ -162,15 +172,11 @@ The configuration structure of NEWM in Archcraft looks something like this:
 
 If you want to change the wallpaper, Edit `~/.config/newm/config.py` script and add your wallpaper here :
 ```py
-background = {
-    ##-- Apply selected wallpaper on each startup and config reload
-    #'path': os.environ['HOME'] + '/path/to/your/wallpapers',
+theme = {
+    ...
 
-    ##-- Apply random wallpaper on each startup and config reload
-    'path': os.environ["HOME"] + f"/path/to/your/wallpapers-directory/wallpaper-{random.randrange(1, 6)}.jpg",
-
-    'time_scale': 0.125,
-    'anim': True,
+    "wallpapers": "~/.config/newm/wallpapers/*.jpg",
+    "default_wallpaper": "~/.config/newm/wallpapers/wallpaper-1.jpg",
 }
 ```
 
@@ -353,7 +359,7 @@ If you're on `Archcraft` and install the provided package, There's nothing else 
 
 If you're running any other distribution and want to install this setup on your Nvidia machine, You need to do some tweaking. In this guide, I'm assuing you're using **Arch Linux**. Follow the steps below to make this wayland compositor work on Nvidia :
 
-- Install **Nvidia Dnewms** on your system. [NVIDIA](https://wiki.archlinux.org/title/NVIDIA) 
+- Install **Nvidia Drivers** on your system. [NVIDIA](https://wiki.archlinux.org/title/NVIDIA) 
 - Edit `/etc/mkinitcpio.conf` file and add **`nvidia`** kernel modules
 ```
 MODULES="nvidia nvidia_modeset nvidia_uvm nvidia_drm"
@@ -378,6 +384,8 @@ More Information: [NVIDIA#Installation](https://wiki.archlinux.org/title/NVIDIA#
 ### Desktop
 
 Here's few screenshots of `NEWM` desktop. These'll give you an idea of the experience of NEWM in Archcraft. 
+
+To toggle blur mode, click on module with `toggle icon` on waybar.
 
 <Tabs>
 
@@ -460,12 +468,17 @@ $ export WLR_NO_HARDWARE_CURSORS=1
 <details>
 <summary><b>How to change GTK theme, icons and cursor?</b></summary>
 
-To change GTK theme, icons and cursor in NEWM session, Edit `~/.config/newm/scripts/gtkthemes` script and restart NEWM to apply the changes.
-```bash
-THEME='Nordic'
-ICONS='Qogir-Dark'
-FONT='Noto Sans 9'
-CURSOR='Qogirr-Dark'
+To change GTK theme, icons and cursor in NEWM session, Edit `~/.config/newm/config.py` script and restart NEWM to apply the changes.
+```py
+theme = {
+    "gtk_theme": "Nordic",
+    "icon_theme": "Qogir-Dark",
+    "cursor_theme": "Qogirr-Dark",
+    "cursor_size": 16,
+    "font": "Noto Sans 9",
+
+    ....
+}
 ```
 
 </details>
@@ -479,6 +492,10 @@ If you use multiple monitors with NEWM wayland compositor, you can manage them a
 2. Edit `~/.config/newm/config.py` file and use the information you get by the command above:
 ```py
 outputs = [
+	##-- Default (All Monitors), Mode: 1920x1080, Scale: 1
+    { 'name': '*', 'scale': 1.0, 'width': 1920, 'height': 1080,
+      'mHz': 60, 'pos_x': 0, 'pos_y': 0 , 'anim': True },
+
 	##-- Laptop Display, Mode: 1920x1080, Scale: 1
     { 'name': 'eDP-1', 'scale': 1.0, 'width': 1920, 'height': 1080,
       'mHz': 60, 'pos_x': 0, 'pos_y': 0 , 'anim': True },

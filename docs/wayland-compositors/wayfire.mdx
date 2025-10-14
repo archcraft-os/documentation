@@ -27,7 +27,7 @@ export const Highlight = ({children, color}) => (
 
 Wayfire is a wayland compositor based on wlroots. It aims to create a customizable, extendable and lightweight environment without sacrificing its appearance.
 
-[![video](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/wayfire/main.png)](https://youtu.be/PXEerGOE8hc)
+[![video](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/wayfire/main.gif)](https://youtu.be/PXEerGOE8hc)
 
 :::tip[Archcraft Wayfire]
 
@@ -41,7 +41,7 @@ Get Wayfire From [**`ko-fi`**](https://ko-fi.com/s/f379e986f4) And Support Archc
 
 Follow the instructions below to install Wayfire :
 
-- Download **wayfire.tar.gz** file from [ko-fi](https://ko-fi.com/s/f379e986f4), and save it in a directory.
+- Download **wayfire_YYYY-MM-DD.tar.gz** file from [ko-fi](https://ko-fi.com/s/f379e986f4), and save it in a directory.
 - Open a terminal in same directory and run the following command to extract the tar file :
 ```bash
 $ tar -xzvf wayfire_YYYY-MM-DD.tar.gz
@@ -62,7 +62,7 @@ $ sudo pacman -U archcraft-wayfire-X.Y-Z-any.pkg.tar.zst
 <TabItem value="wc_2" label="Install On Other Distributions" default>
 
 If you want to install this setup on Arch Linux or on any other distro, follow the points below : 
-- Install the following programs on your Linux distro: `wayfire` `swaybg` `swayidle` `swaylock` `wlroots` `wl-clipboard` `waybar` `wofi`  `kanshi` `foot` `mako` `grim` `slurp` `wf-recorder` `light` `yad` `wlogout` `thunar` `geany` `mpv` `mpd` `mpc` `viewnior` `imagemagick` `xfce-polkit` `xorg-xwayland` `xdg-desktop-portal-wlr` `playerctl` `pastel` `python-pywal` `alacritty` `rofi` `pulsemixer`
+- Install the following programs on your Linux distro: `wayfire` `swaybg` `swayidle` `swaylock` `hyprlock` `wl-clipboard` `waybar` `wofi`  `kanshi` `foot` `mako` `grim` `slurp` `wf-recorder` `light` `yad` `wlogout` `thunar` `geany` `mpv` `mpd` `mpc` `viewnior` `imagemagick` `xfce-polkit` `xorg-xwayland` `xdg-desktop-portal-wlr` `playerctl` `pastel` `python-pywal` `alacritty` `rofi` `pulsemixer` `libxml2-legacy`
 - After installing programs above, Copy Everything from _dotfiles_ to **`~/.config`** :
 ```bash
 $ cp -r ./dotfiles/* ~/.config/
@@ -97,6 +97,7 @@ The configuration structure of Wayfire in Archcraft looks something like this:
 └── wayfire           : shared Files
     ├── alacritty     : alacritty terminal config
     ├── foot          : foot terminal config
+    ├── kitty         : kitty terminal config
     ├── mako          : notification daemon config
     │   └── icons     : notification icons
     ├── rofi          : rofi config files
@@ -106,7 +107,8 @@ The configuration structure of Wayfire in Archcraft looks something like this:
     ├── waybar        : statusbar config
     ├── wlogout       : wlogout config
     │   └── icons     : session icons
-    └── wofi          : launcher config
+    ├── wofi          : launcher config
+    └── hyprlock.conf : hyprlock config file
 ```
 
 ### Terminal
@@ -125,9 +127,21 @@ The configuration structure of Wayfire in Archcraft looks something like this:
 
 </TabItem>
 
-<TabItem value="wc_2" label="Alternate" default>
+<TabItem value="wc_2" label="Kitty" default>
 
-**Foot** is the secondary/alternate terminal. In the Wayfire wayland compositor, foot is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `~/.config/wayfire/foot` directory. These are the following config files you can modify to change the behaviour of your foot terminal:
+**kitty** is the secondary/alternate terminal. In the Wayfire wayland compositor, kitty is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `~/.config/wayfire/kitty` directory. These are the following config files you can modify to change the behaviour of your kitty terminal:
+
+**`~/.config/wayfire/kitty/kitty.conf`** : Main configuration file <br/>
+**`~/.config/wayfire/kitty/colors.conf`** : Colors configurations <br/>
+**`~/.config/wayfire/kitty/fonts.conf`** : Fonts configurations
+
+> If you need any help with kitty config, run : `man kitty.conf` in terminal.
+
+</TabItem>
+
+<TabItem value="wc_3" label="Foot" default>
+
+**Foot** is another alternate terminal. In the Wayfire wayland compositor, foot is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `~/.config/wayfire/foot` directory. These are the following config files you can modify to change the behaviour of your foot terminal:
 
 **`~/.config/wayfire/foot/foot.ini`** : Main configuration file <br/>
 **`~/.config/wayfire/foot/colors.ini`** : Colors configurations <br/>
@@ -141,13 +155,13 @@ The configuration structure of Wayfire in Archcraft looks something like this:
 
 :::tip
 
-By Default, alacritty is used But, If you want to use foot as your default terminal, just edit the `~/.config/wayfire.ini` file and comment the keybindings for **`Terminal : alacritty`** and uncomment the bindings for **`Terminal : foot`**
+By Default, alacritty is used But, If you want to use kitty/foot as your default terminal, just edit the `~/.config/wayfire.ini` file and comment the keybindings for **`Terminal : alacritty`** and uncomment the bindings for **`Terminal : kitty`** or **`Terminal : foot`**
 
 :::
 
 :::warning
 
-When you change the `theme`, the **colors.toml** file of alacritty and **colors.ini** file of foot get overwritten by the theme script.
+When you change the `theme`, the **colors.toml** file of alacritty, **colors.conf** file of kitty and **colors.ini** file of foot get overwritten by the theme script.
 
 :::
 
@@ -458,21 +472,39 @@ Here's few screenshots of `Wayfire` desktop. These'll give you an idea of the ex
 
 To Change the theme, Click on `Color Palette` icon on waybar. To apply a random theme, **`Left Click`** on the theme module and To restore the default theme, **`Right Click`** on the theme module.
 
+To switch between Light/Dark mode, click on module with `moon/sun` icons.
+
 <Tabs>
 
 <TabItem value="wc_1" label="Default Theme" default>
 
-There's only one theme available for Wayfire.
+Dark theme for Wayfire.
 
 ![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/wayfire/main.png)
 
 </TabItem>
 
-<TabItem value="wc_2" label="Random Themes" default>
+<TabItem value="wc_2" label="Light Theme" default>
+
+Light theme for Wayfire.
+
+![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/wayfire/main_light.png)
+
+</TabItem>
+
+<TabItem value="wc_3" label="Random Themes" default>
 
 Auto Generated themes with `pywal`.
 
 ![gif](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/wayfire/random/random.gif)
+
+</TabItem>
+
+<TabItem value="wc_4" label="Lockscreen" default>
+
+Changes colors and wallpaper according to dark/light or `pywal` mode.
+
+![gif](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/wayfire/lock.gif)
 
 </TabItem>
 

@@ -27,7 +27,7 @@ export const Highlight = ({children, color}) => (
 
 Sway is a tiling Wayland compositor and a drop-in replacement for the i3 window manager for X11. It works with your existing i3 configuration and supports most of i3's features, plus a few extras.
 
-[![video](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/sway/main.png)](https://youtu.be/ASlQcf8Jc0I)
+[![video](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/sway/main.gif)](https://youtu.be/ASlQcf8Jc0I)
 
 :::tip[Archcraft Sway]
 
@@ -41,7 +41,7 @@ Get Sway From [**`ko-fi`**](https://ko-fi.com/s/10f2e87af3) And Support Archcraf
 
 Follow the instructions below to install Sway :
 
-- Download **sway.tar.gz** file from [ko-fi](https://ko-fi.com/s/10f2e87af3), and save it in a directory.
+- Download **sway_YYYY-MM-DD.tar.gz** file from [ko-fi](https://ko-fi.com/s/10f2e87af3), and save it in a directory.
 - Open a terminal in same directory and run the following command to extract the tar file :
 ```bash
 $ tar -xzvf sway_YYYY-MM-DD.tar.gz
@@ -62,7 +62,7 @@ $ sudo pacman -U archcraft-sway-X.Y-Z-any.pkg.tar.zst
 <TabItem value="wc_2" label="Install On Other Distributions" default>
 
 If you want to install this setup on Arch Linux or on any other distro, follow the points below : 
-- Install the following programs on your Linux distro: `sway` `swaybg` `swayidle` `swaylock` `wlroots` `wl-clipboard` `waybar` `wofi`  `kanshi` `foot` `mako` `grim` `slurp` `wf-recorder` `light` `yad` `wlogout` `thunar` `geany` `mpv` `mpd` `mpc` `viewnior` `imagemagick` `xfce-polkit` `xorg-xwayland` `xdg-desktop-portal-wlr` `playerctl` `pastel` `python-pywal` `alacritty` `rofi` `pulsemixer`
+- Install the following programs on your Linux distro: `sway` `swaybg` `swayidle` `swaylock` `hyprpicker` `hyprlock` `wl-clipboard` `waybar` `wofi`  `kanshi` `foot` `mako` `grim` `slurp` `wf-recorder` `light` `yad` `wlogout` `thunar` `geany` `mpv` `mpd` `mpc` `viewnior` `imagemagick` `xfce-polkit` `xorg-xwayland` `xdg-desktop-portal-wlr` `playerctl` `pastel` `python-pywal` `alacritty` `rofi` `pulsemixer`
 - After installing programs above, Create sway directory in **`~/.config`**
 ```bash
 $ mkdir -p ~/.config/sway
@@ -100,6 +100,7 @@ The configuration structure of Sway in Archcraft looks something like this:
 └── sway              : sway config directory
     ├── alacritty     : alacritty terminal config
     ├── foot          : foot terminal config
+    ├── kitty         : kitty terminal config
     ├── mako          : notification daemon config
     │   └── icons     : notification icons
     ├── rofi          : rofi config files
@@ -111,6 +112,7 @@ The configuration structure of Sway in Archcraft looks something like this:
     │   └── icons     : session icons
     ├── wofi          : launcher config
     ├── config        : main sway config
+    ├── hyprlock.conf : hyprlock config file
     ├── sway-idle     : sway idle config
     ├── sway-input    : sway input config
     ├── sway-modes    : sway mode config
@@ -134,9 +136,21 @@ The configuration structure of Sway in Archcraft looks something like this:
 
 </TabItem>
 
-<TabItem value="wc_2" label="Alternate" default>
+<TabItem value="wc_2" label="Kitty" default>
 
-**Foot** is the secondary/alternate terminal. In the Sway wayland compositor, foot is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `~/.config/sway/foot` directory. These are the following config files you can modify to change the behaviour of your foot terminal:
+**kitty** is the secondary/alternate terminal. In the Sway wayland compositor, kitty is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `~/.config/sway/kitty` directory. These are the following config files you can modify to change the behaviour of your kitty terminal:
+
+**`~/.config/sway/kitty/kitty.conf`** : Main configuration file <br/>
+**`~/.config/sway/kitty/colors.conf`** : Colors configurations <br/>
+**`~/.config/sway/kitty/fonts.conf`** : Fonts configurations
+
+> If you need any help with kitty config, run : `man kitty.conf` in terminal.
+
+</TabItem>
+
+<TabItem value="wc_3" label="Foot" default>
+
+**Foot** is another alternate terminal. In the Sway wayland compositor, foot is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `~/.config/sway/foot` directory. These are the following config files you can modify to change the behaviour of your foot terminal:
 
 **`~/.config/sway/foot/foot.ini`** : Main configuration file <br/>
 **`~/.config/sway/foot/colors.ini`** : Colors configurations <br/>
@@ -150,13 +164,13 @@ The configuration structure of Sway in Archcraft looks something like this:
 
 :::tip
 
-By Default, alacritty is used But, If you want to use foot as your default terminal, just edit the `~/.config/sway/config` file and comment the keybindings for **`Terminal : alacritty`** and uncomment the bindings for **`Terminal : foot`**
+By Default, alacritty is used But, If you want to use kitty/foot as your default terminal, just edit the `~/.config/sway/config` file and comment the keybindings for **`Terminal : alacritty`** and uncomment the bindings for **`Terminal : kitty`** or **`Terminal : foot`**
 
 :::
 
 :::warning
 
-When you change the `theme`, the **colors.toml** file of alacritty and **colors.ini** file of foot get overwritten by the theme script.
+When you change the `theme`, the **colors.toml** file of alacritty, **colors.conf** file of kitty and **colors.ini** file of foot get overwritten by the theme script.
 
 :::
 
@@ -454,21 +468,39 @@ Here's few screenshots of `Sway` desktop. These'll give you an idea of the exper
 
 To Change the theme, Click on `Color Palette` icon on waybar. To apply a random theme, **`Left Click`** on the theme module and To restore the default theme, **`Right Click`** on the theme module.
 
+To switch between Light/Dark mode, click on module with `moon/sun` icons.
+
 <Tabs>
 
 <TabItem value="wc_1" label="Default Theme" default>
 
-There's only one theme available for Sway.
+Dark theme for Sway.
 
 ![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/sway/main.png)
 
 </TabItem>
 
-<TabItem value="wc_2" label="Random Themes" default>
+<TabItem value="wc_2" label="Light Theme" default>
+
+Light theme for Sway.
+
+![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/sway/main_light.png)
+
+</TabItem>
+
+<TabItem value="wc_3" label="Random Themes" default>
 
 Auto Generated themes with `pywal`.
 
 ![gif](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/sway/random/random.gif)
+
+</TabItem>
+
+<TabItem value="wc_4" label="Lockscreen" default>
+
+Changes colors and wallpaper according to dark/light or `pywal` mode.
+
+![gif](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/sway/lock.gif)
 
 </TabItem>
 
@@ -507,10 +539,10 @@ $ export WLR_NO_HARDWARE_CURSORS=1
 
 To change GTK theme, icons and cursor in Sway session, Edit `~/.config/sway/sway-theme` file and restart Sway to apply the changes.
 ```bash
-gsettings set $gnome-schema gtk-theme 'Manhattan'
-gsettings set $gnome-schema icon-theme 'Luv-Folders-Dark'
-gsettings set $gnome-schema cursor-theme 'Qogirr'
-gsettings set $gnome-schema font-name 'Noto Sans 9'
+set $sway_gtk_theme    Manhattan
+set $sway_icon_theme   Luv-Folders-Dark
+set $sway_cursor_theme Qogirr
+set $sway_fonts        Noto Sans 9
 ```
 
 </details>

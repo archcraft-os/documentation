@@ -31,13 +31,13 @@ Hyprland is a dynamic tiling Wayland compositor based on wlroots that doesn't sa
 
 <TabItem value="wc_1" label="Dark" default>
 
-[![video](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/hyprland/style_1/main.png)](https://youtu.be/t6Zd2F7rtPw)
+[![video](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/hyprland/style_1/main.gif)](https://youtu.be/t6Zd2F7rtPw)
 
 </TabItem>
 
 <TabItem value="wc_2" label="Catppuccin" default>
 
-![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/hyprland/style_2/main.png)
+![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/hyprland/style_2/main.gif)
 
 </TabItem>
 
@@ -55,7 +55,7 @@ Get Hyprland From [**`ko-fi`**](https://ko-fi.com/s/71d0e298d9) And Support Arch
 
 Follow the instructions below to install Hyprland :
 
-- Download **hyprland.tar.gz** file from [ko-fi](https://ko-fi.com/s/71d0e298d9), and save it in a directory.
+- Download **hyprland_YYYY-MM-DD.tar.gz** file from [ko-fi](https://ko-fi.com/s/71d0e298d9), and save it in a directory.
 - Open a terminal in same directory and run the following command to extract the tar file :
 ```bash
 $ tar -xzvf hyprland_YYYY-MM-DD.tar.gz
@@ -67,15 +67,8 @@ $ tar -xzvf hyprland_YYYY-MM-DD.tar.gz
 <TabItem value="wc_1" label="Install On Archcraft" default>
 
 On Archcraft, You can simply install the provided packages in **pkgs** directory :
-
-**To install dark version :**
 ```bash
 $ sudo pacman -U archcraft-hyprland-X.Y-Z-any.pkg.tar.zst
-```
-
-**To install catppuccin version :**
-```bash
-$ sudo pacman -U archcraft-hyprland-catppuccin-X.Y-Z-any.pkg.tar.zst
 ```
 
 </TabItem>
@@ -83,19 +76,12 @@ $ sudo pacman -U archcraft-hyprland-catppuccin-X.Y-Z-any.pkg.tar.zst
 <TabItem value="wc_2" label="Install On Other Distributions" default>
 
 If you want to install this setup on Arch Linux or on any other distro, follow the points below : 
-- Install the following programs on your Linux distro: [`hyprland`](https://github.com/vaxerski/Hyprland), `swaybg` `swayidle` `swaylock` `wlroots` `wl-clipboard` `waybar` `wofi` `foot` `mako` `grim` `slurp` `wf-recorder` `light` `yad` `thunar` `geany` `mpv` `mpd` `mpc` `viewnior` `imagemagick` `xfce-polkit` `xorg-xwayland` `xdg-desktop-portal-wlr` `playerctl` `pastel` `python-pywal` `alacritty` `rofi` `pulsemixer`
-- After installing programs above, Create hypr directory in **`~/.config`**
+- Install the following programs on your Linux distro: [`hyprland`](https://github.com/vaxerski/Hyprland), `hyprlock` `hypridle` `hyprpicker` `hyprpaper` `hyprsunset` `hyprland-qtutils` `wl-clipboard` `waybar` `wofi` `foot` `mako` `grim` `slurp` `wf-recorder` `light` `yad` `thunar` `geany` `mpv` `mpd` `mpc` `viewnior` `imagemagick` `xfce-polkit` `xorg-xwayland` `xdg-desktop-portal-hyprland` `xdg-desktop-portal` `xdg-desktop-portal-gtk` `playerctl` `pastel` `python-pywal` `alacritty` `rofi` `pulsemixer`
+- After installing programs above, Copy Everything from _`dotfiles/`_ to **`~/.config`**
 ```bash
-$ mkdir -p ~/.config/hypr
+$ cp -r ./dotfiles/* ~/.config/
 ```
-- To install **dark** style, Copy Everything from _`dotfiles/dark`_ to **`~/.config/hypr`**
-```bash
-$ cp -r ./dotfiles/dark/* ~/.config/hypr/
-```
-- To install **catppuccin** style, Copy Everything from _`dotfiles/catppuccin`_ to **`~/.config/hypr`**
-```bash
-$ cp -r ./dotfiles/catppuccin/* ~/.config/hypr/
-```
+
 - Logout and login to your amazingly configured Hyprland WC.
 
 > Install the **fonts** from `fonts` and **GTK theme, icons and cursor** from `gtk` directory for overall appearance.
@@ -122,21 +108,26 @@ The configuration structure of Hyprland in Archcraft looks something like this:
 
 ```
 ~/.config
-└── hypr               : hyprland config directory
-    ├── alacritty      : alacritty terminal config
-    ├── foot           : foot terminal config
-    ├── mako           : notification daemon config
-    │   └── icons      : notification icons
-    ├── rofi           : rofi config files
-    ├── scripts        : various scripts for functionality
-    ├── theme          : current theme and pywal themes
-    ├── wallpapers     : wallpapers
-    ├── waybar         : statusbar config
-    ├── wlogout        : wlogout config
-    │   └── icons      : session icons
-    ├── wofi           : launcher config
-    ├── hyprland.conf  : hyprland config file
-    └── hyprtheme.conf : colors and theme elements file
+└── hypr                : hyprland config directory
+    ├── alacritty       : alacritty terminal config
+    ├── config.d        : hyprland config files
+    ├── foot            : foot terminal config
+    ├── kitty           : kitty terminal config
+    ├── mako            : notification daemon config
+    │   └── icons       : notification icons
+    ├── rofi            : rofi config files
+    ├── scripts         : various scripts for functionality
+    ├── theme           : current theme and pywal themes
+    ├── wallpapers      : wallpapers
+    ├── waybar          : statusbar config
+    ├── wlogout         : wlogout config
+    │   └── icons       : session icons
+    ├── wofi            : launcher config
+    ├── hypridle.conf   : hypridle config file
+    ├── hyprland.conf   : hyprland config file
+    ├── hyprlock.conf   : hyprlock config file
+    ├── hyprpaper.conf  : hyprpaper config file
+    └── hyprsunset.conf : hyprsunset config file
 ```
 
 ### Terminal
@@ -155,9 +146,21 @@ The configuration structure of Hyprland in Archcraft looks something like this:
 
 </TabItem>
 
-<TabItem value="wc_2" label="Alternate" default>
+<TabItem value="wc_2" label="Kitty" default>
 
-**Foot** is the secondary/alternate terminal. In the Hyprland wayland compositor, foot is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `~/.config/hypr/foot` directory. These are the following config files you can modify to change the behaviour of your foot terminal:
+**kitty** is the secondary/alternate terminal. In the Hyprland wayland compositor, kitty is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `~/.config/hyprland/kitty` directory. These are the following config files you can modify to change the behaviour of your kitty terminal:
+
+**`~/.config/hyprland/kitty/kitty.conf`** : Main configuration file <br/>
+**`~/.config/hyprland/kitty/colors.conf`** : Colors configurations <br/>
+**`~/.config/hyprland/kitty/fonts.conf`** : Fonts configurations
+
+> If you need any help with kitty config, run : `man kitty.conf` in terminal.
+
+</TabItem>
+
+<TabItem value="wc_3" label="Foot" default>
+
+**Foot** is another alternate terminal. In the Hyprland wayland compositor, foot is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `~/.config/hypr/foot` directory. These are the following config files you can modify to change the behaviour of your foot terminal:
 
 **`~/.config/hypr/foot/foot.ini`** : Main configuration file <br/>
 **`~/.config/hypr/foot/colors.ini`** : Colors configurations <br/>
@@ -171,13 +174,13 @@ The configuration structure of Hyprland in Archcraft looks something like this:
 
 :::tip
 
-By Default, alacritty is used But, If you want to use foot as your default terminal, just edit the `~/.config/hypr/hyprland.conf` file and comment the keybindings for **`Terminal : alacritty`** and uncomment the bindings for **`Terminal : foot`**
+By Default, alacritty is used But, If you want to use kitty/foot as your default terminal, just edit the `~/.config/hypr/config.d/60-key-bindings.conf` file and comment the keybindings for **`Terminal : alacritty`** and uncomment the bindings for **`Terminal : kitty`** or **`Terminal : foot`**
 
 :::
 
 :::warning
 
-When you change the `theme`, the **colors.toml** file of alacritty and **colors.ini** file of foot get overwritten by the theme script.
+When you change the `theme`, the **colors.toml** file of alacritty, **colors.conf** file of kitty and **colors.ini** file of foot get overwritten by the theme script.
 
 :::
 
@@ -195,9 +198,9 @@ When you change the `theme`, the colors in **config** file get overwritten by th
 
 ### Wallpaper
 
-**swaybg** sets the wallpaper in the Hyprland. If you want to change the wallpaper, Edit `~/.config/hypr/scripts/wallpaper` script and add your wallpaper here :
-```bash
-WALLPAPER='/path/to/your/wallpaper'
+**hyprpaper** sets the wallpaper in the Hyprland. If you want to change the wallpaper, Edit `~/.config/hypr/hyprpaper.conf` file and add your wallpaper here :
+```ini
+$wallpaper = /path/to/your/wallpaper
 ```
 :::warning
 
@@ -303,16 +306,31 @@ When you change the `theme`, the **shared/colors.rasi** file of rofi and **style
 
 ### wayland compositor
 
-The configuration of Hyprland is available in `~/.config/hypr`. To configure Hyprland wayland compositor, these are the files that are used :
+The configuration of Hyprland is available in `~/.config/hypr/config.d`. To configure Hyprland wayland compositor, these are the files that are used :
 
-**`hyprland.conf`** : main configuration file for general settings, input/output settings, keybindings and window rules, etc <br/>
-**`hyprtheme.conf`** : theme configuration, fonts, colors, borders, gaps etc.
+**`00-hyprtheme.conf`** : Theme Elements & Colors config file <br/>
+**`01-general.conf`** : General options config file <br/>
+**`02-decoration.conf`** : Decoration config file <br/>
+**`03-animations.conf`** : Animations config file <br/>
+**`04-input.conf`** : Input devices config file <br/>
+**`05-gestures.conf`** : Gestures config file <br/>
+**`06-group.conf`** : Group and groupbar config file <br/>
+**`07-binds`** : Binds config file <br/>
+**`08-cursor.conf`** : Cursor config file <br/>
+**`09-misc.conf`** : Miscellaneous options config file <br/>
+**`10-extra.conf`** : Extra options (layers, workspace rules, multi GPUs) config file <br/>
+**`20-monitor.conf`** : Output/Monitors config file <br/>
+**`30-layout-dwindle.conf`** : Dwindle Layout config file <br/>
+**`40-layout-master.conf`** : Master Layout config file <br/>
+**`50-window-rules.conf`** : Window Rules config file <br/>
+**`60-key-bindings.conf`** : Keybindings, Mouse Buttons config file <br/>
+**`70-permissions.conf`** : Permissions config file <br/>
 
 > If you need any help with hyprland configuration, visit : [Hyprland Wiki](https://wiki.hyprland.org)
 
 :::warning
 
-When you change the `theme`, colors in **hyprtheme.conf** file gets overwritten by the theme script.
+When you change the `theme`, colors in **00-hyprtheme.conf** file gets overwritten by the theme script.
 
 :::
 
@@ -320,7 +338,7 @@ When you change the `theme`, colors in **hyprtheme.conf** file gets overwritten 
 
 ## Keybindings
 
-Here's a list of some important keybinds you need to know for operating Hyprland easily. If you want to view, modify or add new keybinds, Edit `~/.config/hypr/hyprland.conf` file.
+Here's a list of some important keybinds you need to know for operating Hyprland easily. If you want to view, modify or add new keybinds, Edit `~/.config/hypr/config.d/60-key-bindings.conf` file.
 
 ### Applications
 
@@ -328,7 +346,7 @@ Here's a list of some important keybinds you need to know for operating Hyprland
 | --- | --- |
 | <kbd>super + Return</kbd> | Open terminal |
 | <kbd>super + shift + Return</kbd> | Open floating terminal |
-| <kbd>super + T</kbd> | Open fullscreen terminal |
+| <kbd>super + alt + Return</kbd> | Open fullscreen terminal |
 | <kbd>super + shift + F</kbd> | Open file manager (thunar) |
 | <kbd>super + shift + E</kbd> | Open text editor (geany) |
 | <kbd>super + shift + W</kbd> | Open web browser (firefox) |
@@ -339,11 +357,11 @@ Here's a list of some important keybinds you need to know for operating Hyprland
 | --- | --- |
 | <kbd>super</kbd> | Open application launcher |
 | <kbd>super + D</kbd> | Open application launcher |
-| <kbd>super + R</kbd> | Open command runner |
+| <kbd>super + R</kbd> | Open Asroot applet |
 | <kbd>super + N</kbd> | Open network manager applet |
 | <kbd>super + M</kbd> | Open music applet |
 | <kbd>super + X</kbd> | Open powermenu applet |
-| <kbd>super + A</kbd> | Open screenshots applet |
+| <kbd>super + S</kbd> | Open screenshots applet |
 | <kbd>super + B</kbd> | Open bluetooth applet |
 
 ### Hardware Keys
@@ -366,12 +384,12 @@ Here's a list of some important keybinds you need to know for operating Hyprland
 ### Workspaces
 | Keys | Action |
 | --- | --- |
-| <kbd>super + 1..8</kbd> | Switch to workspaces |
-| <kbd>super + shift + 1..8</kbd> | Send active window to respective workspaces |
+| <kbd>super + 1..9</kbd> | Switch to workspaces |
+| <kbd>super + shift + 1..9</kbd> | Send active window to respective workspaces |
+| <kbd>super + 0</kbd> | Toggle special workspace |
+| <kbd>super + shift + 0</kbd> | Send active window to special workspace |
 | <kbd>ctrl + alt + Left/Right</kbd> | Switch to previous/next workspace |
 | <kbd>ctrl + alt + shift + Left/Right</kbd> | Send active window to previous/next workspace |
-| <kbd>super + ctrl + F</kbd> | Toggled all float mode on current workspace |
-| <kbd>super + ctrl + S</kbd> | Toggled all pseudo mode on current workspace |
 
 ### Window Management
 
@@ -379,16 +397,25 @@ Here's a list of some important keybinds you need to know for operating Hyprland
 | --- | --- |
 | <kbd>super + C/Q</kbd> | Close focued window |
 | <kbd>super + F</kbd> | Toggle fullscreen |
-| <kbd>super + S</kbd> | Toggle pseudo mode |
 | <kbd>super + Space</kbd> | Toggle float |
 | <kbd>super + Left/Right/Up/Down</kbd> | Change focus of window respectively |
 | <kbd>super + shift + Left/Right/Up/Down</kbd> | Move active window respectively |
 | <kbd>super + ctrl + Left/Right/Up/Down</kbd> | Resize active window respectively |
 | <kbd>super + alt + Left/Right/Up/Down</kbd> | Move floating window respectively |
+| <kbd>super + shift + Tab</kbd> | Switch focus between current or last window |
 | <kbd>super + Tab</kbd> | Switch between windows |
+| <kbd>alt + Tab</kbd> | Swap windows |
 | <kbd>super + shift + P</kbd> | Toggled pin |
-| <kbd>super + shift + S</kbd> | Swap next |
-| <kbd>super + shift + O</kbd> | Toggle opaque |
+
+### Groups
+
+| Keys | Action |
+| --- | --- |
+| <kbd>super + G</kbd> | Toggle group |
+| <kbd>super + H/L</kbd> | Cycle between group windows |
+| <kbd>super + shift + L</kbd> | Toggle group lock |
+| <kbd>super + alt + M</kbd> | Move window out of group |
+| <kbd>super + Comma/Period</kbd> | Move group windows |
 
 ### Misc Keys
 
@@ -397,6 +424,8 @@ Here's a list of some important keybinds you need to know for operating Hyprland
 | <kbd>super + P</kbd> | Run colorpicker  |
 | <kbd>ctrl + alt + L</kbd> | Trigger lockscreen |
 | <kbd>ctrl + alt + Delete</kbd> | Quit Hyprland |
+| <kbd>super + shift + R</kbd> | Active resize submap |
+| <kbd>super + shift + M</kbd> | Active move submap |
 
 <!-- Nvidia --------------------------------------- -->
 
@@ -406,7 +435,7 @@ If you're on `Archcraft` and install the provided package, There's nothing else 
 
 If you're running any other distribution and want to install this setup on your Nvidia machine, You need to do some tweaking. In this guide, I'm assuing you're using **Arch Linux**. Follow the steps below to make this wayland compositor work on Nvidia :
 
-- Install **Nvidia Dhyprs** on your system. [NVIDIA](https://wiki.archlinux.org/title/NVIDIA) 
+- Install **Nvidia Drivers** on your system. [NVIDIA](https://wiki.archlinux.org/title/NVIDIA) 
 - Edit `/etc/mkinitcpio.conf` file and add **`nvidia`** kernel modules
 ```
 MODULES="nvidia nvidia_modeset nvidia_uvm nvidia_drm"
@@ -472,21 +501,23 @@ Here's few screenshots of `Hyprland` desktop. These'll give you an idea of the e
 
 To Change the theme, Click on `Color Palette` icon on waybar. To apply a random theme, **`Left Click`** on the theme module and To restore the default theme, **`Right Click`** on the theme module.
 
+To switch between Light/Dark mode, click on module with `moon/sun` icons.
+
 <Tabs>
 
 <TabItem value="wc_1" label="Dark" default>
 
-|Default Theme|Random Themes|
-|---|---|
-|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/hyprland/style_1/main.png)|![gif](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/hyprland/style_1/random/random.gif)|
+|Default Theme|Light Theme|Random Themes|Lockscreen|
+|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/hyprland/style_1/main.png)|![gif](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/hyprland/style_1/main_light.png)|![gif](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/hyprland/style_1/random/random.gif)|![gif](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/hyprland/lock.gif)|
 
 </TabItem>
 
 <TabItem value="wc_2" label="Catppuccin" default>
 
-|Default Theme|Random Themes|
-|---|---|
-|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/hyprland/style_2/main.png)|![gif](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/hyprland/style_2/random/random.gif)|
+|Default Theme|Light Theme|Random Themes|Lockscreen|
+|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/hyprland/style_2/main.png)|![gif](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/hyprland/style_2/main_light.png)|![gif](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/hyprland/style_2/random/random.gif)|![gif](https://raw.githubusercontent.com/archcraft-os/misc-files/main/screenshots/hyprland/lock.gif)|
 
 </TabItem>
 
@@ -538,20 +569,31 @@ CURSOR='Qogirr'
 
 If you use multiple monitors with Hyprland wayland compositor, you can manage them as follow:
 
-1. You can get the names of your outputs with `wlr-randr`
-2. Edit `~/.config/hypr/hyprland.conf` file and use the information you get by the command above:
+1. You can get the names of your outputs with `hyprctl monitors all`
+2. Edit `~/.config/hypr/config.d/20-monitor.conf` file and use the information you get by the command above:
 ```ini
-# Laptop screen, mode: 1920x1080, scale: 1, gaps of 10 each side
+# Example : Laptop screen, mode: 1920x1080, scale: 1, gaps of 10 each side
 monitor = eDP-1,1920x1080@60,0x0,1
 monitor = eDP-1,addreserved,10,10,10,10
 monitor = eDP-1,transform,0
 workspace = eDP-1,1
 
-# External monitor, mode: 1920x1080, position: right of laptop, scale: 1.5, gaps of 20 each side, rotated 90d
+# Example : External monitor, mode: 1920x1080, position: right of laptop, scale: 1.5, gaps of 20 each side, rotated 90d
 monitor = HDMI-A-1,1920x1080@60,1920x0,1.5
 monitor = HDMI-A-1,addreserved,20,20,20,20
 monitor = HDMI-A-1,transform,1
 workspace = HDMI-A-1,2
+
+# Monitor v2 : Alternative syntax
+monitorv2 {
+    output = HDMI-A-2
+    mode = 1920x1080@60
+    position = 0x0
+    scale = 1
+    transform = 0
+    addreserved = 20,20,20,20
+}
+
 ```
 
 </details>
