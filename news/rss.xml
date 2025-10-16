@@ -4,10 +4,37 @@
         <title>Archcraft Blog</title>
         <link>https://wiki.archcraft.io/news</link>
         <description>Archcraft Blog</description>
-        <lastBuildDate>Sat, 12 Jul 2025 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 16 Oct 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[October 2025 Release]]></title>
+            <link>https://wiki.archcraft.io/news/54-news-release</link>
+            <guid>https://wiki.archcraft.io/news/54-news-release</guid>
+            <pubDate>Thu, 16 Oct 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[October 2025 ISO of Archcraft is now available to download. Read the changelogs below to know what's new.]]></description>
+            <content:encoded><![CDATA[<p>October 2025 ISO of Archcraft is now available to download. Read the changelogs below to know what's new.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="changelogs-">Changelogs :<a href="https://wiki.archcraft.io/news/54-news-release#changelogs-" class="hash-link" aria-label="Direct link to Changelogs :" title="Direct link to Changelogs :">​</a></h3>
+<ul>
+<li>Support for <code>btrfs</code> and <code>jfs</code> still not added due to previous bugs (unbootable system)</li>
+<li>Updated ISO profile to <code>archiso 86-1</code></li>
+<li>Latest base with new packages</li>
+<li>Update all Archcraft and AUR packages</li>
+<li>Window Managers :<!-- -->
+<ul>
+<li>Fixed <code>polybar</code> backlight module issue</li>
+<li>Fixed <code>bluetooth</code> module flicker issue</li>
+<li>Added <code>spotify</code> module on polybar (only in default)</li>
+<li>Added <code>spotify</code> rofi applet (only in default)</li>
+</ul>
+</li>
+<li>Small improvements and bugs fixed.</li>
+</ul>]]></content:encoded>
+            <category>v25.10</category>
+            <category>release</category>
+            <category>iso</category>
+        </item>
         <item>
             <title><![CDATA[Archcraft Prime Release]]></title>
             <link>https://wiki.archcraft.io/news/52-news-release</link>
@@ -721,25 +748,6 @@
 <p>Install <code>archcraft-arandr</code> after update (to manage screen layouts with a GUI, save and restore your layouts)</p>
 </blockquote>]]></content:encoded>
             <category>v24.04</category>
-            <category>release</category>
-            <category>iso</category>
-        </item>
-        <item>
-            <title><![CDATA[Archcraft LXDE Release]]></title>
-            <link>https://wiki.archcraft.io/news/34-news-release</link>
-            <guid>https://wiki.archcraft.io/news/34-news-release</guid>
-            <pubDate>Fri, 12 Jan 2024 00:00:00 GMT</pubDate>
-            <description><![CDATA[New ISO of Archcraft LXDE is now available to download. Read the changelogs below to know what's new.]]></description>
-            <content:encoded><![CDATA[<p>New ISO of Archcraft LXDE is now available to download. Read the changelogs below to know what's new.</p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="changelogs-">Changelogs :<a href="https://wiki.archcraft.io/news/34-news-release#changelogs-" class="hash-link" aria-label="Direct link to Changelogs :" title="Direct link to Changelogs :">​</a></h3>
-<p><strong><code>Just a regular ISO update</code></strong></p>
-<ul>
-<li>Updated ISO base and profile</li>
-<li>Updated the ISO with latest packages</li>
-<li>Bug Fixes, Etc.</li>
-</ul>]]></content:encoded>
-            <category>flavor</category>
-            <category>lxde</category>
             <category>release</category>
             <category>iso</category>
         </item>

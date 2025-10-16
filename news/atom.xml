@@ -2,11 +2,42 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wiki.archcraft.io/news</id>
     <title>Archcraft Blog</title>
-    <updated>2025-07-12T00:00:00.000Z</updated>
+    <updated>2025-10-16T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wiki.archcraft.io/news"/>
     <subtitle>Archcraft Blog</subtitle>
     <icon>https://wiki.archcraft.io/img/favicon.svg</icon>
+    <entry>
+        <title type="html"><![CDATA[October 2025 Release]]></title>
+        <id>https://wiki.archcraft.io/news/54-news-release</id>
+        <link href="https://wiki.archcraft.io/news/54-news-release"/>
+        <updated>2025-10-16T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[October 2025 ISO of Archcraft is now available to download. Read the changelogs below to know what's new.]]></summary>
+        <content type="html"><![CDATA[<p>October 2025 ISO of Archcraft is now available to download. Read the changelogs below to know what's new.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="changelogs-">Changelogs :<a href="https://wiki.archcraft.io/news/54-news-release#changelogs-" class="hash-link" aria-label="Direct link to Changelogs :" title="Direct link to Changelogs :">​</a></h3>
+<ul>
+<li>Support for <code>btrfs</code> and <code>jfs</code> still not added due to previous bugs (unbootable system)</li>
+<li>Updated ISO profile to <code>archiso 86-1</code></li>
+<li>Latest base with new packages</li>
+<li>Update all Archcraft and AUR packages</li>
+<li>Window Managers :<!-- -->
+<ul>
+<li>Fixed <code>polybar</code> backlight module issue</li>
+<li>Fixed <code>bluetooth</code> module flicker issue</li>
+<li>Added <code>spotify</code> module on polybar (only in default)</li>
+<li>Added <code>spotify</code> rofi applet (only in default)</li>
+</ul>
+</li>
+<li>Small improvements and bugs fixed.</li>
+</ul>]]></content>
+        <author>
+            <name>Aditya Shakya</name>
+            <uri>https://github.com/adi1090x</uri>
+        </author>
+        <category label="v25.10" term="v25.10"/>
+        <category label="release" term="release"/>
+        <category label="iso" term="iso"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Archcraft Prime Release]]></title>
         <id>https://wiki.archcraft.io/news/52-news-release</id>
@@ -796,29 +827,6 @@
             <uri>https://github.com/adi1090x</uri>
         </author>
         <category label="v24.04" term="v24.04"/>
-        <category label="release" term="release"/>
-        <category label="iso" term="iso"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Archcraft LXDE Release]]></title>
-        <id>https://wiki.archcraft.io/news/34-news-release</id>
-        <link href="https://wiki.archcraft.io/news/34-news-release"/>
-        <updated>2024-01-12T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[New ISO of Archcraft LXDE is now available to download. Read the changelogs below to know what's new.]]></summary>
-        <content type="html"><![CDATA[<p>New ISO of Archcraft LXDE is now available to download. Read the changelogs below to know what's new.</p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="changelogs-">Changelogs :<a href="https://wiki.archcraft.io/news/34-news-release#changelogs-" class="hash-link" aria-label="Direct link to Changelogs :" title="Direct link to Changelogs :">​</a></h3>
-<p><strong><code>Just a regular ISO update</code></strong></p>
-<ul>
-<li>Updated ISO base and profile</li>
-<li>Updated the ISO with latest packages</li>
-<li>Bug Fixes, Etc.</li>
-</ul>]]></content>
-        <author>
-            <name>Aditya Shakya</name>
-            <uri>https://github.com/adi1090x</uri>
-        </author>
-        <category label="flavor" term="flavor"/>
-        <category label="lxde" term="lxde"/>
         <category label="release" term="release"/>
         <category label="iso" term="iso"/>
     </entry>
