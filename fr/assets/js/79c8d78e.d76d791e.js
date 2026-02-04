@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkArchcraft_Wiki=self.webpackChunkArchcraft_Wiki||[]).push([[8452],{11182:t=>{t.exports=JSON.parse('{"authors":[{"name":"Aditya Shakya","title":"Developer of Archcraft","url":"https://github.com/adi1090x","imageURL":"https://github.com/adi1090x.png","key":"adi1090x","page":null,"count":59}]}')}}]);
