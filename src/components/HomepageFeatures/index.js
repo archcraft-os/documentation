@@ -10,7 +10,7 @@ const FeatureList = [
     description: (
 		<Translate>
 			Archcraft stays minimal and responsive. 
-			With lightweight apps and window managers, it runs smoothly on under 500 MB of memory.
+			With lightweight apps and window managers, it runs smoothly on under 800 MB of memory.
 		</Translate>
     ),
   },

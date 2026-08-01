@@ -209,6 +209,10 @@ Select `No` if you don't want to format the EFI partition and press <kbd>Enter</
 
 Select `/boot` as mount point and press <kbd>Enter</kbd>
 
+> Note: Choose `/boot` if you want **systemd-boot** as your bootloader.
+>
+> **grub** works with both `/boot` and `/boot/efi`. But preferably, use `/boot/efi`
+
 ![img](./abif/38.png)
 
 And, Now you can mount the rest of the partitions (*for ex: /home*) here. Select it and press <kbd>Enter</kbd>
@@ -259,7 +263,7 @@ Select `Install Bootloader` and press <kbd>Enter</kbd>
 
 ![img](./abif/49.png)
 
-Select `grub` as bootloader and press <kbd>Enter</kbd>
+Select `grub` (or `systemd-boot` if you want) as bootloader and press <kbd>Enter</kbd>
 
 ![img](./abif/50.png)
 

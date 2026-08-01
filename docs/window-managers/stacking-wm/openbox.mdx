@@ -81,9 +81,11 @@ The configuration structure of Openbox WM in Archcraft looks something like this
 
 ```
 ~/.config
-├── alacritty                       : terminal config
+├── alacritty                       : alacritty terminal config
 ├── dconf                           : dconf database for plank config
 ├── dunst                           : dunst config for notifications
+├── kitty                           : kitty terminal config
+├── lead                            : hot corners config
 ├── nitrogen                        : nitrogen config for setting wallpapers
 ├── obmenu-generator                : obmenu-generator config for menus
 ├── openbox                         : openbox config
@@ -93,6 +95,7 @@ The configuration structure of Openbox WM in Archcraft looks something like this
 │   ├── environment                 : script path and other env variables
 │   ├── menu-STYLE.xml              : menu file(s)
 │   └── rc.xml                      : main config file
+├── skippy-xd                       : skippy-xd config
 ├── xfce4                           : xfce config specific for openbox
 │   └── xfconf                      : 
 │       └── xfce-perchannel-xml     : 
@@ -103,6 +106,10 @@ The configuration structure of Openbox WM in Archcraft looks something like this
 
 ### Terminal
 
+<Tabs>
+
+<TabItem value="wm_1" label="Default" default>
+
 **Alacritty** is the default terminal. In the Openbox window manager, alacritty is launched with its default config file. If you need to change anything, make sure you modify the config files in `~/.config/alacritty` directory. These are the following config files you can modify to change the behaviour of your terminal:
 
 **`~/.config/alacritty/alacritty.toml`** : Main configuration file <br/>
@@ -110,6 +117,22 @@ The configuration structure of Openbox WM in Archcraft looks something like this
 **`~/.config/alacritty/fonts.toml`** : Fonts configurations
 
 > If you need any help with alacritty config, run : `man 5 alacritty` in terminal.
+
+</TabItem>
+
+<TabItem value="wm_2" label="Kitty" default>
+
+**kitty** is the secondary/alternate terminal. In the Openbox window manager, kitty is launched with its default config file. If you need to change anything, make sure you modify the config files in `~/.config/kitty` directory. These are the following config files you can modify to change the behaviour of your terminal:
+
+**`~/.config/kitty/kitty.conf`** : Main configuration file <br/>
+**`~/.config/kitty/colors.conf`** : Colors configurations <br/>
+**`~/.config/kitty/fonts.conf`** : Fonts configurations
+
+> If you need any help with kitty config, run : `man kitty.conf` in terminal.
+
+</TabItem>
+
+</Tabs>
 
 :::tip
 
@@ -119,7 +142,7 @@ XFCE Terminal is also installed as an alternate terminal in Openbox. If alacritt
 
 :::warning
 
-When you change the `theme`, the **colors.toml** and **fonts.toml** file get overwritten by the theme script.
+When you change the `theme`, the **fonts.toml**, **colors.toml** file of alacritty, **colors.conf** file of kitty get overwritten by the theme script.
 
 When you change the color-scheme via the openbox menu `Preferences > Terminal Colors`, the **colors.toml** file gets overwritten.
 

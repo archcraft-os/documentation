@@ -82,7 +82,8 @@ The configuration structure of Bspwm in Archcraft looks something like this:
 ```
 ~/.config
 └── bspwm           : bspwm config directory
-    ├── alacritty   : terminal config
+    ├── alacritty   : alacritty terminal config
+    ├── kitty       : kitty terminal config
     ├── scripts     : scripts used for bspwm
     ├── themes      : all themes (polybar, rofi configs) 
     ├── bspwmrc     : main bspwm config file
@@ -94,6 +95,10 @@ The configuration structure of Bspwm in Archcraft looks something like this:
 
 ### Terminal
 
+<Tabs>
+
+<TabItem value="wm_1" label="Default" default>
+
 **Alacritty** is the default terminal. In the Bspwm window manager, alacritty is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `~/.config/bspwm/alacritty` directory. These are the following config files you can modify to change the behaviour of your terminal:
 
 **`~/.config/bspwm/alacritty/alacritty.toml`** : Main configuration file <br/>
@@ -102,9 +107,25 @@ The configuration structure of Bspwm in Archcraft looks something like this:
 
 > If you need any help with alacritty config, run : `man 5 alacritty` in terminal.
 
+</TabItem>
+
+<TabItem value="wm_2" label="Kitty" default>
+
+**kitty** is the secondary/alternate terminal. In the Bspwm window manager, kitty is launched with an alternative config file. If you need to change anything, make sure you modify the config files in `~/.config/bspwm/kitty` directory. These are the following config files you can modify to change the behaviour of your terminal:
+
+**`~/.config/bspwm/kitty/kitty.conf`** : Main configuration file <br/>
+**`~/.config/bspwm/kitty/colors.conf`** : Colors configurations <br/>
+**`~/.config/bspwm/kitty/fonts.conf`** : Fonts configurations
+
+> If you need any help with kitty config, run : `man kitty.conf` in terminal.
+
+</TabItem>
+
+</Tabs>
+
 :::warning
 
-When you change the `theme`, the **colors.toml** and **fonts.toml** file get overwritten by the theme script.
+When you change the `theme`, the **fonts.toml**, **colors.toml** file of alacritty, **colors.conf** file of kitty get overwritten by the theme script.
 
 :::
 
@@ -122,15 +143,13 @@ When you change the `theme`, the fonts and colors in **dunstrc** file get overwr
 
 ### Wallpaper
 
-**Feh** sets the wallpaper in the Bspwm. If you want to change the wallpaper, Edit the script `~/.fehbg`
-
+**hsetroot** sets the wallpaper in the Bspwm. If you want to change the wallpaper, Edit `~/.config/bspwm/themes/wallpaper.sh` script and add the path to your wallpaper.
 ```bash
-#!/bin/sh
-feh --no-fehbg --bg-fill '/path/to/your/wallpaper' 
+WALLPAPER='/path/to/your/wallpaper'
 ```
 :::warning
 
-When you change the `theme`, the script `~/.fehbg` get overwritten by the theme script.
+When you change the `theme`, the script `wallpaper.sh` get overwritten by the theme script.
 
 :::
 

@@ -62,15 +62,6 @@ This method may not work on your system and you might not be able to boot into *
 
 :::
 
-### Enable Suspend Service
-Enable betterlockscreen's suspend service for your user account.
-
-```bash
-# Enable betterlockscreen suspend service
-
-$ sudo systemctl enable betterlockscreen@$USER.service						
-```
-
 ### Fix Lock Screen Background
 Fix lock screen layout on hidpi or low resolution displays.
 
@@ -79,5 +70,7 @@ Fix lock screen layout on hidpi or low resolution displays.
 
 $ betterlockscreen -u /usr/share/backgrounds/groot.jpg
 ```
+
+Or, You can open file manager, right click on an image and click : `Set as lockscreen`
 
 Well, that's pretty much everything for now, go ahead and enjoy Archcraft.
