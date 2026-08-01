@@ -141,6 +141,9 @@
 <hr>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="updated-core-components">Updated Core Components<a href="https://wiki.archcraft.io/fr/news/63-news-release#updated-core-components" class="hash-link" aria-label="Lien direct vers Updated Core Components" title="Lien direct vers Updated Core Components">​</a></h2>
 <table><thead><tr><th>Package</th><th>Update</th></tr></thead><tbody><tr><td>GRUB</td><td>New patched package based on Arch Linux</td></tr><tr><td>Plymouth</td><td>New patched package based on Arch Linux</td></tr><tr><td>archiso</td><td>Updated to 88-1</td></tr><tr><td>SDDM</td><td>Updated configuration and new Qt6 theme</td></tr></tbody></table>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="boot-btrfs-snapshots">Boot Btrfs snapshots<a href="https://wiki.archcraft.io/fr/news/63-news-release#boot-btrfs-snapshots" class="hash-link" aria-label="Lien direct vers Boot Btrfs snapshots" title="Lien direct vers Boot Btrfs snapshots">​</a></h3>
+<p>GRUB now support booting btrfs snapshots. Once a snapshot is created (eg: <code>timeshift</code>), It'll be automatically added to grub bootmenu.</p>
+<p><img decoding="async" loading="lazy" src="https://raw.githubusercontent.com/archcraft-os/misc-files/refs/heads/main/releases/august_2026/btrfs-snaps-boot.png" alt="img" class="img_ev3q"></p>
 <hr>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="new-applications">New Applications<a href="https://wiki.archcraft.io/fr/news/63-news-release#new-applications" class="hash-link" aria-label="Lien direct vers New Applications" title="Lien direct vers New Applications">​</a></h2>
 <p>This release introduces several new and improved utilities.</p>
