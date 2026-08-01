@@ -12,8 +12,8 @@
 <link rel="search" type="application/opensearchdescription+xml" title="Archcraft" href="/opensearch.xml">
 <link rel="alternate" type="application/rss+xml" href="/news/rss.xml" title="Archcraft RSS Feed">
 <link rel="alternate" type="application/atom+xml" href="/news/atom.xml" title="Archcraft Atom Feed"><link rel="stylesheet" href="/assets/css/styles.d742b4fb.css">
-<script src="/assets/js/runtime~main.3783bf38.js" defer="defer"></script>
-<script src="/assets/js/main.469bf4ba.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.93ac47a4.js" defer="defer"></script>
+<script src="/assets/js/main.f6e7a3f9.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><defs>
@@ -133,6 +133,10 @@ Just mount the EFI partition to <code>/boot</code></p></div></div>
 <p>Select <code>No</code> if you don&#x27;t want to format the EFI partition and press <kbd>Enter</kbd></p>
 <p><img decoding="async" loading="lazy" alt="img" src="/assets/images/37-8365f1333e48bce254d808215cfc6f91.png" width="1100" height="770" class="img_ev3q"></p>
 <p>Select <code>/boot</code> as mount point and press <kbd>Enter</kbd></p>
+<blockquote>
+<p>Note: Choose <code>/boot</code> if you want <strong>systemd-boot</strong> as your bootloader.</p>
+<p><strong>grub</strong> works with both <code>/boot</code> and <code>/boot/efi</code>. But preferably, use <code>/boot/efi</code></p>
+</blockquote>
 <p><img decoding="async" loading="lazy" alt="img" src="/assets/images/38-98896945a88cd179b8b3c981997c8fdb.png" width="1100" height="770" class="img_ev3q"></p>
 <p>And, Now you can mount the rest of the partitions (<em>for ex: /home</em>) here. Select it and press <kbd>Enter</kbd></p>
 <p><img decoding="async" loading="lazy" alt="img" src="/assets/images/39-14ef299f1db3c0cf104d3161a5738e66.png" width="1100" height="770" class="img_ev3q"></p>
@@ -158,7 +162,7 @@ Just mount the EFI partition to <code>/boot</code></p></div></div>
 <p><img decoding="async" loading="lazy" alt="img" src="/assets/images/48-23235e2b6891dd9de4af2419746e88c0.png" width="1100" height="770" class="img_ev3q"></p>
 <p>Select <code>Install Bootloader</code> and press <kbd>Enter</kbd></p>
 <p><img decoding="async" loading="lazy" alt="img" src="/assets/images/49-309c06690ac33a9cfb246e45a3bf61b0.png" width="1100" height="770" class="img_ev3q"></p>
-<p>Select <code>grub</code> as bootloader and press <kbd>Enter</kbd></p>
+<p>Select <code>grub</code> (or <code>systemd-boot</code> if you want) as bootloader and press <kbd>Enter</kbd></p>
 <p><img decoding="async" loading="lazy" alt="img" src="/assets/images/50-341e1440163d838dd8572c62ff8f6a46.png" width="1100" height="770" class="img_ev3q"></p>
 <p>Select <code>Yes</code> to make <em>grub</em> default bootloader and press <kbd>Enter</kbd></p>
 <p><img decoding="async" loading="lazy" alt="img" src="/assets/images/51-f09c9e09d9031bc17555cbbb5c6bbd2c.png" width="1100" height="770" class="img_ev3q"></p>

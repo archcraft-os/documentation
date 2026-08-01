@@ -4,10 +4,214 @@
         <title>Archcraft Blog</title>
         <link>https://wiki.archcraft.io/fr/news</link>
         <description>Archcraft Blog</description>
-        <lastBuildDate>Tue, 12 May 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 01 Aug 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>fr</language>
+        <item>
+            <title><![CDATA[August 2026 Release]]></title>
+            <link>https://wiki.archcraft.io/fr/news/63-news-release</link>
+            <guid>https://wiki.archcraft.io/fr/news/63-news-release</guid>
+            <pubDate>Sat, 01 Aug 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Major August 2026 ISO of Archcraft is now available to download. Read the changelogs below to know what's new.]]></description>
+            <content:encoded><![CDATA[<p><span style="background-color:#98c379;border-radius:6px;color:#fff;padding:0.2rem">Major</span> August 2026 ISO of Archcraft is now available to download. Read the changelogs below to know what's new.</p>
+<h1 align="center">Archcraft • August 2026 Release</h1>
+<blockquote>
+<p>A release focused on stability, compatibility and polish. From a completely revamped installation experience to improved desktop sessions, better VirtualBox support and countless bug fixes, this is one of the biggest Archcraft updates yet.</p>
+</blockquote>
+<p><img decoding="async" loading="lazy" src="https://raw.githubusercontent.com/archcraft-os/.github/main/profile/assets/main.png" alt="img" class="img_ev3q"></p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="highlights">Highlights<a href="https://wiki.archcraft.io/fr/news/63-news-release#highlights" class="hash-link" aria-label="Lien direct vers Highlights" title="Lien direct vers Highlights">​</a></h2>
+<ul>
+<li>Brand new <strong>Qt6 SDDM theme</strong></li>
+<li>New <strong>Sway Wayland session</strong></li>
+<li>Reliable <strong>encrypted installations</strong> across installers</li>
+<li>Restored <strong>Btrfs</strong> and <strong>XFS</strong> installation support (calamares)</li>
+<li>Updated to <strong>archiso 88-1</strong></li>
+<li>Improved VirtualBox compatibility</li>
+<li>Better GTK/GNOME application integration</li>
+<li>Hundreds of small fixes and improvements</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="new-login-experience">New Login Experience<a href="https://wiki.archcraft.io/fr/news/63-news-release#new-login-experience" class="hash-link" aria-label="Lien direct vers New Login Experience" title="Lien direct vers New Login Experience">​</a></h2>
+<p>Archcraft now ships with an all-new <strong>Qt6-based SDDM theme</strong>, bringing a cleaner design, improved HiDPI support and a more polished login experience.</p>
+<p><img decoding="async" loading="lazy" src="https://raw.githubusercontent.com/archcraft-os/misc-files/refs/heads/main/releases/august_2026/sddm.png" alt="img" class="img_ev3q"></p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="new-wayland-session">New Wayland Session<a href="https://wiki.archcraft.io/fr/news/63-news-release#new-wayland-session" class="hash-link" aria-label="Lien direct vers New Wayland Session" title="Lien direct vers New Wayland Session">​</a></h2>
+<p>One of the biggest additions in this release is the introduction of <strong>Sway</strong>, providing another lightweight Wayland session alongside the existing window managers.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="features">Features<a href="https://wiki.archcraft.io/fr/news/63-news-release#features" class="hash-link" aria-label="Lien direct vers Features" title="Lien direct vers Features">​</a></h3>
+<ul>
+<li>Completely new appearance</li>
+<li>Carefully tuned defaults</li>
+<li>Improved VirtualBox compatibility</li>
+<li>Better GTK/GNOME application support</li>
+<li>Client-side decorations disabled for a more consistent desktop</li>
+</ul>
+<blockquote>
+<p>Added for HiDPI displays, wayland scales better on modern displays.</p>
+</blockquote>
+<p><img decoding="async" loading="lazy" src="https://raw.githubusercontent.com/archcraft-os/misc-files/refs/heads/main/releases/august_2026/sway.png" alt="img" class="img_ev3q"></p>
+<blockquote>
+<p>More Screenshots <a href="https://gallery.archcraft.io/pages/wcs/sway" target="_blank" rel="noopener noreferrer">Here</a></p>
+</blockquote>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="openbox-improvements">Openbox Improvements<a href="https://wiki.archcraft.io/fr/news/63-news-release#openbox-improvements" class="hash-link" aria-label="Lien direct vers Openbox Improvements" title="Lien direct vers Openbox Improvements">​</a></h2>
+<p>Openbox received numerous quality-of-life improvements.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="new">New<a href="https://wiki.archcraft.io/fr/news/63-news-release#new" class="hash-link" aria-label="Lien direct vers New" title="Lien direct vers New">​</a></h3>
+<ul>
+<li>Reload Theme option added to the menu</li>
+<li>Hot Corners powered by <strong>Lead</strong></li>
+<li>Quick Window/Desktop switching using <strong>Skippy-XD</strong></li>
+<li>Improved startup sequence</li>
+<li>Better GTK application integration</li>
+<li>Firefox and GNOME applications now follow the system theme correctly</li>
+<li>Improved Picom startup for VirtualBox</li>
+</ul>
+<p><img decoding="async" loading="lazy" src="https://raw.githubusercontent.com/archcraft-os/misc-files/refs/heads/main/releases/august_2026/hot-corners.gif" alt="gif" class="img_ev3q"></p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="bspwm-improvements">BSPWM Improvements<a href="https://wiki.archcraft.io/fr/news/63-news-release#bspwm-improvements" class="hash-link" aria-label="Lien direct vers BSPWM Improvements" title="Lien direct vers BSPWM Improvements">​</a></h2>
+<p>The BSPWM session has also received several refinements.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="improvements">Improvements<a href="https://wiki.archcraft.io/fr/news/63-news-release#improvements" class="hash-link" aria-label="Lien direct vers Improvements" title="Lien direct vers Improvements">​</a></h3>
+<ul>
+<li>Replaced <strong>feh</strong> with <strong>hsetroot</strong></li>
+<li>New network management menu</li>
+<li>Improved GTK application theming</li>
+<li>Client-side decorations disabled</li>
+<li>Better VirtualBox compatibility</li>
+<li>Improved Picom startup</li>
+</ul>
+<hr>
+<h1>Installer Improvements</h1>
+<p>This release includes major work across both available installers.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="calamares">Calamares<a href="https://wiki.archcraft.io/fr/news/63-news-release#calamares" class="hash-link" aria-label="Lien direct vers Calamares" title="Lien direct vers Calamares">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="filesystem-support">Filesystem Support<a href="https://wiki.archcraft.io/fr/news/63-news-release#filesystem-support" class="hash-link" aria-label="Lien direct vers Filesystem Support" title="Lien direct vers Filesystem Support">​</a></h3>
+<table><thead><tr><th>Supported</th><th>Status</th></tr></thead><tbody><tr><td>Ext4</td><td>✅</td></tr><tr><td>Btrfs</td><td>✅</td></tr><tr><td>XFS</td><td>✅</td></tr><tr><td>F2FS</td><td>✅</td></tr></tbody></table>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="removed">Removed<a href="https://wiki.archcraft.io/fr/news/63-news-release#removed" class="hash-link" aria-label="Lien direct vers Removed" title="Lien direct vers Removed">​</a></h3>
+<ul>
+<li>JFS</li>
+<li>ReiserFS</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="improvements-1">Improvements<a href="https://wiki.archcraft.io/fr/news/63-news-release#improvements-1" class="hash-link" aria-label="Lien direct vers Improvements" title="Lien direct vers Improvements">​</a></h3>
+<ul>
+<li>Added Sway installation options</li>
+<li>Btrfs support restored</li>
+<li>XFS support restored</li>
+<li>Encryption now works reliably across all supported filesystems</li>
+<li>Installation logic improved</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="tested-configurations">Tested Configurations<a href="https://wiki.archcraft.io/fr/news/63-news-release#tested-configurations" class="hash-link" aria-label="Lien direct vers Tested Configurations" title="Lien direct vers Tested Configurations">​</a></h3>
+<ul>
+<li>UEFI</li>
+<li>Legacy BIOS</li>
+<li>Ext4</li>
+<li>Btrfs</li>
+<li>XFS</li>
+<li>F2FS</li>
+<li>Encrypted</li>
+<li>Non-encrypted</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="abif-installer">ABIF Installer<a href="https://wiki.archcraft.io/fr/news/63-news-release#abif-installer" class="hash-link" aria-label="Lien direct vers ABIF Installer" title="Lien direct vers ABIF Installer">​</a></h2>
+<p>ABIF has become significantly more reliable.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="fixed">Fixed<a href="https://wiki.archcraft.io/fr/news/63-news-release#fixed" class="hash-link" aria-label="Lien direct vers Fixed" title="Lien direct vers Fixed">​</a></h3>
+<ul>
+<li>Encryption installation issues</li>
+<li>LVM installation crash</li>
+<li>Missing kernel parameters for systemd-boot</li>
+<li>systemd-boot installation</li>
+<li>GRUB EFI mounting</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="improvements-2">Improvements<a href="https://wiki.archcraft.io/fr/news/63-news-release#improvements-2" class="hash-link" aria-label="Lien direct vers Improvements" title="Lien direct vers Improvements">​</a></h3>
+<ul>
+<li>Uses <strong>sd-encrypt</strong> hook</li>
+<li>Works correctly with encrypted and non-encrypted installations</li>
+<li>Better bootloader detection</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="tested-configurations-1">Tested Configurations<a href="https://wiki.archcraft.io/fr/news/63-news-release#tested-configurations-1" class="hash-link" aria-label="Lien direct vers Tested Configurations" title="Lien direct vers Tested Configurations">​</a></h3>
+<ul>
+<li>UEFI</li>
+<li>Legacy BIOS</li>
+<li>Ext4</li>
+<li>Encryption</li>
+<li>Non-encryption</li>
+<li>LVM</li>
+<li>Non-LVM</li>
+<li>GRUB</li>
+<li>systemd-boot</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="updated-core-components">Updated Core Components<a href="https://wiki.archcraft.io/fr/news/63-news-release#updated-core-components" class="hash-link" aria-label="Lien direct vers Updated Core Components" title="Lien direct vers Updated Core Components">​</a></h2>
+<table><thead><tr><th>Package</th><th>Update</th></tr></thead><tbody><tr><td>GRUB</td><td>New patched package based on Arch Linux</td></tr><tr><td>Plymouth</td><td>New patched package based on Arch Linux</td></tr><tr><td>archiso</td><td>Updated to 88-1</td></tr><tr><td>SDDM</td><td>Updated configuration and new Qt6 theme</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="new-applications">New Applications<a href="https://wiki.archcraft.io/fr/news/63-news-release#new-applications" class="hash-link" aria-label="Lien direct vers New Applications" title="Lien direct vers New Applications">​</a></h2>
+<p>This release introduces several new and improved utilities.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="new-1">New<a href="https://wiki.archcraft.io/fr/news/63-news-release#new-1" class="hash-link" aria-label="Lien direct vers New" title="Lien direct vers New">​</a></h3>
+<ul>
+<li>GTK4 Welcome application</li>
+<li>GTK4 Help application</li>
+<li>Thunar Search integration</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="updated">Updated<a href="https://wiki.archcraft.io/fr/news/63-news-release#updated" class="hash-link" aria-label="Lien direct vers Updated" title="Lien direct vers Updated">​</a></h3>
+<ul>
+<li>Picom configurations for every X11 session</li>
+<li>New Archcraft packages</li>
+<li>Updated AUR packages</li>
+</ul>
+<table><thead><tr><th>Welcome</th><th>Help</th></tr></thead><tbody><tr><td><img decoding="async" loading="lazy" src="https://raw.githubusercontent.com/archcraft-os/misc-files/refs/heads/main/releases/august_2026/welcome.png" alt="img" class="img_ev3q"></td><td><img decoding="async" loading="lazy" src="https://raw.githubusercontent.com/archcraft-os/misc-files/refs/heads/main/releases/august_2026/help.png" alt="img" class="img_ev3q"></td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="system-improvements">System Improvements<a href="https://wiki.archcraft.io/fr/news/63-news-release#system-improvements" class="hash-link" aria-label="Lien direct vers System Improvements" title="Lien direct vers System Improvements">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="desktop">Desktop<a href="https://wiki.archcraft.io/fr/news/63-news-release#desktop" class="hash-link" aria-label="Lien direct vers Desktop" title="Lien direct vers Desktop">​</a></h3>
+<ul>
+<li>Better GTK/GNOME application theming</li>
+<li>Firefox now follows the desktop theme correctly</li>
+<li>Client-side decorations disabled where appropriate</li>
+<li>Improved environment configuration</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="iso">ISO<a href="https://wiki.archcraft.io/fr/news/63-news-release#iso" class="hash-link" aria-label="Lien direct vers ISO" title="Lien direct vers ISO">​</a></h3>
+<ul>
+<li>Updated to archiso 88-1</li>
+<li>Updated SDDM configuration</li>
+<li>Removed problematic environment variables</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="virtualbox">VirtualBox<a href="https://wiki.archcraft.io/fr/news/63-news-release#virtualbox" class="hash-link" aria-label="Lien direct vers VirtualBox" title="Lien direct vers VirtualBox">​</a></h3>
+<p>Running Archcraft inside VirtualBox is now considerably smoother.</p>
+<p>Improvements include:</p>
+<ul>
+<li>Better Picom startup</li>
+<li>Stable compositor behavior</li>
+<li>Improved Sway startup</li>
+<li>Better overall graphics compatibility</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="bug-fixes">Bug Fixes<a href="https://wiki.archcraft.io/fr/news/63-news-release#bug-fixes" class="hash-link" aria-label="Lien direct vers Bug Fixes" title="Lien direct vers Bug Fixes">​</a></h2>
+<p>Resolved numerous long-standing issues across the distribution.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="fixed-1">Fixed<a href="https://wiki.archcraft.io/fr/news/63-news-release#fixed-1" class="hash-link" aria-label="Lien direct vers Fixed" title="Lien direct vers Fixed">​</a></h3>
+<ul>
+<li>Thunar thumbnails not generating</li>
+<li>xdg-desktop-portal issues preventing:<!-- -->
+<ul>
+<li>File chooser dialogs</li>
+<li>Screen sharing</li>
+<li>OBS capture</li>
+<li>Browser integration</li>
+</ul>
+</li>
+<li>Theme not reloading from the Monitor Manager</li>
+<li>Removed unnecessary pacman hooks</li>
+<li>Numerous small desktop bugs</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="thank-you">Thank You<a href="https://wiki.archcraft.io/fr/news/63-news-release#thank-you" class="hash-link" aria-label="Lien direct vers Thank You" title="Lien direct vers Thank You">​</a></h2>
+<p>Thank you to everyone using Archcraft, reporting issues, suggesting improvements, and supporting the project.</p>
+<p>Every release is built with the goal of keeping Archcraft lightweight, elegant and enjoyable while staying true to the Arch philosophy.</p>
+<p>This release has been a true labor of love. Over the past month, I've spent countless hours—often <strong>8–10 hours a day</strong>—building, testing, fixing, and refining every part of Archcraft. In my opinion, this is the <strong>best version of Archcraft released so far</strong>, and I hope you enjoy using it as much as I enjoyed creating it.</p>
+<p>Archcraft is an independent project maintained by a single developer. If you appreciate the work that goes into keeping it alive and continuously improving it, please consider supporting the project. Your support helps cover development time, testing, infrastructure, and ensures Archcraft can continue to grow.</p>
+<p align="left"></p><p>❤️ <a href="https://archcraft.io/more.html"><strong>Support Archcraft</strong></a> ❤️</p><p></p>
+<p>Enjoy the update!</p>]]></content:encoded>
+            <category>v26.08</category>
+            <category>release</category>
+            <category>iso</category>
+        </item>
         <item>
             <title><![CDATA[Archcraft Prime Release]]></title>
             <link>https://wiki.archcraft.io/fr/news/61-news-release</link>
@@ -760,56 +964,6 @@
             <category>openbox</category>
             <category>bspwm</category>
             <category>i3wm</category>
-            <category>sway</category>
-            <category>wayfire</category>
-            <category>river</category>
-            <category>hyprland</category>
-            <category>newm</category>
-            <category>release</category>
-            <category>iso</category>
-        </item>
-        <item>
-            <title><![CDATA[Archcraft WSE Release]]></title>
-            <link>https://wiki.archcraft.io/fr/news/44-news-release</link>
-            <guid>https://wiki.archcraft.io/fr/news/44-news-release</guid>
-            <pubDate>Tue, 22 Oct 2024 00:00:00 GMT</pubDate>
-            <description><![CDATA[Exclusive New Archcraft Wayland Special Edition ISO is now available to download. Read the changelogs below to know what's new.]]></description>
-            <content:encoded><![CDATA[<p><span style="background-color:#e06b74;border-radius:25px;color:#fff;padding:0.2rem 0.4rem">Exclusive</span> New <strong>Archcraft Wayland Special Edition ISO</strong> is now available to download. Read the changelogs below to know what's new.</p>
-<p>This special edition of Archcraft comes with <a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/sway"><code>Sway</code></a>, <a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/wayfire"><code>Wayfire</code></a>, <a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/river"><code>River</code></a>, <a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/hyprland"><code>Hyprland</code></a> and <a href="https://wiki.archcraft.io/fr/docs/wayland-compositors/newm"><code>Newm</code></a> pre-installed, pre-configured and provides you a wayland only Linux experience.</p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="changelogs-">Changelogs :<a href="https://wiki.archcraft.io/fr/news/44-news-release#changelogs-" class="hash-link" aria-label="Lien direct vers Changelogs :" title="Lien direct vers Changelogs :">​</a></h3>
-<ul>
-<li>Updated ISO profile</li>
-<li>Latest base with new packages</li>
-<li>Update all Archcraft and AUR packages</li>
-<li>Added <strong>new cursor, icon, and GTK themes</strong> (along with updates to existing ones)</li>
-<li>Added <strong>new icon and nerd fonts</strong> (existing ones updated as well)</li>
-<li>Theme updates across all WCs (Waybar, Rofi, Wofi etc.)</li>
-<li>Added <code>kitty</code> terminal support in all WCs</li>
-<li>Updated <code>alacritty</code> configurations in all WCs</li>
-<li>Updated <code>foot</code> config in all WCs</li>
-<li>Added new <code>neofetch</code> configuration</li>
-<li>Updated <code>zsh</code> theme</li>
-<li><strong>wayfire</strong> : Updated to <code>0.9.0</code>, updated configs, added new plugins</li>
-<li><strong>river</strong> : Updated configs, Fixed issue with floating WMs</li>
-<li><strong>hyprland</strong> : Updated to <code>0.44.1</code>, updated configs, updated hyprlock, etc</li>
-<li>Various bug fixes, and more!</li>
-</ul>
-<blockquote>
-<p>The <em><strong>October update package</strong></em> for your <strong>Existing WSE Installation</strong> is now available for download.</p>
-<p>Follow <a href="https://wiki.archcraft.io/docs/premium/wse#update" target="_blank" rel="noopener noreferrer">these instruction</a> to perform the Update.</p>
-<p>You Need to follow <a href="https://wiki.archcraft.io/blog/03-archcraft-update" target="_blank" rel="noopener noreferrer">these instructions</a> as well (<strong>Only Perform Step 2 and Step 6c,6d</strong>).</p>
-</blockquote>
-<p><strong>Download :</strong> You can download the latest ISO from <a href="https://ko-fi.com/s/213becbf00" target="_blank" rel="noopener noreferrer"><strong><code>ko-fi</code></strong> ☕</a></p>
-<p><strong>Get the Updated ISO :</strong>  Follow the steps below to get updated files (or re-download files) for free:</p>
-<ul>
-<li>Login to you Ko-fi account</li>
-<li>Go to your <code>Ko-fi Payments History</code></li>
-<li>Select the purchases you've made</li>
-<li>Click on <code>View Details</code></li>
-<li>Then, Click on <code>View Content</code> to download the updated files.</li>
-</ul>]]></content:encoded>
-            <category>wse</category>
-            <category>wayland</category>
             <category>sway</category>
             <category>wayfire</category>
             <category>river</category>
