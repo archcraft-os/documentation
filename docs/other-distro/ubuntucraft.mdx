@@ -44,11 +44,7 @@ export const Highlight = ({children, color}) => (
 
 **Ubuntucraft** is an installable package that will turn your [Ubuntu](https://ubuntu.com/) installation into Archcraft. Once installed on the top of Ubuntu, It'll offer everything Archcraft offers on your Ubuntu.
 
-**Important** : Ubuntucraft is created on the top of `Ubuntu 24.04 LTS Desktop` and It's ***recommended*** that you install this on a fresh installation of Ubuntu 24.04 LTS.
-
-:::info
-It may work on older and newer version of Ubuntu as well, It's just not tested on those version.
-:::
+**Important** : Ubuntucraft is created on the top of `Ubuntu 24.04` and `Ubuntu 26.04` LTS Desktop ISOs and It's ***recommended*** that you install this on a fresh installation of Ubuntu 24.04/26.04 LTS.
 
 <!-- Download ------------------------------------- -->
 
@@ -60,13 +56,12 @@ You can download the latest package from <Highlight color="#50545b"><a href="htt
 
 Follow the step below to install Ubuntucraft :
 
-- First, **Install Ubuntu 24.04 LTS** (`Minimal Installation`)  on your computer
-- Download the `ubuntucraft.tar.gz` file from ko-fi
+- First, **Install Ubuntu 24.04/26.04 LTS** (`Minimal/Standard Installation`)  on your computer
+- Download the `ubuntucraft-ver_date.tar.gz` file from ko-fi (ex: `ubuntucraft-26.04_2026-08-20.tar.gz`)
 - Transfer or save the file on your Ubuntu installation
-- Extract the file : `tar -xzvf ubuntucraft.tar.gz`
+- Extract the file : `tar -xzvf ubuntucraft-ver_date.tar.gz`
 - Change to extracted directory : `cd ubuntucraft`
 - Run install script and let it do it's job : `./install.sh`
-- You can run `./install.sh |& tee log.txt` to create a installation log file.
 - Once finished, _reboot your computer_ and you'll have **Ubuntucraft installed**.
 
 :::info[Video]
@@ -82,7 +77,35 @@ An **asciinema** file `ubuntucraft.cast` is provided as well, you can play that 
 ## Changelogs
 
 <details>
-<summary><b>Changelog (June 2025) : Last Update</b></summary>
+<summary><b>Changelog (August 2026) : Last Update</b></summary>
+
+**Date** : `August 20th, 2026`
+
+**`Ubuntu 24.04`**
+- Improved installation scripts
+- Fixed few bugs and issues
+**`Ubuntu 26.04`**
+- Improved installation scripts
+- Brand new Qt6 SDDM theme
+- Improved VirtualBox compatibility
+- Improved environment configuration
+- Better GTK/GNOME application integration
+- Added neofetch script
+- Update all Window Manager's Configs
+- Openbox
+  - Reload Theme option added to the menu
+  - Improved startup sequence
+  - Improved Picom startup for VirtualBox
+- Bspwm, i3wm
+  - Replaced feh with hsetroot
+  - New network management menu
+  - Improved Picom startup
+- Hundreds of small fixes and improvements
+
+</details>
+
+<details>
+<summary><b>Changelog (June 2025) : Third Release</b></summary>
 
 **Date** : `June 29th, 2025`
 
