@@ -1,0 +1,219 @@
+---
+sidebar_position: 3
+hide_table_of_contents: false
+---
+
+# Fedoracraft
+
+<!-- Theme ---------------------------------------- -->
+<!-- Tabs -->
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<!-- Badges -->
+export const Highlight = ({children, color}) => (
+  <span
+    style={{
+      backgroundColor: color,
+      borderRadius: '25px',
+      color: '#fff',
+      padding: '0.2rem 0.6rem',
+    }}>
+    {children}
+  </span>
+);
+
+<!-- Add your stuff after this -------------------- -->
+
+**Fedoracraft : Experience Archcraft on Fedora**
+
+[![video](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/fedoracraft/main.gif)](https://youtu.be/uydoC4qNIFU)
+
+## Overview
+
+- Turns your Fedora into **Archcraft**
+- Fully configured `openbox` window manager
+- Fully configured `bspwm` window manager
+- Fully configured `i3wm` window manager
+- Multiple **themes/styles** for both (openbox and bspwm) WMs
+- Everything else that Archcraft offers
+
+:::warning
+**Fedoracraft** is not an ISO or Fedora based distribution.
+:::
+
+**Fedoracraft** is an installable package that will turn your [Fedora](https://fedoraproject.org/) installation into Archcraft. Once installed on the top of Fedora, It'll offer everything Archcraft offers on your Fedora.
+
+**Important** : Fedoracraft is created on the top of `Fedora Workstation 44` ISO (`Fedora-Workstation-Live-44-1.7.x86_64.iso`) and It's ***recommended*** that you install this on a fresh installation of Fedora Workstation 44.
+
+<!-- Download ------------------------------------- -->
+
+## Download
+
+You can download the latest package from <Highlight color="#50545b"><a href="https://ko-fi.com/s/ee1f2f4cad" target="_blank">ko-fi ☕</a></Highlight>
+
+### Installation
+
+Follow the step below to install Fedoracraft :
+
+- First, **Install Fedora Workstation 44**  on your computer
+- Download the `fedoracraft_date.tar.gz` file from ko-fi (ex: `fedoracraft_2026-08-27.tar.gz`)
+- Transfer or save the file on your Fedora installation
+- Extract the file : `tar -xzvf fedoracraft_date.tar.gz`
+- Change to extracted directory : `cd fedoracraft`
+- Run install script and let it do it's job : `./install.sh`
+- Once finished, _reboot your computer_ and you'll have **Fedoracraft installed**.
+- If you want to remove gnome desktop and applications, you can run: `~/fedoracraft/remove-gnome.sh` after rebooting the system.
+
+:::info[Video]
+Watch the [complete installation video](https://youtu.be/uydoC4qNIFU)
+:::
+
+:::tip[Installation Logs]
+**Installation Log** files (`fedoracraft_install_DATE.log`) are provided as well, you can review them to see how the script works.
+:::
+
+<!-- Changelogs ----------------------------------- -->
+
+## Changelogs
+
+<details>
+<summary><b>Changelog (August 2026) : First Release</b></summary>
+
+**Date** : `August 27th, 2026`
+
+- Released Fedoracraft
+
+</details>
+
+<!-- Screenshots ---------------------------------- -->
+
+## Screenshots
+
+### Desktop
+
+Here's few screenshots of `Openbox`, `Bspwm` and `i3wm` desktops. These'll give you an idea of the experience of these WMs in Fedoracraft. 
+
+<Tabs>
+
+<TabItem value="wm_1" label="Openbox" default>
+
+|Desktop 1|Desktop 2|Desktop 3|Desktop 4|Desktop 5|Desktop 6|
+|---|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/fedoracraft/openbox/desktop/desktop_1.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/fedoracraft/openbox/desktop/desktop_2.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/fedoracraft/openbox/desktop/desktop_3.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/fedoracraft/openbox/desktop/desktop_4.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/fedoracraft/openbox/desktop/desktop_5.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/fedoracraft/openbox/desktop/desktop_6.png)|
+
+|Desktop 7|Desktop 8|Desktop 9|Desktop 10|Desktop 11|Desktop 12|
+|---|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/fedoracraft/openbox/desktop/desktop_7.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/fedoracraft/openbox/desktop/desktop_8.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/fedoracraft/openbox/desktop/desktop_9.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/fedoracraft/openbox/desktop/desktop_10.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/fedoracraft/openbox/desktop/desktop_11.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/fedoracraft/openbox/desktop/desktop_12.png)|
+
+</TabItem>
+
+<TabItem value="wm_2" label="Bspwm" default>
+
+|Desktop 1|Desktop 2|Desktop 3|Desktop 4|Desktop 5|Desktop 6|
+|---|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/fedoracraft/bspwm/desktop/desktop_1.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/fedoracraft/bspwm/desktop/desktop_2.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/fedoracraft/bspwm/desktop/desktop_3.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/fedoracraft/bspwm/desktop/desktop_4.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/fedoracraft/bspwm/desktop/desktop_5.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/fedoracraft/bspwm/desktop/desktop_6.png)|
+
+|Desktop 7|Desktop 8|Desktop 9|Desktop 10|Desktop 11|Desktop 12|
+|---|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/fedoracraft/bspwm/desktop/desktop_7.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/fedoracraft/bspwm/desktop/desktop_8.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/fedoracraft/bspwm/desktop/desktop_9.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/fedoracraft/bspwm/desktop/desktop_10.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/fedoracraft/bspwm/desktop/desktop_11.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/fedoracraft/bspwm/desktop/desktop_12.png)|
+
+</TabItem>
+
+<TabItem value="wm_3" label="i3wm" default>
+
+|Desktop 1|Desktop 2|Desktop 3|Desktop 4|Desktop 5|
+|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/fedoracraft/i3wm/desktop/desktop_1.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/fedoracraft/i3wm/desktop/desktop_2.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/fedoracraft/i3wm/desktop/desktop_3.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/fedoracraft/i3wm/desktop/desktop_4.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/fedoracraft/i3wm/desktop/desktop_5.png)|
+
+|Desktop 6|Desktop 7|Desktop 8|Desktop 9|Desktop 10|
+|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/fedoracraft/i3wm/desktop/desktop_6.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/fedoracraft/i3wm/desktop/desktop_7.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/fedoracraft/i3wm/desktop/desktop_8.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/fedoracraft/i3wm/desktop/desktop_9.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/fedoracraft/i3wm/desktop/desktop_10.png)|
+
+</TabItem>
+
+</Tabs>
+
+### Themes
+
+<Tabs>
+
+<TabItem value="wm_1" label="Openbox" default>
+
+There are **10 themes** available in openbox.
+
+|Theme 1|Theme 2|Theme 3|Theme 4|Theme 5|
+|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/fedoracraft/openbox/themes/theme_1.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/fedoracraft/openbox/themes/theme_2.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/fedoracraft/openbox/themes/theme_3.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/fedoracraft/openbox/themes/theme_4.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/fedoracraft/openbox/themes/theme_5.png)|
+
+|Theme 6|Theme 7|Theme 8|Theme 9|Theme 10|
+|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/fedoracraft/openbox/themes/theme_6.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/fedoracraft/openbox/themes/theme_7.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/fedoracraft/openbox/themes/theme_8.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/fedoracraft/openbox/themes/theme_9.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/fedoracraft/openbox/themes/theme_10.png)|
+
+</TabItem>
+
+<TabItem value="wm_2" label="Bspwm" default>
+
+There are **10 themes** available in bspwm.
+
+|Theme 1|Theme 2|Theme 3|Theme 4|Theme 5|
+|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/fedoracraft/bspwm/themes/theme_1.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/fedoracraft/bspwm/themes/theme_2.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/fedoracraft/bspwm/themes/theme_3.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/fedoracraft/bspwm/themes/theme_4.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/fedoracraft/bspwm/themes/theme_5.png)|
+
+|Theme 6|Theme 7|Theme 8|Theme 9|Theme 10|
+|---|---|---|---|---|
+|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/fedoracraft/bspwm/themes/theme_6.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/fedoracraft/bspwm/themes/theme_7.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/fedoracraft/bspwm/themes/theme_8.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/fedoracraft/bspwm/themes/theme_9.png)|![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/fedoracraft/bspwm/themes/theme_10.png)|
+
+</TabItem>
+
+<TabItem value="wm_3" label="i3wm" default>
+
+There is only **one theme** available in i3wm.
+
+![img](https://raw.githubusercontent.com/archcraft-os/misc-files/main/archcraftify/fedoracraft/i3wm/desktop/desktop_1.png)
+
+</TabItem>
+</Tabs>
+
+<!-- FAQs ----------------------------------------- -->
+
+## FAQs
+
+<details>
+<summary><b>How to use Fedoracraft?</b></summary>
+
+For any help with Configurations and Keybindings, visit the respective window manager's page.
+
+**Openbox :** [`Here`](/docs/window-managers/stacking-wm/openbox) <br/>
+**Bspwm :** [`Here`](/docs/window-managers/tiling-wm/bspwm) <br/>
+**i3wm :** [`Here`](/docs/window-managers/tiling-wm/i3wm)
+
+</details>
+
+<details>
+<summary><b>How to get the Updates?</b></summary>
+
+Follow the steps below to get updates (or re-download files):
+- Login to you Ko-fi account
+- Go to your `Ko-fi Payments History`
+- Select the purchases you've made
+- Click on `View Details`
+- Then, Click on `View Content` to download the updated files.
+
+</details>
+
+<details>
+<summary><b>I need help with Fedoracraft?</b></summary>
+
+The best places to get help quickly are **Archcraft Communities**. So join them and ask for help there. The links are in footer section of this wiki.
+
+If you face any issue with this, Email me at **adi1090x@gmail.com** and feel free to ask for help.
+
+</details>
+
+<details>
+<summary><b>Where do i report issues?</b></summary>
+
+Have you found any bug and want to report it, Open an issue on [Github](https://github.com/archcraft-os/fedoracraft/issues)
+
+</details>
