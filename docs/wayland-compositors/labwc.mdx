@@ -1394,15 +1394,12 @@ If the package leaves the user configuration in your home directory, remove `~/.
 <details>
 <summary><b>How do I update to the latest configuration?</b></summary>
 
-Download the latest package from Ko-fi (available to previous buyers for free) and install the updated package.
+Updates depend on how you obtained the configuration:
 
-#### Steps to download updates:
+- **Ko-fi:** Download your purchased version again from your Ko-fi order. New versions require a separate purchase.
+- **GitHub Sponsors:** Download the latest release from the private repository while your sponsorship is active.
 
-1. Log in to your Ko-fi account.
-2. Go to your **Ko-fi Payments History**.
-3. Select your purchase.
-4. Click **View Details**.
-5. Click **View Content** to download the updated files.
+Once downloaded, follow the installation instructions to apply the updated configuration.
 
 </details>
 
@@ -1433,7 +1430,7 @@ Restart your Labwc session for the change to take effect.
 <details>
 <summary><b>How do I change the GTK theme, icons, fonts, and cursor?</b></summary>
 
-Use the `rofi-appearance` applet to change the GTK theme, icon theme, cursor theme, and fonts. Your selections are saved and persist across sessions.
+Use the `rofi-appearance` (press `Super + A`) applet to change the GTK theme, icon theme, cursor theme, and fonts. Your selections are saved and persist across sessions.
 
 Alternatively, you can edit the corresponding variables in `~/.config/labwc/scripts/ac-gtkthemes`:
 
@@ -1517,7 +1514,7 @@ Refer to the **Theme Management** section for more details.
 <details>
 <summary><b>How do I change the desktop wallpaper?</b></summary>
 
-Use the `rofi-wallpaper` applet to select and apply a wallpaper. It supports multi-monitor setups and saves your wallpaper preferences across sessions.
+Use the `rofi-wallpaper` (press `Super + Z`) applet to select and apply a wallpaper. It supports multi-monitor setups and saves your wallpaper preferences across sessions.
 
 Alternatively, you can set a custom wallpaper by editing the `WALLPAPER` variable in `~/.config/labwc/scripts/ac-wallpaper`:
 
@@ -1532,7 +1529,7 @@ Keep in mind that applying a theme updates the wallpaper through the theme engin
 <details>
 <summary><b>How do dynamic themes work?</b></summary>
 
-Dynamic themes use `pywal` to generate a color palette from a randomly selected wallpaper in `~/Pictures/wallpapers`.
+Dynamic themes use `pywal` to generate a color palette from a randomly selected wallpaper in `~/Pictures/Wallpapers`.
 
 Select **Random Theme** from either the Rofi theme applet (`Super+T`) or the Labwc menu under **Preferences → Change Theme**.
 
