@@ -5,30 +5,29 @@ import Translate, {translate} from '@docusaurus/Translate';
 
 const FeatureList = [
   {
-    title: translate({message :'Minimal',}),
+    title: translate({message :'Lightweight',}),
     Svg: require('../../../static/img/minimal.svg').default,
     description: (
 		<Translate>
-			Archcraft stays minimal and responsive. 
-			With lightweight apps and window managers, it runs smoothly on under 800 MB of memory.
+			Lightweight apps and window managers keep Archcraft responsive, with a desktop that can run on under 800 MB of RAM.
 		</Translate>
     ),
   },
   {
-    title: translate({message :'Stunning',}),
+    title: translate({message :'Refined',}),
     Svg: require('../../../static/img/stunning.svg').default,
     description: (
 		<Translate>
-			Flat and pastel colors, consistent UI elements, and multiple themes make Archcraft look clean, minimal, and stunning.
+			Muted color palettes, consistent interface styling, and a selection of themes give Archcraft a clean, cohesive look.
 		</Translate>
     ),
   },
   {
-    title: translate({message :'Powerful',}),
+    title: translate({message :'Flexible',}),
     Svg: require('../../../static/img/powerful.svg').default,
     description: (
 		<Translate>
-			With cutting-edge software, seamless AUR access, and a minimal footprint, Archcraft empowers you to do more on your Linux PC.
+			Get up-to-date software from Arch Linux repositories and access the Arch User Repository (AUR) to tailor your setup.
 		</Translate>
     ),
   },

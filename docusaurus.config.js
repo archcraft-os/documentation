@@ -9,7 +9,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Archcraft',
-  tagline: 'Yet another minimal Linux distribution, based on Arch Linux.',
+  tagline: 'A thoughtfully crafted Linux desktop experience, based on Arch Linux.',
   favicon: 'img/favicon.svg',
 
   // Set the production url of your site here
@@ -17,6 +17,16 @@ const config = {
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
+
+  headTags: [
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'algolia-site-verification',
+        content: '8D75339C54C4F11F',
+      },
+    },
+  ],
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -200,19 +210,19 @@ const config = {
       indexName: 'archcraft',
 
       // Optional: see doc section below
-      contextualSearch: true,
+      contextualSearch: false,
 
       // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
-      externalUrlRegex: 'external\\.com|domain\\.com',
+      //externalUrlRegex: 'external\\.com|domain\\.com',
 
       // Optional: Replace parts of the item URLs from Algolia. Useful when using the same search index for multiple deployments using a different baseUrl. You can use regexp or string in the `from` param. For example: localhost:3000 vs myCompany.com/docs
-      replaceSearchResultPathname: {
-        from: '/docs/', // or as RegExp: /\/docs\//
-        to: '/docs/',
-      },
+      //replaceSearchResultPathname: {
+      //  from: '/docs/', // or as RegExp: /\/docs\//
+      //  to: '/docs/',
+      //},
 
       // Optional: Algolia search parameters
-      searchParameters: {},
+      //searchParameters: {},
 
       // Optional: path for search page that enabled by default (`false` to disable it)
       searchPagePath: 'search',
@@ -298,6 +308,10 @@ const config = {
               {
                 label: 'Release Cycle',
                 href: 'https://archcraft.io/more',
+              },
+              {
+                label: 'Supporters',
+                href: 'https://archcraft.io/supporters',
               },
               {
                 label: 'Sourceforge',
