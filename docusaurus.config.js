@@ -202,12 +202,12 @@ const config = {
       },
     algolia: {
       // The application ID provided by Algolia
-      appId: '2UJTUGCIC9',
+      appId: 'KTDOW3M3ZL',
 
       // Public API key: it is safe to commit it
-      apiKey: '9ce19e82b5a166243dff0a85dd0734fa',
+      apiKey: 'bf85d41b9c3f74faff03ebbbd4d65a69',
 
-      indexName: 'archcraft',
+      indexName: 'archcraft_docs',
 
       // Optional: see doc section below
       contextualSearch: false,
